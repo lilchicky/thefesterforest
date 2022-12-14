@@ -91,6 +91,8 @@ public class ItemInit {
 	public static final RegistryObject<Item> frozen_pendant = items.register("frozen_pendant",
 			() -> new VolatileNecklace(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
 	
+	// Adding comments to test new commits in this thing.
+	
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);
