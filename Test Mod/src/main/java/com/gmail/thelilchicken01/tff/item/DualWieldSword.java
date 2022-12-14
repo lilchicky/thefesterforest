@@ -5,7 +5,9 @@ import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.google.common.collect.HashMultimap;
+import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import com.google.common.collect.ImmutableMultimap.Builder;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -22,29 +24,30 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
 public class DualWieldSword extends Item {
+	
+	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
 	public DualWieldSword() {
 		super(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab));
 		
+		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "weapon damage", 6.0, AttributeModifier.Operation.ADDITION));
+
+	    this.defaultModifiers = builder.build();
+		
 	}
 	
 	@Override
-	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
+	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot slot) {
 		
-		Multimap<Attribute, AttributeModifier> multimap = HashMultimap.create();
-		
-		if(slot == EquipmentSlot.OFFHAND) {
-			multimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "Weapon Damage", 6.0, Operation.ADDITION));
-		}
-		
-		return multimap;
+		return slot == EquipmentSlot.OFFHAND ? this.defaultModifiers : super.getDefaultAttributeModifiers(slot);
 	}
 	
 	@Override
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		lore.add(new TextComponent("A short sword, extremely effective when used").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("alongside another item.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("alongside another weapon.").withStyle(ChatFormatting.GRAY));
 		
 		super.appendHoverText(stack, world, lore, flag);
 	}
