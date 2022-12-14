@@ -91,7 +91,8 @@ public class ItemInit {
 	public static final RegistryObject<Item> frozen_pendant = items.register("frozen_pendant",
 			() -> new VolatileNecklace(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
 	
-	// Adding comments to test new commits in this thing.
+	// TODO EXTREMELY IMPORTANT!!!!! Fix dual wield sword damage stacking
+	// TODO implement frozen pendant
 	
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
