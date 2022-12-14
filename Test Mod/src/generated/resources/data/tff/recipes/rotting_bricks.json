@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aa ",
+    "aa "
+  ],
+  "key": {
+    "a": {
+      "item": "tff:rotting_brick"
+    }
+  },
+  "result": {
+    "item": "tff:rotting_bricks",
+    "count": 4
+  }
+}

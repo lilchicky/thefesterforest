@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "tff:rotting_stone"
+  },
+  "result": "tff:cracked_rotting_stone",
+  "experience": 1.0,
+  "cookingtime": 100
+}

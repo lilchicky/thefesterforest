@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "tff:fester_ore"
+  },
+  "result": "tff:rotting_brick",
+  "experience": 15.0,
+  "cookingtime": 100
+}

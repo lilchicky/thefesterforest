@@ -1,0 +1,12 @@
+{
+	"type": "tff:tff",
+	"generator": {
+		"type": "minecraft:noise",
+		"seed": 0,
+		"settings": "tff:settings",
+		"biome_source": {
+			"type": "minecraft:fixed",
+			"biome": "tff:thefesterforest"
+		}
+	}
+}

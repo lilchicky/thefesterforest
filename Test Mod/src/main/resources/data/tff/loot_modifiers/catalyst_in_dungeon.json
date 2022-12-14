@@ -1,0 +1,10 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/simple_dungeon"
+    }
+  ],
+  "addition": "tff:rotting_catalyst",
+  "type": "tff:catalyst_in_dungeon"
+}

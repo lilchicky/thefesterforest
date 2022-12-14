@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 2,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 100,
+          "name": "minecraft:bone"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 70,
+          "name": "minecraft:black_dye"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "tff:ancient_whistle"
+        }
+      ]
+    }
+  ]
+}

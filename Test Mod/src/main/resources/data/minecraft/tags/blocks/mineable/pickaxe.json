@@ -1,0 +1,10 @@
+{
+	"replace": false,
+	"values": [
+		"tff:volatile_ore",
+		"tff:rotting_bricks",
+		"tff:rotting_stone",
+		"tff:fester_ore",
+		"#tff:tff_stones"
+	]
+}

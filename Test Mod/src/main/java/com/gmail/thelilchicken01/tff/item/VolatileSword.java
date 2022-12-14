@@ -1,0 +1,163 @@
+package com.gmail.thelilchicken01.tff.item;
+
+import java.util.List;
+import java.util.UUID;
+
+import com.gmail.thelilchicken01.tff.init.ParticleInit;
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
+
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
+
+public class VolatileSword extends SwordItem {
+	
+	//private boolean isSound = false;
+	
+	public static Level thisWorld;
+	
+	private static int flameDamage = 5;
+	private static int flameSeconds = 3;
+	private static int slowDuration = 10;
+
+	public VolatileSword(Tier tier, int damage, float aspeed, Properties properties) {
+		
+		super(tier, damage, aspeed, properties);
+		
+	}
+	
+	@Override
+	public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
+		
+		thisWorld = world;
+		//is server side
+		if (!world.isClientSide()) {
+			//Debug - print in console when right click
+			System.out.println(player.getName().getString() + " has used item with hand " + hand.name());
+			//create a list of nearby entities every time you right click
+			List<Entity> nearbyEntities = world.getEntities(player, new AABB(player.getX() - 4, player.getY() - 1, player.getZ() - 4, player.getX() + 4, player.getY() + 1, player.getZ() + 4));
+			//run function to interact with surrounding mobs
+			getEnts(nearbyEntities, player, world);
+			//put sword on cooldown
+			player.getCooldowns().addCooldown(this, 60); //default 100
+			
+		}
+		//is client side
+		else {
+			
+			circleFlame(world, player);
+			
+		}
+		return super.use(world, player, hand);
+	}
+	
+//	private void spawnFoundParticles(UseOnContext context, BlockPos positionClicked) {
+//		
+//	}
+	
+	//On hit an enemy slow them down and light them on fire
+	
+	@Override
+	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+		
+		//target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200), attacker);
+		target.setRemainingFireTicks(flameSeconds * 20);
+		
+		return super.hurtEnemy(stack, target, attacker);
+	}
+	
+	public void circleFlame(Level world, Player player) {
+		
+		for (int x = 0; x < 360; x++) {
+			
+			if (x % 10 == 0) {
+				
+				world.addParticle(ParticleInit.hellflame_particle.get(), player.getX(), player.getY() + 0.5d, player.getZ(), 
+						((Math.cos(x) * 0.75d) * (Math.random() + 0.5)), 0.0d + ((Math.random() - 0.5) * 0.25), ((Math.sin(x) * 0.75d) * (Math.random() + 0.5)));
+				
+				world.addParticle(ParticleInit.hellflame_particle.get(), player.getX(), player.getY() + 0.5d, player.getZ(), 
+						((Math.cos(x) * 0.55d) * (Math.random() + 0.5)), 0.0d + ((Math.random() - 0.5) * 0.25), ((Math.sin(x) * 0.55d) * (Math.random() + 0.5)));
+				
+				world.addParticle(ParticleInit.hellflame_particle.get(), player.getX(), player.getY() + 0.5d, player.getZ(), 
+						((Math.cos(x) * 0.35d) * (Math.random() + 0.5)), 0.0d + ((Math.random() - 0.5) * 0.25), ((Math.sin(x) * 0.35d) * (Math.random() + 0.5)));
+				//System.out.println("X: " + (Math.cos(x) * 0.65d) + " Y:" + 0.0d + " Z:" + (Math.sin(x) * 0.35d)); //(Math.sin(x) * 0.65d)
+				
+			}
+			
+		}
+		
+	}
+	
+	
+	public void getEnts(List<Entity> entityList, Player player, Level world) {
+		
+		//play this blaze shoot sound every time you cast, regardless if you hit something
+		
+		player.level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BLAZE_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F);
+		
+		//circleFlame(world, player);
+		
+		//for every entity in a 3x3 square radius, if they're alive, light them on fire and hurt them
+		
+		for (int x = 0; x < entityList.size(); x++) {
+			System.out.println(entityList.get(x).getName());
+			
+			if (entityList.get(x) instanceof LivingEntity) {
+				
+				LivingEntity currentEntity = (LivingEntity) entityList.get(x);
+			
+				entityList.get(x).setRemainingFireTicks(flameSeconds * 20);
+				entityList.get(x).hurt(DamageSource.GENERIC, flameDamage);
+				currentEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, slowDuration * 20, 2), null);
+				
+			}
+			//isSound = true;
+		}
+		
+	}
+	
+	@Override
+	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
+		
+		if(Screen.hasShiftDown()) {
+			lore.add(new TextComponent("A flaming blade fitted to a scorching hilt.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Right click to create a fiery burst around you.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Anything within 4 blocks of you will be dealt " + flameDamage).withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("damage and set on fire for " + flameSeconds + " seconds,").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("as well as being slowed for " + slowDuration + " seconds.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("The sword will also ignite anything hit for " + flameSeconds + " seconds.").withStyle(ChatFormatting.AQUA));
+		}
+		else {
+			lore.add(new TextComponent("A flaming blade fitted to a scorching hilt.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+		}
+		
+		super.appendHoverText(stack, world, lore, flag);
+	}
+
+}

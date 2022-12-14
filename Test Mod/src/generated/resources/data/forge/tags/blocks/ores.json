@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "tff:volatile_ore",
+    "tff:fester_ore"
+  ]
+}

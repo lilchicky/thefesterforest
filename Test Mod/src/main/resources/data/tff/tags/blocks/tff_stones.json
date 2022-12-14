@@ -1,0 +1,10 @@
+{
+	"replace": false,
+	"values": [
+		"tff:rotting_stone",
+		"tff:mossy_rotting_stone",
+		"tff:cracked_rotting_stone",
+		"tff:rotting_stone_bricks"
+	
+	]
+}

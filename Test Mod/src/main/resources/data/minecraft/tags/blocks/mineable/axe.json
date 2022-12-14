@@ -1,0 +1,9 @@
+{
+	"replace": false,
+	"values": [
+		"#tff:rotting_woods",
+		"tff:rotting_planks",
+		"#tff:slimy_woods",
+		"tff:slimy_planks"
+	]
+}

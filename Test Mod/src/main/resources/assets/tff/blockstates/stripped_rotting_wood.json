@@ -1,0 +1,16 @@
+{
+	"variants": {
+		"axis=x": {
+			"model": "tff:block/stripped_rotting_wood",
+			"x": 90,
+			"y": 90
+		},
+		"axis=y": {
+			"model": "tff:block/stripped_rotting_wood"
+		},
+		"axis=z": {
+			"model": "tff:block/stripped_rotting_wood",
+			"x": 90
+		}
+	}
+}

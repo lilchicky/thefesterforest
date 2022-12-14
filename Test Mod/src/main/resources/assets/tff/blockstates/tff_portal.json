@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"axis=z": {"model": "tff:block/tff_portal_ew" },
+		"axis=x": {"model": "tff:block/tff_portal_ns" }
+	}
+}

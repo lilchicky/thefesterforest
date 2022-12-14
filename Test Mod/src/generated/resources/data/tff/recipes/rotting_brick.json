@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:rotting_bricks"
+    }
+  ],
+  "result": {
+    "item": "tff:rotting_brick",
+    "count": 4
+  }
+}

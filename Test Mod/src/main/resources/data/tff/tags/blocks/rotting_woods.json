@@ -1,0 +1,10 @@
+{
+	"replace": false,
+	"values": [
+		"tff:rotting_log",
+		"tff:stripped_rotting_log",
+		"tff:rotting_wood",
+		"tff:stripped_rotting_wood"
+	
+	]
+}
