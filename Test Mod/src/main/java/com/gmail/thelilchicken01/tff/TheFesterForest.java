@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.gmail.thelilchicken01.tff.client.ClientEventBusSubscriber;
+import com.gmail.thelilchicken01.tff.client.ServerEventBusSubscriber;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.event.ModEventBusEvents;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
@@ -20,14 +21,9 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import software.bernie.geckolib3.GeckoLib;
-import top.theillusivec4.curios.api.SlotTypeMessage;
-import top.theillusivec4.curios.api.SlotTypePreset;
 
 // Thanks to Cy4's tutorials, got me from nothing to this :)
 // Thanks to Kaupenjoe's Tutorials
@@ -41,6 +37,7 @@ public class TheFesterForest {
 	public static final String modid = "tff";
 	
 	public static final ClientEventBusSubscriber ebs = new ClientEventBusSubscriber();
+	public static final ServerEventBusSubscriber sebs = new ServerEventBusSubscriber();
 	public static final ModEventBusEvents mebe = new ModEventBusEvents();
 	
 	public static final Logger LOGGER = LogManager.getLogger();	
