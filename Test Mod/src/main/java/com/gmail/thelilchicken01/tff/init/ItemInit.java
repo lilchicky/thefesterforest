@@ -6,6 +6,7 @@ import com.gmail.thelilchicken01.tff.item.AncientGreatsword;
 import com.gmail.thelilchicken01.tff.item.AncientWhistle;
 import com.gmail.thelilchicken01.tff.item.CatalystItem;
 import com.gmail.thelilchicken01.tff.item.DualWieldSword;
+import com.gmail.thelilchicken01.tff.item.FrozenPendant;
 import com.gmail.thelilchicken01.tff.item.VolatileApple;
 import com.gmail.thelilchicken01.tff.item.VolatileNecklace;
 import com.gmail.thelilchicken01.tff.item.VolatileSword;
@@ -86,6 +87,10 @@ public class ItemInit {
 	//Volatile Necklace
 	public static final RegistryObject<Item> volatile_necklace = items.register("volatile_necklace",
 			() -> new VolatileNecklace(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Frozen Pendant
+	public static final RegistryObject<Item> frozen_pendant = items.register("frozen_pendant",
+			() -> new FrozenPendant(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);

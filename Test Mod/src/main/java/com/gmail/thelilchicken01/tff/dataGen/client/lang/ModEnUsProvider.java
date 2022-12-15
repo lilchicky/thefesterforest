@@ -69,6 +69,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.volatile_ghost_spawn_egg.get(), "Volatile Ghost Spawn Egg");
 		add(ModEntityTypes.volatile_ghost.get(), "Volatile Ghost");
 		add(ItemInit.volatile_necklace.get(), "Volatile Necklace");
+		add(ItemInit.frozen_pendant.get(), "Frozen Pendant");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}
