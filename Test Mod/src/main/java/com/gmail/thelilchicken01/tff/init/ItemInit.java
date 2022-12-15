@@ -47,7 +47,7 @@ public class ItemInit {
 	
 	//Bug Carcass
 	public static final RegistryObject<Item> bug_carcass = register("bug_carcass", 
-			() -> new Item(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().saturationMod(14.0f).nutrition(8)
+			() -> new Item(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().saturationMod(2.0f).nutrition(8).fast()
 					.build())));
 	
 	//Rotting Brick

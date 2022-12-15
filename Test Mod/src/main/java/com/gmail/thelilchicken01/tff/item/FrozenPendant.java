@@ -41,7 +41,7 @@ public class FrozenPendant extends Item implements ICurioItem {
 		super(properties);
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-	    builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "bonus move speed", 0.2, AttributeModifier.Operation.ADDITION));
+	    //builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "bonus move speed", 0.2, AttributeModifier.Operation.ADDITION));
 
 	    this.defaultModifiers = builder.build();
 		
@@ -71,6 +71,8 @@ public class FrozenPendant extends Item implements ICurioItem {
 				if (!currentEntity.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
 				
 					currentEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, enemySlowdownSeconds * 20, 1));
+						
+					slotContext.entity().addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, (enemySlowdownSeconds + 1) * 20, 2));
 				
 				}
 				

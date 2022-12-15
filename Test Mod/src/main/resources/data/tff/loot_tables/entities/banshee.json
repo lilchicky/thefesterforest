@@ -18,6 +18,11 @@
           "type": "minecraft:item",
           "weight": 10,
           "name": "tff:ancient_whistle"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "tff:frozen_pendant"
         }
       ]
     }
