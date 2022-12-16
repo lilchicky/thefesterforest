@@ -26,9 +26,7 @@ public class AncientGreatsword extends SwordItem {
 	
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
-		if (!world.isClientSide()) {
-			System.out.println(player.getName().getString() + " has used item with hand " + hand.name());
-		}
+		
 		return super.use(world, player, hand);
 	}
 	

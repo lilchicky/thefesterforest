@@ -56,13 +56,15 @@ public class VolatileSword extends SwordItem {
 		//is server side
 		if (!world.isClientSide()) {
 			//Debug - print in console when right click
-			System.out.println(player.getName().getString() + " has used item with hand " + hand.name());
+			//System.out.println(player.getName().getString() + " has used item with hand " + hand.name());
 			//create a list of nearby entities every time you right click
 			List<Entity> nearbyEntities = world.getEntities(player, new AABB(player.getX() - 4, player.getY() - 1, player.getZ() - 4, player.getX() + 4, player.getY() + 1, player.getZ() + 4));
 			//run function to interact with surrounding mobs
 			getEnts(nearbyEntities, player, world);
 			//put sword on cooldown
 			player.getCooldowns().addCooldown(this, 60); //default 100
+			
+			this.damageItem(getDefaultInstance(), 2, null, null);
 			
 		}
 		//is client side
@@ -131,7 +133,7 @@ public class VolatileSword extends SwordItem {
 			
 				entityList.get(x).setRemainingFireTicks(flameSeconds * 20);
 				entityList.get(x).hurt(DamageSource.GENERIC, flameDamage);
-				currentEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, slowDuration * 20, 2), null);
+				currentEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, slowDuration * 20, 2));
 				
 			}
 			//isSound = true;

@@ -12,7 +12,9 @@ import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
+import com.gmail.thelilchicken01.tff.particle.BloodParticle;
 import com.gmail.thelilchicken01.tff.particle.HellflameParticle;
+import com.gmail.thelilchicken01.tff.particle.PocketSandParticle;
 import com.gmail.thelilchicken01.tff.particle.TffPortalParticle;
 
 import net.minecraft.client.Minecraft;
@@ -63,7 +65,8 @@ public class ClientEventBusSubscriber {
 		
 		Minecraft.getInstance().particleEngine.register(ParticleInit.hellflame_particle.get(), HellflameParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(ParticleInit.tff_portal_particles.get(), TffPortalParticle.Provider::new);
-		
+		Minecraft.getInstance().particleEngine.register(ParticleInit.pocket_sand_particle.get(), PocketSandParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(ParticleInit.blood_particle.get(), BloodParticle.Provider::new);
 	}
 	
 }

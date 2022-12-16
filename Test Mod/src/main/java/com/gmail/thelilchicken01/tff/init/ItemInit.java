@@ -6,7 +6,10 @@ import com.gmail.thelilchicken01.tff.item.AncientGreatsword;
 import com.gmail.thelilchicken01.tff.item.AncientWhistle;
 import com.gmail.thelilchicken01.tff.item.CatalystItem;
 import com.gmail.thelilchicken01.tff.item.DualWieldSword;
+import com.gmail.thelilchicken01.tff.item.FleshBall;
 import com.gmail.thelilchicken01.tff.item.FrozenPendant;
+import com.gmail.thelilchicken01.tff.item.LifeScythe;
+import com.gmail.thelilchicken01.tff.item.PocketSand;
 import com.gmail.thelilchicken01.tff.item.VolatileApple;
 import com.gmail.thelilchicken01.tff.item.VolatileNecklace;
 import com.gmail.thelilchicken01.tff.item.VolatileSword;
@@ -91,6 +94,19 @@ public class ItemInit {
 	//Frozen Pendant
 	public static final RegistryObject<Item> frozen_pendant = items.register("frozen_pendant",
 			() -> new FrozenPendant(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Pocket Sand
+	public static final RegistryObject<Item> pocket_sand = items.register("pocket_sand",
+			() -> new PocketSand(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Flesh Ball
+	public static final RegistryObject<Item> flesh_ball = items.register("flesh_ball", 
+			() -> new FleshBall(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Life Scythe
+	public static final RegistryObject<Item> life_scythe = register("life_scythe", 
+			() -> new LifeScythe(new VolatileTier(), 2, -3.2f, new Properties().tab(TheFesterForest.tff_tab)
+					.durability(1400)));
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);
