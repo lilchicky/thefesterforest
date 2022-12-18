@@ -58,6 +58,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.frozen_pendant.get());
 		oneLayerItem(ItemInit.pocket_sand.get());
 		oneLayerItem(ItemInit.flesh_ball.get());
+		oneLayerItem(ItemInit.explosive_powder.get());
+		oneLayerItem(ItemInit.angelic_whistle.get());
 	}
 	
 }

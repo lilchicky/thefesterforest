@@ -43,6 +43,16 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:explosive_powder",
+          "conditions": [
+            {
+              "condition": "minecraft:killed_by_player"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
           "weight": 5,
           "name": "minecraft:blaze_powder"
         }

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:angelic_whistle"
+    ]
+  },
+  "criteria": {
+    "has_tff:ancient_whistle": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:ancient_whistle"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:angelic_whistle"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:ancient_whistle",
+      "has_the_recipe"
+    ]
+  ]
+}

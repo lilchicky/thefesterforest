@@ -13,6 +13,7 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 
@@ -36,6 +37,16 @@ public class ModRecipeProvider extends RecipeProvider {
 			.define('a', BlockInit.rotting_stone.get().asItem())
 			.unlockedBy("has_" + BlockInit.rotting_stone.get().getRegistryName(), has(BlockInit.rotting_stone.get().asItem()))
 			.pattern("aa ").pattern("aa ").save(consumer, new ResourceLocation(TheFesterForest.modid, BlockInit.rotting_stone_bricks.get().getRegistryName().getPath()));
+		
+		ShapedRecipeBuilder.shaped(ItemInit.angelic_whistle.get(), 1) // add , int to get number of output
+		.define('a', ItemInit.ancient_whistle.get().asItem())
+		.define('b', Items.NETHER_STAR)
+		.define('c', Items.FEATHER)
+		.define('d', Items.IRON_INGOT)
+		.unlockedBy("has_" + ItemInit.ancient_whistle.get().getRegistryName(), 
+				has(ItemInit.ancient_whistle.get().asItem())) // what unlocks the recipe when you get that item
+		.pattern(" d ").pattern("cac").pattern(" b ").save(consumer, 
+				new ResourceLocation(TheFesterForest.modid, ItemInit.angelic_whistle.get().getRegistryName().getPath()));
 		
 		// Shapeless
 		ShapelessRecipeBuilder.shapeless(ItemInit.rotting_brick.get().asItem(), 4).requires(BlockInit.rotting_bricks.get()) //get item

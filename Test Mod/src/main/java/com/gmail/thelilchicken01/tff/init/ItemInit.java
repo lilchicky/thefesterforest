@@ -4,9 +4,11 @@ import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.item.AncientGreatsword;
 import com.gmail.thelilchicken01.tff.item.AncientWhistle;
+import com.gmail.thelilchicken01.tff.item.AngelicWhistle;
 import com.gmail.thelilchicken01.tff.item.BoneScythe;
 import com.gmail.thelilchicken01.tff.item.CatalystItem;
 import com.gmail.thelilchicken01.tff.item.DualWieldSword;
+import com.gmail.thelilchicken01.tff.item.ExplosivePowder;
 import com.gmail.thelilchicken01.tff.item.FleshBall;
 import com.gmail.thelilchicken01.tff.item.FrozenPendant;
 import com.gmail.thelilchicken01.tff.item.LifeScythe;
@@ -113,10 +115,18 @@ public class ItemInit {
 	public static final RegistryObject<Item> life_scythe = register("life_scythe", 
 			() -> new LifeScythe(new VolatileTier(), 2, -3.2f, new Properties().tab(TheFesterForest.tff_tab)
 					.durability(1400)));
-	//Life Scythe
+	//Bone Scythe
 	public static final RegistryObject<Item> bone_scythe = register("bone_scythe", 
 			() -> new BoneScythe(new VolatileTier(), 1, -3.0f, new Properties().tab(TheFesterForest.tff_tab)
 					.durability(1200)));
+	
+	//Explosive Powder
+	public static final RegistryObject<Item> explosive_powder = register("explosive_powder",
+			() -> new ExplosivePowder(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Angelic Whistle
+	public static final RegistryObject<Item> angelic_whistle = items.register("angelic_whistle",
+			() -> new AngelicWhistle(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);

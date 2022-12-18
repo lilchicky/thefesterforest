@@ -78,6 +78,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.wight_spawn_egg.get(), "Wight Spawn Egg");
 		add(ModEntityTypes.wight.get(), "Wight");
 		add(ItemInit.bone_scythe.get(), "Bone Scythe");
+		add(ItemInit.explosive_powder.get(), "Explosive Powder");
+		add(ItemInit.angelic_whistle.get(), "Angelic Whistle");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}

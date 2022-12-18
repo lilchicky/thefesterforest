@@ -2,7 +2,7 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 6,
+      "rolls": 24,
       "entries": [
         {
           "type": "minecraft:item",
@@ -35,6 +35,11 @@
           "type": "minecraft:item",
           "weight": 5,
           "name": "tff:volatile_necklace"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "tff:explosive_powder"
         },
         {
           "type": "minecraft:item",

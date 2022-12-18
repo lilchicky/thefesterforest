@@ -5,7 +5,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 3977ace43b991c7f9d6bd07669e1a48cac38e9a4 assets/tff/blockstates/rotting_stone.json
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
-417efcd1687ee25f97e17b344f908f72bd8764c7 assets/tff/lang/en_us.json
+1e8b4a7ff4e2abb30a3bfeea8af7e21421971333 assets/tff/lang/en_us.json
 74fa2fd936ff89c42c7a00a07dbdae54f43db419 assets/tff/models/block/cracked_rotting_stone.json
 76c8c0d9d0f865e28054565ba1f9f30e9c98f3d2 assets/tff/models/block/fester_ore.json
 fbc81cfbcece015c00cf47201a00fef65adc0e79 assets/tff/models/block/mossy_rotting_stone.json
@@ -14,8 +14,10 @@ a321e56fb7e0771726b5b69494f272ccb2a8a170 assets/tff/models/block/rotting_bricks.
 8b5defa86c0e94080119bd1760e5ebd6180d99ac assets/tff/models/block/rotting_stone_bricks.json
 50002942b00c9698317479d54c6b900960f472d2 assets/tff/models/block/slimy_planks.json
 1580673c62d0d4b747f0b32aa6a5282d772e81b7 assets/tff/models/item/ancient_whistle.json
+d71bc059265d7ccdce526415ecbca73f58ca93b4 assets/tff/models/item/angelic_whistle.json
 9839b5792c257992e8006e5e1a33c54421c640df assets/tff/models/item/bug_carcass.json
 275c623907e20e0231506a4a29c911421c764b43 assets/tff/models/item/cracked_rotting_stone.json
+61a81680433b6c80847d35ed3e8000bcf3b96f33 assets/tff/models/item/explosive_powder.json
 c54e2c2e2e77906167442203a23cb518c3a9dbfb assets/tff/models/item/fester_ore.json
 ffbbd55d61fbedd6c91aac6c4ef8b0a6707d7c66 assets/tff/models/item/flesh_ball.json
 7c9df64ae0afa30bd02e6b91022c3cc2033361f4 assets/tff/models/item/frozen_pendant.json
@@ -32,6 +34,7 @@ e13adc8a9edece6541e28d75e9419060976daeb3 assets/tff/models/item/rotting_stone_br
 32ec9bb61e262b267d341a2b1e6bcc98923b5838 data/forge/tags/blocks/stone.json
 c292c468d869e1a1c7e5d099d45ff1300c0e1920 data/forge/tags/items/cobblestone.json
 dd8fca77f7e3eb066a4c6a4c0fd3d16145ac6537 data/forge/tags/items/ingots.json
+abaaea0d8800b4b5054e546fd3fb5adefff5f0aa data/tff/advancements/recipes/tff/angelic_whistle.json
 5cb1a2dd5991c3215c45d4219664f26bbb392486 data/tff/advancements/recipes/tff/fester_ore_smelting.json
 21313aa975c80b99ce57485111940bc824a02b28 data/tff/advancements/recipes/tff/mossy_rotting_stone.json
 d54bae36bfa059c761c94ca19a174d039a663ad1 data/tff/advancements/recipes/tff/rotting_brick.json
@@ -53,6 +56,7 @@ e4f7044cd64c351ed798946cc8ae6820f8b456ed data/tff/loot_tables/blocks/slimy_plank
 57660577fd54192aeaab860f4aa2715159816a27 data/tff/loot_tables/blocks/stripped_slimy_log.json
 0059ceadba454e7194d77198e059ef4c2342153a data/tff/loot_tables/blocks/stripped_slimy_wood.json
 67ab0786c0fba0887a3bc51f18995b2195be20d7 data/tff/loot_tables/blocks/volatile_ore.json
+904f2ddd25972afd29bff69847afd4b0352909da data/tff/recipes/angelic_whistle.json
 7370d419993fec3b04f9b4bb1843705a62f826c8 data/tff/recipes/fester_ore_smelting.json
 28807c970ccdac8920171ef7d9942326b0ccc8d6 data/tff/recipes/mossy_rotting_stone.json
 8ff1f8efeb995b35d1fe5315092d30b1771eca4d data/tff/recipes/rotting_brick.json
