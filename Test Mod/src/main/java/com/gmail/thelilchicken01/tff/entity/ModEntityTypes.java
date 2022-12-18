@@ -5,6 +5,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -38,6 +39,11 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<VolatileGhostEntity>> volatile_ghost =
 			entity_types.register("volatile_ghost", () -> EntityType.Builder.of(VolatileGhostEntity::new, MobCategory.MONSTER).sized(0.8f, 1.875f) //width, height of hitbox
 					.build(new ResourceLocation(TheFesterForest.modid, "volatile_ghost").toString()));
+	
+	//Wight
+	public static final RegistryObject<EntityType<WightEntity>> wight =
+			entity_types.register("wight", () -> EntityType.Builder.of(WightEntity::new, MobCategory.MONSTER)
+					.sized(0.8f, 1.875f).build(new ResourceLocation(TheFesterForest.modid, "wight").toString()));
 	
 	
 	public static void register(IEventBus eventBus) {

@@ -40,8 +40,9 @@ public class LifeScythe extends SwordItem {
 		
 		for (int x = 0; x < 50; x++) {
 			world.addParticle(ParticleInit.blood_particle.get(), player.getX(), player.getY() + 0.5d, player.getZ(), 
-					((Math.cos(x) * 0.75d) * (Math.random() + 0.5)), 
-					0.0d + ((Math.random() - 0.5) * 0.25), ((Math.sin(x) * 0.75d) * (Math.random() + 0.5)));
+					((Math.cos(x) * 0.75d) * ((Math.random() - 0.5) * 0.2)), 
+					0.0d + ((Math.random() - 0.5) * 0.5), 
+					((Math.sin(x) * 0.75d) * ((Math.random() - 0.5) * 0.2)));
 		}
 		
 		player.playSound(SoundEvents.SLIME_JUMP, 1.0f, 0.01f);
@@ -67,9 +68,6 @@ public class LifeScythe extends SwordItem {
 	
 	@Override
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		lore.add(new TextComponent("A vibrating, living scythe, capable of healing").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("its wielder on every attack.").withStyle(ChatFormatting.GRAY));
 		
 		if(Screen.hasShiftDown()) {
 			lore.add(new TextComponent("A vibrating, living scythe, capable of healing").withStyle(ChatFormatting.GRAY));

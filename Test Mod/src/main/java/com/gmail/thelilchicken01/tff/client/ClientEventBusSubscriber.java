@@ -6,10 +6,12 @@ import com.gmail.thelilchicken01.tff.entity.client.BansheeRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.CrunchBeetleRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.RottingSkeletonRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.VolatileGhostRenderer;
+import com.gmail.thelilchicken01.tff.entity.client.WightRenderer;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.particle.BloodParticle;
@@ -48,6 +50,7 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(ModEntityTypes.crunch_beetle.get(), CrunchBeetleRenderer::new);
 		EntityRenderers.register(ModEntityTypes.banshee.get(), BansheeRenderer::new);
 		EntityRenderers.register(ModEntityTypes.volatile_ghost.get(), VolatileGhostRenderer::new);
+		EntityRenderers.register(ModEntityTypes.wight.get(), WightRenderer::new);
 	}
 	
 	@SubscribeEvent
@@ -57,6 +60,7 @@ public class ClientEventBusSubscriber {
 		event.put(ModEntityTypes.crunch_beetle.get(), CrunchBeetleEntity.setAttributes());
 		event.put(ModEntityTypes.banshee.get(), BansheeEntity.setAttributes());
 		event.put(ModEntityTypes.volatile_ghost.get(), VolatileGhostEntity.setAttributes());
+		event.put(ModEntityTypes.wight.get(), WightEntity.setAttributes());
 		
 	}
 	

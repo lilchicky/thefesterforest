@@ -4,6 +4,7 @@ import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.item.AncientGreatsword;
 import com.gmail.thelilchicken01.tff.item.AncientWhistle;
+import com.gmail.thelilchicken01.tff.item.BoneScythe;
 import com.gmail.thelilchicken01.tff.item.CatalystItem;
 import com.gmail.thelilchicken01.tff.item.DualWieldSword;
 import com.gmail.thelilchicken01.tff.item.FleshBall;
@@ -83,6 +84,11 @@ public class ItemInit {
 			() -> new ForgeSpawnEggItem(ModEntityTypes.volatile_ghost, 0xff4000, 0xff2600, //Background, Spots
 					new Item.Properties().tab(TheFesterForest.tff_tab)));
 	
+	//Volatile Ghost Spawn Egg
+	public static final RegistryObject<Item> wight_spawn_egg = items.register("wight_spawn_egg", 
+			() -> new ForgeSpawnEggItem(ModEntityTypes.wight, 0xfc034e, 0xfc0303, //Background, Spots
+					new Item.Properties().tab(TheFesterForest.tff_tab)));
+	
 	//Ancient Whistle
 	public static final RegistryObject<Item> ancient_whistle = items.register("ancient_whistle",
 			() -> new AncientWhistle(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
@@ -107,6 +113,10 @@ public class ItemInit {
 	public static final RegistryObject<Item> life_scythe = register("life_scythe", 
 			() -> new LifeScythe(new VolatileTier(), 2, -3.2f, new Properties().tab(TheFesterForest.tff_tab)
 					.durability(1400)));
+	//Life Scythe
+	public static final RegistryObject<Item> bone_scythe = register("bone_scythe", 
+			() -> new BoneScythe(new VolatileTier(), 1, -3.0f, new Properties().tab(TheFesterForest.tff_tab)
+					.durability(1200)));
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);

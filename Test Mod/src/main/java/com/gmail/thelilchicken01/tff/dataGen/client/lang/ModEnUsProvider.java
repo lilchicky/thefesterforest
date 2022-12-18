@@ -75,6 +75,9 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.pocket_sand.get(), "Pocket Sand");
 		add(ItemInit.flesh_ball.get(), "Ball of Flesh");
 		add(ItemInit.life_scythe.get(), "Scythe of Draining");
+		add(ItemInit.wight_spawn_egg.get(), "Wight Spawn Egg");
+		add(ModEntityTypes.wight.get(), "Wight");
+		add(ItemInit.bone_scythe.get(), "Bone Scythe");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}

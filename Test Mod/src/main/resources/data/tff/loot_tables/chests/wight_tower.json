@@ -2,12 +2,12 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 6,
+      "rolls": 24,
       "entries": [
         {
           "type": "minecraft:item",
           "weight": 100,
-          "name": "minecraft:gunpowder"
+          "name": "minecraft:rotten_flesh"
         },
         {
           "type": "minecraft:item",
@@ -16,12 +16,17 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 50,
-          "name": "minecraft:blaze_powder"
+          "weight": 80,
+          "name": "minecraft:diamond"
         },
         {
           "type": "minecraft:item",
-          "weight": 25,
+          "weight": 80,
+          "name": "minecraft:emerald"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 50,
           "name": "minecraft:book",
           "functions": [
             {
@@ -33,18 +38,25 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "tff:volatile_necklace"
+          "weight": 1,
+          "name": "tff:flesh_ball"
         },
         {
           "type": "minecraft:item",
-          "weight": 25,
-          "name": "tff:volatile_apple"
+          "weight": 10,
+          "name": "tff:bone_scythe",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 30,
+              "treasure": true
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "tff:volatile_sword",
+          "weight": 1,
+          "name": "tff:life_scythe",
           "functions": [
             {
               "function": "minecraft:enchant_randomly",

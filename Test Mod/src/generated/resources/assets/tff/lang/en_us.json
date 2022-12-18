@@ -37,9 +37,11 @@
   "entity.tff.crunch_beetle": "Crunch Beetle",
   "entity.tff.rotting_skeleton": "Rotting Skeleton",
   "entity.tff.volatile_ghost": "Volatile Ghost",
+  "entity.tff.wight": "Wight",
   "item.tff.ancient_greatsword": "Ancient Greatsword",
   "item.tff.ancient_whistle": "Ancient Whistle",
   "item.tff.banshee_spawn_egg": "Banshee Spawn Egg",
+  "item.tff.bone_scythe": "Bone Scythe",
   "item.tff.bug_carcass": "Crunch Beetle Carcass",
   "item.tff.crunch_beetle_spawn_egg": "Crunch Beetle Spawn Egg",
   "item.tff.dual_wield_sword": "Dual Wield Sword",
@@ -54,5 +56,6 @@
   "item.tff.volatile_ghost_spawn_egg": "Volatile Ghost Spawn Egg",
   "item.tff.volatile_necklace": "Volatile Necklace",
   "item.tff.volatile_sword": "\u00A76Volatile Sword",
+  "item.tff.wight_spawn_egg": "Wight Spawn Egg",
   "itemGroup.tff": "The Fester Forest"
 }
