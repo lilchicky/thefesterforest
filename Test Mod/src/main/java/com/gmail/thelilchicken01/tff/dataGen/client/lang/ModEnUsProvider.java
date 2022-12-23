@@ -25,6 +25,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("death.attack.tff_volatile_ghost.player", "%1$s was obliterated by %2$s");
 		add("death.attack.tff_sand_damage", "%1$s got too much sand in their eyes");
 		add("death.attack.tff_sand_damage.player", "%2$s aggressively threw sand at %1$s");
+		add("death.attack.tff_bone_damage", "%1$s got boned");
+		add("death.attack.tff_bone_damage.player", "%1$s was knocked out with a bone by %2$s");
 		//Other
 		add(BlockInit.rotting_bricks.get(), "Fester Bricks");
 		add(ItemInit.rotting_brick.get(), "Fester Brick");
@@ -80,6 +82,10 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.bone_scythe.get(), "Bone Scythe");
 		add(ItemInit.explosive_powder.get(), "Explosive Powder");
 		add(ItemInit.angelic_whistle.get(), "Angelic Whistle");
+		add(ItemInit.brittle_branch.get(), "Brittle Branch");
+		add(ItemInit.branch_charge.get(), "Branch Charge");
+		add(ItemInit.bone_charge.get(), "Bone Charge");
+		add(ItemInit.bone_launcher.get(), "Bone Launcher");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}

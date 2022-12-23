@@ -15,6 +15,7 @@ import com.gmail.thelilchicken01.tff.world.dimension.ModDimensions;
 import com.gmail.thelilchicken01.tff.world.structures.ModStructures;
 
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.IndirectEntityDamageSource;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
@@ -30,6 +31,7 @@ import software.bernie.geckolib3.GeckoLib;
 // Thanks to WafflesAreBetter for all the dimension help
 // Thanks to Undergarden for the portal code
 // Thanks to TelepathicGrunt for the structure code!
+// Thanks to GunsWithoutRoses (The best gun mod ever created) for being the only projectile reference I could find
 
 @Mod("tff")
 public class TheFesterForest {
@@ -45,6 +47,7 @@ public class TheFesterForest {
 	public static final DamageSource banshee = new DamageSource(modid + "_banshee").bypassArmor();
 	public static final DamageSource volatile_ghost = new DamageSource(modid + "_volatile_ghost").setExplosion();
 	public static final DamageSource sand_damage = new DamageSource(modid + "_sand_damage");
+	public static final DamageSource bone_damage = new DamageSource(modid + "_bone_damage").bypassArmor();
 	
 	public static final CreativeModeTab tff_tab = new CreativeModeTab(modid) {
 

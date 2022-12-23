@@ -5,7 +5,9 @@ import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.item.AncientGreatsword;
 import com.gmail.thelilchicken01.tff.item.AncientWhistle;
 import com.gmail.thelilchicken01.tff.item.AngelicWhistle;
+import com.gmail.thelilchicken01.tff.item.BoneLauncher;
 import com.gmail.thelilchicken01.tff.item.BoneScythe;
+import com.gmail.thelilchicken01.tff.item.BrittleBranch;
 import com.gmail.thelilchicken01.tff.item.CatalystItem;
 import com.gmail.thelilchicken01.tff.item.DualWieldSword;
 import com.gmail.thelilchicken01.tff.item.ExplosivePowder;
@@ -16,6 +18,8 @@ import com.gmail.thelilchicken01.tff.item.PocketSand;
 import com.gmail.thelilchicken01.tff.item.VolatileApple;
 import com.gmail.thelilchicken01.tff.item.VolatileNecklace;
 import com.gmail.thelilchicken01.tff.item.VolatileSword;
+import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
+import com.gmail.thelilchicken01.tff.item.projectile.BranchShot;
 import com.gmail.thelilchicken01.tff.item.tiers.VolatileTier;
 import com.google.common.base.Supplier;
 
@@ -24,6 +28,8 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.Properties;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -127,6 +133,25 @@ public class ItemInit {
 	//Angelic Whistle
 	public static final RegistryObject<Item> angelic_whistle = items.register("angelic_whistle",
 			() -> new AngelicWhistle(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Brittle Branch
+	public static final RegistryObject<Item> brittle_branch = items.register("brittle_branch",
+			() -> new BrittleBranch(new Properties().tab(TheFesterForest.tff_tab).durability(650), 
+					5, 1, 16, 1.5, 14).repair(() -> Ingredient.of(Items.DEAD_BUSH)));
+	//bonus damage, damage multiplier, fire delay, inaccuracy, enchantability
+	
+	//Branch Charge
+	public static final RegistryObject<BranchShot> branch_charge = items.register("branch_charge",
+			() -> new BranchShot(new Properties().stacksTo(1), 0));// damage of bullet
+	
+	//Bone Charge
+	public static final RegistryObject<BoneShot> bone_charge = items.register("bone_charge",
+			() -> new BoneShot(new Properties().stacksTo(1), 2));// damage of bullet
+	
+	//Brittle Branch
+	public static final RegistryObject<Item> bone_launcher = items.register("bone_launcher",
+			() -> new BoneLauncher(new Properties().tab(TheFesterForest.tff_tab).durability(1100), 
+					0.1).repair(() -> Ingredient.of(Items.BONE_BLOCK)));
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);

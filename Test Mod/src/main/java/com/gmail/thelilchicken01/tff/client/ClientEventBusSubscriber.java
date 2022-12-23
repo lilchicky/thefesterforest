@@ -12,9 +12,12 @@ import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
+import com.gmail.thelilchicken01.tff.entity.projectile.BoneCharge;
+import com.gmail.thelilchicken01.tff.entity.projectile.BranchCharge;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.particle.BloodParticle;
+import com.gmail.thelilchicken01.tff.particle.BoneParticle;
 import com.gmail.thelilchicken01.tff.particle.HellflameParticle;
 import com.gmail.thelilchicken01.tff.particle.PocketSandParticle;
 import com.gmail.thelilchicken01.tff.particle.TffPortalParticle;
@@ -23,7 +26,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -65,12 +70,23 @@ public class ClientEventBusSubscriber {
 	}
 	
 	@SubscribeEvent
+    public static void registerEntityRenders(EntityRenderersEvent.RegisterRenderers event) {
+		//Same renderer as potions
+    	event.registerEntityRenderer(ModEntityTypes.branch_charge.get(), 
+    			(context) -> new ThrownItemRenderer<BranchCharge>(context));
+    	
+    	event.registerEntityRenderer(ModEntityTypes.bone_charge.get(), 
+    			(context) -> new ThrownItemRenderer<BoneCharge>(context));
+    }
+	
+	@SubscribeEvent
 	public static void registerParticleFactories(final ParticleFactoryRegisterEvent event) {
 		
 		Minecraft.getInstance().particleEngine.register(ParticleInit.hellflame_particle.get(), HellflameParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(ParticleInit.tff_portal_particles.get(), TffPortalParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(ParticleInit.pocket_sand_particle.get(), PocketSandParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(ParticleInit.blood_particle.get(), BloodParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(ParticleInit.bone_particle.get(), BoneParticle.Provider::new);
 	}
 	
 }

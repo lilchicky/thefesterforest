@@ -37,7 +37,9 @@ public class AngelicWhistle extends Item {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
 		
-		List<Entity> nearbyEntities = world.getEntities(player, new AABB(player.getX() - 4, player.getY() - 3, player.getZ() - 4, player.getX() + 4, player.getY() + 2, player.getZ() + 4));
+		List<Entity> nearbyEntities = world.getEntities(player, 
+				new AABB(player.getX() - 4, player.getY() - 3, player.getZ() - 4, 
+						player.getX() + 4, player.getY() + 2, player.getZ() + 4));
 			
 		player.playSound(SoundEvents.NOTE_BLOCK_CHIME, 1.2f, 1.4f);
 		
