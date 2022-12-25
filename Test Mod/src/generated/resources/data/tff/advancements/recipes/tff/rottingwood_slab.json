@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:rottingwood_slab"
+    ]
+  },
+  "criteria": {
+    "has_tff:rotting_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:rotting_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:rottingwood_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:rotting_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

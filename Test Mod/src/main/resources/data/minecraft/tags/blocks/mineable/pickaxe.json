@@ -5,6 +5,9 @@
 		"tff:rotting_bricks",
 		"tff:rotting_stone",
 		"tff:fester_ore",
-		"#tff:tff_stones"
+		"#tff:tff_stones",
+		"tff:rotting_stone_brick_stairs",
+		"tff:rotting_stone_brick_slab",
+		"tff:rotting_stone_brick_wall"
 	]
 }

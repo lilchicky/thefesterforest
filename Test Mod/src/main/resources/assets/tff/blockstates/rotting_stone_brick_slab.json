@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tff:block/rotting_stone_brick_slab"
+    },
+    "type=double": {
+      "model": "tff:block/rotting_stone_bricks"
+    },
+    "type=top": {
+      "model": "tff:block/rotting_stone_brick_slab_top"
+    }
+  }
+}

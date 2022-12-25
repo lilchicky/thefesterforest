@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tff:block/rottingwood_slab"
+    },
+    "type=double": {
+      "model": "tff:block/rotting_planks"
+    },
+    "type=top": {
+      "model": "tff:block/rottingwood_slab_top"
+    }
+  }
+}

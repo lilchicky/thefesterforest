@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "tff:block/slimy_planks",
+    "top": "tff:block/slimy_planks",
+    "side": "tff:block/slimy_planks"
+  }
+}

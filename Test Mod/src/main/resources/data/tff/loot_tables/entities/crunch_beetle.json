@@ -6,7 +6,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tff:bug_carcass"
+          "name": "tff:bug_carcass",
+          "weight": 100
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:pocket_sand",
+          "weight": 1
         }
       ]
     }

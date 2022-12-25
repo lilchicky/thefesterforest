@@ -23,11 +23,15 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.block.GrassBlock;
 import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.BlockState;
@@ -254,6 +258,64 @@ public class BlockInit {
 	//Rotting Stone Bricks
 	public static final RegistryObject<Block> rotting_stone_bricks = register("rotting_stone_bricks", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	
+	//Rotting Stone Brick Stairs
+	public static final RegistryObject<Block> rotting_stone_brick_stairs = register("rotting_stone_brick_stairs", 
+			() -> new StairBlock(() -> BlockInit.rotting_stone_bricks.get().defaultBlockState(), 
+					BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	
+	//Rotting Stone Brick Slab
+	public static final RegistryObject<Block> rotting_stone_brick_slab = register("rotting_stone_brick_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	
+	//Rotting Stone Brick Wall
+	public static final RegistryObject<Block> rotting_stone_brick_wall = register("rotting_stone_brick_wall", 
+			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	
+	//Rottingwood Fence
+	public static final RegistryObject<Block> rottingwood_fence = register("rottingwood_fence", 
+			() -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.NETHERRACK)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+		
+	//Rottingwood Gate
+	public static final RegistryObject<Block> rottingwood_fence_gate = register("rottingwood_fence_gate", 
+			() -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.NETHERRACK)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	
+	//Rottingwood Stairs
+	public static final RegistryObject<Block> rottingwood_stairs = register("rottingwood_stairs", 
+			() -> new StairBlock(() -> BlockInit.rotting_planks.get().defaultBlockState(), 
+					BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.NETHERRACK)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	
+	//Rottingwood Slab
+	public static final RegistryObject<Block> rottingwood_slab = register("rottingwood_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.NETHERRACK)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	
+	//Slimy Stairs
+	public static final RegistryObject<Block> slimy_stairs = register("slimy_stairs", 
+			() -> new StairBlock(() -> BlockInit.slimy_planks.get().defaultBlockState(), 
+					BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.SLIME_BLOCK)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+		
+	//Slimy Slab
+	public static final RegistryObject<Block> slimy_slab = register("slimy_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.SLIME_BLOCK)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	
+	//Slimy Fence
+	public static final RegistryObject<Block> slimy_fence = register("slimy_fence", 
+			() -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.SLIME_BLOCK)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			
+	//Slimy Gate
+	public static final RegistryObject<Block> slimy_fence_gate = register("slimy_fence_gate", 
+			() -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.SLIME_BLOCK)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
 	
 	private static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<? extends T> block) {

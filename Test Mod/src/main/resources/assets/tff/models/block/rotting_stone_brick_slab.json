@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "tff:block/rotting_stone_bricks",
+    "top": "tff:block/rotting_stone_bricks",
+    "side": "tff:block/rotting_stone_bricks"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "tff:block/rotting_planks",
+    "top": "tff:block/rotting_planks",
+    "side": "tff:block/rotting_planks"
+  }
+}

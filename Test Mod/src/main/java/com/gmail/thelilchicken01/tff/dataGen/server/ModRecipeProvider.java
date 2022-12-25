@@ -33,10 +33,113 @@ public class ModRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_" + ItemInit.rotting_brick.get().getRegistryName(), has(ItemInit.rotting_brick.get().asItem())) // what unlocks the recipe when you get that item
 			.pattern("aa ").pattern("aa ").save(consumer, new ResourceLocation(TheFesterForest.modid, BlockInit.rotting_bricks.get().getRegistryName().getPath()));
 		
-		ShapedRecipeBuilder.shaped(BlockInit.rotting_stone_bricks.get())
-			.define('a', BlockInit.rotting_stone.get().asItem())
-			.unlockedBy("has_" + BlockInit.rotting_stone.get().getRegistryName(), has(BlockInit.rotting_stone.get().asItem()))
-			.pattern("aa ").pattern("aa ").save(consumer, new ResourceLocation(TheFesterForest.modid, BlockInit.rotting_stone_bricks.get().getRegistryName().getPath()));
+		ShapedRecipeBuilder.shaped(BlockInit.rotting_stone_bricks.get()) //what am i making
+			.define('a', BlockInit.rotting_stone.get().asItem()) //keys
+			.unlockedBy("has_" + BlockInit.rotting_stone.get().getRegistryName(), //unlocked when you get this item
+					has(BlockInit.rotting_stone.get().asItem()))
+			.pattern("aa ").pattern("aa ").save(consumer, //the patterns with the keys above
+					new ResourceLocation(TheFesterForest.modid, //crafting name of recipe is this \/ 
+							BlockInit.rotting_stone_bricks.get().getRegistryName().getPath()));
+		
+		//Stone Brick Stairs
+		ShapedRecipeBuilder.shaped(BlockInit.rotting_stone_brick_stairs.get(), 4)
+			.define('a', BlockInit.rotting_stone_bricks.get().asItem())
+			.unlockedBy("has_" + BlockInit.rotting_stone_bricks.get().getRegistryName(), 
+					has(BlockInit.rotting_stone_bricks.get().asItem()))
+			.pattern("a  ").pattern("aa ").pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.modid, 
+							BlockInit.rotting_stone_brick_stairs.get().getRegistryName().getPath()));
+		
+		//Stone Brick Slabs
+		ShapedRecipeBuilder.shaped(BlockInit.rotting_stone_brick_slab.get(), 6)
+			.define('a', BlockInit.rotting_stone_bricks.get().asItem())
+			.unlockedBy("has_" + BlockInit.rotting_stone_bricks.get().getRegistryName(), 
+					has(BlockInit.rotting_stone_bricks.get().asItem()))
+			.pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.modid, 
+							BlockInit.rotting_stone_brick_slab.get().getRegistryName().getPath()));
+		
+		//Stone Brick Walls
+		ShapedRecipeBuilder.shaped(BlockInit.rotting_stone_brick_wall.get(), 6)
+			.define('a', BlockInit.rotting_stone_bricks.get().asItem())
+			.unlockedBy("has_" + BlockInit.rotting_stone_bricks.get().getRegistryName(), 
+					has(BlockInit.rotting_stone_bricks.get().asItem()))
+			.pattern("aaa").pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.modid, 
+							BlockInit.rotting_stone_brick_wall.get().getRegistryName().getPath()));
+		
+		//Rottingwood Fence
+		ShapedRecipeBuilder.shaped(BlockInit.rottingwood_fence.get(), 3)
+			.define('a', BlockInit.rotting_planks.get().asItem()).define('b', Items.STICK)
+			.unlockedBy("has_" + BlockInit.rotting_planks.get().getRegistryName(), 
+					has(BlockInit.rotting_planks.get().asItem()))
+			.pattern("aba").pattern("aba").save(consumer, 
+					new ResourceLocation(TheFesterForest.modid, 
+							BlockInit.rottingwood_fence.get().getRegistryName().getPath()));
+		
+		//Rottingwood Fence Gate
+		ShapedRecipeBuilder.shaped(BlockInit.rottingwood_fence_gate.get())
+			.define('a', BlockInit.rotting_planks.get().asItem()).define('b', Items.STICK)
+			.unlockedBy("has_" + BlockInit.rotting_planks.get().getRegistryName(), 
+					has(BlockInit.rotting_planks.get().asItem()))
+			.pattern("bab").pattern("bab").save(consumer, 
+					new ResourceLocation(TheFesterForest.modid, 
+							BlockInit.rottingwood_fence_gate.get().getRegistryName().getPath()));
+		
+		//Rottingwood Stairs
+		ShapedRecipeBuilder.shaped(BlockInit.rottingwood_stairs.get(), 4)
+			.define('a', BlockInit.rotting_planks.get().asItem())
+			.unlockedBy("has_" + BlockInit.rotting_planks.get().getRegistryName(), 
+					has(BlockInit.rotting_planks.get().asItem()))
+			.pattern("a  ").pattern("aa ").pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.modid, 
+							BlockInit.rottingwood_stairs.get().getRegistryName().getPath()));
+		
+		//Slimy Stairs
+		ShapedRecipeBuilder.shaped(BlockInit.slimy_stairs.get(), 4)
+			.define('a', BlockInit.slimy_planks.get().asItem())
+			.unlockedBy("has_" + BlockInit.slimy_planks.get().getRegistryName(), 
+					has(BlockInit.slimy_planks.get().asItem()))
+			.pattern("a  ").pattern("aa ").pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.modid, 
+							BlockInit.slimy_stairs.get().getRegistryName().getPath()));
+		
+		//Rottingwood Slabs
+		ShapedRecipeBuilder.shaped(BlockInit.rottingwood_slab.get(), 6)
+			.define('a', BlockInit.rotting_planks.get().asItem())
+			.unlockedBy("has_" + BlockInit.rotting_planks.get().getRegistryName(), 
+					has(BlockInit.rotting_planks.get().asItem()))
+			.pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.modid, 
+							BlockInit.rottingwood_slab.get().getRegistryName().getPath()));
+		
+		//Slimy Slabs
+		ShapedRecipeBuilder.shaped(BlockInit.slimy_slab.get(), 6)
+			.define('a', BlockInit.slimy_planks.get().asItem())
+			.unlockedBy("has_" + BlockInit.slimy_planks.get().getRegistryName(), 
+					has(BlockInit.slimy_planks.get().asItem()))
+			.pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.modid, 
+							BlockInit.slimy_slab.get().getRegistryName().getPath()));
+		
+		//Slimy Fence
+		ShapedRecipeBuilder.shaped(BlockInit.slimy_fence.get(), 3)
+			.define('a', BlockInit.slimy_planks.get().asItem()).define('b', Items.STICK)
+			.unlockedBy("has_" + BlockInit.slimy_planks.get().getRegistryName(), 
+					has(BlockInit.slimy_planks.get().asItem()))
+			.pattern("aba").pattern("aba").save(consumer, 
+					new ResourceLocation(TheFesterForest.modid, 
+							BlockInit.slimy_fence.get().getRegistryName().getPath()));
+				
+		//Slimy Fence Gate
+		ShapedRecipeBuilder.shaped(BlockInit.slimy_fence_gate.get())
+			.define('a', BlockInit.slimy_planks.get().asItem()).define('b', Items.STICK)
+			.unlockedBy("has_" + BlockInit.slimy_planks.get().getRegistryName(), 
+					has(BlockInit.slimy_planks.get().asItem()))
+			.pattern("bab").pattern("bab").save(consumer, 
+					new ResourceLocation(TheFesterForest.modid, 
+							BlockInit.slimy_fence_gate.get().getRegistryName().getPath()));
+		
 		
 		ShapedRecipeBuilder.shaped(ItemInit.angelic_whistle.get(), 1) // add , int to get number of output
 		.define('a', ItemInit.ancient_whistle.get().asItem())

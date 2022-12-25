@@ -86,6 +86,17 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.branch_charge.get(), "Branch Charge");
 		add(ItemInit.bone_charge.get(), "Bone Charge");
 		add(ItemInit.bone_launcher.get(), "Bone Launcher");
+		add(BlockInit.rotting_stone_brick_slab.get(), "Rotting Stone Brick Slab");
+		add(BlockInit.rotting_stone_brick_stairs.get(), "Rotting Stone Brick Stairs");
+		add(BlockInit.rotting_stone_brick_wall.get(), "Rotting Stone Brick Wall");
+		add(BlockInit.rottingwood_fence.get(), "Rottingwood Fence");
+		add(BlockInit.rottingwood_fence_gate.get(), "Rottingwood Fence Gate");
+		add(BlockInit.rottingwood_stairs.get(), "Rottingwood Stairs");
+		add(BlockInit.rottingwood_slab.get(), "Rottingwood Slab");
+		add(BlockInit.slimy_stairs.get(), "Slimy Stairs");
+		add(BlockInit.slimy_slab.get(), "Slimy Slab");
+		add(BlockInit.slimy_fence.get(), "Slimy Fence");
+		add(BlockInit.slimy_fence_gate.get(), "Slimy Fence Gate");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}
