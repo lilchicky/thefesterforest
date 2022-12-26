@@ -62,6 +62,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.angelic_whistle.get());
 		oneLayerItem(ItemInit.branch_charge.get());
 		oneLayerItem(ItemInit.bone_charge.get());
+		oneLayerItem(ItemInit.forgemaster_heart.get());
 	}
 	
 }

@@ -12,6 +12,7 @@ import com.gmail.thelilchicken01.tff.item.CatalystItem;
 import com.gmail.thelilchicken01.tff.item.DualWieldSword;
 import com.gmail.thelilchicken01.tff.item.ExplosivePowder;
 import com.gmail.thelilchicken01.tff.item.FleshBall;
+import com.gmail.thelilchicken01.tff.item.ForgemasterHeart;
 import com.gmail.thelilchicken01.tff.item.FrozenPendant;
 import com.gmail.thelilchicken01.tff.item.LifeScythe;
 import com.gmail.thelilchicken01.tff.item.PocketSand;
@@ -92,9 +93,14 @@ public class ItemInit {
 			() -> new ForgeSpawnEggItem(ModEntityTypes.volatile_ghost, 0xff4000, 0xff2600, //Background, Spots
 					new Item.Properties().tab(TheFesterForest.tff_tab)));
 	
-	//Volatile Ghost Spawn Egg
+	//Wight Spawn Egg
 	public static final RegistryObject<Item> wight_spawn_egg = items.register("wight_spawn_egg", 
 			() -> new ForgeSpawnEggItem(ModEntityTypes.wight, 0xfc034e, 0xfc0303, //Background, Spots
+					new Item.Properties().tab(TheFesterForest.tff_tab)));
+	
+	//Forgemaster Spawn Egg
+	public static final RegistryObject<Item> forgemaster_spawn_egg = items.register("forgemaster_spawn_egg", 
+			() -> new ForgeSpawnEggItem(ModEntityTypes.forgemaster, 0x616161, 0x404040, //Background, Spots
 					new Item.Properties().tab(TheFesterForest.tff_tab)));
 	
 	//Ancient Whistle
@@ -108,6 +114,10 @@ public class ItemInit {
 	//Frozen Pendant
 	public static final RegistryObject<Item> frozen_pendant = items.register("frozen_pendant",
 			() -> new FrozenPendant(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Forgemaster's Heart
+	public static final RegistryObject<Item> forgemaster_heart = items.register("forgemaster_heart",
+			() -> new ForgemasterHeart(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
 	
 	//Pocket Sand
 	public static final RegistryObject<Item> pocket_sand = items.register("pocket_sand",

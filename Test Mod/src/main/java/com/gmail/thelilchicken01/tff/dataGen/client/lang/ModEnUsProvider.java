@@ -97,6 +97,9 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.slimy_slab.get(), "Slimy Slab");
 		add(BlockInit.slimy_fence.get(), "Slimy Fence");
 		add(BlockInit.slimy_fence_gate.get(), "Slimy Fence Gate");
+		add(ModEntityTypes.forgemaster.get(), "The Forgemaster");
+		add(ItemInit.forgemaster_spawn_egg.get(), "Forgemaster Spawn Egg");
+		add(ItemInit.forgemaster_heart.get(), "Forgemaster's Heart");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}

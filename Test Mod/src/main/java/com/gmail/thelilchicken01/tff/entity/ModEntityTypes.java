@@ -3,6 +3,7 @@ package com.gmail.thelilchicken01.tff.entity;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
@@ -49,6 +50,11 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<WightEntity>> wight =
 			entity_types.register("wight", () -> EntityType.Builder.of(WightEntity::new, MobCategory.MONSTER)
 					.sized(0.8f, 1.875f).build(new ResourceLocation(TheFesterForest.modid, "wight").toString()));
+	
+	//Forgemaster
+	public static final RegistryObject<EntityType<ForgemasterEntity>> forgemaster =
+			entity_types.register("forgemaster", () -> EntityType.Builder.of(ForgemasterEntity::new, MobCategory.MONSTER)
+					.sized(1.75f, 4.2f).build(new ResourceLocation(TheFesterForest.modid, "forgemaster").toString()));
 	
 	//Brittle Branch Bullet
 	
