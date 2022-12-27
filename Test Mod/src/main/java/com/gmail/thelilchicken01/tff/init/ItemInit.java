@@ -21,6 +21,7 @@ import com.gmail.thelilchicken01.tff.item.VolatileNecklace;
 import com.gmail.thelilchicken01.tff.item.VolatileSword;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchShot;
+import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
 import com.gmail.thelilchicken01.tff.item.tiers.VolatileTier;
 import com.google.common.base.Supplier;
 
@@ -158,7 +159,11 @@ public class ItemInit {
 	public static final RegistryObject<BoneShot> bone_charge = items.register("bone_charge",
 			() -> new BoneShot(new Properties().stacksTo(1), 2));// damage of bullet
 	
-	//Brittle Branch
+	//Meteor
+	public static final RegistryObject<Meteor> meteor_charge = items.register("meteor_charge",
+			() -> new Meteor(new Properties().stacksTo(1), 15));
+	
+	//Bone Launcher
 	public static final RegistryObject<Item> bone_launcher = items.register("bone_launcher",
 			() -> new BoneLauncher(new Properties().tab(TheFesterForest.tff_tab).durability(1100), 
 					0.1).repair(() -> Ingredient.of(Items.BONE_BLOCK)));

@@ -9,6 +9,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
 import com.gmail.thelilchicken01.tff.entity.projectile.BoneCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.BranchCharge;
+import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -25,6 +26,7 @@ public class ModEntityTypes {
 	
 	public static RegistryObject<EntityType<BranchCharge>> branch_charge;
 	public static RegistryObject<EntityType<BoneCharge>> bone_charge;
+	public static RegistryObject<EntityType<MeteorCharge>> meteor_charge;
 	
 	//Rotting Skeleton
 	public static final RegistryObject<EntityType<RottingSkeletonEntity>> rotting_skeleton =
@@ -72,6 +74,15 @@ public class ModEntityTypes {
 				.<BoneCharge>of(BoneCharge::new, MobCategory.MISC)
 				.sized(0.3125f, 0.3125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
 				.build(TheFesterForest.modid + ":bone_charge"));
+	}
+	
+	//Meteor
+	
+	static {
+		meteor_charge = entity_types.register("meteor_charge", () -> EntityType.Builder
+				.<MeteorCharge>of(MeteorCharge::new, MobCategory.MISC)
+				.sized(0.4125f, 0.4125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
+				.build(TheFesterForest.modid + ":meteor_charge"));
 	}
 	
 	

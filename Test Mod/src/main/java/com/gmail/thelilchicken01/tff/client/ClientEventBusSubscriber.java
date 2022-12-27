@@ -16,6 +16,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
 import com.gmail.thelilchicken01.tff.entity.projectile.BoneCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.BranchCharge;
+import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.particle.BloodParticle;
@@ -81,6 +82,9 @@ public class ClientEventBusSubscriber {
     	
     	event.registerEntityRenderer(ModEntityTypes.bone_charge.get(), 
     			(context) -> new ThrownItemRenderer<BoneCharge>(context));
+    	
+    	event.registerEntityRenderer(ModEntityTypes.meteor_charge.get(), 
+    			(context) -> new ThrownItemRenderer<MeteorCharge>(context));
     }
 	
 	@SubscribeEvent

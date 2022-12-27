@@ -3,19 +3,20 @@ package com.gmail.thelilchicken01.tff.entity.projectile;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
-import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
+import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
 
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.IndirectEntityDamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity.RemovalReason;
 import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
@@ -23,29 +24,30 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.NetworkHooks;
 
-public class BoneCharge extends Fireball {
+public class MeteorCharge extends Fireball {
 	
-	protected double damage = 2;
+	protected double damage = 15;
 	protected boolean ignoreInvulnerability = false;
 	protected double knockbackStrength = 0.1;
 	protected int ticksSinceFired;
 	protected LivingEntity target;
+	protected int effectDuration = 3;
 
-	public BoneCharge(EntityType<? extends BoneCharge> p_i50160_1_, Level p_i50160_2_) {
+	public MeteorCharge(EntityType<? extends MeteorCharge> p_i50160_1_, Level p_i50160_2_) {
 		super(p_i50160_1_, p_i50160_2_);
 	}
 
-	public BoneCharge(Level worldIn, LivingEntity shooter) {
+	public MeteorCharge(Level worldIn, LivingEntity shooter) {
 		this(worldIn, shooter, 0, 0, 0);
 		setPos(shooter.getX(), shooter.getEyeY() - 0.1, shooter.getZ());
 	}
 
-	public BoneCharge(Level worldIn, LivingEntity shooter, double accelX, double accelY, double accelZ) {
-		super(ModEntityTypes.bone_charge.get(), shooter, accelX, accelY, accelZ, worldIn);
+	public MeteorCharge(Level worldIn, LivingEntity shooter, double accelX, double accelY, double accelZ) {
+		super(ModEntityTypes.meteor_charge.get(), shooter, accelX, accelY, accelZ, worldIn);
 	}
 
-	public BoneCharge(Level worldIn, double x, double y, double z, double accelX, double accelY, double accelZ) {
-		super(ModEntityTypes.bone_charge.get(), x, y, z, accelX, accelY, accelZ, worldIn);
+	public MeteorCharge(Level worldIn, double x, double y, double z, double accelX, double accelY, double accelZ) {
+		super(ModEntityTypes.meteor_charge.get(), x, y, z, accelX, accelY, accelZ, worldIn);
 	}
 	
 	private static final double STOP_TRESHOLD = 0.01;
@@ -54,7 +56,7 @@ public class BoneCharge extends Fireball {
 	public void tick() {
 		
 		ticksSinceFired++;
-		if (ticksSinceFired > 20 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
+		if (ticksSinceFired > 160 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
 			remove(RemovalReason.KILLED);
 		}
 		
@@ -63,7 +65,8 @@ public class BoneCharge extends Fireball {
 	
 	@Override
 	protected ParticleOptions getTrailParticle() {
-		return ParticleInit.bone_particle.get();
+		
+		return ParticleTypes.SMOKE;
 	}
 	
 	@Override
@@ -72,12 +75,12 @@ public class BoneCharge extends Fireball {
 		if (!level.isClientSide) {
 			Entity target = raytrace.getEntity();
 			Entity shooter = getOwner();
-			BoneShot bullet = (BoneShot) getItemRaw().getItem();
+			Meteor bullet = (Meteor) getItemRaw().getItem();
 			
 			if (isOnFire()) target.setSecondsOnFire(5);
 			int lastHurtResistant = target.invulnerableTime;
 			if (ignoreInvulnerability) target.invulnerableTime = 0;
-			boolean damaged = target.hurt(TheFesterForest.bone_damage.setProjectile(), (float) bullet.modifyDamage(damage, this, target, shooter, level));
+			boolean damaged = target.hurt(TheFesterForest.meteor_damage.setProjectile(), (float) bullet.modifyDamage(damage, this, target, shooter, level));
 			
 			if (damaged && target instanceof LivingEntity) {
 				LivingEntity livingTarget = (LivingEntity)target;
@@ -90,6 +93,9 @@ public class BoneCharge extends Fireball {
 
 				if (shooter instanceof LivingEntity) doEnchantDamageEffects((LivingEntity)shooter, target);
 				
+				livingTarget.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, effectDuration * 20, 2));
+				livingTarget.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, effectDuration * 20, 2));
+				
 				bullet.onLivingEntityHit(this, livingTarget, shooter, level);
 			}
 			else if (!damaged && ignoreInvulnerability) target.invulnerableTime = lastHurtResistant;
@@ -99,7 +105,10 @@ public class BoneCharge extends Fireball {
 	@Override
 	protected void onHit(HitResult result) {
 		super.onHit(result);
-		if (!level.isClientSide && (!noPhysics || result.getType() != HitResult.Type.BLOCK)) remove(RemovalReason.KILLED);
+		if (!level.isClientSide && (!noPhysics || result.getType() != HitResult.Type.BLOCK)) {
+			playSound(SoundEvents.GENERIC_EXPLODE, 0.2f, 0.5f);
+			remove(RemovalReason.KILLED);
+		}
 	}
 	
 	public void setDamage(double damage) {

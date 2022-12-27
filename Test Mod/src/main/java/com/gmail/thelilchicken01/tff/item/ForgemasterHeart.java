@@ -39,9 +39,10 @@ public class ForgemasterHeart extends Item implements ICurioItem {
 		super(properties);
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-	    builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "less move speed", 0.9, AttributeModifier.Operation.MULTIPLY_TOTAL));
-	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "bonus attack damage", 4, AttributeModifier.Operation.ADDITION));
-	    builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "bonus attack speed", 1.2, AttributeModifier.Operation.MULTIPLY_TOTAL));
+	    builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "less move speed", 0.15, AttributeModifier.Operation.MULTIPLY_BASE));
+	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "bonus attack damage", 5, AttributeModifier.Operation.ADDITION));
+	    builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "bonus attack speed", 0.25, AttributeModifier.Operation.MULTIPLY_BASE));
+	    builder.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), "minus health", -0.25, AttributeModifier.Operation.MULTIPLY_TOTAL));
 	    
 	    this.defaultModifiers = builder.build();
 		
@@ -64,8 +65,9 @@ public class ForgemasterHeart extends Item implements ICurioItem {
 	@Override
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
-		lore.add(new TextComponent("When worn in the charm slot, leeches the").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("movement speed of nearby monsters.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("The still beating heart of the Forgemaster. Equipping it").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("grants you unnatural abilities, but you cannot shake off").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("the searing pain in your chest.").withStyle(ChatFormatting.GRAY));
 		
 		super.appendHoverText(stack, world, lore, flag);
 	}
