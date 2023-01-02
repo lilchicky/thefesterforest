@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:purifying_powder"
+    },
+    {
+      "item": "tff:rotting_stone"
+    },
+    {
+      "item": "tff:rotting_stone"
+    },
+    {
+      "item": "tff:rotting_stone"
+    }
+  ],
+  "result": {
+    "item": "minecraft:stone",
+    "count": 2
+  }
+}

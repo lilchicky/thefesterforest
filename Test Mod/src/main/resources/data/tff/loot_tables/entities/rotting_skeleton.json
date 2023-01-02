@@ -1,7 +1,7 @@
 {
   "pools": [
     {
-      "rolls": 2,
+      "rolls": 3,
       "entries": [
         {
           "type": "minecraft:item",
@@ -25,6 +25,24 @@
           "type": "minecraft:item",
           "weight": 40,
           "name": "minecraft:bone",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 1,
+              "add": true,
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 40,
+          "name": "tff:purifying_powder",
           "functions": [
             {
               "function": "minecraft:set_count",

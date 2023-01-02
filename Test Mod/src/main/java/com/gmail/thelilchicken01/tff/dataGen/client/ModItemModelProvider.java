@@ -64,6 +64,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.bone_charge.get());
 		oneLayerItem(ItemInit.meteor_charge.get());
 		oneLayerItem(ItemInit.forgemaster_heart.get());
+		oneLayerItem(ItemInit.heavy_stone.get());
+		oneLayerItem(ItemInit.purifying_powder.get());
+		
 	}
 	
 }

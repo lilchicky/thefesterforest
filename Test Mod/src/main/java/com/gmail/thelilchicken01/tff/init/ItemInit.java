@@ -14,8 +14,10 @@ import com.gmail.thelilchicken01.tff.item.ExplosivePowder;
 import com.gmail.thelilchicken01.tff.item.FleshBall;
 import com.gmail.thelilchicken01.tff.item.ForgemasterHeart;
 import com.gmail.thelilchicken01.tff.item.FrozenPendant;
+import com.gmail.thelilchicken01.tff.item.HeavyStone;
 import com.gmail.thelilchicken01.tff.item.LifeScythe;
 import com.gmail.thelilchicken01.tff.item.PocketSand;
+import com.gmail.thelilchicken01.tff.item.PurifyingPowder;
 import com.gmail.thelilchicken01.tff.item.VolatileApple;
 import com.gmail.thelilchicken01.tff.item.VolatileNecklace;
 import com.gmail.thelilchicken01.tff.item.VolatileSword;
@@ -115,6 +117,14 @@ public class ItemInit {
 	//Frozen Pendant
 	public static final RegistryObject<Item> frozen_pendant = items.register("frozen_pendant",
 			() -> new FrozenPendant(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Purifying Powder
+	public static final RegistryObject<Item> purifying_powder = items.register("purifying_powder",
+			() -> new PurifyingPowder(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Heavy Stone
+	public static final RegistryObject<Item> heavy_stone = items.register("heavy_stone",
+			() -> new HeavyStone(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
 	
 	//Forgemaster's Heart
 	public static final RegistryObject<Item> forgemaster_heart = items.register("forgemaster_heart",

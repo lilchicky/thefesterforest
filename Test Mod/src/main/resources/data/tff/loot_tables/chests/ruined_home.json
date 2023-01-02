@@ -38,6 +38,11 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 30,
+          "name": "tff:purifying_powder"
+        },
+        {
+          "type": "minecraft:item",
           "weight": 40,
           "name": "tff:bug_carcass"
         }

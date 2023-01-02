@@ -100,6 +100,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ModEntityTypes.forgemaster.get(), "The Forgemaster");
 		add(ItemInit.forgemaster_spawn_egg.get(), "Forgemaster Spawn Egg");
 		add(ItemInit.forgemaster_heart.get(), "Forgemaster's Heart");
+		add(ItemInit.heavy_stone.get(), "Heavy Stone");
+		add(ItemInit.purifying_powder.get(), "Purifying Powder");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}

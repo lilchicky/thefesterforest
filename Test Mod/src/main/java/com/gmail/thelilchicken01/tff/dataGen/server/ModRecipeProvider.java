@@ -160,6 +160,22 @@ public class ModRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_" + BlockInit.rotting_stone.get().getRegistryName(), has(BlockInit.rotting_stone.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.modid, BlockInit.mossy_rotting_stone.get().getRegistryName().getPath()));
 		
+		// Purifying Rotten Flesh
+		ShapelessRecipeBuilder.shapeless(Items.LEATHER, 2)
+			.requires(ItemInit.purifying_powder.get()).requires(Items.ROTTEN_FLESH, 3)
+			.unlockedBy("has_" + ItemInit.purifying_powder.get().getRegistryName(), 
+					has(ItemInit.purifying_powder.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.modid, Items.LEATHER
+					.getRegistryName().getPath()));
+		
+		// Purifying Rotting Stone
+		ShapelessRecipeBuilder.shapeless(Items.STONE, 2)
+			.requires(ItemInit.purifying_powder.get()).requires(BlockInit.rotting_stone.get().asItem(), 3)
+			.unlockedBy("has_" + ItemInit.purifying_powder.get().getRegistryName(), 
+					has(ItemInit.purifying_powder.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.modid, Items.STONE
+					.getRegistryName().getPath()));
+		
 		//Cooking Example
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.fester_ore.get().asItem()),
 			ItemInit.rotting_brick.get(), 15, 100)
