@@ -3,6 +3,7 @@ package com.gmail.thelilchicken01.tff.entity.custom;
 import java.util.List;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
+import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
@@ -56,13 +57,24 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 			BossEvent.BossBarColor.BLUE, 
 			BossEvent.BossBarOverlay.NOTCHED_20)).setDarkenScreen(true);
 	
-	private double shootCooldown = 0.5;
+	private double shootCooldown = 1; // default shot cooldown in seconds, before modifiers
 	private int shootCounter;
-	private int shootDamage = 15;
+	private int shootDamage = 15; // meteor damage
 	
-	private int launchRange = 3;
+	private int launchRange = 3; // radius the knockup can hit you
 	private int launchCounter;
-	private int launchCooldown = 5;
+	private int launchCooldown = 5; // knockup cooldown
+	
+	private int pylonCounter;
+	private int pylonCooldown = 60; // main cooldown
+	private int pylonCharge = 15; // cooldown before healing
+	private int pylonCount = 16; // how many pylons are created
+	private int pylonRadius = 12; // radius pylons are created in
+	private int pylonChargeCounter;
+	private boolean pylonActive = false; 
+	
+	private int phase2health = 500; // health threshold for phase 2
+	private int phase3health = 300; // health threshold for phase 3
 
 	public ForgemasterEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
@@ -93,17 +105,37 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 		
 		shootCounter++;
 		launchCounter++;
+		if (!pylonActive) {
+			pylonCounter++;
+		}
+		else {
+			pylonChargeCounter++;
+		}
 		
-		if (shootCounter > shootCooldown * 20 && this.getTarget() != null) {
+		//Always Running
+		
+		double cooldownMod = 1;
+		
+		if (getHealth() < phase2health) {
+			cooldownMod = 0.6;
+		}
+		
+		else if (getHealth() < phase3health) {
+			cooldownMod = 0.3;
+		}
+		
+		if (shootCounter > (shootCooldown * cooldownMod) * 20 && this.getTarget() != null) {
 			
 			ItemStack ammo = new ItemStack(ItemInit.meteor_charge.get());
 			Meteor bulletItem = ItemInit.meteor_charge.get(); //these will be the same, but are what is being shot
 			
 			MeteorCharge shot = bulletItem.createProjectile(this.level, ammo, this);// level, shot item, this entity
-			//shooting from rotation of entity looking
 			
-			shot.shootFromRotation(this, this.getXRot(), this.getYRot(), 
-					0, 0.4f, (float)0); //speed, inaccuracy
+			Vec3 currentPos = getEyePosition();
+			Vec3 targetPos = getTarget().getPosition(1.0f);
+			Vec3 targetVector = targetPos.subtract(currentPos).normalize();
+			
+			shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 0.4f, 0.0f);
 			shot.setDamage(shootDamage); // set damage
 			shot.setIgnoreInvulnerability(false);
 			
@@ -114,7 +146,9 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 			
 		}
 		
-		if (launchCounter > launchCooldown * 20 && this.getTarget() != null) {
+		//Phase 2
+		
+		if (launchCounter > launchCooldown * 20 && this.getTarget() != null && getHealth() < phase2health) {
 			
 			List<Entity> nearbyEntities = this.getLevel().getEntities(this, 
 					new AABB(this.getX() - launchRange, 
@@ -140,7 +174,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 			
 			for (int x = 0; x < nearbyEntities.size(); x++) {
 			
-				if (nearbyEntities.get(x) instanceof LivingEntity) {
+				if (nearbyEntities.get(x) instanceof LivingEntity && !(nearbyEntities.get(x) instanceof PylonEntity)) {
 					
 					LivingEntity current = (LivingEntity)nearbyEntities.get(x);
 					
@@ -152,6 +186,60 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 			}	
 			
 			launchCounter = 0;
+			
+		}
+		
+		// Phase 3
+		
+		if (pylonCounter > pylonCooldown * 20 && getHealth() < phase3health) {
+			
+			playSound(SoundEvents.ANVIL_USE, 1.0f, 0.01f);
+			
+			for (int x = 0; x < pylonCount; x++) {
+				
+				PylonEntity pylon = new PylonEntity(ModEntityTypes.pylon.get(), getLevel());
+				
+				pylon.setPos(getX() + ((Math.random() - 0.5) * (pylonRadius * 2)), 
+						getY(), 
+						getZ() + ((Math.random() - 0.5) * (pylonRadius * 2)));
+				
+				getLevel().addFreshEntity(pylon);
+			}
+			
+			pylonActive = true;
+			pylonCounter = 0;
+			
+		}
+		
+		if (pylonChargeCounter > pylonCharge * 20 && getHealth() < phase3health) {
+			
+			int livingPylons = 0;
+			
+			List<Entity> nearbyPylons = this.getLevel().getEntities(this, 
+				new AABB(this.getX() - (pylonRadius + 16), 
+						this.getY() - pylonRadius, 
+						this.getZ() - (pylonRadius + 16), 
+						this.getX() + (pylonRadius + 16), 
+						this.getY() + pylonRadius, 
+						this.getZ() + (pylonRadius + 16)));
+			
+			for (int x = 0; x < nearbyPylons.size(); x++) {
+				
+				if (nearbyPylons.get(x) instanceof PylonEntity) {
+					
+					((PylonEntity) nearbyPylons.get(x)).remove(RemovalReason.KILLED);
+					livingPylons++;
+					
+				}
+				
+			}
+			
+			heal((float) livingPylons * 35);
+			
+			playSound(SoundEvents.REDSTONE_TORCH_BURNOUT, 1.0f, 0.1f);
+			
+			pylonActive = false;
+			pylonChargeCounter = 0;
 			
 		}
 		

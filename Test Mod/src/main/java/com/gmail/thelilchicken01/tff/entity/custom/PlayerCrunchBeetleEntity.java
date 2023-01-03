@@ -44,7 +44,7 @@ public class PlayerCrunchBeetleEntity extends TamableAnimal implements IAnimatab
 	
 	private AnimationFactory factory = new AnimationFactory(this);
 	private int lifespanSeconds = 20;
-	private int lifespawnTicker = 0;
+	private int lifespanTicker = 0;
 
 	public PlayerCrunchBeetleEntity(EntityType<? extends TamableAnimal> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
@@ -84,9 +84,9 @@ public class PlayerCrunchBeetleEntity extends TamableAnimal implements IAnimatab
 	@Override
 	public void tick() {
 		
-		lifespawnTicker++;
+		lifespanTicker++;
 		
-		if (lifespawnTicker > lifespanSeconds * 20) {
+		if (lifespanTicker > lifespanSeconds * 20) {
 			
 			remove(RemovalReason.KILLED);
 			

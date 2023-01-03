@@ -2,6 +2,7 @@ package com.gmail.thelilchicken01.tff.entity.projectile;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
+import com.gmail.thelilchicken01.tff.entity.custom.PylonEntity;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
 
@@ -81,9 +82,12 @@ public class MeteorCharge extends Fireball {
 			if (isOnFire()) target.setSecondsOnFire(5);
 			int lastHurtResistant = target.invulnerableTime;
 			if (ignoreInvulnerability) target.invulnerableTime = 0;
-			boolean damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.modid + "_meteor_damage",
-					this, shooter).setProjectile(),
-					(float) bullet.modifyDamage(damage, this, target, shooter, level));
+			boolean damaged = false;
+			if (!(target instanceof PylonEntity)) {
+				damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.modid + "_meteor_damage",
+						this, shooter).setProjectile(),
+						(float) bullet.modifyDamage(damage, this, target, shooter, level));
+			}
 			
 			if (damaged && target instanceof LivingEntity) {
 				LivingEntity livingTarget = (LivingEntity)target;
@@ -132,6 +136,7 @@ public class MeteorCharge extends Fireball {
 		float f1 = -Mth.sin((xRot + p_37255_) * ((float) Math.PI / 180F));
 		float f2 = Mth.cos(yRot * ((float) Math.PI / 180F)) * Mth.cos(xRot * ((float) Math.PI / 180F));
 		shoot((double) f, (double) f1, (double) f2, speed, spread);
+		
 	}
 	
 	@Override

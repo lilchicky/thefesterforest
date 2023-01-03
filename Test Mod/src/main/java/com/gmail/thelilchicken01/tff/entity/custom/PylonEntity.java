@@ -30,6 +30,9 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class PylonEntity extends Monster implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
+	
+	private int lifespanSeconds = 60;
+	private int lifespanTicker = 0;
 
 	public PylonEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
@@ -54,6 +57,23 @@ public class PylonEntity extends Monster implements IAnimatable {
 	@Override
 	public boolean isPushable() {
 		return false;
+	}
+	
+	@Override
+	public void tick() {
+		
+		lifespanTicker++;
+		
+		if (lifespanTicker > lifespanSeconds * 20) {
+			remove(RemovalReason.KILLED);
+		}
+		
+		super.tick();
+	}
+	
+	@Override
+	public boolean isNoGravity() {
+		return true;
 	}
 	
 	protected void playStepSound(BlockPos pos, BlockState blockIn) {
