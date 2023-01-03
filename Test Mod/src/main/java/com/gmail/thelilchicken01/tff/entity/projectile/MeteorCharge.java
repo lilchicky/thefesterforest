@@ -12,6 +12,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.IndirectEntityDamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -80,7 +81,9 @@ public class MeteorCharge extends Fireball {
 			if (isOnFire()) target.setSecondsOnFire(5);
 			int lastHurtResistant = target.invulnerableTime;
 			if (ignoreInvulnerability) target.invulnerableTime = 0;
-			boolean damaged = target.hurt(TheFesterForest.meteor_damage.setProjectile(), (float) bullet.modifyDamage(damage, this, target, shooter, level));
+			boolean damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.modid + "_meteor_damage",
+					this, shooter).setProjectile(),
+					(float) bullet.modifyDamage(damage, this, target, shooter, level));
 			
 			if (damaged && target instanceof LivingEntity) {
 				LivingEntity livingTarget = (LivingEntity)target;

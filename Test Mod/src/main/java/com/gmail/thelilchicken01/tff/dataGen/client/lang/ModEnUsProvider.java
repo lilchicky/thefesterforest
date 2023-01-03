@@ -27,6 +27,12 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("death.attack.tff_sand_damage.player", "%2$s aggressively threw sand at %1$s");
 		add("death.attack.tff_bone_damage", "%1$s got boned");
 		add("death.attack.tff_bone_damage.player", "%1$s was knocked out with a bone by %2$s");
+		add("death.attack.tff_branch_damage", "%1$s was strangled by branches");
+		add("death.attack.tff_branch_damage.player", "%2$s strangled %1$s to death with branches");
+		add("death.attack.tff_knockup_damage", "%1$s was slammed into the ground");
+		add("death.attack.tff_knockup_damage.player", "%1$s was slammed into the ground by %2$s");
+		add("death.attack.tff_meteor_damage", "%1$s was crushed by a flying meteor");
+		add("death.attack.tff_meteor_damage.player", "%1$s was crushed by a flying meteor from %2$s");
 		//Other
 		add(BlockInit.rotting_bricks.get(), "Fester Bricks");
 		add(ItemInit.rotting_brick.get(), "Fester Brick");
@@ -102,6 +108,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.forgemaster_heart.get(), "Forgemaster's Heart");
 		add(ItemInit.heavy_stone.get(), "Heavy Stone");
 		add(ItemInit.purifying_powder.get(), "Purifying Powder");
+		add(ItemInit.bug_eggs.get(), "Bug Eggs");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}

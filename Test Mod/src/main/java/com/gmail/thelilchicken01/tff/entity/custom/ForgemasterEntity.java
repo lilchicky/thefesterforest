@@ -132,7 +132,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 					LivingEntity current = (LivingEntity)nearbyEntities.get(x);
 					
 					current.setDeltaMovement(current.getDeltaMovement().add(0.0, 1.0, 0.0).multiply(0.0, 2.0, 0.0));
-					current.hurt(TheFesterForest.meteor_damage, 10);
+					current.hurt(TheFesterForest.knockup_damage, 10);
 				
 				}
 				

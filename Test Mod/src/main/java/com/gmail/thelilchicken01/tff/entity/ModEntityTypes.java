@@ -63,7 +63,7 @@ public class ModEntityTypes {
 	static {
 		branch_charge = entity_types.register("branch_charge", () -> EntityType.Builder
 				.<BranchCharge>of(BranchCharge::new, MobCategory.MISC)
-				.sized(0.3125f, 0.3125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
+				.sized(0.2f, 0.2f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
 				.build(TheFesterForest.modid + ":branch_charge"));
 	}
 	

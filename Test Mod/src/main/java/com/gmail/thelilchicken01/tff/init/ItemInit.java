@@ -8,6 +8,7 @@ import com.gmail.thelilchicken01.tff.item.AngelicWhistle;
 import com.gmail.thelilchicken01.tff.item.BoneLauncher;
 import com.gmail.thelilchicken01.tff.item.BoneScythe;
 import com.gmail.thelilchicken01.tff.item.BrittleBranch;
+import com.gmail.thelilchicken01.tff.item.BugEggs;
 import com.gmail.thelilchicken01.tff.item.CatalystItem;
 import com.gmail.thelilchicken01.tff.item.DualWieldSword;
 import com.gmail.thelilchicken01.tff.item.ExplosivePowder;
@@ -22,7 +23,7 @@ import com.gmail.thelilchicken01.tff.item.VolatileApple;
 import com.gmail.thelilchicken01.tff.item.VolatileNecklace;
 import com.gmail.thelilchicken01.tff.item.VolatileSword;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
-import com.gmail.thelilchicken01.tff.item.projectile.BranchShot;
+import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
 import com.gmail.thelilchicken01.tff.item.tiers.VolatileTier;
 import com.google.common.base.Supplier;
@@ -120,7 +121,7 @@ public class ItemInit {
 	
 	//Purifying Powder
 	public static final RegistryObject<Item> purifying_powder = items.register("purifying_powder",
-			() -> new PurifyingPowder(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+			() -> new PurifyingPowder(new Properties().tab(TheFesterForest.tff_tab)));
 	
 	//Heavy Stone
 	public static final RegistryObject<Item> heavy_stone = items.register("heavy_stone",
@@ -158,12 +159,11 @@ public class ItemInit {
 	//Brittle Branch
 	public static final RegistryObject<Item> brittle_branch = items.register("brittle_branch",
 			() -> new BrittleBranch(new Properties().tab(TheFesterForest.tff_tab).durability(650), 
-					5, 1, 16, 1.5, 14).repair(() -> Ingredient.of(Items.DEAD_BUSH)));
-	//bonus damage, damage multiplier, fire delay, inaccuracy, enchantability
+					0.1).repair(() -> Ingredient.of(Items.DEAD_BUSH)));
 	
 	//Branch Charge
-	public static final RegistryObject<BranchShot> branch_charge = items.register("branch_charge",
-			() -> new BranchShot(new Properties().stacksTo(1), 0));// damage of bullet
+	public static final RegistryObject<BranchProjectile> branch_charge = items.register("branch_charge",
+			() -> new BranchProjectile(new Properties().stacksTo(1), 10));// damage of bullet
 	
 	//Bone Charge
 	public static final RegistryObject<BoneShot> bone_charge = items.register("bone_charge",
@@ -172,6 +172,10 @@ public class ItemInit {
 	//Meteor
 	public static final RegistryObject<Meteor> meteor_charge = items.register("meteor_charge",
 			() -> new Meteor(new Properties().stacksTo(1), 15));
+	
+	//Bug Eggs
+	public static final RegistryObject<BugEggs> bug_eggs = items.register("bug_eggs",
+			() -> new BugEggs(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
 	
 	//Bone Launcher
 	public static final RegistryObject<Item> bone_launcher = items.register("bone_launcher",

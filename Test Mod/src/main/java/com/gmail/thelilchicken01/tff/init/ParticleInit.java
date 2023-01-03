@@ -28,6 +28,9 @@ public class ParticleInit {
 	public static final RegistryObject<SimpleParticleType> bone_particle = register("bone_particle",
 			() -> new SimpleParticleType(true));
 	
+	public static final RegistryObject<SimpleParticleType> branch_particle = register("branch_particle",
+			() -> new SimpleParticleType(true));
+	
 	private static <T extends ParticleType<?>> RegistryObject<T> register(final String name, final Supplier<T> particle) {
 		return particles.register(name, particle);
 	}

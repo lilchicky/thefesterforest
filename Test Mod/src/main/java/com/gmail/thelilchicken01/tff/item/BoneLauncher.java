@@ -5,11 +5,8 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 import com.gmail.thelilchicken01.tff.entity.projectile.BoneCharge;
-import com.gmail.thelilchicken01.tff.entity.projectile.BranchCharge;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
-import com.gmail.thelilchicken01.tff.item.projectile.BranchShot;
-
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;

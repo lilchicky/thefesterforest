@@ -47,8 +47,7 @@ public class TheFesterForest {
 	public static final DamageSource banshee = new DamageSource(modid + "_banshee").bypassArmor();
 	public static final DamageSource volatile_ghost = new DamageSource(modid + "_volatile_ghost").setExplosion();
 	public static final DamageSource sand_damage = new DamageSource(modid + "_sand_damage");
-	public static final DamageSource bone_damage = new DamageSource(modid + "_bone_damage").bypassArmor();
-	public static final DamageSource meteor_damage = new DamageSource(modid + "_meteor_damage");
+	public static final DamageSource knockup_damage = new DamageSource(modid + "_knockup_damage");
 	
 	public static final CreativeModeTab tff_tab = new CreativeModeTab(modid) {
 
