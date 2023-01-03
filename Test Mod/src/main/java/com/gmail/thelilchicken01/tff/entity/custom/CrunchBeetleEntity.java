@@ -51,12 +51,12 @@ public class CrunchBeetleEntity extends Animal implements IAnimatable {
 		
 		//first num is prio
 		
-		this.goalSelector.addGoal(5, new FloatGoal(this));
+		this.goalSelector.addGoal(1, new FloatGoal(this));
 		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.005, false)); // speed modifier, follow even if no line of sight (this was PanicGoal(this, speed mod)
 		this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0f)); //look distance
 		this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.00));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-		this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers());
+		this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers(CrunchBeetleEntity.class));
 		
 	}
 	

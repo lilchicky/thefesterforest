@@ -2,38 +2,25 @@ package com.gmail.thelilchicken01.tff.item;
 
 import java.util.List;
 
-import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
-import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
-import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
-import com.gmail.thelilchicken01.tff.init.ParticleInit;
+import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.particle.Particle;
-import net.minecraft.client.particle.ParticleEngine;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleType;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 
 public class BugEggs extends Item {
+	
+	private int cooldownSeconds = 20;
 	
 	public BugEggs(Properties properties) {
 		super(properties);
@@ -43,11 +30,19 @@ public class BugEggs extends Item {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
 		
-		world.addFreshEntity(new CrunchBeetleEntity(ModEntityTypes.crunch_beetle.get(), world));
+		for (int x = 0; x < 5; x++) {
+			
+			PlayerCrunchBeetleEntity beetle = new PlayerCrunchBeetleEntity(ModEntityTypes.player_crunch_beetle.get(), world);
+			
+			beetle.setOwnerUUID(player.getUUID());
+			beetle.setPos(player.getX(), player.getY(), player.getZ());
+			
+			world.addFreshEntity(beetle);
+		}
 		
-		player.playSound(SoundEvents.TURTLE_EGG_CRACK, 1.2f, 1.2f);
+		player.playSound(SoundEvents.TURTLE_EGG_CRACK, 1.2f, 1.7f);
 		
-		player.getCooldowns().addCooldown(this, 10);
+		player.getCooldowns().addCooldown(this, cooldownSeconds * 20);
 
 		return super.use(world, player, hand);
 		

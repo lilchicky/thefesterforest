@@ -149,12 +149,12 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 		
 		//first num is prio
 		
-		this.goalSelector.addGoal(7, new FloatGoal(this));
-		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.005, false)); // speed modifier, follow even if no line of sight
+		this.goalSelector.addGoal(1, new FloatGoal(this));
+		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.005, false)); // speed modifier, follow even if no line of sight
 		this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 8.0f)); //look distance
-		this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.00));
-		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
-		this.targetSelector.addGoal(2, (new HurtByTargetGoal(this, Player.class)));
+		this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.00));
+		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+		this.targetSelector.addGoal(2, (new HurtByTargetGoal(this)));
 		this.targetSelector.addGoal(1, (new NearestAttackableTargetGoal(this, Player.class, true)));
 		
 	}

@@ -4,6 +4,7 @@ import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
@@ -36,6 +37,11 @@ public class ModEntityTypes {
 	//Crunch Beetle
 	public static final RegistryObject<EntityType<CrunchBeetleEntity>> crunch_beetle =
 			entity_types.register("crunch_beetle", () -> EntityType.Builder.of(CrunchBeetleEntity::new, MobCategory.CREATURE).sized(0.5f, 0.4f) //width, height of hitbox
+					.build(new ResourceLocation(TheFesterForest.modid, "crunch_beetle").toString()));
+	
+	//Player Crunch Beetle
+	public static final RegistryObject<EntityType<PlayerCrunchBeetleEntity>> player_crunch_beetle =
+			entity_types.register("player_crunch_beetle", () -> EntityType.Builder.of(PlayerCrunchBeetleEntity::new, MobCategory.CREATURE).sized(0.5f, 0.4f) //width, height of hitbox
 					.build(new ResourceLocation(TheFesterForest.modid, "crunch_beetle").toString()));
 	
 	//Banshee

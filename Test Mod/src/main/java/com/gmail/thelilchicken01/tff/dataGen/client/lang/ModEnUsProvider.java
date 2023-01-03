@@ -109,6 +109,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.heavy_stone.get(), "Heavy Stone");
 		add(ItemInit.purifying_powder.get(), "Purifying Powder");
 		add(ItemInit.bug_eggs.get(), "Bug Eggs");
+		add(ModEntityTypes.player_crunch_beetle.get(), "Friendly Crunch Beetle");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}

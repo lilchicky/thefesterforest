@@ -5,12 +5,14 @@ import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.client.BansheeRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.CrunchBeetleRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.ForgemasterRenderer;
+import com.gmail.thelilchicken01.tff.entity.client.PlayerCrunchBeetleRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.RottingSkeletonRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.VolatileGhostRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.WightRenderer;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
@@ -61,6 +63,7 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(ModEntityTypes.volatile_ghost.get(), VolatileGhostRenderer::new);
 		EntityRenderers.register(ModEntityTypes.wight.get(), WightRenderer::new);
 		EntityRenderers.register(ModEntityTypes.forgemaster.get(), ForgemasterRenderer::new);
+		EntityRenderers.register(ModEntityTypes.player_crunch_beetle.get(), PlayerCrunchBeetleRenderer::new);
 	}
 	
 	@SubscribeEvent
@@ -72,6 +75,7 @@ public class ClientEventBusSubscriber {
 		event.put(ModEntityTypes.volatile_ghost.get(), VolatileGhostEntity.setAttributes());
 		event.put(ModEntityTypes.wight.get(), WightEntity.setAttributes());
 		event.put(ModEntityTypes.forgemaster.get(), ForgemasterEntity.setAttributes());
+		event.put(ModEntityTypes.player_crunch_beetle.get(), PlayerCrunchBeetleEntity.setAttributes());
 		
 	}
 	

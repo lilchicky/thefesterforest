@@ -21,6 +21,7 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
@@ -59,11 +60,12 @@ public class BansheeEntity extends Monster implements IAnimatable {
 		
 		//first num is prio
 		
-		this.goalSelector.addGoal(5, new FloatGoal(this));
+		this.goalSelector.addGoal(1, new FloatGoal(this));
 		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.005, false)); // speed modifier, follow even if no line of sight
 		//this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0f)); //look distance
 		this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.00));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
+		this.targetSelector.addGoal(2, (new HurtByTargetGoal(this)));
 		this.targetSelector.addGoal(1, (new NearestAttackableTargetGoal(this, Player.class, true)));
 		
 	}

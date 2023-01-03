@@ -5,6 +5,7 @@ import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
@@ -27,6 +28,7 @@ public class ServerEventBusSubscriber {
 		event.put(ModEntityTypes.volatile_ghost.get(), VolatileGhostEntity.setAttributes());
 		event.put(ModEntityTypes.wight.get(), WightEntity.setAttributes());
 		event.put(ModEntityTypes.forgemaster.get(), ForgemasterEntity.setAttributes());
+		event.put(ModEntityTypes.player_crunch_beetle.get(), PlayerCrunchBeetleEntity.setAttributes());
 		
 	}
 	
