@@ -52,12 +52,13 @@ public class BugEggs extends Item {
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("A bottle of a mysterious, highly reactive powder.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("A small collection of Reetle eggs.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Right click to launch yourself somewhere.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Right click to summon 5 friendly Reetles").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("to fight for you for 20 seconds.").withStyle(ChatFormatting.AQUA));
 		}
 		else {
-			lore.add(new TextComponent("A bottle of a mysterious, highly reactive powder.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("A small collection of Reetle eggs.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 		}
