@@ -107,6 +107,11 @@ public class ItemInit {
 			() -> new ForgeSpawnEggItem(ModEntityTypes.forgemaster, 0x616161, 0x404040, //Background, Spots
 					new Item.Properties().tab(TheFesterForest.tff_tab)));
 	
+	//Forgemasters Pylon Spawn Egg
+	public static final RegistryObject<Item> pylon_spawn_egg = items.register("pylon_spawn_egg", 
+			() -> new ForgeSpawnEggItem(ModEntityTypes.pylon, 0x404040, 0xf02213, //Background, Spots
+					new Item.Properties().tab(TheFesterForest.tff_tab)));
+	
 	//Ancient Whistle
 	public static final RegistryObject<Item> ancient_whistle = items.register("ancient_whistle",
 			() -> new AncientWhistle(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));

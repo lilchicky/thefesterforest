@@ -5,6 +5,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.PylonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
@@ -58,6 +59,11 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<WightEntity>> wight =
 			entity_types.register("wight", () -> EntityType.Builder.of(WightEntity::new, MobCategory.MONSTER)
 					.sized(0.8f, 1.875f).build(new ResourceLocation(TheFesterForest.modid, "wight").toString()));
+	
+	//Forgemaster's Pylon
+	public static final RegistryObject<EntityType<PylonEntity>> pylon =
+			entity_types.register("pylon", () -> EntityType.Builder.of(PylonEntity::new, MobCategory.MONSTER)
+					.sized(0.6f, 1.7f).build(new ResourceLocation(TheFesterForest.modid, "pylon").toString()));
 	
 	//Forgemaster
 	public static final RegistryObject<EntityType<ForgemasterEntity>> forgemaster =
