@@ -11,9 +11,12 @@ import net.minecraft.client.ParticleStatus;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.BossEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -48,6 +51,11 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
 	
+	private final ServerBossEvent bossEvent = (ServerBossEvent)(new ServerBossEvent(
+			this.getDisplayName(), 
+			BossEvent.BossBarColor.BLUE, 
+			BossEvent.BossBarOverlay.NOTCHED_20)).setDarkenScreen(true);
+	
 	private double shootCooldown = 0.5;
 	private int shootCounter;
 	private int shootDamage = 15;
@@ -68,6 +76,11 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 				.add(Attributes.ARMOR, 10.0f)
 				.add(Attributes.KNOCKBACK_RESISTANCE, 10.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.15f).build();
+	}
+	
+	@Override
+	public boolean isPersistenceRequired() {
+		return true;
 	}
 	
 	@Override
@@ -190,6 +203,24 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 		
 		data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
 		
+	}
+	
+	public void startSeenByPlayer(ServerPlayer p_31483_) {
+	    super.startSeenByPlayer(p_31483_);
+	    this.bossEvent.addPlayer(p_31483_);
+	}
+
+	public void stopSeenByPlayer(ServerPlayer p_31488_) {
+	    super.stopSeenByPlayer(p_31488_);
+	    this.bossEvent.removePlayer(p_31488_);
+	}
+	
+	@Override
+	protected void customServerAiStep() {
+		
+		this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
+		
+		super.customServerAiStep();
 	}
 
 	@Override

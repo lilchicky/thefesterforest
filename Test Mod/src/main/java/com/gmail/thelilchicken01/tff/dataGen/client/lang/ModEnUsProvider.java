@@ -68,7 +68,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.bug_carcass.get(), "Reetle Carcass");
 		add(ModEntityTypes.crunch_beetle.get(), "Reetle");
 		add(ModEntityTypes.rotting_skeleton.get(), "Rotting Skeleton");
-		add(ItemInit.crunch_beetle_spawn_egg.get(), "Crunch Beetle Spawn Egg");
+		add(ItemInit.crunch_beetle_spawn_egg.get(), "Reetle Spawn Egg");
 		add(ItemInit.banshee_spawn_egg.get(), "Banshee Spawn Egg");
 		add(ModEntityTypes.banshee.get(), "Banshee");
 		add(ItemInit.ancient_whistle.get(), "Ancient Whistle");
