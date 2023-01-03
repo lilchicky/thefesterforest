@@ -33,7 +33,7 @@ public class ModRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_" + ItemInit.rotting_brick.get().getRegistryName(), has(ItemInit.rotting_brick.get().asItem())) // what unlocks the recipe when you get that item
 			.pattern("aa ").pattern("aa ").save(consumer, new ResourceLocation(TheFesterForest.modid, BlockInit.rotting_bricks.get().getRegistryName().getPath()));
 		
-		ShapedRecipeBuilder.shaped(BlockInit.rotting_stone_bricks.get()) //what am i making
+		ShapedRecipeBuilder.shaped(BlockInit.rotting_stone_bricks.get(), 4) //what am i making
 			.define('a', BlockInit.rotting_stone.get().asItem()) //keys
 			.unlockedBy("has_" + BlockInit.rotting_stone.get().getRegistryName(), //unlocked when you get this item
 					has(BlockInit.rotting_stone.get().asItem()))
