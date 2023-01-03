@@ -65,8 +65,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.stripped_slimy_log.get(), "Stripped Slimy Log");
 		add(BlockInit.stripped_slimy_wood.get(), "Stripped Slimy Wood");
 		add(ItemInit.rotting_skeleton_spawn_egg.get(), "Rotting Skeleton Spawn Egg");
-		add(ItemInit.bug_carcass.get(), "Crunch Beetle Carcass");
-		add(ModEntityTypes.crunch_beetle.get(), "Crunch Beetle");
+		add(ItemInit.bug_carcass.get(), "Reetle Carcass");
+		add(ModEntityTypes.crunch_beetle.get(), "Reetle");
 		add(ModEntityTypes.rotting_skeleton.get(), "Rotting Skeleton");
 		add(ItemInit.crunch_beetle_spawn_egg.get(), "Crunch Beetle Spawn Egg");
 		add(ItemInit.banshee_spawn_egg.get(), "Banshee Spawn Egg");
@@ -108,8 +108,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.forgemaster_heart.get(), "Forgemaster's Heart");
 		add(ItemInit.heavy_stone.get(), "Heavy Stone");
 		add(ItemInit.purifying_powder.get(), "Purifying Powder");
-		add(ItemInit.bug_eggs.get(), "Bug Eggs");
-		add(ModEntityTypes.player_crunch_beetle.get(), "Friendly Crunch Beetle");
+		add(ItemInit.bug_eggs.get(), "Reetle Eggs");
+		add(ModEntityTypes.player_crunch_beetle.get(), "Friendly Reetle");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}

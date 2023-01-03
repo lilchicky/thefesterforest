@@ -70,8 +70,8 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 		//this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0f)); //look distance
 		this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.00));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-		this.targetSelector.addGoal(2, (new HurtByTargetGoal(this)));
-		this.targetSelector.addGoal(1, (new NearestAttackableTargetGoal(this, Player.class, true)));
+		this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)));
+		this.targetSelector.addGoal(2, (new NearestAttackableTargetGoal(this, Player.class, true)));
 		
 	}
 	
