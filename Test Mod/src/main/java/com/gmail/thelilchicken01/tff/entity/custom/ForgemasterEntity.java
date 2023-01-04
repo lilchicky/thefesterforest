@@ -200,23 +200,48 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 			
 			playSound(SoundEvents.ANVIL_USE, 1.0f, 0.01f);
 			
-			for (int x = 0; x < pylonCount; x++) {
+			int spawnedPylons = 0;
+			int spawnTries = 0;
+			
+			pylonSpawn:
+			while (spawnedPylons < pylonCount) {
+				
+				spawnTries++;
 				
 				PylonEntity pylon = new PylonEntity(ModEntityTypes.pylon.get(), getLevel());
 				
-				BlockPos blockTry = new BlockPos(getX() + ((Math.random() - 0.5) * (pylonRadius * 2)), 
-						getY(), 
-						getZ() + ((Math.random() - 0.5) * (pylonRadius * 2)));
+				double randomX = getX() + ((Math.random() - 0.5) * (pylonRadius * 2));
+				double randomY = getY();
+				double randomZ = getZ() + ((Math.random() - 0.5) * (pylonRadius * 2));
 				
-				Block block = getLevel().getBlockState(blockTry).getBlock();
+				BlockPos blockIn = new BlockPos(randomX, 
+						randomY, 
+						randomZ);
 				
-				if (block == Blocks.AIR) {
+				BlockPos blockOn = new BlockPos(randomX, 
+						randomY - 1, 
+						randomZ);
+				
+				Block blockInside = getLevel().getBlockState(blockIn).getBlock();
+				Block blockOnTopOf = getLevel().getBlockState(blockOn).getBlock();
+				
+				if (blockInside == Blocks.AIR && (blockOnTopOf == BlockInit.rotting_planks.get() || 
+						blockOnTopOf == BlockInit.rotting_wood.get())) {
 					
-					pylon.setPos(blockTry.getX(), blockTry.getY(), blockTry.getZ());
+					pylon.setPos(blockIn.getX(), blockIn.getY(), blockIn.getZ());
+					
+					getLevel().addFreshEntity(pylon);
+					
+					spawnedPylons++;
 					
 				}
 				
-				getLevel().addFreshEntity(pylon);
+				if (spawnTries > 100) {
+					System.out.println("Chicky's Fester Forest: No available pylon spawn blocks! (Not a bug)");
+					break pylonSpawn;
+				}
+				
+				
 			}
 			
 			pylonActive = true;
