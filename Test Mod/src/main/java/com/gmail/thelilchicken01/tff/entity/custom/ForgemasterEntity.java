@@ -2,9 +2,12 @@ package com.gmail.thelilchicken01.tff.entity.custom;
 
 import java.util.List;
 
+import javax.xml.stream.Location;
+
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
+import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
 
@@ -36,6 +39,8 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec2;
@@ -199,9 +204,17 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 				
 				PylonEntity pylon = new PylonEntity(ModEntityTypes.pylon.get(), getLevel());
 				
-				pylon.setPos(getX() + ((Math.random() - 0.5) * (pylonRadius * 2)), 
+				BlockPos blockTry = new BlockPos(getX() + ((Math.random() - 0.5) * (pylonRadius * 2)), 
 						getY(), 
 						getZ() + ((Math.random() - 0.5) * (pylonRadius * 2)));
+				
+				Block block = getLevel().getBlockState(blockTry).getBlock();
+				
+				if (block == Blocks.AIR) {
+					
+					pylon.setPos(blockTry.getX(), blockTry.getY(), blockTry.getZ());
+					
+				}
 				
 				getLevel().addFreshEntity(pylon);
 			}
@@ -214,6 +227,8 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 		if (pylonChargeCounter > pylonCharge * 20 && getHealth() < phase3health) {
 			
 			int livingPylons = 0;
+			
+			playSound(SoundEvents.ANVIL_DESTROY, 1.0f, 0.01f);
 			
 			List<Entity> nearbyPylons = this.getLevel().getEntities(this, 
 				new AABB(this.getX() - (pylonRadius + 16), 
