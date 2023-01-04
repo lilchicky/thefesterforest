@@ -1,0 +1,70 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 24,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 100,
+          "name": "minecraft:iron_ingot",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 8,
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 100,
+          "name": "minecraft:bone",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 4,
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 100,
+          "name": "tff:purifying_powder",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 3,
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.7
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tff:forgemaster_heart"
+        }
+      ]
+    }
+  ]
+}

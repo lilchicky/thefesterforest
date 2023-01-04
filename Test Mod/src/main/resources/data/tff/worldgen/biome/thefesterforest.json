@@ -52,19 +52,19 @@
   	"spawn_costs": {
   	
   		"tff:rotting_skeleton": {
-  			"energy_budget": 0.35,
+  			"energy_budget": 0.25,
   			"charge": 0.5
   		},
   		"tff:banshee": {
-  			"energy_budget": 0.35,
+  			"energy_budget": 0.25,
   			"charge": 0.5
   		},
   		"tff:volatile_ghost": {
-  			"energy_budget": 0.35,
+  			"energy_budget": 0.25,
   			"charge": 0.5
   		},
   		"tff:wight": {
-  			"energy_budget": 0.35,
+  			"energy_budget": 0.25,
   			"charge": 0.5
   		}
   	

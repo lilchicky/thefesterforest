@@ -71,6 +71,15 @@
     {
       "weight": 20,
       "element": {
+        "location": "tff:forgemaster_treasure_room",
+        "processors": "tff:forgemaster_treasure_room",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 20,
+      "element": {
         "location": "tff:forgemaster_carpet_hallway",
         "processors": "tff:forgemaster_randomizer",
         "projection": "rigid",
