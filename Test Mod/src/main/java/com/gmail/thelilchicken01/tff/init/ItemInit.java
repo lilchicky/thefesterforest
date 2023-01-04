@@ -13,10 +13,12 @@ import com.gmail.thelilchicken01.tff.item.CatalystItem;
 import com.gmail.thelilchicken01.tff.item.DualWieldSword;
 import com.gmail.thelilchicken01.tff.item.ExplosivePowder;
 import com.gmail.thelilchicken01.tff.item.FleshBall;
+import com.gmail.thelilchicken01.tff.item.ForgemasterHammer;
 import com.gmail.thelilchicken01.tff.item.ForgemasterHeart;
 import com.gmail.thelilchicken01.tff.item.FrozenPendant;
 import com.gmail.thelilchicken01.tff.item.HeavyStone;
 import com.gmail.thelilchicken01.tff.item.LifeScythe;
+import com.gmail.thelilchicken01.tff.item.MechanicalEye;
 import com.gmail.thelilchicken01.tff.item.PocketSand;
 import com.gmail.thelilchicken01.tff.item.PurifyingPowder;
 import com.gmail.thelilchicken01.tff.item.VolatileApple;
@@ -124,6 +126,10 @@ public class ItemInit {
 	public static final RegistryObject<Item> frozen_pendant = items.register("frozen_pendant",
 			() -> new FrozenPendant(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
 	
+	//Mechanical Eye
+	public static final RegistryObject<Item> mechanical_eye = items.register("mechanical_eye",
+			() -> new MechanicalEye(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
 	//Purifying Powder
 	public static final RegistryObject<Item> purifying_powder = items.register("purifying_powder",
 			() -> new PurifyingPowder(new Properties().tab(TheFesterForest.tff_tab)));
@@ -148,6 +154,12 @@ public class ItemInit {
 	public static final RegistryObject<Item> life_scythe = register("life_scythe", 
 			() -> new LifeScythe(new VolatileTier(), 2, -3.2f, new Properties().tab(TheFesterForest.tff_tab)
 					.durability(1400)));
+	
+	//Forgemaster Hammer
+	public static final RegistryObject<Item> forgemaster_hammer = register("forgemaster_hammer", 
+			() -> new ForgemasterHammer(new VolatileTier(), 14, -3.5f, new Properties().tab(TheFesterForest.tff_tab)
+					.durability(3200)));
+		
 	//Bone Scythe
 	public static final RegistryObject<Item> bone_scythe = register("bone_scythe", 
 			() -> new BoneScythe(new VolatileTier(), 1, -3.0f, new Properties().tab(TheFesterForest.tff_tab)

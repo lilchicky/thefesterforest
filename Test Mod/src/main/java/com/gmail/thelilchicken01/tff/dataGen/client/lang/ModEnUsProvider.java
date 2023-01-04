@@ -112,6 +112,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ModEntityTypes.player_crunch_beetle.get(), "Friendly Reetle");
 		add(ModEntityTypes.pylon.get(), "Forgemaster's Pylon");
 		add(ItemInit.pylon_spawn_egg.get(), "Forgemaster's Pylon Spawn Egg");
+		add(ItemInit.forgemaster_hammer.get(), "§7§lForgemaster's Hammer");
+		add(ItemInit.mechanical_eye.get(), "Mechanical Eye");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}
