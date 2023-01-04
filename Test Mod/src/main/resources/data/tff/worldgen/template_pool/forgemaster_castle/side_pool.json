@@ -80,6 +80,24 @@
     {
       "weight": 20,
       "element": {
+        "location": "tff:forgemaster_forge",
+        "processors": "tff:forgemaster_forge",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 20,
+      "element": {
+        "location": "tff:forgemaster_jail",
+        "processors": "tff:forgemaster_randomizer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 20,
+      "element": {
         "location": "tff:forgemaster_carpet_hallway",
         "processors": "tff:forgemaster_randomizer",
         "projection": "rigid",

@@ -71,15 +71,17 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	private int launchCooldown = 5; // knockup cooldown
 	
 	private int pylonCounter;
-	private int pylonCooldown = 60; // main cooldown
+	private int pylonCooldown = 40; // main cooldown
 	private int pylonCharge = 15; // cooldown before healing
 	private int pylonCount = 16; // how many pylons are created
 	private int pylonRadius = 12; // radius pylons are created in
 	private int pylonChargeCounter;
 	private boolean pylonActive = false; 
 	
-	private int phase2health = 500; // health threshold for phase 2
-	private int phase3health = 300; // health threshold for phase 3
+	private int phase2health = 650; // health threshold for phase 2
+	private int phase3health = 400; // health threshold for phase 3
+	
+	private static float totalHealth = 800.0f; // entity health
 
 	public ForgemasterEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
@@ -87,7 +89,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	
 	public static AttributeSupplier setAttributes() {
 		return Monster.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 800.00)
+				.add(Attributes.MAX_HEALTH, totalHealth)
 				.add(Attributes.ATTACK_DAMAGE, 30.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.ARMOR, 10.0f)
