@@ -24,7 +24,7 @@
       }
     },
     {
-      "weight": 40,
+      "weight": 20,
       "element": {
         "location": "tff:forgemaster_door",
         "processors": "tff:forgemaster_randomizer",
@@ -51,7 +51,16 @@
       }
     },
     {
-      "weight": 40,
+      "weight": 30,
+      "element": {
+        "location": "tff:forgemaster_bedroom",
+        "processors": "tff:forgemaster_randomizer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 20,
       "element": {
         "location": "tff:forgemaster_carpet_hallway",
         "processors": "tff:forgemaster_randomizer",
