@@ -48,6 +48,7 @@ public class DualWieldSword extends Item {
 		
 		lore.add(new TextComponent("A short sword, extremely effective when used").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("alongside another weapon.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);
 	}

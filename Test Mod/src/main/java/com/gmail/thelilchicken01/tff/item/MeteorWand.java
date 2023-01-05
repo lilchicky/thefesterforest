@@ -167,12 +167,14 @@ public class MeteorWand extends ProjectileWeaponItem {
 			lore.add(new TextComponent("Right click a block or mob to summon a meteor above your head.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("The meteor does " + shotDamage + " damage and will land where").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("you right clicked. Doesn't work well indoors!").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("A heavy metal rod with a scorching meteor attached to one end.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("Used by the Forgemaster to summon meteors.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
 		}
 		
 		super.appendHoverText(stack, world, lore, flag);

@@ -53,12 +53,14 @@ public class ShieldBook extends Item {
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Right clicking grants you a large shield for").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(absorptionLength + " seconds.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("An old dusty spellbook, detailing the encantations").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("of a shielding spell.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
 		}
 		
 		super.appendHoverText(stack, world, lore, flag);

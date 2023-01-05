@@ -43,6 +43,7 @@ public class AncientGreatsword extends SwordItem {
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		lore.add(new TextComponent("A massive, ancient iron blade.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);
 	}

@@ -68,6 +68,7 @@ public class ForgemasterHeart extends Item implements ICurioItem {
 		lore.add(new TextComponent("The still beating heart of the Forgemaster. Equipping it").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("grants you unnatural abilities, but you cannot shake off").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("the searing pain in your chest.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);
 	}

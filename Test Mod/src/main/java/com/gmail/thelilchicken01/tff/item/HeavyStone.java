@@ -70,6 +70,7 @@ public class HeavyStone extends Item implements ICurioItem {
 		
 		lore.add(new TextComponent("A very dense stone, making you much too").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("heavy to levitate.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);
 	}

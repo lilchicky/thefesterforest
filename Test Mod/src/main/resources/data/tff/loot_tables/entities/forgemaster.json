@@ -1,7 +1,7 @@
 {
   "pools": [
     {
-      "rolls": 240,
+      "rolls": 120,
       "entries": [
         {
           "type": "minecraft:item",
@@ -15,7 +15,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 50,
           "name": "minecraft:bone"
         },
         {
@@ -26,7 +26,7 @@
       ]
     },
     {
-      "rolls": 1,
+      "rolls": 2,
       "entries": [
         {
           "type": "minecraft:item",

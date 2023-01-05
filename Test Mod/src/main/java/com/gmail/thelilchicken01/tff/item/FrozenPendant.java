@@ -88,6 +88,7 @@ public class FrozenPendant extends Item implements ICurioItem {
 		
 		lore.add(new TextComponent("When worn in the charm slot, leeches the").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("movement speed of nearby monsters.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);
 	}

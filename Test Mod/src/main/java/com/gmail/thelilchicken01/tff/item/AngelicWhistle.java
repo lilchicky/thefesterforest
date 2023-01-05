@@ -75,11 +75,13 @@ public class AngelicWhistle extends Item {
 			lore.add(new TextComponent("around you. Any entities that hear it will fly away from you and").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("recieve slow falling for " + slowFallDuration + " seconds.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("Mobs hit around you take " + whistleDamage + " armor piercing damage.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("An impossibly light whistle, crafted from an old Ancient Whistle.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
 		}
 		
 		super.appendHoverText(stack, world, lore, flag);

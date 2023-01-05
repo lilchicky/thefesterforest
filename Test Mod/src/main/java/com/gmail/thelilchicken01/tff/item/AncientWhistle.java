@@ -70,11 +70,13 @@ public class AncientWhistle extends Item {
 			lore.add(new TextComponent("around you. Any entities hit will fly away from you.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("Both yourself and any entities hit will take " + whistleDamage).withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("armor piercing damage.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("An ancient whistle, releasing a deafening pitch when blown.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
 		}
 		
 		super.appendHoverText(stack, world, lore, flag);

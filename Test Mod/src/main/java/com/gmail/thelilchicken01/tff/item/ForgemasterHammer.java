@@ -50,6 +50,7 @@ public class ForgemasterHammer extends SwordItem {
 		lore.add(new TextComponent("forged from an unknown metal and weighing tons.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("The heavy weight of the hammer throws anything it").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("touches.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);
 	}

@@ -29,7 +29,7 @@ public class LifeScythe extends SwordItem {
 	
 	private int absorptionSeconds = 15;
 	private int resistanceSeconds = 15;
-	private int hungerSeconds = 20;
+	private int hungerSeconds = 40;
 
 	public LifeScythe(Tier tier, int damage, float aspeed, Properties properties) {
 		super(tier, damage, aspeed, properties);
@@ -78,12 +78,14 @@ public class LifeScythe extends SwordItem {
 			lore.add(new TextComponent("resistance for " + resistanceSeconds + " seconds. This boost comes").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("at a cost, however - you become ravenously hungry for").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(hungerSeconds + " seconds.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("A vibrating, living scythe, capable of healing").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("its wielder on every attack.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
 		}
 		
 		super.appendHoverText(stack, world, lore, flag);

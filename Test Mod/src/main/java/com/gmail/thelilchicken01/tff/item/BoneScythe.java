@@ -26,10 +26,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 
 public class BoneScythe extends SwordItem {
-	
-	private int absorptionSeconds = 15;
-	private int resistanceSeconds = 15;
-	private int hungerSeconds = 20;
 
 	public BoneScythe(Tier tier, int damage, float aspeed, Properties properties) {
 		super(tier, damage, aspeed, properties);
@@ -39,6 +35,7 @@ public class BoneScythe extends SwordItem {
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		lore.add(new TextComponent("A razor-sharp scythe made of ancient bone.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);
 	}

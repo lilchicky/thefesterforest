@@ -99,6 +99,7 @@ public class MechanicalEye extends Item implements ICurioItem {
 		lore.add(new TextComponent("The mechanical eye of the Forgemaster.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("Shoving it into your skull grants enhanced vision").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("and accuracy.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);
 	}

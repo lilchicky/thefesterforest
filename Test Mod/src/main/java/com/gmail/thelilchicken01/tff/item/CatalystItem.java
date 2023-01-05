@@ -57,11 +57,13 @@ public class CatalystItem  extends Item {
 			lore.add(new TextComponent("to create a doorway to the Fester Forest.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("The portal frame is built with Fester Bricks,").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("crafted from smelted Fester Ore.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("A rotting pile of organic material.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
 		}
 		
 		super.appendHoverText(stack, world, lore, flag);

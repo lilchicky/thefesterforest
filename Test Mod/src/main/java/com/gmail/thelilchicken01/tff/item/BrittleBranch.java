@@ -128,11 +128,13 @@ public class BrittleBranch extends ProjectileWeaponItem {
 			lore.add(new TextComponent("Right click launch 3 projectiles in front of you.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("Each projectile does " + BranchCharge.getStaticDamage() + " damage and inflicts").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("poison.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("An old, fragile branch.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
 		}
 		
 		super.appendHoverText(stack, world, lore, flag);

@@ -41,6 +41,7 @@ public class PurifyingPowder extends Item {
 		
 		lore.add(new TextComponent("A mysterious powder, capable of turning").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("items into different items.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);
 	}

@@ -92,11 +92,13 @@ public class PocketSand extends Item {
 			lore.add(new TextComponent("damaging and slowing anything in front of you.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("For Solomon").withStyle(ChatFormatting.RED));
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("A mysterious pile of sand, seemingly never going away.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
 		}
 		
 		super.appendHoverText(stack, world, lore, flag);

@@ -111,11 +111,13 @@ public class BoneLauncher extends ProjectileWeaponItem {
 			lore.add(new TextComponent("Right click to launch a bone from your stick.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("Each bone does 2 damage, ignoring armor and invulnerability").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("ticks.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("An old stick with a broken bone fitted to the end.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
 		}
 		
 		super.appendHoverText(stack, world, lore, flag);

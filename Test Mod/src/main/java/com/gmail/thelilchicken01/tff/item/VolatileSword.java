@@ -152,11 +152,13 @@ public class VolatileSword extends SwordItem {
 			lore.add(new TextComponent("damage and set on fire for " + flameSeconds + " seconds,").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("as well as being slowed for " + slowDuration + " seconds.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("The sword will also ignite anything hit for " + flameSeconds + " seconds.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("A flaming blade fitted to a scorching hilt.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
 		}
 		
 		super.appendHoverText(stack, world, lore, flag);
