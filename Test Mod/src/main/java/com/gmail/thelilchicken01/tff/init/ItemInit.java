@@ -18,7 +18,12 @@ import com.gmail.thelilchicken01.tff.item.ForgemasterHeart;
 import com.gmail.thelilchicken01.tff.item.FrozenPendant;
 import com.gmail.thelilchicken01.tff.item.HeavyStone;
 import com.gmail.thelilchicken01.tff.item.LifeScythe;
+import com.gmail.thelilchicken01.tff.item.MechanicalBoots;
+import com.gmail.thelilchicken01.tff.item.MechanicalChestplate;
 import com.gmail.thelilchicken01.tff.item.MechanicalEye;
+import com.gmail.thelilchicken01.tff.item.MechanicalHelmet;
+import com.gmail.thelilchicken01.tff.item.MechanicalLeggings;
+import com.gmail.thelilchicken01.tff.item.MeteorWand;
 import com.gmail.thelilchicken01.tff.item.PocketSand;
 import com.gmail.thelilchicken01.tff.item.PurifyingPowder;
 import com.gmail.thelilchicken01.tff.item.VolatileApple;
@@ -27,7 +32,7 @@ import com.gmail.thelilchicken01.tff.item.VolatileSword;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
-import com.gmail.thelilchicken01.tff.item.tiers.VolatileTier;
+import com.gmail.thelilchicken01.tff.item.tiers.ModTiers;
 import com.google.common.base.Supplier;
 
 import net.minecraft.world.effect.MobEffectInstance;
@@ -53,11 +58,11 @@ public class ItemInit {
 	
 	// Volatile Sword
 	public static final RegistryObject<Item> volatileSword = register("volatile_sword", 
-			() -> new VolatileSword(new VolatileTier(), -3, -2.2f, new Properties().tab(TheFesterForest.tff_tab)));
+			() -> new VolatileSword(ModTiers.VOLATILE, -3, -2.2f, new Properties().tab(TheFesterForest.tff_tab)));
 	
 	//Ancient Greatsword
 	public static final RegistryObject<Item> ancientGreatsword = register("ancient_greatsword", 
-			() -> new AncientGreatsword(new VolatileTier(), -1, -3f, new Properties().tab(TheFesterForest.tff_tab).durability(550)));
+			() -> new AncientGreatsword(ModTiers.VOLATILE, -1, -3f, new Properties().tab(TheFesterForest.tff_tab).durability(550)));
 	
 	//Volatile Apple
 	public static final RegistryObject<Item> volatileApple = register("volatile_apple", 
@@ -152,17 +157,17 @@ public class ItemInit {
 	
 	//Life Scythe
 	public static final RegistryObject<Item> life_scythe = register("life_scythe", 
-			() -> new LifeScythe(new VolatileTier(), 2, -3.2f, new Properties().tab(TheFesterForest.tff_tab)
+			() -> new LifeScythe(ModTiers.VOLATILE, 2, -3.2f, new Properties().tab(TheFesterForest.tff_tab)
 					.durability(1400)));
 	
 	//Forgemaster Hammer
 	public static final RegistryObject<Item> forgemaster_hammer = register("forgemaster_hammer", 
-			() -> new ForgemasterHammer(new VolatileTier(), 14, -3.5f, new Properties().tab(TheFesterForest.tff_tab)
+			() -> new ForgemasterHammer(ModTiers.VOLATILE, 14, -3.5f, new Properties().tab(TheFesterForest.tff_tab)
 					.durability(3200)));
 		
 	//Bone Scythe
 	public static final RegistryObject<Item> bone_scythe = register("bone_scythe", 
-			() -> new BoneScythe(new VolatileTier(), 1, -3.0f, new Properties().tab(TheFesterForest.tff_tab)
+			() -> new BoneScythe(ModTiers.VOLATILE, 1, -3.0f, new Properties().tab(TheFesterForest.tff_tab)
 					.durability(1200)));
 	
 	//Explosive Powder
@@ -177,6 +182,11 @@ public class ItemInit {
 	public static final RegistryObject<Item> brittle_branch = items.register("brittle_branch",
 			() -> new BrittleBranch(new Properties().tab(TheFesterForest.tff_tab).durability(650), 
 					0.1).repair(() -> Ingredient.of(Items.DEAD_BUSH)));
+	
+	//Meteor Wand
+	public static final RegistryObject<Item> meteor_wand = items.register("meteor_wand",
+			() -> new MeteorWand(new Properties().tab(TheFesterForest.tff_tab).durability(875), 
+					0.1).repair(() -> Ingredient.of(Items.IRON_INGOT)));
 	
 	//Branch Charge
 	public static final RegistryObject<BranchProjectile> branch_charge = items.register("branch_charge",
@@ -198,6 +208,22 @@ public class ItemInit {
 	public static final RegistryObject<Item> bone_launcher = items.register("bone_launcher",
 			() -> new BoneLauncher(new Properties().tab(TheFesterForest.tff_tab).durability(1100), 
 					0.1).repair(() -> Ingredient.of(Items.BONE_BLOCK)));
+	
+	//Mechanical Helmet
+	public static final RegistryObject<Item> mechanical_helmet = items.register("mechanical_helmet", 
+			() -> new MechanicalHelmet());
+	
+	//Mechanical Chestplate
+	public static final RegistryObject<Item> mechanical_chestplate = items.register("mechanical_chestplate", 
+			() -> new MechanicalChestplate());
+		
+	//Mechanical Leggings
+	public static final RegistryObject<Item> mechanical_leggings = items.register("mechanical_leggings", 
+			() -> new MechanicalLeggings());
+		
+	//Mechanical Boots
+	public static final RegistryObject<Item> mechanical_boots = items.register("mechanical_boots", 
+			() -> new MechanicalBoots());
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);

@@ -19,6 +19,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileWeaponItem;
@@ -122,14 +123,14 @@ public class BrittleBranch extends ProjectileWeaponItem {
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("An old stick with a broken bone fitted to the end.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("An old, fragile branch.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Right click to launch a bone from your stick.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("Each bone does 2 damage, ignoring armor and invulnerability").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("ticks.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Right click launch 3 projectiles in front of you.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Each projectile does " + BranchCharge.getStaticDamage() + " damage and inflicts").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("poison.").withStyle(ChatFormatting.AQUA));
 		}
 		else {
-			lore.add(new TextComponent("An old stick with a broken bone fitted to the end.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("An old, fragile branch.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 		}

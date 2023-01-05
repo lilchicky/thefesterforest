@@ -68,6 +68,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.purifying_powder.get());
 		oneLayerItem(ItemInit.bug_eggs.get());
 		oneLayerItem(ItemInit.mechanical_eye.get());
+		oneLayerItem(ItemInit.mechanical_helmet.get());
+		oneLayerItem(ItemInit.mechanical_chestplate.get());
+		oneLayerItem(ItemInit.mechanical_leggings.get());
+		oneLayerItem(ItemInit.mechanical_boots.get());
 		
 	}
 	

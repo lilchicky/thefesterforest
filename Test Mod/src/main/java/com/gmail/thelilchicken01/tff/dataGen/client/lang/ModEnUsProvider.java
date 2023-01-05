@@ -114,6 +114,11 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.pylon_spawn_egg.get(), "Forgemaster's Pylon Spawn Egg");
 		add(ItemInit.forgemaster_hammer.get(), "§7§lForgemaster's Hammer");
 		add(ItemInit.mechanical_eye.get(), "Mechanical Eye");
+		add(ItemInit.meteor_wand.get(), "Meteor Wand");
+		add(ItemInit.mechanical_boots.get(), "Mechanical Boots");
+		add(ItemInit.mechanical_chestplate.get(), "Mechanical Chestplate");
+		add(ItemInit.mechanical_leggings.get(), "Mechanical Leggings");
+		add(ItemInit.mechanical_helmet.get(), "Mechanical Helmet");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}

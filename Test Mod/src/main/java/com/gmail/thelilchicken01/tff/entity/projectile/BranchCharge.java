@@ -34,6 +34,8 @@ public class BranchCharge extends Fireball {
 	protected int ticksSinceFired;
 	protected LivingEntity target;
 	protected int poisonDuration = 5;
+	
+	private static int staticDamage = 10;
 
 	public BranchCharge(EntityType<? extends BranchCharge> p_i50160_1_, Level p_i50160_2_) {
 		super(p_i50160_1_, p_i50160_2_);
@@ -117,6 +119,10 @@ public class BranchCharge extends Fireball {
 	
 	public double getDamage() {
 		return damage;
+	}
+	
+	public static int getStaticDamage() {
+		return staticDamage;
 	}
 	
 	public void setIgnoreInvulnerability(boolean ignoreInvulnerability) {
