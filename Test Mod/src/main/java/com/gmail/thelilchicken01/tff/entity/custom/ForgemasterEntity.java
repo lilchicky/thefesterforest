@@ -169,20 +169,6 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 				
 				this.playSound(SoundEvents.GENERIC_EXPLODE, 1.0f, 0.4f);
 				
-				if(getLevel().isClientSide()) {
-					for (int x = 0; x < 10; x++) {
-						
-						getLevel().addParticle(ParticleTypes.EXPLOSION, 
-								this.getX() + ((Math.random() - 0.5) * 6), 
-								this.getY(), 
-								this.getZ() + ((Math.random() - 0.5) * 6), 
-								0.0f, 
-								0.0f, 
-								0.0f);
-						
-					}
-				}
-				
 				for (int x = 0; x < nearbyEntities.size(); x++) {
 				
 					if (nearbyEntities.get(x) instanceof LivingEntity && !(nearbyEntities.get(x) instanceof PylonEntity)) {
