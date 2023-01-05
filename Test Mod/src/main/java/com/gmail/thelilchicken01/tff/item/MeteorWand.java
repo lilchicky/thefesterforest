@@ -29,6 +29,8 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class MeteorWand extends ProjectileWeaponItem {
 	
@@ -80,11 +82,10 @@ public class MeteorWand extends ProjectileWeaponItem {
 		return super.interactLivingEntity(stack, player, target, hand);
 	}
 	
-	@SuppressWarnings("resource")
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
 		
-		if (!context.getLevel().isClientSide) {
+		if (!context.getLevel().isClientSide()) {
 			BlockPos clicked = context.getClickedPos();
 				
 			Meteor bulletItem = ItemInit.meteor_charge.get();
@@ -158,6 +159,7 @@ public class MeteorWand extends ProjectileWeaponItem {
 	}
 	
 	@Override
+	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {

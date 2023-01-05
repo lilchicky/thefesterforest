@@ -23,6 +23,8 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class AngelicWhistle extends Item {
 	
@@ -37,35 +39,39 @@ public class AngelicWhistle extends Item {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
 		
-		List<Entity> nearbyEntities = world.getEntities(player, 
-				new AABB(player.getX() - 4, player.getY() - 3, player.getZ() - 4, 
-						player.getX() + 4, player.getY() + 2, player.getZ() + 4));
-			
-		player.playSound(SoundEvents.NOTE_BLOCK_CHIME, 1.2f, 1.4f);
+		if(!world.isClientSide()) {
 		
-		player.getCooldowns().addCooldown(this, 100);
-		
-		for (int x = 0; x < nearbyEntities.size(); x++) {
-		
-			if ((!(nearbyEntities.get(x) instanceof BansheeEntity)) && nearbyEntities.get(x) instanceof LivingEntity) {
+			List<Entity> nearbyEntities = world.getEntities(player, 
+					new AABB(player.getX() - 4, player.getY() - 3, player.getZ() - 4, 
+							player.getX() + 4, player.getY() + 2, player.getZ() + 4));
 				
-				Vec3 playerVel = player.getPosition(1.0f);
-				Vec3 entityVel = nearbyEntities.get(x).getPosition(1.0f);
-				Vec3 newVel = ((entityVel.subtract(playerVel)).normalize().add(new Vec3(0.0, 0.6, 0.0)).multiply(2.0, 2.0, 2.0));
+			player.playSound(SoundEvents.NOTE_BLOCK_CHIME, 1.2f, 1.4f);
 			
-				nearbyEntities.get(x).setDeltaMovement(newVel);
-				nearbyEntities.get(x).hurt(TheFesterForest.banshee, whistleDamage);
-				((LivingEntity) nearbyEntities.get(x)).addEffect(
-						new MobEffectInstance(MobEffects.SLOW_FALLING, slowFallDuration * 20, 19));
+			player.getCooldowns().addCooldown(this, 100);
 			
-			}
+			for (int x = 0; x < nearbyEntities.size(); x++) {
 			
-		}	
+				if ((!(nearbyEntities.get(x) instanceof BansheeEntity)) && nearbyEntities.get(x) instanceof LivingEntity) {
+					
+					Vec3 playerVel = player.getPosition(1.0f);
+					Vec3 entityVel = nearbyEntities.get(x).getPosition(1.0f);
+					Vec3 newVel = ((entityVel.subtract(playerVel)).normalize().add(new Vec3(0.0, 0.6, 0.0)).multiply(2.0, 2.0, 2.0));
+				
+					nearbyEntities.get(x).setDeltaMovement(newVel);
+					nearbyEntities.get(x).hurt(TheFesterForest.banshee, whistleDamage);
+					((LivingEntity) nearbyEntities.get(x)).addEffect(
+							new MobEffectInstance(MobEffects.SLOW_FALLING, slowFallDuration * 20, 19));
+				
+				}
+				
+			}	
+		}
 		
 		return super.use(world, player, hand);
 	}
 	
 	@Override
+	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {

@@ -7,6 +7,7 @@ import java.util.function.Supplier;
 import com.gmail.thelilchicken01.tff.entity.projectile.BoneCharge;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
+
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -25,6 +26,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class BoneLauncher extends ProjectileWeaponItem {
 	
@@ -45,7 +48,7 @@ public class BoneLauncher extends ProjectileWeaponItem {
 		ItemStack gun = player.getItemInHand(hand);
 
 		BoneShot bulletItem = ItemInit.bone_charge.get();
-		if (!world.isClientSide) {
+		if (!world.isClientSide()) {
 			boolean bulletFree = true;
 			
 			ItemStack shotAmmo = new ItemStack(ItemInit.bone_charge.get());
@@ -103,6 +106,7 @@ public class BoneLauncher extends ProjectileWeaponItem {
 	}
 	
 	@Override
+	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {

@@ -73,7 +73,7 @@ public class WightEntity extends Monster implements IAnimatable {
 	@Override
 	public boolean doHurtTarget(Entity target) {
 		
-		if (!target.getLevel().isClientSide) {
+		if (!target.getLevel().isClientSide()) {
 			this.heal(4.0f);
 			this.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1));
 		}

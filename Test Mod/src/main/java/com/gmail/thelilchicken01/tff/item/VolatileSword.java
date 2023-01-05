@@ -1,11 +1,8 @@
 package com.gmail.thelilchicken01.tff.item;
 
 import java.util.List;
-import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Multimap;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -19,12 +16,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
@@ -32,6 +24,8 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class VolatileSword extends SwordItem {
 	
@@ -63,8 +57,6 @@ public class VolatileSword extends SwordItem {
 			getEnts(nearbyEntities, player, world);
 			//put sword on cooldown
 			player.getCooldowns().addCooldown(this, 60); //default 100
-			
-			this.damageItem(getDefaultInstance(), 2, null, null);
 			
 		}
 		//is client side
@@ -142,6 +134,7 @@ public class VolatileSword extends SwordItem {
 	}
 	
 	@Override
+	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {

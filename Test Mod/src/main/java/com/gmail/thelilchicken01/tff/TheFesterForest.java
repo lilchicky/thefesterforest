@@ -38,10 +38,6 @@ public class TheFesterForest {
 	
 	public static final String modid = "tff";
 	
-	public static final ClientEventBusSubscriber ebs = new ClientEventBusSubscriber();
-	public static final ServerEventBusSubscriber sebs = new ServerEventBusSubscriber();
-	public static final ModEventBusEvents mebe = new ModEventBusEvents();
-	
 	public static final Logger LOGGER = LogManager.getLogger();	
 	//Damage Sources
 	public static final DamageSource banshee = new DamageSource(modid + "_banshee").bypassArmor();

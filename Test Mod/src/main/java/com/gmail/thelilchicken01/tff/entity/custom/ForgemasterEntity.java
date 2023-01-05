@@ -131,158 +131,163 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 			cooldownMod = 0.3;
 		}
 		
-		if (shootCounter > (shootCooldown * cooldownMod) * 20 && this.getTarget() != null) {
-			
-			ItemStack ammo = new ItemStack(ItemInit.meteor_charge.get());
-			Meteor bulletItem = ItemInit.meteor_charge.get(); //these will be the same, but are what is being shot
-			
-			MeteorCharge shot = bulletItem.createProjectile(this.level, ammo, this);// level, shot item, this entity
-			
-			Vec3 currentPos = getEyePosition();
-			Vec3 targetPos = getTarget().getPosition(1.0f);
-			Vec3 targetVector = targetPos.subtract(currentPos).normalize();
-			
-			shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 0.4f, 0.0f);
-			shot.setDamage(shootDamage); // set damage
-			shot.setIgnoreInvulnerability(false);
-			
-			playSound(SoundEvents.BLAZE_SHOOT, 0.2f, 0.5f);
-			this.level.addFreshEntity(shot);
-			
-			shootCounter = 0;
-			
-		}
+		if(!getLevel().isClientSide()) {
 		
-		//Phase 2
-		
-		if (launchCounter > launchCooldown * 20 && this.getTarget() != null && getHealth() < phase2health) {
-			
-			List<Entity> nearbyEntities = this.getLevel().getEntities(this, 
-					new AABB(this.getX() - launchRange, 
-							this.getY() - launchRange, 
-							this.getZ() - launchRange, 
-							this.getX() + launchRange, 
-							this.getY() + launchRange, 
-							this.getZ() + launchRange));
-			
-			this.playSound(SoundEvents.GENERIC_EXPLODE, 1.0f, 0.4f);
-			
-			for (int x = 0; x < 10; x++) {
+			if (shootCounter > (shootCooldown * cooldownMod) * 20 && this.getTarget() != null) {
 				
-				getLevel().addParticle(ParticleTypes.EXPLOSION, 
-						this.getX() + ((Math.random() - 0.5) * 6), 
-						this.getY(), 
-						this.getZ() + ((Math.random() - 0.5) * 6), 
-						0.0f, 
-						0.0f, 
-						0.0f);
+				ItemStack ammo = new ItemStack(ItemInit.meteor_charge.get());
+				Meteor bulletItem = ItemInit.meteor_charge.get(); //these will be the same, but are what is being shot
+				
+				MeteorCharge shot = bulletItem.createProjectile(this.level, ammo, this);// level, shot item, this entity
+				
+				Vec3 currentPos = getEyePosition();
+				Vec3 targetPos = getTarget().getPosition(1.0f);
+				Vec3 targetVector = targetPos.subtract(currentPos).normalize();
+				
+				shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 0.4f, 0.0f);
+				shot.setDamage(shootDamage); // set damage
+				shot.setIgnoreInvulnerability(false);
+				
+				playSound(SoundEvents.BLAZE_SHOOT, 0.2f, 0.5f);
+				this.level.addFreshEntity(shot);
+				
+				shootCounter = 0;
 				
 			}
 			
-			for (int x = 0; x < nearbyEntities.size(); x++) {
+			//Phase 2
 			
-				if (nearbyEntities.get(x) instanceof LivingEntity && !(nearbyEntities.get(x) instanceof PylonEntity)) {
-					
-					LivingEntity current = (LivingEntity)nearbyEntities.get(x);
-					
-					current.setDeltaMovement(current.getDeltaMovement().add(0.0, 1.0, 0.0).multiply(0.0, 2.0, 0.0));
-					current.hurt(TheFesterForest.knockup_damage, 10);
+			if (launchCounter > launchCooldown * 20 && this.getTarget() != null && getHealth() < phase2health) {
 				
+				List<Entity> nearbyEntities = this.getLevel().getEntities(this, 
+						new AABB(this.getX() - launchRange, 
+								this.getY() - launchRange, 
+								this.getZ() - launchRange, 
+								this.getX() + launchRange, 
+								this.getY() + launchRange, 
+								this.getZ() + launchRange));
+				
+				this.playSound(SoundEvents.GENERIC_EXPLODE, 1.0f, 0.4f);
+				
+				if(getLevel().isClientSide()) {
+					for (int x = 0; x < 10; x++) {
+						
+						getLevel().addParticle(ParticleTypes.EXPLOSION, 
+								this.getX() + ((Math.random() - 0.5) * 6), 
+								this.getY(), 
+								this.getZ() + ((Math.random() - 0.5) * 6), 
+								0.0f, 
+								0.0f, 
+								0.0f);
+						
+					}
 				}
 				
-			}	
-			
-			launchCounter = 0;
-			
-		}
-		
-		// Phase 3
-		
-		if (pylonCounter > pylonCooldown * 20 && getHealth() < phase3health) {
-			
-			playSound(SoundEvents.ANVIL_USE, 1.0f, 0.01f);
-			
-			int spawnedPylons = 0;
-			int spawnTries = 0;
-			
-			pylonSpawn:
-			while (spawnedPylons < pylonCount) {
+				for (int x = 0; x < nearbyEntities.size(); x++) {
 				
-				spawnTries++;
-				
-				PylonEntity pylon = new PylonEntity(ModEntityTypes.pylon.get(), getLevel());
-				
-				double randomX = getX() + ((Math.random() - 0.5) * (pylonRadius * 2));
-				double randomY = getY();
-				double randomZ = getZ() + ((Math.random() - 0.5) * (pylonRadius * 2));
-				
-				BlockPos blockIn = new BlockPos(randomX, 
-						randomY, 
-						randomZ);
-				
-				BlockPos blockOn = new BlockPos(randomX, 
-						randomY - 1, 
-						randomZ);
-				
-				Block blockInside = getLevel().getBlockState(blockIn).getBlock();
-				Block blockOnTopOf = getLevel().getBlockState(blockOn).getBlock();
-				
-				if (blockInside == Blocks.AIR && (blockOnTopOf == BlockInit.rotting_planks.get() || 
-						blockOnTopOf == BlockInit.rotting_wood.get())) {
+					if (nearbyEntities.get(x) instanceof LivingEntity && !(nearbyEntities.get(x) instanceof PylonEntity)) {
+						
+						LivingEntity current = (LivingEntity)nearbyEntities.get(x);
+						
+						current.setDeltaMovement(current.getDeltaMovement().add(0.0, 1.0, 0.0).multiply(0.0, 2.0, 0.0));
+						current.hurt(TheFesterForest.knockup_damage, 10);
 					
-					pylon.setPos(blockIn.getX(), blockIn.getY(), blockIn.getZ());
+					}
 					
-					getLevel().addFreshEntity(pylon);
-					
-					spawnedPylons++;
-					
-				}
+				}	
 				
-				if (spawnTries > 100) {
-					System.out.println("Chicky's Fester Forest: No available pylon spawn blocks! (Not a bug)");
-					break pylonSpawn;
-				}
-				
+				launchCounter = 0;
 				
 			}
 			
-			pylonActive = true;
-			pylonCounter = 0;
+			// Phase 3
 			
-		}
-		
-		if (pylonChargeCounter > pylonCharge * 20 && getHealth() < phase3health) {
-			
-			int livingPylons = 0;
-			
-			playSound(SoundEvents.ANVIL_DESTROY, 1.0f, 0.01f);
-			
-			List<Entity> nearbyPylons = this.getLevel().getEntities(this, 
-				new AABB(this.getX() - (pylonRadius + 16), 
-						this.getY() - pylonRadius, 
-						this.getZ() - (pylonRadius + 16), 
-						this.getX() + (pylonRadius + 16), 
-						this.getY() + pylonRadius, 
-						this.getZ() + (pylonRadius + 16)));
-			
-			for (int x = 0; x < nearbyPylons.size(); x++) {
+			if (pylonCounter > pylonCooldown * 20 && getHealth() < phase3health) {
 				
-				if (nearbyPylons.get(x) instanceof PylonEntity) {
+				playSound(SoundEvents.ANVIL_USE, 1.0f, 0.01f);
+				
+				int spawnedPylons = 0;
+				int spawnTries = 0;
+				
+				pylonSpawn:
+				while (spawnedPylons < pylonCount) {
 					
-					((PylonEntity) nearbyPylons.get(x)).remove(RemovalReason.KILLED);
-					livingPylons++;
+					spawnTries++;
+					
+					PylonEntity pylon = new PylonEntity(ModEntityTypes.pylon.get(), getLevel());
+					
+					double randomX = getX() + ((Math.random() - 0.5) * (pylonRadius * 2));
+					double randomY = getY();
+					double randomZ = getZ() + ((Math.random() - 0.5) * (pylonRadius * 2));
+					
+					BlockPos blockIn = new BlockPos(randomX, 
+							randomY, 
+							randomZ);
+					
+					BlockPos blockOn = new BlockPos(randomX, 
+							randomY - 1, 
+							randomZ);
+					
+					Block blockInside = getLevel().getBlockState(blockIn).getBlock();
+					Block blockOnTopOf = getLevel().getBlockState(blockOn).getBlock();
+					
+					if (blockInside == Blocks.AIR && (blockOnTopOf == BlockInit.rotting_planks.get() || 
+							blockOnTopOf == BlockInit.rotting_wood.get())) {
+						
+						pylon.setPos(blockIn.getX(), blockIn.getY(), blockIn.getZ());
+						
+						getLevel().addFreshEntity(pylon);
+						
+						spawnedPylons++;
+						
+					}
+					
+					if (spawnTries > 100) {
+						System.out.println("Chicky's Fester Forest: No available pylon spawn blocks! (Not a bug)");
+						break pylonSpawn;
+					}
+					
 					
 				}
 				
+				pylonActive = true;
+				pylonCounter = 0;
+				
 			}
 			
-			heal((float) livingPylons * 35);
-			
-			playSound(SoundEvents.REDSTONE_TORCH_BURNOUT, 1.0f, 0.1f);
-			
-			pylonActive = false;
-			pylonChargeCounter = 0;
-			
+			if (pylonChargeCounter > pylonCharge * 20 && getHealth() < phase3health) {
+				
+				int livingPylons = 0;
+				
+				playSound(SoundEvents.ANVIL_DESTROY, 1.0f, 0.01f);
+				
+				List<Entity> nearbyPylons = this.getLevel().getEntities(this, 
+					new AABB(this.getX() - (pylonRadius + 16), 
+							this.getY() - pylonRadius, 
+							this.getZ() - (pylonRadius + 16), 
+							this.getX() + (pylonRadius + 16), 
+							this.getY() + pylonRadius, 
+							this.getZ() + (pylonRadius + 16)));
+				
+				for (int x = 0; x < nearbyPylons.size(); x++) {
+					
+					if (nearbyPylons.get(x) instanceof PylonEntity) {
+						
+						((PylonEntity) nearbyPylons.get(x)).remove(RemovalReason.KILLED);
+						livingPylons++;
+						
+					}
+					
+				}
+				
+				heal((float) livingPylons * 35);
+				
+				playSound(SoundEvents.REDSTONE_TORCH_BURNOUT, 1.0f, 0.1f);
+				
+				pylonActive = false;
+				pylonChargeCounter = 0;
+				
+			}
 		}
 		
 		super.tick();

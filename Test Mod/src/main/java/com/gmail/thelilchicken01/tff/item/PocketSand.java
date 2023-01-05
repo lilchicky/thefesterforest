@@ -3,15 +3,10 @@ package com.gmail.thelilchicken01.tff.item;
 import java.util.List;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
-import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.particle.Particle;
-import net.minecraft.client.particle.ParticleEngine;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.sounds.SoundEvents;
@@ -27,7 +22,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class PocketSand extends Item {
 	
@@ -53,13 +49,15 @@ public class PocketSand extends Item {
 		
 		player.playSound(SoundEvents.SAND_BREAK, 1.0f, 0.5f);
 		
-		for (int x = 0; x < 150; x++) {
-			world.addParticle(ParticleInit.pocket_sand_particle.get(), player.getX(), player.getY() + 0.5d, player.getZ(), 
-					(player.getLookAngle().x + ((Math.random() - 0.5) * 0.85)), 
-					(player.getLookAngle().y + ((Math.random() - 0.5) * 0.85)), 
-					(player.getLookAngle().z  + ((Math.random() - 0.5) * 0.85)));
-			
-			
+		if(world.isClientSide()) {
+			for (int x = 0; x < 150; x++) {
+				world.addParticle(ParticleInit.pocket_sand_particle.get(), player.getX(), player.getY() + 0.5d, player.getZ(), 
+						(player.getLookAngle().x + ((Math.random() - 0.5) * 0.85)), 
+						(player.getLookAngle().y + ((Math.random() - 0.5) * 0.85)), 
+						(player.getLookAngle().z  + ((Math.random() - 0.5) * 0.85)));
+				
+				
+			}
 		}
 		
 		player.getCooldowns().addCooldown(this, 60);
@@ -83,6 +81,7 @@ public class PocketSand extends Item {
 	}
 	
 	@Override
+	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {
