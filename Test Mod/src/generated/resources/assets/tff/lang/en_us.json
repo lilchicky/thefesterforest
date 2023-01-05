@@ -1,7 +1,6 @@
 {
   "block.tff.cracked_rotting_stone": "Cracked Rotting Stone",
   "block.tff.fester_ore": "Fester Ore",
-  "block.tff.health_gem": "Health Gem",
   "block.tff.mossy_rotting_stone": "Mossy Rotting Stone",
   "block.tff.rotting_bricks": "Fester Bricks",
   "block.tff.rotting_dirt": "Rotting Dirt",
@@ -37,7 +36,6 @@
   "block.tff.stripped_slimy_log": "Stripped Slimy Log",
   "block.tff.stripped_slimy_wood": "Stripped Slimy Wood",
   "block.tff.volatile_lamp": "Volatile Lamp",
-  "block.tff.volatile_ore": "Volatile Ore",
   "death.attack.tff_banshee": "%1$s blew a whistle a little too hard",
   "death.attack.tff_banshee.player": "%1$s had their eardrums ruptured by %2$s",
   "death.attack.tff_bone_damage": "%1$s got boned",
