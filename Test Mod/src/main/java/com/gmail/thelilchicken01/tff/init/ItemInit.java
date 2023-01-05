@@ -27,6 +27,7 @@ import com.gmail.thelilchicken01.tff.item.MechanicalLeggings;
 import com.gmail.thelilchicken01.tff.item.MeteorWand;
 import com.gmail.thelilchicken01.tff.item.PocketSand;
 import com.gmail.thelilchicken01.tff.item.PurifyingPowder;
+import com.gmail.thelilchicken01.tff.item.ShieldBook;
 import com.gmail.thelilchicken01.tff.item.VolatileApple;
 import com.gmail.thelilchicken01.tff.item.VolatileNecklace;
 import com.gmail.thelilchicken01.tff.item.VolatileSword;
@@ -186,7 +187,7 @@ public class ItemInit {
 	
 	//Brittle Branch
 	public static final RegistryObject<Item> brittle_branch = items.register("brittle_branch",
-			() -> new BrittleBranch(new Properties().tab(TheFesterForest.tff_tab).durability(650), 
+			() -> new BrittleBranch(new Properties().tab(TheFesterForest.tff_tab).durability(144), 
 					0.1).repair(() -> Ingredient.of(Items.DEAD_BUSH)));
 	
 	//Meteor Wand
@@ -212,7 +213,7 @@ public class ItemInit {
 	
 	//Bone Launcher
 	public static final RegistryObject<Item> bone_launcher = items.register("bone_launcher",
-			() -> new BoneLauncher(new Properties().tab(TheFesterForest.tff_tab).durability(1100), 
+			() -> new BoneLauncher(new Properties().tab(TheFesterForest.tff_tab).durability(340), 
 					0.1).repair(() -> Ingredient.of(Items.BONE_BLOCK)));
 	
 	//Mechanical Helmet
@@ -230,6 +231,10 @@ public class ItemInit {
 	//Mechanical Boots
 	public static final RegistryObject<Item> mechanical_boots = items.register("mechanical_boots", 
 			() -> new MechanicalBoots());
+	
+	//Shield Book
+	public static final RegistryObject<Item> shield_book = items.register("shield_book", 
+			() -> new ShieldBook());
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);

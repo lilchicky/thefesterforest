@@ -1,59 +1,27 @@
 {
-  "type": "minecraft:entity",
   "pools": [
     {
-      "rolls": 24,
+      "rolls": 240,
       "entries": [
         {
           "type": "minecraft:item",
           "weight": 100,
-          "name": "minecraft:iron_ingot",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 8,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.7
-                }
-              ]
-            }
-          ]
+          "name": "minecraft:iron_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 80,
+          "name": "tff:purifying_powder"
         },
         {
           "type": "minecraft:item",
           "weight": 100,
-          "name": "minecraft:bone",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 4,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.7
-                }
-              ]
-            }
-          ]
+          "name": "minecraft:bone"
         },
         {
           "type": "minecraft:item",
-          "weight": 100,
-          "name": "tff:purifying_powder",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 3,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.7
-                }
-              ]
-            }
-          ]
+          "weight": 20,
+          "name": "tff:mechanical_apple"
         }
       ]
     },
@@ -62,7 +30,74 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "tff:mechanical_helmet",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 45,
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:mechanical_chestplate",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 45,
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:mechanical_leggings",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 45,
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:mechanical_boots",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 45,
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:forgemaster_hammer",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 45,
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:meteor_wand"
+        },
+        {
+          "type": "minecraft:item",
           "name": "tff:forgemaster_heart"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:mechanical_eye"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:shield_book"
         }
       ]
     }

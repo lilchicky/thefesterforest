@@ -73,6 +73,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.mechanical_leggings.get());
 		oneLayerItem(ItemInit.mechanical_boots.get());
 		oneLayerItem(ItemInit.mechanical_apple.get());
+		oneLayerItem(ItemInit.shield_book.get());
 		
 	}
 	
