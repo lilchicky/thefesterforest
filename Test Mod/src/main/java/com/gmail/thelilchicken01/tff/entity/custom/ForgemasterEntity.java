@@ -290,6 +290,23 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 			}
 		}
 		
+		if (getLevel().isClientSide()) {
+			
+			if(launchCounter > launchCooldown * 20 && this.getTarget() != null && getHealth() < phase2health) {
+				for (int x = 0; x < 10; x++) {
+					
+					getLevel().addParticle(ParticleTypes.EXPLOSION, 
+							this.getX() + ((Math.random() - 0.5) * 6), 
+							this.getY(), 
+							this.getZ() + ((Math.random() - 0.5) * 6), 
+							0.0f, 
+							0.0f, 
+							0.0f);
+					
+				}
+			}
+		}
+		
 		super.tick();
 	}
 	
