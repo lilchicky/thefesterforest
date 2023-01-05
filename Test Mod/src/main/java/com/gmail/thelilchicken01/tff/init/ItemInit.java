@@ -18,6 +18,7 @@ import com.gmail.thelilchicken01.tff.item.ForgemasterHeart;
 import com.gmail.thelilchicken01.tff.item.FrozenPendant;
 import com.gmail.thelilchicken01.tff.item.HeavyStone;
 import com.gmail.thelilchicken01.tff.item.LifeScythe;
+import com.gmail.thelilchicken01.tff.item.MechanicalApple;
 import com.gmail.thelilchicken01.tff.item.MechanicalBoots;
 import com.gmail.thelilchicken01.tff.item.MechanicalChestplate;
 import com.gmail.thelilchicken01.tff.item.MechanicalEye;
@@ -66,8 +67,13 @@ public class ItemInit {
 	
 	//Volatile Apple
 	public static final RegistryObject<Item> volatileApple = register("volatile_apple", 
-			() -> new VolatileApple(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().alwaysEat().saturationMod(14.0f).nutrition(6)
+			() -> new VolatileApple(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().alwaysEat().saturationMod(1.0f).nutrition(6)
 					.effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1f).build())));
+	
+	//Mechanical Apple
+	public static final RegistryObject<Item> mechanical_apple = register("mechanical_apple", 
+			() -> new MechanicalApple(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().alwaysEat().saturationMod(1.0f).nutrition(6)
+					.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2880, 2), 1f).build())));
 	
 	//Bug Carcass
 	public static final RegistryObject<Item> bug_carcass = register("bug_carcass", 

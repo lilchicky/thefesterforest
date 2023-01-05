@@ -15,7 +15,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 public enum ModArmorMaterial implements ArmorMaterial {
 
 	// Mechanical Armor
-	MECHANICAL("mechanical", 67, new int[]{1, 3, 4, 2}, 32, SoundEvents.ARMOR_EQUIP_IRON, 3.0F, 0.5F, () -> {
+	MECHANICAL("mechanical", 67, new int[]{2, 4, 5, 3}, 32, SoundEvents.ARMOR_EQUIP_IRON, 3.0F, 0.5F, () -> {
 	    return Ingredient.of(Items.IRON_INGOT);
 	});
 
