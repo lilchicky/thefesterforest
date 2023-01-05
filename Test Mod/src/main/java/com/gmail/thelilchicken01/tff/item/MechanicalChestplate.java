@@ -1,5 +1,6 @@
 package com.gmail.thelilchicken01.tff.item;
 
+import java.util.List;
 import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
@@ -9,6 +10,10 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -18,6 +23,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import top.theillusivec4.curios.api.SlotContext;
 
@@ -116,6 +122,27 @@ public class MechanicalChestplate extends ArmorItem {
 	@Override
 	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
 		return slot == EquipmentSlot.CHEST ? this.defaultModifiers : super.getDefaultAttributeModifiers(slot);
+	}
+	
+	@Override
+	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
+		
+		if(Screen.hasShiftDown()) {
+			lore.add(new TextComponent("The Forgemaster's chestplate.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("Grants heavy armor.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("2+ Pieces: Haste 1").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("4 Pieces: Haste 2 and Regeneration 2").withStyle(ChatFormatting.AQUA));
+		}
+		else {
+			lore.add(new TextComponent("The Forgemaster's boots.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("Equipping grants a boost to jumping.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+		}
+		
+		super.appendHoverText(stack, world, lore, flag);
 	}
 
 }
