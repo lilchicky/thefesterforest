@@ -3,20 +3,17 @@ package com.gmail.thelilchicken01.tff.init;
 import java.util.function.Function;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
-import com.gmail.thelilchicken01.tff.block.HealthGem;
 import com.gmail.thelilchicken01.tff.block.ModFlammableRotatedPillarBlock;
 import com.gmail.thelilchicken01.tff.block.RottingFlower;
 import com.gmail.thelilchicken01.tff.block.RottingwoodSapling;
 import com.gmail.thelilchicken01.tff.block.SlimySapling;
 import com.gmail.thelilchicken01.tff.block.TffPortalBlock;
-import com.gmail.thelilchicken01.tff.block.VolatileOre;
 import com.gmail.thelilchicken01.tff.world.feature.tree.RottingTreeGrower;
 import com.gmail.thelilchicken01.tff.world.feature.tree.SlimyTreeGrower;
 import com.google.common.base.Supplier;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -66,18 +63,6 @@ public class BlockInit {
 	
 	//Fester Ore
 	public static final RegistryObject<Block> fester_ore = register("fester_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
-	
-	//Volatile Ore
-	public static final RegistryObject<Block> volatileOre = register("volatile_ore", 
-			() -> new VolatileOre(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_YELLOW).strength(5.0f).sound(SoundType.STONE).emissiveRendering((state, getter, pos) -> {
-				return true;
-			}).requiresCorrectToolForDrops(), UniformInt.of(3, 7)),
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
-	
-	//Health Gem
-	public static final RegistryObject<Block> healthgem = register("health_gem",
-			() -> new HealthGem(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_RED).strength(0.2f).sound(SoundType.GLASS).lightLevel(state -> 4).dynamicShape()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
 	
 	//Rotting Log
