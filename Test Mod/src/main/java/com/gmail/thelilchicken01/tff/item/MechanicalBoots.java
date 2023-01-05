@@ -59,20 +59,40 @@ public class MechanicalBoots extends ArmorItem {
 	public void onArmorTick(ItemStack stack, Level level, Player player) {
 		
 		if (!player.hasEffect(MobEffects.JUMP)) {
-			player.addEffect(new MobEffectInstance(MobEffects.JUMP, 40, 1, false, false));
+			player.addEffect(new MobEffectInstance(MobEffects.JUMP, 60, 1, false, false));
+		}
+		else {
+			if (player.getEffect(MobEffects.JUMP).getDuration() < 40) {
+				player.addEffect(new MobEffectInstance(MobEffects.JUMP, 60, 1, false, false));
+			}
 		}
 		
 		if (getSetCount(player) == 2 || getSetCount(player) == 3) {
 			if (!player.hasEffect(MobEffects.DIG_SPEED)) {
-				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 40, 0, false, false));
+				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 0, false, false));
+			}
+			else {
+				if (player.getEffect(MobEffects.DIG_SPEED).getDuration() < 40) {
+					player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 0, false, false));
+				}
 			}
 		}
 		if (getSetCount(player) == 4) {
 			if (!player.hasEffect(MobEffects.DIG_SPEED)) {
-				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 40, 1, false, false));
+				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 1, false, false));
+			}
+			else {
+				if (player.getEffect(MobEffects.DIG_SPEED).getDuration() < 40) {
+					player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 1, false, false));
+				}
 			}
 			if (!player.hasEffect(MobEffects.REGENERATION)) {
-				player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 40, 1, false, false));
+				player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1, false, false));
+			}
+			else {
+				if (player.getEffect(MobEffects.REGENERATION).getDuration() < 40) {
+					player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1, false, false));
+				}
 			}
 		}
 		

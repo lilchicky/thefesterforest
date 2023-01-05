@@ -61,15 +61,30 @@ public class MechanicalLeggings extends ArmorItem {
 
 		if (getSetCount(player) == 2 || getSetCount(player) == 3) {
 			if (!player.hasEffect(MobEffects.DIG_SPEED)) {
-				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 40, 0, false, false));
+				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 0, false, false));
+			}
+			else {
+				if (player.getEffect(MobEffects.DIG_SPEED).getDuration() < 40) {
+					player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 0, false, false));
+				}
 			}
 		}
 		if (getSetCount(player) == 4) {
 			if (!player.hasEffect(MobEffects.DIG_SPEED)) {
-				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 40, 1, false, false));
+				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 1, false, false));
+			}
+			else {
+				if (player.getEffect(MobEffects.DIG_SPEED).getDuration() < 40) {
+					player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 1, false, false));
+				}
 			}
 			if (!player.hasEffect(MobEffects.REGENERATION)) {
-				player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 40, 0, false, false));
+				player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1, false, false));
+			}
+			else {
+				if (player.getEffect(MobEffects.REGENERATION).getDuration() < 40) {
+					player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1, false, false));
+				}
 			}
 		}
 		
@@ -137,8 +152,8 @@ public class MechanicalLeggings extends ArmorItem {
 			lore.add(new TextComponent(""));
 		}
 		else {
-			lore.add(new TextComponent("The Forgemaster's boots.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("Equipping grants a boost to jumping.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("The Forgemaster's leggings.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("Equipping grants a large boost to move speed.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 			lore.add(new TextComponent(""));

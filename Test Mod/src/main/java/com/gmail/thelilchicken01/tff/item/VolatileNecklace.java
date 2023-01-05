@@ -53,7 +53,12 @@ public class VolatileNecklace extends Item implements ICurioItem {
 		}
 		
 		if (!slotContext.entity().hasEffect(MobEffects.FIRE_RESISTANCE)) {
-			slotContext.entity().addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 80, 0, false, false));
+			slotContext.entity().addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 60, 0, false, false));
+		}
+		else {
+			if (slotContext.entity().getEffect(MobEffects.FIRE_RESISTANCE).getDuration() < 40) {
+				slotContext.entity().addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 60, 0, false, false));
+			}
 		}
 		
 		ICurioItem.super.curioTick(slotContext, stack);

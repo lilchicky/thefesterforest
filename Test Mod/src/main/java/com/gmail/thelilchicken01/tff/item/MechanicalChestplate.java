@@ -41,7 +41,7 @@ public class MechanicalChestplate extends ArmorItem {
 	    		"move_speed", 0.15, AttributeModifier.Operation.MULTIPLY_BASE));
 	    
 	    builder.put(Attributes.ARMOR, new AttributeModifier(UUID.randomUUID(), 
-	    		"armor", ModArmorMaterial.MECHANICAL.getDefenseForSlot(EquipmentSlot.CHEST) + 3, 
+	    		"armor", ModArmorMaterial.MECHANICAL.getDefenseForSlot(EquipmentSlot.CHEST) + 4, 
 	    		AttributeModifier.Operation.ADDITION));
 	    
 	    builder.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), 
@@ -61,15 +61,30 @@ public class MechanicalChestplate extends ArmorItem {
 		
 		if (getSetCount(player) == 2 || getSetCount(player) == 3) {
 			if (!player.hasEffect(MobEffects.DIG_SPEED)) {
-				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 40, 0, false, false));
+				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 0, false, false));
+			}
+			else {
+				if (player.getEffect(MobEffects.DIG_SPEED).getDuration() < 40) {
+					player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 0, false, false));
+				}
 			}
 		}
 		if (getSetCount(player) == 4) {
 			if (!player.hasEffect(MobEffects.DIG_SPEED)) {
-				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 40, 1, false, false));
+				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 1, false, false));
+			}
+			else {
+				if (player.getEffect(MobEffects.DIG_SPEED).getDuration() < 40) {
+					player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 1, false, false));
+				}
 			}
 			if (!player.hasEffect(MobEffects.REGENERATION)) {
-				player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 40, 0, false, false));
+				player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1, false, false));
+			}
+			else {
+				if (player.getEffect(MobEffects.REGENERATION).getDuration() < 40) {
+					player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1, false, false));
+				}
 			}
 		}
 		
@@ -137,8 +152,8 @@ public class MechanicalChestplate extends ArmorItem {
 			lore.add(new TextComponent(""));
 		}
 		else {
-			lore.add(new TextComponent("The Forgemaster's boots.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("Equipping grants a boost to jumping.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("The Forgemaster's chestplate.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("Grants heavy armor.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 			lore.add(new TextComponent(""));
