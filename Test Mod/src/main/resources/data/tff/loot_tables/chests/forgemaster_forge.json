@@ -27,7 +27,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite_pickaxe",
+          "name": "tff:bone_pickaxe",
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",

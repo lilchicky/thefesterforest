@@ -121,6 +121,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.mechanical_helmet.get(), "Mechanical Helmet");
 		add(ItemInit.mechanical_apple.get(), "Mechanical Apple");
 		add(ItemInit.shield_book.get(), "Shield Book");
+		add(ItemInit.bone_pickaxe.get(), "Bone Pickaxe");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}

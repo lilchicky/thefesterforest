@@ -49,15 +49,13 @@ public class VolatileNecklace extends Item implements ICurioItem {
 	public void curioTick(SlotContext slotContext, ItemStack stack) {
 		
 		if (slotContext.entity().isOnFire()) {
-			slotContext.entity().clearFire();
-		}
-		
-		if (!slotContext.entity().hasEffect(MobEffects.FIRE_RESISTANCE)) {
-			slotContext.entity().addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 60, 0, false, false));
-		}
-		else {
-			if (slotContext.entity().getEffect(MobEffects.FIRE_RESISTANCE).getDuration() < 40) {
-				slotContext.entity().addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 60, 0, false, false));
+			if (!slotContext.entity().hasEffect(MobEffects.DAMAGE_BOOST)) {
+				slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, 0, false, false));
+			}
+			else {
+				if (slotContext.entity().getEffect(MobEffects.DAMAGE_BOOST).getDuration() < 40) {
+					slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, 0, false, false));
+				}
 			}
 		}
 		
@@ -70,8 +68,7 @@ public class VolatileNecklace extends Item implements ICurioItem {
 		if(Screen.hasShiftDown()) {
 			lore.add(new TextComponent("A scorching necklace fitted with a fiery charm.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Extinguishes any fires on the player,").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("as well as granting fire resistance.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("While on fire, gain strength.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
 		}
 		else {

@@ -38,6 +38,21 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(item, item.getRegistryName());
 	}
 	
+	protected void handheldItem(Item item, ResourceLocation texture) {
+		ResourceLocation itemTexture = new ResourceLocation(texture.getNamespace(), "item/" + texture.getPath());
+		if (existingFileHelper.exists(itemTexture, PackType.CLIENT_RESOURCES, ".png", "textures")) {
+			getBuilder(item.getRegistryName().getPath()).parent(getExistingFile(mcLoc("item/handheld")))
+				.texture("layer0", itemTexture);
+		}
+		else {
+			System.out.println("Texture for " + item.getRegistryName().toString() + " not present at " + itemTexture.toString());
+		}
+	}
+	
+	protected void handheldItem(Item item) {
+		handheldItem(item, item.getRegistryName());
+	}
+	
 	@Override
 	protected void registerModels() {
 		// Block Item
@@ -74,6 +89,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.mechanical_boots.get());
 		oneLayerItem(ItemInit.mechanical_apple.get());
 		oneLayerItem(ItemInit.shield_book.get());
+		
+		//Simple handheld items
+		handheldItem(ItemInit.bone_pickaxe.get());
 		
 	}
 	

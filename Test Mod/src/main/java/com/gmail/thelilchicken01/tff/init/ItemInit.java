@@ -6,6 +6,7 @@ import com.gmail.thelilchicken01.tff.item.AncientGreatsword;
 import com.gmail.thelilchicken01.tff.item.AncientWhistle;
 import com.gmail.thelilchicken01.tff.item.AngelicWhistle;
 import com.gmail.thelilchicken01.tff.item.BoneLauncher;
+import com.gmail.thelilchicken01.tff.item.BonePickaxe;
 import com.gmail.thelilchicken01.tff.item.BoneScythe;
 import com.gmail.thelilchicken01.tff.item.BrittleBranch;
 import com.gmail.thelilchicken01.tff.item.BugEggs;
@@ -65,6 +66,10 @@ public class ItemInit {
 	//Ancient Greatsword
 	public static final RegistryObject<Item> ancientGreatsword = register("ancient_greatsword", 
 			() -> new AncientGreatsword(ModTiers.VOLATILE, -1, -3f, new Properties().tab(TheFesterForest.tff_tab).durability(550)));
+	
+	//Bone Pickaxe
+	public static final RegistryObject<Item> bone_pickaxe = register("bone_pickaxe",
+			() -> new BonePickaxe());
 	
 	//Volatile Apple
 	public static final RegistryObject<Item> volatileApple = register("volatile_apple", 
@@ -164,17 +169,17 @@ public class ItemInit {
 	
 	//Life Scythe
 	public static final RegistryObject<Item> life_scythe = register("life_scythe", 
-			() -> new LifeScythe(ModTiers.VOLATILE, 2, -3.2f, new Properties().tab(TheFesterForest.tff_tab)
+			() -> new LifeScythe(ModTiers.BONE, 2, -3.2f, new Properties().tab(TheFesterForest.tff_tab)
 					.durability(1400)));
 	
 	//Forgemaster Hammer
 	public static final RegistryObject<Item> forgemaster_hammer = register("forgemaster_hammer", 
-			() -> new ForgemasterHammer(ModTiers.VOLATILE, 14, -3.5f, new Properties().tab(TheFesterForest.tff_tab)
+			() -> new ForgemasterHammer(ModTiers.MECHANICAL, 14, -3.5f, new Properties().tab(TheFesterForest.tff_tab)
 					.durability(3200)));
 		
 	//Bone Scythe
 	public static final RegistryObject<Item> bone_scythe = register("bone_scythe", 
-			() -> new BoneScythe(ModTiers.VOLATILE, 1, -3.0f, new Properties().tab(TheFesterForest.tff_tab)
+			() -> new BoneScythe(ModTiers.BONE, 1, -3.0f, new Properties().tab(TheFesterForest.tff_tab)
 					.durability(1200)));
 	
 	//Explosive Powder
