@@ -24,7 +24,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 	protected void addTags() {
 		
 		//tag(TagInit.Blocks.COOL_BLOCKS).add(Blocks.ACACIA_BUTTON).add(BlockInit.rotting_log.get());
-		tag(Tags.Blocks.ORES).add(BlockInit.volatileOre.get());
 		tag(Tags.Blocks.ORES).add(BlockInit.fester_ore.get());
 		tag(Tags.Blocks.STONE).add(BlockInit.rotting_stone.get());
 		tag(Tags.Blocks.STONE).add(BlockInit.cracked_rotting_stone.get());

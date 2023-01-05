@@ -49,7 +49,6 @@ public class ClientEventBusSubscriber {
 
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event) {
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.healthgem.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.rotting_leaves.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.rottingwood_sapling.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.tff_portal.get(), RenderType.translucent());

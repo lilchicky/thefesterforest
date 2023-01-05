@@ -40,8 +40,6 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.volatileSword.get(), "§6Volatile Sword");
 		add(ItemInit.ancientGreatsword.get(), "Ancient Greatsword");
 		add(BlockInit.volatileLamp.get(), "Volatile Lamp");
-		add(BlockInit.volatileOre.get(), "Volatile Ore");
-		add(BlockInit.healthgem.get(), "Health Gem");
 		add(ItemInit.volatileApple.get(), "§6Volatile Apple");
 		add(BlockInit.rotting_wood.get(), "Rottingwood");
 		add(BlockInit.rotting_log.get(), "Rottingwood Log");
