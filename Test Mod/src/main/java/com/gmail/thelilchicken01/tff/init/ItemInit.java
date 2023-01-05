@@ -73,17 +73,17 @@ public class ItemInit {
 	
 	//Volatile Apple
 	public static final RegistryObject<Item> volatileApple = register("volatile_apple", 
-			() -> new VolatileApple(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().alwaysEat().saturationMod(1.0f).nutrition(6)
+			() -> new VolatileApple(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().alwaysEat().saturationMod(0.3f).nutrition(4)
 					.effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1f).build())));
 	
 	//Mechanical Apple
 	public static final RegistryObject<Item> mechanical_apple = register("mechanical_apple", 
-			() -> new MechanicalApple(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().alwaysEat().saturationMod(1.0f).nutrition(6)
+			() -> new MechanicalApple(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().alwaysEat().saturationMod(0.3f).nutrition(4)
 					.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2880, 2), 1f).build())));
 	
 	//Bug Carcass
 	public static final RegistryObject<Item> bug_carcass = register("bug_carcass", 
-			() -> new Item(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().saturationMod(2.0f).nutrition(8).fast()
+			() -> new Item(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().saturationMod(1.2f).nutrition(8).fast()
 					.build())));
 	
 	//Rotting Brick

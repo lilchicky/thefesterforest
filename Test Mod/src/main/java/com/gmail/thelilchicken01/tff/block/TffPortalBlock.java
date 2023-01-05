@@ -1,5 +1,4 @@
 package com.gmail.thelilchicken01.tff.block;
-import java.lang.reflect.Field;
 import java.util.Random;
 
 import javax.annotation.Nullable;
@@ -34,7 +33,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.levelgen.RandomSource;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -110,8 +108,8 @@ public class TffPortalBlock extends Block {
             return TffPortalBlock$size1.isValid() && TffPortalBlock$size1.portalBlockCount == 0 ? TffPortalBlock$size1 : null;
         }
     }
-
-    @Override
+    
+	@Override
     public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
         Direction.Axis direction$axis = facing.getAxis();
         Direction.Axis direction$axis1 = stateIn.getValue(AXIS);
