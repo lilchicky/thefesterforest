@@ -3,27 +3,26 @@ package com.gmail.thelilchicken01.tff;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.gmail.thelilchicken01.tff.client.ClientEventBusSubscriber;
-import com.gmail.thelilchicken01.tff.client.ServerEventBusSubscriber;
+import com.gmail.thelilchicken01.tff.config.TFFClientConfigs;
+import com.gmail.thelilchicken01.tff.config.TFFCommonConfigs;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
-import com.gmail.thelilchicken01.tff.event.ModEventBusEvents;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
-import com.gmail.thelilchicken01.tff.util.ModItemProperties;
 import com.gmail.thelilchicken01.tff.villager.ModPOIs;
 import com.gmail.thelilchicken01.tff.world.dimension.ModDimensions;
 import com.gmail.thelilchicken01.tff.world.structures.ModStructures;
 
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.IndirectEntityDamageSource;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import software.bernie.geckolib3.GeckoLib;
 
@@ -68,6 +67,9 @@ public class TheFesterForest {
 		ModStructures.register(bus);
 		
 		GeckoLib.initialize();
+		
+		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, TFFClientConfigs.SPEC, "tff-client.toml");
+		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TFFCommonConfigs.SPEC, "tff-common.toml");
 		
 		MinecraftForge.EVENT_BUS.register(this);
 	}

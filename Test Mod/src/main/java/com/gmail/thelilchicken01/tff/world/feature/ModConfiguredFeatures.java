@@ -2,6 +2,7 @@ package com.gmail.thelilchicken01.tff.world.feature;
 
 import java.util.List;
 
+import com.gmail.thelilchicken01.tff.config.TFFCommonConfigs;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 
 import net.minecraft.core.Holder;
@@ -75,6 +76,8 @@ public class ModConfiguredFeatures {
 			OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.fester_ore.get().defaultBlockState()),
 			OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.fester_ore.get().defaultBlockState()));
 	
-	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> fester_ore = FeatureUtils.register("fester_ore", Feature.ORE, new OreConfiguration(overworld_fester_ore, 9)); //last number is vein size, not below 3
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> fester_ore = 
+			FeatureUtils.register("fester_ore", Feature.ORE, new OreConfiguration(
+					overworld_fester_ore, TFFCommonConfigs.FESTER_ORE_VEIN_SIZE.get())); //last number is vein size, not below 3
 	
 }

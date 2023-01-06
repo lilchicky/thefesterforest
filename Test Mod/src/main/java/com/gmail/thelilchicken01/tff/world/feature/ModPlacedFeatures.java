@@ -1,5 +1,7 @@
 package com.gmail.thelilchicken01.tff.world.feature;
 
+import com.gmail.thelilchicken01.tff.config.TFFCommonConfigs;
+
 import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
@@ -29,7 +31,7 @@ public class ModPlacedFeatures {
 			InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 	
 	public static final Holder<PlacedFeature> fester_ore_placed = PlacementUtils.register("fester_ore_placed", 
-			ModConfiguredFeatures.fester_ore, ModOrePlacement.commonOrePlacement(7, //veins per chunk
-					HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(0), VerticalAnchor.aboveBottom(80)))); //height range
+			ModConfiguredFeatures.fester_ore, ModOrePlacement.commonOrePlacement(TFFCommonConfigs.FESTER_ORE_VEINS_PER_CHUNK.get(), //veins per chunk
+					HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(64), VerticalAnchor.aboveBottom(144)))); //height range
 	
 }
