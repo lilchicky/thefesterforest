@@ -5,8 +5,7 @@
       "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "tff:bug_carcass",
+          "type": "minecraft:empty",
           "weight": 100
         },
         {
@@ -19,6 +18,15 @@
           "name": "tff:bug_eggs",
           "weight": 10
         } 
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tff:bug_carcass"
+        }
       ]
     }
   ]

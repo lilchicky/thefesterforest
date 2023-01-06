@@ -2,7 +2,7 @@
   "type": "minecraft:entity",
   "pools": [
     {
-      "rolls": 2,
+      "rolls": 5,
       "entries": [
         {
           "type": "minecraft:item",
@@ -16,13 +16,29 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
+          "weight": 7,
           "name": "tff:ancient_whistle"
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
+          "weight": 7,
           "name": "tff:frozen_pendant"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 7,
+          "name": "tff:shadow_bow",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
+                }
+              ]
+            }
+          ]
         }
       ]
     }
