@@ -1,0 +1,6 @@
+{
+    "parent": "tff:item/shadow_bow",
+    "textures": {
+        "layer0": "tff:item/shadow_bow_pulling_1"
+    }
+}

@@ -80,7 +80,7 @@ public class BoneLauncher extends ProjectileWeaponItem {
 	
 	@Override
 	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-		return enchantment == Enchantments.MENDING || enchantment == Enchantments.UNBREAKING;
+		return super.canApplyAtEnchantingTable(stack, enchantment);
 	}
 
 	private static final Predicate<ItemStack> BULLETS = (stack) -> stack.getItem() instanceof BoneShot;

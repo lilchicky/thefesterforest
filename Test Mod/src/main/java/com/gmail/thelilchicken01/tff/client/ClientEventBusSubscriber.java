@@ -29,6 +29,7 @@ import com.gmail.thelilchicken01.tff.particle.BranchParticle;
 import com.gmail.thelilchicken01.tff.particle.HellflameParticle;
 import com.gmail.thelilchicken01.tff.particle.PocketSandParticle;
 import com.gmail.thelilchicken01.tff.particle.TffPortalParticle;
+import com.gmail.thelilchicken01.tff.util.ModItemProperties;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -49,6 +50,8 @@ public class ClientEventBusSubscriber {
 
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event) {
+		ModItemProperties.addCustomItemProperties();
+		
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.rotting_leaves.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.rottingwood_sapling.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.tff_portal.get(), RenderType.translucent());

@@ -28,6 +28,7 @@ import com.gmail.thelilchicken01.tff.item.MechanicalLeggings;
 import com.gmail.thelilchicken01.tff.item.MeteorWand;
 import com.gmail.thelilchicken01.tff.item.PocketSand;
 import com.gmail.thelilchicken01.tff.item.PurifyingPowder;
+import com.gmail.thelilchicken01.tff.item.ShadowBow;
 import com.gmail.thelilchicken01.tff.item.ShieldBook;
 import com.gmail.thelilchicken01.tff.item.VolatileApple;
 import com.gmail.thelilchicken01.tff.item.VolatileNecklace;
@@ -240,6 +241,10 @@ public class ItemInit {
 	//Shield Book
 	public static final RegistryObject<Item> shield_book = items.register("shield_book", 
 			() -> new ShieldBook());
+	
+	//Shadow Bow
+	public static final RegistryObject<Item> shadow_bow = items.register("shadow_bow", 
+			() -> new ShadowBow());
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);
