@@ -20,6 +20,8 @@ public final class TagInit {
 		
 		public static final TagKey<Block> rotting_woods = mod("rotting_woods");
 		
+		public static final TagKey<Block> tff_stones = mod("tff_stones");
+		
 		private static TagKey<Block> mod(String path) {
 			return BlockTags.create(new ResourceLocation(TheFesterForest.modid, path));
 		}
@@ -29,6 +31,8 @@ public final class TagInit {
 	public static final class Items {
 		
 		public static final TagKey<Item> slimy_woods = mod("slimy_woods");
+		
+		public static final TagKey<Item> tff_stones = mod("tff_stones");
 		
 		private static TagKey<Item> mod(String path) {
 			return ItemTags.create(new ResourceLocation(TheFesterForest.modid, path));
