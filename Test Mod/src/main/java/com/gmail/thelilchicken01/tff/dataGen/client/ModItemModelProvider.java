@@ -89,6 +89,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.mechanical_boots.get());
 		oneLayerItem(ItemInit.mechanical_apple.get());
 		oneLayerItem(ItemInit.shield_book.get());
+		oneLayerItem(ItemInit.volatile_boots.get());
+		oneLayerItem(ItemInit.volatile_chestplate.get());
+		oneLayerItem(ItemInit.volatile_leggings.get());
+		oneLayerItem(ItemInit.volatile_helmet.get());
 		
 		//Simple handheld items
 		handheldItem(ItemInit.bone_pickaxe.get());

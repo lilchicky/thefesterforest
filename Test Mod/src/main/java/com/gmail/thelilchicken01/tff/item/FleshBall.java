@@ -21,6 +21,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class FleshBall extends Item {
 	
+	private String[] drops = {"Wight", "Fester Forest Loot Chests"};
+	
 	private int duration = 8;
 	
 	public FleshBall(Properties properties) {
@@ -51,11 +53,21 @@ public class FleshBall extends Item {
 			lore.add(new TextComponent("Right click to apply regeneration 20 and slowness").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("5 for " + duration + " seconds.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("A goopy ball of warm, pulsating flesh.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
 			lore.add(new TextComponent(""));
 		}
 		

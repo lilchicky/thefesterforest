@@ -34,6 +34,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class MeteorWand extends ProjectileWeaponItem {
 	
+	private String[] drops = {"The Forgemaster"};
+	
 	protected int shotDamage = 20;
 	protected double inaccuracy;
 	protected boolean ignoreInvulnerability = true;
@@ -170,12 +172,22 @@ public class MeteorWand extends ProjectileWeaponItem {
 			lore.add(new TextComponent("The meteor does " + shotDamage + " damage and will land where").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("you right clicked. Doesn't work well indoors!").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("A heavy metal rod with a scorching meteor attached to one end.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("Used by the Forgemaster to summon meteors.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
 			lore.add(new TextComponent(""));
 		}
 		

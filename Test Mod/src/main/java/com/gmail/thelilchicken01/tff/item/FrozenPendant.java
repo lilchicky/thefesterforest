@@ -28,6 +28,8 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public class FrozenPendant extends Item implements ICurioItem {
 	
+	private String[] drops = {"Banshee"};
+	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 	
 	private int enemySlowdownSeconds = 5;
@@ -84,6 +86,11 @@ public class FrozenPendant extends Item implements ICurioItem {
 		
 		lore.add(new TextComponent("When worn in the charm slot, leeches the").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("movement speed of nearby monsters.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
+		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+		for (int x = 0; x < drops.length; x++) {
+			lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+		}
 		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);

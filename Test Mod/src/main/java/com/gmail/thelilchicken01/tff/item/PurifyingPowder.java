@@ -14,6 +14,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class PurifyingPowder extends Item {
 	
+	private String[] drops = {"Rotting Skeleton", "The Forgemaster"};
+	
 	public PurifyingPowder(Properties properties) {
 		super(properties);
 		
@@ -25,6 +27,11 @@ public class PurifyingPowder extends Item {
 		
 		lore.add(new TextComponent("A mysterious powder, capable of turning").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("items into different items.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
+		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+		for (int x = 0; x < drops.length; x++) {
+			lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+		}
 		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);

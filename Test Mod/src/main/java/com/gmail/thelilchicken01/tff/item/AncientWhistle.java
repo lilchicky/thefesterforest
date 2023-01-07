@@ -28,6 +28,8 @@ public class AncientWhistle extends Item {
 	
 	private int whistleDamage = 5;
 	
+	private String[] drops = {"Banshee"};
+	
 	public AncientWhistle(Properties properties) {
 		super(properties);
 		
@@ -77,11 +79,21 @@ public class AncientWhistle extends Item {
 			lore.add(new TextComponent("Both yourself and any entities hit will take " + whistleDamage).withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("armor piercing damage.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("An ancient whistle, releasing a deafening pitch when blown.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
 			lore.add(new TextComponent(""));
 		}
 		

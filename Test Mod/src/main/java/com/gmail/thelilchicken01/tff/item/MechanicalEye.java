@@ -26,6 +26,8 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public class MechanicalEye extends Item implements ICurioItem {
 	
+	private String[] drops = {"The Forgemaster"};
+	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
 	public MechanicalEye(Properties properties) {
@@ -93,6 +95,11 @@ public class MechanicalEye extends Item implements ICurioItem {
 		lore.add(new TextComponent("The mechanical eye of the Forgemaster.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("Shoving it into your skull grants enhanced vision").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("and accuracy.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
+		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+		for (int x = 0; x < drops.length; x++) {
+			lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+		}
 		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);

@@ -17,6 +17,11 @@ public enum ModArmorMaterial implements ArmorMaterial {
 	// Mechanical Armor
 	MECHANICAL("mechanical", 67, new int[]{2, 4, 5, 3}, 32, SoundEvents.ARMOR_EQUIP_IRON, 3.0F, 0.5F, () -> {
 	    return Ingredient.of(Items.IRON_INGOT);
+	}),
+	
+	//Volatile Armor
+	VOLATILE("volatile", 15, new int[]{3, 6, 8, 3}, 10, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.0F, () -> {
+	    return Ingredient.of(Items.BLAZE_POWDER);
 	});
 
 	private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};

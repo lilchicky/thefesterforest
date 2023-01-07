@@ -37,6 +37,8 @@ public class BoneLauncher extends ProjectileWeaponItem {
 	protected float projectileSpeed = 0.8f;
 	
 	protected Supplier<Ingredient> repairMaterial;
+	
+	private String[] drops = {"Not Implemented"};
 
 	public BoneLauncher(Properties properties, double inaccuracy) {
 		super(properties);
@@ -116,11 +118,21 @@ public class BoneLauncher extends ProjectileWeaponItem {
 			lore.add(new TextComponent("Each bone does 2 damage, ignoring armor and invulnerability").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("ticks.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("An old stick with a broken bone fitted to the end.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
 			lore.add(new TextComponent(""));
 		}
 		

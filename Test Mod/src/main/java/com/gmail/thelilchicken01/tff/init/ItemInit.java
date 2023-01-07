@@ -31,6 +31,10 @@ import com.gmail.thelilchicken01.tff.item.PurifyingPowder;
 import com.gmail.thelilchicken01.tff.item.ShadowBow;
 import com.gmail.thelilchicken01.tff.item.ShieldBook;
 import com.gmail.thelilchicken01.tff.item.VolatileApple;
+import com.gmail.thelilchicken01.tff.item.VolatileBoots;
+import com.gmail.thelilchicken01.tff.item.VolatileChestplate;
+import com.gmail.thelilchicken01.tff.item.VolatileHelmet;
+import com.gmail.thelilchicken01.tff.item.VolatileLeggings;
 import com.gmail.thelilchicken01.tff.item.VolatileNecklace;
 import com.gmail.thelilchicken01.tff.item.VolatileSword;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
@@ -237,6 +241,22 @@ public class ItemInit {
 	//Mechanical Boots
 	public static final RegistryObject<Item> mechanical_boots = items.register("mechanical_boots", 
 			() -> new MechanicalBoots());
+	
+	//Volatile Helmet
+	public static final RegistryObject<Item> volatile_helmet = items.register("volatile_helmet", 
+			() -> new VolatileHelmet());
+		
+	//Volatile Chestplate
+	public static final RegistryObject<Item> volatile_chestplate = items.register("volatile_chestplate", 
+			() -> new VolatileChestplate());
+			
+	//Volatile Leggings
+	public static final RegistryObject<Item> volatile_leggings = items.register("volatile_leggings", 
+			() -> new VolatileLeggings());
+		
+	//Volatile Boots
+	public static final RegistryObject<Item> volatile_boots = items.register("volatile_boots", 
+			() -> new VolatileBoots());
 	
 	//Shield Book
 	public static final RegistryObject<Item> shield_book = items.register("shield_book", 

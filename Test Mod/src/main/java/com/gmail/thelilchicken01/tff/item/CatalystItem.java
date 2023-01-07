@@ -26,6 +26,9 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class CatalystItem  extends Item {
+	
+	private String[] drops = {"Overworld Dungeon Chests"};
+	
 	public CatalystItem() {
 		super (new Properties().tab(TheFesterForest.tff_tab).stacksTo(1).rarity(Rarity.RARE));
 	}
@@ -61,11 +64,21 @@ public class CatalystItem  extends Item {
 			lore.add(new TextComponent("The portal frame is built with Fester Bricks,").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("crafted from smelted Fester Ore.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("A rotting pile of organic material.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
 			lore.add(new TextComponent(""));
 		}
 		

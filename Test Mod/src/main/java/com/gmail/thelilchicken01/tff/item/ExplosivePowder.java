@@ -22,6 +22,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ExplosivePowder extends Item {
 	
+	private String[] drops = {"Volatile Ghost"};
+	
 	public ExplosivePowder(Properties properties) {
 		super(properties);
 		
@@ -53,11 +55,21 @@ public class ExplosivePowder extends Item {
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Right click to launch yourself somewhere.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("A bottle of a mysterious, highly reactive powder.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
 			lore.add(new TextComponent(""));
 		}
 		

@@ -30,6 +30,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class MechanicalLeggings extends ArmorItem {
 	
+	private String[] drops = {"The Forgemaster"};
+	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
 	public MechanicalLeggings() {
@@ -70,24 +72,6 @@ public class MechanicalLeggings extends ArmorItem {
 				}
 			}
 		}
-		if (getSetCount(player) == 4) {
-			if (!player.hasEffect(MobEffects.DIG_SPEED)) {
-				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 1, false, false));
-			}
-			else {
-				if (player.getEffect(MobEffects.DIG_SPEED).getDuration() < 40) {
-					player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 1, false, false));
-				}
-			}
-			if (!player.hasEffect(MobEffects.REGENERATION)) {
-				player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1, false, false));
-			}
-			else {
-				if (player.getEffect(MobEffects.REGENERATION).getDuration() < 40) {
-					player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1, false, false));
-				}
-			}
-		}
 		
 		super.onArmorTick(stack, level, player);
 	}
@@ -96,39 +80,21 @@ public class MechanicalLeggings extends ArmorItem {
 		
 		int wornPieces = 0;
 		
-		for (int x = 0; x <= 3; x++) {
-			
-			switch(x) {
-			
-			case 0:
-				if (player.getItemBySlot(EquipmentSlot.HEAD).toString()
-						.equals(new ItemStack(ItemInit.mechanical_helmet.get()).toString())) {
-					wornPieces++;
-				}
-				break;
-			case 1:
-				if (player.getItemBySlot(EquipmentSlot.CHEST).toString()
-						.equals(new ItemStack(ItemInit.mechanical_chestplate.get()).toString())) {
-					wornPieces++;
-				}
-				break;
-			case 2:
-				if (player.getItemBySlot(EquipmentSlot.LEGS).toString()
-						.equals(new ItemStack(ItemInit.mechanical_leggings.get()).toString())) {
-					wornPieces++;
-				}
-				break;
-			case 3:
-				if (player.getItemBySlot(EquipmentSlot.FEET).toString()
-						.equals(new ItemStack(ItemInit.mechanical_boots.get()).toString())) {
-					wornPieces++;
-				}
-				break;
-			default:
-				break;
-			
-			}
-			
+		if (player.getItemBySlot(EquipmentSlot.HEAD).toString()
+				.equals(new ItemStack(ItemInit.mechanical_helmet.get()).toString())) {
+			wornPieces++;
+		}
+		if (player.getItemBySlot(EquipmentSlot.CHEST).toString()
+				.equals(new ItemStack(ItemInit.mechanical_chestplate.get()).toString())) {
+			wornPieces++;
+		}
+		if (player.getItemBySlot(EquipmentSlot.LEGS).toString()
+				.equals(new ItemStack(ItemInit.mechanical_leggings.get()).toString())) {
+			wornPieces++;
+		}
+		if (player.getItemBySlot(EquipmentSlot.FEET).toString()
+				.equals(new ItemStack(ItemInit.mechanical_boots.get()).toString())) {
+			wornPieces++;
 		}
 		
 		return wornPieces;
@@ -152,12 +118,22 @@ public class MechanicalLeggings extends ArmorItem {
 			lore.add(new TextComponent("2+ Pieces: Haste 1").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("4 Pieces: Haste 2 and Regeneration 2").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("The Forgemaster's leggings.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("Equipping grants a large boost to move speed.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
 			lore.add(new TextComponent(""));
 		}
 		

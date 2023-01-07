@@ -24,6 +24,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class DualWieldSword extends Item {
 	
+	private String[] drops = {"Fester Forest Loot Chests"};
+	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
 	public DualWieldSword() {
@@ -48,6 +50,11 @@ public class DualWieldSword extends Item {
 		
 		lore.add(new TextComponent("A short sword, extremely effective when used").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("alongside another weapon.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
+		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+		for (int x = 0; x < drops.length; x++) {
+			lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+		}
 		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);

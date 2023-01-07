@@ -27,6 +27,8 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public class VolatileNecklace extends Item implements ICurioItem {
 	
+	private String[] drops = {"Fester Forest Loot Chests"};
+	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
 	public VolatileNecklace(Properties properties) {
@@ -52,11 +54,11 @@ public class VolatileNecklace extends Item implements ICurioItem {
 		
 		if (slotContext.entity().isOnFire()) {
 			if (!slotContext.entity().hasEffect(MobEffects.DAMAGE_BOOST)) {
-				slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, 0, false, false));
+				slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, 1, false, false));
 			}
 			else {
 				if (slotContext.entity().getEffect(MobEffects.DAMAGE_BOOST).getDuration() < 40) {
-					slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, 0, false, false));
+					slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, 1, false, false));
 				}
 			}
 		}
@@ -73,11 +75,21 @@ public class VolatileNecklace extends Item implements ICurioItem {
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("While on fire, gain strength.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("A scorching necklace fitted with a fiery charm.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
 			lore.add(new TextComponent(""));
 		}
 		

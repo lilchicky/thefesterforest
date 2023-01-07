@@ -27,6 +27,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class PocketSand extends Item {
 	
+	private String[] drops = {"Reetle"};
+	
 	private int sandDamage = 2;
 	private int slownessDuration = 4;
 	private int blindnessDuration = 4;
@@ -92,11 +94,21 @@ public class PocketSand extends Item {
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("For Solomon").withStyle(ChatFormatting.RED));
 			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("A mysterious pile of sand, seemingly never going away.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
 			lore.add(new TextComponent(""));
 		}
 		

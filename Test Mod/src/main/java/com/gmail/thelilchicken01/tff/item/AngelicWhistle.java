@@ -31,6 +31,8 @@ public class AngelicWhistle extends Item {
 	private int whistleDamage = 10;
 	private int slowFallDuration = 10;
 	
+	private String[] drops = {"None"};
+	
 	public AngelicWhistle(Properties properties) {
 		super(properties);
 		
@@ -82,11 +84,21 @@ public class AngelicWhistle extends Item {
 			lore.add(new TextComponent("recieve slow falling for " + slowFallDuration + " seconds.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("Mobs hit around you take " + whistleDamage + " armor piercing damage.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("An impossibly light whistle, crafted from an old Ancient Whistle.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
 			lore.add(new TextComponent(""));
 		}
 		

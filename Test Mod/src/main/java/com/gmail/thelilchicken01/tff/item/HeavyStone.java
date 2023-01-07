@@ -24,6 +24,8 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public class HeavyStone extends Item implements ICurioItem {
 	
+	private String[] drops = {"Fester Forest Loot Chests"};
+	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
 	public HeavyStone(Properties properties) {
@@ -62,6 +64,11 @@ public class HeavyStone extends Item implements ICurioItem {
 		
 		lore.add(new TextComponent("A very dense stone, making you much too").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("heavy to levitate.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
+		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+		for (int x = 0; x < drops.length; x++) {
+			lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+		}
 		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);

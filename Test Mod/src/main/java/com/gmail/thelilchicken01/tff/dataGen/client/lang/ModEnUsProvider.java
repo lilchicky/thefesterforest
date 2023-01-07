@@ -121,6 +121,10 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.shield_book.get(), "Shield Book");
 		add(ItemInit.bone_pickaxe.get(), "Bone Pickaxe");
 		add(ItemInit.shadow_bow.get(), "Shadow Bow");
+		add(ItemInit.volatile_boots.get(), "Volatile Boots");
+		add(ItemInit.volatile_chestplate.get(), "Volatile Chestplate");
+		add(ItemInit.volatile_leggings.get(), "Volatile Leggings");
+		add(ItemInit.volatile_helmet.get(), "Volatile Helmet");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}

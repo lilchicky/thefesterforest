@@ -25,6 +25,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class LifeScythe extends SwordItem {
 	
+	private String[] drops = {"Wight", "Fester Forest Loot Chests"};
+	
 	private int absorptionSeconds = 15;
 	private int resistanceSeconds = 15;
 	private int hungerSeconds = 40;
@@ -80,12 +82,22 @@ public class LifeScythe extends SwordItem {
 			lore.add(new TextComponent("at a cost, however - you become ravenously hungry for").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(hungerSeconds + " seconds.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
+			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("A vibrating, living scythe, capable of healing").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("its wielder on every attack.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < drops.length; x++) {
+				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			}
 			lore.add(new TextComponent(""));
 		}
 		

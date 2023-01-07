@@ -16,6 +16,8 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ForgemasterHammer extends SwordItem {
+	
+	private String[] drops = {"The Forgemaster"};
 
 	public ForgemasterHammer(Tier tier, int damage, float aspeed, Properties properties) {
 		super(tier, damage, aspeed, properties);
@@ -41,6 +43,11 @@ public class ForgemasterHammer extends SwordItem {
 		lore.add(new TextComponent("forged from an unknown metal and weighing tons.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("The heavy weight of the hammer throws anything it").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("touches.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
+		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+		for (int x = 0; x < drops.length; x++) {
+			lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+		}
 		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);
