@@ -9,6 +9,7 @@ import com.gmail.thelilchicken01.tff.item.BoneLauncher;
 import com.gmail.thelilchicken01.tff.item.BonePickaxe;
 import com.gmail.thelilchicken01.tff.item.BoneScythe;
 import com.gmail.thelilchicken01.tff.item.BrittleBranch;
+import com.gmail.thelilchicken01.tff.item.BugCarcass;
 import com.gmail.thelilchicken01.tff.item.BugEggs;
 import com.gmail.thelilchicken01.tff.item.CatalystItem;
 import com.gmail.thelilchicken01.tff.item.DualWieldSword;
@@ -88,8 +89,7 @@ public class ItemInit {
 	
 	//Bug Carcass
 	public static final RegistryObject<Item> bug_carcass = register("bug_carcass", 
-			() -> new Item(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().saturationMod(1.2f).nutrition(8).fast()
-					.build())));
+			() -> new BugCarcass());
 	
 	//Rotting Brick
 	public static final RegistryObject<Item> rotting_brick = register("rotting_brick", 
@@ -185,7 +185,7 @@ public class ItemInit {
 	//Bone Scythe
 	public static final RegistryObject<Item> bone_scythe = register("bone_scythe", 
 			() -> new BoneScythe(ModTiers.BONE, 1, -3.0f, new Properties().tab(TheFesterForest.tff_tab)
-					.durability(1200)));
+					.durability(561)));
 	
 	//Explosive Powder
 	public static final RegistryObject<Item> explosive_powder = register("explosive_powder",
