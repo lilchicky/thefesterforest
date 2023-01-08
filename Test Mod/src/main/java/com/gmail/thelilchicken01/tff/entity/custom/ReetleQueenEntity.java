@@ -3,20 +3,19 @@ package com.gmail.thelilchicken01.tff.entity.custom;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ExperienceOrb;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
@@ -38,6 +37,8 @@ public class ReetleQueenEntity extends Monster implements IAnimatable {
 	
 	private int spawnSeconds = 2;
 	private int spawnCooldown;
+	
+	private boolean pacified = false;
 
 	public ReetleQueenEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
@@ -79,9 +80,9 @@ public class ReetleQueenEntity extends Monster implements IAnimatable {
 	@Override
 	public void tick() {
 		
-		spawnCooldown++;
+		if(!pacified) spawnCooldown++;
 		
-		if (spawnCooldown > spawnSeconds * 20 && getTarget() instanceof Player) {
+		if (spawnCooldown > spawnSeconds * 20 && getTarget() instanceof Player && !pacified) {
 			
 			CrunchBeetleEntity minion = new CrunchBeetleEntity(ModEntityTypes.crunch_beetle.get(), getLevel());
 			
@@ -93,6 +94,13 @@ public class ReetleQueenEntity extends Monster implements IAnimatable {
 			
 			spawnCooldown = 0;
 			
+		}
+		
+		if (this.hasCustomName()) {
+			if (this.getCustomName().equals(new TextComponent("Little Lady"))) {
+				this.targetSelector.removeAllGoals();
+				pacified = true;
+			}
 		}
 		
 		super.tick();
