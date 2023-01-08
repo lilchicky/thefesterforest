@@ -99,11 +99,19 @@ public class ReetleQueenEntity extends Monster implements IAnimatable {
 		if (this.hasCustomName()) {
 			if (this.getCustomName().equals(new TextComponent("Little Lady"))) {
 				this.targetSelector.removeAllGoals();
+				this.goalSelector.removeGoal(new MeleeAttackGoal(this, 1.005, false));
+				this.setTarget(null);
 				pacified = true;
 			}
 		}
 		
 		super.tick();
+	}
+	
+	@Override
+	public boolean canBeLeashed(Player p_21418_) {
+		
+		return pacified ? true : false;
 	}
 	
 	protected void playStepSound(BlockPos pos, BlockState blockIn) {
