@@ -22,7 +22,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class BugEggs extends Item {
 	
-	private String[] drops = {"Reetle"};
+	private String[] drops = {"Reetle Queen", "Fester Forest Loot Chests"};
 	
 	private int cooldownSeconds = 20;
 	

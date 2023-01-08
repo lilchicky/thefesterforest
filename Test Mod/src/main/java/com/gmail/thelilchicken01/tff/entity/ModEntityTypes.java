@@ -6,6 +6,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PylonEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.ReetleQueenEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
@@ -69,6 +70,11 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<ForgemasterEntity>> forgemaster =
 			entity_types.register("forgemaster", () -> EntityType.Builder.of(ForgemasterEntity::new, MobCategory.MONSTER)
 					.sized(1.75f, 4.2f).build(new ResourceLocation(TheFesterForest.modid, "forgemaster").toString()));
+	
+	//Reetle Queen
+	public static final RegistryObject<EntityType<ReetleQueenEntity>> reetle_queen =
+			entity_types.register("reetle_queen", () -> EntityType.Builder.of(ReetleQueenEntity::new, MobCategory.MONSTER)
+					.sized(1.4f, 0.5f).build(new ResourceLocation(TheFesterForest.modid, "reetle_queen").toString()));
 	
 	//Brittle Branch Bullet
 	

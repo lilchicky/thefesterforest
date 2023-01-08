@@ -14,7 +14,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class PurifyingPowder extends Item {
 	
-	private String[] drops = {"Rotting Skeleton", "The Forgemaster"};
+	private String[] drops = {"Rotting Skeleton", "The Forgemaster", "Fester Forest Loot Chests"};
 	
 	public PurifyingPowder(Properties properties) {
 		super(properties);

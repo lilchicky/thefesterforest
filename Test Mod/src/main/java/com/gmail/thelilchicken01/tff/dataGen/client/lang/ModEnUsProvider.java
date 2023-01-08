@@ -39,7 +39,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.rotting_catalyst.get(), "Rotting Catalyst");
 		add(ItemInit.volatileSword.get(), "§6Volatile Sword");
 		add(ItemInit.ancientGreatsword.get(), "Ancient Greatsword");
-		add(BlockInit.volatileLamp.get(), "Volatile Lamp");
+		add(BlockInit.volatileLamp.get(), "Reetlelight");
 		add(ItemInit.volatileApple.get(), "§6Volatile Apple");
 		add(BlockInit.rotting_wood.get(), "Rottingwood");
 		add(BlockInit.rotting_log.get(), "Rottingwood Log");
@@ -125,6 +125,9 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.volatile_chestplate.get(), "Volatile Chestplate");
 		add(ItemInit.volatile_leggings.get(), "Volatile Leggings");
 		add(ItemInit.volatile_helmet.get(), "Volatile Helmet");
+		add(ModEntityTypes.reetle_queen.get(), "Reetle Queen");
+		add(ItemInit.reetle_queen_spawn_egg.get(), "Reetle Queen Spawn Egg");
+		add(ItemInit.reetle_reagents.get(), "Reetle Reagents");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}

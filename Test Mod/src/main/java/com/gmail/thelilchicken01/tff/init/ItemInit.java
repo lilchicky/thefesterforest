@@ -5,6 +5,7 @@ import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.item.AncientGreatsword;
 import com.gmail.thelilchicken01.tff.item.AncientWhistle;
 import com.gmail.thelilchicken01.tff.item.AngelicWhistle;
+import com.gmail.thelilchicken01.tff.item.ReetleReagents;
 import com.gmail.thelilchicken01.tff.item.BoneLauncher;
 import com.gmail.thelilchicken01.tff.item.BonePickaxe;
 import com.gmail.thelilchicken01.tff.item.BoneScythe;
@@ -114,6 +115,11 @@ public class ItemInit {
 	//Banshee Spawn Egg
 	public static final RegistryObject<Item> banshee_spawn_egg = items.register("banshee_spawn_egg", 
 			() -> new ForgeSpawnEggItem(ModEntityTypes.banshee, 0x1a1a1a, 0x2b2b2b, //Background, Spots
+					new Item.Properties().tab(TheFesterForest.tff_tab)));
+	
+	//Reetle Queen Spawn Egg
+	public static final RegistryObject<Item> reetle_queen_spawn_egg = items.register("reetle_queen_spawn_egg", 
+			() -> new ForgeSpawnEggItem(ModEntityTypes.reetle_queen, 0xc46543, 0x35cd28, //Background, Spots
 					new Item.Properties().tab(TheFesterForest.tff_tab)));
 	
 	//Volatile Ghost Spawn Egg
@@ -265,6 +271,10 @@ public class ItemInit {
 	//Shadow Bow
 	public static final RegistryObject<Item> shadow_bow = items.register("shadow_bow", 
 			() -> new ShadowBow());
+	
+	//Bag of Reetle Legs
+	public static final RegistryObject<Item> reetle_reagents = items.register("reetle_reagents", 
+			() -> new ReetleReagents());
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);

@@ -15,7 +15,7 @@ import net.minecraft.world.level.Level;
 
 public class BugCarcass extends Item {
 	
-	private String[] drops = {"Reetle"};
+	private String[] drops = {"Reetle", "Reetle Queen", "Fester Forest Loot Chests"};
 
 	public BugCarcass() {
 		super(new Properties().tab(TheFesterForest.tff_tab).food(

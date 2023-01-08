@@ -47,6 +47,11 @@ public class CrunchBeetleEntity extends Animal implements IAnimatable {
 				.add(Attributes.MOVEMENT_SPEED, 0.3f).build();
 	}
 	
+	@Override
+	public boolean isPushable() {
+		return false;
+	}
+	
 	protected void registerGoals() {
 		
 		//first num is prio
