@@ -123,7 +123,7 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 			
 			primedTimer = 0;
 			primed = false;
-			this.setHealth(0.0f);
+			this.remove(RemovalReason.KILLED);
 		}
 		
 	}
