@@ -5,7 +5,6 @@ import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.item.AncientGreatsword;
 import com.gmail.thelilchicken01.tff.item.AncientWhistle;
 import com.gmail.thelilchicken01.tff.item.AngelicWhistle;
-import com.gmail.thelilchicken01.tff.item.ReetleReagents;
 import com.gmail.thelilchicken01.tff.item.BoneLauncher;
 import com.gmail.thelilchicken01.tff.item.BonePickaxe;
 import com.gmail.thelilchicken01.tff.item.BoneScythe;
@@ -30,6 +29,8 @@ import com.gmail.thelilchicken01.tff.item.MechanicalLeggings;
 import com.gmail.thelilchicken01.tff.item.MeteorWand;
 import com.gmail.thelilchicken01.tff.item.PocketSand;
 import com.gmail.thelilchicken01.tff.item.PurifyingPowder;
+import com.gmail.thelilchicken01.tff.item.ReetleReagents;
+import com.gmail.thelilchicken01.tff.item.ReinforcedElytra;
 import com.gmail.thelilchicken01.tff.item.ShadowBow;
 import com.gmail.thelilchicken01.tff.item.ShieldBook;
 import com.gmail.thelilchicken01.tff.item.VolatileApple;
@@ -275,6 +276,10 @@ public class ItemInit {
 	//Bag of Reetle Legs
 	public static final RegistryObject<Item> reetle_reagents = items.register("reetle_reagents", 
 			() -> new ReetleReagents());
+	
+	//Reetle Elytra
+	public static final RegistryObject<Item> reetle_elytra = items.register("reetle_elytra", 
+			() -> new ReinforcedElytra());
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);

@@ -128,6 +128,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ModEntityTypes.reetle_queen.get(), "Reetle Queen");
 		add(ItemInit.reetle_queen_spawn_egg.get(), "Reetle Queen Spawn Egg");
 		add(ItemInit.reetle_reagents.get(), "Reetle Reagents");
+		add(ItemInit.reetle_elytra.get(), "Reetle Shell Elytra");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}

@@ -1,6 +1,7 @@
 package com.gmail.thelilchicken01.tff.client;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
+import com.gmail.thelilchicken01.tff.elytra.CustomElytraRenderProperties;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.client.BansheeRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.CrunchBeetleRenderer;
