@@ -11,8 +11,13 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 90,
+          "weight": 70,
           "name": "tff:bug_carcass"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 90,
+          "name": "tff:rotting_carrot"
         },
         {
           "type": "minecraft:item",

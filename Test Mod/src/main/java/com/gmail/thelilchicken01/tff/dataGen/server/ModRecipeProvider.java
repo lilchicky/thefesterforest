@@ -141,6 +141,16 @@ public class ModRecipeProvider extends RecipeProvider {
 					new ResourceLocation(TheFesterForest.modid, 
 							BlockInit.slimy_fence_gate.get().getRegistryName().getPath()));
 		
+		//Rotting Pie
+		ShapedRecipeBuilder.shaped(ItemInit.rotting_pie.get())
+			.define('a', ItemInit.rotting_carrot.get())
+			.define('b', ItemInit.bug_carcass.get())
+			.unlockedBy("has_" + BlockInit.slimy_planks.get().getRegistryName(), 
+					has(BlockInit.slimy_planks.get().asItem()))
+			.pattern(" b ").pattern("bab").pattern(" b ").save(consumer, 
+					new ResourceLocation(TheFesterForest.modid, 
+							ItemInit.rotting_pie.get().getRegistryName().getPath()));
+		
 		
 		ShapedRecipeBuilder.shaped(ItemInit.angelic_whistle.get(), 1) // add , int to get number of output
 		.define('a', ItemInit.ancient_whistle.get().asItem())

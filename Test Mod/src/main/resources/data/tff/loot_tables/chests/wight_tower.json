@@ -21,6 +21,16 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 40,
+          "name": "tff:rotting_carrot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 30,
+          "name": "tff:rotting_pie"
+        },
+        {
+          "type": "minecraft:item",
           "weight": 80,
           "name": "minecraft:emerald"
         },

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " b ",
+    "bab",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "tff:rotting_carrot"
+    },
+    "b": {
+      "item": "tff:bug_carcass"
+    }
+  },
+  "result": {
+    "item": "tff:rotting_pie"
+  }
+}
