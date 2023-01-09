@@ -29,8 +29,12 @@ import com.gmail.thelilchicken01.tff.item.MechanicalLeggings;
 import com.gmail.thelilchicken01.tff.item.MeteorWand;
 import com.gmail.thelilchicken01.tff.item.PocketSand;
 import com.gmail.thelilchicken01.tff.item.PurifyingPowder;
+import com.gmail.thelilchicken01.tff.item.ReetleBoots;
+import com.gmail.thelilchicken01.tff.item.ReetleChestplate;
+import com.gmail.thelilchicken01.tff.item.ReetleElytra;
+import com.gmail.thelilchicken01.tff.item.ReetleHelmet;
+import com.gmail.thelilchicken01.tff.item.ReetleLeggings;
 import com.gmail.thelilchicken01.tff.item.ReetleReagents;
-import com.gmail.thelilchicken01.tff.item.ReinforcedElytra;
 import com.gmail.thelilchicken01.tff.item.ShadowBow;
 import com.gmail.thelilchicken01.tff.item.ShieldBook;
 import com.gmail.thelilchicken01.tff.item.VolatileApple;
@@ -279,7 +283,23 @@ public class ItemInit {
 	
 	//Reetle Elytra
 	public static final RegistryObject<Item> reetle_elytra = items.register("reetle_elytra", 
-			() -> new ReinforcedElytra());
+			() -> new ReetleElytra());
+	
+	//Reetle Helmet
+	public static final RegistryObject<Item> reetle_helmet = items.register("reetle_helmet", 
+			() -> new ReetleHelmet());
+			
+	//Reetle Chestplate
+	public static final RegistryObject<Item> reetle_chestplate = items.register("reetle_chestplate", 
+			() -> new ReetleChestplate());
+				
+	//Reetle Leggings
+	public static final RegistryObject<Item> reetle_leggings = items.register("reetle_leggings", 
+			() -> new ReetleLeggings());
+			
+	//Reetle Boots
+	public static final RegistryObject<Item> reetle_boots = items.register("reetle_boots", 
+			() -> new ReetleBoots());
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);

@@ -26,7 +26,7 @@ import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
-import com.gmail.thelilchicken01.tff.item.ReinforcedElytra;
+import com.gmail.thelilchicken01.tff.item.ReetleElytra;
 import com.gmail.thelilchicken01.tff.particle.BloodParticle;
 import com.gmail.thelilchicken01.tff.particle.BoneParticle;
 import com.gmail.thelilchicken01.tff.particle.BranchParticle;
@@ -78,7 +78,7 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(ModEntityTypes.reetle_queen.get(), ReetleQueenRenderer::new);
 		
 		ItemProperties.register(ItemInit.reetle_elytra.get(), new ResourceLocation(TheFesterForest.modid, "broken"),
-				(stack, arg1, arg2, arg3) -> ReinforcedElytra.isUsable(stack) ? 0 : 1);
+				(stack, arg1, arg2, arg3) -> ReetleElytra.isUsable(stack) ? 0 : 1);
 	}
 	
 	@SubscribeEvent
