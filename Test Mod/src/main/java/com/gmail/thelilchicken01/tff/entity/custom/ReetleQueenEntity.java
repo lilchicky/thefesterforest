@@ -89,6 +89,7 @@ public class ReetleQueenEntity extends Monster implements IAnimatable {
 			minion.setPos(getX(), getY(), getZ());
 			minion.setTarget(getTarget());
 			minion.setHealth(1.0f);
+			minion.setSummoned();
 			
 			getLevel().addFreshEntity(minion);
 			

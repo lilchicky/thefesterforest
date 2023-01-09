@@ -34,6 +34,8 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class CrunchBeetleEntity extends Animal implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
+	
+	private boolean summonedByQueen = false;
 
 	public CrunchBeetleEntity(EntityType<? extends Animal> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
@@ -62,6 +64,18 @@ public class CrunchBeetleEntity extends Animal implements IAnimatable {
 		this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.00));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers(CrunchBeetleEntity.class));
+		
+	}
+	
+	public void setSummoned() {
+		
+		summonedByQueen = true;
+		
+	}
+	
+	public boolean isSummoned() {
+		
+		return summonedByQueen;
 		
 	}
 	

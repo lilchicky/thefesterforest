@@ -59,12 +59,17 @@ public class ReetleQueenAntennae extends Item implements ICurioItem {
 					CrunchBeetleEntity beetle = (CrunchBeetleEntity) nearbyEntities.get(x);
 					PlayerCrunchBeetleEntity tamedBeetle = new PlayerCrunchBeetleEntity(ModEntityTypes.player_crunch_beetle.get(), world);
 					
-					tamedBeetle.setPos(beetle.getX(), beetle.getY(), beetle.getZ());
-					tamedBeetle.setLifeSpanSeconds(120);
-					tamedBeetle.setOwnerUUID(player.getUUID());
+					if (beetle.isSummoned()) {
+						beetle.setTarget(null);
+					}
+					else {
+						tamedBeetle.setPos(beetle.getX(), beetle.getY(), beetle.getZ());
+						tamedBeetle.setLifeSpanSeconds(120);
+						tamedBeetle.setOwnerUUID(player.getUUID());
 					
-					world.addFreshEntity(tamedBeetle);
-					beetle.remove(RemovalReason.KILLED);
+						world.addFreshEntity(tamedBeetle);
+						beetle.remove(RemovalReason.KILLED);
+					}
 					
 					
 				}
