@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 10,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 100,
+          "name": "tff:bug_carcass"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "tff:bug_eggs"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 50,
+          "name": "minecraft:bone"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tff:reetle_shell"
+        }
+      ]
+    }
+  ]
+}

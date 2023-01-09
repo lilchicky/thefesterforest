@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:reetle_shell_chestplate"
+    ]
+  },
+  "criteria": {
+    "has_tff:reetle_shell": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:reetle_shell"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:reetle_shell_chestplate"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:reetle_shell",
+      "has_the_recipe"
+    ]
+  ]
+}

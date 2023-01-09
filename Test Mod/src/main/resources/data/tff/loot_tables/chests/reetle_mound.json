@@ -64,17 +64,8 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:cocoa_beans",
-          "functions": [
-            {
-              "function": "minecraft:set_name",
-              "name": "Reetle Poop"
-            },
-            {
-              "function": "minecraft:set_count",
-              "count": 43
-            }
-          ]
+          "name": "tff:reetle_shell",
+          "weight": 1
         }
       ]
     }

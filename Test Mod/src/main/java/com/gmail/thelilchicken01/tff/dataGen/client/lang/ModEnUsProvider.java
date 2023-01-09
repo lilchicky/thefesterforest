@@ -133,6 +133,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.reetle_chestplate.get(), "Reetle Chestplate");
 		add(ItemInit.reetle_leggings.get(), "Reetle Leggings");
 		add(ItemInit.reetle_boots.get(), "Reetle Boots");
+		add(ItemInit.reetle_shell.get(), "Reetle Shell Plates");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}

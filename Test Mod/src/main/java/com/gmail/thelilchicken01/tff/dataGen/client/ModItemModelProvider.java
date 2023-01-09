@@ -99,6 +99,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.reetle_chestplate.get());
 		oneLayerItem(ItemInit.reetle_leggings.get());
 		oneLayerItem(ItemInit.reetle_boots.get());
+		oneLayerItem(ItemInit.reetle_shell.get());
 		
 		//Simple handheld items
 		handheldItem(ItemInit.bone_pickaxe.get());

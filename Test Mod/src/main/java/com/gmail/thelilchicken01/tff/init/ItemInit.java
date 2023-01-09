@@ -35,6 +35,7 @@ import com.gmail.thelilchicken01.tff.item.ReetleElytra;
 import com.gmail.thelilchicken01.tff.item.ReetleHelmet;
 import com.gmail.thelilchicken01.tff.item.ReetleLeggings;
 import com.gmail.thelilchicken01.tff.item.ReetleReagents;
+import com.gmail.thelilchicken01.tff.item.ReetleShellPlates;
 import com.gmail.thelilchicken01.tff.item.ShadowBow;
 import com.gmail.thelilchicken01.tff.item.ShieldBook;
 import com.gmail.thelilchicken01.tff.item.VolatileApple;
@@ -300,6 +301,10 @@ public class ItemInit {
 	//Reetle Boots
 	public static final RegistryObject<Item> reetle_boots = items.register("reetle_boots", 
 			() -> new ReetleBoots());
+	
+	//Reetle Shell
+	public static final RegistryObject<Item> reetle_shell = items.register("reetle_shell", 
+			() -> new ReetleShellPlates());
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);

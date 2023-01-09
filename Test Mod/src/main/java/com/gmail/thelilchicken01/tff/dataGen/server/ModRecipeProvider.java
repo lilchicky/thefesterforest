@@ -12,6 +12,7 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.UpgradeRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -186,6 +187,29 @@ public class ModRecipeProvider extends RecipeProvider {
 			BlockInit.cracked_rotting_stone.get(), 1, 100)
 			.unlockedBy("has_" + BlockInit.rotting_stone.get().getRegistryName(), has(BlockInit.rotting_stone.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.modid, BlockInit.rotting_stone.get().getRegistryName().getPath() + "_smelting"));
+		
+		//Smithing
+		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_HELMET), Ingredient.of(ItemInit.reetle_shell.get()), ItemInit.reetle_helmet.get())
+			.unlocks("has_" + ItemInit.reetle_shell.get().getRegistryName(), has(ItemInit.reetle_shell.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.modid, ItemInit.reetle_shell.get().getRegistryName().getPath() + "_helmet"));
+		
+		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_CHESTPLATE), Ingredient.of(ItemInit.reetle_shell.get()), ItemInit.reetle_chestplate.get())
+			.unlocks("has_" + ItemInit.reetle_shell.get().getRegistryName(), has(ItemInit.reetle_shell.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.modid, ItemInit.reetle_shell.get().getRegistryName().getPath() + "_chestplate"));
+		
+		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_LEGGINGS), Ingredient.of(ItemInit.reetle_shell.get()), ItemInit.reetle_leggings.get())
+			.unlocks("has_" + ItemInit.reetle_shell.get().getRegistryName(), has(ItemInit.reetle_shell.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.modid, ItemInit.reetle_shell.get().getRegistryName().getPath() + "_leggings"));
+		
+		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_BOOTS), Ingredient.of(ItemInit.reetle_shell.get()), ItemInit.reetle_boots.get())
+			.unlocks("has_" + ItemInit.reetle_shell.get().getRegistryName(), has(ItemInit.reetle_shell.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.modid, ItemInit.reetle_shell.get().getRegistryName().getPath() + "_boots"));
+		
+		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.ELYTRA), Ingredient.of(ItemInit.reetle_shell.get()), ItemInit.reetle_elytra.get())
+			.unlocks("has_" + ItemInit.reetle_shell.get().getRegistryName(), has(ItemInit.reetle_shell.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.modid, ItemInit.reetle_shell.get().getRegistryName().getPath() + "_elytra"));
+		
+		
 	
 		
 	}

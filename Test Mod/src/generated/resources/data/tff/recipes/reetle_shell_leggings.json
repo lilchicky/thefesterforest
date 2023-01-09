@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:netherite_leggings"
+  },
+  "addition": {
+    "item": "tff:reetle_shell"
+  },
+  "result": {
+    "item": "tff:reetle_leggings"
+  }
+}

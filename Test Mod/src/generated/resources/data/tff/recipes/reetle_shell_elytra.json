@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:elytra"
+  },
+  "addition": {
+    "item": "tff:reetle_shell"
+  },
+  "result": {
+    "item": "tff:reetle_elytra"
+  }
+}
