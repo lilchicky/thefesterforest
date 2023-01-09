@@ -31,7 +31,7 @@ public class AngelicWhistle extends Item {
 	private int whistleDamage = 10;
 	private int slowFallDuration = 10;
 	
-	private String[] drops = {"None"};
+	private String[] drops = {"Crafted"};
 	
 	public AngelicWhistle(Properties properties) {
 		super(properties);
