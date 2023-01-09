@@ -1,6 +1,7 @@
 package com.gmail.thelilchicken01.tff.entity.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -81,6 +82,12 @@ public class PlayerCrunchBeetleEntity extends TamableAnimal implements IAnimatab
 		
 	}
 	
+	public void setLifeSpanSeconds(int seconds) {
+		
+		this.lifespanSeconds = seconds;
+		
+	}
+	
 	@Override
 	public void tick() {
 		
@@ -88,6 +95,7 @@ public class PlayerCrunchBeetleEntity extends TamableAnimal implements IAnimatab
 		
 		if (lifespanTicker > lifespanSeconds * 20) {
 			
+			getOwner().sendMessage(new TextComponent("Friendly Reetle has reached the end of its lifespan."), this.getUUID());
 			remove(RemovalReason.KILLED);
 			
 		}

@@ -5,7 +5,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 3977ace43b991c7f9d6bd07669e1a48cac38e9a4 assets/tff/blockstates/rotting_stone.json
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
-3f245dceb93e9759b959ae4dd4c1ae140d076a21 assets/tff/lang/en_us.json
+d25077fe2b2b805bf3f79de6012aaf6271f4bd83 assets/tff/lang/en_us.json
 74fa2fd936ff89c42c7a00a07dbdae54f43db419 assets/tff/models/block/cracked_rotting_stone.json
 76c8c0d9d0f865e28054565ba1f9f30e9c98f3d2 assets/tff/models/block/fester_ore.json
 fbc81cfbcece015c00cf47201a00fef65adc0e79 assets/tff/models/block/mossy_rotting_stone.json
@@ -42,6 +42,7 @@ b6a5dbecb1a680a2ea44fa4f27f7280d9dbd26f3 assets/tff/models/item/reetle_chestplat
 7c5d2a09f3237ca0b5ca659f70bffec2ace2a7da assets/tff/models/item/reetle_elytra.json
 1201cfa1baa581094415cd4d9a77d9a4ebeea769 assets/tff/models/item/reetle_helmet.json
 cc089c6fe7b0178cdc41cde3810dd4757a0bd3a8 assets/tff/models/item/reetle_leggings.json
+8bf9c1b34a5b7d7ea0200ed0e5c9aa702eb065b4 assets/tff/models/item/reetle_queen_antennae.json
 a8ae7d7c14e5bb6a440eaf6e55291d6fecd861b7 assets/tff/models/item/reetle_reagents.json
 800476114fcb411e58a2ac53b4922bc4bb700e79 assets/tff/models/item/reetle_shell.json
 ca3a2b7e93c7aa18594518dd6a0cf41efd3322dc assets/tff/models/item/rotting_brick.json

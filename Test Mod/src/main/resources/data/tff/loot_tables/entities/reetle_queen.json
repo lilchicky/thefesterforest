@@ -18,6 +18,11 @@
           "type": "minecraft:item",
           "weight": 50,
           "name": "minecraft:bone"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "tff:reetle_queen_antennae"
         }
       ]
     },

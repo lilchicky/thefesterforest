@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"tff:mechanical_eye"
+		"tff:mechanical_eye",
+		"tff:reetle_queen_antennae"
 	]
 }

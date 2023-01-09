@@ -54,6 +54,11 @@
         {
           "type": "minecraft:item",
           "weight": 1,
+          "name": "tff:reetle_queen_antennae"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
           "name": "minecraft:cocoa_beans",
           "functions": [
             {
