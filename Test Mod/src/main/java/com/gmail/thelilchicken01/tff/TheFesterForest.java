@@ -3,11 +3,10 @@ package com.gmail.thelilchicken01.tff;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.gmail.thelilchicken01.tff.client.ClientProxy;
-import com.gmail.thelilchicken01.tff.client.CommonProxy;
 import com.gmail.thelilchicken01.tff.config.TFFClientConfigs;
 import com.gmail.thelilchicken01.tff.config.TFFCommonConfigs;
-import com.gmail.thelilchicken01.tff.elytra.ModModelLayers;
+import com.gmail.thelilchicken01.tff.elytra.ReetleElytraArmorStandLayer;
+import com.gmail.thelilchicken01.tff.elytra.ReetleElytraLayer;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
@@ -16,7 +15,15 @@ import com.gmail.thelilchicken01.tff.villager.ModPOIs;
 import com.gmail.thelilchicken01.tff.world.dimension.ModDimensions;
 import com.gmail.thelilchicken01.tff.world.structures.ModStructures;
 
+import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.geom.EntityModelSet;
+import net.minecraft.client.renderer.entity.ArmorStandRenderer;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
+import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
@@ -24,12 +31,11 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import software.bernie.geckolib3.GeckoLib;
 
 // Thanks to Cy4's tutorials, got me from nothing to this :)
@@ -52,8 +58,6 @@ public class TheFesterForest {
 	public static final DamageSource sand_damage = new DamageSource(modid + "_sand_damage");
 	public static final DamageSource knockup_damage = new DamageSource(modid + "_knockup_damage");
 	
-	public static CommonProxy PROXY = DistExecutor.runForDist(() -> ClientProxy::new, () -> CommonProxy::new);
-	
 	public static final CreativeModeTab tff_tab = new CreativeModeTab(modid) {
 
 		@Override
@@ -66,9 +70,6 @@ public class TheFesterForest {
 	
 	public TheFesterForest() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		
-		bus.addListener(this::setupClient);
-		bus.addListener(this::setupEntityModelLayers);
 		
 		ItemInit.items.register(bus);
 		BlockInit.blocks.register(bus);
@@ -84,16 +85,27 @@ public class TheFesterForest {
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TFFCommonConfigs.SPEC, "tff-common.toml");
 		
 		MinecraftForge.EVENT_BUS.register(this);
+		
+		if (FMLEnvironment.dist.isClient()) bus.addListener(this::registerElytraLayer);
+		
 	}
 	
-	private void setupClient(FMLClientSetupEvent event) {
-        PROXY.clientInit();
-    }
-	
-	private void setupEntityModelLayers(final EntityRenderersEvent.RegisterLayerDefinitions event) {
-		
-		ModModelLayers.register(event);
-		
+	@OnlyIn(Dist.CLIENT)
+	private void registerElytraLayer(EntityRenderersEvent event) {
+		if(event instanceof EntityRenderersEvent.AddLayers addLayersEvent){
+			EntityModelSet entityModels = addLayersEvent.getEntityModels();
+			addLayersEvent.getSkins().forEach(s -> {
+				LivingEntityRenderer<? extends Player, ? extends EntityModel<? extends Player>> livingEntityRenderer = addLayersEvent.getSkin(s);
+				if(livingEntityRenderer instanceof PlayerRenderer playerRenderer){
+					playerRenderer.addLayer(new ReetleElytraLayer(playerRenderer, entityModels));
+				}
+			});
+			LivingEntityRenderer<ArmorStand, ? extends EntityModel<ArmorStand>> livingEntityRenderer = addLayersEvent.getRenderer(EntityType.ARMOR_STAND);
+			if(livingEntityRenderer instanceof ArmorStandRenderer armorStandRenderer){
+				armorStandRenderer.addLayer(new ReetleElytraArmorStandLayer(armorStandRenderer, entityModels));
+			}
+
+		}
 	}
 	
 }

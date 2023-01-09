@@ -1,7 +1,6 @@
 package com.gmail.thelilchicken01.tff.client;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
-import com.gmail.thelilchicken01.tff.elytra.CustomElytraRenderProperties;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.client.BansheeRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.CrunchBeetleRenderer;
@@ -25,7 +24,9 @@ import com.gmail.thelilchicken01.tff.entity.projectile.BoneCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.BranchCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
+import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
+import com.gmail.thelilchicken01.tff.item.ReinforcedElytra;
 import com.gmail.thelilchicken01.tff.particle.BloodParticle;
 import com.gmail.thelilchicken01.tff.particle.BoneParticle;
 import com.gmail.thelilchicken01.tff.particle.BranchParticle;
@@ -39,6 +40,8 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
@@ -73,6 +76,9 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(ModEntityTypes.player_crunch_beetle.get(), PlayerCrunchBeetleRenderer::new);
 		EntityRenderers.register(ModEntityTypes.pylon.get(), PylonRenderer::new);
 		EntityRenderers.register(ModEntityTypes.reetle_queen.get(), ReetleQueenRenderer::new);
+		
+		ItemProperties.register(ItemInit.reetle_elytra.get(), new ResourceLocation(TheFesterForest.modid, "broken"),
+				(stack, arg1, arg2, arg3) -> ReinforcedElytra.isUsable(stack) ? 0 : 1);
 	}
 	
 	@SubscribeEvent

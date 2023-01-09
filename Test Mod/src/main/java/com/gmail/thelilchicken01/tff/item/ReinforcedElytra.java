@@ -24,15 +24,16 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraftforge.common.Tags.Items;
 
-public class ReinforcedElytra extends ArmorItem {
+public class ReinforcedElytra extends ElytraItem {
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
 	public ReinforcedElytra() {
 		
-		super(ModArmorMaterial.REETLE, EquipmentSlot.CHEST, new Properties().durability(848).tab(TheFesterForest.tff_tab));
+		super(new Properties().durability(848).tab(TheFesterForest.tff_tab));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		
@@ -40,7 +41,7 @@ public class ReinforcedElytra extends ArmorItem {
 	    		"attack_damage", -2, AttributeModifier.Operation.ADDITION));
 	    
 	    builder.put(Attributes.ARMOR, new AttributeModifier(UUID.randomUUID(), 
-	    		"armor", ModArmorMaterial.REETLE.getDefenseForSlot(EquipmentSlot.CHEST), 
+	    		"armor", ModArmorMaterial.REETLE.getDefenseForSlot(EquipmentSlot.CHEST) - 2, 
 	    		AttributeModifier.Operation.ADDITION));
 	    
 	    builder.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), 
@@ -52,13 +53,10 @@ public class ReinforcedElytra extends ArmorItem {
 	    		AttributeModifier.Operation.ADDITION));
 
 	    this.defaultModifiers = builder.build();
+	    
+	    DispenserBlock.registerBehavior(this, ArmorItem.DISPENSE_ITEM_BEHAVIOR);
 		
 	}
-	
-	@Override
-    public void initializeClient(java.util.function.Consumer<net.minecraftforge.client.IItemRenderProperties> consumer) {
-        consumer.accept((net.minecraftforge.client.IItemRenderProperties) TheFesterForest.PROXY.getArmorRenderProperties());
-    }
 	
 	@Override
 	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
@@ -101,11 +99,6 @@ public class ReinforcedElytra extends ArmorItem {
 
     public EquipmentSlot getEquipmentSlot(ItemStack stack) {
         return EquipmentSlot.CHEST;
-    }
-
-    @Nullable
-    public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-        return "tff:textures/armor/reetle_elytra.png";
     }
 
 }

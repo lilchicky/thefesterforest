@@ -3,7 +3,6 @@ package com.gmail.thelilchicken01.tff.client;
 import java.util.Set;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
-import com.gmail.thelilchicken01.tff.elytra.CustomElytraRenderProperties;
 import com.google.common.collect.Sets;
 
 import net.minecraft.world.entity.Entity;
