@@ -30,7 +30,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
+          "weight": 1,
           "name": "tff:gravity_gauntlet"
         },
         {
