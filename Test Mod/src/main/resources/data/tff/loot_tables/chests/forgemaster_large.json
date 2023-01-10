@@ -50,6 +50,11 @@
           "type": "minecraft:item",
           "weight": 5,
           "name": "minecraft:netherite_scrap"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:moon_shoes"
         }
       ]
     }

@@ -138,6 +138,9 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.rotting_carrot.get(), "Rotting Carrot");
 		add(ItemInit.rotting_pie.get(), "Rotting Pie");
 		add(ItemInit.gravity_gauntlet.get(), "Gravity Gauntlet");
+		add(ItemInit.moon_shoes.get(), "Moon Shoes");
+		add("curios.modifiers.feet", "When on feet:");
+		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");
 		
 	}

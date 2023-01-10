@@ -28,6 +28,7 @@ import com.gmail.thelilchicken01.tff.item.MechanicalEye;
 import com.gmail.thelilchicken01.tff.item.MechanicalHelmet;
 import com.gmail.thelilchicken01.tff.item.MechanicalLeggings;
 import com.gmail.thelilchicken01.tff.item.MeteorWand;
+import com.gmail.thelilchicken01.tff.item.MoonShoes;
 import com.gmail.thelilchicken01.tff.item.PocketSand;
 import com.gmail.thelilchicken01.tff.item.PurifyingPowder;
 import com.gmail.thelilchicken01.tff.item.ReetleBoots;
@@ -324,6 +325,10 @@ public class ItemInit {
 	//Gravity Gauntlet
 	public static final RegistryObject<Item> gravity_gauntlet = items.register("gravity_gauntlet", 
 			() -> new GravityGauntlets());
+	
+	//Moon Shoes
+	public static final RegistryObject<Item> moon_shoes = items.register("moon_shoes", 
+			() -> new MoonShoes());
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);

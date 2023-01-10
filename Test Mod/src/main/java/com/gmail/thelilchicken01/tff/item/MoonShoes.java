@@ -33,7 +33,7 @@ public class MoonShoes extends Item implements ICurioItem {
     	ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder(); 
          
          if (ForgeMod.REACH_DISTANCE.isPresent() && ForgeMod.ATTACK_RANGE.isPresent()) {
-             builder.put(ForgeMod.ENTITY_GRAVITY.get(), new AttributeModifier(UUID.randomUUID(), "Weapon modifier", -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL));
+             builder.put(ForgeMod.ENTITY_GRAVITY.get(), new AttributeModifier(UUID.randomUUID(), "Weapon modifier", -0.5, AttributeModifier.Operation.MULTIPLY_TOTAL));
          }
     	Multimap<Attribute, AttributeModifier> attributeModifiers = ArrayListMultimap.create();
     	attributeModifiers = builder.build();

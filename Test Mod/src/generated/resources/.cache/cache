@@ -5,7 +5,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 3977ace43b991c7f9d6bd07669e1a48cac38e9a4 assets/tff/blockstates/rotting_stone.json
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
-8c06b1f760f7551a48a09f54012c218296c03059 assets/tff/lang/en_us.json
+78cffaea31baa6827c9bbb080d12f05aa995a158 assets/tff/lang/en_us.json
 74fa2fd936ff89c42c7a00a07dbdae54f43db419 assets/tff/models/block/cracked_rotting_stone.json
 76c8c0d9d0f865e28054565ba1f9f30e9c98f3d2 assets/tff/models/block/fester_ore.json
 fbc81cfbcece015c00cf47201a00fef65adc0e79 assets/tff/models/block/mossy_rotting_stone.json
@@ -35,6 +35,7 @@ c6a85d587a6be2abb7af4f1d88d35cb582e1060f assets/tff/models/item/mechanical_chest
 507de5b71c8b289027943eb6a638c3851d9cd3f9 assets/tff/models/item/mechanical_helmet.json
 d17a2f10f5cfc8c3ad74474fbf13f1b6a332d626 assets/tff/models/item/mechanical_leggings.json
 7508b2156aeaec2d36f81552a46b25bd5ce8be95 assets/tff/models/item/meteor_charge.json
+bc0bbc348ed2ee5bb77bb538c9cbaa39449be9af assets/tff/models/item/moon_shoes.json
 1e3bd84e27ff0a90a9b6187edbb626ac438a1570 assets/tff/models/item/mossy_rotting_stone.json
 9e9368e58029f5338026b14a585f0c95906e9792 assets/tff/models/item/pocket_sand.json
 a633748954bd8425fe840a6c0850df036923ba84 assets/tff/models/item/purifying_powder.json

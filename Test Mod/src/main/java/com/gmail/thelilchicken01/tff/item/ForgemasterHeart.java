@@ -33,8 +33,8 @@ public class ForgemasterHeart extends Item implements ICurioItem {
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 	    builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "more move speed", 0.15, AttributeModifier.Operation.MULTIPLY_BASE));
-	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "bonus attack damage", 4, AttributeModifier.Operation.ADDITION));
-	    builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "bonus attack speed", 0.25, AttributeModifier.Operation.MULTIPLY_BASE));
+	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "bonus attack damage", 6, AttributeModifier.Operation.ADDITION));
+	    builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "bonus attack speed", 0.35, AttributeModifier.Operation.MULTIPLY_BASE));
 	    builder.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), "minus health", -0.5, AttributeModifier.Operation.MULTIPLY_TOTAL));
 	    
 	    this.defaultModifiers = builder.build();
