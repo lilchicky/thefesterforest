@@ -55,6 +55,8 @@ public class FrozenPendant extends Item implements ICurioItem {
 	@Override
 	public void curioTick(SlotContext slotContext, ItemStack stack) {
 		
+		ICurioItem.super.curioTick(slotContext, stack);
+		
 		List<Entity> nearbyEntities = slotContext.entity().getLevel().getEntities(slotContext.entity(), new AABB(
 			slotContext.entity().getX() - 4, slotContext.entity().getY()
 			- 2, slotContext.entity().getZ() - 4, slotContext.entity().getX() + 4, slotContext.entity().getY() + 2, slotContext.entity().getZ() + 4));
@@ -77,7 +79,6 @@ public class FrozenPendant extends Item implements ICurioItem {
 		
 		}
 		
-		ICurioItem.super.curioTick(slotContext, stack);
 	}
 	
 	@Override

@@ -52,6 +52,8 @@ public class VolatileNecklace extends Item implements ICurioItem {
 	@Override
 	public void curioTick(SlotContext slotContext, ItemStack stack) {
 		
+		ICurioItem.super.curioTick(slotContext, stack);
+		
 		if (slotContext.entity().isOnFire()) {
 			if (!slotContext.entity().hasEffect(MobEffects.DAMAGE_BOOST)) {
 				slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, 1, false, false));
@@ -63,7 +65,6 @@ public class VolatileNecklace extends Item implements ICurioItem {
 			}
 		}
 		
-		ICurioItem.super.curioTick(slotContext, stack);
 	}
 	
 	@Override

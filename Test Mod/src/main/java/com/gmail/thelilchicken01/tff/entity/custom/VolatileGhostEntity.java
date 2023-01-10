@@ -50,7 +50,7 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 
 	public VolatileGhostEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public static AttributeSupplier setAttributes() {

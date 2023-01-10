@@ -59,12 +59,15 @@ public class BranchCharge extends Fireball {
 	@Override
 	public void tick() {
 		
-		ticksSinceFired++;
-		if (ticksSinceFired > 80 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
-			remove(RemovalReason.KILLED);
+		super.tick();
+		
+		if(!getLevel().isClientSide) {
+			ticksSinceFired++;
+			if (ticksSinceFired > 80 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
+				remove(RemovalReason.KILLED);
+			}
 		}
 		
-		super.tick();
 	}
 	
 	@Override

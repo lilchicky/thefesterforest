@@ -59,6 +59,8 @@ public class VolatileLeggings extends ArmorItem {
 	
 	@Override
 	public void onArmorTick(ItemStack stack, Level level, Player player) {
+		
+		super.onArmorTick(stack, level, player);
 
 		if (getSetCount(player) == 2 || getSetCount(player) == 3) {
 			if (!player.hasEffect(MobEffects.FIRE_RESISTANCE)) {
@@ -71,7 +73,6 @@ public class VolatileLeggings extends ArmorItem {
 			}
 		}
 		
-		super.onArmorTick(stack, level, player);
 	}
 	
 	private int getSetCount(Player player) {

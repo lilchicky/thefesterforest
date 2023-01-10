@@ -64,6 +64,8 @@ public class VolatileBoots extends ArmorItem {
 	@Override
 	public void onArmorTick(ItemStack stack, Level level, Player player) {
 		
+		super.onArmorTick(stack, level, player);
+		
 		damageTick++;
 		
 		if (getSetCount(player) == 2 || getSetCount(player) == 3) {
@@ -117,7 +119,6 @@ public class VolatileBoots extends ArmorItem {
 			
 		}
 		
-		super.onArmorTick(stack, level, player);
 	}
 	
 	private int getSetCount(Player player) {

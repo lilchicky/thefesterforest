@@ -80,33 +80,37 @@ public class ReetleQueenEntity extends Monster implements IAnimatable {
 	@Override
 	public void tick() {
 		
-		if(!pacified) spawnCooldown++;
-		
-		if (spawnCooldown > spawnSeconds * 20 && getTarget() instanceof Player && !pacified) {
-			
-			CrunchBeetleEntity minion = new CrunchBeetleEntity(ModEntityTypes.crunch_beetle.get(), getLevel());
-			
-			minion.setPos(getX(), getY(), getZ());
-			minion.setTarget(getTarget());
-			minion.setHealth(1.0f);
-			minion.setSummoned();
-			
-			getLevel().addFreshEntity(minion);
-			
-			spawnCooldown = 0;
-			
-		}
-		
-		if (this.hasCustomName()) {
-			if (this.getCustomName().equals(new TextComponent("Little Lady"))) {
-				this.targetSelector.removeAllGoals();
-				this.goalSelector.removeGoal(new MeleeAttackGoal(this, 1.005, false));
-				this.setTarget(null);
-				pacified = true;
-			}
-		}
-		
 		super.tick();
+		
+		if(!getLevel().isClientSide) {
+		
+			if(!pacified) spawnCooldown++;
+		
+			if (spawnCooldown > spawnSeconds * 20 && getTarget() instanceof Player && !pacified) {
+			
+				CrunchBeetleEntity minion = new CrunchBeetleEntity(ModEntityTypes.crunch_beetle.get(), getLevel());
+			
+				minion.setPos(getX(), getY(), getZ());
+				minion.setTarget(getTarget());
+				minion.setHealth(1.0f);
+				minion.setSummoned();
+			
+				getLevel().addFreshEntity(minion);
+			
+				spawnCooldown = 0;
+			
+			}
+		
+			if (this.hasCustomName()) {
+				if (this.getCustomName().equals(new TextComponent("Little Lady"))) {
+					this.targetSelector.removeAllGoals();
+					this.goalSelector.removeGoal(new MeleeAttackGoal(this, 1.005, false));
+					this.setTarget(null);
+					pacified = true;
+				}
+			}
+		
+		}
 	}
 	
 	@Override

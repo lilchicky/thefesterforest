@@ -131,6 +131,8 @@ public class ReetleElytra extends ElytraItem {
     
     @Override
 	public void onArmorTick(ItemStack stack, Level level, Player player) {
+    	
+    	super.onArmorTick(stack, level, player);
 		
 		if (getSetCount(player) == 2 || getSetCount(player) == 3) {
 			if (!player.hasEffect(MobEffects.DAMAGE_RESISTANCE)) {
@@ -143,7 +145,6 @@ public class ReetleElytra extends ElytraItem {
 			}
 		}
 		
-		super.onArmorTick(stack, level, player);
 	}
     
     private int getSetCount(Player player) {

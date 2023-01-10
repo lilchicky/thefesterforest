@@ -110,6 +110,8 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	@Override
 	public void tick() {
 		
+		super.tick();
+		
 		shootCounter++;
 		launchCounter++;
 		if (!pylonActive) {
@@ -131,7 +133,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 			cooldownMod = 0.3;
 		}
 		
-		if(!getLevel().isClientSide()) {
+		if(!getLevel().isClientSide) {
 		
 			if (shootCounter > (shootCooldown * cooldownMod) * 20 && this.getTarget() != null) {
 				
@@ -276,7 +278,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 			}
 		}
 		
-		if (getLevel().isClientSide()) {
+		if (getLevel().isClientSide) {
 			
 			if(launchCounter > launchCooldown * 20 && this.getTarget() != null && getHealth() < phase2health) {
 				for (int x = 0; x < 10; x++) {
@@ -292,8 +294,6 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 				}
 			}
 		}
-		
-		super.tick();
 	}
 	
 	protected void registerGoals() {
@@ -306,7 +306,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 		this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.00));
 		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)));
-		this.targetSelector.addGoal(2, (new NearestAttackableTargetGoal(this, Player.class, true)));
+		this.targetSelector.addGoal(2, (new NearestAttackableTargetGoal<>(this, Player.class, true)));
 		
 	}
 	

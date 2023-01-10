@@ -37,51 +37,58 @@ public class ReetleQueenAntennae extends Item implements ICurioItem {
 	@Override
 	public void curioTick(SlotContext slotContext, ItemStack stack) {
 		
-		checkCounter++;
+		ICurioItem.super.curioTick(slotContext, stack);
 		
-		if (checkCounter % 10 == 0) {
+		if (!slotContext.entity().getLevel().isClientSide) {
+		
+			checkCounter++;
+		
+			if (checkCounter % 10 == 0) {
 			
-			Player player = (Player) slotContext.entity();
-			Level world = player.getLevel();
+				Player player = (Player) slotContext.entity();
+				Level world = player.getLevel();
 			
-			List<Entity> nearbyEntities = world.getEntities(player, 
-					new AABB(player.getX() - 4, 
-							player.getY() - 4, 
-							player.getZ() - 4, 
-							player.getX() + 4, 
-							player.getY() + 4, 
-							player.getZ() + 4));
 			
-			for (int x = 0; x < nearbyEntities.size(); x++) {
+				List<Entity> nearbyEntities = world.getEntities(player, 
+						new AABB(player.getX() - 4, 
+								player.getY() - 4, 
+								player.getZ() - 4, 
+								player.getX() + 4, 
+								player.getY() + 4, 
+								player.getZ() + 4));
+			
+				for (int x = 0; x < nearbyEntities.size(); x++) {
+					
+					if (nearbyEntities.get(x) instanceof CrunchBeetleEntity) {
+					
+						CrunchBeetleEntity beetle = (CrunchBeetleEntity) nearbyEntities.get(x);
+						PlayerCrunchBeetleEntity tamedBeetle = new PlayerCrunchBeetleEntity(ModEntityTypes.player_crunch_beetle.get(), world);
+					
+						if (beetle.isSummoned()) {
+							beetle.setTarget(null);
+						}
+						else {
+							
+							tamedBeetle.setPos(beetle.getX(), beetle.getY(), beetle.getZ());
+							tamedBeetle.setOwnerUUID(player.getUUID());
+										
+							world.addFreshEntity(tamedBeetle);
+							tamedBeetle.setLifeSpanSeconds(120);
+							
+							beetle.remove(RemovalReason.KILLED);
+							
+						}
+					
+					}
 				
-				if (nearbyEntities.get(x) instanceof CrunchBeetleEntity) {
-					
-					CrunchBeetleEntity beetle = (CrunchBeetleEntity) nearbyEntities.get(x);
-					PlayerCrunchBeetleEntity tamedBeetle = new PlayerCrunchBeetleEntity(ModEntityTypes.player_crunch_beetle.get(), world);
-					
-					if (beetle.isSummoned()) {
-						beetle.setTarget(null);
-					}
-					else {
-						tamedBeetle.setPos(beetle.getX(), beetle.getY(), beetle.getZ());
-						tamedBeetle.setLifeSpanSeconds(120);
-						tamedBeetle.setOwnerUUID(player.getUUID());
-					
-						world.addFreshEntity(tamedBeetle);
-						beetle.remove(RemovalReason.KILLED);
-					}
-					
-					
 				}
+					
+				checkCounter = 0;
 				
 			}
-			
-			checkCounter = 0;
-			
-			
+	
 		}
-		
-		ICurioItem.super.curioTick(slotContext, stack);
+			
 	}
 	
 	@Override

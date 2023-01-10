@@ -1,38 +1,37 @@
 package com.gmail.thelilchicken01.tff.entity.custom;
 
+import java.util.Optional;
+import java.util.UUID;
+
+import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.Entity.RemovalReason;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.FollowOwnerGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NonTameRandomTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.ResetUniversalAngerTargetGoal;
-import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.Turtle;
-import net.minecraft.world.entity.monster.AbstractSkeleton;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.network.NetworkHooks;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -46,10 +45,18 @@ public class PlayerCrunchBeetleEntity extends TamableAnimal implements IAnimatab
 	private AnimationFactory factory = new AnimationFactory(this);
 	private int lifespanSeconds = 20;
 	private int lifespanTicker = 0;
+	
+	private static final EntityDataAccessor<Optional<UUID>> OWNER_UUID = SynchedEntityData.defineId(PlayerCrunchBeetleEntity.class, EntityDataSerializers.OPTIONAL_UUID);
 
 	public PlayerCrunchBeetleEntity(EntityType<? extends TamableAnimal> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
 	}
+	
+	@Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(OWNER_UUID, Optional.of(Util.NIL_UUID));
+    }
 	
 	public static AttributeSupplier setAttributes() {
 		return Monster.createMobAttributes()
@@ -72,7 +79,7 @@ public class PlayerCrunchBeetleEntity extends TamableAnimal implements IAnimatab
 		
 		this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
 	    this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
-	    this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Monster.class, true));
+	    this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Monster.class, true));
 		
 	}
 	
@@ -91,16 +98,23 @@ public class PlayerCrunchBeetleEntity extends TamableAnimal implements IAnimatab
 	@Override
 	public void tick() {
 		
+		super.tick();
+		
 		lifespanTicker++;
 		
-		if (lifespanTicker > lifespanSeconds * 20) {
+		if (!getLevel().isClientSide) {
+		
+			if (lifespanTicker > lifespanSeconds * 20) {
 			
-			getOwner().sendMessage(new TextComponent("Friendly Reetle has reached the end of its lifespan."), this.getUUID());
-			remove(RemovalReason.KILLED);
+				lifespanTicker = 0;
 			
+				//getOwner().sendMessage(new TextComponent("Friendly Reetle has reached the end of its lifespan."), this.getUUID());
+				remove(RemovalReason.KILLED);
+			
+			}
+		
 		}
 		
-		super.tick();
 	}
 	
 	protected SoundEvent getAmbientSound() { return SoundEvents.SILVERFISH_STEP; }

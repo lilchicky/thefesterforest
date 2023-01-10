@@ -43,7 +43,7 @@ public class ModEntityTypes {
 	
 	//Player Crunch Beetle
 	public static final RegistryObject<EntityType<PlayerCrunchBeetleEntity>> player_crunch_beetle =
-			entity_types.register("player_crunch_beetle", () -> EntityType.Builder.of(PlayerCrunchBeetleEntity::new, MobCategory.CREATURE).sized(0.5f, 0.4f) //width, height of hitbox
+			entity_types.register("player_crunch_beetle", () -> EntityType.Builder.of(PlayerCrunchBeetleEntity::new, MobCategory.CREATURE).sized(0.5f, 0.4f).setShouldReceiveVelocityUpdates(true) //width, height of hitbox
 					.build(new ResourceLocation(TheFesterForest.modid, "crunch_beetle").toString()));
 	
 	//Banshee

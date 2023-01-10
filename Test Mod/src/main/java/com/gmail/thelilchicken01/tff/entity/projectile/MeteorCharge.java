@@ -57,12 +57,15 @@ public class MeteorCharge extends Fireball {
 	@Override
 	public void tick() {
 		
-		ticksSinceFired++;
-		if (ticksSinceFired > 160 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
-			remove(RemovalReason.KILLED);
+		super.tick();
+		
+		if (!getLevel().isClientSide) {
+			ticksSinceFired++;
+			if (ticksSinceFired > 160 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
+				remove(RemovalReason.KILLED);
+			}
 		}
 		
-		super.tick();
 	}
 	
 	@Override

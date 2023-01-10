@@ -119,7 +119,7 @@ public class CrunchBeetleEntity extends Animal implements IAnimatable {
 
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

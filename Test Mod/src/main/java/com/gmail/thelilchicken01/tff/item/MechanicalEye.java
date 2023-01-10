@@ -50,6 +50,8 @@ public class MechanicalEye extends Item implements ICurioItem {
 	
 	@Override
 	public void curioTick(SlotContext slotContext, ItemStack stack) {
+		
+		ICurioItem.super.curioTick(slotContext, stack);
 				
 		if (!slotContext.entity().hasEffect(MobEffects.NIGHT_VISION)) {
 			
@@ -69,7 +71,6 @@ public class MechanicalEye extends Item implements ICurioItem {
 			
 		}
 				
-		ICurioItem.super.curioTick(slotContext, stack);
 	}
 	
 	@Override

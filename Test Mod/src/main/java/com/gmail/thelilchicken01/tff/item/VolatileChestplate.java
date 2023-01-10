@@ -60,6 +60,8 @@ public class VolatileChestplate extends ArmorItem {
 	@Override
 	public void onArmorTick(ItemStack stack, Level level, Player player) {
 		
+		super.onArmorTick(stack, level, player);
+		
 		if (getSetCount(player) == 2 || getSetCount(player) == 3) {
 			if (!player.hasEffect(MobEffects.FIRE_RESISTANCE)) {
 				player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 60, 0, false, false));
@@ -70,8 +72,6 @@ public class VolatileChestplate extends ArmorItem {
 				}
 			}
 		}
-		
-		super.onArmorTick(stack, level, player);
 	}
 	
 	private int getSetCount(Player player) {

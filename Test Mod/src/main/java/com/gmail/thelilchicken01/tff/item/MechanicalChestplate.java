@@ -63,6 +63,8 @@ public class MechanicalChestplate extends ArmorItem {
 	@Override
 	public void onArmorTick(ItemStack stack, Level level, Player player) {
 		
+		super.onArmorTick(stack, level, player);
+		
 		if (getSetCount(player) == 2 || getSetCount(player) == 3) {
 			if (!player.hasEffect(MobEffects.DIG_SPEED)) {
 				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 0, false, false));
@@ -74,7 +76,6 @@ public class MechanicalChestplate extends ArmorItem {
 			}
 		}
 		
-		super.onArmorTick(stack, level, player);
 	}
 	
 	private int getSetCount(Player player) {

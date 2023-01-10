@@ -62,13 +62,16 @@ public class PylonEntity extends Monster implements IAnimatable {
 	@Override
 	public void tick() {
 		
+		super.tick();
+		
 		lifespanTicker++;
 		
-		if (lifespanTicker > lifespanSeconds * 20) {
-			remove(RemovalReason.KILLED);
+		if (!getLevel().isClientSide) {
+			if (lifespanTicker > lifespanSeconds * 20) {
+				remove(RemovalReason.KILLED);
+			}
 		}
 		
-		super.tick();
 	}
 	
 	@Override
