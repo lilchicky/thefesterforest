@@ -45,6 +45,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
+import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -71,7 +72,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	private int launchCooldown = 5; // knockup cooldown
 	
 	private int pylonCounter;
-	private int pylonCooldown = 35; // main cooldown
+	private int pylonCooldown = 25; // main cooldown
 	private int pylonCharge = 15; // cooldown before healing
 	private int pylonCount = 16; // how many pylons are created
 	private int pylonRadius = 12; // radius pylons are created in
@@ -335,11 +336,28 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 		return PlayState.CONTINUE;
 		
 	}
+	
+	private PlayState attackPredicate(AnimationEvent event) {
+		
+		if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
+			
+			event.getController().markNeedsReload();
+			
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.forgemaster.attack", false));
+			
+			this.swinging = false;
+			
+		}
+		
+		return PlayState.CONTINUE;
+		
+	}
 
 	@Override
 	public void registerControllers(AnimationData data) {
 		
 		data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+		data.addAnimationController(new AnimationController(this, "attackcontroller", 0, this::attackPredicate));
 		
 	}
 	
