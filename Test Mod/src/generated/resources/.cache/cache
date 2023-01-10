@@ -5,7 +5,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 3977ace43b991c7f9d6bd07669e1a48cac38e9a4 assets/tff/blockstates/rotting_stone.json
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
-af76905dedc467e057c571d102ffceddc798e8df assets/tff/lang/en_us.json
+8c06b1f760f7551a48a09f54012c218296c03059 assets/tff/lang/en_us.json
 74fa2fd936ff89c42c7a00a07dbdae54f43db419 assets/tff/models/block/cracked_rotting_stone.json
 76c8c0d9d0f865e28054565ba1f9f30e9c98f3d2 assets/tff/models/block/fester_ore.json
 fbc81cfbcece015c00cf47201a00fef65adc0e79 assets/tff/models/block/mossy_rotting_stone.json
@@ -26,6 +26,7 @@ c54e2c2e2e77906167442203a23cb518c3a9dbfb assets/tff/models/item/fester_ore.json
 ffbbd55d61fbedd6c91aac6c4ef8b0a6707d7c66 assets/tff/models/item/flesh_ball.json
 b812a130c005256936ce11549dd1da33e4740737 assets/tff/models/item/forgemaster_heart.json
 7c9df64ae0afa30bd02e6b91022c3cc2033361f4 assets/tff/models/item/frozen_pendant.json
+83f375afc54cd5e22d6f479fc9c36a62677febaa assets/tff/models/item/gravity_gauntlet.json
 f49446076698afd760cbc84d3857a5ea9431d03b assets/tff/models/item/heavy_stone.json
 94672d38650bc9200aa84ac037187327aed2c8af assets/tff/models/item/mechanical_apple.json
 131b0f9adf7ccd20a75d62346e86faf604fc3eae assets/tff/models/item/mechanical_boots.json

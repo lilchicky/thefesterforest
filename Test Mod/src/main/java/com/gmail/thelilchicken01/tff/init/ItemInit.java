@@ -18,6 +18,7 @@ import com.gmail.thelilchicken01.tff.item.FleshBall;
 import com.gmail.thelilchicken01.tff.item.ForgemasterHammer;
 import com.gmail.thelilchicken01.tff.item.ForgemasterHeart;
 import com.gmail.thelilchicken01.tff.item.FrozenPendant;
+import com.gmail.thelilchicken01.tff.item.GravityGauntlets;
 import com.gmail.thelilchicken01.tff.item.HeavyStone;
 import com.gmail.thelilchicken01.tff.item.LifeScythe;
 import com.gmail.thelilchicken01.tff.item.MechanicalApple;
@@ -319,6 +320,10 @@ public class ItemInit {
 	//Rotting Pie
 	public static final RegistryObject<Item> rotting_pie = items.register("rotting_pie", 
 			() -> new RottingPie());
+	
+	//Gravity Gauntlet
+	public static final RegistryObject<Item> gravity_gauntlet = items.register("gravity_gauntlet", 
+			() -> new GravityGauntlets());
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);

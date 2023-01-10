@@ -49,7 +49,6 @@ public class MeteorWand extends ProjectileWeaponItem {
 		this.inaccuracy = inaccuracy;
 	}
 	
-	@SuppressWarnings("resource")
 	@Override
 	public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity target,
 			InteractionHand hand) {

@@ -30,6 +30,11 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 10,
+          "name": "tff:gravity_gauntlet"
+        },
+        {
+          "type": "minecraft:item",
           "weight": 15,
           "name": "minecraft:book",
           "functions": [
