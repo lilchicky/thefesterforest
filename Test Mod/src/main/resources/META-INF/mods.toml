@@ -35,6 +35,14 @@ authors="LilChicky" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
 What lies in the darkness...
+
+The Fester Forest is a dimension mod aimed at adding
+lots and lots of fun loot to mix and match, from tanky
+loadouts to high damage loadouts. 
+
+Hopefully your adventures bring some spice to your endgame!
+
+Please report issues on the CurseForge page of this mod.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.tff]] #optional
