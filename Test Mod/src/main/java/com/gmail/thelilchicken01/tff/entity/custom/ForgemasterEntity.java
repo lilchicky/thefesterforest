@@ -71,7 +71,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	private int launchCooldown = 5; // knockup cooldown
 	
 	private int pylonCounter;
-	private int pylonCooldown = 30; // main cooldown
+	private int pylonCooldown = 20; // main cooldown
 	private int pylonCharge = 15; // cooldown before healing
 	private int pylonCount = 16; // how many pylons are created
 	private int pylonRadius = 12; // radius pylons are created in
