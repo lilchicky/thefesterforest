@@ -71,7 +71,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	private int launchCooldown = 5; // knockup cooldown
 	
 	private int pylonCounter;
-	private int pylonCooldown = 20; // main cooldown
+	private int pylonCooldown = 35; // main cooldown
 	private int pylonCharge = 15; // cooldown before healing
 	private int pylonCount = 16; // how many pylons are created
 	private int pylonRadius = 12; // radius pylons are created in
@@ -79,7 +79,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	private boolean pylonActive = false; 
 	
 	private int phase2health = 650; // health threshold for phase 2
-	private int phase3health = 400; // health threshold for phase 3
+	private int phase3health = 250; // health threshold for phase 3
 	
 	private static float totalHealth = 800.0f; // entity health
 
