@@ -78,6 +78,11 @@ public class ReetleQueenEntity extends Monster implements IAnimatable {
 	}
 	
 	@Override
+	public boolean isPersistenceRequired() {
+		return true;
+	}
+	
+	@Override
 	public void tick() {
 		
 		super.tick();
