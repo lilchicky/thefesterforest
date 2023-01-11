@@ -1,4 +1,4 @@
-package com.gmail.thelilchicken01.tff.item;
+package com.gmail.thelilchicken01.tff.item.reetleArmor;
 
 import java.util.List;
 import java.util.UUID;
@@ -7,7 +7,10 @@ import javax.annotation.Nullable;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
-import com.gmail.thelilchicken01.tff.item.tiers.ModArmorMaterial;
+import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
+import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
@@ -134,43 +137,9 @@ public class ReetleElytra extends ElytraItem {
     	
     	super.onArmorTick(stack, level, player);
 		
-		if (getSetCount(player) == 2 || getSetCount(player) == 3) {
-			if (!player.hasEffect(MobEffects.DAMAGE_RESISTANCE)) {
-				player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 60, 0, false, false));
-			}
-			else {
-				if (player.getEffect(MobEffects.DAMAGE_RESISTANCE).getDuration() < 40) {
-					player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 60, 0, false, false));
-				}
-			}
+    	if (ArmorSets.REETLE.getArmorSet(player) == SetCount.TWO) {
+			ItemUtil.registerPotionEffect(MobEffects.DAMAGE_RESISTANCE, 0, player);
 		}
-		
-	}
-    
-    private int getSetCount(Player player) {
-		
-		int wornPieces = 0;
-		
-		if (player.getItemBySlot(EquipmentSlot.HEAD).toString()
-				.equals(new ItemStack(ItemInit.reetle_helmet.get()).toString())) {
-			wornPieces++;
-		}
-		if (player.getItemBySlot(EquipmentSlot.CHEST).toString()
-				.equals(new ItemStack(ItemInit.reetle_chestplate.get()).toString()) ||
-				player.getItemBySlot(EquipmentSlot.CHEST).toString()
-				.equals(new ItemStack(ItemInit.reetle_elytra.get()).toString())) {
-			wornPieces++;
-		}
-		if (player.getItemBySlot(EquipmentSlot.LEGS).toString()
-				.equals(new ItemStack(ItemInit.reetle_leggings.get()).toString())) {
-			wornPieces++;
-		}
-		if (player.getItemBySlot(EquipmentSlot.FEET).toString()
-				.equals(new ItemStack(ItemInit.reetle_boots.get()).toString())) {
-			wornPieces++;
-		}
-		
-		return wornPieces;
 		
 	}
 	

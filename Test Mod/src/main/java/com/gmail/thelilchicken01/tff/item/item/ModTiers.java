@@ -1,4 +1,4 @@
-package com.gmail.thelilchicken01.tff.item.tiers;
+package com.gmail.thelilchicken01.tff.item.item;
 
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Items;

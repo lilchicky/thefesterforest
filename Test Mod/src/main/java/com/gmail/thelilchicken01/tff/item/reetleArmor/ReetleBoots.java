@@ -1,11 +1,14 @@
-package com.gmail.thelilchicken01.tff.item;
+package com.gmail.thelilchicken01.tff.item.reetleArmor;
 
 import java.util.List;
 import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
-import com.gmail.thelilchicken01.tff.item.tiers.ModArmorMaterial;
+import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
+import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
@@ -28,25 +31,25 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class ReetleChestplate extends ArmorItem {
+public class ReetleBoots extends ArmorItem {
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 	
 	private String[] drops = {"Crafted"};
 
-	public ReetleChestplate() {
-		super(ModArmorMaterial.REETLE, EquipmentSlot.CHEST, new Properties().tab(TheFesterForest.tff_tab));
+	public ReetleBoots() {
+		super(ModArmorMaterial.REETLE, EquipmentSlot.FEET, new Properties().tab(TheFesterForest.tff_tab));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		
-	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), 
-	    		"attack_damage", -4, AttributeModifier.Operation.ADDITION));
+	    builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), 
+	    		"attack_damage", -0.1, AttributeModifier.Operation.MULTIPLY_BASE));
 	    
 	    builder.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), 
-	    		"max_health", 10, AttributeModifier.Operation.ADDITION));
+	    		"max_health", 6, AttributeModifier.Operation.ADDITION));
 	    
 	    builder.put(Attributes.ARMOR, new AttributeModifier(UUID.randomUUID(), 
-	    		"armor", ModArmorMaterial.REETLE.getDefenseForSlot(EquipmentSlot.CHEST), 
+	    		"armor", ModArmorMaterial.REETLE.getDefenseForSlot(EquipmentSlot.FEET), 
 	    		AttributeModifier.Operation.ADDITION));
 	    
 	    builder.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), 
@@ -62,7 +65,7 @@ public class ReetleChestplate extends ArmorItem {
 	
 	@Override
 	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-		return slot == EquipmentSlot.CHEST ? this.defaultModifiers : super.getDefaultAttributeModifiers(slot);
+		return slot == EquipmentSlot.FEET ? this.defaultModifiers : super.getDefaultAttributeModifiers(slot);
 	}
 	
 	@Override
@@ -70,43 +73,13 @@ public class ReetleChestplate extends ArmorItem {
 		
 		super.onArmorTick(stack, level, player);
 		
-		if (getSetCount(player) == 2 || getSetCount(player) == 3) {
-			if (!player.hasEffect(MobEffects.DAMAGE_RESISTANCE)) {
-				player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 60, 0, false, false));
-			}
-			else {
-				if (player.getEffect(MobEffects.DAMAGE_RESISTANCE).getDuration() < 40) {
-					player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 60, 0, false, false));
-				}
-			}
+		if (ArmorSets.REETLE.getArmorSet(player) == SetCount.TWO) {
+			ItemUtil.registerPotionEffect(MobEffects.DAMAGE_RESISTANCE, 0, player);
 		}
-		
-	}
-	
-	private int getSetCount(Player player) {
-		
-		int wornPieces = 0;
-		
-		if (player.getItemBySlot(EquipmentSlot.HEAD).toString()
-				.equals(new ItemStack(ItemInit.reetle_helmet.get()).toString())) {
-			wornPieces++;
+		if (ArmorSets.REETLE.getArmorSet(player) == SetCount.FOUR) {
+			ItemUtil.registerPotionEffect(MobEffects.DAMAGE_RESISTANCE, 1, player);
+			ItemUtil.registerPotionEffect(MobEffects.SATURATION, 0, player);
 		}
-		if (player.getItemBySlot(EquipmentSlot.CHEST).toString()
-				.equals(new ItemStack(ItemInit.reetle_chestplate.get()).toString()) ||
-				player.getItemBySlot(EquipmentSlot.CHEST).toString()
-				.equals(new ItemStack(ItemInit.reetle_elytra.get()).toString())) {
-			wornPieces++;
-		}
-		if (player.getItemBySlot(EquipmentSlot.LEGS).toString()
-				.equals(new ItemStack(ItemInit.reetle_leggings.get()).toString())) {
-			wornPieces++;
-		}
-		if (player.getItemBySlot(EquipmentSlot.FEET).toString()
-				.equals(new ItemStack(ItemInit.reetle_boots.get()).toString())) {
-			wornPieces++;
-		}
-		
-		return wornPieces;
 		
 	}
 	
@@ -115,9 +88,9 @@ public class ReetleChestplate extends ArmorItem {
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Netherite chestplate reinforced with Reetle exoskeletons.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("Netherite boots reinforced with Reetle exoskeletons.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("The heavy weight offers great protection, but").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("severely limits your ability to move your arms.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("makes it difficult to lift your feet.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("2+ Pieces: Resistance 1").withStyle(ChatFormatting.AQUA));
@@ -130,9 +103,9 @@ public class ReetleChestplate extends ArmorItem {
 			lore.add(new TextComponent(""));
 		}
 		else {
-			lore.add(new TextComponent("Netherite chestplate reinforced with Reetle exoskeletons.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("Netherite boots reinforced with Reetle exoskeletons.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("The heavy weight offers great protection, but").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("severely limits your ability to move your arms.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("makes it difficult to lift your feet.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 			lore.add(new TextComponent(""));
@@ -145,5 +118,5 @@ public class ReetleChestplate extends ArmorItem {
 		
 		super.appendHoverText(stack, world, lore, flag);
 	}
-	
+
 }

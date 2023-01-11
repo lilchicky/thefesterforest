@@ -1,11 +1,14 @@
-package com.gmail.thelilchicken01.tff.item;
+package com.gmail.thelilchicken01.tff.item.volatileArmor;
 
 import java.util.List;
 import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
-import com.gmail.thelilchicken01.tff.item.tiers.ModArmorMaterial;
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
+import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
+import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
@@ -68,82 +71,33 @@ public class VolatileBoots extends ArmorItem {
 		
 		damageTick++;
 		
-		if (getSetCount(player) == 2 || getSetCount(player) == 3) {
-			if (!player.hasEffect(MobEffects.FIRE_RESISTANCE)) {
-				player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 60, 0, false, false));
-			}
-			else {
-				if (player.getEffect(MobEffects.FIRE_RESISTANCE).getDuration() < 40) {
-					player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 60, 0, false, false));
-				}
-			}
+		if (ArmorSets.VOLATILE.getArmorSet(player) == SetCount.TWO) {
+			ItemUtil.registerPotionEffect(MobEffects.FIRE_RESISTANCE, 0, player);
 		}
-		if (getSetCount(player) == 4) {
-			if (!player.hasEffect(MobEffects.FIRE_RESISTANCE)) {
-				player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 60, 0, false, false));
-			}
-			else {
-				if (player.getEffect(MobEffects.FIRE_RESISTANCE).getDuration() < 40) {
-					player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 60, 0, false, false));
-				}
-			}
-			
-			if (damageTick > damageSeconds * 20) {
+		if (ArmorSets.VOLATILE.getArmorSet(player) == SetCount.FOUR && damageTick > damageSeconds * 20) {
+			ItemUtil.registerPotionEffect(MobEffects.FIRE_RESISTANCE, 0, player);
 				
-				if(!level.isClientSide()) {
-					
-					List<Entity> nearbyEntities = level.getEntities(player, new AABB(
-							player.getX() - 4, 
-							player.getY() - 4, 
-							player.getZ() - 4, 
-							player.getX() + 4, 
-							player.getY() + 4, 
-							player.getZ() + 4));
-					
-					for (int x = 0; x < nearbyEntities.size(); x++) {
-					
-						if (nearbyEntities.get(x) instanceof Monster) {
-							
-							nearbyEntities.get(x).setSecondsOnFire(damageSeconds);
-							
-							nearbyEntities.get(x).hurt(TheFesterForest.volatile_ghost, 4);
-						
-						}
-						
-					}	
-				}
+			if(!level.isClientSide()) {
 				
-				damageTick = 0;
+				List<Entity> nearbyEntities = ItemUtil.getEntitiesInArea(player, 4, 4);
+				
+				for (int x = 0; x < nearbyEntities.size(); x++) {
+				
+					if (nearbyEntities.get(x) instanceof Monster) {
+						
+						nearbyEntities.get(x).setSecondsOnFire(damageSeconds);
+						
+						nearbyEntities.get(x).hurt(TheFesterForest.volatile_ghost, 4);
+					
+					}
+						
+				}	
 				
 			}
 			
+			damageTick = 0;
+			
 		}
-		
-	}
-	
-	private int getSetCount(Player player) {
-		
-		int wornPieces = 0;
-		
-		if (player.getItemBySlot(EquipmentSlot.HEAD).toString()
-				.equals(new ItemStack(ItemInit.volatile_helmet.get()).toString())) {
-			wornPieces++;
-		}
-		if (player.getItemBySlot(EquipmentSlot.CHEST).toString()
-				.equals(new ItemStack(ItemInit.volatile_chestplate.get()).toString())) {
-			wornPieces++;
-		}
-		if (player.getItemBySlot(EquipmentSlot.LEGS).toString()
-				.equals(new ItemStack(ItemInit.volatile_leggings.get()).toString())) {
-			wornPieces++;
-		}
-		if (player.getItemBySlot(EquipmentSlot.FEET).toString()
-				.equals(new ItemStack(ItemInit.volatile_boots.get()).toString())) {
-			wornPieces++;
-		}
-		
-		return wornPieces;
-		
 	}
 	
 	@Override

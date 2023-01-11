@@ -1,12 +1,14 @@
-package com.gmail.thelilchicken01.tff.item;
+package com.gmail.thelilchicken01.tff.item.mechanicalArmor;
 
 import java.util.List;
 import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
-import com.gmail.thelilchicken01.tff.item.armor.ArmorSetCount;
-import com.gmail.thelilchicken01.tff.item.tiers.ModArmorMaterial;
+import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
+import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
@@ -33,12 +35,6 @@ public class MechanicalBoots extends ArmorItem {
 	
 	private String[] drops = {"The Forgemaster"};
 	
-	private ArmorSetCount armorSet;
-	private ArmorItem[] setTypes = {(ArmorItem) ItemInit.mechanical_boots.get(),
-			(ArmorItem) ItemInit.mechanical_chestplate.get(),
-			(ArmorItem) ItemInit.mechanical_leggings.get(),
-			(ArmorItem) ItemInit.mechanical_helmet.get()};
-	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
 	public MechanicalBoots() {
@@ -48,7 +44,7 @@ public class MechanicalBoots extends ArmorItem {
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		
 	    builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), 
-	    		"jump_strength", 0.1, AttributeModifier.Operation.MULTIPLY_BASE));
+	    		"move_speed", 0.1, AttributeModifier.Operation.MULTIPLY_BASE));
 	    
 	    builder.put(Attributes.ARMOR, new AttributeModifier(UUID.randomUUID(), 
 	    		"armor", ModArmorMaterial.MECHANICAL.getDefenseForSlot(EquipmentSlot.FEET), 
@@ -69,26 +65,18 @@ public class MechanicalBoots extends ArmorItem {
 	@Override
 	public void onArmorTick(ItemStack stack, Level level, Player player) {
 		
-		armorSet = new ArmorSetCount(player, setTypes);
-		
-		if (!player.hasEffect(MobEffects.JUMP)) {
-			player.addEffect(new MobEffectInstance(MobEffects.JUMP, 60, 1, false, false));
-		}
-		else {
-			if (player.getEffect(MobEffects.JUMP).getDuration() < 40) {
-				player.addEffect(new MobEffectInstance(MobEffects.JUMP, 60, 1, false, false));
-			}
-		}
-		
-		if (armorSet.getArmorSet() == 2 || armorSet.getArmorSet() == 3) {
-			armorSet.registerPotionEffect(MobEffects.DIG_SPEED, 0);
-		}
-		if (armorSet.getArmorSet() == 4) {
-			armorSet.registerPotionEffect(MobEffects.DIG_SPEED, 1);
-			armorSet.registerPotionEffect(MobEffects.REGENERATION, 1);
-		}
-		
 		super.onArmorTick(stack, level, player);
+		
+		ItemUtil.registerPotionEffect(MobEffects.JUMP, 1, player);
+		
+		if (ArmorSets.MECHANICAL.getArmorSet(player) == SetCount.TWO) {
+			ItemUtil.registerPotionEffect(MobEffects.DIG_SPEED, 0, player);
+		}
+		if (ArmorSets.MECHANICAL.getArmorSet(player) == SetCount.FOUR) {
+			ItemUtil.registerPotionEffect(MobEffects.DIG_SPEED, 1, player);
+			ItemUtil.registerPotionEffect(MobEffects.REGENERATION, 1, player);
+		}
+		
 	}
 	
 	@Override

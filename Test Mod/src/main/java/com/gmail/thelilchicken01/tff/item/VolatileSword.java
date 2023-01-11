@@ -3,6 +3,7 @@ package com.gmail.thelilchicken01.tff.item;
 import java.util.List;
 
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -54,7 +55,7 @@ public class VolatileSword extends SwordItem {
 			//Debug - print in console when right click
 			//System.out.println(player.getName().getString() + " has used item with hand " + hand.name());
 			//create a list of nearby entities every time you right click
-			List<Entity> nearbyEntities = world.getEntities(player, new AABB(player.getX() - 4, player.getY() - 1, player.getZ() - 4, player.getX() + 4, player.getY() + 1, player.getZ() + 4));
+			List<Entity> nearbyEntities = ItemUtil.getEntitiesInArea(player, 4, 2);
 			//run function to interact with surrounding mobs
 			getEnts(nearbyEntities, player, world);
 			//put sword on cooldown

@@ -1,4 +1,4 @@
-package com.gmail.thelilchicken01.tff.item.tiers;
+package com.gmail.thelilchicken01.tff.item.armor;
 
 import java.util.function.Supplier;
 

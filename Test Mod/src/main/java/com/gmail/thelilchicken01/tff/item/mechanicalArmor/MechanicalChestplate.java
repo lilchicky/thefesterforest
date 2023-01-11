@@ -1,11 +1,14 @@
-package com.gmail.thelilchicken01.tff.item;
+package com.gmail.thelilchicken01.tff.item.mechanicalArmor;
 
 import java.util.List;
 import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
-import com.gmail.thelilchicken01.tff.item.tiers.ModArmorMaterial;
+import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
+import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
@@ -17,6 +20,7 @@ import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -28,23 +32,23 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class MechanicalLeggings extends ArmorItem {
+public class MechanicalChestplate extends ArmorItem {
 	
 	private String[] drops = {"The Forgemaster"};
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
-	public MechanicalLeggings() {
-		super(ModArmorMaterial.MECHANICAL, EquipmentSlot.LEGS, 
+	public MechanicalChestplate() {
+		super(ModArmorMaterial.MECHANICAL, EquipmentSlot.CHEST, 
 				new Properties().tab(TheFesterForest.tff_tab));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		
 	    builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), 
-	    		"move_speed", 0.35, AttributeModifier.Operation.MULTIPLY_BASE));
+	    		"move_speed", 0.15, AttributeModifier.Operation.MULTIPLY_BASE));
 	    
 	    builder.put(Attributes.ARMOR, new AttributeModifier(UUID.randomUUID(), 
-	    		"armor", ModArmorMaterial.MECHANICAL.getDefenseForSlot(EquipmentSlot.LEGS), 
+	    		"armor", ModArmorMaterial.MECHANICAL.getDefenseForSlot(EquipmentSlot.CHEST) + 4, 
 	    		AttributeModifier.Operation.ADDITION));
 	    
 	    builder.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), 
@@ -63,48 +67,16 @@ public class MechanicalLeggings extends ArmorItem {
 	public void onArmorTick(ItemStack stack, Level level, Player player) {
 		
 		super.onArmorTick(stack, level, player);
-
-		if (getSetCount(player) == 2 || getSetCount(player) == 3) {
-			if (!player.hasEffect(MobEffects.DIG_SPEED)) {
-				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 0, false, false));
-			}
-			else {
-				if (player.getEffect(MobEffects.DIG_SPEED).getDuration() < 40) {
-					player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 0, false, false));
-				}
-			}
-		}
 		
-	}
-	
-	private int getSetCount(Player player) {
-		
-		int wornPieces = 0;
-		
-		if (player.getItemBySlot(EquipmentSlot.HEAD).toString()
-				.equals(new ItemStack(ItemInit.mechanical_helmet.get()).toString())) {
-			wornPieces++;
+		if (ArmorSets.MECHANICAL.getArmorSet(player) == SetCount.TWO) {
+			ItemUtil.registerPotionEffect(MobEffects.DIG_SPEED, 0, player);
 		}
-		if (player.getItemBySlot(EquipmentSlot.CHEST).toString()
-				.equals(new ItemStack(ItemInit.mechanical_chestplate.get()).toString())) {
-			wornPieces++;
-		}
-		if (player.getItemBySlot(EquipmentSlot.LEGS).toString()
-				.equals(new ItemStack(ItemInit.mechanical_leggings.get()).toString())) {
-			wornPieces++;
-		}
-		if (player.getItemBySlot(EquipmentSlot.FEET).toString()
-				.equals(new ItemStack(ItemInit.mechanical_boots.get()).toString())) {
-			wornPieces++;
-		}
-		
-		return wornPieces;
 		
 	}
 	
 	@Override
 	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-		return slot == EquipmentSlot.LEGS ? this.defaultModifiers : super.getDefaultAttributeModifiers(slot);
+		return slot == EquipmentSlot.CHEST ? this.defaultModifiers : super.getDefaultAttributeModifiers(slot);
 	}
 	
 	@Override
@@ -112,8 +84,8 @@ public class MechanicalLeggings extends ArmorItem {
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("The Forgemaster's leggings.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("Equipping grants a large boost to move speed.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("The Forgemaster's chestplate.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("Grants heavy armor.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("2+ Pieces: Haste 1").withStyle(ChatFormatting.AQUA));
@@ -126,8 +98,8 @@ public class MechanicalLeggings extends ArmorItem {
 			lore.add(new TextComponent(""));
 		}
 		else {
-			lore.add(new TextComponent("The Forgemaster's leggings.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("Equipping grants a large boost to move speed.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("The Forgemaster's chestplate.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("Grants heavy armor.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 			lore.add(new TextComponent(""));
