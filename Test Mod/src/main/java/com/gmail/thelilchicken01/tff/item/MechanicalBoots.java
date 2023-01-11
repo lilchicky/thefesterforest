@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSetCount;
 import com.gmail.thelilchicken01.tff.item.tiers.ModArmorMaterial;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
@@ -31,6 +32,12 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class MechanicalBoots extends ArmorItem {
 	
 	private String[] drops = {"The Forgemaster"};
+	
+	private ArmorSetCount armorSet;
+	private ArmorItem[] setTypes = {(ArmorItem) ItemInit.mechanical_boots.get(),
+			(ArmorItem) ItemInit.mechanical_chestplate.get(),
+			(ArmorItem) ItemInit.mechanical_leggings.get(),
+			(ArmorItem) ItemInit.mechanical_helmet.get()};
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
@@ -62,6 +69,8 @@ public class MechanicalBoots extends ArmorItem {
 	@Override
 	public void onArmorTick(ItemStack stack, Level level, Player player) {
 		
+		armorSet = new ArmorSetCount(player, setTypes);
+		
 		if (!player.hasEffect(MobEffects.JUMP)) {
 			player.addEffect(new MobEffectInstance(MobEffects.JUMP, 60, 1, false, false));
 		}
@@ -71,61 +80,15 @@ public class MechanicalBoots extends ArmorItem {
 			}
 		}
 		
-		if (getSetCount(player) == 2 || getSetCount(player) == 3) {
-			if (!player.hasEffect(MobEffects.DIG_SPEED)) {
-				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 0, false, false));
-			}
-			else {
-				if (player.getEffect(MobEffects.DIG_SPEED).getDuration() < 40) {
-					player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 0, false, false));
-				}
-			}
+		if (armorSet.getArmorSet() == 2 || armorSet.getArmorSet() == 3) {
+			armorSet.registerPotionEffect(MobEffects.DIG_SPEED, 0);
 		}
-		if (getSetCount(player) == 4) {
-			if (!player.hasEffect(MobEffects.DIG_SPEED)) {
-				player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 1, false, false));
-			}
-			else {
-				if (player.getEffect(MobEffects.DIG_SPEED).getDuration() < 40) {
-					player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 1, false, false));
-				}
-			}
-			if (!player.hasEffect(MobEffects.REGENERATION)) {
-				player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1, false, false));
-			}
-			else {
-				if (player.getEffect(MobEffects.REGENERATION).getDuration() < 40) {
-					player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1, false, false));
-				}
-			}
+		if (armorSet.getArmorSet() == 4) {
+			armorSet.registerPotionEffect(MobEffects.DIG_SPEED, 1);
+			armorSet.registerPotionEffect(MobEffects.REGENERATION, 1);
 		}
 		
 		super.onArmorTick(stack, level, player);
-	}
-	
-	private int getSetCount(Player player) {
-		
-		int wornPieces = 0;
-		
-		if (player.getItemBySlot(EquipmentSlot.HEAD).toString()
-				.equals(new ItemStack(ItemInit.mechanical_helmet.get()).toString())) {
-			wornPieces++;
-		}
-		if (player.getItemBySlot(EquipmentSlot.CHEST).toString()
-				.equals(new ItemStack(ItemInit.mechanical_chestplate.get()).toString())) {
-			wornPieces++;
-		}
-		if (player.getItemBySlot(EquipmentSlot.LEGS).toString()
-				.equals(new ItemStack(ItemInit.mechanical_leggings.get()).toString())) {
-			wornPieces++;
-		}
-		if (player.getItemBySlot(EquipmentSlot.FEET).toString()
-				.equals(new ItemStack(ItemInit.mechanical_boots.get()).toString())) {
-			wornPieces++;
-		}
-		
-		return wornPieces;
-		
 	}
 	
 	@Override
