@@ -45,6 +45,7 @@ public class ServerEventBusSubscriber {
 		event.add(EntityType.PLAYER, ForgeMod.REACH_DISTANCE.get());
 		event.add(EntityType.PLAYER, ForgeMod.ATTACK_RANGE.get());
 		event.add(EntityType.PLAYER, ForgeMod.ENTITY_GRAVITY.get());
+		event.add(EntityType.PLAYER, ForgeMod.STEP_HEIGHT_ADDITION.get());
 		
 	}
 	

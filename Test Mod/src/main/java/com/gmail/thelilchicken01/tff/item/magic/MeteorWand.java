@@ -71,10 +71,10 @@ public class MeteorWand extends ProjectileWeaponItem {
 					shot.getY() + 4.0,
 					shot.getZ());
 			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
-				shot.setDamage(shotDamage + 10);
-			}
-			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
 				shot.setDamage(shotDamage + 20);
+			}
+			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
+				shot.setDamage(shotDamage + 60);
 			}
 			else {
 				shot.setDamage(shotDamage);
@@ -113,10 +113,10 @@ public class MeteorWand extends ProjectileWeaponItem {
 					shot.getY() + 4.0,
 					shot.getZ());
 			if (ArmorSets.BANSHEE.getArmorSet(context.getPlayer()) == SetCount.TWO) {
-				shot.setDamage(shotDamage + 10);
-			}
-			if (ArmorSets.BANSHEE.getArmorSet(context.getPlayer()) == SetCount.TWO) {
 				shot.setDamage(shotDamage + 20);
+			}
+			if (ArmorSets.BANSHEE.getArmorSet(context.getPlayer()) == SetCount.FOUR) {
+				shot.setDamage(shotDamage + 60);
 			}
 			else {
 				shot.setDamage(shotDamage);
@@ -142,8 +142,8 @@ public class MeteorWand extends ProjectileWeaponItem {
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
 			shot.setDamage(shotDamage + 20);
 		}
-		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
-			shot.setDamage(shotDamage + 40);
+		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
+			shot.setDamage(shotDamage + 60);
 		}
 		else {
 			shot.setDamage(shotDamage);

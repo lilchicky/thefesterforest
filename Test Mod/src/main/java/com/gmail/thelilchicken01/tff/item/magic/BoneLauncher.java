@@ -74,7 +74,7 @@ public class BoneLauncher extends ProjectileWeaponItem {
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
 			shot.setDamage(shot.getDamage() + 1);
 		}
-		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
+		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
 			shot.setDamage(shot.getDamage() + 2);
 		}
 		else {

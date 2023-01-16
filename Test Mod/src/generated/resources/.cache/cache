@@ -99,6 +99,7 @@ d5fefaed2a24e5a46555fa7cde2d8b2141cf048e data/tff/advancements/recipes/tff/rotti
 eb3a2f29cc1331f9e5401dd067febfa71cddf6bf data/tff/loot_tables/blocks/cracked_rotting_stone.json
 90055886780aa9b9b2bef577ba148e735b117259 data/tff/loot_tables/blocks/fester_ore.json
 dc934100cf798376a160126c3fe36304716769f5 data/tff/loot_tables/blocks/mossy_rotting_stone.json
+7d9f32d722f2a83f9dcfa9c3774479f8e3784a45 data/tff/loot_tables/blocks/reetlelight.json
 c9bd8fdccdb64f9b3cc1e2198ef095fffd78110e data/tff/loot_tables/blocks/rotting_bricks.json
 79f7956663c7a878c0f2d6b3046a5ae7c12e67f1 data/tff/loot_tables/blocks/rotting_flower.json
 713b48eb026798ec1bdb63537751b1c4d336f193 data/tff/loot_tables/blocks/rotting_stone.json

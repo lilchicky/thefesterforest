@@ -9,6 +9,7 @@ import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
@@ -31,20 +32,16 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ForgeMod;
+import net.minecraftforge.common.util.Lazy;
 
 public class BansheeBoots extends ArmorItem {
 	
 	private String[] drops = {"Banshee"};
 	
-	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
-
-	public BansheeBoots() {
-		super(ModArmorMaterial.BANSHEE, EquipmentSlot.FEET, 
-				new Properties().tab(TheFesterForest.tff_tab));
-		
-		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-		
-	    builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), 
+	public final Lazy<Multimap<Attribute, AttributeModifier>> LAZY = Lazy.of(() ->  {    
+    	ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder(); 
+    	
+    	builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), 
 	    		"move_speed", 0.2, AttributeModifier.Operation.MULTIPLY_BASE));
 	    
 	    builder.put(Attributes.ARMOR, new AttributeModifier(UUID.randomUUID(), 
@@ -54,13 +51,20 @@ public class BansheeBoots extends ArmorItem {
 	    builder.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), 
 	    		"armor_toughness", ModArmorMaterial.BANSHEE.getToughness(), 
 	    		AttributeModifier.Operation.ADDITION));
-	    
-	    if (ForgeMod.STEP_HEIGHT_ADDITION.isPresent()) {
-	    	builder.put(ForgeMod.STEP_HEIGHT_ADDITION.get(), new AttributeModifier(UUID.randomUUID(),
-		    		"step_height", 1.0f, AttributeModifier.Operation.ADDITION));
+         
+        if (ForgeMod.STEP_HEIGHT_ADDITION.isPresent()) {
+        	 builder.put(ForgeMod.STEP_HEIGHT_ADDITION.get(), new AttributeModifier(UUID.randomUUID(),
+ 		    		"step_height", 1.0f, AttributeModifier.Operation.ADDITION));
         }
+        
+    	Multimap<Attribute, AttributeModifier> attributeModifiers = ArrayListMultimap.create();
+    	attributeModifiers = builder.build();
+    	return attributeModifiers;
+    });
 
-	    this.defaultModifiers = builder.build();
+	public BansheeBoots() {
+		super(ModArmorMaterial.BANSHEE, EquipmentSlot.FEET, 
+				new Properties().tab(TheFesterForest.tff_tab));
 		
 	}
 	
@@ -73,7 +77,7 @@ public class BansheeBoots extends ArmorItem {
 	
 	@Override
 	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-		return slot == EquipmentSlot.FEET ? this.defaultModifiers : super.getDefaultAttributeModifiers(slot);
+		return slot == EquipmentSlot.FEET ? this.LAZY.get() : super.getDefaultAttributeModifiers(slot);
 	}
 	
 	@Override
