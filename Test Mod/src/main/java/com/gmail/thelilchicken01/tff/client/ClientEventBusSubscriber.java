@@ -26,7 +26,7 @@ import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
-import com.gmail.thelilchicken01.tff.item.reetleArmor.ReetleElytra;
+import com.gmail.thelilchicken01.tff.item.armor.reetleArmor.ReetleElytra;
 import com.gmail.thelilchicken01.tff.particle.BloodParticle;
 import com.gmail.thelilchicken01.tff.particle.BoneParticle;
 import com.gmail.thelilchicken01.tff.particle.BranchParticle;

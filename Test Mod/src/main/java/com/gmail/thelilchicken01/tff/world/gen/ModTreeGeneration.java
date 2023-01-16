@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
-import com.gmail.thelilchicken01.tff.item.VolatileSword;
+import com.gmail.thelilchicken01.tff.item.mixed.VolatileSword;
 import com.gmail.thelilchicken01.tff.world.feature.ModPlacedFeatures;
 
 import net.minecraft.core.Holder;
