@@ -81,13 +81,13 @@ public class VolatileBoots extends ArmorItem {
 				
 				List<Entity> nearbyEntities = ItemUtil.getEntitiesInArea(player, 4, 4);
 				
-				for (int x = 0; x < nearbyEntities.size(); x++) {
+				for (Entity entity : nearbyEntities) {
 				
-					if (nearbyEntities.get(x) instanceof Monster) {
+					if (entity instanceof Monster) {
 						
-						nearbyEntities.get(x).setSecondsOnFire(damageSeconds);
+						entity.setSecondsOnFire(damageSeconds);
 						
-						nearbyEntities.get(x).hurt(TheFesterForest.volatile_ghost, 4);
+						entity.hurt(TheFesterForest.volatile_ghost, 4);
 					
 					}
 						

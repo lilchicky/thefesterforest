@@ -314,6 +314,7 @@ public class ItemInit {
 	//Reetle Queen Antennae
 	public static final RegistryObject<Item> reetle_queen_antennae = items.register("reetle_queen_antennae", 
 			() -> new ReetleQueenAntennae());
+	
 	//Rotting Carrot
 	public static final RegistryObject<Item> rotting_carrot = items.register("rotting_carrot", 
 			() -> new RottingCarrot());
