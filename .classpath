@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="Test Mod/src/main/java"/>
-	<classpathentry kind="lib" path="Test Mod/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="src" path="The Fester Forest/src/main/java"/>
+	<classpathentry kind="lib" path="The Fester Forest/gradle/wrapper/gradle-wrapper.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
