@@ -89,6 +89,8 @@ public class MechanicalBoots extends ArmorItem {
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {
+			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("The Forgemaster's boots.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("Equipping grants a boost to jumping.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
@@ -103,6 +105,8 @@ public class MechanicalBoots extends ArmorItem {
 			lore.add(new TextComponent(""));
 		}
 		else {
+			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("The Forgemaster's boots.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("Equipping grants a boost to jumping.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));

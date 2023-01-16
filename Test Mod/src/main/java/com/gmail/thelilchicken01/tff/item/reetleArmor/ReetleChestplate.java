@@ -84,6 +84,8 @@ public class ReetleChestplate extends ArmorItem {
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {
+			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Netherite chestplate reinforced with Reetle exoskeletons.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("The heavy weight offers great protection, but").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("severely limits your ability to move your arms.").withStyle(ChatFormatting.GRAY));
@@ -99,6 +101,8 @@ public class ReetleChestplate extends ArmorItem {
 			lore.add(new TextComponent(""));
 		}
 		else {
+			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Netherite chestplate reinforced with Reetle exoskeletons.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("The heavy weight offers great protection, but").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("severely limits your ability to move your arms.").withStyle(ChatFormatting.GRAY));

@@ -111,6 +111,8 @@ public class VolatileBoots extends ArmorItem {
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {
+			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("A delicate pair of boots, searing").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("to the touch.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
@@ -126,6 +128,8 @@ public class VolatileBoots extends ArmorItem {
 			lore.add(new TextComponent(""));
 		}
 		else {
+			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("A delicate pair of boots, searing").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("to the touch.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));

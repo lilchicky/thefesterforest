@@ -84,6 +84,8 @@ public class MechanicalChestplate extends ArmorItem {
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {
+			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("The Forgemaster's chestplate.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("Grants heavy armor.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
@@ -98,6 +100,8 @@ public class MechanicalChestplate extends ArmorItem {
 			lore.add(new TextComponent(""));
 		}
 		else {
+			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("The Forgemaster's chestplate.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("Grants heavy armor.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
