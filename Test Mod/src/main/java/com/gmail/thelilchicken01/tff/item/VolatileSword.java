@@ -124,7 +124,7 @@ public class VolatileSword extends SwordItem {
 			LivingEntity currentEntity = (LivingEntity) entityList.get(x);
 			
 			entityList.get(x).setRemainingFireTicks(flameSeconds * 20);
-			entityList.get(x).hurt(DamageSource.GENERIC, flameDamage);
+			entityList.get(x).hurt(ItemUtil.entityDamageSource("volatile_sword", entityList.get(x), player), flameDamage);
 			currentEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, slowDuration * 20, 2));
 			//isSound = true;
 		}

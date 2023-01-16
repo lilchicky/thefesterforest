@@ -89,7 +89,7 @@ public class VolatileBoots extends ArmorItem {
 						
 						nearbyEntities.get(x).setSecondsOnFire(damageSeconds);
 						
-						nearbyEntities.get(x).hurt(TheFesterForest.volatile_ghost, 4);
+						nearbyEntities.get(x).hurt(ItemUtil.entityDamageSource("volatile_ghost", nearbyEntities.get(x), player), 4);
 						
 					}	
 				

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -40,7 +41,7 @@ public class AncientWhistle extends Item {
 		
 		if(!world.isClientSide()) {
 		
-			List<Entity> nearbyEntities = world.getEntities(player, new AABB(player.getX() - 4, player.getY() - 3, player.getZ() - 4, player.getX() + 4, player.getY() + 2, player.getZ() + 4));
+			List<LivingEntity> nearbyEntities = ItemUtil.getLivingInArea(player, 4, 4);
 				
 			player.playSound(SoundEvents.PHANTOM_AMBIENT, 1.2f, 1.4f);
 			
@@ -50,14 +51,14 @@ public class AncientWhistle extends Item {
 			
 			for (int x = 0; x < nearbyEntities.size(); x++) {
 			
-				if ((!(nearbyEntities.get(x) instanceof BansheeEntity)) && nearbyEntities.get(x) instanceof LivingEntity) {
+				if (!(nearbyEntities.get(x) instanceof BansheeEntity)) {
 					
 					Vec3 playerVel = player.getPosition(1.0f);
 					Vec3 entityVel = nearbyEntities.get(x).getPosition(1.0f);
 					Vec3 newVel = ((entityVel.subtract(playerVel)).normalize().add(new Vec3(0.0, 0.6, 0.0)).multiply(2.0, 2.0, 2.0));
 				
 					nearbyEntities.get(x).setDeltaMovement(newVel);
-					nearbyEntities.get(x).hurt(TheFesterForest.banshee, whistleDamage);
+					nearbyEntities.get(x).hurt(ItemUtil.entityDamageSource("banshee", nearbyEntities.get(x), player), whistleDamage);
 				
 				}
 				

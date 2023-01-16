@@ -33,6 +33,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("death.attack.tff_knockup_damage.player", "%1$s was slammed into the ground by %2$s");
 		add("death.attack.tff_meteor_damage", "%1$s was crushed by a flying meteor");
 		add("death.attack.tff_meteor_damage.player", "%1$s was crushed by a flying meteor from %2$s");
+		add("death.attack.tff_volatile_sword", "%1$s burned up by a flaming blade");
+		add("death.attack.tff_volatile_sword.player", "%1$s incinerated %2$s with a fiery blade");
 		//Other
 		add(BlockInit.rotting_bricks.get(), "Fester Bricks");
 		add(ItemInit.rotting_brick.get(), "Fester Brick");

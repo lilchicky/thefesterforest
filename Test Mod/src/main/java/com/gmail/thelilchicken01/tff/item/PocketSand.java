@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -68,7 +69,7 @@ public class PocketSand extends Item {
 		
 			if (coneEntities.get(x) instanceof LivingEntity && player.hasLineOfSight(coneEntities.get(x))) {
 				
-				coneEntities.get(x).hurt(TheFesterForest.sand_damage, sandDamage);
+				coneEntities.get(x).hurt(ItemUtil.entityDamageSource("sand_damage", coneEntities.get(x), player), sandDamage);
 				
 				((LivingEntity) coneEntities.get(x)).addEffect(
 						new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, slownessDuration * 20, 0));
