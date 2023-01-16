@@ -21,6 +21,11 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 80,
+          "name": "tff:rotting_carrot"
+        },
+        {
+          "type": "minecraft:item",
           "weight": 20,
           "name": "minecraft:book",
           "functions": [
