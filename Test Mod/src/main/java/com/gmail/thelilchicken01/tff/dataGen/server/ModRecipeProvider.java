@@ -29,7 +29,7 @@ public class ModRecipeProvider extends RecipeProvider {
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 		
 		// Shaped
-		ShapedRecipeBuilder.shaped(BlockInit.rotting_bricks.get(), 4) // add , int to get number of output
+		ShapedRecipeBuilder.shaped(BlockInit.rotting_bricks.get()) // add , int to get number of output
 			.define('a', ItemInit.rotting_brick.get().asItem())
 			.unlockedBy("has_" + ItemInit.rotting_brick.get().getRegistryName(), has(ItemInit.rotting_brick.get().asItem())) // what unlocks the recipe when you get that item
 			.pattern("aa ").pattern("aa ").save(consumer, new ResourceLocation(TheFesterForest.modid, BlockInit.rotting_bricks.get().getRegistryName().getPath()));

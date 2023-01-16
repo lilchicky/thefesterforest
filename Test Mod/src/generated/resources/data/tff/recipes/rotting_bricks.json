@@ -10,7 +10,6 @@
     }
   },
   "result": {
-    "item": "tff:rotting_bricks",
-    "count": 4
+    "item": "tff:rotting_bricks"
   }
 }
