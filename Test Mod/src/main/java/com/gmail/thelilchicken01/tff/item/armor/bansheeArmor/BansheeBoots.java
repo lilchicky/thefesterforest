@@ -42,7 +42,7 @@ public class BansheeBoots extends ArmorItem {
     	ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder(); 
     	
     	builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), 
-	    		"move_speed", 0.2, AttributeModifier.Operation.MULTIPLY_BASE));
+	    		"move_speed", 0.25, AttributeModifier.Operation.MULTIPLY_BASE));
 	    
 	    builder.put(Attributes.ARMOR, new AttributeModifier(UUID.randomUUID(), 
 	    		"armor", ModArmorMaterial.BANSHEE.getDefenseForSlot(EquipmentSlot.FEET), 
@@ -54,7 +54,7 @@ public class BansheeBoots extends ArmorItem {
          
         if (ForgeMod.STEP_HEIGHT_ADDITION.isPresent()) {
         	 builder.put(ForgeMod.STEP_HEIGHT_ADDITION.get(), new AttributeModifier(UUID.randomUUID(),
- 		    		"step_height", 1.0f, AttributeModifier.Operation.ADDITION));
+ 		    		"step_height", 0.5f, AttributeModifier.Operation.ADDITION));
         }
         
     	Multimap<Attribute, AttributeModifier> attributeModifiers = ArrayListMultimap.create();

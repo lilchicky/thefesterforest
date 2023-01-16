@@ -44,7 +44,7 @@ public class BansheeLeggings extends ArmorItem {
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		
 	    builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), 
-	    		"move_speed", 0.2, AttributeModifier.Operation.MULTIPLY_BASE));
+	    		"move_speed", 0.25, AttributeModifier.Operation.MULTIPLY_BASE));
 	    
 	    builder.put(Attributes.ARMOR, new AttributeModifier(UUID.randomUUID(), 
 	    		"armor", ModArmorMaterial.BANSHEE.getDefenseForSlot(EquipmentSlot.LEGS), 

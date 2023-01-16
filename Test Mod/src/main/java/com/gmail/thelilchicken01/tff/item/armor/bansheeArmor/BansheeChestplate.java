@@ -48,7 +48,7 @@ public class BansheeChestplate extends ArmorItem {
 	    		"move_speed", 0.2, AttributeModifier.Operation.MULTIPLY_BASE));
 	    
 	    builder.put(Attributes.ARMOR, new AttributeModifier(UUID.randomUUID(), 
-	    		"armor", ModArmorMaterial.BANSHEE.getDefenseForSlot(EquipmentSlot.CHEST) + 4, 
+	    		"armor", ModArmorMaterial.BANSHEE.getDefenseForSlot(EquipmentSlot.CHEST), 
 	    		AttributeModifier.Operation.ADDITION));
 	    
 	    builder.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), 
