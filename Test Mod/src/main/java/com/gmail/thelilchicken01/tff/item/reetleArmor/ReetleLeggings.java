@@ -74,7 +74,7 @@ public class ReetleLeggings extends ArmorItem {
 		super.onArmorTick(stack, level, player);
 		
 		if (ArmorSets.REETLE.getArmorSet(player) == SetCount.TWO) {
-			ItemUtil.registerPotionEffect(MobEffects.DAMAGE_RESISTANCE, 0, player);
+			ItemUtil.registerPotionEffect(MobEffects.DAMAGE_RESISTANCE, 0, player, 3);
 		}
 		
 	}

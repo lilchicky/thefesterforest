@@ -66,7 +66,7 @@ public class VolatileChestplate extends ArmorItem {
 		super.onArmorTick(stack, level, player);
 		
 		if (ArmorSets.VOLATILE.getArmorSet(player) == SetCount.TWO) {
-			ItemUtil.registerPotionEffect(MobEffects.FIRE_RESISTANCE, 0, player);
+			ItemUtil.registerPotionEffect(MobEffects.FIRE_RESISTANCE, 0, player, 3);
 		}
 	}
 	

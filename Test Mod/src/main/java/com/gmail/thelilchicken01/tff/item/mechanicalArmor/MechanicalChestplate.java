@@ -69,7 +69,7 @@ public class MechanicalChestplate extends ArmorItem {
 		super.onArmorTick(stack, level, player);
 		
 		if (ArmorSets.MECHANICAL.getArmorSet(player) == SetCount.TWO) {
-			ItemUtil.registerPotionEffect(MobEffects.DIG_SPEED, 0, player);
+			ItemUtil.registerPotionEffect(MobEffects.DIG_SPEED, 0, player, 3);
 		}
 		
 	}

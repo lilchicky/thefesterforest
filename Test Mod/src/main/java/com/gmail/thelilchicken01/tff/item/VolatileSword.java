@@ -55,7 +55,7 @@ public class VolatileSword extends SwordItem {
 			//Debug - print in console when right click
 			//System.out.println(player.getName().getString() + " has used item with hand " + hand.name());
 			//create a list of nearby entities every time you right click
-			List<Entity> nearbyEntities = ItemUtil.getEntitiesInArea(player, 4, 2);
+			List<LivingEntity> nearbyEntities = ItemUtil.getLivingInArea(player, 4, 2);
 			//run function to interact with surrounding mobs
 			getEnts(nearbyEntities, player, world);
 			//put sword on cooldown
@@ -109,7 +109,7 @@ public class VolatileSword extends SwordItem {
 	}
 	
 	
-	public void getEnts(List<Entity> entityList, Player player, Level world) {
+	public void getEnts(List<LivingEntity> entityList, Player player, Level world) {
 		
 		//play this blaze shoot sound every time you cast, regardless if you hit something
 		
@@ -120,17 +120,12 @@ public class VolatileSword extends SwordItem {
 		//for every entity in a 3x3 square radius, if they're alive, light them on fire and hurt them
 		
 		for (int x = 0; x < entityList.size(); x++) {
-			System.out.println(entityList.get(x).getName());
-			
-			if (entityList.get(x) instanceof LivingEntity) {
 				
-				LivingEntity currentEntity = (LivingEntity) entityList.get(x);
+			LivingEntity currentEntity = (LivingEntity) entityList.get(x);
 			
-				entityList.get(x).setRemainingFireTicks(flameSeconds * 20);
-				entityList.get(x).hurt(DamageSource.GENERIC, flameDamage);
-				currentEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, slowDuration * 20, 2));
-				
-			}
+			entityList.get(x).setRemainingFireTicks(flameSeconds * 20);
+			entityList.get(x).hurt(DamageSource.GENERIC, flameDamage);
+			currentEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, slowDuration * 20, 2));
 			//isSound = true;
 		}
 		

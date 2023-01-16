@@ -67,14 +67,14 @@ public class MechanicalBoots extends ArmorItem {
 		
 		super.onArmorTick(stack, level, player);
 		
-		ItemUtil.registerPotionEffect(MobEffects.JUMP, 1, player);
+		ItemUtil.registerPotionEffect(MobEffects.JUMP, 1, player, 3);
 		
 		if (ArmorSets.MECHANICAL.getArmorSet(player) == SetCount.TWO) {
-			ItemUtil.registerPotionEffect(MobEffects.DIG_SPEED, 0, player);
+			ItemUtil.registerPotionEffect(MobEffects.DIG_SPEED, 0, player, 3);
 		}
 		if (ArmorSets.MECHANICAL.getArmorSet(player) == SetCount.FOUR) {
-			ItemUtil.registerPotionEffect(MobEffects.DIG_SPEED, 1, player);
-			ItemUtil.registerPotionEffect(MobEffects.REGENERATION, 1, player);
+			ItemUtil.registerPotionEffect(MobEffects.DIG_SPEED, 1, player, 3);
+			ItemUtil.registerPotionEffect(MobEffects.REGENERATION, 1, player, 3);
 		}
 		
 	}

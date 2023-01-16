@@ -72,30 +72,31 @@ public class VolatileBoots extends ArmorItem {
 		damageTick++;
 		
 		if (ArmorSets.VOLATILE.getArmorSet(player) == SetCount.TWO) {
-			ItemUtil.registerPotionEffect(MobEffects.FIRE_RESISTANCE, 0, player);
+			ItemUtil.registerPotionEffect(MobEffects.FIRE_RESISTANCE, 0, player, 3);
 		}
-		if (ArmorSets.VOLATILE.getArmorSet(player) == SetCount.FOUR && damageTick > damageSeconds * 20) {
-			ItemUtil.registerPotionEffect(MobEffects.FIRE_RESISTANCE, 0, player);
-				
-			if(!level.isClientSide()) {
-				
-				List<Entity> nearbyEntities = ItemUtil.getEntitiesInArea(player, 4, 4);
-				
-				for (Entity entity : nearbyEntities) {
-				
-					if (entity instanceof Monster) {
-						
-						entity.setSecondsOnFire(damageSeconds);
-						
-						entity.hurt(TheFesterForest.volatile_ghost, 4);
-					
-					}
-						
-				}	
-				
-			}
+		if (ArmorSets.VOLATILE.getArmorSet(player) == SetCount.FOUR) {
+			ItemUtil.registerPotionEffect(MobEffects.FIRE_RESISTANCE, 0, player, 3);
 			
-			damageTick = 0;
+			if (damageTick > damageSeconds * 20) {
+			
+				if(!level.isClientSide()) {
+				
+					List<Monster> nearbyEntities = ItemUtil.getMonstersInArea(player, 4, 4);
+				
+					int size = nearbyEntities.size();
+				
+					for (int x = 0; x < size; x++) {
+						
+						nearbyEntities.get(x).setSecondsOnFire(damageSeconds);
+						
+						nearbyEntities.get(x).hurt(TheFesterForest.volatile_ghost, 4);
+						
+					}	
+				
+				}
+			
+				damageTick = 0;
+			}
 			
 		}
 	}

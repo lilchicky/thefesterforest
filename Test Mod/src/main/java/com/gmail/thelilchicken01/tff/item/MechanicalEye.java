@@ -3,6 +3,7 @@ package com.gmail.thelilchicken01.tff.item;
 import java.util.List;
 import java.util.UUID;
 
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
@@ -15,6 +16,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -52,23 +54,9 @@ public class MechanicalEye extends Item implements ICurioItem {
 	public void curioTick(SlotContext slotContext, ItemStack stack) {
 		
 		ICurioItem.super.curioTick(slotContext, stack);
-				
-		if (!slotContext.entity().hasEffect(MobEffects.NIGHT_VISION)) {
-			
-			slotContext.entity().addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 
-					15 * 20, 2, false, false));
-			
-		}
 		
-		if (slotContext.entity().hasEffect(MobEffects.NIGHT_VISION)) {
-			
-			if (slotContext.entity().getEffect(MobEffects.NIGHT_VISION).getDuration() < (11 * 20)) {
-				
-				slotContext.entity().addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 
-						15 * 20, 2, false, false));
-			
-			}
-			
+		if (slotContext.entity() instanceof Player) {
+			ItemUtil.registerPotionEffect(MobEffects.NIGHT_VISION, 0, (Player) slotContext.entity(), 15);
 		}
 				
 	}
