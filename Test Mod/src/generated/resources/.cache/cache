@@ -5,7 +5,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 3977ace43b991c7f9d6bd07669e1a48cac38e9a4 assets/tff/blockstates/rotting_stone.json
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
-50614d61ad11c599f8935133ea7124fa7463f73f assets/tff/lang/en_us.json
+381f7f408c407ee4e3db129286d1fd8202d44078 assets/tff/lang/en_us.json
 74fa2fd936ff89c42c7a00a07dbdae54f43db419 assets/tff/models/block/cracked_rotting_stone.json
 76c8c0d9d0f865e28054565ba1f9f30e9c98f3d2 assets/tff/models/block/fester_ore.json
 fbc81cfbcece015c00cf47201a00fef65adc0e79 assets/tff/models/block/mossy_rotting_stone.json
@@ -75,6 +75,7 @@ a80712f06eddfb49d032ecb6ae132a0193cb4605 data/tff/advancements/recipes/tff/reetl
 5db1c6023c8cf1b164ec6abe1bc14bce49c3fd7d data/tff/advancements/recipes/tff/reetle_shell_elytra.json
 513eaccf4be09f9c4c06963ed2a307f8aab37ffd data/tff/advancements/recipes/tff/reetle_shell_helmet.json
 10574e09cc2cd3a615c561a37473e5d79eb586ea data/tff/advancements/recipes/tff/reetle_shell_leggings.json
+f654e187af41c7adbe2227028c4222fe67576bd7 data/tff/advancements/recipes/tff/reetlelight.json
 d54bae36bfa059c761c94ca19a174d039a663ad1 data/tff/advancements/recipes/tff/rotting_brick.json
 289e134281ce93e7aaeed276d5fc1628d85d4333 data/tff/advancements/recipes/tff/rotting_bricks.json
 43e3db4f2a61898a05926cb3673d0e34ee1cea3a data/tff/advancements/recipes/tff/rotting_pie.json
@@ -125,6 +126,7 @@ d17f76edeb8fd4a1d5f245c94af15ece6407f6dc data/tff/recipes/reetle_shell_boots.jso
 8b1792b79e509aeef9472a963046251ccdf39523 data/tff/recipes/reetle_shell_elytra.json
 11cc699f5b5fbec52fb18bd4a92870fc93cc5c81 data/tff/recipes/reetle_shell_helmet.json
 457d13a9e415a5d6861170037c5ba7f159a5b5b7 data/tff/recipes/reetle_shell_leggings.json
+552d712a89560a596f2b4767b253918999a01de5 data/tff/recipes/reetlelight.json
 8ff1f8efeb995b35d1fe5315092d30b1771eca4d data/tff/recipes/rotting_brick.json
 68511e2fba6a16e18d17f6420c626cd537a8f46c data/tff/recipes/rotting_bricks.json
 2681dcb11c22fd350d2a3bddbf9f04b0ab6d9150 data/tff/recipes/rotting_pie.json

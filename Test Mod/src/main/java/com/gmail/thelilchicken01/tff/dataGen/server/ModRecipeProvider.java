@@ -151,6 +151,16 @@ public class ModRecipeProvider extends RecipeProvider {
 					new ResourceLocation(TheFesterForest.modid, 
 							ItemInit.rotting_pie.get().getRegistryName().getPath()));
 		
+		//Reetlelight
+		ShapedRecipeBuilder.shaped(BlockInit.reetlelight.get())
+			.define('a', ItemInit.bug_carcass.get())
+			.define('b', Items.GLOWSTONE_DUST)
+			.unlockedBy("has_" + ItemInit.bug_carcass.get().getRegistryName(), 
+					has(ItemInit.bug_carcass.get().asItem()))
+			.pattern(" b ").pattern("bab").pattern(" b ").save(consumer, 
+					new ResourceLocation(TheFesterForest.modid, 
+							BlockInit.reetlelight.get().getRegistryName().getPath()));
+		
 		
 		ShapedRecipeBuilder.shaped(ItemInit.angelic_whistle.get(), 1) // add , int to get number of output
 		.define('a', ItemInit.ancient_whistle.get().asItem())

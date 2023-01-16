@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:reetlelight"
+    ]
+  },
+  "criteria": {
+    "has_tff:bug_carcass": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:bug_carcass"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:reetlelight"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:bug_carcass",
+      "has_the_recipe"
+    ]
+  ]
+}

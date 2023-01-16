@@ -51,7 +51,7 @@ public class BlockInit {
 //			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
 	
 	// Volatile Lamp
-	public static final RegistryObject<Block> volatileLamp = register("volatile_lamp", 
+	public static final RegistryObject<Block> reetlelight = register("reetlelight", 
 			() -> new Block(BlockBehaviour.Properties.of(Material.ICE, MaterialColor.COLOR_ORANGE).strength(0.5f).sound(SoundType.AMETHYST).emissiveRendering((state, getter, pos) -> {
 				return true;
 			}).lightLevel(state -> 15)), 

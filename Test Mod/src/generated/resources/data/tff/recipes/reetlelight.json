@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " b ",
+    "bab",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "tff:bug_carcass"
+    },
+    "b": {
+      "item": "minecraft:glowstone_dust"
+    }
+  },
+  "result": {
+    "item": "tff:reetlelight"
+  }
+}
