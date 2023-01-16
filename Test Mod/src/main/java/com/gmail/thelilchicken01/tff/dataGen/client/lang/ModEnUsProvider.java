@@ -39,10 +39,10 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.rotting_bricks.get(), "Fester Bricks");
 		add(ItemInit.rotting_brick.get(), "Fester Brick");
 		add(ItemInit.rotting_catalyst.get(), "Rotting Catalyst");
-		add(ItemInit.volatileSword.get(), "§6Volatile Sword");
+		add(ItemInit.volatileSword.get(), "Volatile Sword");
 		add(ItemInit.ancientGreatsword.get(), "Ancient Greatsword");
 		add(BlockInit.reetlelight.get(), "Reetlelight");
-		add(ItemInit.volatileApple.get(), "§6Volatile Apple");
+		add(ItemInit.volatileApple.get(), "Volatile Apple");
 		add(BlockInit.rotting_wood.get(), "Rottingwood");
 		add(BlockInit.rotting_log.get(), "Rottingwood Log");
 		add(BlockInit.stripped_rotting_wood.get(), "Stripped Rottingwood");
@@ -141,6 +141,10 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.rotting_pie.get(), "Rotting Pie");
 		add(ItemInit.gravity_gauntlet.get(), "Gravity Gauntlet");
 		add(ItemInit.moon_shoes.get(), "Moon Shoes");
+		add(ItemInit.banshee_helmet.get(), "Banshee Helmet");
+		add(ItemInit.banshee_chestplate.get(), "Banshee Chestplate");
+		add(ItemInit.banshee_leggings.get(), "Banshee Leggings");
+		add(ItemInit.banshee_boots.get(), "Banshee Boots");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

@@ -2,6 +2,10 @@ package com.gmail.thelilchicken01.tff.init;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
+import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeBoots;
+import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeChestplate;
+import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeHelmet;
+import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeLeggings;
 import com.gmail.thelilchicken01.tff.item.armor.mechanicalArmor.MechanicalBoots;
 import com.gmail.thelilchicken01.tff.item.armor.mechanicalArmor.MechanicalChestplate;
 import com.gmail.thelilchicken01.tff.item.armor.mechanicalArmor.MechanicalHelmet;
@@ -306,6 +310,22 @@ public class ItemInit {
 	//Reetle Boots
 	public static final RegistryObject<Item> reetle_boots = items.register("reetle_boots", 
 			() -> new ReetleBoots());
+	
+	//Banshee Helmet
+	public static final RegistryObject<Item> banshee_helmet = items.register("banshee_helmet", 
+			() -> new BansheeHelmet());
+			
+	//Banshee Chestplate
+	public static final RegistryObject<Item> banshee_chestplate = items.register("banshee_chestplate", 
+			() -> new BansheeChestplate());
+				
+	//Banshee Leggings
+	public static final RegistryObject<Item> banshee_leggings = items.register("banshee_leggings", 
+			() -> new BansheeLeggings());
+			
+	//Banshee Boots
+	public static final RegistryObject<Item> banshee_boots = items.register("banshee_boots", 
+			() -> new BansheeBoots());
 	
 	//Reetle Shell
 	public static final RegistryObject<Item> reetle_shell = items.register("reetle_shell", 

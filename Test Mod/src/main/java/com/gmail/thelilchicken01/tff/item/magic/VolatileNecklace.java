@@ -3,6 +3,8 @@ package com.gmail.thelilchicken01.tff.item.magic;
 import java.util.List;
 import java.util.UUID;
 
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
+import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
@@ -16,6 +18,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -28,6 +31,8 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 public class VolatileNecklace extends Item implements ICurioItem {
 	
 	private String[] drops = {"Fester Forest Loot Chests"};
+	
+	private int strengthLevel = 0;
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
@@ -54,13 +59,30 @@ public class VolatileNecklace extends Item implements ICurioItem {
 		
 		ICurioItem.super.curioTick(slotContext, stack);
 		
+		if (slotContext.entity() instanceof Player) {
+			
+			Player player = (Player) slotContext.entity();
+			
+			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
+				
+				strengthLevel = 1;
+				
+			}
+			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
+				
+				strengthLevel = 2;
+				
+			}
+			
+		}
+		
 		if (slotContext.entity().isOnFire()) {
 			if (!slotContext.entity().hasEffect(MobEffects.DAMAGE_BOOST)) {
-				slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, 1, false, false));
+				slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, strengthLevel, false, false));
 			}
 			else {
 				if (slotContext.entity().getEffect(MobEffects.DAMAGE_BOOST).getDuration() < 40) {
-					slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, 1, false, false));
+					slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, strengthLevel, false, false));
 				}
 			}
 		}

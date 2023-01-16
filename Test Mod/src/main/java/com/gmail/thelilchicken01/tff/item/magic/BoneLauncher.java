@@ -6,6 +6,8 @@ import java.util.function.Supplier;
 
 import com.gmail.thelilchicken01.tff.entity.projectile.BoneCharge;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
+import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 
 import net.minecraft.ChatFormatting;
@@ -69,7 +71,15 @@ public class BoneLauncher extends ProjectileWeaponItem {
 	protected void shoot(Level world, Player player, ItemStack gun, ItemStack ammo, BoneShot bulletItem, boolean bulletFree) {
 		BoneCharge shot = bulletItem.createProjectile(world, ammo, player);
 		shot.shootFromRotation(player, player.getXRot(), player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-		shot.setDamage(shot.getDamage());
+		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
+			shot.setDamage(shot.getDamage() + 1);
+		}
+		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
+			shot.setDamage(shot.getDamage() + 2);
+		}
+		else {
+			shot.setDamage(shot.getDamage());
+		}
 		shot.setIgnoreInvulnerability(ignoreInvulnerability);
 
 		world.addFreshEntity(shot);

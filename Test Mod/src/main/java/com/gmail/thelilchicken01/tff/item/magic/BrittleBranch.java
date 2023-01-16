@@ -6,6 +6,9 @@ import java.util.function.Supplier;
 
 import com.gmail.thelilchicken01.tff.entity.projectile.BranchCharge;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
+import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 
 import net.minecraft.ChatFormatting;
@@ -18,6 +21,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileWeaponItem;
@@ -83,6 +87,49 @@ public class BrittleBranch extends ProjectileWeaponItem {
 		shot3.shootFromRotation(player, player.getXRot(), player.getYRot() - 15, 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
 		shot3.setDamage(shot.getDamage());
 		shot3.setIgnoreInvulnerability(ignoreInvulnerability);
+		
+		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
+			BranchCharge shot4 = bulletItem.createProjectile(world, ammo, player);
+			BranchCharge shot5 = bulletItem.createProjectile(world, ammo, player);
+			
+			shot4.shootFromRotation(player, player.getXRot() + 10, player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
+			shot4.setDamage(shot.getDamage());
+			shot4.setIgnoreInvulnerability(ignoreInvulnerability);
+			
+			shot5.shootFromRotation(player, player.getXRot() - 10, player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
+			shot5.setDamage(shot.getDamage());
+			shot5.setIgnoreInvulnerability(ignoreInvulnerability);
+			
+			world.addFreshEntity(shot4);
+			world.addFreshEntity(shot5);
+		}
+		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
+			BranchCharge shot4 = bulletItem.createProjectile(world, ammo, player);
+			BranchCharge shot5 = bulletItem.createProjectile(world, ammo, player);
+			BranchCharge shot6 = bulletItem.createProjectile(world, ammo, player);
+			BranchCharge shot7 = bulletItem.createProjectile(world, ammo, player);
+			
+			shot4.shootFromRotation(player, player.getXRot() + 10, player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
+			shot4.setDamage(shot.getDamage());
+			shot4.setIgnoreInvulnerability(ignoreInvulnerability);
+			
+			shot5.shootFromRotation(player, player.getXRot() - 10, player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
+			shot5.setDamage(shot.getDamage());
+			shot5.setIgnoreInvulnerability(ignoreInvulnerability);
+			
+			shot6.shootFromRotation(player, player.getXRot(), player.getYRot() + 7, 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
+			shot6.setDamage(shot.getDamage());
+			shot6.setIgnoreInvulnerability(ignoreInvulnerability);
+			
+			shot7.shootFromRotation(player, player.getXRot(), player.getYRot() - 7, 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
+			shot7.setDamage(shot.getDamage());
+			shot7.setIgnoreInvulnerability(ignoreInvulnerability);
+			
+			world.addFreshEntity(shot4);
+			world.addFreshEntity(shot5);
+			world.addFreshEntity(shot6);
+			world.addFreshEntity(shot7);
+		}
 
 		world.addFreshEntity(shot);
 		world.addFreshEntity(shot2);

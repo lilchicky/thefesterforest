@@ -22,6 +22,14 @@ public enum ArmorSets {
 				ItemInit.volatile_helmet.get()};
 	}),
 	
+	//Banshee Set
+	BANSHEE(() -> {
+		return new Item[]{ItemInit.banshee_boots.get(),
+				ItemInit.banshee_leggings.get(),
+				ItemInit.banshee_chestplate.get(),
+				ItemInit.banshee_helmet.get()};
+	}),
+	
 	//Reetle Set
 	REETLE(() -> {
 		return new Item[]{ItemInit.reetle_boots.get(),

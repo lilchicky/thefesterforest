@@ -6,6 +6,8 @@ import java.util.function.Supplier;
 
 import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
+import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
 
@@ -68,7 +70,15 @@ public class MeteorWand extends ProjectileWeaponItem {
 			shot.setPos(shot.getX(),
 					shot.getY() + 4.0,
 					shot.getZ());
-			shot.setDamage(shotDamage); // set damage
+			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
+				shot.setDamage(shotDamage + 10);
+			}
+			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
+				shot.setDamage(shotDamage + 20);
+			}
+			else {
+				shot.setDamage(shotDamage);
+			}
 			shot.setIgnoreInvulnerability(false);
 			
 			player.getLevel().addFreshEntity(shot);
@@ -102,7 +112,15 @@ public class MeteorWand extends ProjectileWeaponItem {
 			shot.setPos(shot.getX(),
 					shot.getY() + 4.0,
 					shot.getZ());
-			shot.setDamage(shotDamage); // set damage
+			if (ArmorSets.BANSHEE.getArmorSet(context.getPlayer()) == SetCount.TWO) {
+				shot.setDamage(shotDamage + 10);
+			}
+			if (ArmorSets.BANSHEE.getArmorSet(context.getPlayer()) == SetCount.TWO) {
+				shot.setDamage(shotDamage + 20);
+			}
+			else {
+				shot.setDamage(shotDamage);
+			}
 			shot.setIgnoreInvulnerability(false);
 			
 			context.getLevel().addFreshEntity(shot);
@@ -121,7 +139,15 @@ public class MeteorWand extends ProjectileWeaponItem {
 		MeteorCharge shot = bulletItem.createProjectile(world, ammo, player);
 		
 		shot.shootFromRotation(player, player.getXRot(), player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-		shot.setDamage(shot.getDamage());
+		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
+			shot.setDamage(shotDamage + 20);
+		}
+		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
+			shot.setDamage(shotDamage + 40);
+		}
+		else {
+			shot.setDamage(shotDamage);
+		}
 		shot.setIgnoreInvulnerability(ignoreInvulnerability);
 
 		world.addFreshEntity(shot);

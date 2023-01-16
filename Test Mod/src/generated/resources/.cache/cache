@@ -5,7 +5,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 3977ace43b991c7f9d6bd07669e1a48cac38e9a4 assets/tff/blockstates/rotting_stone.json
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
-381f7f408c407ee4e3db129286d1fd8202d44078 assets/tff/lang/en_us.json
+ea3a95732d0b7b8d1a6963fcbc9c32dde1a6c490 assets/tff/lang/en_us.json
 74fa2fd936ff89c42c7a00a07dbdae54f43db419 assets/tff/models/block/cracked_rotting_stone.json
 76c8c0d9d0f865e28054565ba1f9f30e9c98f3d2 assets/tff/models/block/fester_ore.json
 fbc81cfbcece015c00cf47201a00fef65adc0e79 assets/tff/models/block/mossy_rotting_stone.json
@@ -15,6 +15,10 @@ a321e56fb7e0771726b5b69494f272ccb2a8a170 assets/tff/models/block/rotting_bricks.
 50002942b00c9698317479d54c6b900960f472d2 assets/tff/models/block/slimy_planks.json
 1580673c62d0d4b747f0b32aa6a5282d772e81b7 assets/tff/models/item/ancient_whistle.json
 d71bc059265d7ccdce526415ecbca73f58ca93b4 assets/tff/models/item/angelic_whistle.json
+48e4a553c17534110e35c7b5d67380024bfc9e0e assets/tff/models/item/banshee_boots.json
+12560fcef5b2e4a33da0a4756b1bb9b36c04dd2c assets/tff/models/item/banshee_chestplate.json
+e167eb8577c48080163c48273ddd0e1184d23a3c assets/tff/models/item/banshee_helmet.json
+22785d51965261c4ac879ee29a35ff7431211922 assets/tff/models/item/banshee_leggings.json
 dabf9811ce518e8a9041848627d3656c558fffac assets/tff/models/item/bone_charge.json
 da59f8ff4579602351618f74026514a840ced764 assets/tff/models/item/bone_pickaxe.json
 56b37fa751e39e57c0d0acbd27e833d3049eec67 assets/tff/models/item/branch_charge.json

@@ -3,6 +3,8 @@ package com.gmail.thelilchicken01.tff.item.magic;
 import java.util.List;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
+import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -36,6 +38,18 @@ public class ShieldBook extends Item {
 	
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
+		
+		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
+			
+			absorptionLength = 7;
+			
+		}
+		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
+			
+			absorptionLength = 12;
+			cooldown = 15;
+			
+		}
 		
 		player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, absorptionLength * 20, 14, false, false));
 		

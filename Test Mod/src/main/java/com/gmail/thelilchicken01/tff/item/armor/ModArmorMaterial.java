@@ -21,12 +21,17 @@ public enum ModArmorMaterial implements ArmorMaterial {
 	}),
 	
 	//Volatile Armor
-	VOLATILE("volatile", 15, new int[]{3, 6, 8, 3}, 10, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.0F, () -> {
+	VOLATILE("volatile", 15, new int[]{3, 6, 8, 3}, 10, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0F, 0.0F, () -> {
 	    return Ingredient.of(Items.BLAZE_POWDER);
 	}),
 	
+	//Banshee Armor
+	BANSHEE("banshee", 12, new int[]{2, 4, 5, 2}, 32, SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 0.0F, () -> {
+		return Ingredient.of(Items.BLACK_DYE);
+	}),
+	
 	//Reetle Armor
-	REETLE("reetle", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 4.0F, 0.2F, () -> {
+	REETLE("reetle", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 4.0F, 0.2F, () -> {
 	    return Ingredient.of(ItemInit.bug_carcass.get());
 	});
 

@@ -3,6 +3,8 @@ package com.gmail.thelilchicken01.tff.item.mixed;
 import java.util.List;
 
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
+import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 
 import net.minecraft.ChatFormatting;
@@ -121,10 +123,21 @@ public class VolatileSword extends SwordItem {
 		
 		for (int x = 0; x < entityList.size(); x++) {
 				
-			LivingEntity currentEntity = (LivingEntity) entityList.get(x);
+			LivingEntity currentEntity = entityList.get(x);
 			
-			entityList.get(x).setRemainingFireTicks(flameSeconds * 20);
-			entityList.get(x).hurt(ItemUtil.entityDamageSource("volatile_sword", entityList.get(x), player), flameDamage);
+			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
+				
+				flameDamage = 12;
+				
+			}
+			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
+				
+				flameDamage = 16;
+				
+			}
+			
+			currentEntity.setRemainingFireTicks(flameSeconds * 20);
+			currentEntity.hurt(ItemUtil.entityDamageSource("volatile_sword", entityList.get(x), player), flameDamage);
 			currentEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, slowDuration * 20, 2));
 			//isSound = true;
 		}

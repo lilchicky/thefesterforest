@@ -3,6 +3,8 @@ package com.gmail.thelilchicken01.tff.item.magic;
 import java.util.List;
 import java.util.UUID;
 
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
+import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
@@ -16,6 +18,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -33,6 +36,8 @@ public class FrozenPendant extends Item implements ICurioItem {
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 	
 	private int enemySlowdownSeconds = 5;
+	private int enemySlowdownLevel = 1;
+	private int speedBuff = 2;
 
 	public FrozenPendant(Properties properties) {
 		super(properties);
@@ -57,6 +62,24 @@ public class FrozenPendant extends Item implements ICurioItem {
 		
 		ICurioItem.super.curioTick(slotContext, stack);
 		
+		if (slotContext.entity() instanceof Player) {
+			
+			Player player = (Player) slotContext.entity();
+			
+			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
+				
+				enemySlowdownLevel = 2;
+				
+			}
+			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
+				
+				enemySlowdownLevel = 3;
+				speedBuff = 3;
+				
+			}
+			
+		}
+		
 		List<Entity> nearbyEntities = slotContext.entity().getLevel().getEntities(slotContext.entity(), new AABB(
 			slotContext.entity().getX() - 4, slotContext.entity().getY()
 			- 2, slotContext.entity().getZ() - 4, slotContext.entity().getX() + 4, slotContext.entity().getY() + 2, slotContext.entity().getZ() + 4));
@@ -69,9 +92,9 @@ public class FrozenPendant extends Item implements ICurioItem {
 				
 				if (!currentEntity.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
 				
-					currentEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, enemySlowdownSeconds * 20, 1));
+					currentEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, enemySlowdownSeconds * 20, enemySlowdownLevel));
 						
-					slotContext.entity().addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, (enemySlowdownSeconds + 1) * 20, 2, false, false));
+					slotContext.entity().addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, (enemySlowdownSeconds + 1) * 20, speedBuff, false, false));
 				
 				}
 				

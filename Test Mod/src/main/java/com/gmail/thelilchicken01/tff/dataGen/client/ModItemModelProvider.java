@@ -105,6 +105,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.rotting_pie.get());
 		oneLayerItem(ItemInit.gravity_gauntlet.get());
 		oneLayerItem(ItemInit.moon_shoes.get());
+		oneLayerItem(ItemInit.banshee_helmet.get());
+		oneLayerItem(ItemInit.banshee_chestplate.get());
+		oneLayerItem(ItemInit.banshee_leggings.get());
+		oneLayerItem(ItemInit.banshee_boots.get());
 		
 		//Simple handheld items
 		handheldItem(ItemInit.bone_pickaxe.get());
