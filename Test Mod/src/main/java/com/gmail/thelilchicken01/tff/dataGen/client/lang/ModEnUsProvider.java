@@ -145,6 +145,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.banshee_chestplate.get(), "Banshee Chestplate");
 		add(ItemInit.banshee_leggings.get(), "Banshee Leggings");
 		add(ItemInit.banshee_boots.get(), "Banshee Boots");
+		add(BlockInit.crushed_rotting_stone.get(), "Crushed Rotting Stone");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

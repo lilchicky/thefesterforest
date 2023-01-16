@@ -4,7 +4,8 @@
 		"tff:rotting_stone",
 		"tff:mossy_rotting_stone",
 		"tff:cracked_rotting_stone",
-		"tff:rotting_stone_bricks"
+		"tff:rotting_stone_bricks",
+		"tff:crushed_rotting_stone"
 	
 	]
 }

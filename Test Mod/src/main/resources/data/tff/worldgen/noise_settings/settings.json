@@ -25,14 +25,14 @@
       "y_factor": 160
     },
     "bottom_slide": {
-      "target": 5,
-      "size": 0,
+      "target": 0.1171875,
+      "size": 3,
       "offset": 0
     },
     "top_slide": {
       "target": -0.078125,
-      "size": 7,
-      "offset": 4
+      "size": 2,
+      "offset": 8
     },
     "terrain_shaper": {
       "offset": {
@@ -3014,6 +3014,74 @@
                   "Name": "tff:rotting_dirt"
                 }
               }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:stone_depth",
+                "offset": 0,
+                "surface_type": "floor",
+                "add_surface_depth": false,
+                "secondary_depth_range": 0
+              },
+              "then_run": {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:water",
+                  "offset": -1,
+                  "surface_depth_multiplier": 0,
+                  "add_stone_depth": false
+                },
+                "then_run": {
+                  "type": "minecraft:sequence",
+                  "sequence": [
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:biome",
+                        "biome_is": [
+                          "tff:fester_ocean"
+                        ]
+                      },
+                      "then_run": {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:hole"
+                        },
+                        "then_run": {
+                          "type": "minecraft:sequence",
+                          "sequence": [
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:water",
+                                "offset": 0,
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:air"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:block",
+                              "result_state": {
+                                "Name": "minecraft:water",
+                                "Properties": {
+                                  "level": "0"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
             }
           ]
         }
@@ -3022,7 +3090,7 @@
         "type": "minecraft:condition",
         "if_true": {
           "type": "minecraft:vertical_gradient",
-          "random_name": "minecraft:deepslate",
+          "random_name": "tff:crushed_rotting_stone",
           "true_at_and_below": {
             "absolute": 0
           },
@@ -3033,7 +3101,7 @@
         "then_run": {
           "type": "minecraft:block",
           "result_state": {
-            "Name": "minecraft:deepslate",
+            "Name": "tff:crushed_rotting_stone",
             "Properties": {
               "axis": "y"
             }

@@ -22,6 +22,7 @@ import net.minecraftforge.registries.ForgeRegistry;
 public class ModTreeGeneration {
 	
 	public static ResourceKey<Biome> thefesterforest = ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(TheFesterForest.modid, "thefesterforest"));
+	public static ResourceKey<Biome> fester_ocean = ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(TheFesterForest.modid, "fester_ocean"));
 
 	@SuppressWarnings("deprecation")
 	public static void generateTrees(final BiomeLoadingEvent event) {
@@ -33,6 +34,12 @@ public class ModTreeGeneration {
 		BiomeDictionary.addTypes(thefesterforest, BiomeDictionary.Type.DEAD);
 		BiomeDictionary.addTypes(thefesterforest, BiomeDictionary.Type.LUSH);
 		BiomeDictionary.addTypes(thefesterforest, BiomeDictionary.Type.COLD);
+		
+		BiomeDictionary.addTypes(fester_ocean, BiomeDictionary.Type.FOREST);
+		BiomeDictionary.addTypes(fester_ocean, BiomeDictionary.Type.DENSE);
+		BiomeDictionary.addTypes(fester_ocean, BiomeDictionary.Type.DEAD);
+		BiomeDictionary.addTypes(fester_ocean, BiomeDictionary.Type.LUSH);
+		BiomeDictionary.addTypes(fester_ocean, BiomeDictionary.Type.COLD);
 		Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);
 		
 		//types.contains(BiomeDictionary.Type.FOREST) && 

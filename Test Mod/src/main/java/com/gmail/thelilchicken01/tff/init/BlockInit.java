@@ -61,6 +61,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> rotting_stone = register("rotting_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
 	
+	//Crushed Rotting Stone
+	public static final RegistryObject<Block> crushed_rotting_stone = register("crushed_rotting_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).sound(SoundType.STONE).requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	
 	//Fester Ore
 	public static final RegistryObject<Block> fester_ore = register("fester_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));

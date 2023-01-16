@@ -24,6 +24,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
 		simpleBlock(BlockInit.cracked_rotting_stone.get());
 		simpleBlock(BlockInit.mossy_rotting_stone.get());
 		simpleBlock(BlockInit.rotting_stone_bricks.get());
+		simpleBlock(BlockInit.crushed_rotting_stone.get());
 		
 	}
 

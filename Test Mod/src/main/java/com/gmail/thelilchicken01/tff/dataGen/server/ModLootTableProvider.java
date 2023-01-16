@@ -46,6 +46,7 @@ public class ModLootTableProvider extends BaseLootTableProvider {
 		dropSelf(BlockInit.slimy_fence.get());
 		dropSelf(BlockInit.slimy_fence_gate.get());
 		dropSelf(BlockInit.reetlelight.get());
+		dropSelf(BlockInit.crushed_rotting_stone.get());
 		
 		//silkTouch(BlockInit.volatileOre.get(), Items.BLAZE_POWDER, 1, 4);
 		

@@ -127,12 +127,12 @@ public class VolatileSword extends SwordItem {
 			
 			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
 				
-				flameDamage = 12;
+				flameDamage = 10;
 				
 			}
 			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
 				
-				flameDamage = 16;
+				flameDamage = 15;
 				
 			}
 			
