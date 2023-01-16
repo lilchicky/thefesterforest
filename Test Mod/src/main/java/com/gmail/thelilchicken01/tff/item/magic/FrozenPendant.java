@@ -31,7 +31,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public class FrozenPendant extends Item implements ICurioItem {
 	
-	private String[] drops = {"Banshee"};
+	private String[] drops = {"Banshee", "Fester Forest Loot Chests"};
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 	

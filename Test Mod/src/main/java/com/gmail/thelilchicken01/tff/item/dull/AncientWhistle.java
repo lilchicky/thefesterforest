@@ -29,7 +29,7 @@ public class AncientWhistle extends Item {
 	
 	private int whistleDamage = 5;
 	
-	private String[] drops = {"Banshee"};
+	private String[] drops = {"Banshee", "Fester Forest Loot Chests"};
 	
 	public AncientWhistle(Properties properties) {
 		super(properties);

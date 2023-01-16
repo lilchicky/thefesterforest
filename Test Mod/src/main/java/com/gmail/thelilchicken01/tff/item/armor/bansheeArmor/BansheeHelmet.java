@@ -33,7 +33,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class BansheeHelmet extends ArmorItem {
 	
-	private String[] drops = {"Banshee"};
+	private String[] drops = {"Banshee", "Fester Forest Loot Chests"};
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 

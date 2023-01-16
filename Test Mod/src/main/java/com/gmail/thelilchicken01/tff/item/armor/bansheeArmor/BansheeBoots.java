@@ -36,7 +36,7 @@ import net.minecraftforge.common.util.Lazy;
 
 public class BansheeBoots extends ArmorItem {
 	
-	private String[] drops = {"Banshee"};
+	private String[] drops = {"Banshee", "Fester Forest Loot Chests"};
 	
 	public final Lazy<Multimap<Attribute, AttributeModifier>> LAZY = Lazy.of(() ->  {    
     	ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder(); 
