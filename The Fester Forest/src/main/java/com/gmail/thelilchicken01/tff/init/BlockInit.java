@@ -5,6 +5,7 @@ import java.util.function.Function;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.block.ModFlammableRotatedPillarBlock;
 import com.gmail.thelilchicken01.tff.block.RottingFlower;
+import com.gmail.thelilchicken01.tff.block.RottingGraveDirt;
 import com.gmail.thelilchicken01.tff.block.RottingwoodSapling;
 import com.gmail.thelilchicken01.tff.block.SlimySapling;
 import com.gmail.thelilchicken01.tff.block.TffPortalBlock;
@@ -32,8 +33,6 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -59,6 +58,10 @@ public class BlockInit {
 	
 	//Rotting Stone
 	public static final RegistryObject<Block> rotting_stone = register("rotting_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	
+	//Grave Rotting Dirt
+	public static final RegistryObject<Block> rotting_grave_dirt = register("rotting_grave_dirt", () -> new RottingGraveDirt(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
 	
 	//Crushed Rotting Stone
