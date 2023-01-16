@@ -1,0 +1,16 @@
+{
+	"variants": {
+		"axis=x": {
+			"model": "tff:block/slimy_wood",
+			"x": 90,
+			"y": 90
+		},
+		"axis=y": {
+			"model": "tff:block/slimy_wood"
+		},
+		"axis=z": {
+			"model": "tff:block/slimy_wood",
+			"x": 90
+		}
+	}
+}

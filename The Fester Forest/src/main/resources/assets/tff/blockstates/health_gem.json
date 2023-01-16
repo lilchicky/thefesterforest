@@ -1,0 +1,36 @@
+{
+	"variants": {
+		"facing=north,lit=true": {
+			"model":"tff:block/health_gem",
+			"y": 270
+		},
+		"facing=east,lit=true": {
+			"model":"tff:block/health_gem",
+			"y": 0
+		},
+		"facing=south,lit=true": {
+			"model":"tff:block/health_gem",
+			"y": 90
+		},
+		"facing=west,lit=true": {
+			"model":"tff:block/health_gem",
+			"y": 180
+		},
+		"facing=north,lit=false": {
+			"model":"tff:block/health_gem",
+			"y": 270
+		},
+		"facing=east,lit=false": {
+			"model":"tff:block/health_gem",
+			"y": 0
+		},
+		"facing=south,lit=false": {
+			"model":"tff:block/health_gem",
+			"y": 90
+		},
+		"facing=west,lit=false": {
+			"model":"tff:block/health_gem",
+			"y": 180
+		}
+	}
+}

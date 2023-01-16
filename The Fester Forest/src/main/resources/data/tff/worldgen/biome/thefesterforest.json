@@ -1,0 +1,93 @@
+{
+  	"temperature": 0.8,
+  	"downfall": 0.4,
+  	"precipitation": "rain",
+  	"temperature_modifier": "none",
+  	"category": "forest",
+  	"effects": {
+    	"sky_color": 32768,
+    	"fog_color": 32768,
+    	"water_color": 16384,
+    	"water_fog_color": 16384,
+    	"grass_color": 4422659,
+    	"foliage_color": 5601292,
+    	"grass_color_modifier": "none"
+  	},
+  	"spawners": {
+    	"monster": [
+      		{
+        		"type": "tff:rotting_skeleton",
+        		"weight": 100,
+        		"minCount": 1,
+        		"maxCount": 1
+      		},
+      		{
+        		"type": "tff:banshee",
+        		"weight": 80,
+        		"minCount": 1,
+        		"maxCount": 1
+      		},
+      		{
+        		"type": "tff:volatile_ghost",
+        		"weight": 75,
+        		"minCount": 1,
+        		"maxCount": 1
+      		},
+      		{
+        		"type": "tff:wight",
+        		"weight": 20,
+        		"minCount": 1,
+        		"maxCount": 1
+      		}
+    	],
+    	"creature": [
+      		{
+        		"type": "tff:crunch_beetle",
+       			"weight": 5,
+        		"minCount": 4,
+        		"maxCount": 7
+      		}
+    	]
+  	},
+  	"spawn_costs": {
+  	
+  		"tff:rotting_skeleton": {
+  			"energy_budget": 0.25,
+  			"charge": 0.5
+  		},
+  		"tff:banshee": {
+  			"energy_budget": 0.25,
+  			"charge": 0.5
+  		},
+  		"tff:volatile_ghost": {
+  			"energy_budget": 0.25,
+  			"charge": 0.5
+  		},
+  		"tff:wight": {
+  			"energy_budget": 0.25,
+  			"charge": 0.5
+  		}
+  	
+  	},
+  	"carvers": {
+    	"air": [
+      		"minecraft:cave",
+      		"minecraft:canyon",
+      		"minecraft:cave_extra_underground",
+      		"minecraft:nether_cave"
+    	]
+  	},
+  	"features": [
+  		[],
+    	[],
+    	[],
+    	[],
+    	[],
+    	[],
+    	[],
+    	[],
+    	[],
+    	[],
+    	[]
+  	]
+}

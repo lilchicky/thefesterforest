@@ -1,0 +1,17 @@
+{
+	"replace": false,
+	"values": [
+		"#tff:rotting_woods",
+		"tff:rotting_planks",
+		"#tff:slimy_woods",
+		"tff:slimy_planks",
+		"tff:rottingwood_fence",
+		"tff:rottingwood_fence_gate",
+		"tff:rottingwood_stairs",
+		"tff:rottingwood_slab",
+		"tff:slimy_slab",
+		"tff:slimy_stairs",
+		"tff:slimy_fence",
+		"tff:slimy_fence_gate"
+	]
+}

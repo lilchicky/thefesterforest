@@ -1,7 +1,0 @@
-{
-	"parent": "block/cube_column",
-	"textures": {
-		"end": "tff:block/stripped_rotting_wood",
-		"side": "tff:block/stripped_rotting_wood"
-	}
-}

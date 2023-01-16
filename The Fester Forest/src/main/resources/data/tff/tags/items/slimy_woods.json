@@ -1,0 +1,10 @@
+{
+	"replace": false,
+	"values": [
+		"tff:slimy_log",
+		"tff:stripped_slimy_log",
+		"tff:slimy_wood",
+		"tff:stripped_slimy_wood"
+	
+	]
+}

@@ -1,7 +1,0 @@
-{
-	"parent": "block/cube_column",
-	"textures": {
-		"end": "tff:block/slimy_log",
-		"side": "tff:block/slimy_log"
-	}
-}

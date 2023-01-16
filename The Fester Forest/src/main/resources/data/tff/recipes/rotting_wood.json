@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"RR ",
+		"RR "
+	],
+	
+	"key": {
+		"R": {
+			"item": "tff:rotting_log"
+		}
+	},
+	
+	"result": {
+		"item": "tff:rotting_wood",
+		"count": 3
+	}
+}

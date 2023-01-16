@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "top": "tff:block/rotting_grass_top",
-    "bottom": "tff:block/rotting_dirt",
-    "side": "tff:block/rotting_grass_side"
-  }
-}
