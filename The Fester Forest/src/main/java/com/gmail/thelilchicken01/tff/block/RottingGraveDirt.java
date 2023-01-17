@@ -1,9 +1,6 @@
 package com.gmail.thelilchicken01.tff.block;
 
-import java.util.Random;
-
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -15,10 +12,10 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class RottingGraveDirt extends Block {
 	
-	protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D);
+	protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D);
 
 	public RottingGraveDirt() {
-		super(BlockBehaviour.Properties.copy(Blocks.DIRT).speedFactor(10.0f));
+		super(BlockBehaviour.Properties.copy(Blocks.DIRT).speedFactor(-0.5f).jumpFactor(-0.5f));
 		
 	}
 	

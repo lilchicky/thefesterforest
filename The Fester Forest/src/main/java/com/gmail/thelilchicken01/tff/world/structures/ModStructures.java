@@ -25,6 +25,8 @@ public class ModStructures {
      * this base structure will have the resourcelocation of structure_tutorial:sky_structures.
      */
     public static final RegistryObject<StructureFeature<?>> REETLE_CAVE = DEFERRED_REGISTRY_STRUCTURE.register("reetle_cave", ReetleCave::new);
+    public static final RegistryObject<StructureFeature<?>> BANSHEE_GRAVEYARD = DEFERRED_REGISTRY_STRUCTURE.register("banshee_graveyard", BansheeGraveyard::new);
+    public static final RegistryObject<StructureFeature<?>> FESTER_ROCK = DEFERRED_REGISTRY_STRUCTURE.register("fester_rock", FesterRocks::new);
     
     public static void register(IEventBus bus) {
     	DEFERRED_REGISTRY_STRUCTURE.register(bus);
