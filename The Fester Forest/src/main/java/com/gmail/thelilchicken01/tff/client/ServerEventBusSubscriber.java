@@ -11,6 +11,9 @@ import com.gmail.thelilchicken01.tff.entity.custom.ReetleQueenEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.goop.GoopEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.goop.MediumGoopEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.goop.SmallGoopEntity;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -36,6 +39,9 @@ public class ServerEventBusSubscriber {
 		event.put(ModEntityTypes.player_crunch_beetle.get(), PlayerCrunchBeetleEntity.setAttributes());
 		event.put(ModEntityTypes.pylon.get(), PylonEntity.setAttributes());
 		event.put(ModEntityTypes.reetle_queen.get(), ReetleQueenEntity.setAttributes());
+		event.put(ModEntityTypes.goop.get(), GoopEntity.setAttributes());
+		event.put(ModEntityTypes.goop_medium.get(), MediumGoopEntity.setAttributes());
+		event.put(ModEntityTypes.goop_small.get(), SmallGoopEntity.setAttributes());
 		
 	}
 	

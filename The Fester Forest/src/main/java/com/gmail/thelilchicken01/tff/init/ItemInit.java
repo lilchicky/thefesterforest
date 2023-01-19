@@ -157,6 +157,11 @@ public class ItemInit {
 			() -> new ForgeSpawnEggItem(ModEntityTypes.pylon, 0x404040, 0xf02213, //Background, Spots
 					new Item.Properties().tab(TheFesterForest.tff_tab)));
 	
+	//Goop Spawn Egg
+	public static final RegistryObject<Item> goop_spawn_egg = items.register("goop_spawn_egg", 
+			() -> new ForgeSpawnEggItem(ModEntityTypes.goop, 0x521252, 0x260926, //Background, Spots
+					new Item.Properties().tab(TheFesterForest.tff_tab)));
+
 	//Ancient Whistle
 	public static final RegistryObject<Item> ancient_whistle = items.register("ancient_whistle",
 			() -> new AncientWhistle(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));

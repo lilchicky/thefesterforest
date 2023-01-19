@@ -11,6 +11,9 @@ import com.gmail.thelilchicken01.tff.entity.client.ReetleQueenRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.RottingSkeletonRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.VolatileGhostRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.WightRenderer;
+import com.gmail.thelilchicken01.tff.entity.client.goop.GoopRenderer;
+import com.gmail.thelilchicken01.tff.entity.client.goop.MediumGoopRenderer;
+import com.gmail.thelilchicken01.tff.entity.client.goop.SmallGoopRenderer;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
@@ -20,6 +23,9 @@ import com.gmail.thelilchicken01.tff.entity.custom.ReetleQueenEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.goop.GoopEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.goop.MediumGoopEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.goop.SmallGoopEntity;
 import com.gmail.thelilchicken01.tff.entity.projectile.BoneCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.BranchCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
@@ -76,6 +82,9 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(ModEntityTypes.player_crunch_beetle.get(), PlayerCrunchBeetleRenderer::new);
 		EntityRenderers.register(ModEntityTypes.pylon.get(), PylonRenderer::new);
 		EntityRenderers.register(ModEntityTypes.reetle_queen.get(), ReetleQueenRenderer::new);
+		EntityRenderers.register(ModEntityTypes.goop.get(), GoopRenderer::new);
+		EntityRenderers.register(ModEntityTypes.goop_medium.get(), MediumGoopRenderer::new);
+		EntityRenderers.register(ModEntityTypes.goop_small.get(), SmallGoopRenderer::new);
 		
 		ItemProperties.register(ItemInit.reetle_elytra.get(), new ResourceLocation(TheFesterForest.modid, "broken"),
 				(stack, arg1, arg2, arg3) -> ReetleElytra.isUsable(stack) ? 0 : 1);
@@ -93,6 +102,9 @@ public class ClientEventBusSubscriber {
 		event.put(ModEntityTypes.player_crunch_beetle.get(), PlayerCrunchBeetleEntity.setAttributes());
 		event.put(ModEntityTypes.pylon.get(), PylonEntity.setAttributes());
 		event.put(ModEntityTypes.reetle_queen.get(), ReetleQueenEntity.setAttributes());
+		event.put(ModEntityTypes.goop.get(), GoopEntity.setAttributes());
+		event.put(ModEntityTypes.goop_medium.get(), MediumGoopEntity.setAttributes());
+		event.put(ModEntityTypes.goop_small.get(), SmallGoopEntity.setAttributes());
 		
 	}
 	

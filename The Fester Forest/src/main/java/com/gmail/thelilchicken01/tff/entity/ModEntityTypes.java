@@ -10,6 +10,9 @@ import com.gmail.thelilchicken01.tff.entity.custom.ReetleQueenEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.goop.GoopEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.goop.MediumGoopEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.goop.SmallGoopEntity;
 import com.gmail.thelilchicken01.tff.entity.projectile.BoneCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.BranchCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
@@ -75,6 +78,21 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<ReetleQueenEntity>> reetle_queen =
 			entity_types.register("reetle_queen", () -> EntityType.Builder.of(ReetleQueenEntity::new, MobCategory.MONSTER)
 					.sized(1.4f, 0.5f).build(new ResourceLocation(TheFesterForest.modid, "reetle_queen").toString()));
+	
+	//Goop
+	public static final RegistryObject<EntityType<GoopEntity>> goop =
+			entity_types.register("goop", () -> EntityType.Builder.of(GoopEntity::new, MobCategory.MONSTER)
+					.sized(1.4f, 1.4f).build(new ResourceLocation(TheFesterForest.modid, "goop").toString()));
+	
+	//Medium Goop
+	public static final RegistryObject<EntityType<MediumGoopEntity>> goop_medium =
+			entity_types.register("goop_medium", () -> EntityType.Builder.of(MediumGoopEntity::new, MobCategory.MONSTER)
+					.sized(1.4f * 0.6666f, 1.4f * 0.6666f).build(new ResourceLocation(TheFesterForest.modid, "goop_medium").toString()));
+		
+	//Small Goop
+	public static final RegistryObject<EntityType<SmallGoopEntity>> goop_small =
+			entity_types.register("goop_small", () -> EntityType.Builder.of(SmallGoopEntity::new, MobCategory.MONSTER)
+					.sized(1.4f * 0.4f, 1.4f * 0.4f).build(new ResourceLocation(TheFesterForest.modid, "goop_small").toString()));
 	
 	//Brittle Branch Bullet
 	
