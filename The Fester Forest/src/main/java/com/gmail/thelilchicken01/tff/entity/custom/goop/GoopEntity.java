@@ -146,7 +146,7 @@ public class GoopEntity extends Monster implements IAnimatable {
 	}
 	
 	protected int getJumpDelay() {
-	    return this.random.nextInt(5);
+	    return this.random.nextInt(5) + 3;
 	}
 	
 	protected SoundEvent getJumpSound() {
