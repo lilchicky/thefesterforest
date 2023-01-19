@@ -60,6 +60,8 @@
   "entity.tff.crunch_beetle": "Reetle",
   "entity.tff.forgemaster": "The Forgemaster",
   "entity.tff.goop": "Rotting Goop",
+  "entity.tff.goop_medium": "Condensed Rotting Goop",
+  "entity.tff.goop_small": "Miniscule Rotting Goop",
   "entity.tff.player_crunch_beetle": "Friendly Reetle",
   "entity.tff.pylon": "Forgemaster's Pylon",
   "entity.tff.reetle_queen": "Reetle Queen",

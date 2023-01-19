@@ -149,6 +149,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.rotting_grave_dirt.get(), "Rotting Grave Dirt");
 		add(ItemInit.goop_spawn_egg.get(), "Rotting Goop Spawn Egg");
 		add(ModEntityTypes.goop.get(), "Rotting Goop");
+		add(ModEntityTypes.goop_medium.get(), "Condensed Rotting Goop");
+		add(ModEntityTypes.goop_small.get(), "Miniscule Rotting Goop");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");
