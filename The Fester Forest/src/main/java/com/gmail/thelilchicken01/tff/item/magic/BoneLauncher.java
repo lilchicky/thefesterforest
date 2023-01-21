@@ -40,7 +40,7 @@ public class BoneLauncher extends ProjectileWeaponItem {
 	
 	protected Supplier<Ingredient> repairMaterial;
 	
-	private String[] drops = {"Not Implemented"};
+	private String[] drops = {"Wight"};
 
 	public BoneLauncher(Properties properties, double inaccuracy) {
 		super(properties);
