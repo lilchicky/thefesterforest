@@ -53,6 +53,11 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:bone_launcher"
+        },
+        {
+          "type": "minecraft:item",
           "weight": 10,
           "name": "tff:bone_scythe",
           "functions": [

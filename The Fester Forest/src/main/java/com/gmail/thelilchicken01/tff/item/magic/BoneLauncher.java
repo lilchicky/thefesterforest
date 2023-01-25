@@ -40,7 +40,7 @@ public class BoneLauncher extends ProjectileWeaponItem {
 	
 	protected Supplier<Ingredient> repairMaterial;
 	
-	private String[] drops = {"Wight"};
+	private String[] drops = {"Wight", "Fester Forest Loot Chests"};
 
 	public BoneLauncher(Properties properties, double inaccuracy) {
 		super(properties);
