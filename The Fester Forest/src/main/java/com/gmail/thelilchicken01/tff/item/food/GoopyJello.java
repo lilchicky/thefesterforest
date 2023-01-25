@@ -15,13 +15,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
-public class RottingJello extends Item {
+public class GoopyJello extends Item {
 	
 	private String[] drops = {"Rotting Goop"};
 
-	public RottingJello() {
+	public GoopyJello() {
 		super(new Properties().tab(TheFesterForest.tff_tab).food(
-				new FoodProperties.Builder().saturationMod(2.6f).nutrition(14)
+				new FoodProperties.Builder().saturationMod(2.2f).nutrition(12)
 				.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 0), 1f)
 				.build()));
 	}

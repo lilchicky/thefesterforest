@@ -37,6 +37,7 @@ import com.gmail.thelilchicken01.tff.item.dull.ReetleShellPlates;
 import com.gmail.thelilchicken01.tff.item.food.BugCarcass;
 import com.gmail.thelilchicken01.tff.item.food.MechanicalApple;
 import com.gmail.thelilchicken01.tff.item.food.RottingCarrot;
+import com.gmail.thelilchicken01.tff.item.food.GoopyJello;
 import com.gmail.thelilchicken01.tff.item.food.RottingPie;
 import com.gmail.thelilchicken01.tff.item.food.VolatileApple;
 import com.gmail.thelilchicken01.tff.item.item.ModTiers;
@@ -355,6 +356,10 @@ public class ItemInit {
 	//Moon Shoes
 	public static final RegistryObject<Item> moon_shoes = items.register("moon_shoes", 
 			() -> new MoonShoes());
+	
+	//Goopy Jello
+	public static final RegistryObject<Item> goopy_jello = items.register("goopy_jello", 
+			() -> new GoopyJello());
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);
