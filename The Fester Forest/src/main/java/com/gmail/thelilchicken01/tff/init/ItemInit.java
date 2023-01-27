@@ -78,46 +78,11 @@ public class ItemInit {
 	public static final DeferredRegister<Item> items = DeferredRegister.create(ForgeRegistries.ITEMS, TheFesterForest.modid);
 	
 	/*
-	 * For swords - VolatileTier base is 4. Iron Sword base is 1.6. -2.4 will give base sword, larger subtracted number
-	 * will give slower speed, smaller subtracted number will give higher attack speed.
+	 * 
+	 * Spawn Eggs
+	 * 
 	 */
 	
-	// Volatile Sword
-	public static final RegistryObject<Item> volatileSword = register("volatile_sword", 
-			() -> new VolatileSword(ModTiers.VOLATILE, -3, -2.2f, new Properties().tab(TheFesterForest.tff_tab)));
-	
-	//Ancient Greatsword
-	public static final RegistryObject<Item> ancientGreatsword = register("ancient_greatsword", 
-			() -> new AncientGreatsword(ModTiers.VOLATILE, -1, -3f, new Properties().tab(TheFesterForest.tff_tab).durability(550)));
-	
-	//Bone Pickaxe
-	public static final RegistryObject<Item> bone_pickaxe = register("bone_pickaxe",
-			() -> new BonePickaxe());
-	
-	//Volatile Apple
-	public static final RegistryObject<Item> volatileApple = register("volatile_apple", 
-			() -> new VolatileApple(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().alwaysEat().saturationMod(0.3f).nutrition(4)
-					.effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1f).build())));
-	
-	//Mechanical Apple
-	public static final RegistryObject<Item> mechanical_apple = register("mechanical_apple", 
-			() -> new MechanicalApple(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().alwaysEat().saturationMod(0.3f).nutrition(4)
-					.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2880, 2), 1f).build())));
-	
-	//Bug Carcass
-	public static final RegistryObject<Item> bug_carcass = register("bug_carcass", 
-			() -> new BugCarcass());
-	
-	//Rotting Brick
-	public static final RegistryObject<Item> rotting_brick = register("rotting_brick", 
-			() -> new Item(new Properties().tab(TheFesterForest.tff_tab)));
-		
-	//Rotting Catalyst
-	public static final RegistryObject<Item> rotting_catalyst = register("rotting_catalyst", CatalystItem::new);
-	
-	//Dual Wield Sword
-	public static final RegistryObject<Item> dual_wield_sword = register("dual_wield_sword", () -> new DualWieldSword());
-		
 	//Rotting Skeleton Spawn Egg
 	public static final RegistryObject<Item> rotting_skeleton_spawn_egg = items.register("rotting_skeleton_spawn_egg", 
 			() -> new ForgeSpawnEggItem(ModEntityTypes.rotting_skeleton, 0xa4775b, 0x81218e, //Background, Spots
@@ -162,112 +127,12 @@ public class ItemInit {
 	public static final RegistryObject<Item> goop_spawn_egg = items.register("goop_spawn_egg", 
 			() -> new ForgeSpawnEggItem(ModEntityTypes.goop, 0x521252, 0x260926, //Background, Spots
 					new Item.Properties().tab(TheFesterForest.tff_tab)));
-
-	//Ancient Whistle
-	public static final RegistryObject<Item> ancient_whistle = items.register("ancient_whistle",
-			() -> new AncientWhistle(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
 	
-	//Volatile Necklace
-	public static final RegistryObject<Item> volatile_necklace = items.register("volatile_necklace",
-			() -> new VolatileNecklace(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
-	
-	//Frozen Pendant
-	public static final RegistryObject<Item> frozen_pendant = items.register("frozen_pendant",
-			() -> new FrozenPendant(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
-	
-	//Mechanical Eye
-	public static final RegistryObject<Item> mechanical_eye = items.register("mechanical_eye",
-			() -> new MechanicalEye(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
-	
-	//Purifying Powder
-	public static final RegistryObject<Item> purifying_powder = items.register("purifying_powder",
-			() -> new PurifyingPowder(new Properties().tab(TheFesterForest.tff_tab)));
-	
-	//Heavy Stone
-	public static final RegistryObject<Item> heavy_stone = items.register("heavy_stone",
-			() -> new HeavyStone(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
-	
-	//Forgemaster's Heart
-	public static final RegistryObject<Item> forgemaster_heart = items.register("forgemaster_heart",
-			() -> new ForgemasterHeart(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
-	
-	//Pocket Sand
-	public static final RegistryObject<Item> pocket_sand = items.register("pocket_sand",
-			() -> new PocketSand(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
-	
-	//Flesh Ball
-	public static final RegistryObject<Item> flesh_ball = items.register("flesh_ball", 
-			() -> new FleshBall(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
-	
-	//Life Scythe
-	public static final RegistryObject<Item> life_scythe = register("life_scythe", 
-			() -> new LifeScythe(ModTiers.BONE, 2, -3.2f, new Properties().tab(TheFesterForest.tff_tab)
-					.durability(1400)));
-	
-	//Forgemaster Hammer
-	public static final RegistryObject<Item> forgemaster_hammer = register("forgemaster_hammer", 
-			() -> new ForgemasterHammer(ModTiers.MECHANICAL, 14, -3.5f, new Properties().tab(TheFesterForest.tff_tab)
-					.durability(3200)));
-		
-	//Bone Scythe
-	public static final RegistryObject<Item> bone_scythe = register("bone_scythe", 
-			() -> new BoneScythe(ModTiers.BONE, 1, -3.0f, new Properties().tab(TheFesterForest.tff_tab)
-					.durability(561)));
-	
-	//Explosive Powder
-	public static final RegistryObject<Item> explosive_powder = register("explosive_powder",
-			() -> new ExplosivePowder(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
-	
-	//Angelic Whistle
-	public static final RegistryObject<Item> angelic_whistle = items.register("angelic_whistle",
-			() -> new AngelicWhistle(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
-	
-	//Brittle Branch
-	public static final RegistryObject<Item> brittle_branch = items.register("brittle_branch",
-			() -> new BrittleBranch(new Properties().tab(TheFesterForest.tff_tab).durability(144), 
-					0.1).repair(() -> Ingredient.of(Items.DEAD_BUSH)));
-	
-	//Meteor Wand
-	public static final RegistryObject<Item> meteor_wand = items.register("meteor_wand",
-			() -> new MeteorWand(new Properties().tab(TheFesterForest.tff_tab).durability(875), 
-					0.1).repair(() -> Ingredient.of(Items.IRON_INGOT)));
-	
-	//Branch Charge
-	public static final RegistryObject<BranchProjectile> branch_charge = items.register("branch_charge",
-			() -> new BranchProjectile(new Properties().stacksTo(1), 10));// damage of bullet
-	
-	//Bone Charge
-	public static final RegistryObject<BoneShot> bone_charge = items.register("bone_charge",
-			() -> new BoneShot(new Properties().stacksTo(1), 2));// damage of bullet
-	
-	//Meteor
-	public static final RegistryObject<Meteor> meteor_charge = items.register("meteor_charge",
-			() -> new Meteor(new Properties().stacksTo(1), 15));
-	
-	//Bug Eggs
-	public static final RegistryObject<BugEggs> bug_eggs = items.register("bug_eggs",
-			() -> new BugEggs(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
-	
-	//Bone Launcher
-	public static final RegistryObject<Item> bone_launcher = items.register("bone_launcher",
-			() -> new BoneLauncher(new Properties().tab(TheFesterForest.tff_tab).durability(340), 
-					0.1).repair(() -> Ingredient.of(Items.BONE_BLOCK)));
-	
-	//Mechanical Helmet
-	public static final RegistryObject<Item> mechanical_helmet = items.register("mechanical_helmet", 
-			() -> new MechanicalHelmet());
-	
-	//Mechanical Chestplate
-	public static final RegistryObject<Item> mechanical_chestplate = items.register("mechanical_chestplate", 
-			() -> new MechanicalChestplate());
-		
-	//Mechanical Leggings
-	public static final RegistryObject<Item> mechanical_leggings = items.register("mechanical_leggings", 
-			() -> new MechanicalLeggings());
-		
-	//Mechanical Boots
-	public static final RegistryObject<Item> mechanical_boots = items.register("mechanical_boots", 
-			() -> new MechanicalBoots());
+	/*
+	 * 
+	 * Volatile Items
+	 * 
+	 */
 	
 	//Volatile Helmet
 	public static final RegistryObject<Item> volatile_helmet = items.register("volatile_helmet", 
@@ -285,17 +150,23 @@ public class ItemInit {
 	public static final RegistryObject<Item> volatile_boots = items.register("volatile_boots", 
 			() -> new VolatileBoots());
 	
-	//Shield Book
-	public static final RegistryObject<Item> shield_book = items.register("shield_book", 
-			() -> new ShieldBook());
+	//Explosive Powder
+	public static final RegistryObject<Item> explosive_powder = register("explosive_powder",
+			() -> new ExplosivePowder(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
 	
-	//Shadow Bow
-	public static final RegistryObject<Item> shadow_bow = items.register("shadow_bow", 
-			() -> new ShadowBow());
+	// Volatile Sword
+	public static final RegistryObject<Item> volatileSword = register("volatile_sword", 
+			() -> new VolatileSword(ModTiers.VOLATILE, -3, -2.2f, new Properties().tab(TheFesterForest.tff_tab)));
 	
-	//Bag of Reetle Legs
-	public static final RegistryObject<Item> reetle_reagents = items.register("reetle_reagents", 
-			() -> new ReetleReagents());
+	/*
+	 * 
+	 * Reetle Items
+	 * 
+	 */
+	
+	//Reetle Shell
+	public static final RegistryObject<Item> reetle_shell = items.register("reetle_shell", 
+			() -> new ReetleShellPlates());
 	
 	//Reetle Elytra
 	public static final RegistryObject<Item> reetle_elytra = items.register("reetle_elytra", 
@@ -317,6 +188,62 @@ public class ItemInit {
 	public static final RegistryObject<Item> reetle_boots = items.register("reetle_boots", 
 			() -> new ReetleBoots());
 	
+	//Bug Eggs
+	public static final RegistryObject<BugEggs> bug_eggs = items.register("bug_eggs",
+			() -> new BugEggs(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Pocket Sand
+	public static final RegistryObject<Item> pocket_sand = items.register("pocket_sand",
+			() -> new PocketSand(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	/*
+	 * 
+	 * Mechanical Items
+	 * 
+	 */
+	
+	//Mechanical Helmet
+	public static final RegistryObject<Item> mechanical_helmet = items.register("mechanical_helmet", 
+			() -> new MechanicalHelmet());
+	
+	//Mechanical Chestplate
+	public static final RegistryObject<Item> mechanical_chestplate = items.register("mechanical_chestplate", 
+			() -> new MechanicalChestplate());
+		
+	//Mechanical Leggings
+	public static final RegistryObject<Item> mechanical_leggings = items.register("mechanical_leggings", 
+			() -> new MechanicalLeggings());
+		
+	//Mechanical Boots
+	public static final RegistryObject<Item> mechanical_boots = items.register("mechanical_boots", 
+			() -> new MechanicalBoots());
+	
+	//Shield Book
+	public static final RegistryObject<Item> shield_book = items.register("shield_book", 
+			() -> new ShieldBook());
+	
+	//Meteor Wand
+	public static final RegistryObject<Item> meteor_wand = items.register("meteor_wand",
+			() -> new MeteorWand(new Properties().tab(TheFesterForest.tff_tab).durability(875), 
+					0.1).repair(() -> Ingredient.of(Items.IRON_INGOT)));
+	
+	//Forgemaster Hammer
+	public static final RegistryObject<Item> forgemaster_hammer = register("forgemaster_hammer", 
+			() -> new ForgemasterHammer(ModTiers.MECHANICAL, 14, -3.5f, new Properties().tab(TheFesterForest.tff_tab)
+					.durability(3200)));
+	
+	/*
+	 * 
+	 * Goopy Items
+	 * 
+	 */
+	
+	/*
+	 * 
+	 * Banshee Items
+	 * 
+	 */
+	
 	//Banshee Helmet
 	public static final RegistryObject<Item> banshee_helmet = items.register("banshee_helmet", 
 			() -> new BansheeHelmet());
@@ -333,13 +260,117 @@ public class ItemInit {
 	public static final RegistryObject<Item> banshee_boots = items.register("banshee_boots", 
 			() -> new BansheeBoots());
 	
-	//Reetle Shell
-	public static final RegistryObject<Item> reetle_shell = items.register("reetle_shell", 
-			() -> new ReetleShellPlates());
+	//Shadow Bow
+	public static final RegistryObject<Item> shadow_bow = items.register("shadow_bow", 
+			() -> new ShadowBow());
+	
+	//Ancient Whistle
+	public static final RegistryObject<Item> ancient_whistle = items.register("ancient_whistle",
+			() -> new AncientWhistle(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Angelic Whistle
+	public static final RegistryObject<Item> angelic_whistle = items.register("angelic_whistle",
+			() -> new AngelicWhistle(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	/*
+	 * 
+	 * Wight Items
+	 * 
+	 */
+	
+	//Bone Launcher
+	public static final RegistryObject<Item> bone_launcher = items.register("bone_launcher",
+			() -> new BoneLauncher(new Properties().tab(TheFesterForest.tff_tab).durability(340), 
+					0.1).repair(() -> Ingredient.of(Items.BONE_BLOCK)));
+	
+	//Bone Scythe
+	public static final RegistryObject<Item> bone_scythe = register("bone_scythe", 
+			() -> new BoneScythe(ModTiers.BONE, 1, -3.0f, new Properties().tab(TheFesterForest.tff_tab)
+					.durability(561)));
+	
+	//Flesh Ball
+	public static final RegistryObject<Item> flesh_ball = items.register("flesh_ball", 
+			() -> new FleshBall(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Life Scythe
+	public static final RegistryObject<Item> life_scythe = register("life_scythe", 
+			() -> new LifeScythe(ModTiers.BONE, 2, -3.2f, new Properties().tab(TheFesterForest.tff_tab)
+					.durability(1400)));
+	
+	//Bone Pickaxe
+	public static final RegistryObject<Item> bone_pickaxe = register("bone_pickaxe",
+			() -> new BonePickaxe());
+	
+	/*
+	 * 
+	 * Rotting Skeleton Items
+	 * 
+	 */
+	
+	//Brittle Branch
+	public static final RegistryObject<Item> brittle_branch = items.register("brittle_branch",
+			() -> new BrittleBranch(new Properties().tab(TheFesterForest.tff_tab).durability(144), 
+					0.1).repair(() -> Ingredient.of(Items.DEAD_BUSH)));
+	
+	//Ancient Greatsword
+	public static final RegistryObject<Item> ancientGreatsword = register("ancient_greatsword", 
+			() -> new AncientGreatsword(ModTiers.METAL, -1, -3f, new Properties().tab(TheFesterForest.tff_tab).durability(550)));
+	
+	/*
+	 * 
+	 * Baubles
+	 * 
+	 */
+	
+	//Moon Shoes
+	public static final RegistryObject<Item> moon_shoes = items.register("moon_shoes", 
+			() -> new MoonShoes());
+	
+	//Gravity Gauntlet
+	public static final RegistryObject<Item> gravity_gauntlet = items.register("gravity_gauntlet", 
+			() -> new GravityGauntlets());
 	
 	//Reetle Queen Antennae
 	public static final RegistryObject<Item> reetle_queen_antennae = items.register("reetle_queen_antennae", 
 			() -> new ReetleQueenAntennae());
+	
+	//Bag of Reetle Legs
+	public static final RegistryObject<Item> reetle_reagents = items.register("reetle_reagents", 
+			() -> new ReetleReagents());
+	
+	//Forgemaster's Heart
+	public static final RegistryObject<Item> forgemaster_heart = items.register("forgemaster_heart",
+			() -> new ForgemasterHeart(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Heavy Stone
+	public static final RegistryObject<Item> heavy_stone = items.register("heavy_stone",
+			() -> new HeavyStone(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Volatile Necklace
+	public static final RegistryObject<Item> volatile_necklace = items.register("volatile_necklace",
+			() -> new VolatileNecklace(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Frozen Pendant
+	public static final RegistryObject<Item> frozen_pendant = items.register("frozen_pendant",
+			() -> new FrozenPendant(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Mechanical Eye
+	public static final RegistryObject<Item> mechanical_eye = items.register("mechanical_eye",
+			() -> new MechanicalEye(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Dual Wield Sword
+	public static final RegistryObject<Item> dual_wield_sword = register(
+			"dual_wield_sword", () -> new DualWieldSword());
+	
+	/*
+	 * 
+	 * Foods
+	 * 
+	 */
+	
+	//Goopy Jello
+	public static final RegistryObject<Item> goopy_jello = items.register("goopy_jello", 
+			() -> new GoopyJello());
 	
 	//Rotting Carrot
 	public static final RegistryObject<Item> rotting_carrot = items.register("rotting_carrot", 
@@ -349,17 +380,60 @@ public class ItemInit {
 	public static final RegistryObject<Item> rotting_pie = items.register("rotting_pie", 
 			() -> new RottingPie());
 	
-	//Gravity Gauntlet
-	public static final RegistryObject<Item> gravity_gauntlet = items.register("gravity_gauntlet", 
-			() -> new GravityGauntlets());
+	//Bug Carcass
+	public static final RegistryObject<Item> bug_carcass = register("bug_carcass", 
+			() -> new BugCarcass());
 	
-	//Moon Shoes
-	public static final RegistryObject<Item> moon_shoes = items.register("moon_shoes", 
-			() -> new MoonShoes());
+	//Volatile Apple
+	public static final RegistryObject<Item> volatileApple = register("volatile_apple", 
+			() -> new VolatileApple(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().alwaysEat().saturationMod(0.3f).nutrition(4)
+					.effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1f).build())));
 	
-	//Goopy Jello
-	public static final RegistryObject<Item> goopy_jello = items.register("goopy_jello", 
-			() -> new GoopyJello());
+	//Mechanical Apple
+	public static final RegistryObject<Item> mechanical_apple = register("mechanical_apple", 
+			() -> new MechanicalApple(new Properties().tab(TheFesterForest.tff_tab).food(new FoodProperties.Builder().alwaysEat().saturationMod(0.3f).nutrition(4)
+					.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2880, 2), 1f).build())));
+	
+	/*
+	 * 
+	 * Misc Items
+	 * 
+	 */
+	
+	//Purifying Powder
+	public static final RegistryObject<Item> purifying_powder = items.register("purifying_powder",
+			() -> new PurifyingPowder(new Properties().tab(TheFesterForest.tff_tab)));
+	
+	//Rotting Brick
+	public static final RegistryObject<Item> rotting_brick = register("rotting_brick", 
+			() -> new Item(new Properties().tab(TheFesterForest.tff_tab)));
+		
+	//Rotting Catalyst
+	public static final RegistryObject<Item> rotting_catalyst = register("rotting_catalyst", CatalystItem::new);
+	
+	/*
+	 * 
+	 * Projectile Items
+	 * 
+	 */
+	
+	//Branch Charge
+	public static final RegistryObject<BranchProjectile> branch_charge = items.register("branch_charge",
+			() -> new BranchProjectile(new Properties().stacksTo(1), 10));// damage of bullet
+	
+	//Bone Charge
+	public static final RegistryObject<BoneShot> bone_charge = items.register("bone_charge",
+			() -> new BoneShot(new Properties().stacksTo(1), 2));// damage of bullet
+	
+	//Meteor
+	public static final RegistryObject<Meteor> meteor_charge = items.register("meteor_charge",
+			() -> new Meteor(new Properties().stacksTo(1), 15));
+	
+	/*
+	 * 
+	 * Registry
+	 * 
+	 */
 	
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
 		return items.register(name, item);
