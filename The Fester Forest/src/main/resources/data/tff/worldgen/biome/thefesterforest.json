@@ -38,6 +38,12 @@
         		"weight": 20,
         		"minCount": 1,
         		"maxCount": 1
+      		},
+      		{
+        		"type": "tff:goop",
+        		"weight": 20,
+        		"minCount": 1,
+        		"maxCount": 1
       		}
     	],
     	"creature": [
@@ -64,6 +70,10 @@
   			"charge": 0.5
   		},
   		"tff:wight": {
+  			"energy_budget": 0.25,
+  			"charge": 0.5
+  		},
+  		"tff:goop": {
   			"energy_budget": 0.25,
   			"charge": 0.5
   		}

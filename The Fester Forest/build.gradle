@@ -16,7 +16,7 @@ plugins {
 apply plugin: 'net.minecraftforge.gradle'
 
 
-version = '1.1.3'
+version = '1.1.4'
 group = 'com.gmail.escarson01.tff' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'tff'
 
@@ -200,7 +200,7 @@ jar {
         attributes([
                 "Specification-Title"     : "tff",
                 "Specification-Vendor"    : "lilchicky",
-                "Specification-Version"   : "1.1.3", // We are version 1 of ourselves
+                "Specification-Version"   : "1.1.4", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "lilchicky",
