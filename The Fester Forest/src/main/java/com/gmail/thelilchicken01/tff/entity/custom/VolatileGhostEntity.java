@@ -41,9 +41,8 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
 	
-	private int explodeDamage = 30;
+	private int explodeDamage = 50;
 	private int nauseaDurationSeconds = 10;
-	private int explodeCheckTimer = 0;
 	private boolean primed = false;
 	private int primedTimer = 0;
 	private List<Entity> nearbyEntities;
@@ -55,7 +54,7 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 	
 	public static AttributeSupplier setAttributes() {
 		return Monster.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 7.0f)
+				.add(Attributes.MAX_HEALTH, 18.0f)
 				.add(Attributes.ATTACK_DAMAGE, 12.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.2f).build();
@@ -79,7 +78,6 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 	public void tick() {
 		
 		super.tick();
-		explodeCheckTimer++;
 		
 		if (!primed) {
 			
