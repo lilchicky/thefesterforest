@@ -5,7 +5,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 50,
+          "weight": 150,
           "name": "minecraft:iron_ingot",
           "functions": [
             {
@@ -23,7 +23,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 300,
           "name": "minecraft:bone",
           "functions": [
             {
@@ -41,7 +41,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 40,
+          "weight": 140,
           "name": "tff:purifying_powder",
           "functions": [
             {

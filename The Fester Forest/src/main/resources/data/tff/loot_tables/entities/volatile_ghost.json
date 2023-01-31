@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 300,
           "name": "minecraft:gunpowder"
         },
         {
@@ -33,7 +33,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
+          "weight": 120,
           "name": "tff:volatile_apple",
           "conditions": [
             {
@@ -53,7 +53,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
+          "weight": 120,
           "name": "minecraft:blaze_powder"
         },
         {

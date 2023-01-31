@@ -6,12 +6,12 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 300,
           "name": "minecraft:bone"
         },
         {
           "type": "minecraft:item",
-          "weight": 70,
+          "weight": 170,
           "name": "minecraft:black_dye"
         },
         {
