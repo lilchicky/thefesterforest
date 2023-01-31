@@ -41,7 +41,7 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
 	
-	private int explodeDamage = 10;
+	private int explodeDamage = 30;
 	private int nauseaDurationSeconds = 10;
 	private int explodeCheckTimer = 0;
 	private boolean primed = false;
@@ -56,7 +56,7 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 	public static AttributeSupplier setAttributes() {
 		return Monster.createMobAttributes()
 				.add(Attributes.MAX_HEALTH, 7.0f)
-				.add(Attributes.ATTACK_DAMAGE, 10.0f)
+				.add(Attributes.ATTACK_DAMAGE, 12.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.2f).build();
 	}
@@ -71,7 +71,7 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 		this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.00));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)));
-		this.targetSelector.addGoal(2, (new NearestAttackableTargetGoal(this, Player.class, true)));
+		this.targetSelector.addGoal(2, (new NearestAttackableTargetGoal<>(this, Player.class, true)));
 		
 	}
 	

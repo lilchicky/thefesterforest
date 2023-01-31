@@ -51,7 +51,7 @@ public class BansheeEntity extends Monster implements IAnimatable {
 	public static AttributeSupplier setAttributes() {
 		return Monster.createMobAttributes()
 				.add(Attributes.MAX_HEALTH, 30.00)
-				.add(Attributes.ATTACK_DAMAGE, 6.0f)
+				.add(Attributes.ATTACK_DAMAGE, 14.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.35f).build();
 	}
@@ -102,7 +102,7 @@ public class BansheeEntity extends Monster implements IAnimatable {
 						Vec3 newVel = ((entityVel.subtract(playerVel)).normalize().add(new Vec3(0.0, 0.6, 0.0)).multiply(2.0, 2.0, 2.0));
 					
 						nearbyEntities.get(x).setDeltaMovement(newVel);
-						nearbyEntities.get(x).hurt(TheFesterForest.banshee, 5);
+						nearbyEntities.get(x).hurt(TheFesterForest.banshee, 10);
 					
 					}
 				

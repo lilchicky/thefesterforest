@@ -43,7 +43,7 @@ public class GoopEntity extends Monster implements IAnimatable {
 		return Monster.createMobAttributes()
 				.add(Attributes.MAX_HEALTH, 95.00)
 				.add(Attributes.ARMOR, 10.0f)
-				.add(Attributes.ATTACK_DAMAGE, 7.0f)
+				.add(Attributes.ATTACK_DAMAGE, 12.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.2f).build();
 	}
