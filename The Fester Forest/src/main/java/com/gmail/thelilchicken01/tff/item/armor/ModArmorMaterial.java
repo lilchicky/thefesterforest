@@ -30,6 +30,11 @@ public enum ModArmorMaterial implements ArmorMaterial {
 		return Ingredient.of(Items.BLACK_DYE);
 	}),
 	
+	//Goopy Armor
+	GOOP("goop", 32, new int[]{3, 6, 7, 4}, 32, SoundEvents.SLIME_BLOCK_BREAK, 2.0F, 0.1F, () -> {
+		return Ingredient.of(Items.SLIME_BALL);
+	}),
+	
 	//Reetle Armor
 	REETLE("reetle", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 4.0F, 0.2F, () -> {
 	    return Ingredient.of(ItemInit.bug_carcass.get());
