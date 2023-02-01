@@ -115,6 +115,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		
 		//Simple handheld items
 		handheldItem(ItemInit.bone_pickaxe.get());
+		handheldItem(ItemInit.goopy_stick.get());
 		
 	}
 	

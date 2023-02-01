@@ -35,9 +35,9 @@ import com.gmail.thelilchicken01.tff.item.dull.ReetleQueenAntennae;
 import com.gmail.thelilchicken01.tff.item.dull.ReetleReagents;
 import com.gmail.thelilchicken01.tff.item.dull.ReetleShellPlates;
 import com.gmail.thelilchicken01.tff.item.food.BugCarcass;
+import com.gmail.thelilchicken01.tff.item.food.GoopyJello;
 import com.gmail.thelilchicken01.tff.item.food.MechanicalApple;
 import com.gmail.thelilchicken01.tff.item.food.RottingCarrot;
-import com.gmail.thelilchicken01.tff.item.food.GoopyJello;
 import com.gmail.thelilchicken01.tff.item.food.RottingPie;
 import com.gmail.thelilchicken01.tff.item.food.VolatileApple;
 import com.gmail.thelilchicken01.tff.item.item.ModTiers;
@@ -59,6 +59,7 @@ import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
 import com.gmail.thelilchicken01.tff.item.tool.BonePickaxe;
+import com.gmail.thelilchicken01.tff.item.tool.GoopyStick;
 import com.google.common.base.Supplier;
 
 import net.minecraft.world.effect.MobEffectInstance;
@@ -237,6 +238,10 @@ public class ItemInit {
 	 * Goopy Items
 	 * 
 	 */
+	
+	//Goopy Paxel
+	public static final RegistryObject<Item> goopy_stick = register("goopy_stick",
+			() -> new GoopyStick());
 	
 	/*
 	 * 

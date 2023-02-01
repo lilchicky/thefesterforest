@@ -152,6 +152,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ModEntityTypes.goop_medium.get(), "Condensed Rotting Goop");
 		add(ModEntityTypes.goop_small.get(), "Miniscule Rotting Goop");
 		add(ItemInit.goopy_jello.get(), "Goopy Jello");
+		add(ItemInit.goopy_stick.get(), "Goopy Stick");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");
