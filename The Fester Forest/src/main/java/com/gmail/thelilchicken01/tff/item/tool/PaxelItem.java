@@ -5,7 +5,9 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -35,6 +37,15 @@ public class PaxelItem extends DiggerItem {
 			   net.minecraftforge.common.ToolActions.DEFAULT_AXE_ACTIONS.contains(toolAction) ||
 			   net.minecraftforge.common.ToolActions.DEFAULT_HOE_ACTIONS.contains(toolAction) ||
 			   net.minecraftforge.common.ToolActions.DEFAULT_SHOVEL_ACTIONS.contains(toolAction);
+	}
+	
+	@Override
+	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+		
+		return enchantment.category.canEnchant(Items.IRON_PICKAXE) ||
+				enchantment.category.canEnchant(Items.IRON_AXE) ||
+				enchantment.category.canEnchant(Items.IRON_SHOVEL) ||
+				enchantment.category.canEnchant(Items.IRON_HOE);
 	}
 
 }
