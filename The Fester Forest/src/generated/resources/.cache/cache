@@ -7,7 +7,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 3977ace43b991c7f9d6bd07669e1a48cac38e9a4 assets/tff/blockstates/rotting_stone.json
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
-3b13bfb610f00ffcf008470bc3d0fb90b4b97deb assets/tff/lang/en_us.json
+a5cce834166ea98c56c1fe9dbc057cba19fdacfa assets/tff/lang/en_us.json
 74fa2fd936ff89c42c7a00a07dbdae54f43db419 assets/tff/models/block/cracked_rotting_stone.json
 24c646b7cae5aa575669209b81e20029ad8d223d assets/tff/models/block/crushed_rotting_stone.json
 76c8c0d9d0f865e28054565ba1f9f30e9c98f3d2 assets/tff/models/block/fester_ore.json
@@ -68,6 +68,7 @@ b08a670b388ee20a6c200d1f4cbc3567b0d6ec8d assets/tff/models/item/rotting_carrot.j
 e13adc8a9edece6541e28d75e9419060976daeb3 assets/tff/models/item/rotting_stone_bricks.json
 7ea77da900756b7083824d030e272af4cda269b1 assets/tff/models/item/shield_book.json
 15b181e8e1aea4c8a5b302ac94ed51c5348bcf29 assets/tff/models/item/slimy_planks.json
+da31db73483b117c57e34455a1260575e1d4244a assets/tff/models/item/slippery_goop.json
 bcda1d4d737233f9885f1da3a0f49f39287c5dac assets/tff/models/item/volatile_boots.json
 63b4894051a5adefaf5e02b6092332a996f9ebb3 assets/tff/models/item/volatile_chestplate.json
 164a098f441d335871032b02fd241d6202f1aba7 assets/tff/models/item/volatile_helmet.json

@@ -34,6 +34,7 @@ import com.gmail.thelilchicken01.tff.item.dull.PurifyingPowder;
 import com.gmail.thelilchicken01.tff.item.dull.ReetleQueenAntennae;
 import com.gmail.thelilchicken01.tff.item.dull.ReetleReagents;
 import com.gmail.thelilchicken01.tff.item.dull.ReetleShellPlates;
+import com.gmail.thelilchicken01.tff.item.dull.SlipperyGoop;
 import com.gmail.thelilchicken01.tff.item.food.BugCarcass;
 import com.gmail.thelilchicken01.tff.item.food.GoopyJello;
 import com.gmail.thelilchicken01.tff.item.food.MechanicalApple;
@@ -362,6 +363,10 @@ public class ItemInit {
 	//Mechanical Eye
 	public static final RegistryObject<Item> mechanical_eye = items.register("mechanical_eye",
 			() -> new MechanicalEye(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab)));
+	
+	//Frozen Pendant
+	public static final RegistryObject<Item> slippery_goop = items.register("slippery_goop",
+			() -> new SlipperyGoop());
 	
 	//Dual Wield Sword
 	public static final RegistryObject<Item> dual_wield_sword = register(

@@ -112,6 +112,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.banshee_leggings.get());
 		oneLayerItem(ItemInit.banshee_boots.get());
 		oneLayerItem(ItemInit.goopy_jello.get());
+		oneLayerItem(ItemInit.slippery_goop.get());
 		
 		//Simple handheld items
 		handheldItem(ItemInit.bone_pickaxe.get());

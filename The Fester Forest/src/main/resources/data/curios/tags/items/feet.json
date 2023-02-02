@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"tff:moon_shoes"
+		"tff:moon_shoes",
+		"tff:slippery_goop"
 	]
 }
