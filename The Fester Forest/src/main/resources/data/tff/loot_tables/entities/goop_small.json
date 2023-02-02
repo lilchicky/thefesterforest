@@ -16,7 +16,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 150,
           "name": "tff:goopy_jello"
         },
         {
