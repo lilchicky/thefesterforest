@@ -21,6 +21,7 @@ public class ModCommonEvents {
 		event.enqueueWork(() -> {
 			
 			((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(BlockInit.rotting_flower.getId(), BlockInit.rotting_flower_pot);
+			((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(BlockInit.sickening_flower.getId(), BlockInit.sickening_flower_pot);
 			
 			InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.NECKLACE.getMessageBuilder().build());
 			InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().build());

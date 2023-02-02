@@ -7,6 +7,7 @@ import com.gmail.thelilchicken01.tff.block.ModFlammableRotatedPillarBlock;
 import com.gmail.thelilchicken01.tff.block.RottingFlower;
 import com.gmail.thelilchicken01.tff.block.RottingGraveDirt;
 import com.gmail.thelilchicken01.tff.block.RottingwoodSapling;
+import com.gmail.thelilchicken01.tff.block.SickeningFlower;
 import com.gmail.thelilchicken01.tff.block.SlimySapling;
 import com.gmail.thelilchicken01.tff.block.TffPortalBlock;
 import com.gmail.thelilchicken01.tff.world.feature.tree.RottingTreeGrower;
@@ -204,6 +205,10 @@ public class BlockInit {
 	public static final RegistryObject<FlowerBlock> rotting_flower = register("rotting_flower", () -> new RottingFlower(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
 	
+	//Sickening Flower
+	public static final RegistryObject<FlowerBlock> sickening_flower = register("sickening_flower", () -> new SickeningFlower(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	
 	//Rotting Tall Grass
 	public static final RegistryObject<FlowerBlock> rotting_tall_grass = register("rotting_tall_grass", () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 20, Properties.copy(Blocks.GRASS)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
@@ -211,6 +216,10 @@ public class BlockInit {
 	//Rotting Flower Pot
 	public static final RegistryObject<FlowerPotBlock> rotting_flower_pot = blocks.register("rotting_flower_pot", 
 			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, rotting_flower, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+	
+	//Sickening Flower Pot
+	public static final RegistryObject<FlowerPotBlock> sickening_flower_pot = blocks.register("sickening_flower_pot", 
+			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, sickening_flower, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
 	
 	
 	//Rotting Grass Block

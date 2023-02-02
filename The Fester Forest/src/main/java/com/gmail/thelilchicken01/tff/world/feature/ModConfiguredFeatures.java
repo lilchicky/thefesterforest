@@ -67,6 +67,13 @@ public class ModConfiguredFeatures {
 					new RandomPatchConfiguration(64, 2, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, //tries, xspread, yspread
 							new SimpleBlockConfiguration(BlockStateProvider.simple(BlockInit.rotting_flower.get())))));
 	
+	// Sickening Flower
+	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> sickening_flower = 
+			FeatureUtils.register("sickening_flower", Feature.FLOWER, 
+					new RandomPatchConfiguration(32, 1, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, //tries, xspread, yspread
+							new SimpleBlockConfiguration(BlockStateProvider.simple(BlockInit.sickening_flower.get())))));
+	
+	// Rotting Tall Grass
 	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> rotting_tall_grass = 
 			FeatureUtils.register("rotting_tall_grass", Feature.FLOWER, 
 					new RandomPatchConfiguration(512, 16, 7, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, //tries, xspread, yspread

@@ -69,6 +69,8 @@ public class ClientEventBusSubscriber {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.tff_portal.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.rotting_flower.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.rotting_flower_pot.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.sickening_flower.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.sickening_flower_pot.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.rotting_tall_grass.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.slimy_leaves.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.slimy_sapling.get(), RenderType.cutout());

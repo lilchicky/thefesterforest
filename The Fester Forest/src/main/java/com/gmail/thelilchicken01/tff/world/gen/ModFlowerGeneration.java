@@ -31,6 +31,7 @@ public class ModFlowerGeneration {
 			
 			base.add(ModPlacedFeatures.rotting_flower_placed);
 			base.add(ModPlacedFeatures.rotting_tall_grass_placed);
+			base.add(ModPlacedFeatures.sickening_flower_placed);
 			
 		}
 		else {
