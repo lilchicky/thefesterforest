@@ -6,13 +6,25 @@
     ]
   },
   "criteria": {
-    "has_tff:slimy_planks": {
+    "has_tff:rotting_carrot": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "tff:slimy_planks"
+              "tff:rotting_carrot"
+            ]
+          }
+        ]
+      }
+    },
+    "has_tff:bug_carcass": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:bug_carcass"
             ]
           }
         ]
@@ -27,7 +39,8 @@
   },
   "requirements": [
     [
-      "has_tff:slimy_planks",
+      "has_tff:rotting_carrot",
+      "has_tff:bug_carcass",
       "has_the_recipe"
     ]
   ]
