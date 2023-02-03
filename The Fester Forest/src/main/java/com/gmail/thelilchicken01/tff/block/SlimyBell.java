@@ -25,7 +25,7 @@ public class SlimyBell extends FlowerBlock {
 			
 			if (!((Player) entity).hasEffect(MobEffects.JUMP)) {
 				
-				((Player) entity).addEffect(new MobEffectInstance(MobEffects.JUMP, 40, 0));
+				((Player) entity).addEffect(new MobEffectInstance(MobEffects.JUMP, 40, ((int) Math.random() * 3)));
 				
 			}
 			
