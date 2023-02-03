@@ -2,14 +2,18 @@ package com.gmail.thelilchicken01.tff.world.feature;
 
 import java.util.List;
 
+import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.config.TFFCommonConfigs;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 
 import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
@@ -25,6 +29,9 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ModConfiguredFeatures {
 	
@@ -67,12 +74,6 @@ public class ModConfiguredFeatures {
 					new RandomPatchConfiguration(64, 2, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, //tries, xspread, yspread
 							new SimpleBlockConfiguration(BlockStateProvider.simple(BlockInit.rotting_flower.get())))));
 	
-	// Sickening Flower
-	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> sickening_flower = 
-			FeatureUtils.register("sickening_flower", Feature.FLOWER, 
-					new RandomPatchConfiguration(32, 1, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, //tries, xspread, yspread
-							new SimpleBlockConfiguration(BlockStateProvider.simple(BlockInit.sickening_flower.get())))));
-	
 	// Rotting Tall Grass
 	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> rotting_tall_grass = 
 			FeatureUtils.register("rotting_tall_grass", Feature.FLOWER, 
@@ -87,4 +88,8 @@ public class ModConfiguredFeatures {
 			FeatureUtils.register("fester_ore", Feature.ORE, new OreConfiguration(
 					overworld_fester_ore, TFFCommonConfigs.FESTER_ORE_VEIN_SIZE.get())); //last number is vein size, not below 3
 	
+    private static RandomPatchConfiguration patch(Block block, int tries) {
+    	return FeatureUtils.simpleRandomPatchConfiguration(tries, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(block))));
+    }
+
 }

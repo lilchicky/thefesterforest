@@ -97,7 +97,11 @@
     	[],
     	[],
     	[],
-    	[],
+    	[
+    		"tff:sickening_flower_placed",
+    		"tff:rotting_flower_placed",
+    		"tff:rotting_tall_grass_placed"
+    	],
     	[]
   	]
 }

@@ -13,6 +13,9 @@ import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.villager.ModPOIs;
 import com.gmail.thelilchicken01.tff.world.dimension.ModDimensions;
+import com.gmail.thelilchicken01.tff.world.feature.ModConfiguredFeatures;
+import com.gmail.thelilchicken01.tff.world.feature.TffConfiguredFeatures;
+import com.gmail.thelilchicken01.tff.world.feature.TffPlacedFeature;
 import com.gmail.thelilchicken01.tff.world.structures.ModStructures;
 
 import net.minecraft.client.model.EntityModel;
@@ -74,6 +77,8 @@ public class TheFesterForest {
 		ItemInit.items.register(bus);
 		BlockInit.blocks.register(bus);
 		ParticleInit.particles.register(bus);
+		TffConfiguredFeatures.configured_features.register(bus);
+		TffPlacedFeature.placed_features.register(bus);
 		ModDimensions.register();
 		ModPOIs.register(bus);
 		ModEntityTypes.register(bus);
