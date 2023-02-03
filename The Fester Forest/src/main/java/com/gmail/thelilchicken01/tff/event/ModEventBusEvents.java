@@ -11,7 +11,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = TheFesterForest.modid, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = TheFesterForest.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventBusEvents {
 
     @SubscribeEvent
@@ -19,7 +19,7 @@ public class ModEventBusEvents {
                                                            event) {
         event.getRegistry().registerAll(
                 new CatalystInDungeonAdditionModifier.Serializer().setRegistryName
-                        (new ResourceLocation(TheFesterForest.modid,"catalyst_in_dungeon"))
+                        (new ResourceLocation(TheFesterForest.MODID,"catalyst_in_dungeon"))
         );
     }
 }

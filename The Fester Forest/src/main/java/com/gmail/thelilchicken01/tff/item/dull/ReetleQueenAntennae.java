@@ -30,7 +30,7 @@ public class ReetleQueenAntennae extends Item implements ICurioItem {
 	private int checkCounter;
 
 	public ReetleQueenAntennae() {
-		super(new Properties().tab(TheFesterForest.tff_tab).stacksTo(1));
+		super(new Properties().tab(TheFesterForest.TFF_TAB).stacksTo(1));
 		
 	}
 	
@@ -62,7 +62,7 @@ public class ReetleQueenAntennae extends Item implements ICurioItem {
 					if (nearbyEntities.get(x) instanceof CrunchBeetleEntity) {
 					
 						CrunchBeetleEntity beetle = (CrunchBeetleEntity) nearbyEntities.get(x);
-						PlayerCrunchBeetleEntity tamedBeetle = new PlayerCrunchBeetleEntity(ModEntityTypes.player_crunch_beetle.get(), world);
+						PlayerCrunchBeetleEntity tamedBeetle = new PlayerCrunchBeetleEntity(ModEntityTypes.PLAYER_CRUNCH_BEETLE.get(), world);
 					
 						if (beetle.isSummoned()) {
 							beetle.setTarget(null);

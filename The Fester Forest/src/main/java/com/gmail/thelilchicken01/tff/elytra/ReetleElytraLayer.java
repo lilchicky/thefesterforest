@@ -16,7 +16,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class ReetleElytraLayer extends ElytraLayer<AbstractClientPlayer, PlayerModel<AbstractClientPlayer>> {
 
-	private static final ResourceLocation texture = new ResourceLocation(TheFesterForest.modid, "textures/entity/reetle_elytra.png");
+	private static final ResourceLocation TEXTURE = new ResourceLocation(TheFesterForest.MODID, "textures/entity/reetle_elytra.png");
 	
 	public ReetleElytraLayer(RenderLayerParent<AbstractClientPlayer, PlayerModel<AbstractClientPlayer>> rendererIn, EntityModelSet modelSet) {
 		
@@ -27,13 +27,13 @@ public class ReetleElytraLayer extends ElytraLayer<AbstractClientPlayer, PlayerM
 	@Override
 	public boolean shouldRender(ItemStack stack, AbstractClientPlayer entity) {
 		
-		return stack.getItem() == ItemInit.reetle_elytra.get();
+		return stack.getItem() == ItemInit.REETLE_ELYTRA.get();
 	}
 	
 	@Override
 	public ResourceLocation getElytraTexture(ItemStack stack, AbstractClientPlayer entity) {
 		
-		return texture;
+		return TEXTURE;
 	}
 	
 }

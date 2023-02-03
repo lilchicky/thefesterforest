@@ -14,7 +14,7 @@ public class JEITffModPlugin implements IModPlugin {
 	@Override
 	public ResourceLocation getPluginUid() {
 		
-		return new ResourceLocation(TheFesterForest.modid, "jei_plugin");
+		return new ResourceLocation(TheFesterForest.MODID, "jei_plugin");
 	}
 	
 	//These are for if I add a new workstation.

@@ -42,7 +42,7 @@ public class GravityGauntlets extends Item implements ICurioItem {
     });
 
 	public GravityGauntlets() {
-		super(new Properties().tab(TheFesterForest.tff_tab).stacksTo(1));
+		super(new Properties().tab(TheFesterForest.TFF_TAB).stacksTo(1));
 		
 	}
 	

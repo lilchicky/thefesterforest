@@ -135,7 +135,7 @@ public class TffPortalBlock extends Block {
                 Level entityWorld = entity.level;
                 if(entityWorld != null) {
                     MinecraftServer minecraftserver = entityWorld.getServer();
-                    ResourceKey<Level> destination = entity.level.dimension() == ModDimensions.tff_key ? Level.OVERWORLD : ModDimensions.tff_key;
+                    ResourceKey<Level> destination = entity.level.dimension() == ModDimensions.TFF_KEY ? Level.OVERWORLD : ModDimensions.TFF_KEY;
                     if(minecraftserver != null) {
                         ServerLevel destinationWorld = minecraftserver.getLevel(destination);
                         if(destinationWorld != null && minecraftserver.isNetherEnabled() && !entity.isPassenger()) {
@@ -174,7 +174,7 @@ public class TffPortalBlock extends Block {
                 zSpeed = random.nextFloat() * 2.0F * (float)j;
             }
 
-            level.addParticle(ParticleInit.tff_portal_particles.get(), x, y, z, xSpeed * 0.2f, ySpeed * 0.2f, zSpeed * 0.2f);
+            level.addParticle(ParticleInit.TFF_PORTAL_PARTICLES.get(), x, y, z, xSpeed * 0.2f, ySpeed * 0.2f, zSpeed * 0.2f);
         }
 
     }
@@ -280,7 +280,7 @@ public class TffPortalBlock extends Block {
                     }
 
                     Block block = blockstate.getBlock();
-                    if (block == BlockInit.tff_portal.get()) {
+                    if (block == BlockInit.TFF_PORTAL.get()) {
                         ++this.portalBlockCount;
                     }
 
@@ -318,7 +318,7 @@ public class TffPortalBlock extends Block {
 
         protected boolean canConnect(BlockState pos) {
             Block block = pos.getBlock();
-            return pos.isAir() || block == BlockInit.tff_portal.get();
+            return pos.isAir() || block == BlockInit.TFF_PORTAL.get();
         }
 
         public boolean isValid() {
@@ -330,7 +330,7 @@ public class TffPortalBlock extends Block {
                 BlockPos blockpos = this.bottomLeft.relative(this.rightDir, i);
 
                 for(int j = 0; j < this.height; ++j) {
-                    this.level.setBlock(blockpos.above(j), BlockInit.tff_portal.get().defaultBlockState().setValue(TffPortalBlock.AXIS, this.axis), 18);
+                    this.level.setBlock(blockpos.above(j), BlockInit.TFF_PORTAL.get().defaultBlockState().setValue(TffPortalBlock.AXIS, this.axis), 18);
                 }
             }
 

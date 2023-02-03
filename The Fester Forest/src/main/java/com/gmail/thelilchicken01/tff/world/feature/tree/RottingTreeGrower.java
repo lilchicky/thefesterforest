@@ -12,7 +12,7 @@ public class RottingTreeGrower extends AbstractTreeGrower {
 
 	@Override
 	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(Random p_204307_, boolean p_204308_) {
-		return TffConfiguredFeatures.rottingwood_tree.getHolder().get();
+		return TffConfiguredFeatures.ROTTINGWOOD_TREE.getHolder().get();
 	}
 
 }

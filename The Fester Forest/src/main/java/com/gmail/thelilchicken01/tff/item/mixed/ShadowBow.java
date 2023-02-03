@@ -31,7 +31,7 @@ public class ShadowBow extends BowItem {
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
 	public ShadowBow() {
-		super(new Properties().durability(966).tab(TheFesterForest.tff_tab));
+		super(new Properties().durability(966).tab(TheFesterForest.TFF_TAB));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, 
@@ -54,7 +54,7 @@ public class ShadowBow extends BowItem {
 	@Override
 	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
 		
-		return enchantment.category.canEnchant(ItemInit.ancientGreatsword.get()) ||
+		return enchantment.category.canEnchant(ItemInit.ANCIENT_GREATSWORD.get()) ||
 				super.canApplyAtEnchantingTable(stack, enchantment);
 	}
 	

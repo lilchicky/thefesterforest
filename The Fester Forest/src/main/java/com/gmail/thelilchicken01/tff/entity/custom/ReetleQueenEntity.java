@@ -93,7 +93,7 @@ public class ReetleQueenEntity extends Monster implements IAnimatable {
 		
 			if (spawnCooldown > spawnSeconds * 20 && getTarget() instanceof Player && !pacified) {
 			
-				CrunchBeetleEntity minion = new CrunchBeetleEntity(ModEntityTypes.crunch_beetle.get(), getLevel());
+				CrunchBeetleEntity minion = new CrunchBeetleEntity(ModEntityTypes.CRUNCH_BEETLE.get(), getLevel());
 			
 				minion.setPos(getX(), getY(), getZ());
 				minion.setTarget(getTarget());

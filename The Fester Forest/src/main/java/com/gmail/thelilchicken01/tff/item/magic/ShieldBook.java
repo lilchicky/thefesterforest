@@ -32,7 +32,7 @@ public class ShieldBook extends Item {
 
 	public ShieldBook() {
 		
-		super(new Properties().tab(TheFesterForest.tff_tab).durability(64));
+		super(new Properties().tab(TheFesterForest.TFF_TAB).durability(64));
 		
 	}
 	

@@ -16,7 +16,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
-@Mod.EventBusSubscriber(modid = TheFesterForest.modid, bus = Bus.MOD)
+@Mod.EventBusSubscriber(modid = TheFesterForest.MODID, bus = Bus.MOD)
 public class TffDataGeneration {
 
 	@SubscribeEvent

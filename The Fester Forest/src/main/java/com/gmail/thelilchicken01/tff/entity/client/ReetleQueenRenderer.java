@@ -22,7 +22,7 @@ public class ReetleQueenRenderer extends GeoEntityRenderer<ReetleQueenEntity> {
 	@Override
 	public ResourceLocation getTextureLocation(ReetleQueenEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/reetle_queen/reetle_queen.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/reetle_queen/reetle_queen.png");
 	}
 	
 	@Override

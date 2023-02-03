@@ -19,7 +19,7 @@ public class ReetleShellPlates extends Item {
 	private String[] drops = {"Reetle Queen", "Fester Forest Loot Chests"};
 
 	public ReetleShellPlates() {
-		super(new Properties().tab(TheFesterForest.tff_tab));
+		super(new Properties().tab(TheFesterForest.TFF_TAB));
 	}
 	
 	@Override

@@ -11,19 +11,19 @@ public class GoopModel extends AnimatedGeoModel<GoopEntity> {
 	@Override
 	public ResourceLocation getAnimationFileLocation(GoopEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "animations/goop.animation.json");
+		return new ResourceLocation(TheFesterForest.MODID, "animations/goop.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelLocation(GoopEntity object) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "geo/goop.geo.json");
+		return new ResourceLocation(TheFesterForest.MODID, "geo/goop.geo.json");
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(GoopEntity object) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/goop/goop.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/goop/goop.png");
 	}
 
 }

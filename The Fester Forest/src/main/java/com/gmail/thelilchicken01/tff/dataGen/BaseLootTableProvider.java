@@ -42,12 +42,12 @@ public abstract class BaseLootTableProvider extends LootTableProvider {
     private static final Logger LOGGER = LogManager.getLogger();
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 
-    protected final Map<Block, LootTable.Builder> lootTables = new HashMap<>();
-    private final DataGenerator generator;
+    protected final Map<Block, LootTable.Builder> LOOT_TABLES = new HashMap<>();
+    private final DataGenerator GENERATOR;
 
     public BaseLootTableProvider(DataGenerator dataGeneratorIn) {
         super(dataGeneratorIn);
-        this.generator = dataGeneratorIn;
+        this.GENERATOR = dataGeneratorIn;
     }
 
     protected abstract void addTables();
@@ -99,14 +99,14 @@ public abstract class BaseLootTableProvider extends LootTableProvider {
         addTables();
 
         Map<ResourceLocation, LootTable> tables = new HashMap<>();
-        for (Map.Entry<Block, LootTable.Builder> entry : lootTables.entrySet()) {
+        for (Map.Entry<Block, LootTable.Builder> entry : LOOT_TABLES.entrySet()) {
             tables.put(entry.getKey().getLootTable(), entry.getValue().setParamSet(LootContextParamSets.BLOCK).build());
         }
         writeTables(cache, tables);
     }
 
     private void writeTables(HashCache cache, Map<ResourceLocation, LootTable> tables) {
-        Path outputFolder = this.generator.getOutputFolder();
+        Path outputFolder = this.GENERATOR.getOutputFolder();
         tables.forEach((key, lootTable) -> {
             Path path = outputFolder.resolve("data/" + key.getNamespace() + "/loot_tables/" + key.getPath() + ".json");
             try {
@@ -118,7 +118,7 @@ public abstract class BaseLootTableProvider extends LootTableProvider {
     }
     
     public void add(Block block, LootTable.Builder builder) {
-    	lootTables.put(block, builder);
+    	LOOT_TABLES.put(block, builder);
     }
     
 }

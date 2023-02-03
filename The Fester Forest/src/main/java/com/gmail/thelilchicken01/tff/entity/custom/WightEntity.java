@@ -111,7 +111,7 @@ public class WightEntity extends Monster implements IAnimatable {
 	@Override
 	public ItemStack getMainHandItem() {
 		
-		return new ItemStack(ItemInit.life_scythe.get(), 1);
+		return new ItemStack(ItemInit.LIFE_SCYTHE.get(), 1);
 	}
 
 	@Override

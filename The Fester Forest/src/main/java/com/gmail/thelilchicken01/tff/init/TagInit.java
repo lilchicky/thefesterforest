@@ -16,26 +16,26 @@ public final class TagInit {
 		
 		public static final TagKey<Block> PORTAL_FRAME_BLOCKS = mod("portal_frame_blocks");
 		
-		public static final TagKey<Block> slimy_woods = mod("slimy_woods");
+		public static final TagKey<Block> SLIMY_WOODS = mod("slimy_woods");
 		
-		public static final TagKey<Block> rotting_woods = mod("rotting_woods");
+		public static final TagKey<Block> ROTTING_WOODS = mod("rotting_woods");
 		
-		public static final TagKey<Block> tff_stones = mod("tff_stones");
+		public static final TagKey<Block> TFF_STONES = mod("tff_stones");
 		
 		private static TagKey<Block> mod(String path) {
-			return BlockTags.create(new ResourceLocation(TheFesterForest.modid, path));
+			return BlockTags.create(new ResourceLocation(TheFesterForest.MODID, path));
 		}
 		
 	}
 	
 	public static final class Items {
 		
-		public static final TagKey<Item> slimy_woods = mod("slimy_woods");
+		public static final TagKey<Item> SLIMY_WOODS = mod("slimy_woods");
 		
-		public static final TagKey<Item> tff_stones = mod("tff_stones");
+		public static final TagKey<Item> TFF_STONES = mod("tff_stones");
 		
 		private static TagKey<Item> mod(String path) {
-			return ItemTags.create(new ResourceLocation(TheFesterForest.modid, path));
+			return ItemTags.create(new ResourceLocation(TheFesterForest.MODID, path));
 		}
 		
 	}

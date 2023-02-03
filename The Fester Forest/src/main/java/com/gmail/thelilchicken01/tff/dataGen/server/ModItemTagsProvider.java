@@ -16,16 +16,16 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
 	public ModItemTagsProvider(DataGenerator gen, BlockTagsProvider blocks,
 			@Nullable ExistingFileHelper helper) {
-		super(gen, blocks, TheFesterForest.modid, helper);
+		super(gen, blocks, TheFesterForest.MODID, helper);
 		
 	}
 	
 	@Override
 	protected void addTags() {
 		
-		tag(Tags.Items.INGOTS).add(ItemInit.rotting_brick.get().asItem());
-		tag(Tags.Items.COBBLESTONE).add(BlockInit.cracked_rotting_stone.get().asItem());
-		tag(Tags.Items.COBBLESTONE).add(BlockInit.mossy_rotting_stone.get().asItem());
+		tag(Tags.Items.INGOTS).add(ItemInit.ROTTING_BRICK.get().asItem());
+		tag(Tags.Items.COBBLESTONE).add(BlockInit.CRACKED_ROTTING_STONE.get().asItem());
+		tag(Tags.Items.COBBLESTONE).add(BlockInit.MOSSY_ROTTING_STONE.get().asItem());
 		
 	}
 

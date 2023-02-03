@@ -39,7 +39,7 @@ public class MechanicalBoots extends ArmorItem {
 
 	public MechanicalBoots() {
 		super(ModArmorMaterial.MECHANICAL, EquipmentSlot.FEET, 
-				new Properties().tab(TheFesterForest.tff_tab));
+				new Properties().tab(TheFesterForest.TFF_TAB));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		

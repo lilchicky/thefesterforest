@@ -38,7 +38,7 @@ public class ReetleHelmet extends ArmorItem {
 	private String[] drops = {"Crafted"};
 
 	public ReetleHelmet() {
-		super(ModArmorMaterial.REETLE, EquipmentSlot.HEAD, new Properties().tab(TheFesterForest.tff_tab));
+		super(ModArmorMaterial.REETLE, EquipmentSlot.HEAD, new Properties().tab(TheFesterForest.TFF_TAB));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		

@@ -13,7 +13,7 @@ public class SlimyTreeGrower extends AbstractTreeGrower {
 
 	@Override
 	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(Random p_204307_, boolean p_204308_) {
-		return TffConfiguredFeatures.slimy_tree.getHolder().get();
+		return TffConfiguredFeatures.SLIMY_TREE.getHolder().get();
 	}
 
 }

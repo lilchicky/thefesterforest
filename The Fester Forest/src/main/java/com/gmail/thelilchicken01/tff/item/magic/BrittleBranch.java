@@ -54,11 +54,11 @@ public class BrittleBranch extends ProjectileWeaponItem {
 	public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
 		ItemStack gun = player.getItemInHand(hand);
 
-		BranchProjectile bulletItem = ItemInit.branch_charge.get();
+		BranchProjectile bulletItem = ItemInit.BRANCH_CHARGE.get();
 		if (!world.isClientSide()) {
 			boolean bulletFree = true;
 			
-			ItemStack shotAmmo = new ItemStack(ItemInit.branch_charge.get());
+			ItemStack shotAmmo = new ItemStack(ItemInit.BRANCH_CHARGE.get());
 			shoot(world, player, gun, shotAmmo, bulletItem, bulletFree);
 			
 			gun.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand()));

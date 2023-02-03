@@ -23,7 +23,7 @@ public class RottingSkeletonRenderer extends GeoEntityRenderer<RottingSkeletonEn
 	@Override
 	public ResourceLocation getTextureLocation(RottingSkeletonEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/rotting_skeleton/rotting_skeleton.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/rotting_skeleton/rotting_skeleton.png");
 	}
 	
 	@Override

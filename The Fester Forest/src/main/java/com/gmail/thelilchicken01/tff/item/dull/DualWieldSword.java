@@ -29,7 +29,7 @@ public class DualWieldSword extends Item {
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
 	public DualWieldSword() {
-		super(new Properties().stacksTo(1).tab(TheFesterForest.tff_tab));
+		super(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "weapon damage", 6.0, AttributeModifier.Operation.ADDITION));

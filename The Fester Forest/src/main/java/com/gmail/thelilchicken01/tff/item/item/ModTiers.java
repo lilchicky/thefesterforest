@@ -1,5 +1,7 @@
 package com.gmail.thelilchicken01.tff.item.item;
 
+import com.gmail.thelilchicken01.tff.init.ItemInit;
+
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -14,7 +16,7 @@ public class ModTiers {
 	
 	public static final ForgeTier PAXEL_DIAMOND = new ForgeTier(3, 1561, 8.0F, 
 			3.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> {
-	    return Ingredient.of(Items.DIAMOND);
+	    return Ingredient.of(ItemInit.GOOPY_JELLO.get());
 	});
 	
 	public static final ForgeTier METAL = new ForgeTier(4, 1600, 0.0F, 

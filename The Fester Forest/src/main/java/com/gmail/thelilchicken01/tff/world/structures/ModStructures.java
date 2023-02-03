@@ -18,7 +18,7 @@ public class ModStructures {
      * configured structures and configured features need to be registered directly to BuiltinRegistries as there
      * is no Deferred Registry system for them.
      */
-    public static final DeferredRegister<StructureFeature<?>> DEFERRED_REGISTRY_STRUCTURE = DeferredRegister.create(ForgeRegistries.STRUCTURE_FEATURES, TheFesterForest.modid);
+    public static final DeferredRegister<StructureFeature<?>> DEFERRED_REGISTRY_STRUCTURE = DeferredRegister.create(ForgeRegistries.STRUCTURE_FEATURES, TheFesterForest.MODID);
 
     /**
      * Registers the base structure itself and sets what its path is. In this case,

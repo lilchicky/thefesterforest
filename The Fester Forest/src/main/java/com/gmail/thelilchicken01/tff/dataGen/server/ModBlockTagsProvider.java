@@ -15,7 +15,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
 	public ModBlockTagsProvider(DataGenerator gen,
 			@Nullable ExistingFileHelper helper) {
-		super(gen, TheFesterForest.modid, helper);
+		super(gen, TheFesterForest.MODID, helper);
 		
 		
 	}
@@ -24,10 +24,10 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 	protected void addTags() {
 		
 		//tag(TagInit.Blocks.COOL_BLOCKS).add(Blocks.ACACIA_BUTTON).add(BlockInit.rotting_log.get());
-		tag(Tags.Blocks.ORES).add(BlockInit.fester_ore.get());
-		tag(Tags.Blocks.STONE).add(BlockInit.rotting_stone.get());
-		tag(Tags.Blocks.STONE).add(BlockInit.cracked_rotting_stone.get());
-		tag(Tags.Blocks.STONE).add(BlockInit.mossy_rotting_stone.get());
+		tag(Tags.Blocks.ORES).add(BlockInit.FESTER_ORE.get());
+		tag(Tags.Blocks.STONE).add(BlockInit.ROTTING_STONE.get());
+		tag(Tags.Blocks.STONE).add(BlockInit.CRACKED_ROTTING_STONE.get());
+		tag(Tags.Blocks.STONE).add(BlockInit.MOSSY_ROTTING_STONE.get());
 	}
 
 }

@@ -11,19 +11,19 @@ public class WightModel extends AnimatedGeoModel<WightEntity> {
 	@Override
 	public ResourceLocation getAnimationFileLocation(WightEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "animations/wight.animation.json");
+		return new ResourceLocation(TheFesterForest.MODID, "animations/wight.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelLocation(WightEntity object) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "geo/wight.geo.json");
+		return new ResourceLocation(TheFesterForest.MODID, "geo/wight.geo.json");
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(WightEntity object) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/wight/wight.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/wight/wight.png");
 	}
 
 }

@@ -57,8 +57,8 @@ public class MeteorWand extends ProjectileWeaponItem {
 		
 		if (!player.getLevel().isClientSide) {
 				
-			Meteor bulletItem = ItemInit.meteor_charge.get();
-			ItemStack shotAmmo = new ItemStack(ItemInit.meteor_charge.get());
+			Meteor bulletItem = ItemInit.METEOR_CHARGE.get();
+			ItemStack shotAmmo = new ItemStack(ItemInit.METEOR_CHARGE.get());
 			
 			MeteorCharge shot = bulletItem.createProjectile(player.getLevel(), shotAmmo, player);
 			
@@ -99,8 +99,8 @@ public class MeteorWand extends ProjectileWeaponItem {
 		if (!context.getLevel().isClientSide()) {
 			BlockPos clicked = context.getClickedPos();
 				
-			Meteor bulletItem = ItemInit.meteor_charge.get();
-			ItemStack shotAmmo = new ItemStack(ItemInit.meteor_charge.get());
+			Meteor bulletItem = ItemInit.METEOR_CHARGE.get();
+			ItemStack shotAmmo = new ItemStack(ItemInit.METEOR_CHARGE.get());
 			
 			MeteorCharge shot = bulletItem.createProjectile(context.getLevel(), shotAmmo, context.getPlayer());
 			

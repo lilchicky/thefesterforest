@@ -16,35 +16,35 @@ public enum ArmorSets {
 	
 	//Volatile Set
 	VOLATILE(() -> {
-		return new Item[]{ItemInit.volatile_boots.get(),
-				ItemInit.volatile_leggings.get(),
-				ItemInit.volatile_chestplate.get(),
-				ItemInit.volatile_helmet.get()};
+		return new Item[]{ItemInit.VOLATILE_BOOTS.get(),
+				ItemInit.VOLATILE_LEGGINGS.get(),
+				ItemInit.VOLATILE_CHESTPLATE.get(),
+				ItemInit.VOLATILE_HELMET.get()};
 	}),
 	
 	//Banshee Set
 	BANSHEE(() -> {
-		return new Item[]{ItemInit.banshee_boots.get(),
-				ItemInit.banshee_leggings.get(),
-				ItemInit.banshee_chestplate.get(),
-				ItemInit.banshee_helmet.get()};
+		return new Item[]{ItemInit.BANSHEE_BOOTS.get(),
+				ItemInit.BANSHEE_LEGGINGS.get(),
+				ItemInit.BANSHEE_CHESTPLATE.get(),
+				ItemInit.BANSHEE_HELMET.get()};
 	}),
 	
 	//Reetle Set
 	REETLE(() -> {
-		return new Item[]{ItemInit.reetle_boots.get(),
-				ItemInit.reetle_leggings.get(),
-				ItemInit.reetle_chestplate.get(),
-				ItemInit.reetle_helmet.get(),
-				ItemInit.reetle_elytra.get()};
+		return new Item[]{ItemInit.REETLE_BOOTS.get(),
+				ItemInit.REETLE_LEGGINGS.get(),
+				ItemInit.REETLE_CHESTPLATE.get(),
+				ItemInit.REETLE_HELMET.get(),
+				ItemInit.REETLE_ELYTRA.get()};
 	}),
 	
 	//Mechanical Set
 	MECHANICAL(() -> {
-		return new Item[]{ItemInit.mechanical_boots.get(),
-				ItemInit.mechanical_leggings.get(),
-				ItemInit.mechanical_chestplate.get(),
-				ItemInit.mechanical_helmet.get()};
+		return new Item[]{ItemInit.MECHANICAL_BOOTS.get(),
+				ItemInit.MECHANICAL_LEGGINGS.get(),
+				ItemInit.MECHANICAL_CHESTPLATE.get(),
+				ItemInit.MECHANICAL_HELMET.get()};
 	});
 	
 	private final LazyLoadedValue<Item[]> armorSet;

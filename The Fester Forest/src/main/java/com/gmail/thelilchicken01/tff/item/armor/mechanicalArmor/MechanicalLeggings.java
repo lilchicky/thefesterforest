@@ -39,7 +39,7 @@ public class MechanicalLeggings extends ArmorItem {
 
 	public MechanicalLeggings() {
 		super(ModArmorMaterial.MECHANICAL, EquipmentSlot.LEGS, 
-				new Properties().tab(TheFesterForest.tff_tab));
+				new Properties().tab(TheFesterForest.TFF_TAB));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		

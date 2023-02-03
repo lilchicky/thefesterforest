@@ -29,205 +29,205 @@ public class ModRecipeProvider extends RecipeProvider {
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 		
 		// Shaped
-		ShapedRecipeBuilder.shaped(BlockInit.rotting_bricks.get()) // add , int to get number of output
-			.define('a', ItemInit.rotting_brick.get().asItem())
-			.unlockedBy("has_" + ItemInit.rotting_brick.get().getRegistryName(), has(ItemInit.rotting_brick.get().asItem())) // what unlocks the recipe when you get that item
-			.pattern("aa ").pattern("aa ").save(consumer, new ResourceLocation(TheFesterForest.modid, BlockInit.rotting_bricks.get().getRegistryName().getPath()));
+		ShapedRecipeBuilder.shaped(BlockInit.ROTTING_BRICKS.get()) // add , int to get number of output
+			.define('a', ItemInit.ROTTING_BRICK.get().asItem())
+			.unlockedBy("has_" + ItemInit.ROTTING_BRICK.get().getRegistryName(), has(ItemInit.ROTTING_BRICK.get().asItem())) // what unlocks the recipe when you get that item
+			.pattern("aa ").pattern("aa ").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_BRICKS.get().getRegistryName().getPath()));
 		
-		ShapedRecipeBuilder.shaped(BlockInit.rotting_stone_bricks.get(), 4) //what am i making
-			.define('a', BlockInit.rotting_stone.get().asItem()) //keys
-			.unlockedBy("has_" + BlockInit.rotting_stone.get().getRegistryName(), //unlocked when you get this item
-					has(BlockInit.rotting_stone.get().asItem()))
+		ShapedRecipeBuilder.shaped(BlockInit.ROTTING_STONE_BRICKS.get(), 4) //what am i making
+			.define('a', BlockInit.ROTTING_STONE.get().asItem()) //keys
+			.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), //unlocked when you get this item
+					has(BlockInit.ROTTING_STONE.get().asItem()))
 			.pattern("aa ").pattern("aa ").save(consumer, //the patterns with the keys above
-					new ResourceLocation(TheFesterForest.modid, //crafting name of recipe is this \/ 
-							BlockInit.rotting_stone_bricks.get().getRegistryName().getPath()));
+					new ResourceLocation(TheFesterForest.MODID, //crafting name of recipe is this \/ 
+							BlockInit.ROTTING_STONE_BRICKS.get().getRegistryName().getPath()));
 		
 		//Stone Brick Stairs
-		ShapedRecipeBuilder.shaped(BlockInit.rotting_stone_brick_stairs.get(), 4)
-			.define('a', BlockInit.rotting_stone_bricks.get().asItem())
-			.unlockedBy("has_" + BlockInit.rotting_stone_bricks.get().getRegistryName(), 
-					has(BlockInit.rotting_stone_bricks.get().asItem()))
+		ShapedRecipeBuilder.shaped(BlockInit.ROTTING_STONE_BRICK_STAIRS.get(), 4)
+			.define('a', BlockInit.ROTTING_STONE_BRICKS.get().asItem())
+			.unlockedBy("has_" + BlockInit.ROTTING_STONE_BRICKS.get().getRegistryName(), 
+					has(BlockInit.ROTTING_STONE_BRICKS.get().asItem()))
 			.pattern("a  ").pattern("aa ").pattern("aaa").save(consumer, 
-					new ResourceLocation(TheFesterForest.modid, 
-							BlockInit.rotting_stone_brick_stairs.get().getRegistryName().getPath()));
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.ROTTING_STONE_BRICK_STAIRS.get().getRegistryName().getPath()));
 		
 		//Stone Brick Slabs
-		ShapedRecipeBuilder.shaped(BlockInit.rotting_stone_brick_slab.get(), 6)
-			.define('a', BlockInit.rotting_stone_bricks.get().asItem())
-			.unlockedBy("has_" + BlockInit.rotting_stone_bricks.get().getRegistryName(), 
-					has(BlockInit.rotting_stone_bricks.get().asItem()))
+		ShapedRecipeBuilder.shaped(BlockInit.ROTTING_STONE_BRICK_SLAB.get(), 6)
+			.define('a', BlockInit.ROTTING_STONE_BRICKS.get().asItem())
+			.unlockedBy("has_" + BlockInit.ROTTING_STONE_BRICKS.get().getRegistryName(), 
+					has(BlockInit.ROTTING_STONE_BRICKS.get().asItem()))
 			.pattern("aaa").save(consumer, 
-					new ResourceLocation(TheFesterForest.modid, 
-							BlockInit.rotting_stone_brick_slab.get().getRegistryName().getPath()));
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.ROTTING_STONE_BRICK_SLAB.get().getRegistryName().getPath()));
 		
 		//Stone Brick Walls
-		ShapedRecipeBuilder.shaped(BlockInit.rotting_stone_brick_wall.get(), 6)
-			.define('a', BlockInit.rotting_stone_bricks.get().asItem())
-			.unlockedBy("has_" + BlockInit.rotting_stone_bricks.get().getRegistryName(), 
-					has(BlockInit.rotting_stone_bricks.get().asItem()))
+		ShapedRecipeBuilder.shaped(BlockInit.ROTTING_STONE_BRICK_WALL.get(), 6)
+			.define('a', BlockInit.ROTTING_STONE_BRICKS.get().asItem())
+			.unlockedBy("has_" + BlockInit.ROTTING_STONE_BRICKS.get().getRegistryName(), 
+					has(BlockInit.ROTTING_STONE_BRICKS.get().asItem()))
 			.pattern("aaa").pattern("aaa").save(consumer, 
-					new ResourceLocation(TheFesterForest.modid, 
-							BlockInit.rotting_stone_brick_wall.get().getRegistryName().getPath()));
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.ROTTING_STONE_BRICK_WALL.get().getRegistryName().getPath()));
 		
 		//Rottingwood Fence
-		ShapedRecipeBuilder.shaped(BlockInit.rottingwood_fence.get(), 3)
-			.define('a', BlockInit.rotting_planks.get().asItem()).define('b', Items.STICK)
-			.unlockedBy("has_" + BlockInit.rotting_planks.get().getRegistryName(), 
-					has(BlockInit.rotting_planks.get().asItem()))
+		ShapedRecipeBuilder.shaped(BlockInit.ROTTINGWOOD_FENCE.get(), 3)
+			.define('a', BlockInit.ROTTING_PLANKS.get().asItem()).define('b', Items.STICK)
+			.unlockedBy("has_" + BlockInit.ROTTING_PLANKS.get().getRegistryName(), 
+					has(BlockInit.ROTTING_PLANKS.get().asItem()))
 			.pattern("aba").pattern("aba").save(consumer, 
-					new ResourceLocation(TheFesterForest.modid, 
-							BlockInit.rottingwood_fence.get().getRegistryName().getPath()));
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.ROTTINGWOOD_FENCE.get().getRegistryName().getPath()));
 		
 		//Rottingwood Fence Gate
-		ShapedRecipeBuilder.shaped(BlockInit.rottingwood_fence_gate.get())
-			.define('a', BlockInit.rotting_planks.get().asItem()).define('b', Items.STICK)
-			.unlockedBy("has_" + BlockInit.rotting_planks.get().getRegistryName(), 
-					has(BlockInit.rotting_planks.get().asItem()))
+		ShapedRecipeBuilder.shaped(BlockInit.ROTTINGWOOD_FENCE_GATE.get())
+			.define('a', BlockInit.ROTTING_PLANKS.get().asItem()).define('b', Items.STICK)
+			.unlockedBy("has_" + BlockInit.ROTTING_PLANKS.get().getRegistryName(), 
+					has(BlockInit.ROTTING_PLANKS.get().asItem()))
 			.pattern("bab").pattern("bab").save(consumer, 
-					new ResourceLocation(TheFesterForest.modid, 
-							BlockInit.rottingwood_fence_gate.get().getRegistryName().getPath()));
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.ROTTINGWOOD_FENCE_GATE.get().getRegistryName().getPath()));
 		
 		//Rottingwood Stairs
-		ShapedRecipeBuilder.shaped(BlockInit.rottingwood_stairs.get(), 4)
-			.define('a', BlockInit.rotting_planks.get().asItem())
-			.unlockedBy("has_" + BlockInit.rotting_planks.get().getRegistryName(), 
-					has(BlockInit.rotting_planks.get().asItem()))
+		ShapedRecipeBuilder.shaped(BlockInit.ROTTINGWOOD_STAIRS.get(), 4)
+			.define('a', BlockInit.ROTTING_PLANKS.get().asItem())
+			.unlockedBy("has_" + BlockInit.ROTTING_PLANKS.get().getRegistryName(), 
+					has(BlockInit.ROTTING_PLANKS.get().asItem()))
 			.pattern("a  ").pattern("aa ").pattern("aaa").save(consumer, 
-					new ResourceLocation(TheFesterForest.modid, 
-							BlockInit.rottingwood_stairs.get().getRegistryName().getPath()));
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.ROTTINGWOOD_STAIRS.get().getRegistryName().getPath()));
 		
 		//Slimy Stairs
-		ShapedRecipeBuilder.shaped(BlockInit.slimy_stairs.get(), 4)
-			.define('a', BlockInit.slimy_planks.get().asItem())
-			.unlockedBy("has_" + BlockInit.slimy_planks.get().getRegistryName(), 
-					has(BlockInit.slimy_planks.get().asItem()))
+		ShapedRecipeBuilder.shaped(BlockInit.SLIMY_STAIRS.get(), 4)
+			.define('a', BlockInit.SLIMY_PLANKS.get().asItem())
+			.unlockedBy("has_" + BlockInit.SLIMY_PLANKS.get().getRegistryName(), 
+					has(BlockInit.SLIMY_PLANKS.get().asItem()))
 			.pattern("a  ").pattern("aa ").pattern("aaa").save(consumer, 
-					new ResourceLocation(TheFesterForest.modid, 
-							BlockInit.slimy_stairs.get().getRegistryName().getPath()));
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.SLIMY_STAIRS.get().getRegistryName().getPath()));
 		
 		//Rottingwood Slabs
-		ShapedRecipeBuilder.shaped(BlockInit.rottingwood_slab.get(), 6)
-			.define('a', BlockInit.rotting_planks.get().asItem())
-			.unlockedBy("has_" + BlockInit.rotting_planks.get().getRegistryName(), 
-					has(BlockInit.rotting_planks.get().asItem()))
+		ShapedRecipeBuilder.shaped(BlockInit.ROTTINGWOOD_SLAB.get(), 6)
+			.define('a', BlockInit.ROTTING_PLANKS.get().asItem())
+			.unlockedBy("has_" + BlockInit.ROTTING_PLANKS.get().getRegistryName(), 
+					has(BlockInit.ROTTING_PLANKS.get().asItem()))
 			.pattern("aaa").save(consumer, 
-					new ResourceLocation(TheFesterForest.modid, 
-							BlockInit.rottingwood_slab.get().getRegistryName().getPath()));
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.ROTTINGWOOD_SLAB.get().getRegistryName().getPath()));
 		
 		//Slimy Slabs
-		ShapedRecipeBuilder.shaped(BlockInit.slimy_slab.get(), 6)
-			.define('a', BlockInit.slimy_planks.get().asItem())
-			.unlockedBy("has_" + BlockInit.slimy_planks.get().getRegistryName(), 
-					has(BlockInit.slimy_planks.get().asItem()))
+		ShapedRecipeBuilder.shaped(BlockInit.SLIMY_SLAB.get(), 6)
+			.define('a', BlockInit.SLIMY_PLANKS.get().asItem())
+			.unlockedBy("has_" + BlockInit.SLIMY_PLANKS.get().getRegistryName(), 
+					has(BlockInit.SLIMY_PLANKS.get().asItem()))
 			.pattern("aaa").save(consumer, 
-					new ResourceLocation(TheFesterForest.modid, 
-							BlockInit.slimy_slab.get().getRegistryName().getPath()));
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.SLIMY_SLAB.get().getRegistryName().getPath()));
 		
 		//Slimy Fence
-		ShapedRecipeBuilder.shaped(BlockInit.slimy_fence.get(), 3)
-			.define('a', BlockInit.slimy_planks.get().asItem()).define('b', Items.STICK)
-			.unlockedBy("has_" + BlockInit.slimy_planks.get().getRegistryName(), 
-					has(BlockInit.slimy_planks.get().asItem()))
+		ShapedRecipeBuilder.shaped(BlockInit.SLIMY_FENCE.get(), 3)
+			.define('a', BlockInit.SLIMY_PLANKS.get().asItem()).define('b', Items.STICK)
+			.unlockedBy("has_" + BlockInit.SLIMY_PLANKS.get().getRegistryName(), 
+					has(BlockInit.SLIMY_PLANKS.get().asItem()))
 			.pattern("aba").pattern("aba").save(consumer, 
-					new ResourceLocation(TheFesterForest.modid, 
-							BlockInit.slimy_fence.get().getRegistryName().getPath()));
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.SLIMY_FENCE.get().getRegistryName().getPath()));
 				
 		//Slimy Fence Gate
-		ShapedRecipeBuilder.shaped(BlockInit.slimy_fence_gate.get())
-			.define('a', BlockInit.slimy_planks.get().asItem()).define('b', Items.STICK)
-			.unlockedBy("has_" + BlockInit.slimy_planks.get().getRegistryName(), 
-					has(BlockInit.slimy_planks.get().asItem()))
+		ShapedRecipeBuilder.shaped(BlockInit.SLIMY_FENCE_GATE.get())
+			.define('a', BlockInit.SLIMY_PLANKS.get().asItem()).define('b', Items.STICK)
+			.unlockedBy("has_" + BlockInit.SLIMY_PLANKS.get().getRegistryName(), 
+					has(BlockInit.SLIMY_PLANKS.get().asItem()))
 			.pattern("bab").pattern("bab").save(consumer, 
-					new ResourceLocation(TheFesterForest.modid, 
-							BlockInit.slimy_fence_gate.get().getRegistryName().getPath()));
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.SLIMY_FENCE_GATE.get().getRegistryName().getPath()));
 		
 		//Rotting Pie
-		ShapedRecipeBuilder.shaped(ItemInit.rotting_pie.get())
-			.define('a', ItemInit.rotting_carrot.get())
-			.define('b', ItemInit.bug_carcass.get())
-			.unlockedBy("has_" + BlockInit.slimy_planks.get().getRegistryName(), 
-					has(BlockInit.slimy_planks.get().asItem()))
+		ShapedRecipeBuilder.shaped(ItemInit.ROTTING_PIE.get())
+			.define('a', ItemInit.ROTTING_CARROT.get())
+			.define('b', ItemInit.BUG_CARCASS.get())
+			.unlockedBy("has_" + BlockInit.SLIMY_PLANKS.get().getRegistryName(), 
+					has(BlockInit.SLIMY_PLANKS.get().asItem()))
 			.pattern(" b ").pattern("bab").pattern(" b ").save(consumer, 
-					new ResourceLocation(TheFesterForest.modid, 
-							ItemInit.rotting_pie.get().getRegistryName().getPath()));
+					new ResourceLocation(TheFesterForest.MODID, 
+							ItemInit.ROTTING_PIE.get().getRegistryName().getPath()));
 		
 		//Reetlelight
-		ShapedRecipeBuilder.shaped(BlockInit.reetlelight.get())
-			.define('a', ItemInit.bug_carcass.get())
+		ShapedRecipeBuilder.shaped(BlockInit.REETLELIGHT.get())
+			.define('a', ItemInit.BUG_CARCASS.get())
 			.define('b', Items.GLOWSTONE_DUST)
-			.unlockedBy("has_" + ItemInit.bug_carcass.get().getRegistryName(), 
-					has(ItemInit.bug_carcass.get().asItem()))
+			.unlockedBy("has_" + ItemInit.BUG_CARCASS.get().getRegistryName(), 
+					has(ItemInit.BUG_CARCASS.get().asItem()))
 			.pattern(" b ").pattern("bab").pattern(" b ").save(consumer, 
-					new ResourceLocation(TheFesterForest.modid, 
-							BlockInit.reetlelight.get().getRegistryName().getPath()));
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.REETLELIGHT.get().getRegistryName().getPath()));
 		
 		
-		ShapedRecipeBuilder.shaped(ItemInit.angelic_whistle.get(), 1) // add , int to get number of output
-		.define('a', ItemInit.ancient_whistle.get().asItem())
+		ShapedRecipeBuilder.shaped(ItemInit.ANGELIC_WHISTLE.get(), 1) // add , int to get number of output
+		.define('a', ItemInit.ANCIENT_WHISTLE.get().asItem())
 		.define('b', Items.NETHER_STAR)
 		.define('c', Items.FEATHER)
 		.define('d', Items.IRON_INGOT)
-		.unlockedBy("has_" + ItemInit.ancient_whistle.get().getRegistryName(), 
-				has(ItemInit.ancient_whistle.get().asItem())) // what unlocks the recipe when you get that item
+		.unlockedBy("has_" + ItemInit.ANCIENT_WHISTLE.get().getRegistryName(), 
+				has(ItemInit.ANCIENT_WHISTLE.get().asItem())) // what unlocks the recipe when you get that item
 		.pattern(" d ").pattern("cac").pattern(" b ").save(consumer, 
-				new ResourceLocation(TheFesterForest.modid, ItemInit.angelic_whistle.get().getRegistryName().getPath()));
+				new ResourceLocation(TheFesterForest.MODID, ItemInit.ANGELIC_WHISTLE.get().getRegistryName().getPath()));
 		
 		// Shapeless
-		ShapelessRecipeBuilder.shapeless(ItemInit.rotting_brick.get().asItem(), 4).requires(BlockInit.rotting_bricks.get()) //get item
-			.unlockedBy("has_" + BlockInit.rotting_bricks.get().getRegistryName(), has(BlockInit.rotting_bricks.get().asItem()))
-			.save(consumer, new ResourceLocation(TheFesterForest.modid, ItemInit.rotting_brick.get().getRegistryName().getPath()));
+		ShapelessRecipeBuilder.shapeless(ItemInit.ROTTING_BRICK.get().asItem(), 4).requires(BlockInit.ROTTING_BRICKS.get()) //get item
+			.unlockedBy("has_" + BlockInit.ROTTING_BRICKS.get().getRegistryName(), has(BlockInit.ROTTING_BRICKS.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.ROTTING_BRICK.get().getRegistryName().getPath()));
 		
-		ShapelessRecipeBuilder.shapeless(BlockInit.mossy_rotting_stone.get().asItem(), 1).requires(BlockInit.rotting_stone.get()).requires(Blocks.VINE)
-			.unlockedBy("has_" + BlockInit.rotting_stone.get().getRegistryName(), has(BlockInit.rotting_stone.get().asItem()))
-			.save(consumer, new ResourceLocation(TheFesterForest.modid, BlockInit.mossy_rotting_stone.get().getRegistryName().getPath()));
+		ShapelessRecipeBuilder.shapeless(BlockInit.MOSSY_ROTTING_STONE.get().asItem(), 1).requires(BlockInit.ROTTING_STONE.get()).requires(Blocks.VINE)
+			.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), has(BlockInit.ROTTING_STONE.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.MOSSY_ROTTING_STONE.get().getRegistryName().getPath()));
 		
 		// Purifying Rotten Flesh
 		ShapelessRecipeBuilder.shapeless(Items.LEATHER, 2)
-			.requires(ItemInit.purifying_powder.get()).requires(Items.ROTTEN_FLESH, 3)
-			.unlockedBy("has_" + ItemInit.purifying_powder.get().getRegistryName(), 
-					has(ItemInit.purifying_powder.get()))
-			.save(consumer, new ResourceLocation(TheFesterForest.modid, Items.LEATHER
+			.requires(ItemInit.PURIFYING_POWDER.get()).requires(Items.ROTTEN_FLESH, 3)
+			.unlockedBy("has_" + ItemInit.PURIFYING_POWDER.get().getRegistryName(), 
+					has(ItemInit.PURIFYING_POWDER.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, Items.LEATHER
 					.getRegistryName().getPath()));
 		
 		// Purifying Rotting Stone
 		ShapelessRecipeBuilder.shapeless(Items.STONE, 2)
-			.requires(ItemInit.purifying_powder.get()).requires(BlockInit.rotting_stone.get().asItem(), 3)
-			.unlockedBy("has_" + ItemInit.purifying_powder.get().getRegistryName(), 
-					has(ItemInit.purifying_powder.get()))
-			.save(consumer, new ResourceLocation(TheFesterForest.modid, Items.STONE
+			.requires(ItemInit.PURIFYING_POWDER.get()).requires(BlockInit.ROTTING_STONE.get().asItem(), 3)
+			.unlockedBy("has_" + ItemInit.PURIFYING_POWDER.get().getRegistryName(), 
+					has(ItemInit.PURIFYING_POWDER.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, Items.STONE
 					.getRegistryName().getPath()));
 		
 		//Cooking Example
-		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.fester_ore.get().asItem()),
-			ItemInit.rotting_brick.get(), 15, 100)
-			.unlockedBy("has_" + BlockInit.fester_ore.get().getRegistryName(), has(BlockInit.fester_ore.get().asItem()))
-			.save(consumer, new ResourceLocation(TheFesterForest.modid, BlockInit.fester_ore.get().getRegistryName().getPath() + "_smelting"));
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.FESTER_ORE.get().asItem()),
+			ItemInit.ROTTING_BRICK.get(), 15, 100)
+			.unlockedBy("has_" + BlockInit.FESTER_ORE.get().getRegistryName(), has(BlockInit.FESTER_ORE.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.FESTER_ORE.get().getRegistryName().getPath() + "_smelting"));
 		
-		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.rotting_stone.get().asItem()),
-			BlockInit.cracked_rotting_stone.get(), 1, 100)
-			.unlockedBy("has_" + BlockInit.rotting_stone.get().getRegistryName(), has(BlockInit.rotting_stone.get().asItem()))
-			.save(consumer, new ResourceLocation(TheFesterForest.modid, BlockInit.rotting_stone.get().getRegistryName().getPath() + "_smelting"));
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.ROTTING_STONE.get().asItem()),
+			BlockInit.CRACKED_ROTTING_STONE.get(), 1, 100)
+			.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), has(BlockInit.ROTTING_STONE.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_STONE.get().getRegistryName().getPath() + "_smelting"));
 		
 		//Smithing
-		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_HELMET), Ingredient.of(ItemInit.reetle_shell.get()), ItemInit.reetle_helmet.get())
-			.unlocks("has_" + ItemInit.reetle_shell.get().getRegistryName(), has(ItemInit.reetle_shell.get()))
-			.save(consumer, new ResourceLocation(TheFesterForest.modid, ItemInit.reetle_shell.get().getRegistryName().getPath() + "_helmet"));
+		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_HELMET), Ingredient.of(ItemInit.REETLE_SHELL.get()), ItemInit.REETLE_HELMET.get())
+			.unlocks("has_" + ItemInit.REETLE_SHELL.get().getRegistryName(), has(ItemInit.REETLE_SHELL.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.REETLE_SHELL.get().getRegistryName().getPath() + "_helmet"));
 		
-		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_CHESTPLATE), Ingredient.of(ItemInit.reetle_shell.get()), ItemInit.reetle_chestplate.get())
-			.unlocks("has_" + ItemInit.reetle_shell.get().getRegistryName(), has(ItemInit.reetle_shell.get()))
-			.save(consumer, new ResourceLocation(TheFesterForest.modid, ItemInit.reetle_shell.get().getRegistryName().getPath() + "_chestplate"));
+		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_CHESTPLATE), Ingredient.of(ItemInit.REETLE_SHELL.get()), ItemInit.REETLE_CHESTPLATE.get())
+			.unlocks("has_" + ItemInit.REETLE_SHELL.get().getRegistryName(), has(ItemInit.REETLE_SHELL.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.REETLE_SHELL.get().getRegistryName().getPath() + "_chestplate"));
 		
-		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_LEGGINGS), Ingredient.of(ItemInit.reetle_shell.get()), ItemInit.reetle_leggings.get())
-			.unlocks("has_" + ItemInit.reetle_shell.get().getRegistryName(), has(ItemInit.reetle_shell.get()))
-			.save(consumer, new ResourceLocation(TheFesterForest.modid, ItemInit.reetle_shell.get().getRegistryName().getPath() + "_leggings"));
+		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_LEGGINGS), Ingredient.of(ItemInit.REETLE_SHELL.get()), ItemInit.REETLE_LEGGINGS.get())
+			.unlocks("has_" + ItemInit.REETLE_SHELL.get().getRegistryName(), has(ItemInit.REETLE_SHELL.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.REETLE_SHELL.get().getRegistryName().getPath() + "_leggings"));
 		
-		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_BOOTS), Ingredient.of(ItemInit.reetle_shell.get()), ItemInit.reetle_boots.get())
-			.unlocks("has_" + ItemInit.reetle_shell.get().getRegistryName(), has(ItemInit.reetle_shell.get()))
-			.save(consumer, new ResourceLocation(TheFesterForest.modid, ItemInit.reetle_shell.get().getRegistryName().getPath() + "_boots"));
+		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_BOOTS), Ingredient.of(ItemInit.REETLE_SHELL.get()), ItemInit.REETLE_BOOTS.get())
+			.unlocks("has_" + ItemInit.REETLE_SHELL.get().getRegistryName(), has(ItemInit.REETLE_SHELL.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.REETLE_SHELL.get().getRegistryName().getPath() + "_boots"));
 		
-		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.ELYTRA), Ingredient.of(ItemInit.reetle_shell.get()), ItemInit.reetle_elytra.get())
-			.unlocks("has_" + ItemInit.reetle_shell.get().getRegistryName(), has(ItemInit.reetle_shell.get()))
-			.save(consumer, new ResourceLocation(TheFesterForest.modid, ItemInit.reetle_shell.get().getRegistryName().getPath() + "_elytra"));
+		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.ELYTRA), Ingredient.of(ItemInit.REETLE_SHELL.get()), ItemInit.REETLE_ELYTRA.get())
+			.unlocks("has_" + ItemInit.REETLE_SHELL.get().getRegistryName(), has(ItemInit.REETLE_SHELL.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.REETLE_SHELL.get().getRegistryName().getPath() + "_elytra"));
 		
 		
 	

@@ -22,7 +22,7 @@ public class BansheeRenderer extends GeoEntityRenderer<BansheeEntity> {
 	@Override
 	public ResourceLocation getTextureLocation(BansheeEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/banshee/banshee.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/banshee/banshee.png");
 	}
 	
 	@Override

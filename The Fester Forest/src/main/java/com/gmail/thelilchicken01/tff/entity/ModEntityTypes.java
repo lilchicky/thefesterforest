@@ -27,103 +27,103 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModEntityTypes {
 
-	public static final DeferredRegister<EntityType<?>> entity_types =
-			DeferredRegister.create(ForgeRegistries.ENTITIES, TheFesterForest.modid);
+	public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
+			DeferredRegister.create(ForgeRegistries.ENTITIES, TheFesterForest.MODID);
 	
 	public static RegistryObject<EntityType<BranchCharge>> branch_charge;
 	public static RegistryObject<EntityType<BoneCharge>> bone_charge;
 	public static RegistryObject<EntityType<MeteorCharge>> meteor_charge;
 	
 	//Rotting Skeleton
-	public static final RegistryObject<EntityType<RottingSkeletonEntity>> rotting_skeleton =
-			entity_types.register("rotting_skeleton", () -> EntityType.Builder.of(RottingSkeletonEntity::new, MobCategory.MONSTER).sized(0.8f, 1.875f) //width, height of hitbox
-					.build(new ResourceLocation(TheFesterForest.modid, "rotting_skeleton").toString()));
+	public static final RegistryObject<EntityType<RottingSkeletonEntity>> ROTTING_SKELETON =
+			ENTITY_TYPES.register("rotting_skeleton", () -> EntityType.Builder.of(RottingSkeletonEntity::new, MobCategory.MONSTER).sized(0.8f, 1.875f) //width, height of hitbox
+					.build(new ResourceLocation(TheFesterForest.MODID, "rotting_skeleton").toString()));
 	
 	//Crunch Beetle
-	public static final RegistryObject<EntityType<CrunchBeetleEntity>> crunch_beetle =
-			entity_types.register("crunch_beetle", () -> EntityType.Builder.of(CrunchBeetleEntity::new, MobCategory.CREATURE).sized(0.5f, 0.4f) //width, height of hitbox
-					.build(new ResourceLocation(TheFesterForest.modid, "crunch_beetle").toString()));
+	public static final RegistryObject<EntityType<CrunchBeetleEntity>> CRUNCH_BEETLE =
+			ENTITY_TYPES.register("crunch_beetle", () -> EntityType.Builder.of(CrunchBeetleEntity::new, MobCategory.CREATURE).sized(0.5f, 0.4f) //width, height of hitbox
+					.build(new ResourceLocation(TheFesterForest.MODID, "crunch_beetle").toString()));
 	
 	//Player Crunch Beetle
-	public static final RegistryObject<EntityType<PlayerCrunchBeetleEntity>> player_crunch_beetle =
-			entity_types.register("player_crunch_beetle", () -> EntityType.Builder.of(PlayerCrunchBeetleEntity::new, MobCategory.CREATURE).sized(0.5f, 0.4f).setShouldReceiveVelocityUpdates(true) //width, height of hitbox
-					.build(new ResourceLocation(TheFesterForest.modid, "crunch_beetle").toString()));
+	public static final RegistryObject<EntityType<PlayerCrunchBeetleEntity>> PLAYER_CRUNCH_BEETLE =
+			ENTITY_TYPES.register("player_crunch_beetle", () -> EntityType.Builder.of(PlayerCrunchBeetleEntity::new, MobCategory.CREATURE).sized(0.5f, 0.4f).setShouldReceiveVelocityUpdates(true) //width, height of hitbox
+					.build(new ResourceLocation(TheFesterForest.MODID, "crunch_beetle").toString()));
 	
 	//Banshee
-	public static final RegistryObject<EntityType<BansheeEntity>> banshee =
-			entity_types.register("banshee", () -> EntityType.Builder.of(BansheeEntity::new, MobCategory.MONSTER).sized(0.8f, 1.875f) //width, height of hitbox
-					.build(new ResourceLocation(TheFesterForest.modid, "banshee").toString()));
+	public static final RegistryObject<EntityType<BansheeEntity>> BANSHEE =
+			ENTITY_TYPES.register("banshee", () -> EntityType.Builder.of(BansheeEntity::new, MobCategory.MONSTER).sized(0.8f, 1.875f) //width, height of hitbox
+					.build(new ResourceLocation(TheFesterForest.MODID, "banshee").toString()));
 	
 	//Volatile Ghost
-	public static final RegistryObject<EntityType<VolatileGhostEntity>> volatile_ghost =
-			entity_types.register("volatile_ghost", () -> EntityType.Builder.of(VolatileGhostEntity::new, MobCategory.MONSTER).sized(0.8f, 1.875f) //width, height of hitbox
-					.build(new ResourceLocation(TheFesterForest.modid, "volatile_ghost").toString()));
+	public static final RegistryObject<EntityType<VolatileGhostEntity>> VOLATILE_GHOST =
+			ENTITY_TYPES.register("volatile_ghost", () -> EntityType.Builder.of(VolatileGhostEntity::new, MobCategory.MONSTER).sized(0.8f, 1.875f) //width, height of hitbox
+					.build(new ResourceLocation(TheFesterForest.MODID, "volatile_ghost").toString()));
 	
 	//Wight
-	public static final RegistryObject<EntityType<WightEntity>> wight =
-			entity_types.register("wight", () -> EntityType.Builder.of(WightEntity::new, MobCategory.MONSTER)
-					.sized(0.8f, 1.875f).build(new ResourceLocation(TheFesterForest.modid, "wight").toString()));
+	public static final RegistryObject<EntityType<WightEntity>> WIGHT =
+			ENTITY_TYPES.register("wight", () -> EntityType.Builder.of(WightEntity::new, MobCategory.MONSTER)
+					.sized(0.8f, 1.875f).build(new ResourceLocation(TheFesterForest.MODID, "wight").toString()));
 	
 	//Forgemaster's Pylon
-	public static final RegistryObject<EntityType<PylonEntity>> pylon =
-			entity_types.register("pylon", () -> EntityType.Builder.of(PylonEntity::new, MobCategory.MONSTER)
-					.sized(0.6f, 1.7f).build(new ResourceLocation(TheFesterForest.modid, "pylon").toString()));
+	public static final RegistryObject<EntityType<PylonEntity>> PYLON =
+			ENTITY_TYPES.register("pylon", () -> EntityType.Builder.of(PylonEntity::new, MobCategory.MONSTER)
+					.sized(0.6f, 1.7f).build(new ResourceLocation(TheFesterForest.MODID, "pylon").toString()));
 	
 	//Forgemaster
-	public static final RegistryObject<EntityType<ForgemasterEntity>> forgemaster =
-			entity_types.register("forgemaster", () -> EntityType.Builder.of(ForgemasterEntity::new, MobCategory.MONSTER)
-					.sized(1.75f, 4.2f).build(new ResourceLocation(TheFesterForest.modid, "forgemaster").toString()));
+	public static final RegistryObject<EntityType<ForgemasterEntity>> FORGEMASTER =
+			ENTITY_TYPES.register("forgemaster", () -> EntityType.Builder.of(ForgemasterEntity::new, MobCategory.MONSTER)
+					.sized(1.75f, 4.2f).build(new ResourceLocation(TheFesterForest.MODID, "forgemaster").toString()));
 	
 	//Reetle Queen
-	public static final RegistryObject<EntityType<ReetleQueenEntity>> reetle_queen =
-			entity_types.register("reetle_queen", () -> EntityType.Builder.of(ReetleQueenEntity::new, MobCategory.MONSTER)
-					.sized(1.4f, 0.5f).build(new ResourceLocation(TheFesterForest.modid, "reetle_queen").toString()));
+	public static final RegistryObject<EntityType<ReetleQueenEntity>> REETLE_QUEEN =
+			ENTITY_TYPES.register("reetle_queen", () -> EntityType.Builder.of(ReetleQueenEntity::new, MobCategory.MONSTER)
+					.sized(1.4f, 0.5f).build(new ResourceLocation(TheFesterForest.MODID, "reetle_queen").toString()));
 	
 	//Goop
-	public static final RegistryObject<EntityType<GoopEntity>> goop =
-			entity_types.register("goop", () -> EntityType.Builder.of(GoopEntity::new, MobCategory.MONSTER)
-					.sized(1.4f, 1.4f).build(new ResourceLocation(TheFesterForest.modid, "goop").toString()));
+	public static final RegistryObject<EntityType<GoopEntity>> GOOP =
+			ENTITY_TYPES.register("goop", () -> EntityType.Builder.of(GoopEntity::new, MobCategory.MONSTER)
+					.sized(1.4f, 1.4f).build(new ResourceLocation(TheFesterForest.MODID, "goop").toString()));
 	
 	//Medium Goop
-	public static final RegistryObject<EntityType<MediumGoopEntity>> goop_medium =
-			entity_types.register("goop_medium", () -> EntityType.Builder.of(MediumGoopEntity::new, MobCategory.MONSTER)
-					.sized(1.4f * 0.6666f, 1.4f * 0.6666f).build(new ResourceLocation(TheFesterForest.modid, "goop_medium").toString()));
+	public static final RegistryObject<EntityType<MediumGoopEntity>> GOOP_MEDIUM =
+			ENTITY_TYPES.register("goop_medium", () -> EntityType.Builder.of(MediumGoopEntity::new, MobCategory.MONSTER)
+					.sized(1.4f * 0.6666f, 1.4f * 0.6666f).build(new ResourceLocation(TheFesterForest.MODID, "goop_medium").toString()));
 		
 	//Small Goop
-	public static final RegistryObject<EntityType<SmallGoopEntity>> goop_small =
-			entity_types.register("goop_small", () -> EntityType.Builder.of(SmallGoopEntity::new, MobCategory.MONSTER)
-					.sized(1.4f * 0.4f, 1.4f * 0.4f).build(new ResourceLocation(TheFesterForest.modid, "goop_small").toString()));
+	public static final RegistryObject<EntityType<SmallGoopEntity>> GOOP_SMALL =
+			ENTITY_TYPES.register("goop_small", () -> EntityType.Builder.of(SmallGoopEntity::new, MobCategory.MONSTER)
+					.sized(1.4f * 0.4f, 1.4f * 0.4f).build(new ResourceLocation(TheFesterForest.MODID, "goop_small").toString()));
 	
 	//Brittle Branch Bullet
 	
 	static {
-		branch_charge = entity_types.register("branch_charge", () -> EntityType.Builder
+		branch_charge = ENTITY_TYPES.register("branch_charge", () -> EntityType.Builder
 				.<BranchCharge>of(BranchCharge::new, MobCategory.MISC)
 				.sized(0.2f, 0.2f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
-				.build(TheFesterForest.modid + ":branch_charge"));
+				.build(TheFesterForest.MODID + ":branch_charge"));
 	}
 	
 	//Bone Charge Bullet
 	
 	static {
-		bone_charge = entity_types.register("bone_charge", () -> EntityType.Builder
+		bone_charge = ENTITY_TYPES.register("bone_charge", () -> EntityType.Builder
 				.<BoneCharge>of(BoneCharge::new, MobCategory.MISC)
 				.sized(0.3125f, 0.3125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
-				.build(TheFesterForest.modid + ":bone_charge"));
+				.build(TheFesterForest.MODID + ":bone_charge"));
 	}
 	
 	//Meteor
 	
 	static {
-		meteor_charge = entity_types.register("meteor_charge", () -> EntityType.Builder
+		meteor_charge = ENTITY_TYPES.register("meteor_charge", () -> EntityType.Builder
 				.<MeteorCharge>of(MeteorCharge::new, MobCategory.MISC)
 				.sized(0.4125f, 0.4125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
-				.build(TheFesterForest.modid + ":meteor_charge"));
+				.build(TheFesterForest.MODID + ":meteor_charge"));
 	}
 	
 	
 	public static void register(IEventBus eventBus) {
-		entity_types.register(eventBus);
+		ENTITY_TYPES.register(eventBus);
 	}
 	
 }

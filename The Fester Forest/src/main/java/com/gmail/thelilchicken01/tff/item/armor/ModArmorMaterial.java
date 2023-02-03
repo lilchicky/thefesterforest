@@ -37,7 +37,7 @@ public enum ModArmorMaterial implements ArmorMaterial {
 	
 	//Reetle Armor
 	REETLE("reetle", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 4.0F, 0.2F, () -> {
-	    return Ingredient.of(ItemInit.bug_carcass.get());
+	    return Ingredient.of(ItemInit.BUG_CARCASS.get());
 	});
 
 	private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
@@ -82,7 +82,7 @@ public enum ModArmorMaterial implements ArmorMaterial {
 	   }
 
 	   public String getName() {
-	      return TheFesterForest.modid + ":" + this.name;
+	      return TheFesterForest.MODID + ":" + this.name;
 	   }
 
 	   public float getToughness() {

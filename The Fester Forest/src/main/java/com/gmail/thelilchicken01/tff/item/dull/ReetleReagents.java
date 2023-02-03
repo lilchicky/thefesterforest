@@ -38,7 +38,7 @@ public class ReetleReagents extends Item implements ICurioItem {
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
 	public ReetleReagents() {
-		super(new Properties().tab(TheFesterForest.tff_tab).stacksTo(1));
+		super(new Properties().tab(TheFesterForest.TFF_TAB).stacksTo(1));
 		
 		CommonEventBusSubscriber.registerPlayerHurtHandlers(new PlayerHurtHandler() {
 			

@@ -102,7 +102,7 @@ public class BansheeEntity extends Monster implements IAnimatable {
 						Vec3 newVel = ((entityVel.subtract(playerVel)).normalize().add(new Vec3(0.0, 0.6, 0.0)).multiply(2.0, 2.0, 2.0));
 					
 						nearbyEntities.get(x).setDeltaMovement(newVel);
-						nearbyEntities.get(x).hurt(TheFesterForest.banshee, 10);
+						nearbyEntities.get(x).hurt(TheFesterForest.BANSHEE, 10);
 					
 					}
 				

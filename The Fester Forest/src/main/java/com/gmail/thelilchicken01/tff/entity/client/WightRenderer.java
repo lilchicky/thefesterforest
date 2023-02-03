@@ -21,7 +21,7 @@ public class WightRenderer extends GeoEntityRenderer<WightEntity> {
 	@Override
 	public ResourceLocation getTextureLocation(WightEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/wight/wight.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/wight/wight.png");
 	}
 	
 	@Override

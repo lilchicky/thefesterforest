@@ -22,7 +22,7 @@ public class ForgemasterRenderer extends GeoEntityRenderer<ForgemasterEntity> {
 	@Override
 	public ResourceLocation getTextureLocation(ForgemasterEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/forgemaster/forgemaster.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/forgemaster/forgemaster.png");
 	}
 	
 	@Override

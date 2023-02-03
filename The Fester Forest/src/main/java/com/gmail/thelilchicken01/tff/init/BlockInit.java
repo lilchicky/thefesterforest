@@ -40,9 +40,9 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class BlockInit {
 	
-	public static final DeferredRegister<Block> blocks = DeferredRegister.create(ForgeRegistries.BLOCKS, TheFesterForest.modid);
+	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TheFesterForest.MODID);
 	
-	public static final DeferredRegister<Item> items = ItemInit.items; 
+	public static final DeferredRegister<Item> BLOCK_ITEMS = ItemInit.ITEMS; 
 	
 	
 //	//Rotting Wood
@@ -51,50 +51,50 @@ public class BlockInit {
 //			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
 	
 	// Volatile Lamp
-	public static final RegistryObject<Block> reetlelight = register("reetlelight", 
+	public static final RegistryObject<Block> REETLELIGHT = register("reetlelight", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SHROOMLIGHT).emissiveRendering((state, getter, pos) -> {
 				return true;
 			}).lightLevel(state -> 15)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Stone
-	public static final RegistryObject<Block> rotting_stone = register("rotting_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	public static final RegistryObject<Block> ROTTING_STONE = register("rotting_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Grave Rotting Dirt
-	public static final RegistryObject<Block> rotting_grave_dirt = register("rotting_grave_dirt", () -> new RottingGraveDirt(), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	public static final RegistryObject<Block> ROTTING_GRAVE_DIRT = register("rotting_grave_dirt", () -> new RottingGraveDirt(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Crushed Rotting Stone
-	public static final RegistryObject<Block> crushed_rotting_stone = register("crushed_rotting_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).sound(SoundType.STONE).requiresCorrectToolForDrops()), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	public static final RegistryObject<Block> CRUSHED_ROTTING_STONE = register("crushed_rotting_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).sound(SoundType.STONE).requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Fester Ore
-	public static final RegistryObject<Block> fester_ore = register("fester_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	public static final RegistryObject<Block> FESTER_ORE = register("fester_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Log
-	public static final RegistryObject<Block> rotting_log = register("rotting_log", 
+	public static final RegistryObject<Block> ROTTING_LOG = register("rotting_log", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.NETHERRACK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Log Stripped
-		public static final RegistryObject<Block> stripped_rotting_log = register("stripped_rotting_log", 
+		public static final RegistryObject<Block> STRIPPED_ROTTING_LOG = register("stripped_rotting_log", 
 				() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).sound(SoundType.NETHERRACK)), 
-				object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+				object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 		
 	//Rotting Wood
-	public static final RegistryObject<Block> rotting_wood = register("rotting_wood", 
+	public static final RegistryObject<Block> ROTTING_WOOD = register("rotting_wood", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.NETHERRACK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 		
 	//Rotting Wood Stripped
-	public static final RegistryObject<Block> stripped_rotting_wood = register("stripped_rotting_wood", 
+	public static final RegistryObject<Block> STRIPPED_ROTTING_WOOD = register("stripped_rotting_wood", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).sound(SoundType.NETHERRACK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Wood Planks
-	public static final RegistryObject<Block> rotting_planks = register("rotting_planks",
+	public static final RegistryObject<Block> ROTTING_PLANKS = register("rotting_planks",
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.NETHERRACK)) {
 
 				@Override
@@ -112,10 +112,10 @@ public class BlockInit {
 					return 5;
 				}
 				
-			}, object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			}, object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Wood Planks
-	public static final RegistryObject<Block> slimy_planks = register("slimy_planks",
+	public static final RegistryObject<Block> SLIMY_PLANKS = register("slimy_planks",
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.SLIME_BLOCK)) {
 				
 				@Override
@@ -133,10 +133,10 @@ public class BlockInit {
 					return 5;
 				}
 					
-			}, object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			}, object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Wood Leaves
-	public static final RegistryObject<Block> rotting_leaves = register("rotting_leaves",
+	public static final RegistryObject<Block> ROTTING_LEAVES = register("rotting_leaves",
 			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.HONEY_BLOCK)) {
 
 				@Override
@@ -154,10 +154,10 @@ public class BlockInit {
 					return 30;
 				}
 					
-			}, object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			}, object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Slimy Leaves
-	public static final RegistryObject<Block> slimy_leaves = register("slimy_leaves",
+	public static final RegistryObject<Block> SLIMY_LEAVES = register("slimy_leaves",
 			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.SLIME_BLOCK)) {
 
 				@Override
@@ -175,157 +175,157 @@ public class BlockInit {
 					return 30;
 				}
 					
-			}, object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			}, object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 		
 	//Rotting Sapling
-	public static final RegistryObject<Block> rottingwood_sapling = register("rottingwood_sapling", 
+	public static final RegistryObject<Block> ROTTINGWOOD_SAPLING = register("rottingwood_sapling", 
 			() -> new RottingwoodSapling(new RottingTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Slimy Sapling
-	public static final RegistryObject<Block> slimy_sapling = register("slimy_sapling", 
+	public static final RegistryObject<Block> SLIMY_SAPLING = register("slimy_sapling", 
 			() -> new SlimySapling(new SlimyTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Dirt
-	public static final RegistryObject<Block> rotting_dirt = register("rotting_dirt", 
+	public static final RegistryObject<Block> ROTTING_DIRT = register("rotting_dirt", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Bricks
-	public static final RegistryObject<Block> rotting_bricks = register("rotting_bricks", 
+	public static final RegistryObject<Block> ROTTING_BRICKS = register("rotting_bricks", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 		
 	//Rotting Portal
-	public static final RegistryObject<Block> tff_portal = register("tff_portal", () -> new TffPortalBlock(), 
+	public static final RegistryObject<Block> TFF_PORTAL = register("tff_portal", () -> new TffPortalBlock(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties()));
 	
 	//Rotting Flower
-	public static final RegistryObject<FlowerBlock> rotting_flower = register("rotting_flower", () -> new RottingFlower(), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	public static final RegistryObject<FlowerBlock> ROTTING_FLOWER = register("rotting_flower", () -> new RottingFlower(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Sickening Flower
-	public static final RegistryObject<FlowerBlock> sickening_flower = register("sickening_flower", () -> new SickeningFlower(), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	public static final RegistryObject<FlowerBlock> SICKENING_FLOWER = register("sickening_flower", () -> new SickeningFlower(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Tall Grass
-	public static final RegistryObject<FlowerBlock> rotting_tall_grass = register("rotting_tall_grass", () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 20, Properties.copy(Blocks.GRASS)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	public static final RegistryObject<FlowerBlock> ROTTING_TALL_GRASS = register("rotting_tall_grass", () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 20, Properties.copy(Blocks.GRASS)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Flower Pot
-	public static final RegistryObject<FlowerPotBlock> rotting_flower_pot = blocks.register("rotting_flower_pot", 
-			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, rotting_flower, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+	public static final RegistryObject<FlowerPotBlock> ROTTING_FLOWER_POT = BLOCKS.register("rotting_flower_pot", 
+			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ROTTING_FLOWER, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
 	
 	//Sickening Flower Pot
-	public static final RegistryObject<FlowerPotBlock> sickening_flower_pot = blocks.register("sickening_flower_pot", 
-			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, sickening_flower, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+	public static final RegistryObject<FlowerPotBlock> SICKENING_FLOWER_POT = BLOCKS.register("sickening_flower_pot", 
+			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SICKENING_FLOWER, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
 	
 	
 	//Rotting Grass Block
-	public static final RegistryObject<Block> rotting_grass = register("rotting_grass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)),
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+	public static final RegistryObject<Block> ROTTING_GRASS = register("rotting_grass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)),
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Log
-	public static final RegistryObject<Block> slimy_log = register("slimy_log", 
+	public static final RegistryObject<Block> SLIMY_LOG = register("slimy_log", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.SLIME_BLOCK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Slimy Log Stripped
-	public static final RegistryObject<Block> stripped_slimy_log = register("stripped_slimy_log", 
+	public static final RegistryObject<Block> STRIPPED_SLIMY_LOG = register("stripped_slimy_log", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).sound(SoundType.SLIME_BLOCK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 			
 	//Slimy Wood
-	public static final RegistryObject<Block> slimy_wood = register("slimy_wood", 
+	public static final RegistryObject<Block> SLIMY_WOOD = register("slimy_wood", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.SLIME_BLOCK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 			
 	//Slimy Wood Stripped
-	public static final RegistryObject<Block> stripped_slimy_wood = register("stripped_slimy_wood", 
+	public static final RegistryObject<Block> STRIPPED_SLIMY_WOOD = register("stripped_slimy_wood", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).sound(SoundType.SLIME_BLOCK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Cracked Rotting Stone
-	public static final RegistryObject<Block> cracked_rotting_stone = register("cracked_rotting_stone", 
+	public static final RegistryObject<Block> CRACKED_ROTTING_STONE = register("cracked_rotting_stone", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Mossy Rotting Stone
-	public static final RegistryObject<Block> mossy_rotting_stone = register("mossy_rotting_stone", 
+	public static final RegistryObject<Block> MOSSY_ROTTING_STONE = register("mossy_rotting_stone", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Stone Bricks
-	public static final RegistryObject<Block> rotting_stone_bricks = register("rotting_stone_bricks", 
+	public static final RegistryObject<Block> ROTTING_STONE_BRICKS = register("rotting_stone_bricks", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Stone Brick Stairs
-	public static final RegistryObject<Block> rotting_stone_brick_stairs = register("rotting_stone_brick_stairs", 
-			() -> new StairBlock(() -> BlockInit.rotting_stone_bricks.get().defaultBlockState(), 
+	public static final RegistryObject<Block> ROTTING_STONE_BRICK_STAIRS = register("rotting_stone_brick_stairs", 
+			() -> new StairBlock(() -> BlockInit.ROTTING_STONE_BRICKS.get().defaultBlockState(), 
 					BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Stone Brick Slab
-	public static final RegistryObject<Block> rotting_stone_brick_slab = register("rotting_stone_brick_slab", 
+	public static final RegistryObject<Block> ROTTING_STONE_BRICK_SLAB = register("rotting_stone_brick_slab", 
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Stone Brick Wall
-	public static final RegistryObject<Block> rotting_stone_brick_wall = register("rotting_stone_brick_wall", 
+	public static final RegistryObject<Block> ROTTING_STONE_BRICK_WALL = register("rotting_stone_brick_wall", 
 			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rottingwood Fence
-	public static final RegistryObject<Block> rottingwood_fence = register("rottingwood_fence", 
+	public static final RegistryObject<Block> ROTTINGWOOD_FENCE = register("rottingwood_fence", 
 			() -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.NETHERRACK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 		
 	//Rottingwood Gate
-	public static final RegistryObject<Block> rottingwood_fence_gate = register("rottingwood_fence_gate", 
+	public static final RegistryObject<Block> ROTTINGWOOD_FENCE_GATE = register("rottingwood_fence_gate", 
 			() -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.NETHERRACK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rottingwood Stairs
-	public static final RegistryObject<Block> rottingwood_stairs = register("rottingwood_stairs", 
-			() -> new StairBlock(() -> BlockInit.rotting_planks.get().defaultBlockState(), 
+	public static final RegistryObject<Block> ROTTINGWOOD_STAIRS = register("rottingwood_stairs", 
+			() -> new StairBlock(() -> BlockInit.ROTTING_PLANKS.get().defaultBlockState(), 
 					BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.NETHERRACK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rottingwood Slab
-	public static final RegistryObject<Block> rottingwood_slab = register("rottingwood_slab", 
+	public static final RegistryObject<Block> ROTTINGWOOD_SLAB = register("rottingwood_slab", 
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.NETHERRACK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Slimy Stairs
-	public static final RegistryObject<Block> slimy_stairs = register("slimy_stairs", 
-			() -> new StairBlock(() -> BlockInit.slimy_planks.get().defaultBlockState(), 
+	public static final RegistryObject<Block> SLIMY_STAIRS = register("slimy_stairs", 
+			() -> new StairBlock(() -> BlockInit.SLIMY_PLANKS.get().defaultBlockState(), 
 					BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.SLIME_BLOCK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 		
 	//Slimy Slab
-	public static final RegistryObject<Block> slimy_slab = register("slimy_slab", 
+	public static final RegistryObject<Block> SLIMY_SLAB = register("slimy_slab", 
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.SLIME_BLOCK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Slimy Fence
-	public static final RegistryObject<Block> slimy_fence = register("slimy_fence", 
+	public static final RegistryObject<Block> SLIMY_FENCE = register("slimy_fence", 
 			() -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.SLIME_BLOCK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 			
 	//Slimy Gate
-	public static final RegistryObject<Block> slimy_fence_gate = register("slimy_fence_gate", 
+	public static final RegistryObject<Block> SLIMY_FENCE_GATE = register("slimy_fence_gate", 
 			() -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.SLIME_BLOCK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.tff_tab)));
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	private static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<? extends T> block) {
-		return blocks.register(name, block);
+		return BLOCKS.register(name, block);
 	}
 	
 	private static <T extends Block> RegistryObject<T> register(final String name, final Supplier<? extends T> block, Function<RegistryObject<T>, Supplier<? extends Item>> item) {
 		RegistryObject<T> obj = registerBlock(name, block);
-		items.register(name, item.apply(obj));
+		BLOCK_ITEMS.register(name, item.apply(obj));
 		return obj;
 	}
 	

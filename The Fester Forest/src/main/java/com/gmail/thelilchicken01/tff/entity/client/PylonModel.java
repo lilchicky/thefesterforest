@@ -11,19 +11,19 @@ public class PylonModel extends AnimatedGeoModel<PylonEntity> {
 	@Override
 	public ResourceLocation getAnimationFileLocation(PylonEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "animations/pylon.animation.json");
+		return new ResourceLocation(TheFesterForest.MODID, "animations/pylon.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelLocation(PylonEntity object) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "geo/pylon.geo.json");
+		return new ResourceLocation(TheFesterForest.MODID, "geo/pylon.geo.json");
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(PylonEntity object) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/pylon/pylon.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/pylon/pylon.png");
 	}
 
 }

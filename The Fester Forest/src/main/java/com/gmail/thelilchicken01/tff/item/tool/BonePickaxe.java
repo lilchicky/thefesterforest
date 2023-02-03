@@ -18,7 +18,7 @@ public class BonePickaxe extends PickaxeItem {
 	private String[] drops = {"Fester Forest Loot Chests"};
 
 	public BonePickaxe() {
-		super(ModTiers.BONE, -2, -3.0f, new Properties().tab(TheFesterForest.tff_tab).durability(2384));
+		super(ModTiers.BONE, -2, -3.0f, new Properties().tab(TheFesterForest.TFF_TAB).durability(2384));
 	}
 	
 	@Override

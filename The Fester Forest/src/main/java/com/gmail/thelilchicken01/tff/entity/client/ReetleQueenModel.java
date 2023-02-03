@@ -11,19 +11,19 @@ public class ReetleQueenModel extends AnimatedGeoModel<ReetleQueenEntity> {
 	@Override
 	public ResourceLocation getAnimationFileLocation(ReetleQueenEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "animations/reetle_queen.animation.json");
+		return new ResourceLocation(TheFesterForest.MODID, "animations/reetle_queen.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelLocation(ReetleQueenEntity object) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "geo/reetle_queen.geo.json");
+		return new ResourceLocation(TheFesterForest.MODID, "geo/reetle_queen.geo.json");
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(ReetleQueenEntity object) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/reetle_queen/reetle_queen.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/reetle_queen/reetle_queen.png");
 	}
 
 }

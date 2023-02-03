@@ -87,7 +87,7 @@ public class MeteorCharge extends Fireball {
 			if (ignoreInvulnerability) target.invulnerableTime = 0;
 			boolean damaged = false;
 			if (!(target instanceof PylonEntity)) {
-				damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.modid + "_meteor_damage",
+				damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_meteor_damage",
 						this, shooter).setProjectile(),
 						(float) bullet.modifyDamage(damage, this, target, shooter, level));
 			}

@@ -10,22 +10,22 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 public class ModBlockstateProvider extends BlockStateProvider {
 
 	public ModBlockstateProvider(DataGenerator gen, ExistingFileHelper helper) {
-		super(gen, TheFesterForest.modid, helper);
+		super(gen, TheFesterForest.MODID, helper);
 		
 	}
 
 	@Override
 	protected void registerStatesAndModels() {
 
-		simpleBlock(BlockInit.rotting_bricks.get());
-		simpleBlock(BlockInit.rotting_stone.get());
-		simpleBlock(BlockInit.fester_ore.get());
-		simpleBlock(BlockInit.slimy_planks.get());
-		simpleBlock(BlockInit.cracked_rotting_stone.get());
-		simpleBlock(BlockInit.mossy_rotting_stone.get());
-		simpleBlock(BlockInit.rotting_stone_bricks.get());
-		simpleBlock(BlockInit.crushed_rotting_stone.get());
-		simpleBlock(BlockInit.rotting_grave_dirt.get());
+		simpleBlock(BlockInit.ROTTING_BRICKS.get());
+		simpleBlock(BlockInit.ROTTING_STONE.get());
+		simpleBlock(BlockInit.FESTER_ORE.get());
+		simpleBlock(BlockInit.SLIMY_PLANKS.get());
+		simpleBlock(BlockInit.CRACKED_ROTTING_STONE.get());
+		simpleBlock(BlockInit.MOSSY_ROTTING_STONE.get());
+		simpleBlock(BlockInit.ROTTING_STONE_BRICKS.get());
+		simpleBlock(BlockInit.CRUSHED_ROTTING_STONE.get());
+		simpleBlock(BlockInit.ROTTING_GRAVE_DIRT.get());
 		
 	}
 

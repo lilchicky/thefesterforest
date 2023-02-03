@@ -49,7 +49,7 @@ public class ReetleElytra extends ElytraItem {
 
 	public ReetleElytra() {
 		
-		super(new Properties().durability(848).tab(TheFesterForest.tff_tab));
+		super(new Properties().durability(848).tab(TheFesterForest.TFF_TAB));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		
@@ -113,7 +113,7 @@ public class ReetleElytra extends ElytraItem {
     }
 
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
-        return repair.getItem() == ItemInit.bug_carcass.get();
+        return repair.getItem() == ItemInit.BUG_CARCASS.get();
     }
 
     public EquipmentSlot getEquipmentSlot(ItemStack stack) {
@@ -123,7 +123,7 @@ public class ReetleElytra extends ElytraItem {
     @Override
 	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
 		
-		return enchantment.category.canEnchant(ItemInit.mechanical_chestplate.get()) ||
+		return enchantment.category.canEnchant(ItemInit.MECHANICAL_CHESTPLATE.get()) ||
 				super.canApplyAtEnchantingTable(stack, enchantment);
 	}
     

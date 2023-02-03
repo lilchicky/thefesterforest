@@ -64,7 +64,7 @@ public class BansheeBoots extends ArmorItem {
 
 	public BansheeBoots() {
 		super(ModArmorMaterial.BANSHEE, EquipmentSlot.FEET, 
-				new Properties().tab(TheFesterForest.tff_tab));
+				new Properties().tab(TheFesterForest.TFF_TAB));
 		
 	}
 	

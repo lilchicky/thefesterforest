@@ -66,7 +66,7 @@ public class BoneCharge extends Fireball {
 	
 	@Override
 	protected ParticleOptions getTrailParticle() {
-		return ParticleInit.bone_particle.get();
+		return ParticleInit.BONE_PARTICLE.get();
 	}
 	
 	@Override
@@ -80,7 +80,7 @@ public class BoneCharge extends Fireball {
 			if (isOnFire()) target.setSecondsOnFire(5);
 			int lastHurtResistant = target.invulnerableTime;
 			if (ignoreInvulnerability) target.invulnerableTime = 0;
-			boolean damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.modid + "_bone_damage",
+			boolean damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_bone_damage",
 					this, shooter).setProjectile().bypassArmor(),
 					(float) bullet.modifyDamage(damage, this, target, shooter, level));
 			

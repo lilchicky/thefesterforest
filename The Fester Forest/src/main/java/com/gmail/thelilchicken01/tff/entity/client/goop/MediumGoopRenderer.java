@@ -23,7 +23,7 @@ public class MediumGoopRenderer extends GeoEntityRenderer<MediumGoopEntity> {
 	@Override
 	public ResourceLocation getTextureLocation(MediumGoopEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/goop/goop.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/goop/goop.png");
 	}
 	
 	@Override

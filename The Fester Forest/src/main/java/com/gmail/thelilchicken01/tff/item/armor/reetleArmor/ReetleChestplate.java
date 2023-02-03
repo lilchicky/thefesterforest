@@ -38,7 +38,7 @@ public class ReetleChestplate extends ArmorItem {
 	private String[] drops = {"Crafted"};
 
 	public ReetleChestplate() {
-		super(ModArmorMaterial.REETLE, EquipmentSlot.CHEST, new Properties().tab(TheFesterForest.tff_tab));
+		super(ModArmorMaterial.REETLE, EquipmentSlot.CHEST, new Properties().tab(TheFesterForest.TFF_TAB));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		

@@ -16,7 +16,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class ReetleElytraArmorStandLayer extends ElytraLayer<ArmorStand, ArmorStandArmorModel> {
 	
-	private static final ResourceLocation texture = new ResourceLocation(TheFesterForest.modid,
+	private static final ResourceLocation TEXTURE = new ResourceLocation(TheFesterForest.MODID,
             "textures/entity/reetle_elytra.png");
 
     public ReetleElytraArmorStandLayer(ArmorStandRenderer armorStandRenderer,
@@ -26,12 +26,12 @@ public class ReetleElytraArmorStandLayer extends ElytraLayer<ArmorStand, ArmorSt
 
     @Override
     public boolean shouldRender(ItemStack stack, ArmorStand entity) {
-        return stack.getItem() == ItemInit.reetle_elytra.get();
+        return stack.getItem() == ItemInit.REETLE_ELYTRA.get();
     }
 
     @Override
     public ResourceLocation getElytraTexture(ItemStack stack, ArmorStand entity) {
-        return texture;
+        return TEXTURE;
     }
 	
 }

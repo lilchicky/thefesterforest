@@ -41,7 +41,7 @@ public class MoonShoes extends Item implements ICurioItem {
     });
 
 	public MoonShoes() {
-		super(new Properties().tab(TheFesterForest.tff_tab).stacksTo(1));
+		super(new Properties().tab(TheFesterForest.TFF_TAB).stacksTo(1));
 		
 	}
 	

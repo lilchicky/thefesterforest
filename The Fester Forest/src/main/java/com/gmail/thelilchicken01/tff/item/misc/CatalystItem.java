@@ -30,15 +30,15 @@ public class CatalystItem  extends Item {
 	private String[] drops = {"Overworld Dungeon Chests"};
 	
 	public CatalystItem() {
-		super (new Properties().tab(TheFesterForest.tff_tab).stacksTo(1).rarity(Rarity.RARE));
+		super (new Properties().tab(TheFesterForest.TFF_TAB).stacksTo(1).rarity(Rarity.RARE));
 	}
 	
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
-		if(context.getPlayer().level.dimension() == ModDimensions.tff_key || context.getPlayer().level.dimension() == Level.OVERWORLD) {
+		if(context.getPlayer().level.dimension() == ModDimensions.TFF_KEY || context.getPlayer().level.dimension() == Level.OVERWORLD) {
 			for (Direction direction : Direction.Plane.VERTICAL) {
 				BlockPos framePos = context.getClickedPos().relative(direction);
-				if (((TffPortalBlock) BlockInit.tff_portal.get()).trySpawnPortal(context.getLevel(), framePos)) {
+				if (((TffPortalBlock) BlockInit.TFF_PORTAL.get()).trySpawnPortal(context.getLevel(), framePos)) {
 					
 					
 					context.getLevel().playSound(context.getPlayer(), framePos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 0.2f, 0.3f);

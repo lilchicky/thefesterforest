@@ -51,11 +51,11 @@ public class BoneLauncher extends ProjectileWeaponItem {
 	public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
 		ItemStack gun = player.getItemInHand(hand);
 
-		BoneShot bulletItem = ItemInit.bone_charge.get();
+		BoneShot bulletItem = ItemInit.BONE_CHARGE.get();
 		if (!world.isClientSide()) {
 			boolean bulletFree = true;
 			
-			ItemStack shotAmmo = new ItemStack(ItemInit.bone_charge.get());
+			ItemStack shotAmmo = new ItemStack(ItemInit.BONE_CHARGE.get());
 			shoot(world, player, gun, shotAmmo, bulletItem, bulletFree);
 			
 			gun.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand()));

@@ -41,7 +41,7 @@ public class VolatileLeggings extends ArmorItem {
 
 	public VolatileLeggings() {
 		super(ModArmorMaterial.VOLATILE, EquipmentSlot.LEGS, 
-				new Properties().tab(TheFesterForest.tff_tab));
+				new Properties().tab(TheFesterForest.TFF_TAB));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		

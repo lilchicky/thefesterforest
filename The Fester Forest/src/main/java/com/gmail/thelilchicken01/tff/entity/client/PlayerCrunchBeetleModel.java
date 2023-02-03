@@ -11,19 +11,19 @@ public class PlayerCrunchBeetleModel extends AnimatedGeoModel<PlayerCrunchBeetle
 	@Override
 	public ResourceLocation getAnimationFileLocation(PlayerCrunchBeetleEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "animations/crunch_beetle.animation.json");
+		return new ResourceLocation(TheFesterForest.MODID, "animations/crunch_beetle.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelLocation(PlayerCrunchBeetleEntity object) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "geo/crunch_beetle.geo.json");
+		return new ResourceLocation(TheFesterForest.MODID, "geo/crunch_beetle.geo.json");
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(PlayerCrunchBeetleEntity object) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/crunch_beetle/crunch_beetle.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/crunch_beetle/crunch_beetle.png");
 	}
 
 }

@@ -12,7 +12,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import top.theillusivec4.curios.api.SlotTypeMessage;
 import top.theillusivec4.curios.api.SlotTypePreset;
 
-@Mod.EventBusSubscriber(modid = TheFesterForest.modid, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = TheFesterForest.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModCommonEvents {
 
 	@SubscribeEvent
@@ -20,8 +20,8 @@ public class ModCommonEvents {
 		
 		event.enqueueWork(() -> {
 			
-			((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(BlockInit.rotting_flower.getId(), BlockInit.rotting_flower_pot);
-			((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(BlockInit.sickening_flower.getId(), BlockInit.sickening_flower_pot);
+			((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(BlockInit.ROTTING_FLOWER.getId(), BlockInit.ROTTING_FLOWER_POT);
+			((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(BlockInit.SICKENING_FLOWER.getId(), BlockInit.SICKENING_FLOWER_POT);
 			
 			InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.NECKLACE.getMessageBuilder().build());
 			InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().build());

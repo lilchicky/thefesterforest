@@ -63,7 +63,7 @@ public class ItemUtil {
 	
 	public static IndirectEntityDamageSource entityDamageSource(String name, Entity target, Entity shooter) {
 		
-		return new IndirectEntityDamageSource(TheFesterForest.modid + "_" + name, target, shooter);
+		return new IndirectEntityDamageSource(TheFesterForest.MODID + "_" + name, target, shooter);
 		
 	}
 	

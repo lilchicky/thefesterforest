@@ -39,7 +39,7 @@ public class MechanicalHelmet extends ArmorItem {
 
 	public MechanicalHelmet() {
 		super(ModArmorMaterial.MECHANICAL, EquipmentSlot.HEAD, 
-				new Properties().tab(TheFesterForest.tff_tab));
+				new Properties().tab(TheFesterForest.TFF_TAB));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		

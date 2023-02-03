@@ -10,14 +10,14 @@ import net.minecraft.world.level.dimension.DimensionType;
 
 public class ModDimensions {
 
-	public static final ResourceKey<Level> tff_key = ResourceKey.create(Registry.DIMENSION_REGISTRY, 
-			new ResourceLocation(TheFesterForest.modid, "tff"));
+	public static final ResourceKey<Level> TFF_KEY = ResourceKey.create(Registry.DIMENSION_REGISTRY, 
+			new ResourceLocation(TheFesterForest.MODID, "tff"));
 	
-	public static final ResourceKey<DimensionType> tff_type = ResourceKey.create(Registry.DIMENSION_TYPE_REGISTRY, tff_key.getRegistryName());
+	public static final ResourceKey<DimensionType> TFF_TYPE = ResourceKey.create(Registry.DIMENSION_TYPE_REGISTRY, TFF_KEY.getRegistryName());
 	
 	public static void register() {
 		
-		System.out.println("Registering ModDimensions for " + TheFesterForest.modid);
+		System.out.println("Registering ModDimensions for " + TheFesterForest.MODID);
 		
 	}
 	

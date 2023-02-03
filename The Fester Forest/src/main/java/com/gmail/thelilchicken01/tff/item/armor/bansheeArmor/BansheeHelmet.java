@@ -39,7 +39,7 @@ public class BansheeHelmet extends ArmorItem {
 
 	public BansheeHelmet() {
 		super(ModArmorMaterial.BANSHEE, EquipmentSlot.HEAD, 
-				new Properties().tab(TheFesterForest.tff_tab));
+				new Properties().tab(TheFesterForest.TFF_TAB));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		

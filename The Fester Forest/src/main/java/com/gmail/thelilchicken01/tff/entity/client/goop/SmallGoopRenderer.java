@@ -23,7 +23,7 @@ public class SmallGoopRenderer extends GeoEntityRenderer<SmallGoopEntity> {
 	@Override
 	public ResourceLocation getTextureLocation(SmallGoopEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/goop/goop.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/goop/goop.png");
 	}
 	
 	@Override

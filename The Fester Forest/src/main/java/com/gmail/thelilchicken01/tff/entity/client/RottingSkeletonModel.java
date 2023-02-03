@@ -11,19 +11,19 @@ public class RottingSkeletonModel extends AnimatedGeoModel<RottingSkeletonEntity
 	@Override
 	public ResourceLocation getAnimationFileLocation(RottingSkeletonEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "animations/rotting_skeleton.animation.json");
+		return new ResourceLocation(TheFesterForest.MODID, "animations/rotting_skeleton.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelLocation(RottingSkeletonEntity object) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "geo/rotting_skeleton.geo.json");
+		return new ResourceLocation(TheFesterForest.MODID, "geo/rotting_skeleton.geo.json");
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(RottingSkeletonEntity object) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/rotting_skeleton/rotting_skeleton.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/rotting_skeleton/rotting_skeleton.png");
 	}
 
 }

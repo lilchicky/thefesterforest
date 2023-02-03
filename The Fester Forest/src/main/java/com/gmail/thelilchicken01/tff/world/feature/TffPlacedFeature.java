@@ -22,30 +22,34 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class TffPlacedFeature {
 	
-	public static final DeferredRegister<PlacedFeature> placed_features = 
-			DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, TheFesterForest.modid);
+	public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = 
+			DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, TheFesterForest.MODID);
 	
 	// Rottingwood Tree
-	public static final RegistryObject<PlacedFeature> rottingwood_tree_placed = placed_features.register(
-			"rottingwood_tree_placed", () -> new PlacedFeature(TffConfiguredFeatures.rottingwood_tree.getHolder().get(), tree(5)));
+	public static final RegistryObject<PlacedFeature> ROTTINGWOOD_TREE_PLACED = PLACED_FEATURES.register(
+			"rottingwood_tree_placed", () -> new PlacedFeature(TffConfiguredFeatures.ROTTINGWOOD_TREE.getHolder().get(), tree(5)));
 	
 	// Slimy Tree
-	public static final RegistryObject<PlacedFeature> slimy_tree_placed = placed_features.register(
-			"slimy_tree_placed", () -> new PlacedFeature(TffConfiguredFeatures.slimy_tree.getHolder().get(), tree(1)));
+	public static final RegistryObject<PlacedFeature> SLIMY_TREE_PLACED = PLACED_FEATURES.register(
+			"slimy_tree_placed", () -> new PlacedFeature(TffConfiguredFeatures.SLIMY_TREE.getHolder().get(), tree(1)));
+	
+	// Slimy Tree Heavy
+	public static final RegistryObject<PlacedFeature> SLIMY_TREE_HEAVY_PLACED = PLACED_FEATURES.register(
+			"slimy_tree_heavy_placed", () -> new PlacedFeature(TffConfiguredFeatures.SLIMY_TREE.getHolder().get(), tree(1)));
 	
 	// Sickening Flower
-	public static final RegistryObject<PlacedFeature> sickening_flower_placed = placed_features.register(
-			"sickening_flower_placed", () -> new PlacedFeature(TffConfiguredFeatures.sickening_flower.getHolder().get(),
+	public static final RegistryObject<PlacedFeature> SICKENING_FLOWER_PLACED = PLACED_FEATURES.register(
+			"sickening_flower_placed", () -> new PlacedFeature(TffConfiguredFeatures.SICKENING_FLOWER.getHolder().get(),
 					patch(6)));
 	
 	// Rotting Flower
-	public static final RegistryObject<PlacedFeature> rotting_flower_placed = placed_features.register(
-			"rotting_flower_placed", () -> new PlacedFeature(TffConfiguredFeatures.rotting_flower.getHolder().get(),
+	public static final RegistryObject<PlacedFeature> ROTTING_FLOWER_PLACED = PLACED_FEATURES.register(
+			"rotting_flower_placed", () -> new PlacedFeature(TffConfiguredFeatures.ROTTING_FLOWER.getHolder().get(),
 					patch(9)));
 	
 	// Rotting Tall Grass
-	public static final RegistryObject<PlacedFeature> rotting_tall_grass_placed = placed_features.register(
-			"rotting_tall_grass_placed", () -> new PlacedFeature(TffConfiguredFeatures.rotting_tall_grass.getHolder().get(),
+	public static final RegistryObject<PlacedFeature> ROTTING_TALL_GRASS_PLACED = PLACED_FEATURES.register(
+			"rotting_tall_grass_placed", () -> new PlacedFeature(TffConfiguredFeatures.ROTTING_TALL_GRASS.getHolder().get(),
 					patch(128)));
 	
     private static List<PlacementModifier> patch(int count) {

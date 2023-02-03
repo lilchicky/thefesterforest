@@ -8,7 +8,7 @@ import net.minecraft.world.item.Item;
 
 public class ModItemProperties {
     public static void addCustomItemProperties() {
-        makeBow(ItemInit.shadow_bow.get());
+        makeBow(ItemInit.SHADOW_BOW.get());
     }
 
     private static void makeBow(Item item) {

@@ -39,27 +39,27 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModTeleporter implements ITeleporter {
 
-    protected final ServerLevel level;
+    protected final ServerLevel LEVEL;
     //private final BlockState frame = !ForgeRegistries.BLOCKS.containsKey(ResourceLocation.tryParse(TheFesterForestConfig.Common.return_portal_frame_block_id.get())) ? BlockInit.rotting_bricks.get().defaultBlockState() : ForgeRegistries.BLOCKS.getValue(ResourceLocation.tryParse(TheFesterForestConfig.Common.return_portal_frame_block_id.get())).defaultBlockState();
 
     public ModTeleporter(ServerLevel level) {
-        this.level = level;
+        this.LEVEL = level;
     }
 
     public Optional<BlockUtil.FoundRectangle> getExistingPortal(BlockPos pos) {
-        PoiManager poiManager = this.level.getPoiManager();
-        poiManager.ensureLoadedAndValid(this.level, pos, 64);
+        PoiManager poiManager = this.LEVEL.getPoiManager();
+        poiManager.ensureLoadedAndValid(this.LEVEL, pos, 64);
         Optional<PoiRecord> optional = poiManager.getInSquare((poiType) ->
-                poiType == ModPOIs.tff_portal.get(), pos, 64, PoiManager.Occupancy.ANY).sorted(Comparator.<PoiRecord>comparingDouble((poi) ->
+                poiType == ModPOIs.TFF_PORTAL.get(), pos, 64, PoiManager.Occupancy.ANY).sorted(Comparator.<PoiRecord>comparingDouble((poi) ->
                 poi.getPos().distSqr(pos)).thenComparingInt((poi) ->
                 poi.getPos().getY())).filter((poi) ->
-                this.level.getBlockState(poi.getPos()).hasProperty(BlockStateProperties.HORIZONTAL_AXIS)).findFirst();
+                this.LEVEL.getBlockState(poi.getPos()).hasProperty(BlockStateProperties.HORIZONTAL_AXIS)).findFirst();
         return optional.map((poi) -> {
             BlockPos blockpos = poi.getPos();
-            this.level.getChunkSource().addRegionTicket(TicketType.PORTAL, new ChunkPos(blockpos), 3, blockpos);
-            BlockState blockstate = this.level.getBlockState(blockpos);
+            this.LEVEL.getChunkSource().addRegionTicket(TicketType.PORTAL, new ChunkPos(blockpos), 3, blockpos);
+            BlockState blockstate = this.LEVEL.getBlockState(blockpos);
             return BlockUtil.getLargestRectangleAround(blockpos, blockstate.getValue(BlockStateProperties.HORIZONTAL_AXIS), 21, Direction.Axis.Y, 21, (posIn) ->
-                    this.level.getBlockState(posIn) == blockstate);
+                    this.LEVEL.getBlockState(posIn) == blockstate);
         });
     }
 
@@ -69,20 +69,20 @@ public class ModTeleporter implements ITeleporter {
         BlockPos blockpos = null;
         double d1 = -1.0D;
         BlockPos blockpos1 = null;
-        WorldBorder worldborder = this.level.getWorldBorder();
-        int dimensionLogicalHeight = this.level.getHeight() - 1;
+        WorldBorder worldborder = this.LEVEL.getWorldBorder();
+        int dimensionLogicalHeight = this.LEVEL.getHeight() - 1;
         BlockPos.MutableBlockPos mutablePos = pos.mutable();
 
         for(BlockPos.MutableBlockPos blockpos$mutable1 : BlockPos.spiralAround(pos, 16, Direction.EAST, Direction.SOUTH)) {
-            int j = Math.min(dimensionLogicalHeight, this.level.getHeight(Heightmap.Types.MOTION_BLOCKING, blockpos$mutable1.getX(), blockpos$mutable1.getZ()));
+            int j = Math.min(dimensionLogicalHeight, this.LEVEL.getHeight(Heightmap.Types.MOTION_BLOCKING, blockpos$mutable1.getX(), blockpos$mutable1.getZ()));
             if (worldborder.isWithinBounds(blockpos$mutable1) && worldborder.isWithinBounds(blockpos$mutable1.move(direction, 1))) {
                 blockpos$mutable1.move(direction.getOpposite(), 1);
 
                 for(int l = j; l >= 0; --l) {
                     blockpos$mutable1.setY(l);
-                    if (this.level.isEmptyBlock(blockpos$mutable1)) {
+                    if (this.LEVEL.isEmptyBlock(blockpos$mutable1)) {
                         int i1;
-                        for(i1 = l; l > 0 && this.level.isEmptyBlock(blockpos$mutable1.move(Direction.DOWN)); --l) {
+                        for(i1 = l; l > 0 && this.LEVEL.isEmptyBlock(blockpos$mutable1.move(Direction.DOWN)); --l) {
                         }
 
                         if (l + 4 <= dimensionLogicalHeight) {
@@ -114,7 +114,7 @@ public class ModTeleporter implements ITeleporter {
         }
 
         if (d0 == -1.0D) {
-            blockpos = (new BlockPos(pos.getX(), Mth.clamp(pos.getY(), 70, this.level.getHeight() - 10), pos.getZ())).immutable();
+            blockpos = (new BlockPos(pos.getX(), Mth.clamp(pos.getY(), 70, this.LEVEL.getHeight() - 10), pos.getZ())).immutable();
             Direction direction1 = direction.getClockWise();
             if (!worldborder.isWithinBounds(blockpos)) {
                 return Optional.empty();
@@ -123,9 +123,9 @@ public class ModTeleporter implements ITeleporter {
             for(int l1 = -1; l1 < 2; ++l1) {
                 for(int k2 = 0; k2 < 2; ++k2) {
                     for(int i3 = -1; i3 < 3; ++i3) {
-                        BlockState blockstate1 = i3 < 0 ? BlockInit.rotting_bricks.get().defaultBlockState() : Blocks.AIR.defaultBlockState();
+                        BlockState blockstate1 = i3 < 0 ? BlockInit.ROTTING_BRICKS.get().defaultBlockState() : Blocks.AIR.defaultBlockState();
                         mutablePos.setWithOffset(blockpos, k2 * direction.getStepX() + l1 * direction1.getStepX(), i3, k2 * direction.getStepZ() + l1 * direction1.getStepZ());
-                        this.level.setBlockAndUpdate(mutablePos, blockstate1);
+                        this.LEVEL.setBlockAndUpdate(mutablePos, blockstate1);
                     }
                 }
             }
@@ -135,17 +135,17 @@ public class ModTeleporter implements ITeleporter {
             for(int i2 = -1; i2 < 4; ++i2) {
                 if (k1 == -1 || k1 == 2 || i2 == -1 || i2 == 3) {
                     mutablePos.setWithOffset(blockpos, k1 * direction.getStepX(), i2, k1 * direction.getStepZ());
-                    this.level.setBlock(mutablePos, BlockInit.rotting_bricks.get().defaultBlockState(), 3);
+                    this.LEVEL.setBlock(mutablePos, BlockInit.ROTTING_BRICKS.get().defaultBlockState(), 3);
                 }
             }
         }
 
-        BlockState tffPortal = BlockInit.tff_portal.get().defaultBlockState().setValue(TffPortalBlock.AXIS, axis);
+        BlockState tffPortal = BlockInit.TFF_PORTAL.get().defaultBlockState().setValue(TffPortalBlock.AXIS, axis);
 
         for(int j2 = 0; j2 < 2; ++j2) {
             for(int l2 = 0; l2 < 3; ++l2) {
                 mutablePos.setWithOffset(blockpos, j2 * direction.getStepX(), l2, j2 * direction.getStepZ());
-                this.level.setBlock(mutablePos, tffPortal, 18);
+                this.LEVEL.setBlock(mutablePos, tffPortal, 18);
             }
         }
 
@@ -158,11 +158,11 @@ public class ModTeleporter implements ITeleporter {
         for(int i = -1; i < 3; ++i) {
             for(int j = -1; j < 4; ++j) {
                 offsetPos.setWithOffset(originalPos, directionIn.getStepX() * i + direction.getStepX() * offsetScale, j, directionIn.getStepZ() * i + direction.getStepZ() * offsetScale);
-                if (j < 0 && !this.level.getBlockState(offsetPos).getMaterial().isSolid()) {
+                if (j < 0 && !this.LEVEL.getBlockState(offsetPos).getMaterial().isSolid()) {
                     return false;
                 }
 
-                if (j >= 0 && !this.level.isEmptyBlock(offsetPos)) {
+                if (j >= 0 && !this.LEVEL.isEmptyBlock(offsetPos)) {
                     return false;
                 }
             }
@@ -174,8 +174,8 @@ public class ModTeleporter implements ITeleporter {
     @Nullable
     @Override
     public PortalInfo getPortalInfo(Entity entity, ServerLevel level, Function<ServerLevel, PortalInfo> defaultPortalInfo) {
-        boolean destinationIsUG = level.dimension() == ModDimensions.tff_key;
-        if (entity.level.dimension() != ModDimensions.tff_key && !destinationIsUG) {
+        boolean destinationIsUG = level.dimension() == ModDimensions.TFF_KEY;
+        if (entity.level.dimension() != ModDimensions.TFF_KEY && !destinationIsUG) {
             return null;
         }
         else {
@@ -211,7 +211,7 @@ public class ModTeleporter implements ITeleporter {
             return existingPortal;
         }
         else {
-            Direction.Axis portalAxis = this.level.getBlockState(entity.portalEntrancePos).getOptionalValue(TffPortalBlock.AXIS).orElse(Direction.Axis.X);
+            Direction.Axis portalAxis = this.LEVEL.getBlockState(entity.portalEntrancePos).getOptionalValue(TffPortalBlock.AXIS).orElse(Direction.Axis.X);
             return this.makePortal(pos, portalAxis);
         }
     }

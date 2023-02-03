@@ -113,7 +113,7 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 		
 					LivingEntity currentEntity = (LivingEntity) nearbyEntities.get(x);
 				
-					nearbyEntities.get(x).hurt(TheFesterForest.volatile_ghost, explodeDamage);
+					nearbyEntities.get(x).hurt(TheFesterForest.VOLATILE_GHOST, explodeDamage);
 					currentEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, (nauseaDurationSeconds * 20), 200));
 				}
 		

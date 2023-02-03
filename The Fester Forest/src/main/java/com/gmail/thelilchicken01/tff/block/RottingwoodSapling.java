@@ -18,7 +18,7 @@ public class RottingwoodSapling extends SaplingBlock {
 	
 	@Override
 	protected boolean mayPlaceOn(BlockState state, BlockGetter getter, BlockPos pos) {
-		return state.is(BlockInit.rotting_dirt.get()) || state.is(BlockTags.DIRT) || state.is(BlockInit.rotting_grass.get());
+		return state.is(BlockInit.ROTTING_DIRT.get()) || state.is(BlockTags.DIRT) || state.is(BlockInit.ROTTING_GRASS.get());
 	}
 
 }

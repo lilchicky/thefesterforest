@@ -39,7 +39,7 @@ public class BansheeLeggings extends ArmorItem {
 
 	public BansheeLeggings() {
 		super(ModArmorMaterial.BANSHEE, EquipmentSlot.LEGS, 
-				new Properties().tab(TheFesterForest.tff_tab));
+				new Properties().tab(TheFesterForest.TFF_TAB));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		

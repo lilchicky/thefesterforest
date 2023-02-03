@@ -52,21 +52,21 @@ import software.bernie.geckolib3.GeckoLib;
 @Mod("tff")
 public class TheFesterForest {
 	
-	public static final String modid = "tff";
+	public static final String MODID = "tff";
 	
 	public static final Logger LOGGER = LogManager.getLogger();	
 	//Damage Sources
-	public static final DamageSource banshee = new DamageSource(modid + "_banshee").bypassArmor();
-	public static final DamageSource volatile_ghost = new DamageSource(modid + "_volatile_ghost").setExplosion();
-	public static final DamageSource sand_damage = new DamageSource(modid + "_sand_damage");
-	public static final DamageSource knockup_damage = new DamageSource(modid + "_knockup_damage");
+	public static final DamageSource BANSHEE = new DamageSource(MODID + "_banshee").bypassArmor();
+	public static final DamageSource VOLATILE_GHOST = new DamageSource(MODID + "_volatile_ghost").setExplosion();
+	public static final DamageSource SAND_DAMAGE = new DamageSource(MODID + "_sand_damage");
+	public static final DamageSource KNOCKUP_DAMAGE = new DamageSource(MODID + "_knockup_damage");
 	
-	public static final CreativeModeTab tff_tab = new CreativeModeTab(modid) {
+	public static final CreativeModeTab TFF_TAB = new CreativeModeTab(MODID) {
 
 		@Override
 		@OnlyIn(Dist.CLIENT)
 		public net.minecraft.world.item.ItemStack makeIcon() {
-			return new ItemStack(BlockInit.rotting_log.get());
+			return new ItemStack(BlockInit.ROTTING_LOG.get());
 		}
 		
 	};
@@ -74,11 +74,11 @@ public class TheFesterForest {
 	public TheFesterForest() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		
-		ItemInit.items.register(bus);
-		BlockInit.blocks.register(bus);
-		ParticleInit.particles.register(bus);
-		TffConfiguredFeatures.configured_features.register(bus);
-		TffPlacedFeature.placed_features.register(bus);
+		ItemInit.ITEMS.register(bus);
+		BlockInit.BLOCKS.register(bus);
+		ParticleInit.PARTICLES.register(bus);
+		TffConfiguredFeatures.CONFIGURED_FEATURES.register(bus);
+		TffPlacedFeature.PLACED_FEATURES.register(bus);
 		ModDimensions.register();
 		ModPOIs.register(bus);
 		ModEntityTypes.register(bus);

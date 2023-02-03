@@ -68,7 +68,7 @@ public class MediumGoopEntity extends Monster implements IAnimatable {
 	    if (this.deathTime == 20 && !this.level.isClientSide()) {
 	    	if (!getLevel().isClientSide()) {
 				
-				SmallGoopEntity newGoop = new SmallGoopEntity(ModEntityTypes.goop_small.get(), getLevel());
+				SmallGoopEntity newGoop = new SmallGoopEntity(ModEntityTypes.GOOP_SMALL.get(), getLevel());
 				
 				newGoop.setPos(getX(), getY(), getZ());
 				newGoop.setTarget(getTarget());

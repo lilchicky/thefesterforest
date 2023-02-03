@@ -40,7 +40,7 @@ public class LifeScythe extends SwordItem {
 		
 		if (world.isClientSide()) {
 			for (int x = 0; x < 50; x++) {
-				world.addParticle(ParticleInit.blood_particle.get(), player.getX(), player.getY() + 0.5d, player.getZ(), 
+				world.addParticle(ParticleInit.BLOOD_PARTICLE.get(), player.getX(), player.getY() + 0.5d, player.getZ(), 
 						((Math.cos(x) * 0.75d) * ((Math.random() - 0.5) * 0.2)), 
 						0.0d + ((Math.random() - 0.5) * 0.5), 
 						((Math.sin(x) * 0.75d) * ((Math.random() - 0.5) * 0.2)));

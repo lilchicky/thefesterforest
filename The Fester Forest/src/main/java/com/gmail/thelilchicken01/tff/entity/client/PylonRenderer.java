@@ -22,7 +22,7 @@ public class PylonRenderer extends GeoEntityRenderer<PylonEntity> {
 	@Override
 	public ResourceLocation getTextureLocation(PylonEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/pylon/pylon.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/pylon/pylon.png");
 	}
 	
 	@Override

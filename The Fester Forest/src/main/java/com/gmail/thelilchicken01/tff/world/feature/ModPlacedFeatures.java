@@ -14,8 +14,8 @@ import net.minecraft.world.level.levelgen.placement.RarityFilter;
 
 public class ModPlacedFeatures {
 	
-	public static final Holder<PlacedFeature> fester_ore_placed = PlacementUtils.register("fester_ore_placed", 
-			ModConfiguredFeatures.fester_ore, ModOrePlacement.commonOrePlacement(TFFCommonConfigs.FESTER_ORE_VEINS_PER_CHUNK.get(), //veins per chunk
+	public static final Holder<PlacedFeature> FESTER_ORE_PLACED = PlacementUtils.register("fester_ore_placed", 
+			ModConfiguredFeatures.FESTER_ORE, ModOrePlacement.commonOrePlacement(TFFCommonConfigs.FESTER_ORE_VEINS_PER_CHUNK.get(), //veins per chunk
 					HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(64), VerticalAnchor.aboveBottom(144)))); //height range
 	
 }

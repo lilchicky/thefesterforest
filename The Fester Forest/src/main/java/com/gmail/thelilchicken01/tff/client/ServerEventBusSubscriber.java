@@ -24,24 +24,24 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
-@Mod.EventBusSubscriber(modid = TheFesterForest.modid, bus = Bus.MOD, value = Dist.DEDICATED_SERVER)
+@Mod.EventBusSubscriber(modid = TheFesterForest.MODID, bus = Bus.MOD, value = Dist.DEDICATED_SERVER)
 public class ServerEventBusSubscriber {
 
 	@SubscribeEvent
 	public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
 		
-		event.put(ModEntityTypes.rotting_skeleton.get(), RottingSkeletonEntity.setAttributes());
-		event.put(ModEntityTypes.crunch_beetle.get(), CrunchBeetleEntity.setAttributes());
-		event.put(ModEntityTypes.banshee.get(), BansheeEntity.setAttributes());
-		event.put(ModEntityTypes.volatile_ghost.get(), VolatileGhostEntity.setAttributes());
-		event.put(ModEntityTypes.wight.get(), WightEntity.setAttributes());
-		event.put(ModEntityTypes.forgemaster.get(), ForgemasterEntity.setAttributes());
-		event.put(ModEntityTypes.player_crunch_beetle.get(), PlayerCrunchBeetleEntity.setAttributes());
-		event.put(ModEntityTypes.pylon.get(), PylonEntity.setAttributes());
-		event.put(ModEntityTypes.reetle_queen.get(), ReetleQueenEntity.setAttributes());
-		event.put(ModEntityTypes.goop.get(), GoopEntity.setAttributes());
-		event.put(ModEntityTypes.goop_medium.get(), MediumGoopEntity.setAttributes());
-		event.put(ModEntityTypes.goop_small.get(), SmallGoopEntity.setAttributes());
+		event.put(ModEntityTypes.ROTTING_SKELETON.get(), RottingSkeletonEntity.setAttributes());
+		event.put(ModEntityTypes.CRUNCH_BEETLE.get(), CrunchBeetleEntity.setAttributes());
+		event.put(ModEntityTypes.BANSHEE.get(), BansheeEntity.setAttributes());
+		event.put(ModEntityTypes.VOLATILE_GHOST.get(), VolatileGhostEntity.setAttributes());
+		event.put(ModEntityTypes.WIGHT.get(), WightEntity.setAttributes());
+		event.put(ModEntityTypes.FORGEMASTER.get(), ForgemasterEntity.setAttributes());
+		event.put(ModEntityTypes.PLAYER_CRUNCH_BEETLE.get(), PlayerCrunchBeetleEntity.setAttributes());
+		event.put(ModEntityTypes.PYLON.get(), PylonEntity.setAttributes());
+		event.put(ModEntityTypes.REETLE_QUEEN.get(), ReetleQueenEntity.setAttributes());
+		event.put(ModEntityTypes.GOOP.get(), GoopEntity.setAttributes());
+		event.put(ModEntityTypes.GOOP_MEDIUM.get(), MediumGoopEntity.setAttributes());
+		event.put(ModEntityTypes.GOOP_SMALL.get(), SmallGoopEntity.setAttributes());
 		
 	}
 	

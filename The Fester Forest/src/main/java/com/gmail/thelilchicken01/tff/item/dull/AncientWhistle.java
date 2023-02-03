@@ -45,7 +45,7 @@ public class AncientWhistle extends Item {
 				
 			player.playSound(SoundEvents.PHANTOM_AMBIENT, 1.2f, 1.4f);
 			
-			player.hurt(TheFesterForest.banshee, whistleDamage);
+			player.hurt(TheFesterForest.BANSHEE, whistleDamage);
 			
 			player.getCooldowns().addCooldown(this, 100);
 			

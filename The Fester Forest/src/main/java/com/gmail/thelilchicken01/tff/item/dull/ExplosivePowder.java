@@ -33,7 +33,7 @@ public class ExplosivePowder extends Item {
 	public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
 		
 		player.setDeltaMovement(player.getLookAngle().multiply(2, 2, 2));
-		player.hurt(TheFesterForest.volatile_ghost, 4);
+		player.hurt(TheFesterForest.VOLATILE_GHOST, 4);
 		player.playSound(SoundEvents.GENERIC_EXPLODE, 1.2f, 0.5f);
 		
 		if(world.isClientSide()) {

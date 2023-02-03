@@ -40,7 +40,7 @@ public class BansheeChestplate extends ArmorItem {
 
 	public BansheeChestplate() {
 		super(ModArmorMaterial.BANSHEE, EquipmentSlot.CHEST, 
-				new Properties().tab(TheFesterForest.tff_tab));
+				new Properties().tab(TheFesterForest.TFF_TAB));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		

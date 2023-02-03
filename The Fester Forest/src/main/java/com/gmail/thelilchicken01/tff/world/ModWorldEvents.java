@@ -6,7 +6,7 @@ import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = TheFesterForest.modid)
+@Mod.EventBusSubscriber(modid = TheFesterForest.MODID)
 public class ModWorldEvents {
 
 	@SubscribeEvent

@@ -47,21 +47,21 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
 			ToolAction toolAction) {
 		
 		if(stack.getItem() instanceof AxeItem) {
-			if(state.is(BlockInit.rotting_log.get())) {
-				return BlockInit.stripped_rotting_log.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+			if(state.is(BlockInit.ROTTING_LOG.get())) {
+				return BlockInit.STRIPPED_ROTTING_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
 			}
 			
-			if(state.is(BlockInit.rotting_wood.get())) {
-				return BlockInit.stripped_rotting_wood.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+			if(state.is(BlockInit.ROTTING_WOOD.get())) {
+				return BlockInit.STRIPPED_ROTTING_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
 			}
 			
 			// Slimy Log
-			if(state.is(BlockInit.slimy_log.get())) {
-				return BlockInit.stripped_slimy_log.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+			if(state.is(BlockInit.SLIMY_LOG.get())) {
+				return BlockInit.STRIPPED_SLIMY_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
 			}
 			
-			if(state.is(BlockInit.slimy_wood.get())) {
-				return BlockInit.stripped_slimy_wood.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+			if(state.is(BlockInit.SLIMY_WOOD.get())) {
+				return BlockInit.STRIPPED_SLIMY_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
 			}
 		}
 		

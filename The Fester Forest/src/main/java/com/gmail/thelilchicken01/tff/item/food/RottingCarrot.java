@@ -20,7 +20,7 @@ public class RottingCarrot extends Item {
 	private String[] drops = {"Fester Forest Loot Chests"};
 
 	public RottingCarrot() {
-		super(new Properties().tab(TheFesterForest.tff_tab).food(
+		super(new Properties().tab(TheFesterForest.TFF_TAB).food(
 				new FoodProperties.Builder().saturationMod(0.2f).nutrition(4).effect(() -> new MobEffectInstance(MobEffects.HUNGER, 400, 0), 1f)
 				.build()));
 	}

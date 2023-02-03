@@ -11,19 +11,19 @@ public class ForgemasterModel extends AnimatedGeoModel<ForgemasterEntity> {
 	@Override
 	public ResourceLocation getAnimationFileLocation(ForgemasterEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "animations/forgemaster.animation.json");
+		return new ResourceLocation(TheFesterForest.MODID, "animations/forgemaster.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelLocation(ForgemasterEntity object) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "geo/forgemaster.geo.json");
+		return new ResourceLocation(TheFesterForest.MODID, "geo/forgemaster.geo.json");
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(ForgemasterEntity object) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/forgemaster/forgemaster.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/forgemaster/forgemaster.png");
 	}
 
 }

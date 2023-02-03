@@ -138,8 +138,8 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 		
 			if (shootCounter > (shootCooldown * cooldownMod) * 20 && this.getTarget() != null) {
 				
-				ItemStack ammo = new ItemStack(ItemInit.meteor_charge.get());
-				Meteor bulletItem = ItemInit.meteor_charge.get(); //these will be the same, but are what is being shot
+				ItemStack ammo = new ItemStack(ItemInit.METEOR_CHARGE.get());
+				Meteor bulletItem = ItemInit.METEOR_CHARGE.get(); //these will be the same, but are what is being shot
 				
 				MeteorCharge shot = bulletItem.createProjectile(this.level, ammo, this);// level, shot item, this entity
 				
@@ -179,7 +179,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 						LivingEntity current = (LivingEntity)nearbyEntities.get(x);
 						
 						current.setDeltaMovement(current.getDeltaMovement().add(0.0, 1.0, 0.0).multiply(0.0, 2.0, 0.0));
-						current.hurt(TheFesterForest.knockup_damage, 10);
+						current.hurt(TheFesterForest.KNOCKUP_DAMAGE, 10);
 					
 					}
 					
@@ -203,7 +203,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 					
 					spawnTries++;
 					
-					PylonEntity pylon = new PylonEntity(ModEntityTypes.pylon.get(), getLevel());
+					PylonEntity pylon = new PylonEntity(ModEntityTypes.PYLON.get(), getLevel());
 					
 					double randomX = getX() + ((Math.random() - 0.5) * (pylonRadius * 2));
 					double randomY = getY();
@@ -220,8 +220,8 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 					Block blockInside = getLevel().getBlockState(blockIn).getBlock();
 					Block blockOnTopOf = getLevel().getBlockState(blockOn).getBlock();
 					
-					if (blockInside == Blocks.AIR && (blockOnTopOf == BlockInit.rotting_planks.get() || 
-							blockOnTopOf == BlockInit.rotting_wood.get())) {
+					if (blockInside == Blocks.AIR && (blockOnTopOf == BlockInit.ROTTING_PLANKS.get() || 
+							blockOnTopOf == BlockInit.ROTTING_WOOD.get())) {
 						
 						pylon.setPos(blockIn.getX(), blockIn.getY(), blockIn.getZ());
 						

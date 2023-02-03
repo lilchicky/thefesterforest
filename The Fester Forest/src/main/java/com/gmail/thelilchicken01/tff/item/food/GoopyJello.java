@@ -20,7 +20,7 @@ public class GoopyJello extends Item {
 	private String[] drops = {"Rotting Goop"};
 
 	public GoopyJello() {
-		super(new Properties().tab(TheFesterForest.tff_tab).food(
+		super(new Properties().tab(TheFesterForest.TFF_TAB).food(
 				new FoodProperties.Builder().saturationMod(2.2f).nutrition(12)
 				.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 0), 1f)
 				.build()));

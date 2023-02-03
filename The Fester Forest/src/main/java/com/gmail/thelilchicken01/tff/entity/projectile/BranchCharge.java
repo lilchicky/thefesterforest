@@ -72,7 +72,7 @@ public class BranchCharge extends Fireball {
 	
 	@Override
 	protected ParticleOptions getTrailParticle() {
-		return ParticleInit.branch_particle.get();
+		return ParticleInit.BRANCH_PARTICLE.get();
 	}
 	
 	@Override
@@ -86,7 +86,7 @@ public class BranchCharge extends Fireball {
 			if (isOnFire()) target.setSecondsOnFire(5);
 			int lastHurtResistant = target.invulnerableTime;
 			if (ignoreInvulnerability) target.invulnerableTime = 0;
-			boolean damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.modid + "_branch_damage",
+			boolean damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_branch_damage",
 					this, shooter).setProjectile(),
 					(float) bullet.modifyDamage(damage, this, target, shooter, level));
 			

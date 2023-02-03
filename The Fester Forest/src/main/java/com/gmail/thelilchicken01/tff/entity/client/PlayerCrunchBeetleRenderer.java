@@ -21,7 +21,7 @@ public class PlayerCrunchBeetleRenderer extends GeoEntityRenderer<PlayerCrunchBe
 	@Override
 	public ResourceLocation getTextureLocation(PlayerCrunchBeetleEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/crunch_beetle/crunch_beetle.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/crunch_beetle/crunch_beetle.png");
 	}
 	
 	@Override

@@ -36,7 +36,7 @@ public class BugEggs extends Item {
 		
 		for (int x = 0; x < 5; x++) {
 			
-			PlayerCrunchBeetleEntity beetle = new PlayerCrunchBeetleEntity(ModEntityTypes.player_crunch_beetle.get(), world);
+			PlayerCrunchBeetleEntity beetle = new PlayerCrunchBeetleEntity(ModEntityTypes.PLAYER_CRUNCH_BEETLE.get(), world);
 			
 			beetle.setOwnerUUID(player.getUUID());
 			beetle.setPos(player.getX(), player.getY(), player.getZ());

@@ -57,56 +57,56 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
-@Mod.EventBusSubscriber(modid = TheFesterForest.modid, bus = Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = TheFesterForest.MODID, bus = Bus.MOD, value = Dist.CLIENT)
 public class ClientEventBusSubscriber {
 
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event) {
 		ModItemProperties.addCustomItemProperties();
 		
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.rotting_leaves.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.rottingwood_sapling.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.tff_portal.get(), RenderType.translucent());
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.rotting_flower.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.rotting_flower_pot.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.sickening_flower.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.sickening_flower_pot.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.rotting_tall_grass.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.slimy_leaves.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.slimy_sapling.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTING_LEAVES.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTINGWOOD_SAPLING.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.TFF_PORTAL.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTING_FLOWER.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTING_FLOWER_POT.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.SICKENING_FLOWER.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.SICKENING_FLOWER_POT.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTING_TALL_GRASS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.SLIMY_LEAVES.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.SLIMY_SAPLING.get(), RenderType.cutout());
 		
-		EntityRenderers.register(ModEntityTypes.rotting_skeleton.get(), RottingSkeletonRenderer::new);
-		EntityRenderers.register(ModEntityTypes.crunch_beetle.get(), CrunchBeetleRenderer::new);
-		EntityRenderers.register(ModEntityTypes.banshee.get(), BansheeRenderer::new);
-		EntityRenderers.register(ModEntityTypes.volatile_ghost.get(), VolatileGhostRenderer::new);
-		EntityRenderers.register(ModEntityTypes.wight.get(), WightRenderer::new);
-		EntityRenderers.register(ModEntityTypes.forgemaster.get(), ForgemasterRenderer::new);
-		EntityRenderers.register(ModEntityTypes.player_crunch_beetle.get(), PlayerCrunchBeetleRenderer::new);
-		EntityRenderers.register(ModEntityTypes.pylon.get(), PylonRenderer::new);
-		EntityRenderers.register(ModEntityTypes.reetle_queen.get(), ReetleQueenRenderer::new);
-		EntityRenderers.register(ModEntityTypes.goop.get(), GoopRenderer::new);
-		EntityRenderers.register(ModEntityTypes.goop_medium.get(), MediumGoopRenderer::new);
-		EntityRenderers.register(ModEntityTypes.goop_small.get(), SmallGoopRenderer::new);
+		EntityRenderers.register(ModEntityTypes.ROTTING_SKELETON.get(), RottingSkeletonRenderer::new);
+		EntityRenderers.register(ModEntityTypes.CRUNCH_BEETLE.get(), CrunchBeetleRenderer::new);
+		EntityRenderers.register(ModEntityTypes.BANSHEE.get(), BansheeRenderer::new);
+		EntityRenderers.register(ModEntityTypes.VOLATILE_GHOST.get(), VolatileGhostRenderer::new);
+		EntityRenderers.register(ModEntityTypes.WIGHT.get(), WightRenderer::new);
+		EntityRenderers.register(ModEntityTypes.FORGEMASTER.get(), ForgemasterRenderer::new);
+		EntityRenderers.register(ModEntityTypes.PLAYER_CRUNCH_BEETLE.get(), PlayerCrunchBeetleRenderer::new);
+		EntityRenderers.register(ModEntityTypes.PYLON.get(), PylonRenderer::new);
+		EntityRenderers.register(ModEntityTypes.REETLE_QUEEN.get(), ReetleQueenRenderer::new);
+		EntityRenderers.register(ModEntityTypes.GOOP.get(), GoopRenderer::new);
+		EntityRenderers.register(ModEntityTypes.GOOP_MEDIUM.get(), MediumGoopRenderer::new);
+		EntityRenderers.register(ModEntityTypes.GOOP_SMALL.get(), SmallGoopRenderer::new);
 		
-		ItemProperties.register(ItemInit.reetle_elytra.get(), new ResourceLocation(TheFesterForest.modid, "broken"),
+		ItemProperties.register(ItemInit.REETLE_ELYTRA.get(), new ResourceLocation(TheFesterForest.MODID, "broken"),
 				(stack, arg1, arg2, arg3) -> ReetleElytra.isUsable(stack) ? 0 : 1);
 	}
 	
 	@SubscribeEvent
 	public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
 		
-		event.put(ModEntityTypes.rotting_skeleton.get(), RottingSkeletonEntity.setAttributes());
-		event.put(ModEntityTypes.crunch_beetle.get(), CrunchBeetleEntity.setAttributes());
-		event.put(ModEntityTypes.banshee.get(), BansheeEntity.setAttributes());
-		event.put(ModEntityTypes.volatile_ghost.get(), VolatileGhostEntity.setAttributes());
-		event.put(ModEntityTypes.wight.get(), WightEntity.setAttributes());
-		event.put(ModEntityTypes.forgemaster.get(), ForgemasterEntity.setAttributes());
-		event.put(ModEntityTypes.player_crunch_beetle.get(), PlayerCrunchBeetleEntity.setAttributes());
-		event.put(ModEntityTypes.pylon.get(), PylonEntity.setAttributes());
-		event.put(ModEntityTypes.reetle_queen.get(), ReetleQueenEntity.setAttributes());
-		event.put(ModEntityTypes.goop.get(), GoopEntity.setAttributes());
-		event.put(ModEntityTypes.goop_medium.get(), MediumGoopEntity.setAttributes());
-		event.put(ModEntityTypes.goop_small.get(), SmallGoopEntity.setAttributes());
+		event.put(ModEntityTypes.ROTTING_SKELETON.get(), RottingSkeletonEntity.setAttributes());
+		event.put(ModEntityTypes.CRUNCH_BEETLE.get(), CrunchBeetleEntity.setAttributes());
+		event.put(ModEntityTypes.BANSHEE.get(), BansheeEntity.setAttributes());
+		event.put(ModEntityTypes.VOLATILE_GHOST.get(), VolatileGhostEntity.setAttributes());
+		event.put(ModEntityTypes.WIGHT.get(), WightEntity.setAttributes());
+		event.put(ModEntityTypes.FORGEMASTER.get(), ForgemasterEntity.setAttributes());
+		event.put(ModEntityTypes.PLAYER_CRUNCH_BEETLE.get(), PlayerCrunchBeetleEntity.setAttributes());
+		event.put(ModEntityTypes.PYLON.get(), PylonEntity.setAttributes());
+		event.put(ModEntityTypes.REETLE_QUEEN.get(), ReetleQueenEntity.setAttributes());
+		event.put(ModEntityTypes.GOOP.get(), GoopEntity.setAttributes());
+		event.put(ModEntityTypes.GOOP_MEDIUM.get(), MediumGoopEntity.setAttributes());
+		event.put(ModEntityTypes.GOOP_SMALL.get(), SmallGoopEntity.setAttributes());
 		
 	}
 	
@@ -126,12 +126,12 @@ public class ClientEventBusSubscriber {
 	@SubscribeEvent
 	public static void registerParticleFactories(final ParticleFactoryRegisterEvent event) {
 		
-		Minecraft.getInstance().particleEngine.register(ParticleInit.hellflame_particle.get(), HellflameParticle.Provider::new);
-		Minecraft.getInstance().particleEngine.register(ParticleInit.tff_portal_particles.get(), TffPortalParticle.Provider::new);
-		Minecraft.getInstance().particleEngine.register(ParticleInit.pocket_sand_particle.get(), PocketSandParticle.Provider::new);
-		Minecraft.getInstance().particleEngine.register(ParticleInit.blood_particle.get(), BloodParticle.Provider::new);
-		Minecraft.getInstance().particleEngine.register(ParticleInit.bone_particle.get(), BoneParticle.Provider::new);
-		Minecraft.getInstance().particleEngine.register(ParticleInit.branch_particle.get(), BranchParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(ParticleInit.HELLFLAME_PARTICLES.get(), HellflameParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(ParticleInit.TFF_PORTAL_PARTICLES.get(), TffPortalParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(ParticleInit.POCKET_SAND_PARTICLE.get(), PocketSandParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(ParticleInit.BLOOD_PARTICLE.get(), BloodParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(ParticleInit.BONE_PARTICLE.get(), BoneParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(ParticleInit.BRANCH_PARTICLE.get(), BranchParticle.Provider::new);
 	}
 	
 }

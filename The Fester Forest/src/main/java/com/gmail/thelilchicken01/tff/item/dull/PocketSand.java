@@ -54,7 +54,7 @@ public class PocketSand extends Item {
 		
 		if(world.isClientSide()) {
 			for (int x = 0; x < 150; x++) {
-				world.addParticle(ParticleInit.pocket_sand_particle.get(), player.getX(), player.getY() + 0.5d, player.getZ(), 
+				world.addParticle(ParticleInit.POCKET_SAND_PARTICLE.get(), player.getX(), player.getY() + 0.5d, player.getZ(), 
 						(player.getLookAngle().x + ((Math.random() - 0.5) * 0.85)), 
 						(player.getLookAngle().y + ((Math.random() - 0.5) * 0.85)), 
 						(player.getLookAngle().z  + ((Math.random() - 0.5) * 0.85)));

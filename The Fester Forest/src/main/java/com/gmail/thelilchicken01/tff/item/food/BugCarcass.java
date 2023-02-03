@@ -18,7 +18,7 @@ public class BugCarcass extends Item {
 	private String[] drops = {"Reetle", "Reetle Queen", "Fester Forest Loot Chests"};
 
 	public BugCarcass() {
-		super(new Properties().tab(TheFesterForest.tff_tab).food(
+		super(new Properties().tab(TheFesterForest.TFF_TAB).food(
 				new FoodProperties.Builder().saturationMod(1.2f).nutrition(8).fast()
 				.build()));
 	}

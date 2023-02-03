@@ -19,7 +19,7 @@ public class GoopyStick extends PaxelItem {
 	private String[] drops = {"Rotting Goop"};
 
 	public GoopyStick() {
-		super(ModTiers.PAXEL_DIAMOND, 0, 0.0f, new Properties().tab(TheFesterForest.tff_tab));
+		super(ModTiers.PAXEL_DIAMOND, 0, 0.0f, new Properties().tab(TheFesterForest.TFF_TAB));
 		
 	}
 	

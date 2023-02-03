@@ -22,7 +22,7 @@ public class VolatileGhostRenderer extends GeoEntityRenderer<VolatileGhostEntity
 	@Override
 	public ResourceLocation getTextureLocation(VolatileGhostEntity animatable) {
 		
-		return new ResourceLocation(TheFesterForest.modid, "textures/entity/volatile_ghost/volatile_ghost.png");
+		return new ResourceLocation(TheFesterForest.MODID, "textures/entity/volatile_ghost/volatile_ghost.png");
 	}
 	
 	@Override

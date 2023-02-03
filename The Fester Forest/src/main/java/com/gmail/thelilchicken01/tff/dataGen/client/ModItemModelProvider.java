@@ -14,7 +14,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 public class ModItemModelProvider extends ItemModelProvider {
 
 	public ModItemModelProvider(DataGenerator generator, ExistingFileHelper helper) {
-		super(generator, TheFesterForest.modid, helper);
+		super(generator, TheFesterForest.MODID, helper);
 		
 		
 	}
@@ -56,67 +56,67 @@ public class ModItemModelProvider extends ItemModelProvider {
 	@Override
 	protected void registerModels() {
 		// Block Item
-		simpleBlockItem(BlockInit.rotting_bricks.get().asItem());
-		simpleBlockItem(BlockInit.rotting_stone.get().asItem());
-		simpleBlockItem(BlockInit.fester_ore.get().asItem());
-		simpleBlockItem(BlockInit.slimy_planks.get().asItem());
-		simpleBlockItem(BlockInit.cracked_rotting_stone.get().asItem());
-		simpleBlockItem(BlockInit.mossy_rotting_stone.get().asItem());
-		simpleBlockItem(BlockInit.rotting_stone_bricks.get().asItem());
-		simpleBlockItem(BlockInit.crushed_rotting_stone.get().asItem());
-		simpleBlockItem(BlockInit.rotting_grave_dirt.get().asItem());
+		simpleBlockItem(BlockInit.ROTTING_BRICKS.get().asItem());
+		simpleBlockItem(BlockInit.ROTTING_STONE.get().asItem());
+		simpleBlockItem(BlockInit.FESTER_ORE.get().asItem());
+		simpleBlockItem(BlockInit.SLIMY_PLANKS.get().asItem());
+		simpleBlockItem(BlockInit.CRACKED_ROTTING_STONE.get().asItem());
+		simpleBlockItem(BlockInit.MOSSY_ROTTING_STONE.get().asItem());
+		simpleBlockItem(BlockInit.ROTTING_STONE_BRICKS.get().asItem());
+		simpleBlockItem(BlockInit.CRUSHED_ROTTING_STONE.get().asItem());
+		simpleBlockItem(BlockInit.ROTTING_GRAVE_DIRT.get().asItem());
 		
 		// Simple 2D Item
-		oneLayerItem(ItemInit.rotting_brick.get());
-		oneLayerItem(ItemInit.rotting_catalyst.get());
-		oneLayerItem(ItemInit.bug_carcass.get());
-		oneLayerItem(ItemInit.ancient_whistle.get());
-		oneLayerItem(ItemInit.volatile_necklace.get());
-		oneLayerItem(ItemInit.frozen_pendant.get());
-		oneLayerItem(ItemInit.pocket_sand.get());
-		oneLayerItem(ItemInit.flesh_ball.get());
-		oneLayerItem(ItemInit.explosive_powder.get());
-		oneLayerItem(ItemInit.angelic_whistle.get());
-		oneLayerItem(ItemInit.branch_charge.get());
-		oneLayerItem(ItemInit.bone_charge.get());
-		oneLayerItem(ItemInit.meteor_charge.get());
-		oneLayerItem(ItemInit.forgemaster_heart.get());
-		oneLayerItem(ItemInit.heavy_stone.get());
-		oneLayerItem(ItemInit.purifying_powder.get());
-		oneLayerItem(ItemInit.bug_eggs.get());
-		oneLayerItem(ItemInit.mechanical_eye.get());
-		oneLayerItem(ItemInit.mechanical_helmet.get());
-		oneLayerItem(ItemInit.mechanical_chestplate.get());
-		oneLayerItem(ItemInit.mechanical_leggings.get());
-		oneLayerItem(ItemInit.mechanical_boots.get());
-		oneLayerItem(ItemInit.mechanical_apple.get());
-		oneLayerItem(ItemInit.shield_book.get());
-		oneLayerItem(ItemInit.volatile_boots.get());
-		oneLayerItem(ItemInit.volatile_chestplate.get());
-		oneLayerItem(ItemInit.volatile_leggings.get());
-		oneLayerItem(ItemInit.volatile_helmet.get());
-		oneLayerItem(ItemInit.reetle_reagents.get());
-		oneLayerItem(ItemInit.reetle_elytra.get());
-		oneLayerItem(ItemInit.reetle_helmet.get());
-		oneLayerItem(ItemInit.reetle_chestplate.get());
-		oneLayerItem(ItemInit.reetle_leggings.get());
-		oneLayerItem(ItemInit.reetle_boots.get());
-		oneLayerItem(ItemInit.reetle_shell.get());
-		oneLayerItem(ItemInit.reetle_queen_antennae.get());
-		oneLayerItem(ItemInit.rotting_carrot.get());
-		oneLayerItem(ItemInit.rotting_pie.get());
-		oneLayerItem(ItemInit.gravity_gauntlet.get());
-		oneLayerItem(ItemInit.moon_shoes.get());
-		oneLayerItem(ItemInit.banshee_helmet.get());
-		oneLayerItem(ItemInit.banshee_chestplate.get());
-		oneLayerItem(ItemInit.banshee_leggings.get());
-		oneLayerItem(ItemInit.banshee_boots.get());
-		oneLayerItem(ItemInit.goopy_jello.get());
-		oneLayerItem(ItemInit.slippery_goop.get());
+		oneLayerItem(ItemInit.ROTTING_BRICK.get());
+		oneLayerItem(ItemInit.ROTTING_CATALYST.get());
+		oneLayerItem(ItemInit.BUG_CARCASS.get());
+		oneLayerItem(ItemInit.ANCIENT_WHISTLE.get());
+		oneLayerItem(ItemInit.VOLATILE_NECKLACE.get());
+		oneLayerItem(ItemInit.FROZEN_PENDANT.get());
+		oneLayerItem(ItemInit.POCKET_SAND.get());
+		oneLayerItem(ItemInit.FLESH_BALL.get());
+		oneLayerItem(ItemInit.EXPLOSIVE_POWDER.get());
+		oneLayerItem(ItemInit.ANGELIC_WHISTLE.get());
+		oneLayerItem(ItemInit.BRANCH_CHARGE.get());
+		oneLayerItem(ItemInit.BONE_CHARGE.get());
+		oneLayerItem(ItemInit.METEOR_CHARGE.get());
+		oneLayerItem(ItemInit.FORGEMASTER_HEART.get());
+		oneLayerItem(ItemInit.HEAVY_STONE.get());
+		oneLayerItem(ItemInit.PURIFYING_POWDER.get());
+		oneLayerItem(ItemInit.BUG_EGGS.get());
+		oneLayerItem(ItemInit.MECHANICAL_EYE.get());
+		oneLayerItem(ItemInit.MECHANICAL_HELMET.get());
+		oneLayerItem(ItemInit.MECHANICAL_CHESTPLATE.get());
+		oneLayerItem(ItemInit.MECHANICAL_LEGGINGS.get());
+		oneLayerItem(ItemInit.MECHANICAL_BOOTS.get());
+		oneLayerItem(ItemInit.MECHANICAL_APPLE.get());
+		oneLayerItem(ItemInit.SHIELD_BOOK.get());
+		oneLayerItem(ItemInit.VOLATILE_BOOTS.get());
+		oneLayerItem(ItemInit.VOLATILE_CHESTPLATE.get());
+		oneLayerItem(ItemInit.VOLATILE_LEGGINGS.get());
+		oneLayerItem(ItemInit.VOLATILE_HELMET.get());
+		oneLayerItem(ItemInit.REETLE_REAGENTS.get());
+		oneLayerItem(ItemInit.REETLE_ELYTRA.get());
+		oneLayerItem(ItemInit.REETLE_HELMET.get());
+		oneLayerItem(ItemInit.REETLE_CHESTPLATE.get());
+		oneLayerItem(ItemInit.REETLE_LEGGINGS.get());
+		oneLayerItem(ItemInit.REETLE_BOOTS.get());
+		oneLayerItem(ItemInit.REETLE_SHELL.get());
+		oneLayerItem(ItemInit.REETLE_QUEEN_ANTENNAE.get());
+		oneLayerItem(ItemInit.ROTTING_CARROT.get());
+		oneLayerItem(ItemInit.ROTTING_PIE.get());
+		oneLayerItem(ItemInit.GRAVITY_GAUNTLET.get());
+		oneLayerItem(ItemInit.MOON_SHOES.get());
+		oneLayerItem(ItemInit.BANSHEE_HELMET.get());
+		oneLayerItem(ItemInit.BANSHEE_CHESTPLATE.get());
+		oneLayerItem(ItemInit.BANSHEE_LEGGINGS.get());
+		oneLayerItem(ItemInit.BANSHEE_BOOTS.get());
+		oneLayerItem(ItemInit.GOOPY_JELLO.get());
+		oneLayerItem(ItemInit.SLIPPERY_GOOP.get());
 		
 		//Simple handheld items
-		handheldItem(ItemInit.bone_pickaxe.get());
-		handheldItem(ItemInit.goopy_stick.get());
+		handheldItem(ItemInit.BONE_PICKAXE.get());
+		handheldItem(ItemInit.GOOPY_STICK.get());
 		
 	}
 	

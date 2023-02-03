@@ -13,18 +13,18 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = TheFesterForest.modid)
+@Mod.EventBusSubscriber(modid = TheFesterForest.MODID)
 public class CommonEventBusSubscriber {
 
-	private static final Set<PlayerHurtHandler> playerHurtHandlers = Sets.newTreeSet(new HandlerPriorityComparator());
-	private static final Set<PlayerDeathHandler> playerDeathHandlers = Sets.newTreeSet(new HandlerPriorityComparator());
+	private static final Set<PlayerHurtHandler> PLAYER_HURT_HANDLERS = Sets.newTreeSet(new HandlerPriorityComparator());
+	private static final Set<PlayerDeathHandler> PLAYER_DEATH_HANDLERS = Sets.newTreeSet(new HandlerPriorityComparator());
 	
 	public static void registerPlayerHurtHandlers(PlayerHurtHandler handler) {
-		playerHurtHandlers.add(handler);
+		PLAYER_HURT_HANDLERS.add(handler);
 	}
 	
 	public static void registerPlayerDeathHandler(PlayerDeathHandler handler) {
-		playerDeathHandlers.add(handler);
+		PLAYER_DEATH_HANDLERS.add(handler);
 	}
 	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
@@ -40,7 +40,7 @@ public class CommonEventBusSubscriber {
 		
 		boolean cancel = false;
 		
-		for (PlayerHurtHandler handler : playerHurtHandlers) {
+		for (PlayerHurtHandler handler : PLAYER_HURT_HANDLERS) {
 			
 			if (handler.canApply(player, event) && handler.apply(player, event)) {
 				
@@ -73,7 +73,7 @@ public class CommonEventBusSubscriber {
 		
 		boolean cancel = false;
 		
-		for (PlayerDeathHandler handler : playerDeathHandlers) {
+		for (PlayerDeathHandler handler : PLAYER_DEATH_HANDLERS) {
 			
 			if (handler.canApply(player, event) && handler.apply(player, event)) {
 				
