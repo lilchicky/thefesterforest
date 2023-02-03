@@ -73,7 +73,7 @@ public class CatalystItem  extends Item {
 			lore.add(new TextComponent(""));
 		}
 		else {
-			lore.add(new TextComponent("Portal Catalyst").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent("Portal Igniter").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("A rotting pile of organic material.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
