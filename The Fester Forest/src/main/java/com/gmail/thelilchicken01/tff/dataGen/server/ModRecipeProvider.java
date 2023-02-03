@@ -145,8 +145,10 @@ public class ModRecipeProvider extends RecipeProvider {
 		ShapedRecipeBuilder.shaped(ItemInit.ROTTING_PIE.get())
 			.define('a', ItemInit.ROTTING_CARROT.get())
 			.define('b', ItemInit.BUG_CARCASS.get())
-			.unlockedBy("has_" + BlockInit.SLIMY_PLANKS.get().getRegistryName(), 
-					has(BlockInit.SLIMY_PLANKS.get().asItem()))
+			.unlockedBy("has_" + ItemInit.ROTTING_CARROT.get().getRegistryName(), 
+					has(ItemInit.ROTTING_CARROT.get().asItem()))
+			.unlockedBy("has_" + ItemInit.BUG_CARCASS.get().getRegistryName(), 
+					has(ItemInit.BUG_CARCASS.get().asItem()))
 			.pattern(" b ").pattern("bab").pattern(" b ").save(consumer, 
 					new ResourceLocation(TheFesterForest.MODID, 
 							ItemInit.ROTTING_PIE.get().getRegistryName().getPath()));
