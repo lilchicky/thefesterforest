@@ -155,6 +155,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.GOOPY_STICK.get(), "Goopy Stick");
 		add(ItemInit.SLIPPERY_GOOP.get(), "Slippery Goop");
 		add(BlockInit.SICKENING_FLOWER.get(), "Sickening Amaranth");
+		add(BlockInit.SLIMY_FLOWER.get(), "Slimy Bell");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

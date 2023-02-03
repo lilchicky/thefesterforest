@@ -70,6 +70,7 @@ public class ClientEventBusSubscriber {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTING_FLOWER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTING_FLOWER_POT.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.SICKENING_FLOWER.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.SLIMY_FLOWER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.SICKENING_FLOWER_POT.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTING_TALL_GRASS.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.SLIMY_LEAVES.get(), RenderType.cutout());

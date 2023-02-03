@@ -35,7 +35,7 @@ public class TffPlacedFeature {
 	
 	// Slimy Tree Heavy
 	public static final RegistryObject<PlacedFeature> SLIMY_TREE_HEAVY_PLACED = PLACED_FEATURES.register(
-			"slimy_tree_heavy_placed", () -> new PlacedFeature(TffConfiguredFeatures.SLIMY_TREE.getHolder().get(), tree(1)));
+			"slimy_tree_heavy_placed", () -> new PlacedFeature(TffConfiguredFeatures.SLIMY_TREE.getHolder().get(), tree(5)));
 	
 	// Sickening Flower
 	public static final RegistryObject<PlacedFeature> SICKENING_FLOWER_PLACED = PLACED_FEATURES.register(
@@ -46,6 +46,11 @@ public class TffPlacedFeature {
 	public static final RegistryObject<PlacedFeature> ROTTING_FLOWER_PLACED = PLACED_FEATURES.register(
 			"rotting_flower_placed", () -> new PlacedFeature(TffConfiguredFeatures.ROTTING_FLOWER.getHolder().get(),
 					patch(18)));
+	
+	// Slimy Flower
+	public static final RegistryObject<PlacedFeature> SLIMY_FLOWER_PLACED = PLACED_FEATURES.register(
+			"slimy_flower_placed", () -> new PlacedFeature(TffConfiguredFeatures.SLIMY_FLOWER.getHolder().get(),
+					patch(128)));
 	
 	// Rotting Tall Grass
 	public static final RegistryObject<PlacedFeature> ROTTING_TALL_GRASS_PLACED = PLACED_FEATURES.register(

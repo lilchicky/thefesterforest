@@ -8,6 +8,7 @@ import com.gmail.thelilchicken01.tff.block.RottingFlower;
 import com.gmail.thelilchicken01.tff.block.RottingGraveDirt;
 import com.gmail.thelilchicken01.tff.block.RottingwoodSapling;
 import com.gmail.thelilchicken01.tff.block.SickeningFlower;
+import com.gmail.thelilchicken01.tff.block.SlimyBell;
 import com.gmail.thelilchicken01.tff.block.SlimySapling;
 import com.gmail.thelilchicken01.tff.block.TffPortalBlock;
 import com.gmail.thelilchicken01.tff.world.feature.tree.RottingTreeGrower;
@@ -207,6 +208,10 @@ public class BlockInit {
 	
 	//Sickening Flower
 	public static final RegistryObject<FlowerBlock> SICKENING_FLOWER = register("sickening_flower", () -> new SickeningFlower(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Slimy Flower
+	public static final RegistryObject<FlowerBlock> SLIMY_FLOWER = register("slimy_bell", () -> new SlimyBell(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Tall Grass
