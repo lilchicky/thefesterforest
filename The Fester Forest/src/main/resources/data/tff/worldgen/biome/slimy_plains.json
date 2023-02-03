@@ -5,8 +5,8 @@
   	"temperature_modifier": "none",
   	"category": "forest",
   	"effects": {
-    	"sky_color": 3103023,
-    	"fog_color": 3103023,
+    	"sky_color": 1594392,
+    	"fog_color": 1594392,
     	"water_color": 1912349,
     	"water_fog_color": 1912349,
     	"grass_color": 4422659,
@@ -41,7 +41,7 @@
       		},
       		{
         		"type": "tff:goop",
-        		"weight": 20,
+        		"weight": 60,
         		"minCount": 1,
         		"maxCount": 1
       		}

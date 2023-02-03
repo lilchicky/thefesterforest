@@ -2979,30 +2979,6 @@
                               }
                             },
                             {
-                              "type": "minecraft:condition",
-                              "if_true": {
-                                "type": "minecraft:biome",
-                                "biome_is": [
-                                  "tff:slimy_forest"
-                                ]
-                              },
-                              "then_run": {
-                                "type": "minecraft:condition",
-                                "if_true": {
-                                  "type": "minecraft:water",
-                                  "offset": 0,
-                                  "surface_depth_multiplier": 0,
-                                  "add_stone_depth": false
-                                },
-                                "then_run": {
-                                  "type": "minecraft:block",
-                                  "result_state": {
-                                    "Name": "minecraft:slime_block"
-                                  }
-                                }
-                              }
-                            },
-                            {
                               "type": "minecraft:block",
                               "result_state": {
                                 "Name": "tff:rotting_dirt"
