@@ -27,7 +27,7 @@ public class ModPlacedFeatures {
 			InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 	
 	public static final Holder<PlacedFeature> sickening_flower_placed = PlacementUtils.register("sickening_flower_placed", 
-			ModConfiguredFeatures.sickening_flower, RarityFilter.onAverageOnceEvery(2),
+			ModConfiguredFeatures.sickening_flower, RarityFilter.onAverageOnceEvery(6),
 			InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 	
 	public static final Holder<PlacedFeature> rotting_tall_grass_placed = PlacementUtils.register("rotting_tall_grass_placed", 
