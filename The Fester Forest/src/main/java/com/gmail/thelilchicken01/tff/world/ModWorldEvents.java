@@ -1,10 +1,7 @@
 package com.gmail.thelilchicken01.tff.world;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
-import com.gmail.thelilchicken01.tff.world.gen.ModFlowerGeneration;
 import com.gmail.thelilchicken01.tff.world.gen.ModOreGeneration;
-import com.gmail.thelilchicken01.tff.world.gen.ModTreeGeneration;
-
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -16,9 +13,6 @@ public class ModWorldEvents {
 	public static void biomeLoadingEvent(final BiomeLoadingEvent event) {
 		
 		ModOreGeneration.generateOres(event); //This MUST be above vegetal_decoration, must be in order (ctrl click steps from mod generation classes to find order)
-		
-		ModTreeGeneration.generateTrees(event);
-		ModFlowerGeneration.generateFlowers(event);
 		
 	}
 	

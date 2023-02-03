@@ -2,7 +2,7 @@ package com.gmail.thelilchicken01.tff.world.feature.tree;
 
 import java.util.Random;
 
-import com.gmail.thelilchicken01.tff.world.feature.ModConfiguredFeatures;
+import com.gmail.thelilchicken01.tff.world.feature.TffConfiguredFeatures;
 
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
@@ -12,7 +12,7 @@ public class RottingTreeGrower extends AbstractTreeGrower {
 
 	@Override
 	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(Random p_204307_, boolean p_204308_) {
-		return ModConfiguredFeatures.rottingwood_tree;
+		return TffConfiguredFeatures.rottingwood_tree.getHolder().get();
 	}
 
 }
