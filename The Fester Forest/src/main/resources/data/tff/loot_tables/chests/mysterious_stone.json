@@ -25,13 +25,18 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
+          "weight": 5,
           "name": "tff:heavy_stone"
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 5,
           "name": "tff:gravity_gauntlet"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "tff:moon_shoes"
         },
         {
           "type": "minecraft:item",
