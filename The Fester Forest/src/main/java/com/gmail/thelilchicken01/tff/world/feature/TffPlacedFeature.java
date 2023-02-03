@@ -40,17 +40,17 @@ public class TffPlacedFeature {
 	// Sickening Flower
 	public static final RegistryObject<PlacedFeature> SICKENING_FLOWER_PLACED = PLACED_FEATURES.register(
 			"sickening_flower_placed", () -> new PlacedFeature(TffConfiguredFeatures.SICKENING_FLOWER.getHolder().get(),
-					patch(6)));
+					patch(10)));
 	
 	// Rotting Flower
 	public static final RegistryObject<PlacedFeature> ROTTING_FLOWER_PLACED = PLACED_FEATURES.register(
 			"rotting_flower_placed", () -> new PlacedFeature(TffConfiguredFeatures.ROTTING_FLOWER.getHolder().get(),
-					patch(9)));
+					patch(18)));
 	
 	// Rotting Tall Grass
 	public static final RegistryObject<PlacedFeature> ROTTING_TALL_GRASS_PLACED = PLACED_FEATURES.register(
 			"rotting_tall_grass_placed", () -> new PlacedFeature(TffConfiguredFeatures.ROTTING_TALL_GRASS.getHolder().get(),
-					patch(128)));
+					patch(228)));
 	
     private static List<PlacementModifier> patch(int count) {
         return List.of(CountPlacement.of(count), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
