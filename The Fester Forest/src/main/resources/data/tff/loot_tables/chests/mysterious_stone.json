@@ -35,11 +35,6 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "tff:moon_shoes"
-        },
-        {
-          "type": "minecraft:item",
           "weight": 15,
           "name": "minecraft:book",
           "functions": [
