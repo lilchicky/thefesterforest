@@ -38,7 +38,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		//Other
 		add(BlockInit.rotting_bricks.get(), "Fester Bricks");
 		add(ItemInit.rotting_brick.get(), "Fester Brick");
-		add(ItemInit.rotting_catalyst.get(), "Rotting Catalyst");
+		add(ItemInit.rotting_catalyst.get(), "Rotting Mound");
 		add(ItemInit.volatileSword.get(), "Volatile Sword");
 		add(ItemInit.ancientGreatsword.get(), "Ancient Greatsword");
 		add(BlockInit.reetlelight.get(), "Reetlelight");

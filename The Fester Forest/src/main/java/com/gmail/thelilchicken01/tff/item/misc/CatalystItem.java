@@ -57,7 +57,7 @@ public class CatalystItem  extends Item {
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Portal Catalyst").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent("Portal Igniter").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("A rotting pile of organic material.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
