@@ -9,6 +9,9 @@ import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.sounds.SoundEvents;
@@ -94,13 +97,13 @@ public class VolatileSword extends SwordItem {
 			
 			if (x % 10 == 0) {
 				
-				world.addParticle(ParticleInit.HELLFLAME_PARTICLES.get(), player.getX(), player.getY() + 0.5d, player.getZ(), 
+				world.addParticle(ParticleTypes.FLAME, player.getX(), player.getY() + 0.5d, player.getZ(), 
 						((Math.cos(x) * 0.75d) * (Math.random() + 0.5)), 0.0d + ((Math.random() - 0.5) * 0.25), ((Math.sin(x) * 0.75d) * (Math.random() + 0.5)));
 				
-				world.addParticle(ParticleInit.HELLFLAME_PARTICLES.get(), player.getX(), player.getY() + 0.5d, player.getZ(), 
+				world.addParticle(ParticleTypes.FLAME, player.getX(), player.getY() + 0.5d, player.getZ(), 
 						((Math.cos(x) * 0.55d) * (Math.random() + 0.5)), 0.0d + ((Math.random() - 0.5) * 0.25), ((Math.sin(x) * 0.55d) * (Math.random() + 0.5)));
 				
-				world.addParticle(ParticleInit.HELLFLAME_PARTICLES.get(), player.getX(), player.getY() + 0.5d, player.getZ(), 
+				world.addParticle(ParticleTypes.FLAME, player.getX(), player.getY() + 0.5d, player.getZ(), 
 						((Math.cos(x) * 0.35d) * (Math.random() + 0.5)), 0.0d + ((Math.random() - 0.5) * 0.25), ((Math.sin(x) * 0.35d) * (Math.random() + 0.5)));
 				//System.out.println("X: " + (Math.cos(x) * 0.65d) + " Y:" + 0.0d + " Z:" + (Math.sin(x) * 0.35d)); //(Math.sin(x) * 0.65d)
 				
