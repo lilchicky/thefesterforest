@@ -56,35 +56,38 @@ public class MeteorWand extends ProjectileWeaponItem {
 			InteractionHand hand) {
 		
 		if (!player.getLevel().isClientSide) {
+			
+			if (this.cooldown == 0) {
 				
-			Meteor bulletItem = ItemInit.METEOR_CHARGE.get();
-			ItemStack shotAmmo = new ItemStack(ItemInit.METEOR_CHARGE.get());
+				Meteor bulletItem = ItemInit.METEOR_CHARGE.get();
+				ItemStack shotAmmo = new ItemStack(ItemInit.METEOR_CHARGE.get());
+				
+				MeteorCharge shot = bulletItem.createProjectile(player.getLevel(), shotAmmo, player);
 			
-			MeteorCharge shot = bulletItem.createProjectile(player.getLevel(), shotAmmo, player);
+				Vec3 currentPos = player.getEyePosition().add(0.0, 4.0, 0.0);
+				Vec3 targetPos = new Vec3(target.getX(), target.getY(), target.getZ());
+				Vec3 targetVector = targetPos.subtract(currentPos).normalize();
 			
-			Vec3 currentPos = player.getEyePosition().add(0.0, 4.0, 0.0);
-			Vec3 targetPos = new Vec3(target.getX(), target.getY(), target.getZ());
-			Vec3 targetVector = targetPos.subtract(currentPos).normalize();
+				shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 0.4f, 0.0f);
+				shot.setPos(shot.getX(),
+						shot.getY() + 4.0,
+						shot.getZ());
+				if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
+					shot.setDamage(shotDamage + 20);
+				}
+				if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
+					shot.setDamage(shotDamage + 60);
+				}
+				else {
+					shot.setDamage(shotDamage);
+				}
+				shot.setIgnoreInvulnerability(false);
 			
-			shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 0.4f, 0.0f);
-			shot.setPos(shot.getX(),
-					shot.getY() + 4.0,
-					shot.getZ());
-			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
-				shot.setDamage(shotDamage + 20);
+				player.getLevel().addFreshEntity(shot);
+			
+				player.getItemInHand(hand).hurtAndBreak(
+						1, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand()));
 			}
-			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
-				shot.setDamage(shotDamage + 60);
-			}
-			else {
-				shot.setDamage(shotDamage);
-			}
-			shot.setIgnoreInvulnerability(false);
-			
-			player.getLevel().addFreshEntity(shot);
-			
-			player.getItemInHand(hand).hurtAndBreak(
-					1, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand()));
 		}
 		
 		player.awardStat(Stats.ITEM_USED.get(this));

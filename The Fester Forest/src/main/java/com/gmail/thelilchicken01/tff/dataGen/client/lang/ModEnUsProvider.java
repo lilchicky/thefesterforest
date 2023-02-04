@@ -138,7 +138,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.REETLE_CHESTPLATE.get(), "Reetle Chestplate");
 		add(ItemInit.REETLE_LEGGINGS.get(), "Reetle Leggings");
 		add(ItemInit.REETLE_BOOTS.get(), "Reetle Boots");
-		add(ItemInit.REETLE_SHELL.get(), "Reetle Shell Plates");
+		add(ItemInit.REETLE_SHELL.get(), "Reetle Shell Plate");
 		add(ItemInit.REETLE_QUEEN_ANTENNAE.get(), "Reetle Queen Antennae");
 		add(ItemInit.ROTTING_CARROT.get(), "Rotting Carrot");
 		add(ItemInit.ROTTING_PIE.get(), "Rotting Pie");

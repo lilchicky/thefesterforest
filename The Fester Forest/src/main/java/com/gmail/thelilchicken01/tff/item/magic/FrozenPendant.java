@@ -90,13 +90,9 @@ public class FrozenPendant extends Item implements ICurioItem {
 				
 				Monster currentEntity = ((Monster) nearbyEntities.get(x));
 				
-				if (!currentEntity.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
-				
-					currentEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, enemySlowdownSeconds * 20, enemySlowdownLevel));
+				currentEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, enemySlowdownSeconds * 20, enemySlowdownLevel));
 						
-					slotContext.entity().addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, (enemySlowdownSeconds + 1) * 20, speedBuff, false, false));
-				
-				}
+				slotContext.entity().addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, (enemySlowdownSeconds + 1) * 20, speedBuff, false, false));
 				
 			}
 		
