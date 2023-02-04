@@ -8,7 +8,7 @@ import net.minecraft.world.entity.LivingEntity;
 
 public class AcidEffect extends MobEffect {
 	
-	private int counter = 0;
+	private int counter = 20;
 	private int cooldown = 20;
 
 	protected AcidEffect() {

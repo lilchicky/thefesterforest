@@ -51,6 +51,7 @@ import com.gmail.thelilchicken01.tff.item.magic.VolatileNecklace;
 import com.gmail.thelilchicken01.tff.item.melee.AncientGreatsword;
 import com.gmail.thelilchicken01.tff.item.melee.BoneScythe;
 import com.gmail.thelilchicken01.tff.item.melee.ForgemasterHammer;
+import com.gmail.thelilchicken01.tff.item.melee.GoopySword;
 import com.gmail.thelilchicken01.tff.item.melee.LifeScythe;
 import com.gmail.thelilchicken01.tff.item.misc.BugEggs;
 import com.gmail.thelilchicken01.tff.item.misc.CatalystItem;
@@ -243,6 +244,10 @@ public class ItemInit {
 	//Goopy Paxel
 	public static final RegistryObject<Item> GOOPY_STICK = register("goopy_stick",
 			() -> new GoopyStick());
+	
+	//Goopy Sword
+	public static final RegistryObject<Item> GOOPY_SWORD = register("goopy_sword", 
+			() -> new GoopySword(ModTiers.GOOP, 0, -2.4f, new Properties().tab(TheFesterForest.TFF_TAB).durability(1678)));
 	
 	/*
 	 * 
