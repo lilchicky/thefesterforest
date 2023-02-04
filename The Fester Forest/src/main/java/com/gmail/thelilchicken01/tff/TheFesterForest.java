@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.gmail.thelilchicken01.tff.config.TFFClientConfigs;
 import com.gmail.thelilchicken01.tff.config.TFFCommonConfigs;
+import com.gmail.thelilchicken01.tff.effect.ModEffects;
 import com.gmail.thelilchicken01.tff.elytra.ReetleElytraArmorStandLayer;
 import com.gmail.thelilchicken01.tff.elytra.ReetleElytraLayer;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
@@ -55,11 +56,13 @@ public class TheFesterForest {
 	public static final String MODID = "tff";
 	
 	public static final Logger LOGGER = LogManager.getLogger();	
+	
 	//Damage Sources
 	public static final DamageSource BANSHEE = new DamageSource(MODID + "_banshee").bypassArmor();
 	public static final DamageSource VOLATILE_GHOST = new DamageSource(MODID + "_volatile_ghost").setExplosion();
 	public static final DamageSource SAND_DAMAGE = new DamageSource(MODID + "_sand_damage");
 	public static final DamageSource KNOCKUP_DAMAGE = new DamageSource(MODID + "_knockup_damage");
+	public static final DamageSource GOOP_ACID = new DamageSource(MODID + "_goop_acid").bypassArmor();
 	
 	public static final CreativeModeTab TFF_TAB = new CreativeModeTab(MODID) {
 
@@ -82,6 +85,7 @@ public class TheFesterForest {
 		ModDimensions.register();
 		ModPOIs.register(bus);
 		ModEntityTypes.register(bus);
+		ModEffects.register(bus);
 		ModStructures.register(bus);
 		
 		GeckoLib.initialize();

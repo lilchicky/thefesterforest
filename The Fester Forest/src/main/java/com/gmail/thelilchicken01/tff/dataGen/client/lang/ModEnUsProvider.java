@@ -1,6 +1,7 @@
 package com.gmail.thelilchicken01.tff.dataGen.client.lang;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
+import com.gmail.thelilchicken01.tff.effect.ModEffects;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
@@ -35,6 +36,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("death.attack.tff_meteor_damage.player", "%1$s was crushed by a flying meteor from %2$s");
 		add("death.attack.tff_volatile_sword", "%1$s burned up by a flaming blade");
 		add("death.attack.tff_volatile_sword.player", "%1$s incinerated %2$s with a fiery blade");
+		add("death.attack.tff_goop_acid", "%1$s was melted into a slimy puddle");
+		add("death.attack.tff_goop_acid.player", "%1$s turned %2$s into a puddle of slime");
 		//Other
 		add(BlockInit.ROTTING_BRICKS.get(), "Fester Bricks");
 		add(ItemInit.ROTTING_BRICK.get(), "Fester Brick");
@@ -156,6 +159,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.SLIPPERY_GOOP.get(), "Slippery Goop");
 		add(BlockInit.SICKENING_FLOWER.get(), "Sickening Amaranth");
 		add(BlockInit.SLIMY_FLOWER.get(), "Slimy Bell");
+		add(ModEffects.GOOP_ACID.get(), "Acidic Goop");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");
