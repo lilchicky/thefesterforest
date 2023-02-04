@@ -29,7 +29,7 @@
       		},
       		{
         		"type": "tff:volatile_ghost",
-        		"weight": 75,
+        		"weight": 60,
         		"minCount": 1,
         		"maxCount": 1
       		},
