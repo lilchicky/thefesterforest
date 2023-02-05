@@ -74,7 +74,7 @@ public class GoopyChestplate extends ArmorItem {
 			@Override
 			public boolean canApply(Player player, LivingAttackEvent event) {
 				
-				if (event.getSource().getEntity() instanceof LivingEntity && player.getItemBySlot(EquipmentSlot.CHEST) == new ItemStack(ItemInit.GOOPY_CHESTPLATE.get())) {
+				if (event.getSource().getEntity() instanceof LivingEntity && player.getItemBySlot(EquipmentSlot.CHEST).getItem() == ItemInit.GOOPY_CHESTPLATE.get()) {
 					
 					LivingEntity entity = (LivingEntity) event.getSource().getEntity();
 					

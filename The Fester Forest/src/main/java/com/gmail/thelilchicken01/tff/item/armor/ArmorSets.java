@@ -77,14 +77,14 @@ public enum ArmorSets {
 			
 			if (armorSet.get()[x] instanceof ArmorItem) {
 				
-				if (player.getItemBySlot(((ArmorItem) armorSet.get()[x]).getSlot()) == new ItemStack(armorSet.get()[x])) {
+				if (player.getItemBySlot(((ArmorItem) armorSet.get()[x]).getSlot()).getItem() == armorSet.get()[x]) {
 					setCount++;
 				}
 				
 			}
 			else if (armorSet.get()[x] instanceof ElytraItem) {
 				
-				if (player.getItemBySlot(EquipmentSlot.CHEST) == new ItemStack(armorSet.get()[x])) {
+				if (player.getItemBySlot(EquipmentSlot.CHEST).getItem() == armorSet.get()[x]) {
 					setCount++;
 				}
 				
