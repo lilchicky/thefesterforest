@@ -19,7 +19,7 @@ public class BugCarcass extends Item {
 
 	public BugCarcass() {
 		super(new Properties().tab(TheFesterForest.TFF_TAB).food(
-				new FoodProperties.Builder().saturationMod(1.2f).nutrition(8).fast()
+				new FoodProperties.Builder().saturationMod(0.8f).nutrition(8).fast().meat()
 				.build()));
 	}
 	

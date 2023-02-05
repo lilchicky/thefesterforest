@@ -21,7 +21,7 @@ public class GoopyJello extends Item {
 
 	public GoopyJello() {
 		super(new Properties().tab(TheFesterForest.TFF_TAB).food(
-				new FoodProperties.Builder().saturationMod(2.2f).nutrition(12)
+				new FoodProperties.Builder().saturationMod(1.8f).nutrition(12)
 				.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 0), 1f)
 				.build()));
 	}
