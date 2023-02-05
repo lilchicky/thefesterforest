@@ -28,7 +28,7 @@ public class GoopySword extends SwordItem {
 	@Override
 	public boolean hurtEnemy(ItemStack stack, LivingEntity entityHurt, LivingEntity entityAttacker) {
 		
-		entityHurt.addEffect(new MobEffectInstance(ModEffects.GOOP_ACID.get(), 100, 2));
+		entityHurt.addEffect(new MobEffectInstance(ModEffects.GOOP_ACID.get(), 100, 3));
 		
 		return super.hurtEnemy(stack, entityHurt, entityAttacker);
 		
