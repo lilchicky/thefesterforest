@@ -75,7 +75,7 @@ public class GoopyBoots extends ArmorItem {
 			@Override
 			public boolean canApply(Player player, LivingAttackEvent event) {
 				
-				if (event.getSource().getEntity() instanceof LivingEntity) {
+				if (event.getSource().getEntity() instanceof LivingEntity && player.getItemBySlot(EquipmentSlot.FEET) == new ItemStack(ItemInit.GOOPY_BOOTS.get())) {
 					
 					LivingEntity entity = (LivingEntity) event.getSource().getEntity();
 					

@@ -74,7 +74,7 @@ public class GoopyHelmet extends ArmorItem {
 			@Override
 			public boolean canApply(Player player, LivingAttackEvent event) {
 				
-				if (event.getSource().getEntity() instanceof LivingEntity) {
+				if (event.getSource().getEntity() instanceof LivingEntity && player.getItemBySlot(EquipmentSlot.HEAD) == new ItemStack(ItemInit.GOOPY_HELMET.get())) {
 					
 					LivingEntity entity = (LivingEntity) event.getSource().getEntity();
 					
