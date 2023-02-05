@@ -66,7 +66,7 @@ public class SlipperyGoop extends Item implements ICurioItem {
 		
 		lore.add(new TextComponent("Dull").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("A glob of very slippery purple goop.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("A bottle of very slippery purple goop.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("Makes you very hard to slow down.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
