@@ -66,7 +66,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 2,
           "name": "tff:banshee_helmet",
           "functions": [
             {
@@ -84,7 +84,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 2,
           "name": "tff:banshee_chestplate",
           "functions": [
             {
@@ -102,7 +102,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 2,
           "name": "tff:banshee_leggings",
           "functions": [
             {
@@ -120,7 +120,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 2,
           "name": "tff:banshee_boots",
           "functions": [
             {

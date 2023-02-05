@@ -58,12 +58,12 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 2,
           "name": "tff:slippery_goop"
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 2,
           "name": "tff:goopy_stick"
         },
         {
@@ -78,7 +78,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 2,
           "name": "tff:goopy_sword",
           "functions": [
             {
@@ -94,7 +94,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 2,
           "name": "tff:goopy_helmet",
           "functions": [
             {
@@ -110,7 +110,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 2,
           "name": "tff:goopy_chestplate",
           "functions": [
             {
@@ -126,7 +126,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 2,
           "name": "tff:goopy_leggings",
           "functions": [
             {
@@ -142,7 +142,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 2,
           "name": "tff:goopy_boots",
           "functions": [
             {

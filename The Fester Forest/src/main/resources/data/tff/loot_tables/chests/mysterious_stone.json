@@ -30,12 +30,12 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 3,
           "name": "tff:heavy_stone"
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 3,
           "name": "tff:gravity_gauntlet"
         },
         {

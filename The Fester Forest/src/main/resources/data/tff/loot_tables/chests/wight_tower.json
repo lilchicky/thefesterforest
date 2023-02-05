@@ -53,17 +53,17 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 2,
           "name": "tff:flesh_ball"
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 2,
           "name": "tff:bone_launcher"
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
+          "weight": 2,
           "name": "tff:bone_scythe",
           "functions": [
             {
@@ -75,7 +75,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 2,
           "name": "tff:life_scythe",
           "functions": [
             {

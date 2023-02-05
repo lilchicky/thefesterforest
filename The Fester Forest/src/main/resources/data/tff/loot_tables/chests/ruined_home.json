@@ -21,7 +21,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 2,
           "name": "tff:dual_wield_sword"
         },
         {
@@ -58,12 +58,12 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 2,
           "name": "tff:brittle_branch"
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 2,
           "name": "tff:moon_shoes"
         }
       ]

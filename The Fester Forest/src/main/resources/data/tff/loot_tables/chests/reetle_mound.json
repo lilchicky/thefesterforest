@@ -16,7 +16,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 2,
           "name": "tff:bug_eggs"
         },
         {
@@ -58,7 +58,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 2,
           "name": "tff:reetle_queen_antennae"
         },
         {
