@@ -320,7 +320,7 @@ public class ItemInit {
 	
 	//Bone Scythe
 	public static final RegistryObject<Item> BONE_SCYTHE = register("bone_scythe", 
-			() -> new BoneScythe(ModTiers.BONE, 1, -3.0f, new Properties().tab(TheFesterForest.TFF_TAB)
+			() -> new BoneScythe(ModTiers.BONE, 4, -3.0f, new Properties().tab(TheFesterForest.TFF_TAB)
 					.durability(561)));
 	
 	//Flesh Ball
