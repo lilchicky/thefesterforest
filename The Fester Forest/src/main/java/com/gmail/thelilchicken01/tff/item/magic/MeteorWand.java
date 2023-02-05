@@ -57,7 +57,7 @@ public class MeteorWand extends ProjectileWeaponItem {
 		
 		if (!player.getLevel().isClientSide) {
 			
-			if (this.cooldown == 0) {
+			if (!player.getCooldowns().isOnCooldown(this)) {
 				
 				Meteor bulletItem = ItemInit.METEOR_CHARGE.get();
 				ItemStack shotAmmo = new ItemStack(ItemInit.METEOR_CHARGE.get());
@@ -87,11 +87,11 @@ public class MeteorWand extends ProjectileWeaponItem {
 			
 				player.getItemInHand(hand).hurtAndBreak(
 						1, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand()));
+				
+				player.awardStat(Stats.ITEM_USED.get(this));
+				player.getCooldowns().addCooldown(this, cooldown * 20);
 			}
 		}
-		
-		player.awardStat(Stats.ITEM_USED.get(this));
-		player.getCooldowns().addCooldown(this, cooldown * 20);
 		
 		return super.interactLivingEntity(stack, player, target, hand);
 	}

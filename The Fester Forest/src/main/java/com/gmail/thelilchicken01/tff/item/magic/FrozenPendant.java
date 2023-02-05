@@ -35,9 +35,9 @@ public class FrozenPendant extends Item implements ICurioItem {
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 	
-	private int enemySlowdownSeconds = 5;
+	private int enemySlowdownSeconds = 1;
 	private int enemySlowdownLevel = 1;
-	private int speedBuff = 2;
+	private int speedBuff = 1;
 
 	public FrozenPendant(Properties properties) {
 		super(properties);
@@ -74,7 +74,7 @@ public class FrozenPendant extends Item implements ICurioItem {
 			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
 				
 				enemySlowdownLevel = 3;
-				speedBuff = 3;
+				speedBuff = 2;
 				
 			}
 			
