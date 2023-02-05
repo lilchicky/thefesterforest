@@ -161,6 +161,10 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.SLIMY_FLOWER.get(), "Slimy Bell");
 		add(ModEffects.GOOP_ACID.get(), "Acidic Goop");
 		add(ItemInit.GOOPY_SWORD.get(), "Goopy Sword");
+		add(ItemInit.GOOPY_HELMET.get(), "Goopy Head Glob");
+		add(ItemInit.GOOPY_CHESTPLATE.get(), "Goopy Body Sludge");
+		add(ItemInit.GOOPY_LEGGINGS.get(), "Goopy Pants");
+		add(ItemInit.GOOPY_BOOTS.get(), "Goopy Shoes");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");
