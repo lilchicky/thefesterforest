@@ -16,17 +16,17 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 7,
+          "weight": 5,
           "name": "tff:ancient_whistle"
         },
         {
           "type": "minecraft:item",
-          "weight": 7,
+          "weight": 5,
           "name": "tff:frozen_pendant"
         },
         {
           "type": "minecraft:item",
-          "weight": 7,
+          "weight": 5,
           "name": "tff:shadow_bow",
           "functions": [
             {

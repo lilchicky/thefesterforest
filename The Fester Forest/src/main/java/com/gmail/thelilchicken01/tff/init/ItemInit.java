@@ -6,6 +6,10 @@ import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeBoots;
 import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeChestplate;
 import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeHelmet;
 import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeLeggings;
+import com.gmail.thelilchicken01.tff.item.armor.goop.GoopyBoots;
+import com.gmail.thelilchicken01.tff.item.armor.goop.GoopyChestplate;
+import com.gmail.thelilchicken01.tff.item.armor.goop.GoopyHelmet;
+import com.gmail.thelilchicken01.tff.item.armor.goop.GoopyLeggings;
 import com.gmail.thelilchicken01.tff.item.armor.mechanicalArmor.MechanicalBoots;
 import com.gmail.thelilchicken01.tff.item.armor.mechanicalArmor.MechanicalChestplate;
 import com.gmail.thelilchicken01.tff.item.armor.mechanicalArmor.MechanicalHelmet;
@@ -240,6 +244,22 @@ public class ItemInit {
 	 * Goopy Items
 	 * 
 	 */
+	
+	//Goopy Helmet
+	public static final RegistryObject<Item> GOOPY_HELMET = register("goopy_helmet", 
+			() -> new GoopyHelmet());
+			
+	//Goopy Chestplate
+	public static final RegistryObject<Item> GOOPY_CHESTPLATE = register("goopy_chestplate", 
+			() -> new GoopyChestplate());
+				
+	//Goopy Leggings
+	public static final RegistryObject<Item> GOOPY_LEGGINGS = register("goopy_leggings", 
+			() -> new GoopyLeggings());
+			
+	//Goopy Boots
+	public static final RegistryObject<Item> GOOPY_BOOTS = register("goopy_boots", 
+			() -> new GoopyBoots());
 	
 	//Goopy Paxel
 	public static final RegistryObject<Item> GOOPY_STICK = register("goopy_stick",

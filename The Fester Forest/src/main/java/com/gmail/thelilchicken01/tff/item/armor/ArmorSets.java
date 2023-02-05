@@ -39,6 +39,14 @@ public enum ArmorSets {
 				ItemInit.REETLE_ELYTRA.get()};
 	}),
 	
+	//Goopy Set
+	GOOP(() -> {
+		return new Item[]{ItemInit.GOOPY_BOOTS.get(),
+				ItemInit.GOOPY_LEGGINGS.get(),
+				ItemInit.GOOPY_CHESTPLATE.get(),
+				ItemInit.GOOPY_HELMET.get()};
+	}),
+	
 	//Mechanical Set
 	MECHANICAL(() -> {
 		return new Item[]{ItemInit.MECHANICAL_BOOTS.get(),

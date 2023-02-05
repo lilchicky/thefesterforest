@@ -31,7 +31,7 @@ public enum ModArmorMaterial implements ArmorMaterial {
 	}),
 	
 	//Goopy Armor
-	GOOP("goop", 32, new int[]{3, 6, 7, 4}, 32, SoundEvents.SLIME_BLOCK_BREAK, 2.0F, 0.1F, () -> {
+	GOOP("goop", 32, new int[]{3, 6, 8, 3}, 7, SoundEvents.SLIME_BLOCK_BREAK, 2.0F, 0.0F, () -> {
 		return Ingredient.of(Items.SLIME_BALL);
 	}),
 	
