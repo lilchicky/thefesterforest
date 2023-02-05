@@ -117,6 +117,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.GOOPY_CHESTPLATE.get());
 		oneLayerItem(ItemInit.GOOPY_LEGGINGS.get());
 		oneLayerItem(ItemInit.GOOPY_BOOTS.get());
+		oneLayerItem(ItemInit.ROTTING_SLIMEBALL.get());
 		
 		//Simple handheld items
 		handheldItem(ItemInit.BONE_PICKAXE.get());

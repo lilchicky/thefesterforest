@@ -165,6 +165,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.GOOPY_CHESTPLATE.get(), "Goopy Body Sludge");
 		add(ItemInit.GOOPY_LEGGINGS.get(), "Goopy Pants");
 		add(ItemInit.GOOPY_BOOTS.get(), "Goopy Shoes");
+		add(ItemInit.ROTTING_SLIMEBALL.get(), "Rotting Slimeball");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

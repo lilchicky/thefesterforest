@@ -7,7 +7,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 3977ace43b991c7f9d6bd07669e1a48cac38e9a4 assets/tff/blockstates/rotting_stone.json
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
-aa9acc8c0bb278f8770a02a5a5b559161d791a18 assets/tff/lang/en_us.json
+8eb660b0ec59d6d1404d0035906f78ce5be4b88b assets/tff/lang/en_us.json
 74fa2fd936ff89c42c7a00a07dbdae54f43db419 assets/tff/models/block/cracked_rotting_stone.json
 24c646b7cae5aa575669209b81e20029ad8d223d assets/tff/models/block/crushed_rotting_stone.json
 76c8c0d9d0f865e28054565ba1f9f30e9c98f3d2 assets/tff/models/block/fester_ore.json
@@ -69,6 +69,7 @@ b08a670b388ee20a6c200d1f4cbc3567b0d6ec8d assets/tff/models/item/rotting_carrot.j
 4a7bf0515e236788a720f07fe166ada82a3a571c assets/tff/models/item/rotting_catalyst.json
 960ce97a54ffe8ddd83769fcc87039dd2477e7de assets/tff/models/item/rotting_grave_dirt.json
 65230a1388c563359708dbe3a4ccba0f48555a5a assets/tff/models/item/rotting_pie.json
+90c171e4c1b5fd9739cb3fefaa7c952788317300 assets/tff/models/item/rotting_slimeball.json
 20eb805785d46392d3828670491a51374af3232a assets/tff/models/item/rotting_stone.json
 e13adc8a9edece6541e28d75e9419060976daeb3 assets/tff/models/item/rotting_stone_bricks.json
 7ea77da900756b7083824d030e272af4cda269b1 assets/tff/models/item/shield_book.json
@@ -85,6 +86,7 @@ c292c468d869e1a1c7e5d099d45ff1300c0e1920 data/forge/tags/items/cobblestone.json
 dd8fca77f7e3eb066a4c6a4c0fd3d16145ac6537 data/forge/tags/items/ingots.json
 7b5d3fa610f8ba85f128dc9711a48b20071aa6cc data/tff/advancements/recipes/building_blocks/stone.json
 56927ae18c7158f9ba1ba9ec8079e601ebb975d0 data/tff/advancements/recipes/misc/leather.json
+e92868a1b5b0771db281a142262ff216110551f3 data/tff/advancements/recipes/misc/rotting_slimeball.json
 abaaea0d8800b4b5054e546fd3fb5adefff5f0aa data/tff/advancements/recipes/tff/angelic_whistle.json
 5cb1a2dd5991c3215c45d4219664f26bbb392486 data/tff/advancements/recipes/tff/fester_ore_smelting.json
 21313aa975c80b99ce57485111940bc824a02b28 data/tff/advancements/recipes/tff/mossy_rotting_stone.json
@@ -153,6 +155,7 @@ d17f76edeb8fd4a1d5f245c94af15ece6407f6dc data/tff/recipes/reetle_shell_boots.jso
 8ff1f8efeb995b35d1fe5315092d30b1771eca4d data/tff/recipes/rotting_brick.json
 d8b39e36574ca5b73aac2280f31cf6f6e75af49a data/tff/recipes/rotting_bricks.json
 2681dcb11c22fd350d2a3bddbf9f04b0ab6d9150 data/tff/recipes/rotting_pie.json
+a115ce9c84a2b1e47165a6cfe677d67ea1207449 data/tff/recipes/rotting_slimeball.json
 9b88318d80f9b8277d765ac29424c80c07e6fffe data/tff/recipes/rotting_stone_brick_slab.json
 2ffa84deed67fd0a8fd24e109b0429aa88bc03d2 data/tff/recipes/rotting_stone_brick_stairs.json
 d503fb3f5069e3a3e17c0b1a243870a3f6d2e1ba data/tff/recipes/rotting_stone_brick_wall.json

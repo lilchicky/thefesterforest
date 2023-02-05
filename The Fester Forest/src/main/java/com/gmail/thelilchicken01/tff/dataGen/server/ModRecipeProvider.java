@@ -183,6 +183,10 @@ public class ModRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), has(BlockInit.ROTTING_STONE.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.MOSSY_ROTTING_STONE.get().getRegistryName().getPath()));
 		
+		ShapelessRecipeBuilder.shapeless(Items.SLIME_BALL, 4).requires(ItemInit.ROTTING_SLIMEBALL.get())
+		.unlockedBy("has_" + ItemInit.ROTTING_SLIMEBALL.get().getRegistryName(), has(ItemInit.ROTTING_SLIMEBALL.get().asItem()))
+		.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.ROTTING_SLIMEBALL.get().getRegistryName().getPath()));
+		
 		// Purifying Rotten Flesh
 		ShapelessRecipeBuilder.shapeless(Items.LEATHER, 2)
 			.requires(ItemInit.PURIFYING_POWDER.get()).requires(Items.ROTTEN_FLESH, 3)

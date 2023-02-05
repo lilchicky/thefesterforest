@@ -16,7 +16,7 @@ public class ModTiers {
 	
 	public static final ForgeTier PAXEL_DIAMOND = new ForgeTier(3, 1561, 8.0F, 
 			3.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> {
-	    return Ingredient.of(ItemInit.GOOPY_JELLO.get());
+	    return Ingredient.of(ItemInit.ROTTING_SLIMEBALL.get());
 	});
 	
 	public static final ForgeTier METAL = new ForgeTier(4, 1600, 0.0F, 
@@ -26,7 +26,7 @@ public class ModTiers {
 	
 	public static final ForgeTier GOOP = new ForgeTier(4, 1600, 0.0F, 
 			4.0F, 15, BlockTags.NEEDS_IRON_TOOL, () -> {
-	    return Ingredient.of(Items.SLIME_BALL);
+	    return Ingredient.of(ItemInit.ROTTING_SLIMEBALL.get());
 	});
 	
 	public static final ForgeTier MECHANICAL = new ForgeTier(4, 1600, 0.0F, 

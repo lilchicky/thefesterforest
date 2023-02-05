@@ -269,6 +269,10 @@ public class ItemInit {
 	public static final RegistryObject<Item> GOOPY_SWORD = register("goopy_sword", 
 			() -> new GoopySword(ModTiers.GOOP, 0, -2.4f, new Properties().tab(TheFesterForest.TFF_TAB).durability(1678)));
 	
+	//Rotting Slimeball
+	public static final RegistryObject<Item> ROTTING_SLIMEBALL = register("rotting_slimeball", 
+			() -> new Item(new Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	/*
 	 * 
 	 * Banshee Items
