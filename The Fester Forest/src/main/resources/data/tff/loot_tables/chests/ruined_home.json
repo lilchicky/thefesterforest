@@ -16,6 +16,11 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 20,
+          "name": "minecraft:ender_pearl"
+        },
+        {
+          "type": "minecraft:item",
           "weight": 5,
           "name": "tff:dual_wield_sword"
         },

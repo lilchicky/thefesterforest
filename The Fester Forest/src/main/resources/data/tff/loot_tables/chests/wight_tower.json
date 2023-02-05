@@ -36,6 +36,11 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 25,
+          "name": "minecraft:ender_pearl"
+        },
+        {
+          "type": "minecraft:item",
           "weight": 50,
           "name": "minecraft:book",
           "functions": [

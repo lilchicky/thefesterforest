@@ -33,6 +33,16 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 50,
+          "name": "minecraft:ender_pearl"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 50,
+          "name": "minecraft:gold_ingot"
+        },
+        {
+          "type": "minecraft:item",
           "weight": 40,
           "name": "tff:rotting_carrot"
         },

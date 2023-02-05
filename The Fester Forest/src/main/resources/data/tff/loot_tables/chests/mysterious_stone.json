@@ -25,6 +25,11 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 30,
+          "name": "minecraft:ender_pearl"
+        },
+        {
+          "type": "minecraft:item",
           "weight": 5,
           "name": "tff:heavy_stone"
         },
