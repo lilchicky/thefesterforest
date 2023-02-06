@@ -48,6 +48,9 @@ public class VolatileHelmet extends ArmorItem {
 	    builder.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), 
 	    		"max_health", -4.0, AttributeModifier.Operation.ADDITION));
 	    
+	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), 
+	    		"damage", 4.0, AttributeModifier.Operation.ADDITION));
+	    
 	    builder.put(Attributes.ARMOR, new AttributeModifier(UUID.randomUUID(), 
 	    		"armor", ModArmorMaterial.VOLATILE.getDefenseForSlot(EquipmentSlot.HEAD), 
 	    		AttributeModifier.Operation.ADDITION));

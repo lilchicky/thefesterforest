@@ -52,6 +52,9 @@ public class VolatileBoots extends ArmorItem {
 	    builder.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), 
 	    		"max_health", -2.0, AttributeModifier.Operation.ADDITION));
 	    
+	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), 
+	    		"damage", 2.0, AttributeModifier.Operation.ADDITION));
+	    
 	    builder.put(Attributes.ARMOR, new AttributeModifier(UUID.randomUUID(), 
 	    		"armor", ModArmorMaterial.VOLATILE.getDefenseForSlot(EquipmentSlot.FEET), 
 	    		AttributeModifier.Operation.ADDITION));

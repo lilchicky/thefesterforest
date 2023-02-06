@@ -41,6 +41,9 @@ public class VolatileNecklace extends Item implements ICurioItem {
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 	    builder.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), "reduced_health", -4.0, AttributeModifier.Operation.ADDITION));
+	    
+	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), 
+	    		"damage", 4.0, AttributeModifier.Operation.ADDITION));
 
 	    this.defaultModifiers = builder.build();
 		
