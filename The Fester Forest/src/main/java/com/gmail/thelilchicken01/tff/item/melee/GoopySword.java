@@ -8,7 +8,9 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
@@ -22,7 +24,10 @@ public class GoopySword extends SwordItem {
 	private String[] drops = {"Rotting Goop"};
 
 	public GoopySword(Tier tier, int damage, float aspeed, Properties properties) {
-		super(tier, damage, aspeed, properties);
+		super(tier, damage, aspeed, properties.food(
+				new FoodProperties.Builder().saturationMod(0.1f).nutrition(1)
+				.effect(() -> new MobEffectInstance(ModEffects.GOOP_ACID.get(), 200, 0), 1f)
+				.build()));
 	}
 	
 	@Override
@@ -41,6 +46,7 @@ public class GoopySword extends SwordItem {
 		lore.add(new TextComponent("Melee").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("A big slimy sword. Coats anything hit in an acidic goop for 5 seconds.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("Seems almost squishy enough to eat...").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 		for (int x = 0; x < drops.length; x++) {
