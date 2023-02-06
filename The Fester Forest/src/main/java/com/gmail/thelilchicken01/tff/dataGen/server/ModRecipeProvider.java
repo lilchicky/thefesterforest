@@ -214,6 +214,31 @@ public class ModRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), has(BlockInit.ROTTING_STONE.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_STONE.get().getRegistryName().getPath() + "_smelting"));
 		
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ItemInit.GOOPY_SWORD.get()),
+				ItemInit.GOOPY_JELLO.get(), 1, 100)
+				.unlockedBy("has_" + ItemInit.GOOPY_SWORD.get().getRegistryName(), has(ItemInit.GOOPY_SWORD.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.GOOPY_SWORD.get().getRegistryName().getPath() + "_smelting"));
+		
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ItemInit.GOOPY_HELMET.get()),
+				ItemInit.GOOPY_JELLO.get(), 1, 100)
+				.unlockedBy("has_" + ItemInit.GOOPY_HELMET.get().getRegistryName(), has(ItemInit.GOOPY_HELMET.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.GOOPY_HELMET.get().getRegistryName().getPath() + "_smelting"));
+		
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ItemInit.GOOPY_CHESTPLATE.get()),
+				ItemInit.GOOPY_JELLO.get(), 1, 100)
+				.unlockedBy("has_" + ItemInit.GOOPY_CHESTPLATE.get().getRegistryName(), has(ItemInit.GOOPY_CHESTPLATE.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.GOOPY_CHESTPLATE.get().getRegistryName().getPath() + "_smelting"));
+		
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ItemInit.GOOPY_LEGGINGS.get()),
+				ItemInit.GOOPY_JELLO.get(), 1, 100)
+				.unlockedBy("has_" + ItemInit.GOOPY_LEGGINGS.get().getRegistryName(), has(ItemInit.GOOPY_LEGGINGS.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.GOOPY_LEGGINGS.get().getRegistryName().getPath() + "_smelting"));
+		
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ItemInit.GOOPY_BOOTS.get()),
+				ItemInit.GOOPY_JELLO.get(), 1, 100)
+				.unlockedBy("has_" + ItemInit.GOOPY_BOOTS.get().getRegistryName(), has(ItemInit.GOOPY_BOOTS.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.GOOPY_BOOTS.get().getRegistryName().getPath() + "_smelting"));
+		
 		//Smithing
 		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_HELMET), Ingredient.of(ItemInit.REETLE_SHELL.get()), ItemInit.REETLE_HELMET.get())
 			.unlocks("has_" + ItemInit.REETLE_SHELL.get().getRegistryName(), has(ItemInit.REETLE_SHELL.get()))

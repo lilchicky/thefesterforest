@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:goopy_leggings_smelting"
+    ]
+  },
+  "criteria": {
+    "has_tff:goopy_leggings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:goopy_leggings"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:goopy_leggings_smelting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:goopy_leggings",
+      "has_the_recipe"
+    ]
+  ]
+}
