@@ -16,7 +16,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 public enum ModArmorMaterial implements ArmorMaterial {
 
 	// Mechanical Armor
-	MECHANICAL("mechanical", 67, new int[]{3, 5, 6, 4}, 32, SoundEvents.NETHERITE_BLOCK_BREAK, 4.0F, 0.5F, () -> {
+	MECHANICAL("mechanical", 67, new int[]{4, 6, 7, 5}, 32, SoundEvents.NETHERITE_BLOCK_BREAK, 4.0F, 0.5F, () -> {
 	    return Ingredient.of(Items.IRON_INGOT);
 	}),
 	
@@ -36,7 +36,7 @@ public enum ModArmorMaterial implements ArmorMaterial {
 	}),
 	
 	//Reetle Armor
-	REETLE("reetle", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 4.0F, 0.2F, () -> {
+	REETLE("reetle", 37, new int[]{4, 6, 8, 4}, 15, SoundEvents.TURTLE_EGG_CRACK, 4.0F, 0.2F, () -> {
 	    return Ingredient.of(ItemInit.BUG_CARCASS.get());
 	});
 
