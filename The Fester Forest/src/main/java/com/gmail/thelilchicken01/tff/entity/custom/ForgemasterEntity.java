@@ -79,10 +79,10 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	private int pylonChargeCounter;
 	private boolean pylonActive = false; 
 	
-	private int phase2health = 650; // health threshold for phase 2
-	private int phase3health = 250; // health threshold for phase 3
-	
 	private static float totalHealth = 800.0f; // entity health
+	
+	private int phase2health = (int) (totalHealth * 0.8); // health threshold for phase 2
+	private int phase3health = (int) (totalHealth * 0.3); // health threshold for phase 3
 
 	public ForgemasterEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
