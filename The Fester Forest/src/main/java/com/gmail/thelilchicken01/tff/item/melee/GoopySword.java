@@ -24,10 +24,7 @@ public class GoopySword extends SwordItem {
 	private String[] drops = {"Rotting Goop"};
 
 	public GoopySword(Tier tier, int damage, float aspeed, Properties properties) {
-		super(tier, damage, aspeed, properties.food(
-				new FoodProperties.Builder().saturationMod(0.1f).nutrition(1)
-				.effect(() -> new MobEffectInstance(ModEffects.GOOP_ACID.get(), 200, 0), 1f)
-				.build()));
+		super(tier, damage, aspeed, properties);
 	}
 	
 	@Override
