@@ -23,6 +23,11 @@
           "type": "minecraft:item",
           "weight": 10,
           "name": "tff:reetle_queen_antennae"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:reetle_reagents",
+          "weight": 10
         }
       ]
     },
