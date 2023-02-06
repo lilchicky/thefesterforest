@@ -41,6 +41,9 @@ public class BansheeHelmet extends ArmorItem {
 	public final Lazy<Multimap<Attribute, AttributeModifier>> LAZY = Lazy.of(() ->  {    
     	ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder(); 
     	
+    	builder.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), 
+	    		"max_health", ModArmorMaterial.BANSHEE.getDefenseForSlot(EquipmentSlot.HEAD) + 4, AttributeModifier.Operation.ADDITION));
+    	
     	builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), 
 	    		"move_speed", 0.2, AttributeModifier.Operation.MULTIPLY_BASE));
 	    

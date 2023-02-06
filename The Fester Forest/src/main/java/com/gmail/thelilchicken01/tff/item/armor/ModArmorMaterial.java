@@ -26,7 +26,7 @@ public enum ModArmorMaterial implements ArmorMaterial {
 	}),
 	
 	//Banshee Armor
-	BANSHEE("banshee", 12, new int[]{2, 4, 5, 2}, 32, SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 0.0F, () -> {
+	BANSHEE("banshee", 12, new int[]{2, 4, 5, 2}, 32, SoundEvents.WOOL_BREAK, 1.0F, 0.0F, () -> {
 		return Ingredient.of(Items.BLACK_DYE);
 	}),
 	
