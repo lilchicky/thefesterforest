@@ -81,11 +81,15 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	
 	private static float totalHealth = 800.0f; // entity health
 	
-	private int phase2health = (int) (totalHealth * 0.8); // health threshold for phase 2
-	private int phase3health = (int) (totalHealth * 0.3); // health threshold for phase 3
+	private int phase2health;
+	private int phase3health;
 
 	public ForgemasterEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
+		
+		phase2health = (int) (getMaxHealth() * 0.8); // health threshold for phase 2
+		phase3health = (int) (getMaxHealth() * 0.3); // health threshold for phase 3
+		
 	}
 	
 	public static AttributeSupplier setAttributes() {
