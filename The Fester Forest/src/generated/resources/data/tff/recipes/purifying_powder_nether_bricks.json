@@ -5,17 +5,17 @@
       "item": "tff:purifying_powder"
     },
     {
-      "item": "minecraft:rotten_flesh"
+      "item": "minecraft:netherrack"
     },
     {
-      "item": "minecraft:rotten_flesh"
+      "item": "minecraft:netherrack"
     },
     {
-      "item": "minecraft:rotten_flesh"
+      "item": "minecraft:netherrack"
     }
   ],
   "result": {
-    "item": "minecraft:leather",
+    "item": "minecraft:nether_bricks",
     "count": 3
   }
 }

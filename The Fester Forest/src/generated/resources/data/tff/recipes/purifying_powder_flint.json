@@ -5,17 +5,17 @@
       "item": "tff:purifying_powder"
     },
     {
-      "item": "minecraft:rotten_flesh"
+      "item": "minecraft:gravel"
     },
     {
-      "item": "minecraft:rotten_flesh"
+      "item": "minecraft:gravel"
     },
     {
-      "item": "minecraft:rotten_flesh"
+      "item": "minecraft:gravel"
     }
   ],
   "result": {
-    "item": "minecraft:leather",
-    "count": 3
+    "item": "minecraft:flint",
+    "count": 6
   }
 }

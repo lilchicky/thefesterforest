@@ -5,17 +5,17 @@
       "item": "tff:purifying_powder"
     },
     {
-      "item": "minecraft:rotten_flesh"
+      "tag": "forge:sand"
     },
     {
-      "item": "minecraft:rotten_flesh"
+      "tag": "forge:sand"
     },
     {
-      "item": "minecraft:rotten_flesh"
+      "tag": "forge:sand"
     }
   ],
   "result": {
-    "item": "minecraft:leather",
-    "count": 3
+    "item": "minecraft:quartz",
+    "count": 9
   }
 }

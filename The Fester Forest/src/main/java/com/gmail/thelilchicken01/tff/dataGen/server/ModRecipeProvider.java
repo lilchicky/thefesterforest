@@ -16,7 +16,10 @@ import net.minecraft.data.recipes.UpgradeRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModRecipeProvider extends RecipeProvider {
 
@@ -196,7 +199,7 @@ public class ModRecipeProvider extends RecipeProvider {
 		.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.ROTTING_SLIMEBALL.get().getRegistryName().getPath()));
 		
 		// Purifying Rotten Flesh
-		ShapelessRecipeBuilder.shapeless(Items.LEATHER, 2)
+		ShapelessRecipeBuilder.shapeless(Items.LEATHER, 3)
 			.requires(ItemInit.PURIFYING_POWDER.get()).requires(Items.ROTTEN_FLESH, 3)
 			.unlockedBy("has_" + ItemInit.PURIFYING_POWDER.get().getRegistryName(), 
 					has(ItemInit.PURIFYING_POWDER.get()))
@@ -204,12 +207,52 @@ public class ModRecipeProvider extends RecipeProvider {
 					.getRegistryName().getPath()));
 		
 		// Purifying Rotting Stone
-		ShapelessRecipeBuilder.shapeless(Items.STONE, 2)
+		ShapelessRecipeBuilder.shapeless(Items.STONE, 3)
 			.requires(ItemInit.PURIFYING_POWDER.get()).requires(BlockInit.ROTTING_STONE.get().asItem(), 3)
 			.unlockedBy("has_" + ItemInit.PURIFYING_POWDER.get().getRegistryName(), 
 					has(ItemInit.PURIFYING_POWDER.get()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, Items.STONE
 					.getRegistryName().getPath()));
+		
+		// Purifying Gravel
+		ShapelessRecipeBuilder.shapeless(Items.FLINT, 6)
+			.requires(ItemInit.PURIFYING_POWDER.get()).requires(Items.GRAVEL, 3)
+			.unlockedBy("has_" + ItemInit.PURIFYING_POWDER.get().getRegistryName(), 
+					has(ItemInit.PURIFYING_POWDER.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.PURIFYING_POWDER.get()
+					.getRegistryName().getPath() + "_flint"));
+		
+		// Purifying Netherrack
+		ShapelessRecipeBuilder.shapeless(Items.NETHER_BRICKS, 3)
+			.requires(ItemInit.PURIFYING_POWDER.get()).requires(Items.NETHERRACK, 3)
+			.unlockedBy("has_" + ItemInit.PURIFYING_POWDER.get().getRegistryName(), 
+					has(ItemInit.PURIFYING_POWDER.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.PURIFYING_POWDER.get()
+					.getRegistryName().getPath() + "_nether_bricks"));
+		
+		// Purifying Nether Star
+		ShapelessRecipeBuilder.shapeless(Items.WITHER_SKELETON_SKULL, 6)
+			.requires(ItemInit.PURIFYING_POWDER.get()).requires(Items.NETHER_STAR, 3)
+			.unlockedBy("has_" + ItemInit.PURIFYING_POWDER.get().getRegistryName(), 
+					has(ItemInit.PURIFYING_POWDER.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.PURIFYING_POWDER.get()
+					.getRegistryName().getPath() + "_nether_star"));
+		
+		// Purifying Ancient Debris
+		ShapelessRecipeBuilder.shapeless(Items.NETHERITE_SCRAP, 5)
+			.requires(ItemInit.PURIFYING_POWDER.get()).requires(Items.ANCIENT_DEBRIS, 3)
+			.unlockedBy("has_" + ItemInit.PURIFYING_POWDER.get().getRegistryName(), 
+					has(ItemInit.PURIFYING_POWDER.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.PURIFYING_POWDER.get()
+					.getRegistryName().getPath() + "_ancient_debris"));
+		
+		// Purifying Blaze Rod
+		ShapelessRecipeBuilder.shapeless(Items.BLAZE_POWDER, 9)
+			.requires(ItemInit.PURIFYING_POWDER.get()).requires(Items.BLAZE_ROD, 3)
+			.unlockedBy("has_" + ItemInit.PURIFYING_POWDER.get().getRegistryName(), 
+					has(ItemInit.PURIFYING_POWDER.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.PURIFYING_POWDER.get()
+					.getRegistryName().getPath() + "_blaze_rod"));
 		
 		//Cooking Example
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.FESTER_ORE.get().asItem()),
