@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "tff:rotting_flower_to_blue_dye"
+      "tff:rotting_flower_to_purple_dye"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "tff:rotting_flower_to_blue_dye"
+        "recipe": "tff:rotting_flower_to_purple_dye"
       }
     }
   },

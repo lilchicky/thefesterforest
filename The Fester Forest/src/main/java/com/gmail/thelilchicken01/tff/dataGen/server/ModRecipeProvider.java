@@ -200,9 +200,9 @@ public class ModRecipeProvider extends RecipeProvider {
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.ROTTING_BRICK.get().getRegistryName().getPath()));
 		
 		// Rotting Flower to Purple
-		ShapelessRecipeBuilder.shapeless(Items.BLUE_DYE, 1).requires(BlockInit.ROTTING_FLOWER.get()) //get item
+		ShapelessRecipeBuilder.shapeless(Items.PURPLE_DYE, 1).requires(BlockInit.ROTTING_FLOWER.get()) //get item
 			.unlockedBy("has_" + BlockInit.ROTTING_FLOWER.get().getRegistryName(), has(BlockInit.ROTTING_FLOWER.get().asItem()))
-			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_FLOWER.get().getRegistryName().getPath() + "_to_blue_dye"));
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_FLOWER.get().getRegistryName().getPath() + "_to_purple_dye"));
 		
 		// Sickening Flower to Magenta
 		ShapelessRecipeBuilder.shapeless(Items.MAGENTA_DYE, 1).requires(BlockInit.SICKENING_FLOWER.get()) //get item
