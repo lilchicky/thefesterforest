@@ -15,6 +15,7 @@ import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 
 public class ModConfiguredFeatures {
 	
@@ -39,5 +40,13 @@ public class ModConfiguredFeatures {
 	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> FESTER_ORE = 
 			FeatureUtils.register("fester_ore", Feature.ORE, new OreConfiguration(
 					OVERWORLD_FESTER_ORE, TFFCommonConfigs.FESTER_ORE_VEIN_SIZE.get())); //last number is vein size, not below 3
+	
+	public static final List<OreConfiguration.TargetBlockState> TFF_FESTER_ORE = List.of(
+			OreConfiguration.target(new BlockMatchTest(BlockInit.ROTTING_STONE.get()), BlockInit.FESTER_ORE.get().defaultBlockState()),
+			OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.FESTER_ORE.get().defaultBlockState()));
+	
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> TFF_FESTER_ORE_GEN = 
+			FeatureUtils.register("fester_ore_tff", Feature.ORE, new OreConfiguration(
+					OVERWORLD_FESTER_ORE, TFFCommonConfigs.FESTER_ORE_VEIN_SIZE.get() * 3));
 
 }
