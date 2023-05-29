@@ -79,7 +79,7 @@ public class BansheeEntity extends Monster implements IAnimatable {
 		
 		if (timer > 100 && this.getHealth() > 0.0f) {
 			
-			List<Entity> nearbyEntities = this.getLevel().getEntities(this, new AABB(this.getX() - 4, this.getY() - 1, this.getZ() - 4, this.getX() + 4, this.getY() + 1, this.getZ() + 4));
+			List<Entity> nearbyEntities = this.getLevel().getEntities(this, new AABB(this.getX() - 4, this.getY() - 4, this.getZ() - 4, this.getX() + 4, this.getY() + 4, this.getZ() + 4));
 			boolean playerNear = false;
 			
 			playerCheck:
