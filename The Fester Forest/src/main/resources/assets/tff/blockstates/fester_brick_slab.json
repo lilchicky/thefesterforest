@@ -4,7 +4,7 @@
       "model": "tff:block/fester_brick_slab"
     },
     "type=double": {
-      "model": "tff:block/fester_brick_slab"
+      "model": "tff:block/rotting_bricks"
     },
     "type=top": {
       "model": "tff:block/fester_brick_slab_top"
