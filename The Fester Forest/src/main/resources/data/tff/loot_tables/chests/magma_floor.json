@@ -6,27 +6,32 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 200,
           "name": "minecraft:gunpowder"
         },
         {
           "type": "minecraft:item",
-          "weight": 95,
+          "weight": 190,
           "name": "minecraft:bone"
         },
         {
           "type": "minecraft:item",
-          "weight": 50,
+          "weight": 100,
           "name": "minecraft:blaze_powder"
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
+          "weight": 40,
           "name": "minecraft:ender_pearl"
         },
         {
           "type": "minecraft:item",
-          "weight": 25,
+          "weight": 40,
+          "name": "minecraft:gold_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 50,
           "name": "minecraft:book",
           "functions": [
             {
@@ -48,12 +53,12 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 25,
+          "weight": 50,
           "name": "tff:volatile_apple"
         },
         {
           "type": "minecraft:item",
-          "weight": 25,
+          "weight": 50,
           "name": "tff:rotting_carrot"
         },
         {

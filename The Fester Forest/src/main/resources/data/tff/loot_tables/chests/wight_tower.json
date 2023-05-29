@@ -6,37 +6,37 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 200,
           "name": "minecraft:rotten_flesh"
         },
         {
           "type": "minecraft:item",
-          "weight": 95,
+          "weight": 200,
           "name": "minecraft:bone"
         },
         {
           "type": "minecraft:item",
-          "weight": 80,
+          "weight": 120,
           "name": "minecraft:diamond"
         },
         {
           "type": "minecraft:item",
-          "weight": 40,
+          "weight": 100,
           "name": "tff:rotting_carrot"
         },
         {
           "type": "minecraft:item",
-          "weight": 30,
+          "weight": 50,
           "name": "tff:rotting_pie"
         },
         {
           "type": "minecraft:item",
-          "weight": 80,
+          "weight": 100,
           "name": "minecraft:emerald"
         },
         {
           "type": "minecraft:item",
-          "weight": 25,
+          "weight": 50,
           "name": "minecraft:ender_pearl"
         },
         {

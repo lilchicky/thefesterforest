@@ -6,32 +6,32 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 200,
           "name": "minecraft:iron_ingot"
         },
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 200,
           "name": "minecraft:bone"
         },
         {
           "type": "minecraft:item",
-          "weight": 80,
+          "weight": 160,
           "name": "minecraft:black_dye"
         },
         {
           "type": "minecraft:item",
-          "weight": 80,
+          "weight": 160,
           "name": "tff:rotting_carrot"
         },
         {
           "type": "minecraft:item",
-          "weight": 50,
+          "weight": 60,
           "name": "minecraft:ender_pearl"
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
+          "weight": 40,
           "name": "minecraft:book",
           "functions": [
             {

@@ -6,47 +6,47 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 200,
           "name": "minecraft:bone"
         },
         {
           "type": "minecraft:item",
-          "weight": 95,
+          "weight": 190,
           "name": "minecraft:rotten_flesh"
         },
         {
           "type": "minecraft:item",
-          "weight": 50,
+          "weight": 100,
           "name": "minecraft:iron_ingot"
         },
         {
           "type": "minecraft:item",
-          "weight": 15,
+          "weight": 30,
           "name": "minecraft:gold_ingot"
         },
         {
           "type": "minecraft:item",
-          "weight": 15,
+          "weight": 30,
           "name": "minecraft:diamond"
         },
         {
           "type": "minecraft:item",
-          "weight": 15,
+          "weight": 30,
           "name": "minecraft:emerald"
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
+          "weight": 40,
           "name": "minecraft:ender_pearl"
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
+          "weight": 30,
           "name": "tff:rotting_slimeball"
         },
         {
           "type": "minecraft:item",
-          "weight": 25,
+          "weight": 50,
           "name": "minecraft:book",
           "functions": [
             {
@@ -68,12 +68,12 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 25,
+          "weight": 50,
           "name": "tff:goopy_jello"
         },
         {
           "type": "minecraft:item",
-          "weight": 25,
+          "weight": 50,
           "name": "tff:rotting_carrot"
         },
         {

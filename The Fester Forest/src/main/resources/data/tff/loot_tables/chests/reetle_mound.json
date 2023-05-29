@@ -6,12 +6,12 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 200,
           "name": "tff:rotting_dirt"
         },
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 200,
           "name": "tff:bug_carcass"
         },
         {
@@ -21,12 +21,12 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 80,
+          "weight": 160,
           "name": "minecraft:bone_meal"
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
+          "weight": 40,
           "name": "minecraft:book",
           "functions": [
             {
@@ -43,7 +43,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 30,
+          "weight": 60,
           "name": "tff:rotting_carrot"
         },
         {

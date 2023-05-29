@@ -11,12 +11,12 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 95,
+          "weight": 200,
           "name": "minecraft:bone"
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
+          "weight": 40,
           "name": "minecraft:ender_pearl"
         },
         {
@@ -26,7 +26,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
+          "weight": 50,
           "name": "minecraft:book",
           "functions": [
             {
@@ -38,17 +38,17 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
+          "weight": 40,
           "name": "minecraft:emerald"
         },
         {
           "type": "minecraft:item",
-          "weight": 30,
+          "weight": 60,
           "name": "tff:purifying_powder"
         },
         {
           "type": "minecraft:item",
-          "weight": 30,
+          "weight": 60,
           "name": "tff:rotting_carrot"
         },
         {

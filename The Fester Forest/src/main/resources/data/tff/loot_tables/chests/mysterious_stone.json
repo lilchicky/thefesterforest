@@ -5,18 +5,23 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 200,
           "name": "tff:rotting_stone"
         },
         {
           "type": "minecraft:item",
-          "weight": 30,
+          "weight": 60,
           "name": "minecraft:diamond"
         },
         {
           "type": "minecraft:item",
           "weight": 45,
           "name": "minecraft:iron_ingot"
+        },
+        {
+       	  "type": "minecraft:tag",
+       	  "weight": 100,
+       	  "name": "forge:ores"
         },
         {
           "type": "minecraft:item",
@@ -40,7 +45,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 15,
+          "weight": 30,
           "name": "minecraft:book",
           "functions": [
             {
