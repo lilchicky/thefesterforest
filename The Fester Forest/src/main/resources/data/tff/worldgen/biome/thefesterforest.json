@@ -5,8 +5,8 @@
   	"temperature_modifier": "none",
   	"category": "forest",
   	"effects": {
-    	"sky_color": 32768,
-    	"fog_color": 32768,
+    	"sky_color": 599040,
+    	"fog_color": 599040,
     	"water_color": 16384,
     	"water_fog_color": 16384,
     	"grass_color": 599040,
