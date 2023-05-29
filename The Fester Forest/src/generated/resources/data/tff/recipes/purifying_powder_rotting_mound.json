@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:purifying_powder"
+    },
+    {
+      "item": "tff:rotting_catalyst"
+    }
+  ],
+  "result": {
+    "item": "minecraft:beef",
+    "count": 5
+  }
+}

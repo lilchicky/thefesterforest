@@ -254,6 +254,14 @@ public class ModRecipeProvider extends RecipeProvider {
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.PURIFYING_POWDER.get()
 					.getRegistryName().getPath() + "_blaze_rod"));
 		
+		// Purifying Rotting Mound
+		ShapelessRecipeBuilder.shapeless(Items.BEEF, 5)
+			.requires(ItemInit.PURIFYING_POWDER.get()).requires(ItemInit.ROTTING_CATALYST.get(), 1)
+			.unlockedBy("has_" + ItemInit.PURIFYING_POWDER.get().getRegistryName(), 
+					has(ItemInit.PURIFYING_POWDER.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.PURIFYING_POWDER.get()
+					.getRegistryName().getPath() + "_rotting_mound"));
+		
 		//Cooking Example
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.FESTER_ORE.get().asItem()),
 			ItemInit.ROTTING_BRICK.get(), 15, 100)
