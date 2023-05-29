@@ -204,6 +204,11 @@ public class BlockInit {
 						BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).requiresCorrectToolForDrops()), 
 				object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 		
+	//Fester Brick Slab
+	public static final RegistryObject<Block> FESTER_BRICK_SLAB = register("fester_brick_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+		
 	//Rotting Portal
 	public static final RegistryObject<Block> TFF_PORTAL = register("tff_portal", () -> new TffPortalBlock(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties()));

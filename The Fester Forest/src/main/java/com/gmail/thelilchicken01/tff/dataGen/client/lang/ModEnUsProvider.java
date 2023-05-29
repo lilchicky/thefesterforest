@@ -167,6 +167,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.GOOPY_BOOTS.get(), "Goopy Shoes");
 		add(ItemInit.ROTTING_SLIMEBALL.get(), "Rotting Slimeball");
 		add(BlockInit.FESTER_BRICK_STAIRS.get(), "Fester Brick Stairs");
+		add(BlockInit.FESTER_BRICK_SLAB.get(), "Fester Brick Slab");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");
