@@ -57,6 +57,16 @@ public class TffPlacedFeature {
 			"rotting_tall_grass_placed", () -> new PlacedFeature(TffConfiguredFeatures.ROTTING_TALL_GRASS.getHolder().get(),
 					patch(228)));
 	
+	// Weeping Grass Common
+	public static final RegistryObject<PlacedFeature> WEEPING_GRASS_COMMON_PLACED = PLACED_FEATURES.register(
+			"weeping_grass_common_placed", () -> new PlacedFeature(TffConfiguredFeatures.WEEPING_GRASS_COMMON.getHolder().get(),
+					patch(228)));
+	
+	// Weeping Grass Rare
+	public static final RegistryObject<PlacedFeature> WEEPING_GRASS_RARE_PLACED = PLACED_FEATURES.register(
+			"weeping_grass_rare_placed", () -> new PlacedFeature(TffConfiguredFeatures.WEEPING_GRASS_RARE.getHolder().get(),
+					patch(10)));
+	
     private static List<PlacementModifier> patch(int count) {
         return List.of(CountPlacement.of(count), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
     }

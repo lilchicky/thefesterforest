@@ -69,6 +69,16 @@ public class TffConfiguredFeatures {
 	public static final RegistryObject<ConfiguredFeature<?, ?>> ROTTING_TALL_GRASS = 
 			CONFIGURED_FEATURES.register("rotting_tall_grass", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH,
 					patch(BlockInit.ROTTING_TALL_GRASS.get(), 32)));
+	
+	// Weeping Grass Common
+	public static final RegistryObject<ConfiguredFeature<?, ?>> WEEPING_GRASS_COMMON = 
+			CONFIGURED_FEATURES.register("weeping_grass_common", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+					patch(BlockInit.WEEPING_GRASS.get(), 32)));
+	
+	// Weeping Grass Sparse
+	public static final RegistryObject<ConfiguredFeature<?, ?>> WEEPING_GRASS_RARE = 
+			CONFIGURED_FEATURES.register("weeping_grass_rare", () -> new ConfiguredFeature<>(Feature.FLOWER,
+					patch(BlockInit.WEEPING_GRASS.get(), 16)));
 						
     private static RandomPatchConfiguration patch(Block block, int tries) {
     	

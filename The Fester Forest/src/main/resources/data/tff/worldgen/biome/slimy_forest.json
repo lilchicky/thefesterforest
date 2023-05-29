@@ -9,9 +9,8 @@
     	"fog_color": 1594392,
     	"water_color": 1912349,
     	"water_fog_color": 1912349,
-    	"grass_color": 4422659,
-    	"foliage_color": 5601292,
-    	"grass_color_modifier": "none"
+   		"grass_color": 599040,
+    	"foliage_color": 144128
   	},
   	"spawners": {
     	"monster": [
@@ -102,7 +101,8 @@
     		"tff:slimy_flower_placed",
     		"tff:sickening_flower_placed",
     		"tff:rotting_flower_placed",
-    		"tff:rotting_tall_grass_placed"
+    		"tff:rotting_tall_grass_placed",
+    		"tff:weeping_grass_rare_placed"
     	],
     	[]
   	]

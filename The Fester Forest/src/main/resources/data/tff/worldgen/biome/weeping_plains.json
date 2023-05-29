@@ -1,18 +1,17 @@
 {
-  	"temperature": 0.8,
-  	"downfall": 0.4,
-  	"precipitation": "rain",
-  	"temperature_modifier": "none",
-  	"category": "forest",
-  	"effects": {
-    	"sky_color": 32768,
-    	"fog_color": 32768,
-    	"water_color": 16384,
-    	"water_fog_color": 16384,
-    	"grass_color": 599040,
-    	"foliage_color": 144128
-  	},
-  	"spawners": {
+  "temperature": 0.8,
+  "downfall": 0.4,
+  "precipitation": "rain",
+  "category": "plains",
+  "effects": {
+    "sky_color": 6250483,
+    "fog_color": 4340433,
+    "water_color": 2055902,
+    "water_fog_color": 329011,
+    "grass_color": 599040,
+    "foliage_color": 144128
+  },
+  "spawners": {
     	"monster": [
       		{
         		"type": "tff:rotting_skeleton",
@@ -78,15 +77,14 @@
   		}
   	
   	},
-  	"carvers": {
-    	"air": [
-      		"minecraft:cave",
-      		"minecraft:canyon",
-      		"minecraft:cave_extra_underground",
-      		"minecraft:nether_cave"
-    	]
-  	},
-  	"features": [
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:canyon",
+      "minecraft:cave_extra_underground"
+    ]
+  },
+  "features": [
   		[],
     	[],
     	[],
@@ -97,12 +95,10 @@
     	[],
     	[],
     	[
-    		"tff:rottingwood_tree_placed",
-    		"tff:slimy_tree_placed",
     		"tff:sickening_flower_placed",
     		"tff:rotting_flower_placed",
     		"tff:rotting_tall_grass_placed",
-    		"tff:weeping_grass_rare_placed"
+    		"tff:weeping_grass_common_placed"
     	],
     	[]
   	]
