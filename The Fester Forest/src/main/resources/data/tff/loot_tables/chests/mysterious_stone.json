@@ -1,27 +1,12 @@
 {
   "pools": [
     {
-      "rolls": 24,
+      "rolls": 14,
       "entries": [
         {
           "type": "minecraft:item",
           "weight": 200,
           "name": "tff:rotting_stone"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 60,
-          "name": "minecraft:diamond"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 45,
-          "name": "minecraft:iron_ingot"
-        },
-        {
-       	  "type": "minecraft:tag",
-       	  "weight": 100,
-       	  "name": "forge:ores"
         },
         {
           "type": "minecraft:item",
@@ -60,6 +45,17 @@
           "name": "tff:purifying_powder"
         }
       ]
+    },
+    {
+    	"rolls": 10,
+    	"entries": [
+        	{
+       	  		"type": "minecraft:tag",
+       	  		"weight": 10,
+       	  		"name": "forge:ores",
+       	  		"expand": true
+        	}
+    	]
     }
   ]
 }
