@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 300,
+          "weight": 500,
           "name": "minecraft:gunpowder",
           "conditions": [
             {
@@ -58,8 +58,13 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 120,
-          "name": "minecraft:blaze_powder"
+          "weight": 200,
+          "name": "minecraft:blaze_powder",
+          "conditions": [
+            {
+              "condition": "minecraft:killed_by_player"
+            }
+          ]
         },
         {
           "type": "minecraft:item",

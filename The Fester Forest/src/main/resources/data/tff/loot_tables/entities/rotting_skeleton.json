@@ -5,57 +5,18 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 150,
-          "name": "minecraft:iron_ingot",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 1,
-              "add": true,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.5
-                }
-              ]
-            }
-          ]
+          "weight": 200,
+          "name": "minecraft:iron_ingot"
         },
         {
           "type": "minecraft:item",
-          "weight": 300,
-          "name": "minecraft:bone",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 1,
-              "add": true,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.5
-                }
-              ]
-            }
-          ]
+          "weight": 500,
+          "name": "minecraft:bone"
         },
         {
           "type": "minecraft:item",
-          "weight": 140,
-          "name": "tff:purifying_powder",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 1,
-              "add": true,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.5
-                }
-              ]
-            }
-          ]
+          "weight": 240,
+          "name": "tff:purifying_powder"
         },
         {
           "type": "minecraft:item",

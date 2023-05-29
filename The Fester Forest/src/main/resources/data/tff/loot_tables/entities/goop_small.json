@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 300,
+          "weight": 500,
           "name": "minecraft:slime_ball"
         },
         {
@@ -29,14 +29,7 @@
         {
           "type": "minecraft:item",
           "weight": 150,
-          "name": "tff:rotting_slimeball",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 3,
-              "add": true
-            }
-          ]
+          "name": "tff:rotting_slimeball"
         },
         {
           "type": "minecraft:item",

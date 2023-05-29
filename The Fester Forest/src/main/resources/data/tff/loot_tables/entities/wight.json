@@ -6,17 +6,17 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 200,
+          "weight": 600,
           "name": "minecraft:bone"
         },
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 300,
           "name": "minecraft:rotten_flesh"
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
+          "weight": 5,
           "name": "tff:flesh_ball"
         },
         {
