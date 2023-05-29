@@ -232,7 +232,7 @@ public class ModRecipeProvider extends RecipeProvider {
 		
 		// Purifying Nether Star
 		ShapelessRecipeBuilder.shapeless(Items.WITHER_SKELETON_SKULL, 6)
-			.requires(ItemInit.PURIFYING_POWDER.get()).requires(Items.NETHER_STAR, 3)
+			.requires(ItemInit.PURIFYING_POWDER.get()).requires(Items.NETHER_STAR, 1)
 			.unlockedBy("has_" + ItemInit.PURIFYING_POWDER.get().getRegistryName(), 
 					has(ItemInit.PURIFYING_POWDER.get()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.PURIFYING_POWDER.get()
