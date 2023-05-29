@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:slimy_bell"
+    }
+  ],
+  "result": {
+    "item": "minecraft:lime_dye"
+  }
+}

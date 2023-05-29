@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:slimy_bell_to_lime_dye"
+    ]
+  },
+  "criteria": {
+    "has_tff:slimy_bell": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:slimy_bell"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:slimy_bell_to_lime_dye"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:slimy_bell",
+      "has_the_recipe"
+    ]
+  ]
+}

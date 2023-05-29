@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:weeping_grass_to_blue_dye"
+    ]
+  },
+  "criteria": {
+    "has_tff:weeping_grass": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:weeping_grass"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:weeping_grass_to_blue_dye"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:weeping_grass",
+      "has_the_recipe"
+    ]
+  ]
+}

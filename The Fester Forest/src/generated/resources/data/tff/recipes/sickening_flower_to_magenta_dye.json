@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:sickening_flower"
+    }
+  ],
+  "result": {
+    "item": "minecraft:magenta_dye"
+  }
+}

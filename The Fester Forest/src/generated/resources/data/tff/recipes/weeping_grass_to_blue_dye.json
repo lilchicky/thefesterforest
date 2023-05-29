@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:weeping_grass"
+    }
+  ],
+  "result": {
+    "item": "minecraft:blue_dye"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:rotting_flower"
+    }
+  ],
+  "result": {
+    "item": "minecraft:blue_dye"
+  }
+}

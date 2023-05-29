@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:sickening_flower_to_magenta_dye"
+    ]
+  },
+  "criteria": {
+    "has_tff:sickening_flower": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:sickening_flower"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:sickening_flower_to_magenta_dye"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:sickening_flower",
+      "has_the_recipe"
+    ]
+  ]
+}
