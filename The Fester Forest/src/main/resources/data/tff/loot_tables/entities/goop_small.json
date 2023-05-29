@@ -30,15 +30,24 @@
           "type": "minecraft:item",
           "weight": 150,
           "name": "tff:rotting_slimeball"
-        },
+        }
+      ]
+    },
+    {
+    	"rolls": 1,
+    	"entries": [
+    		{
+    			"type": "minecraft:empty",
+          		"weight": 25
+          	},
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 1,
           "name": "tff:slippery_goop"
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 1,
           "name": "tff:goopy_stick",
           "functions": [
             {
@@ -54,7 +63,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 1,
           "name": "tff:goopy_sword",
           "functions": [
             {
@@ -70,7 +79,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 1,
           "name": "tff:goopy_helmet",
           "functions": [
             {
@@ -91,7 +100,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 1,
           "name": "tff:goopy_chestplate",
           "functions": [
             {
@@ -112,7 +121,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 1,
           "name": "tff:goopy_leggings",
           "functions": [
             {
@@ -133,7 +142,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 1,
           "name": "tff:goopy_boots",
           "functions": [
             {
@@ -152,7 +161,7 @@
             }
           ]
         }
-      ]
+    	]
     }
   ]
 }

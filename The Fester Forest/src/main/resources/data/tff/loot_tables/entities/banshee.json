@@ -13,20 +13,29 @@
           "type": "minecraft:item",
           "weight": 300,
           "name": "minecraft:black_dye"
-        },
+        }
+      ]
+    },
+    {
+    	"rolls": 1,
+    	"entries": [
+    		{
+    			"type": "minecraft:empty",
+          		"weight": 25
+          	},
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 1,
           "name": "tff:ancient_whistle"
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 1,
           "name": "tff:frozen_pendant"
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 1,
           "name": "tff:shadow_bow",
           "functions": [
             {
@@ -42,7 +51,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 2,
+          "weight": 1,
           "name": "tff:banshee_helmet",
           "functions": [
             {
@@ -58,7 +67,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 2,
+          "weight": 1,
           "name": "tff:banshee_chestplate",
           "functions": [
             {
@@ -74,7 +83,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 2,
+          "weight": 1,
           "name": "tff:banshee_leggings",
           "functions": [
             {
@@ -90,7 +99,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 2,
+          "weight": 1,
           "name": "tff:banshee_boots",
           "functions": [
             {

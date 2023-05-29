@@ -17,10 +17,19 @@
           "type": "minecraft:item",
           "weight": 240,
           "name": "tff:purifying_powder"
-        },
+        }
+      ]
+    },
+    {
+    	"rolls": 1,
+    	"entries": [
+    		{
+    			"type": "minecraft:empty",
+          		"weight": 25
+          	},
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 1,
           "name": "tff:ancient_greatsword",
           "functions": [
             {
@@ -41,7 +50,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 1,
           "name": "tff:brittle_branch",
           "functions": [
             {
@@ -60,7 +69,7 @@
             }
           ]
         }
-      ]
+    	]
     }
   ]
 }
