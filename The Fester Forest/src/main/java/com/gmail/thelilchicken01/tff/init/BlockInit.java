@@ -229,6 +229,10 @@ public class BlockInit {
 	public static final RegistryObject<FlowerBlock> ROTTING_TALL_GRASS = register("rotting_tall_grass", () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 20, Properties.copy(Blocks.GRASS)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	//Weeping Grass
+	public static final RegistryObject<FlowerBlock> WEEPING_GRASS = register("weeping_grass", () -> new FlowerBlock(MobEffects.NIGHT_VISION, 20, Properties.copy(Blocks.GRASS)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	//Rotting Flower Pot
 	public static final RegistryObject<FlowerPotBlock> ROTTING_FLOWER_POT = BLOCKS.register("rotting_flower_pot", 
 			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ROTTING_FLOWER, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
