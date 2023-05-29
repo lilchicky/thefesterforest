@@ -41,6 +41,7 @@ public class RottingSkeletonEntity extends Monster implements IAnimatable {
 				.add(Attributes.MAX_HEALTH, 40.00)
 				.add(Attributes.ATTACK_DAMAGE, 18.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
+				.add(Attributes.ARMOR, 10.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.2f).build();
 	}
 	

@@ -43,9 +43,9 @@ public class WightEntity extends Monster implements IAnimatable {
 	
 	public static AttributeSupplier setAttributes() {
 		return Monster.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 60.00)
+				.add(Attributes.MAX_HEALTH, 120.00)
 				.add(Attributes.ATTACK_DAMAGE, 30.0f)
-				.add(Attributes.ARMOR, 5.0f)
+				.add(Attributes.ARMOR, 10.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.25f).build();
 	}
@@ -74,8 +74,8 @@ public class WightEntity extends Monster implements IAnimatable {
 	public boolean doHurtTarget(Entity target) {
 		
 		if (!target.getLevel().isClientSide()) {
-			this.heal(10.0f);
-			this.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1));
+			this.heal(30.0f);
+			this.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 2));
 		}
 		
 		return super.doHurtTarget(target);
