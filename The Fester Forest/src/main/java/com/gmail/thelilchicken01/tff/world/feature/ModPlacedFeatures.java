@@ -18,8 +18,4 @@ public class ModPlacedFeatures {
 			ModConfiguredFeatures.FESTER_ORE, ModOrePlacement.commonOrePlacement(TFFCommonConfigs.FESTER_ORE_VEINS_PER_CHUNK.get(), //veins per chunk
 					HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(64), VerticalAnchor.aboveBottom(144)))); //height range
 	
-	public static final Holder<PlacedFeature> TFF_FESTER_ORE_PLACED = PlacementUtils.register("tff_fester_ore_placed", 
-			ModConfiguredFeatures.TFF_FESTER_ORE_GEN, ModOrePlacement.commonOrePlacement(TFFCommonConfigs.FESTER_ORE_VEINS_PER_CHUNK.get() * 3, //veins per chunk
-					HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(6), VerticalAnchor.aboveBottom(255))));
-	
 }
