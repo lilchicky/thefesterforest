@@ -104,6 +104,14 @@ public class ModRecipeProvider extends RecipeProvider {
 			.pattern("a  ").pattern("aa ").pattern("aaa").save(consumer, 
 					new ResourceLocation(TheFesterForest.MODID, 
 							BlockInit.SLIMY_STAIRS.get().getRegistryName().getPath()));
+		//Fester Stairs
+		ShapedRecipeBuilder.shaped(BlockInit.FESTER_BRICK_STAIRS.get(), 4)
+			.define('a', BlockInit.ROTTING_BRICKS.get().asItem())
+			.unlockedBy("has_" + BlockInit.ROTTING_BRICKS.get().getRegistryName(), 
+					has(BlockInit.ROTTING_BRICKS.get().asItem()))
+			.pattern("a  ").pattern("aa ").pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.FESTER_BRICK_STAIRS.get().getRegistryName().getPath()));
 		
 		//Rottingwood Slabs
 		ShapedRecipeBuilder.shaped(BlockInit.ROTTINGWOOD_SLAB.get(), 6)

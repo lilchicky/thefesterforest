@@ -115,7 +115,7 @@ public class BlockInit {
 				
 			}, object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
-	//Rotting Wood Planks
+	//Slimy Wood Planks
 	public static final RegistryObject<Block> SLIMY_PLANKS = register("slimy_planks",
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.SLIME_BLOCK)) {
 				
@@ -193,10 +193,16 @@ public class BlockInit {
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
-	//Rotting Bricks
+	//Fester Bricks
 	public static final RegistryObject<Block> ROTTING_BRICKS = register("rotting_bricks", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Fester Brick Stairs
+		public static final RegistryObject<Block> FESTER_BRICK_STAIRS = register("fester_brick_stairs", 
+				() -> new StairBlock(() -> BlockInit.ROTTING_BRICKS.get().defaultBlockState(), 
+						BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).requiresCorrectToolForDrops()), 
+				object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 		
 	//Rotting Portal
 	public static final RegistryObject<Block> TFF_PORTAL = register("tff_portal", () -> new TffPortalBlock(), 

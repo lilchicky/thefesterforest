@@ -50,6 +50,7 @@ public class ModLootTableProvider extends BaseLootTableProvider {
 		dropSelf(BlockInit.ROTTING_GRAVE_DIRT.get());
 		dropSelf(BlockInit.SICKENING_FLOWER.get());
 		dropSelf(BlockInit.SLIMY_FLOWER.get());
+		dropSelf(BlockInit.FESTER_BRICK_STAIRS.get());
 		
 		//silkTouch(BlockInit.volatileOre.get(), Items.BLAZE_POWDER, 1, 4);
 		

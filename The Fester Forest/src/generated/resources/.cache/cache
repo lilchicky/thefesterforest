@@ -7,7 +7,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 3977ace43b991c7f9d6bd07669e1a48cac38e9a4 assets/tff/blockstates/rotting_stone.json
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
-8eb660b0ec59d6d1404d0035906f78ce5be4b88b assets/tff/lang/en_us.json
+47b89845baaf92aff795431bfa3db96caf1d4cdf assets/tff/lang/en_us.json
 74fa2fd936ff89c42c7a00a07dbdae54f43db419 assets/tff/models/block/cracked_rotting_stone.json
 24c646b7cae5aa575669209b81e20029ad8d223d assets/tff/models/block/crushed_rotting_stone.json
 76c8c0d9d0f865e28054565ba1f9f30e9c98f3d2 assets/tff/models/block/fester_ore.json
@@ -88,6 +88,7 @@ dd8fca77f7e3eb066a4c6a4c0fd3d16145ac6537 data/forge/tags/items/ingots.json
 56927ae18c7158f9ba1ba9ec8079e601ebb975d0 data/tff/advancements/recipes/misc/leather.json
 e92868a1b5b0771db281a142262ff216110551f3 data/tff/advancements/recipes/misc/rotting_slimeball.json
 abaaea0d8800b4b5054e546fd3fb5adefff5f0aa data/tff/advancements/recipes/tff/angelic_whistle.json
+4c88fd3dcd7aa76df87755ada7c931ccc4d0e887 data/tff/advancements/recipes/tff/fester_brick_stairs.json
 5cb1a2dd5991c3215c45d4219664f26bbb392486 data/tff/advancements/recipes/tff/fester_ore_smelting.json
 dc1ae8f8428336bdd84941aa5b324bb1ac798cc0 data/tff/advancements/recipes/tff/goopy_boots_smelting.json
 e4a1308e2086b59220ba5caaa03c6ba61276ef08 data/tff/advancements/recipes/tff/goopy_chestplate_smelting.json
@@ -119,6 +120,7 @@ d5fefaed2a24e5a46555fa7cde2d8b2141cf048e data/tff/advancements/recipes/tff/rotti
 1c414a1d5c34944f733263784a5395f551f7e200 data/tff/advancements/recipes/tff/slimy_stairs.json
 eb3a2f29cc1331f9e5401dd067febfa71cddf6bf data/tff/loot_tables/blocks/cracked_rotting_stone.json
 fc3a448c7a7526b85a9018d3e4aeae823f8dad26 data/tff/loot_tables/blocks/crushed_rotting_stone.json
+769e6cb7ccc26b3a47c0cb3cda48b5b746abdb56 data/tff/loot_tables/blocks/fester_brick_stairs.json
 90055886780aa9b9b2bef577ba148e735b117259 data/tff/loot_tables/blocks/fester_ore.json
 dc934100cf798376a160126c3fe36304716769f5 data/tff/loot_tables/blocks/mossy_rotting_stone.json
 7d9f32d722f2a83f9dcfa9c3774479f8e3784a45 data/tff/loot_tables/blocks/reetlelight.json
@@ -148,6 +150,7 @@ eada62fdb8938ea1ee9debe9ef0af0cc5659a56b data/tff/loot_tables/blocks/slimy_stair
 57660577fd54192aeaab860f4aa2715159816a27 data/tff/loot_tables/blocks/stripped_slimy_log.json
 0059ceadba454e7194d77198e059ef4c2342153a data/tff/loot_tables/blocks/stripped_slimy_wood.json
 904f2ddd25972afd29bff69847afd4b0352909da data/tff/recipes/angelic_whistle.json
+1324f3265ea69ebadd9ba0e1a26d6d718199cf2c data/tff/recipes/fester_brick_stairs.json
 7370d419993fec3b04f9b4bb1843705a62f826c8 data/tff/recipes/fester_ore_smelting.json
 3ad47b50d4b71facec133882a206c4853d444f6a data/tff/recipes/goopy_boots_smelting.json
 edb34627fe17d8da89fb7a730e4b2710db166c3e data/tff/recipes/goopy_chestplate_smelting.json

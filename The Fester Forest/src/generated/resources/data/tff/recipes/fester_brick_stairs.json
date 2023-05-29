@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "a  ",
+    "aa ",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "tff:rotting_bricks"
+    }
+  },
+  "result": {
+    "item": "tff:fester_brick_stairs",
+    "count": 4
+  }
+}
