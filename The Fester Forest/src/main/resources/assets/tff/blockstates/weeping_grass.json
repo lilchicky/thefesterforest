@@ -1,5 +1,6 @@
 {
 	"variants": {
-		"": {"model": "tff:block/weeping_grass"}
+		"half=lower": {"model": "tff:block/weeping_grass_lower"},
+		"half=upper": {"model": "tff:block/weeping_grass_upper"}
 	}
 }

@@ -11,6 +11,7 @@ import com.gmail.thelilchicken01.tff.block.SickeningFlower;
 import com.gmail.thelilchicken01.tff.block.SlimyBell;
 import com.gmail.thelilchicken01.tff.block.SlimySapling;
 import com.gmail.thelilchicken01.tff.block.TffPortalBlock;
+import com.gmail.thelilchicken01.tff.block.WeepingGrass;
 import com.gmail.thelilchicken01.tff.world.feature.tree.RottingTreeGrower;
 import com.gmail.thelilchicken01.tff.world.feature.tree.SlimyTreeGrower;
 import com.google.common.base.Supplier;
@@ -31,6 +32,7 @@ import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.TallFlowerBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
@@ -230,7 +232,7 @@ public class BlockInit {
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Weeping Grass
-	public static final RegistryObject<FlowerBlock> WEEPING_GRASS = register("weeping_grass", () -> new FlowerBlock(MobEffects.NIGHT_VISION, 20, Properties.copy(Blocks.GRASS)), 
+	public static final RegistryObject<TallFlowerBlock> WEEPING_GRASS = register("weeping_grass", () -> new WeepingGrass(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Flower Pot
