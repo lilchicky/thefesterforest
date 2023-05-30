@@ -26,6 +26,7 @@ public class ModStructures {
      */
     public static final RegistryObject<StructureFeature<?>> REETLE_CAVE = DEFERRED_REGISTRY_STRUCTURE.register("reetle_cave", ReetleCave::new);
     public static final RegistryObject<StructureFeature<?>> BANSHEE_GRAVEYARD = DEFERRED_REGISTRY_STRUCTURE.register("banshee_graveyard", BansheeGraveyard::new);
+    public static final RegistryObject<StructureFeature<?>> RUINS = DEFERRED_REGISTRY_STRUCTURE.register("ruins", Ruins::new);
     
     public static void register(IEventBus bus) {
     	DEFERRED_REGISTRY_STRUCTURE.register(bus);

@@ -1,10 +1,10 @@
 {
     // The base structure class to use for the behavior of the structure. (Like extra terrain checks and such)
-  "type": "minecraft:village",
+  "type": "tff:ruins",
 
   "config": {
       // the path to the template pool json file to use
-    "start_pool": "tff:banshee_graveyard",
+    "start_pool": "tff:small_tower_1",
 
       // This is how many pieces away from the starting piece a piece of the structure can spawn
       // Think of it like the length of the branch of the structure
@@ -12,7 +12,7 @@
   },
 
     // The biome tag to use for what biomes that this structure can spawn in"
-  "biomes": "#tff:has_structure/banshee_graveyard",
+  "biomes": "#tff:has_structure/small_tower_1",
 
     // If true, land will be add around the bottom of the structure. (Based on the starting piece's y value)
   "adapt_noise": true,
@@ -20,17 +20,6 @@
     // What mobs can spawn over time in the structure.
     // Make sure you add the mob to the right category (monster, creature, etc)
   "spawn_overrides": {
-    "monster": {
-      "bounding_box": "piece",
-      "spawns": [
-        {
-          "type": "tff:banshee",
-          "weight": 1,
-          "minCount": 2,
-          "maxCount": 4
-        }
-      ]
-    }
   }
     
 }
