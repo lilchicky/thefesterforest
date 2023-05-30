@@ -49,6 +49,8 @@
   "curios.modifiers.feet": "When on feet:",
   "death.attack.tff_banshee": "%1$s blew a whistle a little too hard",
   "death.attack.tff_banshee.player": "%1$s had their eardrums ruptured by %2$s",
+  "death.attack.tff_banshee_mob": "%1$s had their eardrums ruptured by %2&s",
+  "death.attack.tff_banshee_mob.player": "%1$s had their eardrums ruptured by %2&s",
   "death.attack.tff_bone_damage": "%1$s got boned",
   "death.attack.tff_bone_damage.player": "%1$s was knocked out with a bone by %2$s",
   "death.attack.tff_branch_damage": "%1$s was strangled by branches",
