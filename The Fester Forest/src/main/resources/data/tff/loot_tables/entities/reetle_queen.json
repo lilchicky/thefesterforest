@@ -2,7 +2,7 @@
   "type": "minecraft:entity",
   "pools": [
     {
-      "rolls": 10,
+      "rolls": 20,
       "entries": [
         {
           "type": "minecraft:item",
@@ -11,23 +11,23 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
+          "weight": 1,
           "name": "tff:bug_eggs"
         },
         {
           "type": "minecraft:item",
-          "weight": 50,
+          "weight": 5,
           "name": "minecraft:bone"
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
+          "weight": 1,
           "name": "tff:reetle_queen_antennae"
         },
         {
           "type": "minecraft:item",
           "name": "tff:reetle_reagents",
-          "weight": 10
+          "weight": 1
         }
       ]
     },
