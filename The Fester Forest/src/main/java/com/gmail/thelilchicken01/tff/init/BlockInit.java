@@ -197,7 +197,7 @@ public class BlockInit {
 	
 	//Fester Bricks
 	public static final RegistryObject<Block> ROTTING_BRICKS = register("rotting_bricks", 
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)), 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Fester Brick Stairs
