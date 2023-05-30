@@ -307,6 +307,22 @@ public class ModRecipeProvider extends RecipeProvider {
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.PURIFYING_POWDER.get()
 					.getRegistryName().getPath() + "_soul_rot"));
 		
+		// Purifying Fester Bricks
+		ShapelessRecipeBuilder.shapeless(Items.OBSIDIAN, 3)
+			.requires(ItemInit.PURIFYING_POWDER.get()).requires(BlockInit.ROTTING_BRICKS.get(), 3)
+			.unlockedBy("has_" + ItemInit.PURIFYING_POWDER.get().getRegistryName(), 
+					has(ItemInit.PURIFYING_POWDER.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.PURIFYING_POWDER.get()
+					.getRegistryName().getPath() + "_rotting_bricks"));
+		
+		// Purifying Rotting Stone Bricks
+		ShapelessRecipeBuilder.shapeless(Items.STONE_BRICKS, 3)
+			.requires(ItemInit.PURIFYING_POWDER.get()).requires(BlockInit.ROTTING_STONE_BRICKS.get(), 3)
+			.unlockedBy("has_" + ItemInit.PURIFYING_POWDER.get().getRegistryName(), 
+					has(ItemInit.PURIFYING_POWDER.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.PURIFYING_POWDER.get()
+					.getRegistryName().getPath() + "_rotting_stone_bricks"));
+		
 		//Cooking Example
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.FESTER_ORE.get().asItem()),
 			ItemInit.ROTTING_BRICK.get(), 15, 200)
