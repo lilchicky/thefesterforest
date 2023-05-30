@@ -17,6 +17,11 @@
         {
           "type": "minecraft:item",
           "weight": 100,
+          "name": "tff:bug_carcass"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 100,
           "name": "minecraft:gold_ingot"
         },
         {

@@ -10,7 +10,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 200,
           "name": "tff:bug_carcass"
         },
         {
