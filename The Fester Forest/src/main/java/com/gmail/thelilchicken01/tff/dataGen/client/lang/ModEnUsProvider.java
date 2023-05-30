@@ -38,8 +38,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("death.attack.tff_volatile_sword.player", "%1$s incinerated %2$s with a fiery blade");
 		add("death.attack.tff_goop_acid", "%1$s was melted into a slimy puddle");
 		add("death.attack.tff_goop_acid.player", "%1$s turned %2$s into a puddle of slime");
-		add("death.attack.tff_banshee_mob", "%1$s had their eardrums ruptured by %2&s");
-		add("death.attack.tff_banshee_mob.player", "%1$s had their eardrums ruptured by %2&s");
+		add("death.attack.tff_banshee_mob", "%1$s had their eardrums ruptured by %2$s");
+		add("death.attack.tff_banshee_mob.player", "%1$s had their eardrums ruptured by %2$s");
 		//Other
 		add(BlockInit.ROTTING_BRICKS.get(), "Fester Bricks");
 		add(ItemInit.ROTTING_BRICK.get(), "Fester Brick");
