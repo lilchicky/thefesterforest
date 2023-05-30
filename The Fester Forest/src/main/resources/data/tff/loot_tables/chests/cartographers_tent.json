@@ -27,7 +27,7 @@
         {
           "type": "minecraft:item",
           "weight": 30,
-          "name": "minecraft:empty_map"
+          "name": "minecraft:map"
         },
         {
           "type": "minecraft:item",
