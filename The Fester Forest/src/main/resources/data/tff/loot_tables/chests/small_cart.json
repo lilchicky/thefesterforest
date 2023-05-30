@@ -1,0 +1,56 @@
+{
+  "pools": [
+    {
+      "rolls": 14,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 200,
+          "name": "tff:rotting_carrot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 100,
+          "name": "tff:bug_carcass"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 30,
+          "name": "minecraft:iron_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 3,
+          "name": "minecraft:netherite_hoe"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 30,
+          "name": "minecraft:book",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 45
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 50,
+          "name": "tff:purifying_powder"
+        }
+      ]
+    },
+    {
+    	"rolls": 10,
+    	"entries": [
+        	{
+       	  		"type": "minecraft:tag",
+       	  		"weight": 10,
+       	  		"name": "forge:seeds",
+       	  		"expand": true
+        	}
+    	]
+    }
+  ]
+}
