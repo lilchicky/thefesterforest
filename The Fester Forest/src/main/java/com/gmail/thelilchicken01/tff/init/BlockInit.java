@@ -248,6 +248,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> ROTTING_GRASS = register("rotting_grass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)),
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	//Soul Rot
+	public static final RegistryObject<Block> SOUL_ROT = register("soul_rot", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND)),
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	//Rotting Log
 	public static final RegistryObject<Block> SLIMY_LOG = register("slimy_log", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.SLIME_BLOCK)), 
