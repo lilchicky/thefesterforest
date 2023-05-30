@@ -45,6 +45,14 @@ public class ModRecipeProvider extends RecipeProvider {
 					new ResourceLocation(TheFesterForest.MODID, //crafting name of recipe is this \/ 
 							BlockInit.ROTTING_STONE_BRICKS.get().getRegistryName().getPath()));
 		
+		ShapedRecipeBuilder.shaped(Items.SKELETON_SKULL, 1) //what am i making
+			.define('a', BlockInit.SOUL_ROT.get().asItem()) //keys
+			.unlockedBy("has_" + BlockInit.SOUL_ROT.get().getRegistryName(), //unlocked when you get this item
+					has(BlockInit.SOUL_ROT.get().asItem()))
+			.pattern("aa ").pattern("aa ").save(consumer, //the patterns with the keys above
+					new ResourceLocation(TheFesterForest.MODID, //crafting name of recipe is this \/ 
+							BlockInit.SOUL_ROT.get().getRegistryName().getPath() + "_to_skulls"));
+		
 		//Stone Brick Stairs
 		ShapedRecipeBuilder.shaped(BlockInit.ROTTING_STONE_BRICK_STAIRS.get(), 4)
 			.define('a', BlockInit.ROTTING_STONE_BRICKS.get().asItem())
@@ -291,41 +299,54 @@ public class ModRecipeProvider extends RecipeProvider {
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.PURIFYING_POWDER.get()
 					.getRegistryName().getPath() + "_rotting_mound"));
 		
+		// Purifying Soul Rot
+		ShapelessRecipeBuilder.shapeless(Items.SOUL_SAND, 5)
+			.requires(ItemInit.PURIFYING_POWDER.get()).requires(BlockInit.SOUL_ROT.get(), 3)
+			.unlockedBy("has_" + ItemInit.PURIFYING_POWDER.get().getRegistryName(), 
+					has(ItemInit.PURIFYING_POWDER.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.PURIFYING_POWDER.get()
+					.getRegistryName().getPath() + "_soul_rot"));
+		
 		//Cooking Example
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.FESTER_ORE.get().asItem()),
-			ItemInit.ROTTING_BRICK.get(), 15, 100)
+			ItemInit.ROTTING_BRICK.get(), 15, 200)
 			.unlockedBy("has_" + BlockInit.FESTER_ORE.get().getRegistryName(), has(BlockInit.FESTER_ORE.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.FESTER_ORE.get().getRegistryName().getPath() + "_smelting"));
 		
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.ROTTING_STONE.get().asItem()),
-			BlockInit.CRACKED_ROTTING_STONE.get(), 1, 100)
+			BlockInit.CRACKED_ROTTING_STONE.get(), 1, 200)
 			.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), has(BlockInit.ROTTING_STONE.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_STONE.get().getRegistryName().getPath() + "_smelting"));
 		
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ItemInit.GOOPY_SWORD.get()),
-				ItemInit.GOOPY_JELLO.get(), 1, 100)
+				ItemInit.GOOPY_JELLO.get(), 1, 200)
 				.unlockedBy("has_" + ItemInit.GOOPY_SWORD.get().getRegistryName(), has(ItemInit.GOOPY_SWORD.get()))
 				.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.GOOPY_SWORD.get().getRegistryName().getPath() + "_smelting"));
 		
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ItemInit.GOOPY_HELMET.get()),
-				ItemInit.GOOPY_JELLO.get(), 1, 100)
+				ItemInit.GOOPY_JELLO.get(), 1, 200)
 				.unlockedBy("has_" + ItemInit.GOOPY_HELMET.get().getRegistryName(), has(ItemInit.GOOPY_HELMET.get()))
 				.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.GOOPY_HELMET.get().getRegistryName().getPath() + "_smelting"));
 		
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ItemInit.GOOPY_CHESTPLATE.get()),
-				ItemInit.GOOPY_JELLO.get(), 1, 100)
+				ItemInit.GOOPY_JELLO.get(), 1, 200)
 				.unlockedBy("has_" + ItemInit.GOOPY_CHESTPLATE.get().getRegistryName(), has(ItemInit.GOOPY_CHESTPLATE.get()))
 				.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.GOOPY_CHESTPLATE.get().getRegistryName().getPath() + "_smelting"));
 		
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ItemInit.GOOPY_LEGGINGS.get()),
-				ItemInit.GOOPY_JELLO.get(), 1, 100)
+				ItemInit.GOOPY_JELLO.get(), 1, 200)
 				.unlockedBy("has_" + ItemInit.GOOPY_LEGGINGS.get().getRegistryName(), has(ItemInit.GOOPY_LEGGINGS.get()))
 				.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.GOOPY_LEGGINGS.get().getRegistryName().getPath() + "_smelting"));
 		
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ItemInit.GOOPY_BOOTS.get()),
-				ItemInit.GOOPY_JELLO.get(), 1, 100)
+				ItemInit.GOOPY_JELLO.get(), 1, 200)
 				.unlockedBy("has_" + ItemInit.GOOPY_BOOTS.get().getRegistryName(), has(ItemInit.GOOPY_BOOTS.get()))
 				.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.GOOPY_BOOTS.get().getRegistryName().getPath() + "_smelting"));
+		
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.SOUL_ROT.get()),
+				Items.BONE_BLOCK, 1, 200)
+				.unlockedBy("has_" + BlockInit.SOUL_ROT.get().getRegistryName(), has(BlockInit.SOUL_ROT.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.SOUL_ROT.get().getRegistryName().getPath() + "_smelting_to_bone_block"));
 		
 		//Smithing
 		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_HELMET), Ingredient.of(ItemInit.REETLE_SHELL.get()), ItemInit.REETLE_HELMET.get())

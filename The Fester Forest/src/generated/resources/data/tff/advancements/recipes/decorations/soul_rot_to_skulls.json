@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:soul_rot_to_skulls"
+    ]
+  },
+  "criteria": {
+    "has_tff:soul_rot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:soul_rot"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:soul_rot_to_skulls"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:soul_rot",
+      "has_the_recipe"
+    ]
+  ]
+}

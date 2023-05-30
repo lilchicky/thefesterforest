@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:purifying_powder"
+    },
+    {
+      "item": "tff:soul_rot"
+    },
+    {
+      "item": "tff:soul_rot"
+    },
+    {
+      "item": "tff:soul_rot"
+    }
+  ],
+  "result": {
+    "item": "minecraft:soul_sand",
+    "count": 5
+  }
+}
