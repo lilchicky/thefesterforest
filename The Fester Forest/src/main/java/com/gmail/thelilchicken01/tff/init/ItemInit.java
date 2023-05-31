@@ -38,6 +38,7 @@ import com.gmail.thelilchicken01.tff.item.dull.PurifyingPowder;
 import com.gmail.thelilchicken01.tff.item.dull.ReetleQueenAntennae;
 import com.gmail.thelilchicken01.tff.item.dull.ReetleReagents;
 import com.gmail.thelilchicken01.tff.item.dull.ReetleShellPlates;
+import com.gmail.thelilchicken01.tff.item.dull.RotfishFang;
 import com.gmail.thelilchicken01.tff.item.dull.SlipperyGoop;
 import com.gmail.thelilchicken01.tff.item.food.BugCarcass;
 import com.gmail.thelilchicken01.tff.item.food.CookedRotfish;
@@ -407,6 +408,10 @@ public class ItemInit {
 	//Dual Wield Sword
 	public static final RegistryObject<Item> DUAL_WIELD_SWORD = register(
 			"dual_wield_sword", () -> new DualWieldSword());
+	
+	//Rotfish Fang
+	public static final RegistryObject<Item> ROTFISH_FANG = register("rotfish_fang",
+			() -> new RotfishFang());
 	
 	/*
 	 * 
