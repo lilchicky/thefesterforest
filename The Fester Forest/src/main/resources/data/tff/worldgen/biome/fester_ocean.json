@@ -12,8 +12,22 @@
     	"grass_color": 599040,
     	"foliage_color": 144128
   	},
-  	"spawners": {},
-  	"spawn_costs": {},
+  	"creature_spawn_probability": 0.9,
+  	"spawners": {
+  	
+  		"monster": [
+      		{
+        		"type": "tff:rotfish",
+        		"weight": 100,
+        		"minCount": 3,
+        		"maxCount": 5
+      		}
+      	]
+  	
+  	},
+  	"spawn_costs": {
+  	
+  	},
   	"carvers": {
     	"air": [
       		"minecraft:cave",

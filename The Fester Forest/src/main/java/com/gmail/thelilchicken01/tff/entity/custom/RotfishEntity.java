@@ -81,7 +81,7 @@ public class RotfishEntity extends Monster implements IAnimatable {
 	
 	protected void registerGoals() {
 		
-		this.goalSelector.addGoal(2, new RotfishEntity.WaterMeleeAttackGoal(this, 1.005, false));
+		this.goalSelector.addGoal(2, new RotfishEntity.WaterMeleeAttackGoal(this, 1.3, false));
 	    this.goalSelector.addGoal(4, new RotfishEntity.FishSwimGoal(this));
 	    
 	    this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, RotfishEntity.class)).setAlertOthers(RotfishEntity.class));
@@ -111,10 +111,6 @@ public class RotfishEntity extends Monster implements IAnimatable {
 	
 	public boolean canBreatheUnderwater() {
 		return true;
-	}
-
-	public MobType getMobType() {
-		return MobType.WATER;
 	}
 	
 	protected void handleAirSupply(int p_30344_) {
