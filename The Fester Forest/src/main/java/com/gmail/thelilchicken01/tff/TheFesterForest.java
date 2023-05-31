@@ -12,9 +12,10 @@ import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
+import com.gmail.thelilchicken01.tff.integration.CuriosIntegration;
+import com.gmail.thelilchicken01.tff.integration.ModCompat;
 import com.gmail.thelilchicken01.tff.villager.ModPOIs;
 import com.gmail.thelilchicken01.tff.world.dimension.ModDimensions;
-import com.gmail.thelilchicken01.tff.world.feature.ModConfiguredFeatures;
 import com.gmail.thelilchicken01.tff.world.feature.TffConfiguredFeatures;
 import com.gmail.thelilchicken01.tff.world.feature.TffPlacedFeature;
 import com.gmail.thelilchicken01.tff.world.structures.ModStructures;
@@ -77,25 +78,49 @@ public class TheFesterForest {
 	public TheFesterForest() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		
+		System.out.println("Initializing the Spook");
+		
 		ItemInit.ITEMS.register(bus);
+		System.out.println("Items initialized");
+		
 		BlockInit.BLOCKS.register(bus);
+		System.out.println("Blocks initialized");
+		
 		ParticleInit.PARTICLES.register(bus);
+		System.out.println("Particles initialized");
+		
 		TffConfiguredFeatures.CONFIGURED_FEATURES.register(bus);
 		TffPlacedFeature.PLACED_FEATURES.register(bus);
+		System.out.println("Features initialized");
+		
 		ModDimensions.register();
+		System.out.println("The Fester Forest dimension initialized");
+		
 		ModPOIs.register(bus);
+		System.out.println("POIs initialized");
+		
 		ModEntityTypes.register(bus);
+		System.out.println("Entities initialized");
+		
 		ModEffects.register(bus);
+		System.out.println("Potion Effects initialized");
+		
 		ModStructures.register(bus);
+		System.out.println("Structures initialized");
+		
+		ModCompat.initCompat();
 		
 		GeckoLib.initialize();
 		
 		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, TFFClientConfigs.SPEC, "tff-client.toml");
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TFFCommonConfigs.SPEC, "tff-common.toml");
+		System.out.println("Config Loaded");
 		
 		MinecraftForge.EVENT_BUS.register(this);
 		
 		if (FMLEnvironment.dist.isClient()) bus.addListener(this::registerElytraLayer);
+		
+		System.out.println("Happy Adventuring!");
 		
 	}
 	
