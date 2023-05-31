@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:raw_rotfish_smelting_raw_rotfish"
+    ]
+  },
+  "criteria": {
+    "has_tff:raw_rotfish": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:raw_rotfish"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:raw_rotfish_smelting_raw_rotfish"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:raw_rotfish",
+      "has_the_recipe"
+    ]
+  ]
+}

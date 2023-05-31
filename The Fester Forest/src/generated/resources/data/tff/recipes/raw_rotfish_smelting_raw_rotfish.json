@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "tff:raw_rotfish"
+  },
+  "result": "tff:cooked_rotfish",
+  "experience": 1.0,
+  "cookingtime": 200
+}

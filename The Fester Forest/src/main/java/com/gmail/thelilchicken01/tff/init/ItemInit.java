@@ -40,8 +40,10 @@ import com.gmail.thelilchicken01.tff.item.dull.ReetleReagents;
 import com.gmail.thelilchicken01.tff.item.dull.ReetleShellPlates;
 import com.gmail.thelilchicken01.tff.item.dull.SlipperyGoop;
 import com.gmail.thelilchicken01.tff.item.food.BugCarcass;
+import com.gmail.thelilchicken01.tff.item.food.CookedRotfish;
 import com.gmail.thelilchicken01.tff.item.food.GoopyJello;
 import com.gmail.thelilchicken01.tff.item.food.MechanicalApple;
+import com.gmail.thelilchicken01.tff.item.food.RawRotfish;
 import com.gmail.thelilchicken01.tff.item.food.RottingCarrot;
 import com.gmail.thelilchicken01.tff.item.food.RottingPie;
 import com.gmail.thelilchicken01.tff.item.food.VolatileApple;
@@ -427,6 +429,14 @@ public class ItemInit {
 	//Bug Carcass
 	public static final RegistryObject<Item> BUG_CARCASS = register("bug_carcass", 
 			() -> new BugCarcass());
+	
+	//Raw Rotfish
+	public static final RegistryObject<Item> RAW_ROTFISH = register("raw_rotfish", 
+			() -> new RawRotfish());
+	
+	//Cooked Rotfish
+	public static final RegistryObject<Item> COOKED_ROTFISH = register("cooked_rotfish", 
+			() -> new CookedRotfish());
 	
 	//Volatile Apple
 	public static final RegistryObject<Item> VOLATILE_APPLE = register("volatile_apple", 
