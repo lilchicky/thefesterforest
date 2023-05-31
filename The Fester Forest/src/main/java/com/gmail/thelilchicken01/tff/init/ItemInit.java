@@ -135,6 +135,11 @@ public class ItemInit {
 			() -> new ForgeSpawnEggItem(ModEntityTypes.GOOP, 0x521252, 0x260926, //Background, Spots
 					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	//Rotfish Spawn Egg
+	public static final RegistryObject<Item> ROTFISH_SPAWN_EGG = register("rotfish_spawn_egg", 
+			() -> new ForgeSpawnEggItem(ModEntityTypes.ROTFISH, 0x7b32a8, 0x4325b0, //Background, Spots
+					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	/*
 	 * 
 	 * Volatile Items

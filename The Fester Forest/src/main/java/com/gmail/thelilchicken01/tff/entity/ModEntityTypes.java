@@ -7,6 +7,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PylonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ReetleQueenEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.RotfishEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
@@ -93,6 +94,11 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<SmallGoopEntity>> GOOP_SMALL =
 			ENTITY_TYPES.register("goop_small", () -> EntityType.Builder.of(SmallGoopEntity::new, MobCategory.MONSTER)
 					.sized(1.4f * 0.4f, 1.4f * 0.4f).build(new ResourceLocation(TheFesterForest.MODID, "goop_small").toString()));
+	
+	//Rotfish
+	public static final RegistryObject<EntityType<RotfishEntity>> ROTFISH =
+			ENTITY_TYPES.register("rotfish", () -> EntityType.Builder.of(RotfishEntity::new, MobCategory.MONSTER)
+					.sized(1.0f * 1.0f, 1.0f).build(new ResourceLocation(TheFesterForest.MODID, "rotfish").toString()));
 	
 	//Brittle Branch Bullet
 	

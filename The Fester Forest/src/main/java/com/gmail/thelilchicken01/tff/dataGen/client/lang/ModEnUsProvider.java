@@ -173,6 +173,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.WEEPING_GRASS.get(), "Weeping Grass");
 		add(BlockInit.SOUL_ROT.get(), "Soul Rot");
 		add(BlockInit.TFF_PORTAL.get(), "The Fester Forest Portal");
+		add(ItemInit.ROTFISH_SPAWN_EGG.get(), "Rotfish Spawn Egg");
+		add(ModEntityTypes.ROTFISH.get(), "Rotfish");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

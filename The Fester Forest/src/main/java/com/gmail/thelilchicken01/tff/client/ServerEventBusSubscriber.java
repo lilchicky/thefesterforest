@@ -8,6 +8,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PylonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ReetleQueenEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.RotfishEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
@@ -42,6 +43,7 @@ public class ServerEventBusSubscriber {
 		event.put(ModEntityTypes.GOOP.get(), GoopEntity.setAttributes());
 		event.put(ModEntityTypes.GOOP_MEDIUM.get(), MediumGoopEntity.setAttributes());
 		event.put(ModEntityTypes.GOOP_SMALL.get(), SmallGoopEntity.setAttributes());
+		event.put(ModEntityTypes.ROTFISH.get(), RotfishEntity.setAttributes());
 		
 	}
 	
