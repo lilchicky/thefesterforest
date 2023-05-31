@@ -1,0 +1,137 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.rotfish.idle": {
+			"loop": true,
+			"animation_length": 4,
+			"bones": {
+				"tail": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -10, 0]
+						},
+						"2.0": {
+							"vector": [0, 10, 0],
+							"easing": "easeInOutExpo"
+						},
+						"4.0": {
+							"vector": [0, -10, 0],
+							"easing": "easeInOutExpo"
+						}
+					}
+				},
+				"left_fin": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.0": {
+							"vector": [0, -17.5, 0]
+						},
+						"2.0": {
+							"vector": [0, 0, 0]
+						},
+						"3.0": {
+							"vector": [0, -17.5, 0]
+						},
+						"4.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"right_fin": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.0": {
+							"vector": [0, 17.5, 0]
+						},
+						"2.0": {
+							"vector": [0, 0, 0]
+						},
+						"3.0": {
+							"vector": [0, 17.5, 0]
+						},
+						"4.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"mouth": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"2.0": {
+							"vector": [-20, 0, 0]
+						},
+						"4.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.rotfish.walk": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"tail": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -10, 0]
+						},
+						"0.5": {
+							"vector": [0, 10, 0],
+							"easing": "linear"
+						},
+						"1.0": {
+							"vector": [0, -10, 0]
+						}
+					}
+				},
+				"left_fin": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, -17.5, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"right_fin": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 17.5, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"mouth": {
+					"rotation": {
+						"0.0": {
+							"vector": [12.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [2.5, 0, 0]
+						},
+						"1.0": {
+							"vector": [12.5, 0, 0]
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}
