@@ -67,6 +67,17 @@
           "name": "tff:moon_shoes"
         }
       ]
+    },
+    {
+    	"rolls": 6,
+    	"entries": [
+        	{
+       	  		"type": "minecraft:tag",
+       	  		"weight": 10,
+       	  		"name": "tff:tff_foods",
+       	  		"expand": true
+        	}
+    	]
     }
   ]
 }

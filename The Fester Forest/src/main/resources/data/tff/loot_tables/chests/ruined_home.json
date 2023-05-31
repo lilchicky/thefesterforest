@@ -48,16 +48,6 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 60,
-          "name": "tff:rotting_carrot"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 40,
-          "name": "tff:bug_carcass"
-        },
-        {
-          "type": "minecraft:item",
           "weight": 2,
           "name": "tff:brittle_branch"
         },
@@ -67,6 +57,17 @@
           "name": "tff:moon_shoes"
         }
       ]
+    },
+    {
+    	"rolls": 6,
+    	"entries": [
+        	{
+       	  		"type": "minecraft:tag",
+       	  		"weight": 10,
+       	  		"name": "tff:tff_foods",
+       	  		"expand": true
+        	}
+    	]
     }
   ]
 }

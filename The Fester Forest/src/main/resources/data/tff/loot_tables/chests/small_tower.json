@@ -17,11 +17,6 @@
         {
           "type": "minecraft:item",
           "weight": 100,
-          "name": "tff:bug_carcass"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 100,
           "name": "minecraft:gold_ingot"
         },
         {
@@ -52,6 +47,17 @@
           ]
         }
       ]
+    },
+    {
+    	"rolls": 6,
+    	"entries": [
+        	{
+       	  		"type": "minecraft:tag",
+       	  		"weight": 10,
+       	  		"name": "tff:tff_foods",
+       	  		"expand": true
+        	}
+    	]
     }
   ]
 }

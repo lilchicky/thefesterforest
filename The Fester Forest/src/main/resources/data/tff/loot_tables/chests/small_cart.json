@@ -10,11 +10,6 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 200,
-          "name": "tff:bug_carcass"
-        },
-        {
-          "type": "minecraft:item",
           "weight": 30,
           "name": "minecraft:iron_ingot"
         },
@@ -48,6 +43,17 @@
        	  		"type": "minecraft:tag",
        	  		"weight": 10,
        	  		"name": "forge:seeds",
+       	  		"expand": true
+        	}
+    	]
+    },
+    {
+    	"rolls": 6,
+    	"entries": [
+        	{
+       	  		"type": "minecraft:tag",
+       	  		"weight": 10,
+       	  		"name": "tff:tff_foods",
        	  		"expand": true
         	}
     	]
