@@ -16,7 +16,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 200,
           "name": "minecraft:blaze_powder"
         },
         {
