@@ -1,0 +1,121 @@
+{
+  "display": {
+    "icon": {
+      "item": "tff:rotting_pie"
+    },
+    "title": "A Disgusting Feast",
+    "description": "Eat all Fester Forest foods",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "tff:thefesterforest",
+  "criteria": {
+    "rotting_carrot": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:rotting_carrot"
+		  ]
+        }
+      }
+    },
+    "rotting_pie": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:rotting_pie"
+		  ]
+        }
+      }
+    },
+    "raw_rotfish": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:raw_rotfish"
+		  ]
+        }
+      }
+    },
+    "cooked_rotfish": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:cooked_rotfish"
+		  ]
+        }
+      }
+    },
+    "goopy_jello": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:goopy_jello"
+		  ]
+        }
+      }
+    },
+    "bug_carcass": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:bug_carcass"
+		  ]
+        }
+      }
+    },
+    "volatile_apple": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:volatile_apple"
+		  ]
+        }
+      }
+    },
+    "mechanical_apple": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:mechanical_apple"
+		  ]
+        }
+      }
+    }
+  },
+  "requirements": [
+  	[
+  		"rotting_carrot"
+  	],
+  	[
+  		"rotting_pie"
+  	],
+  	[
+  		"raw_rotfish"
+  	],
+  	[
+  		"cooked_rotfish"
+  	],
+  	[
+  		"goopy_jello"
+  	],
+  	[
+  		"bug_carcass"
+  	],
+  	[
+  		"volatile_apple"
+  	],
+  	[
+  		"mechanical_apple"
+  	]
+  ]
+}

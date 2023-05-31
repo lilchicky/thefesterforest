@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "tff:fester_ore"
+    },
+    "title": "Decaying Stone",
+    "description": "Obtain a piece of Fester Ore",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "tff:the_beginning",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:fester_ore"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

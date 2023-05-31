@@ -1,0 +1,77 @@
+{
+  "display": {
+    "icon": {
+      "item": "tff:mechanical_chestplate"
+    },
+    "title": "A Body of Steel",
+    "description": "Collect all 4 pieces of the Mechanical Armor set",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "tff:the_forgemaster",
+  "criteria": {
+    "mechanical_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:mechanical_helmet"
+            ]
+          }
+        ]
+      }
+    },
+    "mechanical_chestplate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:mechanical_chestplate"
+            ]
+          }
+        ]
+      }
+    },
+    "mechanical_leggings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:mechanical_leggings"
+            ]
+          }
+        ]
+      }
+    },
+    "mechanical_boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:mechanical_boots"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+  	[
+  		"mechanical_helmet"
+  	],
+  	[
+  		"mechanical_chestplate"
+  	],
+  	[
+  		"mechanical_leggings"
+  	],
+  	[
+  		"mechanical_boots"
+  	]
+  ]
+}

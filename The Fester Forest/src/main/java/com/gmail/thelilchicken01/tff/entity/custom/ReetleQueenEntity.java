@@ -1,15 +1,22 @@
 package com.gmail.thelilchicken01.tff.entity.custom;
 
+import java.util.List;
+
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ExperienceOrb;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
@@ -22,6 +29,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -31,7 +39,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class ReetleQueenEntity extends Monster implements IAnimatable {
+public class ReetleQueenEntity extends TamableAnimal implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
 	
@@ -39,8 +47,10 @@ public class ReetleQueenEntity extends Monster implements IAnimatable {
 	private int spawnCooldown;
 	
 	private boolean pacified = false;
+	
+	private List<Entity> nearbyEntities;
 
-	public ReetleQueenEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
+	public ReetleQueenEntity(EntityType<? extends TamableAnimal> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
 	}
 	
@@ -109,6 +119,22 @@ public class ReetleQueenEntity extends Monster implements IAnimatable {
 		
 			if (this.hasCustomName()) {
 				if (this.getCustomName().equals(new TextComponent("Little Lady"))) {
+					
+					
+					nearbyEntities = this.getLevel().getEntities(this, new AABB(this.getX() - 8, this.getY() - 8, this.getZ() - 8, this.getX() + 8, this.getY() + 8, this.getZ() + 8));
+					
+					for (int x = 0; x < nearbyEntities.size(); x++) {
+						
+						if (nearbyEntities.get(x) instanceof Player) {
+							
+							if ((Player) nearbyEntities.get(x) instanceof ServerPlayer) {
+						         CriteriaTriggers.TAME_ANIMAL.trigger((ServerPlayer)nearbyEntities.get(x), this);
+						    }
+							
+						}
+						
+					}
+					
 					this.targetSelector.removeAllGoals();
 					this.goalSelector.removeGoal(new MeleeAttackGoal(this, 1.005, false));
 					this.setTarget(null);
@@ -174,6 +200,12 @@ public class ReetleQueenEntity extends Monster implements IAnimatable {
 	@Override
 	public AnimationFactory getFactory() {
 		return this.factory;
+	}
+
+	@Override
+	public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

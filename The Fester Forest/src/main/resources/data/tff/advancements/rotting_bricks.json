@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "tff:rotting_bricks"
+    },
+    "title": "Disgusting Bricks",
+    "description": "Using bricks gathered from smelting Fester Ore, craft Fester Bricks",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "tff:fester_ore",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:rotting_bricks"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

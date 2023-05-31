@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "tff:reetle_queen_antennae"
+    },
+    "title": "Squash 'Em",
+    "description": "Defeat the Reetle Queen",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "tff:reetle_cave",
+  "criteria": {
+    "kill_reetle_queen": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+        	{
+        		"condition": "minecraft:entity_properties",
+        		"predicate": {
+        			"type": "tff:reetle_queen"
+        		},
+        		"entity": "this"
+        	}
+        
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "kill_reetle_queen"
+    ]
+  ]
+}

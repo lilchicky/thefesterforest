@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": {
+      "item": "tff:rotting_log"
+    },
+    "title": "The Fester Forest",
+    "description": "A forest of rot and decay",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "background": "tff:textures/block/rotting_wood.png"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick",
+      "conditions": {}
+    }
+  }
+}

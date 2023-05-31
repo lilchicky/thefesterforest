@@ -40,6 +40,7 @@ public class BugEggs extends Item {
 			
 			beetle.setOwnerUUID(player.getUUID());
 			beetle.setPos(player.getX(), player.getY(), player.getZ());
+			beetle.tame(player);
 			
 			world.addFreshEntity(beetle);
 		}

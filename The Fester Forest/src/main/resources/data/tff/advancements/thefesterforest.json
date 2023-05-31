@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "tff:rottingwood_sapling"
+    },
+    "title": "What a Spooky Place",
+    "description": "Travel to the Fester Forest",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "tff:rotting_bricks",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "from": "minecraft:overworld",
+        "to": "tff:tff"
+      }
+    }
+  }
+}

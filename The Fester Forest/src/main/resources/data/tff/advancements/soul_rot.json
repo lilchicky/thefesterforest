@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "tff:soul_rot"
+    },
+    "title": "The Screams of the Forsaken",
+    "description": "Obtain Soul Rot from a Soul Well",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "tff:soul_well",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:soul_rot"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
