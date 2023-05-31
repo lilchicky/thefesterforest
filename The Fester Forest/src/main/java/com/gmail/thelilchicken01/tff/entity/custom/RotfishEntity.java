@@ -2,33 +2,46 @@ package com.gmail.thelilchicken01.tff.entity.custom;
 
 import java.util.EnumSet;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.FluidTags;
+import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.control.MoveControl;
+import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.MoveTowardsRestrictionGoal;
+import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.ZombieAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
+import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.animal.Turtle;
 import net.minecraft.world.entity.animal.axolotl.Axolotl;
 import net.minecraft.world.entity.monster.Drowned;
 import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.monster.ZombifiedPiglin;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
@@ -54,30 +67,35 @@ public class RotfishEntity extends Monster implements IAnimatable {
 		super(p_33002_, p_33003_);
 		
 		this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
+		this.moveControl = new RotfishEntity.WaterMoveControl(this);
 	}
 	
 	public static AttributeSupplier setAttributes() {
 		return Monster.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 1.00)
-				.add(Attributes.ATTACK_DAMAGE, 1.0f)
-				.add(Attributes.ATTACK_SPEED, 1.0f)
-				.add(Attributes.MOVEMENT_SPEED, 0.01f).build();
+				.add(Attributes.MAX_HEALTH, 35.00)
+				.add(Attributes.ATTACK_DAMAGE, 18.0f)
+				.add(Attributes.ATTACK_SPEED, 2.0f)
+				.add(Attributes.MOVEMENT_SPEED, 0.5f).build();
 	}
 	
 	protected void registerGoals() {
 		
-		MoveTowardsRestrictionGoal movetowardsrestrictiongoal = new MoveTowardsRestrictionGoal(this, 1.0D);
-	    this.randomStrollGoal = new RandomStrollGoal(this, 1.0D, 80);
-	    this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.005, false));
-	    this.goalSelector.addGoal(5, movetowardsrestrictiongoal);
-	    this.goalSelector.addGoal(7, this.randomStrollGoal);
-	    this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
-	    this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Guardian.class, 12.0F, 0.01F));
-	    this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
-	    this.randomStrollGoal.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
-	    movetowardsrestrictiongoal.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
-	    this.targetSelector.addGoal(1, (new NearestAttackableTargetGoal<>(this, Player.class, true)));
+		this.goalSelector.addGoal(2, new RotfishEntity.WaterMeleeAttackGoal(this, 1.005, false));
+	    this.goalSelector.addGoal(4, new RotfishEntity.FishSwimGoal(this));
+	    
+	    this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, RotfishEntity.class)).setAlertOthers(RotfishEntity.class));
+	    this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::okTarget));
 		
+	}
+	
+	public boolean okTarget(@Nullable LivingEntity target) {
+		if (target != null) {
+			return target.isInWater();
+		} 
+		
+		else {
+			return false;
+		}
 	}
 	
 	protected PathNavigation createNavigation(Level world) {
@@ -96,6 +114,41 @@ public class RotfishEntity extends Monster implements IAnimatable {
 
 	public MobType getMobType() {
 		return MobType.WATER;
+	}
+	
+	protected void handleAirSupply(int p_30344_) {
+		if (this.isAlive() && !this.isInWaterOrBubble()) {
+			this.setAirSupply(p_30344_ - 1);
+			if (this.getAirSupply() == -20) {
+				this.setAirSupply(0);
+				this.hurt(DamageSource.DROWN, 2.0F);
+			}
+		} 
+		
+		else {
+			this.setAirSupply(300);
+		}
+
+	}
+	
+	@Override
+	public void baseTick() {
+		int i = this.getAirSupply();
+	    super.baseTick();
+	    this.handleAirSupply(i);
+	}
+	
+	@Override
+	public void aiStep() {
+		if (this.isInWaterOrBubble()) {
+            this.setAirSupply(300);
+         } else if (this.onGround) {
+            this.setDeltaMovement(this.getDeltaMovement().add((double)((this.random.nextFloat() * 2.0F - 1.0F) * 0.4F), 0.5D, (double)((this.random.nextFloat() * 2.0F - 1.0F) * 0.4F)));
+            this.setYRot(this.random.nextFloat() * 360.0F);
+            this.onGround = false;
+            this.hasImpulse = true;
+        }
+		super.aiStep();
 	}
 	
 	protected SoundEvent getAmbientSound() { return SoundEvents.TROPICAL_FISH_AMBIENT; }
@@ -129,5 +182,73 @@ public class RotfishEntity extends Monster implements IAnimatable {
 	public AnimationFactory getFactory() {
 		return this.factory;
 	}
+	
+	static class WaterMeleeAttackGoal extends MeleeAttackGoal {
+		
+		private final RotfishEntity ROTFISH;
+
+		public WaterMeleeAttackGoal(RotfishEntity fish, double p_25553_, boolean p_25554_) {
+			super(fish, p_25553_, p_25554_);
+			this.ROTFISH = fish;
+		}
+		
+		@Override
+		public boolean canUse() {
+			return super.canUse() && this.ROTFISH.okTarget(this.ROTFISH.getTarget());
+		}
+		
+		@Override
+		public boolean canContinueToUse() {
+			return super.canContinueToUse() && this.ROTFISH.okTarget(this.ROTFISH.getTarget());
+		}
+		
+	}
+	
+	static class WaterMoveControl extends MoveControl {
+	      private final RotfishEntity thisFish;
+
+	      WaterMoveControl(RotfishEntity rotfish) {
+	         super(rotfish);
+	         this.thisFish = rotfish;
+	      }
+
+	      public void tick() {
+	         if (this.thisFish.isEyeInFluid(FluidTags.WATER)) {
+	            this.thisFish.setDeltaMovement(this.thisFish.getDeltaMovement().add(0.0D, 0.005D, 0.0D));
+	         }
+
+	         if (this.operation == MoveControl.Operation.MOVE_TO && !this.thisFish.getNavigation().isDone()) {
+	            float f = (float)(this.speedModifier * this.thisFish.getAttributeValue(Attributes.MOVEMENT_SPEED));
+	            this.thisFish.setSpeed(Mth.lerp(0.125F, this.thisFish.getSpeed(), f));
+	            double d0 = this.wantedX - this.thisFish.getX();
+	            double d1 = this.wantedY - this.thisFish.getY();
+	            double d2 = this.wantedZ - this.thisFish.getZ();
+	            if (d1 != 0.0D) {
+	               double d3 = Math.sqrt(d0 * d0 + d1 * d1 + d2 * d2);
+	               this.thisFish.setDeltaMovement(this.thisFish.getDeltaMovement().add(0.0D, (double)this.thisFish.getSpeed() * (d1 / d3) * 0.1D, 0.0D));
+	            }
+
+	            if (d0 != 0.0D || d2 != 0.0D) {
+	               float f1 = (float)(Mth.atan2(d2, d0) * (double)(180F / (float)Math.PI)) - 90.0F;
+	               this.thisFish.setYRot(this.rotlerp(this.thisFish.getYRot(), f1, 90.0F));
+	               this.thisFish.yBodyRot = this.thisFish.getYRot();
+	            }
+
+	         } else {
+	            this.thisFish.setSpeed(0.0F);
+	         }
+	      }
+	   }
+
+	   static class FishSwimGoal extends RandomSwimmingGoal {
+
+	      public FishSwimGoal(RotfishEntity rotfish) {
+	         super(rotfish, 1.0D, 40);
+	      }
+
+	      public boolean canUse() {
+	         return super.canUse();
+	      }
+	   }
 
 }
