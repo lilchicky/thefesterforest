@@ -2,6 +2,7 @@
 	"replace": false,
 	"values": [
 		"tff:frozen_pendant",
-		"tff:heavy_stone"
+		"tff:heavy_stone",
+		"tff:rotfish_fang"
 	]
 }
