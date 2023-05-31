@@ -87,7 +87,7 @@ public class WightEntity extends Monster implements IAnimatable {
 	
 	protected SoundEvent getDeathSound() {return SoundEvents.SKELETON_HURT; }
 	
-	protected float getSoundVolume() {return 0.2f;}
+	protected float getSoundVolume() {return 1.0f;}
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		

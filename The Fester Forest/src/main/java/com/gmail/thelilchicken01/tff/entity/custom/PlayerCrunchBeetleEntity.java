@@ -123,7 +123,7 @@ public class PlayerCrunchBeetleEntity extends TamableAnimal implements IAnimatab
 	
 	protected SoundEvent getDeathSound() {return SoundEvents.SILVERFISH_DEATH; }
 	
-	protected float getSoundVolume() {return 0.2f;}
+	protected float getSoundVolume() {return 1.0f;}
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		

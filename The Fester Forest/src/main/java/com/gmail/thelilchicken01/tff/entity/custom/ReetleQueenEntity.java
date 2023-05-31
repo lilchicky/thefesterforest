@@ -35,7 +35,7 @@ public class ReetleQueenEntity extends Monster implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
 	
-	private int spawnSeconds = 2;
+	private int spawnSeconds = 1;
 	private int spawnCooldown;
 	
 	private boolean pacified = false;
@@ -137,7 +137,7 @@ public class ReetleQueenEntity extends Monster implements IAnimatable {
 	
 	protected SoundEvent getDeathSound() {return SoundEvents.SILVERFISH_DEATH; }
 	
-	protected float getSoundVolume() {return 0.2f;}
+	protected float getSoundVolume() {return 1.0f;}
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
