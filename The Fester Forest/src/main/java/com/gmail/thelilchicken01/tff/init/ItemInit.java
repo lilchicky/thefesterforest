@@ -154,6 +154,11 @@ public class ItemInit {
 			() -> new ForgeSpawnEggItem(ModEntityTypes.AMBECTRUM, 0x02d5d9, 0x45fcff, //Background, Spots
 					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	//Seathrown Skeleton Spawn Egg
+	public static final RegistryObject<Item> SEATHROWN_SKELETON_SPAWN_EGG = register("seathrown_skeleton_spawn_egg", 
+			() -> new ForgeSpawnEggItem(ModEntityTypes.SEATHROWN_SKELETON, 0x3d3d3d, 0x595959, //Background, Spots
+					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	/*
 	 * 
 	 * Volatile Items

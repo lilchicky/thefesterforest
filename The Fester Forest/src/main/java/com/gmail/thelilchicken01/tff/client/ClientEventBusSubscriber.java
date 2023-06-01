@@ -11,6 +11,7 @@ import com.gmail.thelilchicken01.tff.entity.client.PylonRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.ReetleQueenRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.RotfishRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.RottingSkeletonRenderer;
+import com.gmail.thelilchicken01.tff.entity.client.SeathrownSkeletonRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.VolatileGhostRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.WightRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.goop.GoopRenderer;
@@ -25,6 +26,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.PylonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ReetleQueenEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RotfishEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.SeathrownSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.goop.GoopEntity;
@@ -96,6 +98,7 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(ModEntityTypes.GOOP_SMALL.get(), SmallGoopRenderer::new);
 		EntityRenderers.register(ModEntityTypes.ROTFISH.get(), RotfishRenderer::new);
 		EntityRenderers.register(ModEntityTypes.AMBECTRUM.get(), AmbectrumRenderer::new);
+		EntityRenderers.register(ModEntityTypes.SEATHROWN_SKELETON.get(), SeathrownSkeletonRenderer::new);
 		
 		ItemProperties.register(ItemInit.REETLE_ELYTRA.get(), new ResourceLocation(TheFesterForest.MODID, "broken"),
 				(stack, arg1, arg2, arg3) -> ReetleElytra.isUsable(stack) ? 0 : 1);
@@ -118,6 +121,7 @@ public class ClientEventBusSubscriber {
 		event.put(ModEntityTypes.GOOP_SMALL.get(), SmallGoopEntity.setAttributes());
 		event.put(ModEntityTypes.ROTFISH.get(), RotfishEntity.setAttributes());
 		event.put(ModEntityTypes.AMBECTRUM.get(), AmbectrumEntity.setAttributes());
+		event.put(ModEntityTypes.SEATHROWN_SKELETON.get(), SeathrownSkeletonEntity.setAttributes());
 		
 	}
 	

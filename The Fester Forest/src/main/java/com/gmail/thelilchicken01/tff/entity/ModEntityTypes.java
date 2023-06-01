@@ -10,6 +10,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.PylonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ReetleQueenEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RotfishEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.SeathrownSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.goop.GoopEntity;
@@ -107,6 +108,11 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<AmbectrumEntity>> AMBECTRUM =
 			ENTITY_TYPES.register("ambectrum", () -> EntityType.Builder.of(AmbectrumEntity::new, MobCategory.MONSTER)
 					.sized(1.2f, 3.0f).build(new ResourceLocation(TheFesterForest.MODID, "ambectrum").toString()));
+	
+	//Seathrown Skeleton
+	public static final RegistryObject<EntityType<SeathrownSkeletonEntity>> SEATHROWN_SKELETON =
+			ENTITY_TYPES.register("seathrown_skeleton", () -> EntityType.Builder.of(SeathrownSkeletonEntity::new, MobCategory.MONSTER)
+					.sized(1.2f, 1.4f).build(new ResourceLocation(TheFesterForest.MODID, "seathrown_skeleton").toString()));
 	
 	//Brittle Branch Bullet
 	

@@ -188,6 +188,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.ELECTRIC_PICKAXE.get(), "Electric Pickaxe");
 		add(ItemInit.AMBECTRUM_DONUT.get(), "Ambectrum Donut");
 		add(ItemInit.AMBECTRUM_JELLY.get(), "Ambectrum Jelly");
+		add(ItemInit.SEATHROWN_SKELETON_SPAWN_EGG.get(), "Seathrown Skeleton Spawn Egg");
+		add(ModEntityTypes.SEATHROWN_SKELETON.get(), "Seathrown Skeleton");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

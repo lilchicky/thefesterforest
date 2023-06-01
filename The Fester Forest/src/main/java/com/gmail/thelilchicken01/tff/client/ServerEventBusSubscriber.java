@@ -11,6 +11,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.PylonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ReetleQueenEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RotfishEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RottingSkeletonEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.SeathrownSkeletonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.VolatileGhostEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.WightEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.goop.GoopEntity;
@@ -46,6 +47,7 @@ public class ServerEventBusSubscriber {
 		event.put(ModEntityTypes.GOOP_SMALL.get(), SmallGoopEntity.setAttributes());
 		event.put(ModEntityTypes.ROTFISH.get(), RotfishEntity.setAttributes());
 		event.put(ModEntityTypes.AMBECTRUM.get(), AmbectrumEntity.setAttributes());
+		event.put(ModEntityTypes.SEATHROWN_SKELETON.get(), SeathrownSkeletonEntity.setAttributes());
 		
 	}
 	
