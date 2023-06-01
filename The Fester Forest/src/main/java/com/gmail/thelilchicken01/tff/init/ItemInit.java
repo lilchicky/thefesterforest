@@ -376,7 +376,7 @@ public class ItemInit {
 	
 	//Shock Sword
 	public static final RegistryObject<Item> SHOCK_SWORD = register("shock_sword", 
-			() -> new ShockSword(ModTiers.ELECTRIC, -2, -2.4f, new Properties().tab(TheFesterForest.TFF_TAB)));
+			() -> new ShockSword(ModTiers.ELECTRIC, -5, -1.8f, new Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Electric Pickaxe
 	public static final RegistryObject<Item> ELECTRIC_PICKAXE = register("electric_pickaxe",
