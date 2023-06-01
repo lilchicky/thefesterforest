@@ -60,6 +60,7 @@ import com.gmail.thelilchicken01.tff.item.melee.BoneScythe;
 import com.gmail.thelilchicken01.tff.item.melee.ForgemasterHammer;
 import com.gmail.thelilchicken01.tff.item.melee.GoopySword;
 import com.gmail.thelilchicken01.tff.item.melee.LifeScythe;
+import com.gmail.thelilchicken01.tff.item.melee.ShockSword;
 import com.gmail.thelilchicken01.tff.item.misc.BugEggs;
 import com.gmail.thelilchicken01.tff.item.misc.CatalystItem;
 import com.gmail.thelilchicken01.tff.item.mixed.ShadowBow;
@@ -364,6 +365,16 @@ public class ItemInit {
 	//Ancient Greatsword
 	public static final RegistryObject<Item> ANCIENT_GREATSWORD = register("ancient_greatsword", 
 			() -> new AncientGreatsword(ModTiers.METAL, -1, -3f, new Properties().tab(TheFesterForest.TFF_TAB).durability(550)));
+	
+	/*
+	 * 
+	 * Ambectrum
+	 * 
+	 */
+	
+	//Shock Sword
+	public static final RegistryObject<Item> SHOCK_SWORD = register("shock_sword", 
+			() -> new ShockSword(ModTiers.ELECTRIC, -2, -2.4f, new Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	/*
 	 * 

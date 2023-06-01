@@ -9,6 +9,14 @@ import net.minecraftforge.common.ForgeTier;
 
 public class ModTiers {
 	
+	/*
+	 * NETHERITE(4, 2031, 9.0F, 4.0F, 15, () -> {
+      	return Ingredient.of(Items.NETHERITE_INGOT);
+   	   });
+   	   
+   	   Level, Durability, Speed, Damage, Enchantability
+	 */
+	
 	public static final ForgeTier VOLATILE = new ForgeTier(4, 1600, 0.0F, 
 			10.0F, 15, BlockTags.NEEDS_DIAMOND_TOOL, () -> {
 	    return Ingredient.of(Items.BLAZE_POWDER);
@@ -37,6 +45,11 @@ public class ModTiers {
 	public static final ForgeTier BONE = new ForgeTier(4, 1600, 24.0F, 
 			10.0F, 15, BlockTags.NEEDS_DIAMOND_TOOL, () -> {
 	    return Ingredient.of(Items.BONE);
+	});
+	
+	public static final ForgeTier ELECTRIC = new ForgeTier(4, 875, 9.0F, 
+			10.0F, 25, BlockTags.NEEDS_DIAMOND_TOOL, () -> {
+	    return Ingredient.of(Items.IRON_INGOT);
 	});
 
 }
