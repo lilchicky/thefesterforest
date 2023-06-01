@@ -1,5 +1,7 @@
 {
   "block.tff.compressed_rotting_sand": "Compressed Rotting Sand",
+  "block.tff.compressed_rotting_sand_slab": "Compressed Rotting Sand Slab",
+  "block.tff.compressed_rotting_sand_stairs": "Compressed Rotting Sand Stairs",
   "block.tff.cracked_rotting_stone": "Cracked Rotting Stone",
   "block.tff.crushed_rotting_stone": "Crushed Rotting Stone",
   "block.tff.fester_brick_slab": "Fester Brick Slab",

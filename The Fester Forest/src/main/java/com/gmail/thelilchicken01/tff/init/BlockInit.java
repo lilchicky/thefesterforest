@@ -78,6 +78,17 @@ public class BlockInit {
 			.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	//Compressed Rotting Sand Stairs
+	public static final RegistryObject<Block> COMPRESSED_ROTTING_SAND_STAIRS = register("compressed_rotting_sand_stairs", 
+			() -> new StairBlock(() -> BlockInit.COMPRESSED_ROTTING_SAND.get().defaultBlockState(), 
+					BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).requiresCorrectToolForDrops()), 
+					object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+			
+	//Compressed Rotting Sand Slab
+	public static final RegistryObject<Block> COMPRESSED_ROTTING_SAND_SLAB = register("compressed_rotting_sand_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	//Crushed Rotting Stone
 	public static final RegistryObject<Block> CRUSHED_ROTTING_STONE = register("crushed_rotting_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).sound(SoundType.STONE).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));

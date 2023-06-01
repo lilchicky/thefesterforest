@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "a  ",
+    "aa ",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "tff:compressed_rotting_sand"
+    }
+  },
+  "result": {
+    "item": "tff:compressed_rotting_sand_stairs",
+    "count": 4
+  }
+}

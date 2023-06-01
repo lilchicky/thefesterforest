@@ -56,6 +56,8 @@ public class ModLootTableProvider extends BaseLootTableProvider {
 		dropSelf(BlockInit.SOUL_ROT.get());
 		dropSelf(BlockInit.ROTTING_SAND.get());
 		dropSelf(BlockInit.COMPRESSED_ROTTING_SAND.get());
+		dropSelf(BlockInit.COMPRESSED_ROTTING_SAND_STAIRS.get());
+		dropSelf(BlockInit.COMPRESSED_ROTTING_SAND_SLAB.get());
 		
 		//silkTouch(BlockInit.volatileOre.get(), Items.BLAZE_POWDER, 1, 4);
 		

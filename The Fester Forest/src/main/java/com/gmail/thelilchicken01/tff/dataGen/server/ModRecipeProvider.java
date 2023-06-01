@@ -76,6 +76,24 @@ public class ModRecipeProvider extends RecipeProvider {
 					new ResourceLocation(TheFesterForest.MODID, 
 							BlockInit.ROTTING_STONE_BRICK_SLAB.get().getRegistryName().getPath()));
 		
+		//Compressed Rotting Sand Stairs
+		ShapedRecipeBuilder.shaped(BlockInit.COMPRESSED_ROTTING_SAND_STAIRS.get(), 4)
+			.define('a', BlockInit.COMPRESSED_ROTTING_SAND.get().asItem())
+			.unlockedBy("has_" + BlockInit.COMPRESSED_ROTTING_SAND.get().getRegistryName(), 
+					has(BlockInit.COMPRESSED_ROTTING_SAND.get().asItem()))
+			.pattern("a  ").pattern("aa ").pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.COMPRESSED_ROTTING_SAND_STAIRS.get().getRegistryName().getPath()));
+		
+		//Compressed Rotting Sand Slab
+		ShapedRecipeBuilder.shaped(BlockInit.COMPRESSED_ROTTING_SAND_SLAB.get(), 6)
+			.define('a', BlockInit.COMPRESSED_ROTTING_SAND.get().asItem())
+			.unlockedBy("has_" + BlockInit.COMPRESSED_ROTTING_SAND.get().getRegistryName(), 
+					has(BlockInit.COMPRESSED_ROTTING_SAND.get().asItem()))
+			.pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.COMPRESSED_ROTTING_SAND_SLAB.get().getRegistryName().getPath()));
+		
 		//Stone Brick Walls
 		ShapedRecipeBuilder.shaped(BlockInit.ROTTING_STONE_BRICK_WALL.get(), 6)
 			.define('a', BlockInit.ROTTING_STONE_BRICKS.get().asItem())

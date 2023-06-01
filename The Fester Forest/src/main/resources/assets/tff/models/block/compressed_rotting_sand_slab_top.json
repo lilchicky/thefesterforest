@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/outer_stairs",
+  "parent": "minecraft:block/slab_top",
   "textures": {
     "bottom": "tff:block/compressed_rotting_sand",
     "top": "tff:block/compressed_rotting_sand",

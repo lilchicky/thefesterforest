@@ -192,6 +192,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ModEntityTypes.SEATHROWN_SKELETON.get(), "Seathrown Skeleton");
 		add(BlockInit.ROTTING_SAND.get(), "Rotting Sand");
 		add(BlockInit.COMPRESSED_ROTTING_SAND.get(), "Compressed Rotting Sand");
+		add(BlockInit.COMPRESSED_ROTTING_SAND_STAIRS.get(), "Compressed Rotting Sand Stairs");
+		add(BlockInit.COMPRESSED_ROTTING_SAND_SLAB.get(), "Compressed Rotting Sand Slab");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");
