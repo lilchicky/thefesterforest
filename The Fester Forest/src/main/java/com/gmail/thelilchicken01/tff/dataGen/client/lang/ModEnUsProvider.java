@@ -184,6 +184,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.ELECTRIC_CHARGE.get(), "Electric Charge");
 		add(ModEffects.PARALYSIS.get(), "Paralysis");
 		add(ItemInit.SHOCK_SWORD.get(), "Shock Sword");
+		add(ItemInit.SHOCK_NECKLACE.get(), "Shock Necklace");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

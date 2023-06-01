@@ -123,6 +123,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.COOKED_ROTFISH.get());
 		oneLayerItem(ItemInit.ROTFISH_FANG.get());
 		oneLayerItem(ItemInit.ELECTRIC_CHARGE.get());
+		oneLayerItem(ItemInit.SHOCK_NECKLACE.get());
 		
 		//Simple handheld items
 		handheldItem(ItemInit.BONE_PICKAXE.get());

@@ -39,6 +39,7 @@ import com.gmail.thelilchicken01.tff.item.dull.ReetleQueenAntennae;
 import com.gmail.thelilchicken01.tff.item.dull.ReetleReagents;
 import com.gmail.thelilchicken01.tff.item.dull.ReetleShellPlates;
 import com.gmail.thelilchicken01.tff.item.dull.RotfishFang;
+import com.gmail.thelilchicken01.tff.item.dull.ShockNecklace;
 import com.gmail.thelilchicken01.tff.item.dull.SlipperyGoop;
 import com.gmail.thelilchicken01.tff.item.food.BugCarcass;
 import com.gmail.thelilchicken01.tff.item.food.CookedRotfish;
@@ -429,6 +430,10 @@ public class ItemInit {
 	//Rotfish Fang
 	public static final RegistryObject<Item> ROTFISH_FANG = register("rotfish_fang",
 			() -> new RotfishFang());
+	
+	//Shock Necklace
+	public static final RegistryObject<Item> SHOCK_NECKLACE = register("shock_necklace",
+			() -> new ShockNecklace());
 	
 	/*
 	 * 
