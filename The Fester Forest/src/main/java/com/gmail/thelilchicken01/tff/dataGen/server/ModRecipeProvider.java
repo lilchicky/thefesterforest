@@ -232,8 +232,12 @@ public class ModRecipeProvider extends RecipeProvider {
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.MOSSY_ROTTING_STONE.get().getRegistryName().getPath()));
 		
 		ShapelessRecipeBuilder.shapeless(Items.SLIME_BALL, 4).requires(ItemInit.ROTTING_SLIMEBALL.get())
-		.unlockedBy("has_" + ItemInit.ROTTING_SLIMEBALL.get().getRegistryName(), has(ItemInit.ROTTING_SLIMEBALL.get().asItem()))
-		.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.ROTTING_SLIMEBALL.get().getRegistryName().getPath()));
+			.unlockedBy("has_" + ItemInit.ROTTING_SLIMEBALL.get().getRegistryName(), has(ItemInit.ROTTING_SLIMEBALL.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.ROTTING_SLIMEBALL.get().getRegistryName().getPath()));
+		
+		ShapelessRecipeBuilder.shapeless(ItemInit.AMBECTRUM_DONUT.get(), 1).requires(ItemInit.AMBECTRUM_JELLY.get()).requires(Items.WHEAT).requires(Items.SUGAR)
+			.unlockedBy("has_" + ItemInit.AMBECTRUM_JELLY.get().getRegistryName(), has(ItemInit.AMBECTRUM_JELLY.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.AMBECTRUM_DONUT.get().getRegistryName().getPath()));
 		
 		// Purifying Rotten Flesh
 		ShapelessRecipeBuilder.shapeless(Items.LEATHER, 3)

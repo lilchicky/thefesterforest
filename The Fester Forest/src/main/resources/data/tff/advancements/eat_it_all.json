@@ -90,6 +90,26 @@
 		  ]
         }
       }
+    },
+    "ambectrum_jelly": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:ambectrum_jelly"
+		  ]
+        }
+      }
+    },
+    "ambectrum_donut": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:ambectrum_donut"
+		  ]
+        }
+      }
     }
   },
   "requirements": [
@@ -116,6 +136,12 @@
   	],
   	[
   		"mechanical_apple"
+  	],
+  	[
+  		"ambectrum_jelly"
+  	],
+  	[
+  		"ambectrum_donut"
   	]
   ]
 }

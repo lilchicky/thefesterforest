@@ -186,6 +186,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.SHOCK_SWORD.get(), "Shock Sword");
 		add(ItemInit.SHOCK_NECKLACE.get(), "Shock Necklace");
 		add(ItemInit.ELECTRIC_PICKAXE.get(), "Electric Pickaxe");
+		add(ItemInit.AMBECTRUM_DONUT.get(), "Ambectrum Donut");
+		add(ItemInit.AMBECTRUM_JELLY.get(), "Ambectrum Jelly");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

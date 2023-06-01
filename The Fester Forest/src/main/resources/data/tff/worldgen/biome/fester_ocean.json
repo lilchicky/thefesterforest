@@ -19,8 +19,14 @@
       		{
         		"type": "tff:rotfish",
         		"weight": 100,
-        		"minCount": 3,
-        		"maxCount": 5
+        		"minCount": 5,
+        		"maxCount": 8
+      		},
+      		{
+        		"type": "tff:ambectrum",
+        		"weight": 30,
+        		"minCount": 1,
+        		"maxCount": 1
       		}
       	]
   	

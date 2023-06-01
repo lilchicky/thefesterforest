@@ -41,6 +41,8 @@ import com.gmail.thelilchicken01.tff.item.dull.ReetleShellPlates;
 import com.gmail.thelilchicken01.tff.item.dull.RotfishFang;
 import com.gmail.thelilchicken01.tff.item.dull.ShockNecklace;
 import com.gmail.thelilchicken01.tff.item.dull.SlipperyGoop;
+import com.gmail.thelilchicken01.tff.item.food.AmbectrumDonut;
+import com.gmail.thelilchicken01.tff.item.food.AmbectrumJelly;
 import com.gmail.thelilchicken01.tff.item.food.BugCarcass;
 import com.gmail.thelilchicken01.tff.item.food.CookedRotfish;
 import com.gmail.thelilchicken01.tff.item.food.GoopyJello;
@@ -469,6 +471,14 @@ public class ItemInit {
 	//Cooked Rotfish
 	public static final RegistryObject<Item> COOKED_ROTFISH = register("cooked_rotfish", 
 			() -> new CookedRotfish());
+	
+	//Ambectrum Jelly
+	public static final RegistryObject<Item> AMBECTRUM_JELLY = register("ambectrum_jelly", 
+			() -> new AmbectrumJelly());
+		
+	//Ambectrum Donut
+	public static final RegistryObject<Item> AMBECTRUM_DONUT = register("ambectrum_donut", 
+			() -> new AmbectrumDonut());
 	
 	//Volatile Apple
 	public static final RegistryObject<Item> VOLATILE_APPLE = register("volatile_apple", 

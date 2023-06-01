@@ -8,7 +8,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
 c5defbedf25b6ecf36bf55b38b2ff99beff20207 assets/tff/blockstates/soul_rot.json
-4db3efc888c933ed3fbd02acb3e4fe6aecd17877 assets/tff/lang/en_us.json
+2b60c45e275e1265c27ab4c5d452386a570f5cbf assets/tff/lang/en_us.json
 74fa2fd936ff89c42c7a00a07dbdae54f43db419 assets/tff/models/block/cracked_rotting_stone.json
 24c646b7cae5aa575669209b81e20029ad8d223d assets/tff/models/block/crushed_rotting_stone.json
 76c8c0d9d0f865e28054565ba1f9f30e9c98f3d2 assets/tff/models/block/fester_ore.json
@@ -19,6 +19,8 @@ a321e56fb7e0771726b5b69494f272ccb2a8a170 assets/tff/models/block/rotting_bricks.
 8b5defa86c0e94080119bd1760e5ebd6180d99ac assets/tff/models/block/rotting_stone_bricks.json
 50002942b00c9698317479d54c6b900960f472d2 assets/tff/models/block/slimy_planks.json
 03a8f0dbfe7709003477da38d92daf86bb7528ca assets/tff/models/block/soul_rot.json
+32c2990eac992ecaf61c7602a37bb6d1f69a0fcc assets/tff/models/item/ambectrum_donut.json
+854940d999ddc8f2f8441f0e983f43b2416a8150 assets/tff/models/item/ambectrum_jelly.json
 1580673c62d0d4b747f0b32aa6a5282d772e81b7 assets/tff/models/item/ancient_whistle.json
 d71bc059265d7ccdce526415ecbca73f58ca93b4 assets/tff/models/item/angelic_whistle.json
 48e4a553c17534110e35c7b5d67380024bfc9e0e assets/tff/models/item/banshee_boots.json
@@ -113,6 +115,7 @@ e92868a1b5b0771db281a142262ff216110551f3 data/tff/advancements/recipes/misc/rott
 d8fe739909a9d51b66dc74aab244dd66561eb1c9 data/tff/advancements/recipes/misc/sickening_flower_to_magenta_dye.json
 552847576df2166bdb35f4d34b577e29acc9fc4f data/tff/advancements/recipes/misc/slimy_bell_to_lime_dye.json
 d30f3cd523fadad37354ac9f39923d43708784ee data/tff/advancements/recipes/misc/weeping_grass_to_blue_dye.json
+fb54d5c5d64f8a5a9f9bd72a3d1955ed70200bf0 data/tff/advancements/recipes/tff/ambectrum_donut.json
 abaaea0d8800b4b5054e546fd3fb5adefff5f0aa data/tff/advancements/recipes/tff/angelic_whistle.json
 3760d735f96e730636bb04563a850c49a724de17 data/tff/advancements/recipes/tff/fester_brick_slab.json
 4c88fd3dcd7aa76df87755ada7c931ccc4d0e887 data/tff/advancements/recipes/tff/fester_brick_stairs.json
@@ -180,6 +183,7 @@ eada62fdb8938ea1ee9debe9ef0af0cc5659a56b data/tff/loot_tables/blocks/slimy_stair
 57660577fd54192aeaab860f4aa2715159816a27 data/tff/loot_tables/blocks/stripped_slimy_log.json
 0059ceadba454e7194d77198e059ef4c2342153a data/tff/loot_tables/blocks/stripped_slimy_wood.json
 ed623e982e5b0c19b76b7fdd5830b1038d7684be data/tff/loot_tables/blocks/weeping_grass.json
+f3bd56dca76299aac9a88398b0dddf35bafcf843 data/tff/recipes/ambectrum_donut.json
 904f2ddd25972afd29bff69847afd4b0352909da data/tff/recipes/angelic_whistle.json
 12336b616f5bfb4928881fc2a7fc6e35ce93bb21 data/tff/recipes/fester_brick_slab.json
 1324f3265ea69ebadd9ba0e1a26d6d718199cf2c data/tff/recipes/fester_brick_stairs.json
