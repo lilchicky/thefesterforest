@@ -94,6 +94,15 @@ public class ModRecipeProvider extends RecipeProvider {
 					new ResourceLocation(TheFesterForest.MODID, 
 							BlockInit.COMPRESSED_ROTTING_SAND_SLAB.get().getRegistryName().getPath()));
 		
+		//Compressed Rotting Sand Wall
+		ShapedRecipeBuilder.shaped(BlockInit.COMPRESSED_ROTTING_SAND_WALL.get(), 6)
+			.define('a', BlockInit.COMPRESSED_ROTTING_SAND.get().asItem())
+			.unlockedBy("has_" + BlockInit.COMPRESSED_ROTTING_SAND.get().getRegistryName(), 
+					has(BlockInit.COMPRESSED_ROTTING_SAND.get().asItem()))
+			.pattern("aaa").pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.COMPRESSED_ROTTING_SAND_WALL.get().getRegistryName().getPath()));
+		
 		//Stone Brick Walls
 		ShapedRecipeBuilder.shaped(BlockInit.ROTTING_STONE_BRICK_WALL.get(), 6)
 			.define('a', BlockInit.ROTTING_STONE_BRICKS.get().asItem())

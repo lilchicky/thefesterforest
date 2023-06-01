@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tff:rotting_stone_brick_wall"
+    "tff:rotting_stone_brick_wall",
+    "tff:compressed_rotting_sand_wall"
   ]
 }

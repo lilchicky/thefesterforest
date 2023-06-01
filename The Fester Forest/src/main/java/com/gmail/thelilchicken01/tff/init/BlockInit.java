@@ -94,6 +94,11 @@ public class BlockInit {
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	//Compressed Rotting Sand Wall
+	public static final RegistryObject<Block> COMPRESSED_ROTTING_SAND_WALL = register("compressed_rotting_sand_wall", 
+			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	//Crushed Rotting Stone
 	public static final RegistryObject<Block> CRUSHED_ROTTING_STONE = register("crushed_rotting_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).sound(SoundType.STONE).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));

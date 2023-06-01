@@ -12,6 +12,7 @@
 		"tff:fester_brick_slab",
 		"tff:compressed_rotting_sand",
 		"tff:compressed_rotting_sand_stairs",
-		"tff:compressed_rotting_sand_slab"
+		"tff:compressed_rotting_sand_slab",
+		"tff:compressed_rotting_sand_wall"
 	]
 }
