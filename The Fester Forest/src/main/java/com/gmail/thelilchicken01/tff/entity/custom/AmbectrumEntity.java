@@ -45,7 +45,7 @@ public class AmbectrumEntity extends Monster implements IAnimatable {
 	
 	protected RandomStrollGoal randomStrollGoal;
 	
-	private double shootCooldown = 2; // default shot cooldown in seconds, before modifiers
+	private double shootCooldown = 4; // default shot cooldown in seconds, before modifiers
 	private int shootCounter;
 	private int shootDamage = 15;
 
