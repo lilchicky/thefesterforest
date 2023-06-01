@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "tff:reetle_queen_antennae"
+    },
+    "title": "King of the Castle",
+    "description": "King of the Castle",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "tff:reetle_cave",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:reetle_queen_antennae"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

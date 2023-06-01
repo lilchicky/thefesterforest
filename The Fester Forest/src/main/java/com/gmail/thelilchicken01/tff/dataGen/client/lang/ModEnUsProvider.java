@@ -178,6 +178,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.RAW_ROTFISH.get(), "Raw Rotfish");
 		add(ItemInit.COOKED_ROTFISH.get(), "Cooked Rotfish");
 		add(ItemInit.ROTFISH_FANG.get(), "Rotfish Fang");
+		add(ItemInit.AMBECTRUM_SPAWN_EGG.get(), "Ambectrum Spawn Egg");
+		add(ModEntityTypes.AMBECTRUM.get(), "Ambectrum");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

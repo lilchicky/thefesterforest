@@ -2,6 +2,7 @@ package com.gmail.thelilchicken01.tff.client;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
+import com.gmail.thelilchicken01.tff.entity.custom.AmbectrumEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
@@ -44,6 +45,7 @@ public class ServerEventBusSubscriber {
 		event.put(ModEntityTypes.GOOP_MEDIUM.get(), MediumGoopEntity.setAttributes());
 		event.put(ModEntityTypes.GOOP_SMALL.get(), SmallGoopEntity.setAttributes());
 		event.put(ModEntityTypes.ROTFISH.get(), RotfishEntity.setAttributes());
+		event.put(ModEntityTypes.AMBECTRUM.get(), AmbectrumEntity.setAttributes());
 		
 	}
 	

@@ -1,6 +1,7 @@
 package com.gmail.thelilchicken01.tff.entity;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
+import com.gmail.thelilchicken01.tff.entity.custom.AmbectrumEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
@@ -16,6 +17,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.goop.MediumGoopEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.goop.SmallGoopEntity;
 import com.gmail.thelilchicken01.tff.entity.projectile.BoneCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.BranchCharge;
+import com.gmail.thelilchicken01.tff.entity.projectile.ElectricCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
 
 import net.minecraft.resources.ResourceLocation;
@@ -34,6 +36,7 @@ public class ModEntityTypes {
 	public static RegistryObject<EntityType<BranchCharge>> branch_charge;
 	public static RegistryObject<EntityType<BoneCharge>> bone_charge;
 	public static RegistryObject<EntityType<MeteorCharge>> meteor_charge;
+	public static RegistryObject<EntityType<ElectricCharge>> electric_charge;
 	
 	//Rotting Skeleton
 	public static final RegistryObject<EntityType<RottingSkeletonEntity>> ROTTING_SKELETON =
@@ -98,7 +101,12 @@ public class ModEntityTypes {
 	//Rotfish
 	public static final RegistryObject<EntityType<RotfishEntity>> ROTFISH =
 			ENTITY_TYPES.register("rotfish", () -> EntityType.Builder.of(RotfishEntity::new, MobCategory.MONSTER)
-					.sized(1.0f * 1.0f, 1.0f).build(new ResourceLocation(TheFesterForest.MODID, "rotfish").toString()));
+					.sized(1.0f, 1.0f).build(new ResourceLocation(TheFesterForest.MODID, "rotfish").toString()));
+	
+	//Ambectrum
+	public static final RegistryObject<EntityType<AmbectrumEntity>> AMBECTRUM =
+			ENTITY_TYPES.register("ambectrum", () -> EntityType.Builder.of(AmbectrumEntity::new, MobCategory.MONSTER)
+					.sized(1.2f, 3.0f).build(new ResourceLocation(TheFesterForest.MODID, "ambectrum").toString()));
 	
 	//Brittle Branch Bullet
 	
@@ -125,6 +133,15 @@ public class ModEntityTypes {
 				.<MeteorCharge>of(MeteorCharge::new, MobCategory.MISC)
 				.sized(0.4125f, 0.4125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
 				.build(TheFesterForest.MODID + ":meteor_charge"));
+	}
+	
+	//Electric Charge
+	
+	static {
+		electric_charge = ENTITY_TYPES.register("electric_charge", () -> EntityType.Builder
+				.<ElectricCharge>of(ElectricCharge::new, MobCategory.MISC)
+				.sized(0.4125f, 0.4125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
+				.build(TheFesterForest.MODID + ":electric_charge"));
 	}
 	
 	

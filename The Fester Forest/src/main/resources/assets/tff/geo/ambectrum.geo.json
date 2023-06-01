@@ -1,0 +1,70 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "tentacles",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "tentacles_north",
+					"parent": "tentacles",
+					"pivot": [0, 30, -7],
+					"cubes": [
+						{"origin": [-7, 11, -7], "size": [2, 20, 0], "uv": [52, 32]},
+						{"origin": [-3, 7, -7], "size": [2, 24, 0], "uv": [40, 32]},
+						{"origin": [1, 9, -7], "size": [2, 22, 0], "uv": [48, 32]},
+						{"origin": [5, 4, -7], "size": [2, 27, 0], "uv": [32, 32]}
+					]
+				},
+				{
+					"name": "tentacles_south",
+					"parent": "tentacles",
+					"pivot": [0, 30, 7],
+					"cubes": [
+						{"origin": [5, 5, 7], "size": [2, 26, 0], "uv": [36, 32]},
+						{"origin": [1, 1, 7], "size": [2, 30, 0], "uv": [8, 32]},
+						{"origin": [-3, 8, 7], "size": [2, 23, 0], "uv": [44, 32]},
+						{"origin": [-7, 3, 7], "size": [2, 28, 0], "uv": [20, 32]}
+					]
+				},
+				{
+					"name": "tentacles_west",
+					"parent": "tentacles",
+					"pivot": [7, 30, 0.33333],
+					"cubes": [
+						{"origin": [7, 6, -5], "size": [0, 25, 2], "uv": [24, 30]},
+						{"origin": [7, 2, -1], "size": [0, 29, 2], "uv": [4, 30]},
+						{"origin": [7, 4, 4], "size": [0, 27, 2], "uv": [12, 30]}
+					]
+				},
+				{
+					"name": "tentacles_east",
+					"parent": "tentacles",
+					"pivot": [-7, 30, 0.33333],
+					"cubes": [
+						{"origin": [-7, 6, 4], "size": [0, 25, 2], "uv": [28, 30]},
+						{"origin": [-7, 1, -1], "size": [0, 30, 2], "uv": [0, 30]},
+						{"origin": [-7, 4, -5], "size": [0, 27, 2], "uv": [16, 30]}
+					]
+				},
+				{
+					"name": "body",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-8, 30, -8], "size": [16, 16, 16], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

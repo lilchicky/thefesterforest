@@ -66,6 +66,7 @@ import com.gmail.thelilchicken01.tff.item.mixed.ShadowBow;
 import com.gmail.thelilchicken01.tff.item.mixed.VolatileSword;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
+import com.gmail.thelilchicken01.tff.item.projectile.ElectricShot;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
 import com.gmail.thelilchicken01.tff.item.tool.BonePickaxe;
 import com.gmail.thelilchicken01.tff.item.tool.GoopyStick;
@@ -141,6 +142,11 @@ public class ItemInit {
 	//Rotfish Spawn Egg
 	public static final RegistryObject<Item> ROTFISH_SPAWN_EGG = register("rotfish_spawn_egg", 
 			() -> new ForgeSpawnEggItem(ModEntityTypes.ROTFISH, 0x7b32a8, 0x4325b0, //Background, Spots
+					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Ambectrum Spawn Egg
+	public static final RegistryObject<Item> AMBECTRUM_SPAWN_EGG = register("ambectrum_spawn_egg", 
+			() -> new ForgeSpawnEggItem(ModEntityTypes.AMBECTRUM, 0x02d5d9, 0x45fcff, //Background, Spots
 					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	/*
@@ -487,6 +493,10 @@ public class ItemInit {
 	//Meteor
 	public static final RegistryObject<Meteor> METEOR_CHARGE = register("meteor_charge",
 			() -> new Meteor(new Properties().stacksTo(1), 15));
+	
+	//Electric Charge
+	public static final RegistryObject<ElectricShot> ELECTRIC_CHARGE = register("electric_charge",
+			() -> new ElectricShot(new Properties().stacksTo(1), 15));
 	
 	/*
 	 * 
