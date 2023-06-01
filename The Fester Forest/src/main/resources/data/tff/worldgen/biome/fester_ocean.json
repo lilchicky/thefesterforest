@@ -24,9 +24,15 @@
       		},
       		{
         		"type": "tff:ambectrum",
-        		"weight": 30,
+        		"weight": 40,
         		"minCount": 1,
         		"maxCount": 1
+      		},
+      		{
+        		"type": "tff:seathrown_skeleton",
+        		"weight": 100,
+        		"minCount": 2,
+        		"maxCount": 4
       		}
       	]
   	
