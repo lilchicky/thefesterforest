@@ -6,6 +6,7 @@ import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.block.ModFlammableRotatedPillarBlock;
 import com.gmail.thelilchicken01.tff.block.RottingFlower;
 import com.gmail.thelilchicken01.tff.block.RottingGraveDirt;
+import com.gmail.thelilchicken01.tff.block.RottingSand;
 import com.gmail.thelilchicken01.tff.block.RottingwoodSapling;
 import com.gmail.thelilchicken01.tff.block.SickeningFlower;
 import com.gmail.thelilchicken01.tff.block.SlimyBell;
@@ -66,6 +67,10 @@ public class BlockInit {
 	
 	//Grave Rotting Dirt
 	public static final RegistryObject<Block> ROTTING_GRAVE_DIRT = register("rotting_grave_dirt", () -> new RottingGraveDirt(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Rotting Sand
+	public static final RegistryObject<Block> ROTTING_SAND = register("rotting_sand", () -> new RottingSand(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Crushed Rotting Stone

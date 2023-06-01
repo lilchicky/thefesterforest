@@ -190,6 +190,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.AMBECTRUM_JELLY.get(), "Ambectrum Jelly");
 		add(ItemInit.SEATHROWN_SKELETON_SPAWN_EGG.get(), "Seathrown Skeleton Spawn Egg");
 		add(ModEntityTypes.SEATHROWN_SKELETON.get(), "Seathrown Skeleton");
+		add(BlockInit.ROTTING_SAND.get(), "Rotting Sand");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

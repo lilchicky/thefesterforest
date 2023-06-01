@@ -4,6 +4,7 @@
 		"tff:rotting_dirt",
 		"tff:rotting_grass",
 		"tff:rotting_grave_dirt",
-		"tff:soul_rot"
+		"tff:soul_rot",
+		"tff:rotting_sand"
 	]
 }

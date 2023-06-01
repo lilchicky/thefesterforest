@@ -3017,7 +3017,7 @@
               "then_run": {
                 "type": "minecraft:block",
                 "result_state": {
-                  "Name": "tff:rotting_dirt"
+                  "Name": "tff:rotting_sand"
                 }
               }
             },
