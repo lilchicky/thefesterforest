@@ -1,6 +1,7 @@
 package com.gmail.thelilchicken01.tff.entity.projectile;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
+import com.gmail.thelilchicken01.tff.effect.ModEffects;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.item.projectile.ElectricShot;
 
@@ -31,7 +32,9 @@ public class ElectricCharge extends Fireball {
 	protected double knockbackStrength = 0.1;
 	protected int ticksSinceFired;
 	protected LivingEntity target;
-	protected int effectDuration = 3;
+	protected int effectDuration = 2;
+	
+	protected Vec3 startingVelocity = new Vec3(0.0, 0.0, 0.0);
 
 	public ElectricCharge(EntityType<? extends ElectricCharge> p_i50160_1_, Level p_i50160_2_) {
 		super(p_i50160_1_, p_i50160_2_);
@@ -62,8 +65,21 @@ public class ElectricCharge extends Fireball {
 			if (ticksSinceFired > 160 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
 				remove(RemovalReason.KILLED);
 			}
+			this.setDeltaMovement(startingVelocity);
 		}
 		
+	}
+	
+	public void setDefaultVelocity(Vec3 velocity) {
+		
+		startingVelocity = velocity;
+		
+	}
+	
+	@Override
+	protected float getBlockSpeedFactor() {
+		
+		return 1.0f;
 	}
 	
 	@Override
@@ -98,7 +114,7 @@ public class ElectricCharge extends Fireball {
 
 				if (shooter instanceof LivingEntity) doEnchantDamageEffects((LivingEntity)shooter, target);
 				
-				livingTarget.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, effectDuration * 20, 24));
+				livingTarget.addEffect(new MobEffectInstance(ModEffects.PARALYSIS.get(), effectDuration * 20, 0));
 				
 				bullet.onLivingEntityHit(this, livingTarget, shooter, level);
 			}

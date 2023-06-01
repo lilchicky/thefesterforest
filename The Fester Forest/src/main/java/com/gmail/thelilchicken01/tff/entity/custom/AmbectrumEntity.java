@@ -59,7 +59,7 @@ public class AmbectrumEntity extends Monster implements IAnimatable {
 	
 	public static AttributeSupplier setAttributes() {
 		return Monster.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 35.00)
+				.add(Attributes.MAX_HEALTH, 115.00)
 				.add(Attributes.ATTACK_DAMAGE, 18.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.ARMOR, 4.0f)
@@ -98,8 +98,9 @@ public class AmbectrumEntity extends Monster implements IAnimatable {
 				shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 0.4f, 0.0f);
 				shot.setDamage(shootDamage); // set damage
 				shot.setIgnoreInvulnerability(false);
+				shot.setDefaultVelocity(targetVector);
 				
-				playSound(SoundEvents.BEE_HURT, 1.2f, 0.5f);
+				playSound(SoundEvents.BEE_HURT, 2.0f, 0.5f);
 				this.level.addFreshEntity(shot);
 				
 				shootCounter = 0;

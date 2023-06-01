@@ -16,6 +16,10 @@ public class ModEffects {
 	public static final RegistryObject<MobEffect> GOOP_ACID = MOB_EFFECTS.register("goop_acid",
 			() -> new AcidEffect());
 	
+	// Paralysis
+	public static final RegistryObject<MobEffect> PARALYSIS = MOB_EFFECTS.register("paralysis",
+			() -> new Paralysis());
+	
 	public static void register(IEventBus bus) {
 		
 		MOB_EFFECTS.register(bus);
