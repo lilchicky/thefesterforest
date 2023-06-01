@@ -1,3 +1,4 @@
+83e222c66e3a0aa1dfcacbd8613d678559841819 assets/tff/blockstates/compressed_rotting_sand.json
 41a89637396dd028d6b612939b79fc68616d50f6 assets/tff/blockstates/cracked_rotting_stone.json
 7286f3703a24300d4f7066744ba5b35def0d25a9 assets/tff/blockstates/crushed_rotting_stone.json
 c0cb3d0a7bdbc3f5d812f443acb1cf63b70b6d3e assets/tff/blockstates/fester_ore.json
@@ -9,7 +10,8 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
 c5defbedf25b6ecf36bf55b38b2ff99beff20207 assets/tff/blockstates/soul_rot.json
-9cb8536dd78cdcf39c5c80420c5a309bc6d83f39 assets/tff/lang/en_us.json
+5d19371b64f1d6679f21955655117c8513fe7a23 assets/tff/lang/en_us.json
+e48eb80bb4a853e7d3636a9aa2971065e6494c2f assets/tff/models/block/compressed_rotting_sand.json
 74fa2fd936ff89c42c7a00a07dbdae54f43db419 assets/tff/models/block/cracked_rotting_stone.json
 24c646b7cae5aa575669209b81e20029ad8d223d assets/tff/models/block/crushed_rotting_stone.json
 76c8c0d9d0f865e28054565ba1f9f30e9c98f3d2 assets/tff/models/block/fester_ore.json
@@ -34,6 +36,7 @@ da59f8ff4579602351618f74026514a840ced764 assets/tff/models/item/bone_pickaxe.jso
 56b37fa751e39e57c0d0acbd27e833d3049eec67 assets/tff/models/item/branch_charge.json
 9839b5792c257992e8006e5e1a33c54421c640df assets/tff/models/item/bug_carcass.json
 469bd13be83f58dac9f4aabb9c5dddbf8e0a499c assets/tff/models/item/bug_eggs.json
+d91239c09f6918edb5fc234dcaca85bc19bcb3ae assets/tff/models/item/compressed_rotting_sand.json
 fcb9d391953c727b2de5841a081c019dd8e6e8bc assets/tff/models/item/cooked_rotfish.json
 275c623907e20e0231506a4a29c911421c764b43 assets/tff/models/item/cracked_rotting_stone.json
 bbdcc442af976a8d3a1569a6e2ecd3ac852c2385 assets/tff/models/item/crushed_rotting_stone.json
@@ -120,6 +123,7 @@ d8fe739909a9d51b66dc74aab244dd66561eb1c9 data/tff/advancements/recipes/misc/sick
 d30f3cd523fadad37354ac9f39923d43708784ee data/tff/advancements/recipes/misc/weeping_grass_to_blue_dye.json
 fb54d5c5d64f8a5a9f9bd72a3d1955ed70200bf0 data/tff/advancements/recipes/tff/ambectrum_donut.json
 abaaea0d8800b4b5054e546fd3fb5adefff5f0aa data/tff/advancements/recipes/tff/angelic_whistle.json
+2d2ba50840915c15220e21f2395f244fdb75ff4c data/tff/advancements/recipes/tff/compressed_rotting_sand.json
 3760d735f96e730636bb04563a850c49a724de17 data/tff/advancements/recipes/tff/fester_brick_slab.json
 4c88fd3dcd7aa76df87755ada7c931ccc4d0e887 data/tff/advancements/recipes/tff/fester_brick_stairs.json
 5cb1a2dd5991c3215c45d4219664f26bbb392486 data/tff/advancements/recipes/tff/fester_ore_smelting.json
@@ -152,6 +156,7 @@ d5fefaed2a24e5a46555fa7cde2d8b2141cf048e data/tff/advancements/recipes/tff/rotti
 45c792c91893ba6a0feafffd9e5ad8c9f6cb430c data/tff/advancements/recipes/tff/slimy_fence_gate.json
 651f7d74f9d52409006574e1f734e3e6ea1f3e50 data/tff/advancements/recipes/tff/slimy_slab.json
 1c414a1d5c34944f733263784a5395f551f7e200 data/tff/advancements/recipes/tff/slimy_stairs.json
+66d5bb179fe2e808a246ae4dd0a6e9f921e450e1 data/tff/loot_tables/blocks/compressed_rotting_sand.json
 eb3a2f29cc1331f9e5401dd067febfa71cddf6bf data/tff/loot_tables/blocks/cracked_rotting_stone.json
 fc3a448c7a7526b85a9018d3e4aeae823f8dad26 data/tff/loot_tables/blocks/crushed_rotting_stone.json
 3517dc7534585dfe42c9f6085934fbd082238c98 data/tff/loot_tables/blocks/fester_brick_slab.json
@@ -189,6 +194,7 @@ eada62fdb8938ea1ee9debe9ef0af0cc5659a56b data/tff/loot_tables/blocks/slimy_stair
 ed623e982e5b0c19b76b7fdd5830b1038d7684be data/tff/loot_tables/blocks/weeping_grass.json
 f3bd56dca76299aac9a88398b0dddf35bafcf843 data/tff/recipes/ambectrum_donut.json
 904f2ddd25972afd29bff69847afd4b0352909da data/tff/recipes/angelic_whistle.json
+1570dac7e1038a71f46120afbb0a457c30543fc2 data/tff/recipes/compressed_rotting_sand.json
 12336b616f5bfb4928881fc2a7fc6e35ce93bb21 data/tff/recipes/fester_brick_slab.json
 1324f3265ea69ebadd9ba0e1a26d6d718199cf2c data/tff/recipes/fester_brick_stairs.json
 734763c3152289a52423616afe9349453f222a8b data/tff/recipes/fester_ore_smelting.json

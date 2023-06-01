@@ -37,6 +37,11 @@ public class ModRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_" + ItemInit.ROTTING_BRICK.get().getRegistryName(), has(ItemInit.ROTTING_BRICK.get().asItem())) // what unlocks the recipe when you get that item
 			.pattern("aa ").pattern("aa ").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_BRICKS.get().getRegistryName().getPath()));
 		
+		ShapedRecipeBuilder.shaped(BlockInit.COMPRESSED_ROTTING_SAND.get()) // add , int to get number of output
+			.define('a', BlockInit.ROTTING_SAND.get().asItem())
+			.unlockedBy("has_" + BlockInit.ROTTING_SAND.get().getRegistryName(), has(BlockInit.ROTTING_SAND.get().asItem())) // what unlocks the recipe when you get that item
+			.pattern("aa ").pattern("aa ").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.COMPRESSED_ROTTING_SAND.get().getRegistryName().getPath()));
+		
 		ShapedRecipeBuilder.shaped(BlockInit.ROTTING_STONE_BRICKS.get(), 4) //what am i making
 			.define('a', BlockInit.ROTTING_STONE.get().asItem()) //keys
 			.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), //unlocked when you get this item

@@ -28,6 +28,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
 		simpleBlock(BlockInit.ROTTING_GRAVE_DIRT.get());
 		simpleBlock(BlockInit.SOUL_ROT.get());
 		simpleBlock(BlockInit.ROTTING_SAND.get());
+		simpleBlock(BlockInit.COMPRESSED_ROTTING_SAND.get());
 		
 	}
 
