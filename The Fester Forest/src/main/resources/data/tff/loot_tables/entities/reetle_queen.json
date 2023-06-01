@@ -11,23 +11,23 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 5,
           "name": "tff:bug_eggs"
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 100,
           "name": "minecraft:bone"
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 5,
           "name": "tff:reetle_queen_antennae"
         },
         {
           "type": "minecraft:item",
           "name": "tff:reetle_reagents",
-          "weight": 1
+          "weight": 5
         }
       ]
     },
