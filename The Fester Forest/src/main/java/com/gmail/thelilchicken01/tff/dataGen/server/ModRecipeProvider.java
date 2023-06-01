@@ -404,6 +404,11 @@ public class ModRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_" + ItemInit.RAW_ROTFISH.get().getRegistryName(), has(ItemInit.RAW_ROTFISH.get()))
 				.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.RAW_ROTFISH.get().getRegistryName().getPath() + "_smelting_raw_rotfish"));
 		
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.ROTTING_SAND.get()),
+				BlockInit.ROTTING_GLASS.get(), 1, 200)
+				.unlockedBy("has_" + BlockInit.ROTTING_SAND.get().getRegistryName(), has(BlockInit.ROTTING_SAND.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_GLASS.get().getRegistryName().getPath() + "_smelting"));
+		
 		//Smithing
 		UpgradeRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_HELMET), Ingredient.of(ItemInit.REETLE_SHELL.get()), ItemInit.REETLE_HELMET.get())
 			.unlocks("has_" + ItemInit.REETLE_SHELL.get().getRegistryName(), has(ItemInit.REETLE_SHELL.get()))

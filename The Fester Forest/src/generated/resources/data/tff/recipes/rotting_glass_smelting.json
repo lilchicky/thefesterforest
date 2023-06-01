@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "tff:rotting_sand"
+  },
+  "result": "tff:rotting_glass",
+  "experience": 1.0,
+  "cookingtime": 200
+}

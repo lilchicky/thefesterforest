@@ -68,6 +68,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		simpleBlockItem(BlockInit.SOUL_ROT.get().asItem());
 		simpleBlockItem(BlockInit.ROTTING_SAND.get().asItem());
 		simpleBlockItem(BlockInit.COMPRESSED_ROTTING_SAND.get().asItem());
+		simpleBlockItem(BlockInit.ROTTING_GLASS.get().asItem());
 		
 		// Simple 2D Item
 		oneLayerItem(ItemInit.ROTTING_BRICK.get());

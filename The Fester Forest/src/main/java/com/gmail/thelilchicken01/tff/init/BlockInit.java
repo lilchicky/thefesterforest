@@ -29,6 +29,7 @@ import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -76,6 +77,10 @@ public class BlockInit {
 	//Compressed Rotting Sand
 	public static final RegistryObject<Block> COMPRESSED_ROTTING_SAND = register("compressed_rotting_sand", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)
 			.requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Rotting Glass
+	public static final RegistryObject<Block> ROTTING_GLASS = register("rotting_glass", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS).noOcclusion()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Compressed Rotting Sand Stairs
