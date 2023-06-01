@@ -31,7 +31,7 @@ public class AmbectrumJelly extends Item {
 		lore.add(new TextComponent("Food").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("A glowing blue jelly.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("Tastes slightly minty.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("Tastes slightly of mint and lemon.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 		for (int x = 0; x < drops.length; x++) {
