@@ -54,7 +54,7 @@ public class ShockNecklace extends Item implements ICurioItem {
 		
 		lore.add(new TextComponent("Dull").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("A small ball of energy on a chain.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("A small ball of electricity on a chain.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("Grants you immense energy.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));

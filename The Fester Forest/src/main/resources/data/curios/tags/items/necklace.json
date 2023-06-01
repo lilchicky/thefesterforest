@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"tff:volatile_necklace"
+		"tff:volatile_necklace",
+		"tff:shock_necklace"
 	]
 }
