@@ -8,7 +8,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
 c5defbedf25b6ecf36bf55b38b2ff99beff20207 assets/tff/blockstates/soul_rot.json
-c8c02192816bbea0531a3f56ac389f0ab07e9bb6 assets/tff/lang/en_us.json
+8a94c4bbb46dfc68bf5dd2c33f7119d87f4c30aa assets/tff/lang/en_us.json
 74fa2fd936ff89c42c7a00a07dbdae54f43db419 assets/tff/models/block/cracked_rotting_stone.json
 24c646b7cae5aa575669209b81e20029ad8d223d assets/tff/models/block/crushed_rotting_stone.json
 76c8c0d9d0f865e28054565ba1f9f30e9c98f3d2 assets/tff/models/block/fester_ore.json
@@ -33,6 +33,7 @@ da59f8ff4579602351618f74026514a840ced764 assets/tff/models/item/bone_pickaxe.jso
 fcb9d391953c727b2de5841a081c019dd8e6e8bc assets/tff/models/item/cooked_rotfish.json
 275c623907e20e0231506a4a29c911421c764b43 assets/tff/models/item/cracked_rotting_stone.json
 bbdcc442af976a8d3a1569a6e2ecd3ac852c2385 assets/tff/models/item/crushed_rotting_stone.json
+fc97e5aa66114f3bccc84a0c1d20622d8cabf6a8 assets/tff/models/item/electric_charge.json
 61a81680433b6c80847d35ed3e8000bcf3b96f33 assets/tff/models/item/explosive_powder.json
 c54e2c2e2e77906167442203a23cb518c3a9dbfb assets/tff/models/item/fester_ore.json
 ffbbd55d61fbedd6c91aac6c4ef8b0a6707d7c66 assets/tff/models/item/flesh_ball.json

@@ -1,8 +1,10 @@
 package com.gmail.thelilchicken01.tff.entity.custom;
 
-import java.util.EnumSet;
-
 import javax.annotation.Nullable;
+
+import com.gmail.thelilchicken01.tff.entity.projectile.ElectricCharge;
+import com.gmail.thelilchicken01.tff.init.ItemInit;
+import com.gmail.thelilchicken01.tff.item.projectile.ElectricShot;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
@@ -10,44 +12,25 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.MoveControl;
-import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.MoveTowardsRestrictionGoal;
-import net.minecraft.world.entity.ai.goal.PanicGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
-import net.minecraft.world.entity.ai.goal.ZombieAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
-import net.minecraft.world.entity.animal.AbstractFish;
-import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.animal.Turtle;
-import net.minecraft.world.entity.animal.axolotl.Axolotl;
-import net.minecraft.world.entity.monster.Drowned;
-import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Zombie;
-import net.minecraft.world.entity.monster.ZombifiedPiglin;
-import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -61,6 +44,10 @@ public class AmbectrumEntity extends Monster implements IAnimatable {
 	private AnimationFactory factory = new AnimationFactory(this);
 	
 	protected RandomStrollGoal randomStrollGoal;
+	
+	private double shootCooldown = 2; // default shot cooldown in seconds, before modifiers
+	private int shootCounter;
+	private int shootDamage = 15;
 
 	public AmbectrumEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
 		
@@ -87,6 +74,38 @@ public class AmbectrumEntity extends Monster implements IAnimatable {
 	    this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, AmbectrumEntity.class)).setAlertOthers(AmbectrumEntity.class));
 	    this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::okTarget));
 		
+	}
+	
+	public void tick() {
+		
+		super.tick();
+		
+		shootCounter++;
+		
+		if(!getLevel().isClientSide) {
+		
+			if (shootCounter > (shootCooldown * 20) && this.okTarget(this.getTarget())) {
+				
+				ItemStack ammo = new ItemStack(ItemInit.ELECTRIC_CHARGE.get());
+				ElectricShot bulletItem = ItemInit.ELECTRIC_CHARGE.get(); //these will be the same, but are what is being shot
+				
+				ElectricCharge shot = bulletItem.createProjectile(this.level, ammo, this);// level, shot item, this entity
+				
+				Vec3 currentPos = getEyePosition();
+				Vec3 targetPos = getTarget().getPosition(1.0f);
+				Vec3 targetVector = targetPos.subtract(currentPos).normalize();
+				
+				shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 0.4f, 0.0f);
+				shot.setDamage(shootDamage); // set damage
+				shot.setIgnoreInvulnerability(false);
+				
+				playSound(SoundEvents.BEE_HURT, 1.2f, 0.5f);
+				this.level.addFreshEntity(shot);
+				
+				shootCounter = 0;
+				
+			}
+		}
 	}
 	
 	public boolean okTarget(@Nullable LivingEntity target) {
