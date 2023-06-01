@@ -6,21 +6,31 @@ import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.google.common.collect.Sets;
 
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = TheFesterForest.MODID)
 public class CommonEventBusSubscriber {
+	
+	/*
+	 * Thanks to Mo Enchants for the momentum code!
+	 */
 
 	private static final Set<PlayerHurtHandler> PLAYER_HURT_HANDLERS = Sets.newTreeSet(new HandlerPriorityComparator());
 	private static final Set<PlayerDeathHandler> PLAYER_DEATH_HANDLERS = Sets.newTreeSet(new HandlerPriorityComparator());
+	
+	private static ItemStack pickaxe;
 	
 	public static void registerPlayerHurtHandlers(PlayerHurtHandler handler) {
 		PLAYER_HURT_HANDLERS.add(handler);
@@ -60,6 +70,78 @@ public class CommonEventBusSubscriber {
 			event.setResult(null);
 			
 		}
+		
+	}
+	
+	@SubscribeEvent
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		
+		Player player = event.player;
+		
+		InteractionHand hand = player.getUsedItemHand();
+        if (hand == null) return;
+		
+		ItemStack usedItem = player.getItemInHand(hand);
+		
+		if (usedItem.getItem() == ItemInit.ELECTRIC_PICKAXE.get()) {
+			
+			pickaxe = usedItem;
+			
+		}
+		else {
+			
+			if (pickaxe != null) {
+				
+				CompoundTag compound = pickaxe.getOrCreateTag();
+				compound.putInt("momentum", 0);
+				
+			}
+			
+		}
+		
+	}
+	
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
+	public static void onBlockBreak(BlockEvent.BreakEvent event) {
+		
+		Player player = event.getPlayer();
+		
+		InteractionHand hand = player.getUsedItemHand();
+        if (hand == null) return;
+		
+		ItemStack usedItem = player.getItemInHand(hand);
+		
+		if (!(usedItem.getItem() == ItemInit.ELECTRIC_PICKAXE.get())) return;
+		
+		CompoundTag compound = usedItem.getOrCreateTag();
+		int momentum = compound.getInt("momentum");
+		
+		if (momentum < 100) {
+				
+			compound.putInt("momentum", momentum + 1);
+				
+		}
+
+	}
+	
+	@SubscribeEvent
+	public static void breakSpeed(PlayerEvent.BreakSpeed event) {
+		
+		Player player = event.getPlayer();
+		
+		InteractionHand hand = player.getUsedItemHand();
+        if (hand == null) return;
+		
+		ItemStack usedItem = player.getItemInHand(hand);
+		
+		if (!(usedItem.getItem() == ItemInit.ELECTRIC_PICKAXE.get())) return;
+		
+		
+		CompoundTag compound = usedItem.getOrCreateTag();
+		int momentum = compound.getInt("momentum");
+		float oldSpeed = event.getOriginalSpeed();
+		float newSpeed = oldSpeed + 0.5f * momentum;
+		event.setNewSpeed(newSpeed);
 		
 	}
 	

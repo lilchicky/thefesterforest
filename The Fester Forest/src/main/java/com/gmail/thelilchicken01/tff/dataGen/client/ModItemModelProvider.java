@@ -130,6 +130,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		handheldItem(ItemInit.GOOPY_STICK.get());
 		handheldItem(ItemInit.GOOPY_SWORD.get());
 		handheldItem(ItemInit.SHOCK_SWORD.get());
+		handheldItem(ItemInit.ELECTRIC_PICKAXE.get());
 		
 	}
 	

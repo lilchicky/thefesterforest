@@ -47,7 +47,7 @@ public class ModTiers {
 	    return Ingredient.of(Items.BONE);
 	});
 	
-	public static final ForgeTier ELECTRIC = new ForgeTier(4, 875, 9.0F, 
+	public static final ForgeTier ELECTRIC = new ForgeTier(4, 875, 1.0F, 
 			10.0F, 25, BlockTags.NEEDS_DIAMOND_TOOL, () -> {
 	    return Ingredient.of(Items.IRON_INGOT);
 	});

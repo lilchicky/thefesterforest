@@ -71,6 +71,7 @@ import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.ElectricShot;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
 import com.gmail.thelilchicken01.tff.item.tool.BonePickaxe;
+import com.gmail.thelilchicken01.tff.item.tool.ElectricPickaxe;
 import com.gmail.thelilchicken01.tff.item.tool.GoopyStick;
 import com.google.common.base.Supplier;
 
@@ -376,6 +377,10 @@ public class ItemInit {
 	//Shock Sword
 	public static final RegistryObject<Item> SHOCK_SWORD = register("shock_sword", 
 			() -> new ShockSword(ModTiers.ELECTRIC, -2, -2.4f, new Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Electric Pickaxe
+	public static final RegistryObject<Item> ELECTRIC_PICKAXE = register("electric_pickaxe",
+			() -> new ElectricPickaxe());
 	
 	/*
 	 * 
