@@ -33,6 +33,14 @@ public class TffPlacedFeature {
 	public static final RegistryObject<PlacedFeature> SLIMY_TREE_PLACED = PLACED_FEATURES.register(
 			"slimy_tree_placed", () -> new PlacedFeature(TffConfiguredFeatures.SLIMY_TREE.getHolder().get(), tree(1)));
 	
+	// Blue Ocean Tree
+	public static final RegistryObject<PlacedFeature> BLUE_OCEAN_TREE = PLACED_FEATURES.register(
+			"blue_ocean_tree_placed", () -> new PlacedFeature(TffConfiguredFeatures.BLUE_OCEAN_TREE.getHolder().get(), tree(1)));
+	
+	// Orange Ocean Tree
+	public static final RegistryObject<PlacedFeature> ORANGE_OCEAN_TREE = PLACED_FEATURES.register(
+			"orange_ocean_tree_placed", () -> new PlacedFeature(TffConfiguredFeatures.ORANGE_OCEAN_TREE.getHolder().get(), tree(1)));
+	
 	// Slimy Tree Heavy
 	public static final RegistryObject<PlacedFeature> SLIMY_TREE_HEAVY_PLACED = PLACED_FEATURES.register(
 			"slimy_tree_heavy_placed", () -> new PlacedFeature(TffConfiguredFeatures.SLIMY_TREE.getHolder().get(), tree(5)));

@@ -199,6 +199,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.CRACKED_ROTTING_STONE_BRICKS.get(), "Cracked Rotting Stone Bricks");
 		add(BlockInit.FESTER_BRICK_WALL.get(), "Fester Brick Wall");
 		add(BlockInit.ROTTING_BONE_BLOCK.get(), "Rotting Bone Block");
+		add(BlockInit.BLUE_FESTER_SHROOM_BLOCK.get(), "Blue Fester Shroom Block");
+		add(BlockInit.ORANGE_FESTER_SHROOM_BLOCK.get(), "Orange Fester Shroom Block");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

@@ -3,6 +3,7 @@
 	"values": [
 		"tff:rotting_dirt",
 		"tff:rotting_grass",
-		"tff:rotting_grave_dirt"
+		"tff:rotting_grave_dirt",
+		"tff:rotting_sand"
 	]
 }

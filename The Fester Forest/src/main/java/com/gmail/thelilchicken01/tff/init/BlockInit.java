@@ -417,7 +417,7 @@ public class BlockInit {
 	 * 
 	 */
 	
-	// Volatile Lamp
+	//Reetlelight
 	public static final RegistryObject<Block> REETLELIGHT = register("reetlelight", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SHROOMLIGHT).emissiveRendering((state, getter, pos) -> {
 				return true;
@@ -426,6 +426,14 @@ public class BlockInit {
 	
 	//Soul Rot
 	public static final RegistryObject<Block> SOUL_ROT = register("soul_rot", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND)),
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Blue Fester Shroom Block
+	public static final RegistryObject<Block> BLUE_FESTER_SHROOM_BLOCK = register("blue_fester_shroom_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)),
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Orange Fester Shroom Block
+	public static final RegistryObject<Block> ORANGE_FESTER_SHROOM_BLOCK = register("orange_fester_shroom_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)),
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Bone Block

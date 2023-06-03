@@ -15,9 +15,11 @@ import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConf
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaPineFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraftforge.registries.DeferredRegister;
@@ -47,6 +49,24 @@ public class TffConfiguredFeatures {
 					BlockStateProvider.simple(BlockInit.SLIMY_LEAVES.get()), //Block that makes the leaves
 					new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 4), //how are the leaves placed (middle click for more) WIDTH, HEIGHT OFF TRUNK, HEIGHT
 					new TwoLayersFeatureSize(1, 0, 2)).dirt(BlockStateProvider.simple(BlockInit.ROTTING_DIRT.get())).build()));
+	
+	//Ocean Foliage
+	public static final RegistryObject<ConfiguredFeature<?, ?>> BLUE_OCEAN_TREE = 
+			CONFIGURED_FEATURES.register("blue_ocean_tree", () -> new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+					BlockStateProvider.simple(BlockInit.ROTTING_WOOD.get()), //Block that makes the trunk
+					new ForkingTrunkPlacer(2, 3, 1), //place trunks straight up (middle click for more)
+					BlockStateProvider.simple(BlockInit.BLUE_FESTER_SHROOM_BLOCK.get()), //Block that makes the leaves
+					new AcaciaFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0)), //how are the leaves placed (middle click for more) WIDTH, HEIGHT OFF TRUNK, HEIGHT
+					new TwoLayersFeatureSize(1, 0, 2)).dirt(BlockStateProvider.simple(BlockInit.ROTTING_SAND.get())).build()));
+	
+	//Ocean Foliage
+	public static final RegistryObject<ConfiguredFeature<?, ?>> ORANGE_OCEAN_TREE = 
+			CONFIGURED_FEATURES.register("orange_ocean_tree", () -> new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+					BlockStateProvider.simple(BlockInit.ROTTING_WOOD.get()), //Block that makes the trunk
+					new ForkingTrunkPlacer(2, 3, 1), //place trunks straight up (middle click for more)
+					BlockStateProvider.simple(BlockInit.ORANGE_FESTER_SHROOM_BLOCK.get()), //Block that makes the leaves
+					new AcaciaFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0)), //how are the leaves placed (middle click for more) WIDTH, HEIGHT OFF TRUNK, HEIGHT
+					new TwoLayersFeatureSize(1, 0, 2)).dirt(BlockStateProvider.simple(BlockInit.ROTTING_SAND.get())).build()));
 	
 	
 	

@@ -1,4 +1,5 @@
 {
+  "block.tff.blue_fester_shroom_block": "Blue Fester Shroom Block",
   "block.tff.compressed_rotting_sand": "Compressed Rotting Sand",
   "block.tff.compressed_rotting_sand_slab": "Compressed Rotting Sand Slab",
   "block.tff.compressed_rotting_sand_stairs": "Compressed Rotting Sand Stairs",
@@ -11,6 +12,7 @@
   "block.tff.fester_brick_wall": "Fester Brick Wall",
   "block.tff.fester_ore": "Fester Ore",
   "block.tff.mossy_rotting_stone": "Mossy Rotting Stone",
+  "block.tff.orange_fester_shroom_block": "Orange Fester Shroom Block",
   "block.tff.reetlelight": "Reetlelight",
   "block.tff.rotting_bone_block": "Rotting Bone Block",
   "block.tff.rotting_bricks": "Fester Bricks",
