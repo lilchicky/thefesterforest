@@ -78,35 +78,35 @@ public class TheFesterForest {
 	public TheFesterForest() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		
-		System.out.println("Initializing the Spook");
+		System.out.println("[The Fester Forest] Initializing the Spook");
 		
 		ItemInit.ITEMS.register(bus);
-		System.out.println("Items initialized");
+		System.out.println("[The Fester Forest] Items initialized");
 		
 		BlockInit.BLOCKS.register(bus);
-		System.out.println("Blocks initialized");
+		System.out.println("[The Fester Forest] Blocks initialized");
 		
 		ParticleInit.PARTICLES.register(bus);
-		System.out.println("Particles initialized");
+		System.out.println("[The Fester Forest] Particles initialized");
 		
 		TffConfiguredFeatures.CONFIGURED_FEATURES.register(bus);
 		TffPlacedFeature.PLACED_FEATURES.register(bus);
-		System.out.println("Features initialized");
+		System.out.println("[The Fester Forest] Features initialized");
 		
 		ModDimensions.register();
-		System.out.println("The Fester Forest dimension initialized");
+		System.out.println("[The Fester Forest] The Fester Forest dimension initialized");
 		
 		ModPOIs.register(bus);
-		System.out.println("POIs initialized");
+		System.out.println("[The Fester Forest] POIs initialized");
 		
 		ModEntityTypes.register(bus);
-		System.out.println("Entities initialized");
+		System.out.println("[The Fester Forest] Entities initialized");
 		
 		ModEffects.register(bus);
-		System.out.println("Potion Effects initialized");
+		System.out.println("[The Fester Forest] Potion Effects initialized");
 		
 		ModStructures.register(bus);
-		System.out.println("Structures initialized");
+		System.out.println("[The Fester Forest] Structures initialized");
 		
 		ModCompat.initCompat();
 		
@@ -114,13 +114,13 @@ public class TheFesterForest {
 		
 		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, TFFClientConfigs.SPEC, "tff-client.toml");
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TFFCommonConfigs.SPEC, "tff-common.toml");
-		System.out.println("Config Loaded");
+		System.out.println("[The Fester Forest] Config Loaded");
 		
 		MinecraftForge.EVENT_BUS.register(this);
 		
 		if (FMLEnvironment.dist.isClient()) bus.addListener(this::registerElytraLayer);
 		
-		System.out.println("Happy Adventuring!");
+		System.out.println("[The Fester Forest] Happy Adventuring!");
 		
 	}
 	
