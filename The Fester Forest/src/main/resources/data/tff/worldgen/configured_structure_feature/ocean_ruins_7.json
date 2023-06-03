@@ -4,7 +4,7 @@
 
   "config": {
       // the path to the template pool json file to use
-    "start_pool": "tff:ruined_portal",
+    "start_pool": "tff:ocean_ruins_7",
 
       // This is how many pieces away from the starting piece a piece of the structure can spawn
       // Think of it like the length of the branch of the structure
@@ -12,7 +12,7 @@
   },
 
     // The biome tag to use for what biomes that this structure can spawn in"
-  "biomes": "#tff:has_structure/ruined_portal",
+  "biomes": "#tff:has_structure/ocean_ruins",
 
     // If true, land will be add around the bottom of the structure. (Based on the starting piece's y value)
   "adapt_noise": true,

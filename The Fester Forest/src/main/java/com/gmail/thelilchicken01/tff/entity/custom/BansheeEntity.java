@@ -4,7 +4,10 @@ import java.util.List;
 import java.util.Vector;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
+import com.gmail.thelilchicken01.tff.init.ItemInit;
+import com.gmail.thelilchicken01.tff.item.item.ICuriosUtil;
 import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.gmail.thelilchicken01.tff.util.InventoryHelper;
 import com.mojang.math.Vector3d;
 
 import net.minecraft.client.resources.sounds.Sound;
