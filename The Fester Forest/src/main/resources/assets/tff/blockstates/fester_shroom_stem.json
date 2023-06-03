@@ -1,0 +1,16 @@
+{
+	"variants": {
+		"axis=x": {
+			"model": "tff:block/fester_shroom_stem",
+			"x": 90,
+			"y": 90
+		},
+		"axis=y": {
+			"model": "tff:block/fester_shroom_stem"
+		},
+		"axis=z": {
+			"model": "tff:block/fester_shroom_stem",
+			"x": 90
+		}
+	}
+}

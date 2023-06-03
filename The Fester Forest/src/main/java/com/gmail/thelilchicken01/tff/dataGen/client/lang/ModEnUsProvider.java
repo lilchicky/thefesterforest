@@ -201,6 +201,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.ROTTING_BONE_BLOCK.get(), "Rotting Bone Block");
 		add(BlockInit.BLUE_FESTER_SHROOM_BLOCK.get(), "Blue Fester Shroom Block");
 		add(BlockInit.ORANGE_FESTER_SHROOM_BLOCK.get(), "Orange Fester Shroom Block");
+		add(BlockInit.FESTER_SHROOM_STEM.get(), "Fester Shroom Stem");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");
