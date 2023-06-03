@@ -89,8 +89,11 @@ public class BansheeEntity extends Monster implements IAnimatable {
 			playerCheck:
 			for (int x = 0; x < nearbyEntities.size(); x++) {
 				if (nearbyEntities.get(x) instanceof Player) {
-					playerNear = true;
-					break playerCheck;
+					Player playerCheck = (Player) nearbyEntities.get(x);
+					if (!(playerCheck.isCreative() || playerCheck.isSpectator())) {
+						playerNear = true;
+						break playerCheck;
+					}
 				}
 			}
 			
@@ -98,9 +101,16 @@ public class BansheeEntity extends Monster implements IAnimatable {
 				
 				this.playSound(SoundEvents.PHANTOM_AMBIENT, 1.2f, 1.4f);
 				
-				for (int x = 0; x < nearbyEntities.size(); x++) {
+				boolean playerIsTargetable = true;
 				
-					if ((!(nearbyEntities.get(x) instanceof BansheeEntity)) && nearbyEntities.get(x) instanceof LivingEntity) {
+				for (int x = 0; x < nearbyEntities.size(); x++) {
+					
+					if (nearbyEntities.get(x) instanceof Player) {
+						Player player = (Player) nearbyEntities.get(x);
+						playerIsTargetable = !(player.isCreative() || player.isSpectator());
+					}
+				
+					if ((!(nearbyEntities.get(x) instanceof BansheeEntity)) && nearbyEntities.get(x) instanceof LivingEntity && playerIsTargetable) {
 					
 						Vec3 playerVel = this.getPosition(1.0f);
 						Vec3 entityVel = nearbyEntities.get(x).getPosition(1.0f);
