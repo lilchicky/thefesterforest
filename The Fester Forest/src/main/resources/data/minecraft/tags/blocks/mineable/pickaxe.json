@@ -14,6 +14,7 @@
 		"tff:compressed_rotting_sand_stairs",
 		"tff:compressed_rotting_sand_slab",
 		"tff:compressed_rotting_sand_wall",
-		"#tff:tff_stone_bricks"
+		"#tff:tff_stone_bricks",
+		"tff:rotting_bone_block"
 	]
 }

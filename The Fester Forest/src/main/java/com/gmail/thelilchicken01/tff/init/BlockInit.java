@@ -4,6 +4,7 @@ import java.util.function.Function;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.block.ModFlammableRotatedPillarBlock;
+import com.gmail.thelilchicken01.tff.block.NonFlammableRotatedPillarBlock;
 import com.gmail.thelilchicken01.tff.block.RottingFlower;
 import com.gmail.thelilchicken01.tff.block.RottingGraveDirt;
 import com.gmail.thelilchicken01.tff.block.RottingSand;
@@ -426,6 +427,17 @@ public class BlockInit {
 	//Soul Rot
 	public static final RegistryObject<Block> SOUL_ROT = register("soul_rot", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND)),
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Rotting Bone Block
+	public static final RegistryObject<Block> ROTTING_BONE_BLOCK = register("rotting_bone_block", 
+			() -> new NonFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).sound(SoundType.BONE_BLOCK).requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	/*
+	 * 
+	 * Unobtainable
+	 * 
+	 */
 	
 	//Rotting Portal
 	public static final RegistryObject<Block> TFF_PORTAL = register("tff_portal", () -> new TffPortalBlock(), 
