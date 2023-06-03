@@ -112,6 +112,15 @@ public class ModRecipeProvider extends RecipeProvider {
 					new ResourceLocation(TheFesterForest.MODID, 
 							BlockInit.ROTTING_STONE_BRICK_WALL.get().getRegistryName().getPath()));
 		
+		//Fester Brick Walls
+		ShapedRecipeBuilder.shaped(BlockInit.FESTER_BRICK_WALL.get(), 6)
+			.define('a', BlockInit.ROTTING_BRICKS.get().asItem())
+			.unlockedBy("has_" + BlockInit.ROTTING_BRICKS.get().getRegistryName(), 
+					has(BlockInit.ROTTING_BRICKS.get().asItem()))
+			.pattern("aaa").pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.FESTER_BRICK_WALL.get().getRegistryName().getPath()));
+		
 		//Rottingwood Fence
 		ShapedRecipeBuilder.shaped(BlockInit.ROTTINGWOOD_FENCE.get(), 3)
 			.define('a', BlockInit.ROTTING_PLANKS.get().asItem()).define('b', Items.STICK)

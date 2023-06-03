@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "tff:rotting_bricks"
+    }
+  },
+  "result": {
+    "item": "tff:fester_brick_wall",
+    "count": 6
+  }
+}
