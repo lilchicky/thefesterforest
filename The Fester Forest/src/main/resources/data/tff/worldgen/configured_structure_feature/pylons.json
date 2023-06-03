@@ -20,26 +20,14 @@
     // What mobs can spawn over time in the structure.
     // Make sure you add the mob to the right category (monster, creature, etc)
   "spawn_overrides": {
-  	"monster": {
+  	"water_creature": {
       "bounding_box": "piece",
       "spawns": [
-        {
-        	"type": "tff:rotfish",
-        	"weight": 100,
-        	"minCount": 5,
-        	"maxCount": 8
-      	},
       	{
         	"type": "tff:ambectrum",
-        	"weight": 40,
+        	"weight": 100,
         	"minCount": 1,
         	"maxCount": 1
-      	},
-      	{
-        	"type": "tff:seathrown_skeleton",
-        	"weight": 100,
-        	"minCount": 2,
-        	"maxCount": 4
       	}
       ]
     }

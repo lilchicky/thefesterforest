@@ -151,7 +151,7 @@ public class OceanFloor extends StructureFeature<JigsawConfiguration> {
         if(structurePiecesGenerator.isPresent()) {
             // I use to debug and quickly find out if the structure is spawning or not and where it is.
             // This is returning the coordinates of the center starting piece.
-            TheFesterForest.LOGGER.log(Level.DEBUG, "Ocean Structure at {}", blockpos);
+            //TheFesterForest.LOGGER.log(Level.DEBUG, "Ocean Structure at {}", blockpos);
         }
 
         // Return the pieces generator that is now set up so that the game runs it when it needs to create the layout of structure pieces.
