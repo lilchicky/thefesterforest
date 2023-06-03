@@ -30,7 +30,7 @@
       		},
       		{
         		"type": "tff:seathrown_skeleton",
-        		"weight": 100,
+        		"weight": 80,
         		"minCount": 2,
         		"maxCount": 4
       		}
@@ -64,7 +64,7 @@
     		"tff:rotting_tall_grass_placed",
     		"tff:weeping_grass_rare_placed",
     		"tff:blue_ocean_tree_placed",
-    		"tff:orange_tree_placed"
+    		"tff:orange_ocean_tree_placed"
     	],
     	[]
   	]
