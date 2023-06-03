@@ -112,7 +112,7 @@ public class ModEntityTypes {
 	//Seathrown Skeleton
 	public static final RegistryObject<EntityType<SeathrownSkeletonEntity>> SEATHROWN_SKELETON =
 			ENTITY_TYPES.register("seathrown_skeleton", () -> EntityType.Builder.of(SeathrownSkeletonEntity::new, MobCategory.MONSTER)
-					.sized(1.2f, 1.4f).build(new ResourceLocation(TheFesterForest.MODID, "seathrown_skeleton").toString()));
+					.sized(1.0f, 1.4f).build(new ResourceLocation(TheFesterForest.MODID, "seathrown_skeleton").toString()));
 	
 	//Brittle Branch Bullet
 	

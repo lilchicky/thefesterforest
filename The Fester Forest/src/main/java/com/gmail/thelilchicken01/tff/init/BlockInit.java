@@ -315,23 +315,28 @@ public class BlockInit {
 	
 	//Rotting Stone Bricks
 	public static final RegistryObject<Block> ROTTING_STONE_BRICKS = register("rotting_stone_bricks", 
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Cracked Rotting Stone Bricks
+	public static final RegistryObject<Block> CRACKED_ROTTING_STONE_BRICKS = register("cracked_rotting_stone_bricks", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Stone Brick Stairs
 	public static final RegistryObject<Block> ROTTING_STONE_BRICK_STAIRS = register("rotting_stone_brick_stairs", 
 			() -> new StairBlock(() -> BlockInit.ROTTING_STONE_BRICKS.get().defaultBlockState(), 
-					BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
+					BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Stone Brick Slab
 	public static final RegistryObject<Block> ROTTING_STONE_BRICK_SLAB = register("rotting_stone_brick_slab", 
-			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Stone Brick Wall
 	public static final RegistryObject<Block> ROTTING_STONE_BRICK_WALL = register("rotting_stone_brick_wall", 
-			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
+			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rottingwood Fence

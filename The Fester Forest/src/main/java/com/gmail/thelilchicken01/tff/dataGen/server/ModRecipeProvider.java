@@ -378,6 +378,11 @@ public class ModRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), has(BlockInit.ROTTING_STONE.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_STONE.get().getRegistryName().getPath() + "_smelting"));
 		
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.ROTTING_STONE_BRICKS.get().asItem()),
+				BlockInit.CRACKED_ROTTING_STONE_BRICKS.get(), 1, 200)
+				.unlockedBy("has_" + BlockInit.ROTTING_STONE_BRICKS.get().getRegistryName(), has(BlockInit.ROTTING_STONE_BRICKS.get().asItem()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.CRACKED_ROTTING_STONE_BRICKS.get().getRegistryName().getPath() + "_smelting"));
+		
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ItemInit.GOOPY_SWORD.get()),
 				ItemInit.GOOPY_JELLO.get(), 1, 200)
 				.unlockedBy("has_" + ItemInit.GOOPY_SWORD.get().getRegistryName(), has(ItemInit.GOOPY_SWORD.get()))

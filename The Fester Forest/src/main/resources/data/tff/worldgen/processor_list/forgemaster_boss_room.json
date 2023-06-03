@@ -36,7 +36,7 @@
             "predicate_type": "minecraft:always_true"
           },
           "output_state": {
-            "Name": "tff:cracked_rotting_stone"
+            "Name": "tff:cracked_rotting_stone_bricks"
           }
         },
         {

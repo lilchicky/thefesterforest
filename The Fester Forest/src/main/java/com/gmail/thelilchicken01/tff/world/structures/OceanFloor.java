@@ -5,22 +5,29 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.levelgen.LegacyRandomSource;
+import net.minecraft.world.level.levelgen.WorldgenRandom;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.JigsawConfiguration;
+import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.BuiltinStructureSets;
 import net.minecraft.world.level.levelgen.structure.PoolElementStructurePiece;
 import net.minecraft.world.level.levelgen.structure.PostPlacementProcessor;
 import net.minecraft.world.level.levelgen.structure.pieces.PieceGenerator;
 import net.minecraft.world.level.levelgen.structure.pieces.PieceGeneratorSupplier;
 import net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement;
+import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureManager;
+
 import org.apache.logging.log4j.Level;
 
 import java.util.Optional;
 
-public class Ruins extends StructureFeature<JigsawConfiguration> {
+public class OceanFloor extends StructureFeature<JigsawConfiguration> {
 
     // A custom codec that changes the size limit for our code_structure_sky_fan.json's config to not be capped at 7.
     // With this, we can have a structure with a size limit up to 30 if we want to have extremely long branches of pieces in the structure.
@@ -31,9 +38,9 @@ public class Ruins extends StructureFeature<JigsawConfiguration> {
         ).apply(codec, JigsawConfiguration::new);
     });
 
-    public Ruins() {
+    public OceanFloor() {
         // Create the pieces layout of the structure and give it to the game
-        super(CODEC, Ruins::createPiecesGenerator, PostPlacementProcessor.NONE);
+        super(CODEC, OceanFloor::createPiecesGenerator, PostPlacementProcessor.NONE);
     }
 
     /**
@@ -74,12 +81,9 @@ public class Ruins extends StructureFeature<JigsawConfiguration> {
      * Use the biome tags for where to spawn the structure and users can datapack
      * it to spawn in specific biomes that aren't in the dimension they don't like if they wish.
      */
-    
     private static boolean isFeatureChunk(PieceGeneratorSupplier.Context<JigsawConfiguration> context) {
         // Grabs the chunk position we are at
         ChunkPos chunkpos = context.chunkPos();
-        
-        
 
         // Checks to make sure our structure does not spawn within 10 chunks of an Ocean Monument
         // to demonstrate how this method is good for checking extra conditions for spawning
@@ -90,17 +94,37 @@ public class Ruins extends StructureFeature<JigsawConfiguration> {
 
         // Check if the spot is valid for our structure. This is just as another method for cleanness.
         // Returning an empty optional tells the game to skip this spot as it will not generate the structure.
-        if (!Ruins.isFeatureChunk(context)) {
+        if (!OceanFloor.isFeatureChunk(context)) {
             return Optional.empty();
         }
 
         // Turns the chunk coordinates into actual coordinates we can use. (Gets center of that chunk)
         BlockPos blockpos = context.chunkPos().getMiddleBlockPosition(0);
+        
+        WorldgenRandom worldgenrandom = new WorldgenRandom(new LegacyRandomSource(0L));
+        worldgenrandom.setLargeFeatureSeed(context.seed(), context.chunkPos().x, context.chunkPos().z);
+        
+        Rotation rotation = Rotation.getRandom(worldgenrandom);
+        
+        StructureManager structuremanager = context.structureManager();
+        
+        JigsawConfiguration jigsawconfiguration = context.config();
+        
+        StructureTemplatePool structuretemplatepool = jigsawconfiguration.startPool().value();
+        StructurePoolElement structurepoolelement = structuretemplatepool.getRandomTemplate(worldgenrandom);
+        
+        PoolElementStructurePiece poolelementstructurepiece = new PoolElementStructurePiece(structuremanager, structurepoolelement, blockpos, 
+        		structurepoolelement.getGroundLevelDelta(), rotation, structurepoolelement.getBoundingBox(structuremanager, blockpos, rotation));
+        BoundingBox boundingbox = poolelementstructurepiece.getBoundingBox();
+        int i = (boundingbox.maxX() + boundingbox.minX()) / 2;
+        int j = (boundingbox.maxZ() + boundingbox.minZ()) / 2;
+        
+        int height = context.chunkGenerator().getFirstFreeHeight(i, j, Heightmap.Types.OCEAN_FLOOR_WG, context.heightAccessor());
 
         // Set's our spawning blockpos's y offset to be 60 blocks up.
         // Since we are going to have heightmap/terrain height spawning set to true further down, this will make it so we spawn 60 blocks above terrain.
         // If we wanted to spawn on ocean floor, we would set heightmap/terrain height spawning to false and the grab the y value of the terrain with OCEAN_FLOOR_WG heightmap.
-        blockpos = blockpos.above(0);
+        blockpos = blockpos.above(height);
 
         Optional<PieceGenerator<JigsawConfiguration>> structurePiecesGenerator =
                 JigsawPlacement.addPieces(
@@ -109,7 +133,7 @@ public class Ruins extends StructureFeature<JigsawConfiguration> {
                         blockpos, // Position of the structure. Y value is ignored if last parameter is set to true.
                         false,  // Special boundary adjustments for villages. It's... hard to explain. Keep this false and make your pieces not be partially intersecting.
                         // Either not intersecting or fully contained will make children pieces spawn just fine. It's easier that way.
-                        true // Adds the terrain height's y value to the passed in blockpos's y value. (This uses WORLD_SURFACE_WG heightmap which stops at top water too)
+                        false // Adds the terrain height's y value to the passed in blockpos's y value. (This uses WORLD_SURFACE_WG heightmap which stops at top water too)
                         // Here, blockpos's y value is 60 which means the structure spawn 60 blocks above terrain height.
                         // Set this to false for structure to be place only at the passed in blockpos's Y value instead.
                         // Definitely keep this false when placing structures in the nether as otherwise, heightmap placing will put the structure on the Bedrock roof.
@@ -124,10 +148,13 @@ public class Ruins extends StructureFeature<JigsawConfiguration> {
          * https://github.com/TelepathicGrunt/RepurposedStructures/blob/1.18.2/src/main/java/com/telepathicgrunt/repurposedstructures/world/structures/pieces/PieceLimitedJigsawManager.java
          */
 
+        if(structurePiecesGenerator.isPresent()) {
+            // I use to debug and quickly find out if the structure is spawning or not and where it is.
+            // This is returning the coordinates of the center starting piece.
+            TheFesterForest.LOGGER.log(Level.DEBUG, "Ocean Structure at {}", blockpos);
+        }
+
         // Return the pieces generator that is now set up so that the game runs it when it needs to create the layout of structure pieces.
         return structurePiecesGenerator;
     }
-    
-    
-    
 }
