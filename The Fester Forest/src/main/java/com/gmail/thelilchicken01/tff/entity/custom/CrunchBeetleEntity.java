@@ -8,6 +8,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
@@ -39,6 +40,11 @@ public class CrunchBeetleEntity extends Animal implements IAnimatable {
 
 	public CrunchBeetleEntity(EntityType<? extends Animal> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
+	}
+	
+	@Override
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
 	}
 	
 	public static AttributeSupplier setAttributes() {

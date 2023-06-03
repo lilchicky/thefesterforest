@@ -79,6 +79,11 @@ public class SeathrownSkeletonEntity extends Monster implements IAnimatable {
 				.add(Attributes.MOVEMENT_SPEED, 0.5f).build();
 	}
 	
+	@Override
+	public MobType getMobType() {
+		return MobType.UNDEAD;
+	}
+	
 	protected void registerGoals() {
 		
 		this.goalSelector.addGoal(2, new SeathrownSkeletonEntity.WaterMeleeAttackGoal(this, 1.3, false));

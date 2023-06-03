@@ -15,7 +15,7 @@
   	"creature_spawn_probability": 0.9,
   	"spawners": {
   	
-  		"water_creature": [
+  		"monster": [
       		{
         		"type": "tff:rotfish",
         		"weight": 100,

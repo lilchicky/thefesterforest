@@ -10,6 +10,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
@@ -87,6 +88,11 @@ public class RottingSkeletonEntity extends Monster implements IAnimatable {
 		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rotting_skeleton.idle", true));
 		return PlayState.CONTINUE;
 		
+	}
+	
+	@Override
+	public MobType getMobType() {
+		return MobType.UNDEAD;
 	}
 
 	@Override

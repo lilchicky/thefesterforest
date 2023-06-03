@@ -14,6 +14,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.MoveControl;
@@ -64,6 +65,11 @@ public class AmbectrumEntity extends Monster implements IAnimatable {
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.ARMOR, 4.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.05f).build();
+	}
+	
+	@Override
+	public MobType getMobType() {
+		return MobType.WATER;
 	}
 	
 	protected void registerGoals() {

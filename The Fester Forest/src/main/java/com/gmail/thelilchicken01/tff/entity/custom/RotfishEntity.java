@@ -79,6 +79,11 @@ public class RotfishEntity extends Monster implements IAnimatable {
 				.add(Attributes.MOVEMENT_SPEED, 0.5f).build();
 	}
 	
+	@Override
+	public MobType getMobType() {
+		return MobType.WATER;
+	}
+	
 	protected void registerGoals() {
 		
 		this.goalSelector.addGoal(2, new RotfishEntity.WaterMeleeAttackGoal(this, 1.3, false));

@@ -15,6 +15,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -57,6 +58,11 @@ public class PlayerCrunchBeetleEntity extends TamableAnimal implements IAnimatab
         super.defineSynchedData();
         this.entityData.define(OWNER_UUID, Optional.of(Util.NIL_UUID));
     }
+	
+	@Override
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
+	}
 	
 	public static AttributeSupplier setAttributes() {
 		return Monster.createMobAttributes()

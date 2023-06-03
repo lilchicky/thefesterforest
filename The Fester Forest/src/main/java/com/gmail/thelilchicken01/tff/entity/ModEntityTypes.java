@@ -101,17 +101,17 @@ public class ModEntityTypes {
 	
 	//Rotfish
 	public static final RegistryObject<EntityType<RotfishEntity>> ROTFISH =
-			ENTITY_TYPES.register("rotfish", () -> EntityType.Builder.of(RotfishEntity::new, MobCategory.WATER_CREATURE)
+			ENTITY_TYPES.register("rotfish", () -> EntityType.Builder.of(RotfishEntity::new, MobCategory.MONSTER)
 					.sized(1.0f, 1.0f).build(new ResourceLocation(TheFesterForest.MODID, "rotfish").toString()));
 	
 	//Ambectrum
 	public static final RegistryObject<EntityType<AmbectrumEntity>> AMBECTRUM =
-			ENTITY_TYPES.register("ambectrum", () -> EntityType.Builder.of(AmbectrumEntity::new, MobCategory.WATER_CREATURE)
+			ENTITY_TYPES.register("ambectrum", () -> EntityType.Builder.of(AmbectrumEntity::new, MobCategory.MONSTER)
 					.sized(1.2f, 3.0f).build(new ResourceLocation(TheFesterForest.MODID, "ambectrum").toString()));
 	
 	//Seathrown Skeleton
 	public static final RegistryObject<EntityType<SeathrownSkeletonEntity>> SEATHROWN_SKELETON =
-			ENTITY_TYPES.register("seathrown_skeleton", () -> EntityType.Builder.of(SeathrownSkeletonEntity::new, MobCategory.WATER_CREATURE)
+			ENTITY_TYPES.register("seathrown_skeleton", () -> EntityType.Builder.of(SeathrownSkeletonEntity::new, MobCategory.MONSTER)
 					.sized(1.0f, 1.4f).build(new ResourceLocation(TheFesterForest.MODID, "seathrown_skeleton").toString()));
 	
 	//Brittle Branch Bullet
