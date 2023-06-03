@@ -1,0 +1,69 @@
+{
+  	"temperature": 0.8,
+  	"downfall": 0.4,
+  	"precipitation": "rain",
+  	"temperature_modifier": "none",
+  	"category": "ocean",
+  	"effects": {
+    	"sky_color": 4129344,
+    	"fog_color": 5899612,
+    	"water_color": 1461763,
+    	"water_fog_color": 668675,
+    	"grass_color": 599040,
+    	"foliage_color": 144128
+  	},
+  	"creature_spawn_probability": 0.9,
+  	"spawners": {
+  	
+  		"monster": [
+      		{
+        		"type": "tff:rotfish",
+        		"weight": 100,
+        		"minCount": 5,
+        		"maxCount": 8
+      		},
+      		{
+        		"type": "tff:ambectrum",
+        		"weight": 40,
+        		"minCount": 1,
+        		"maxCount": 1
+      		},
+      		{
+        		"type": "tff:seathrown_skeleton",
+        		"weight": 100,
+        		"minCount": 2,
+        		"maxCount": 4
+      		}
+      	]
+  	
+  	},
+  	"spawn_costs": {
+  	
+  	},
+  	"carvers": {
+    	"air": [
+      		"minecraft:cave",
+      		"minecraft:canyon",
+      		"minecraft:cave_extra_underground",
+      		"minecraft:nether_cave"
+    	]
+  	},
+  	"features": [
+  		[],
+    	[],
+    	[],
+    	[],
+    	[],
+    	[],
+    	[],
+    	[],
+    	[],
+    	[
+    		"tff:sickening_flower_placed",
+    		"tff:rotting_flower_placed",
+    		"tff:rotting_tall_grass_placed",
+    		"tff:weeping_grass_rare_placed"
+    	],
+    	[]
+  	]
+}

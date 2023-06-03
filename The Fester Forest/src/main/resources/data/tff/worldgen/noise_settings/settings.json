@@ -2997,7 +2997,8 @@
                       "if_true": {
                         "type": "minecraft:biome",
                         "biome_is": [
-                          "tff:fester_ocean"
+                          "tff:fester_ocean",
+                          "tff:fester_river"
                         ]
                       },
                       "then_run": {
@@ -3043,14 +3044,15 @@
                     "if_true": {
                       "type": "minecraft:biome",
                       "biome_is": [
-                        "tff:fester_ocean"
+                        "tff:fester_ocean",
+                        "tff:fester_river"
                       ]
                     },
                     "then_run": {
                       "type": "minecraft:condition",
                       "if_true": {
                         "type": "minecraft:stone_depth",
-                        "offset": 0,
+                        "offset": 5,
                         "surface_type": "floor",
                         "add_surface_depth": true,
                         "secondary_depth_range": 6
@@ -3083,7 +3085,8 @@
                     "if_true": {
                       "type": "minecraft:biome",
                       "biome_is": [
-                        "tff:fester_ocean"
+                        "tff:fester_ocean",
+                        "tff:fester_river"
                       ]
                     },
                     "then_run": {
@@ -3096,7 +3099,7 @@
                             "offset": 0,
                             "surface_type": "ceiling",
                             "add_surface_depth": false,
-                            "secondary_depth_range": 5
+                            "secondary_depth_range": 0
                           },
                           "then_run": {
                             "type": "minecraft:block",
@@ -3124,19 +3127,19 @@
                           "offset": 0,
                           "surface_type": "ceiling",
                           "add_surface_depth": false,
-                          "secondary_depth_range": 5
+                          "secondary_depth_range": 0
                         },
                         "then_run": {
                           "type": "minecraft:block",
                           "result_state": {
-                            "Name": "tff:rotting_sand"
+                            "Name": "tff:rotting_dirt"
                           }
                         }
                       },
                       {
                         "type": "minecraft:block",
                         "result_state": {
-                          "Name": "tff:rotting_sand"
+                          "Name": "tff:rotting_dirt"
                         }
                       }
                     ]
