@@ -155,19 +155,19 @@ public class CorrodedShroomEntity extends Monster implements IAnimatable {
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
-		if(event.isMoving()) {
+		if(this.isInWater()) {
 			
-			if (this.isInWater()) {
+			if (event.isMoving()) {
 				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.corroded_shroom.swim", true));
 				return PlayState.CONTINUE;
 			}
 			
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.corroded_shroom.walk", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.corroded_shroom.idle", true));
 			return PlayState.CONTINUE;
 			
 		}
 		
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.corroded_shroom.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.corroded_shroom.walk", true));
 		return PlayState.CONTINUE;
 		
 	}
