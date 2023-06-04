@@ -99,6 +99,11 @@ public class TffConfiguredFeatures {
 	public static final RegistryObject<ConfiguredFeature<?, ?>> WEEPING_GRASS_RARE = 
 			CONFIGURED_FEATURES.register("weeping_grass_rare", () -> new ConfiguredFeature<>(Feature.FLOWER,
 					patch(BlockInit.WEEPING_GRASS.get(), 16)));
+	
+	// Corroded Mushrooms
+	public static final RegistryObject<ConfiguredFeature<?, ?>> CORRODED_SHROOM = 
+			CONFIGURED_FEATURES.register("corroded_shroom", () -> new ConfiguredFeature<>(Feature.FLOWER,
+					patch(BlockInit.CORRODED_SHROOM.get(), 32)));
 						
     private static RandomPatchConfiguration patch(Block block, int tries) {
     	

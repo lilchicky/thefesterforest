@@ -65,6 +65,8 @@ public class ModLootTableProvider extends BaseLootTableProvider {
 		dropSelf(BlockInit.BLUE_FESTER_SHROOM_BLOCK.get());
 		dropSelf(BlockInit.ORANGE_FESTER_SHROOM_BLOCK.get());
 		dropSelf(BlockInit.FESTER_SHROOM_STEM.get());
+		dropSelf(BlockInit.CORRODED_SHROOM.get());
+		dropSelf(BlockInit.SICKENING_FLOWER.get());
 		
 		silkTouch(BlockInit.ROTTING_GLASS.get(), BlockInit.ROTTING_GLASS.get().asItem(), 0, 0);
 		

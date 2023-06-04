@@ -22,6 +22,7 @@ public class ModCommonEvents {
 			
 			((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(BlockInit.ROTTING_FLOWER.getId(), BlockInit.ROTTING_FLOWER_POT);
 			((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(BlockInit.SICKENING_FLOWER.getId(), BlockInit.SICKENING_FLOWER_POT);
+			((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(BlockInit.CORRODED_SHROOM.getId(), BlockInit.CORRODED_SHROOM_FLOWER_POT);
 			
 			InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.NECKLACE.getMessageBuilder().build());
 			InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().build());
