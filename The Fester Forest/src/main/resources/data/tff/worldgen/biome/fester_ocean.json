@@ -35,7 +35,7 @@
         		"maxCount": 4
       		}
       	],
-    	"water_creature": [
+    	"creature": [
       		{
         		"type": "tff:corroded_shroom",
        			"weight": 5,
