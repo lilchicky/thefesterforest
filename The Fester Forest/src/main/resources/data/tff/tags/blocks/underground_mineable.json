@@ -1,0 +1,15 @@
+{
+	"replace": false,
+	"values": [
+		"#forge:cobblestone",
+		"#forge:end_stones",
+		"#forge:gravel",
+		"#forge:netherrack",
+		"#forge:obsidian",
+		"#forge:ores",
+		"#forge:sand",
+		"#forge:stone",
+		"#forge:sandstone"
+	
+	]
+}

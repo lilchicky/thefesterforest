@@ -22,6 +22,8 @@ public final class TagInit {
 		
 		public static final TagKey<Block> TFF_STONES = mod("tff_stones");
 		
+		public static final TagKey<Block> UNDERGROUND_MINEABLE = mod("underground_mineable");
+		
 		private static TagKey<Block> mod(String path) {
 			return BlockTags.create(new ResourceLocation(TheFesterForest.MODID, path));
 		}

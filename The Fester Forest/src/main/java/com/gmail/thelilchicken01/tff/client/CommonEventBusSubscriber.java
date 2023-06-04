@@ -4,13 +4,16 @@ import java.util.Set;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
+import com.gmail.thelilchicken01.tff.init.TagInit;
 import com.google.common.collect.Sets;
 
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
@@ -88,11 +91,14 @@ public class CommonEventBusSubscriber {
 		CompoundTag compound = usedItem.getOrCreateTag();
 		int momentum = compound.getInt("momentum");
 		
-		String cachedBlock = compound.getString("block");
-        String currentBlock = event.getState().getBlock().getDescriptionId();
-        if (!cachedBlock.equals(currentBlock)) {
+        Boolean isInList = false;
+        if (event.getState().getBlock().defaultBlockState().is(TagInit.Blocks.UNDERGROUND_MINEABLE)) {
+        	
+        	isInList = true;
+        	
+        }
+        if (!isInList) {
         	compound.putInt("momentum", 0);
-        	compound.putString("block", currentBlock);
         } 
         else {
         	if (momentum < 100) {

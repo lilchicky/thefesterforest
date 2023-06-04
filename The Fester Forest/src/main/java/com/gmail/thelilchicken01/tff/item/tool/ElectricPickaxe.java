@@ -28,9 +28,12 @@ public class ElectricPickaxe extends PickaxeItem {
 		
 		lore.add(new TextComponent("Tool").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("Using this pickaxe fills it with charge, increasing your").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("mining speed on same - type blocks. Breaking a different").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("type of block than last mined negates the bonus charge.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("Breaking underground blocks with this pickaxe fills it with charges,").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("up to 100. Each charge increases your mining speed slightly. Mining").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("a non-underground block dissipates all charges.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(""));
+		lore.add(new TextComponent("Blocks considered \"Underground\" are tagged with #tff:underground_mineable").withStyle(ChatFormatting.DARK_GRAY).withStyle(ChatFormatting.ITALIC));
+		lore.add(new TextComponent("when looking at a block in the F3 menu. Uses Forge tags.").withStyle(ChatFormatting.DARK_GRAY).withStyle(ChatFormatting.ITALIC));
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 		for (int x = 0; x < drops.length; x++) {
