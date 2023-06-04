@@ -4,6 +4,7 @@ import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.client.AmbectrumRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.BansheeRenderer;
+import com.gmail.thelilchicken01.tff.entity.client.CorrodedShroomRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.CrunchBeetleRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.ForgemasterRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.PlayerCrunchBeetleRenderer;
@@ -19,6 +20,7 @@ import com.gmail.thelilchicken01.tff.entity.client.goop.MediumGoopRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.goop.SmallGoopRenderer;
 import com.gmail.thelilchicken01.tff.entity.custom.AmbectrumEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.CorrodedShroomEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
@@ -100,6 +102,7 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(ModEntityTypes.ROTFISH.get(), RotfishRenderer::new);
 		EntityRenderers.register(ModEntityTypes.AMBECTRUM.get(), AmbectrumRenderer::new);
 		EntityRenderers.register(ModEntityTypes.SEATHROWN_SKELETON.get(), SeathrownSkeletonRenderer::new);
+		EntityRenderers.register(ModEntityTypes.CORRODED_SHROOM.get(), CorrodedShroomRenderer::new);
 		
 		ItemProperties.register(ItemInit.REETLE_ELYTRA.get(), new ResourceLocation(TheFesterForest.MODID, "broken"),
 				(stack, arg1, arg2, arg3) -> ReetleElytra.isUsable(stack) ? 0 : 1);
@@ -123,6 +126,7 @@ public class ClientEventBusSubscriber {
 		event.put(ModEntityTypes.ROTFISH.get(), RotfishEntity.setAttributes());
 		event.put(ModEntityTypes.AMBECTRUM.get(), AmbectrumEntity.setAttributes());
 		event.put(ModEntityTypes.SEATHROWN_SKELETON.get(), SeathrownSkeletonEntity.setAttributes());
+		event.put(ModEntityTypes.CORRODED_SHROOM.get(), CorrodedShroomEntity.setAttributes());
 		
 	}
 	

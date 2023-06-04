@@ -159,6 +159,11 @@ public class ItemInit {
 			() -> new ForgeSpawnEggItem(ModEntityTypes.SEATHROWN_SKELETON, 0x3d3d3d, 0x595959, //Background, Spots
 					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	//Corroded Shroom Spawn Egg
+	public static final RegistryObject<Item> CORRODED_SHROOM_SPAWN_EGG = register("corroded_shroom_spawn_egg", 
+			() -> new ForgeSpawnEggItem(ModEntityTypes.CORRODED_SHROOM, 0x1f1c5c, 0x804617, //Background, Spots
+					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	/*
 	 * 
 	 * Volatile Items

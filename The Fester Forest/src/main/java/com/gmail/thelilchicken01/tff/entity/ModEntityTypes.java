@@ -3,6 +3,7 @@ package com.gmail.thelilchicken01.tff.entity;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.custom.AmbectrumEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.CorrodedShroomEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
@@ -113,6 +114,11 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<SeathrownSkeletonEntity>> SEATHROWN_SKELETON =
 			ENTITY_TYPES.register("seathrown_skeleton", () -> EntityType.Builder.of(SeathrownSkeletonEntity::new, MobCategory.MONSTER)
 					.sized(1.0f, 1.4f).build(new ResourceLocation(TheFesterForest.MODID, "seathrown_skeleton").toString()));
+	
+	//Corroded Shroom
+	public static final RegistryObject<EntityType<CorrodedShroomEntity>> CORRODED_SHROOM =
+			ENTITY_TYPES.register("corroded_shroom", () -> EntityType.Builder.of(CorrodedShroomEntity::new, MobCategory.CREATURE)
+					.sized(1.0f, 1.0f).build(new ResourceLocation(TheFesterForest.MODID, "corroded_shroom").toString()));
 	
 	//Brittle Branch Bullet
 	
