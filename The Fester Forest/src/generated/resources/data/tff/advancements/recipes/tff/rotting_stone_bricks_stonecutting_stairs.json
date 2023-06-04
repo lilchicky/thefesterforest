@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:rotting_stone_bricks_stonecutting_stairs"
+    ]
+  },
+  "criteria": {
+    "has_tff:rotting_stone_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:rotting_stone_bricks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:rotting_stone_bricks_stonecutting_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:rotting_stone_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}

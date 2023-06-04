@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:crushed_rotting_stone_stonecutting_crushed_to_normal"
+    ]
+  },
+  "criteria": {
+    "has_tff:crushed_rotting_stone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:crushed_rotting_stone"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:crushed_rotting_stone_stonecutting_crushed_to_normal"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:crushed_rotting_stone",
+      "has_the_recipe"
+    ]
+  ]
+}

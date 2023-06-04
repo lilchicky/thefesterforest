@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:rotting_bricks_stonecutting_wall"
+    ]
+  },
+  "criteria": {
+    "has_tff:rotting_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:rotting_bricks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:rotting_bricks_stonecutting_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:rotting_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}

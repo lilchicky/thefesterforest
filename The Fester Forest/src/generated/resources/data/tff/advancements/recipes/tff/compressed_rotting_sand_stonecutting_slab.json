@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:compressed_rotting_sand_stonecutting_slab"
+    ]
+  },
+  "criteria": {
+    "has_tff:compressed_rotting_sand": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:compressed_rotting_sand"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:compressed_rotting_sand_stonecutting_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:compressed_rotting_sand",
+      "has_the_recipe"
+    ]
+  ]
+}

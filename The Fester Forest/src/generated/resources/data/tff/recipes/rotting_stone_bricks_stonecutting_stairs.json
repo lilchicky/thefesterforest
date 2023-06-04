@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "tff:rotting_stone_bricks"
+  },
+  "result": "tff:rotting_stone_brick_stairs",
+  "count": 1
+}

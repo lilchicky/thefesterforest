@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "tff:compressed_rotting_sand"
+  },
+  "result": "tff:compressed_rotting_sand_wall",
+  "count": 1
+}

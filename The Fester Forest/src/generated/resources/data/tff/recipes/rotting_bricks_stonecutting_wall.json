@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "tff:rotting_bricks"
+  },
+  "result": "tff:fester_brick_wall",
+  "count": 1
+}

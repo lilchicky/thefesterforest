@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:rotting_stone_stonecutting_slab"
+    ]
+  },
+  "criteria": {
+    "has_tff:rotting_stone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:rotting_stone"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:rotting_stone_stonecutting_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:rotting_stone",
+      "has_the_recipe"
+    ]
+  ]
+}

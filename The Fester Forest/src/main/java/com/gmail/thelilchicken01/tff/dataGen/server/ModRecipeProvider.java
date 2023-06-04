@@ -12,14 +12,12 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.data.recipes.UpgradeRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModRecipeProvider extends RecipeProvider {
 
@@ -510,7 +508,81 @@ public class ModRecipeProvider extends RecipeProvider {
 			.unlocks("has_" + ItemInit.REETLE_SHELL.get().getRegistryName(), has(ItemInit.REETLE_SHELL.get()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.REETLE_SHELL.get().getRegistryName().getPath() + "_elytra"));
 		
+		/*
+		 * Stonecutting Rotting Stone Bricks
+		 */
 		
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockInit.ROTTING_STONE_BRICKS.get()), BlockInit.ROTTING_STONE_BRICK_SLAB.get().asItem(), 2)
+				.unlockedBy("has_" + BlockInit.ROTTING_STONE_BRICKS.get().getRegistryName(), has(BlockInit.ROTTING_STONE_BRICKS.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_STONE_BRICKS.get().getRegistryName().getPath() + "_stonecutting_slab"));
+		
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockInit.ROTTING_STONE_BRICKS.get()), BlockInit.ROTTING_STONE_BRICK_STAIRS.get().asItem())
+				.unlockedBy("has_" + BlockInit.ROTTING_STONE_BRICKS.get().getRegistryName(), has(BlockInit.ROTTING_STONE_BRICKS.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_STONE_BRICKS.get().getRegistryName().getPath() + "_stonecutting_stairs"));
+		
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockInit.ROTTING_STONE_BRICKS.get()), BlockInit.ROTTING_STONE_BRICK_WALL.get().asItem())
+				.unlockedBy("has_" + BlockInit.ROTTING_STONE_BRICKS.get().getRegistryName(), has(BlockInit.ROTTING_STONE_BRICKS.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_STONE_BRICKS.get().getRegistryName().getPath() + "_stonecutting_wall"));
+		
+		/*
+		 * Stonecutting Rotting Stone
+		 */
+		
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockInit.ROTTING_STONE.get()), BlockInit.ROTTING_STONE_BRICKS.get().asItem())
+				.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), has(BlockInit.ROTTING_STONE.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_STONE.get().getRegistryName().getPath() + "_stonecutting_bricks"));
+		
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockInit.ROTTING_STONE.get()), BlockInit.ROTTING_STONE_BRICK_SLAB.get().asItem(), 2)
+				.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), has(BlockInit.ROTTING_STONE.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_STONE.get().getRegistryName().getPath() + "_stonecutting_slab"));
+
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockInit.ROTTING_STONE.get()), BlockInit.ROTTING_STONE_BRICK_STAIRS.get().asItem())
+				.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), has(BlockInit.ROTTING_STONE.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_STONE.get().getRegistryName().getPath() + "_stonecutting_stairs"));
+
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockInit.ROTTING_STONE.get()), BlockInit.ROTTING_STONE_BRICK_WALL.get().asItem())
+				.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), has(BlockInit.ROTTING_STONE.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_STONE.get().getRegistryName().getPath() + "_stonecutting_wall"));
+		
+		/*
+		 * Stonecutting Compressed Rotting Sand
+		 */
+
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockInit.COMPRESSED_ROTTING_SAND.get()), BlockInit.COMPRESSED_ROTTING_SAND_SLAB.get().asItem(), 2)
+				.unlockedBy("has_" + BlockInit.COMPRESSED_ROTTING_SAND.get().getRegistryName(), has(BlockInit.COMPRESSED_ROTTING_SAND.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.COMPRESSED_ROTTING_SAND.get().getRegistryName().getPath() + "_stonecutting_slab"));
+
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockInit.COMPRESSED_ROTTING_SAND.get()), BlockInit.COMPRESSED_ROTTING_SAND_STAIRS.get().asItem())
+				.unlockedBy("has_" + BlockInit.COMPRESSED_ROTTING_SAND.get().getRegistryName(), has(BlockInit.COMPRESSED_ROTTING_SAND.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.COMPRESSED_ROTTING_SAND.get().getRegistryName().getPath() + "_stonecutting_stairs"));
+
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockInit.COMPRESSED_ROTTING_SAND.get()), BlockInit.COMPRESSED_ROTTING_SAND_WALL.get().asItem())
+				.unlockedBy("has_" + BlockInit.COMPRESSED_ROTTING_SAND.get().getRegistryName(), has(BlockInit.COMPRESSED_ROTTING_SAND.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.COMPRESSED_ROTTING_SAND.get().getRegistryName().getPath() + "_stonecutting_wall"));
+		
+		/*
+		 * Fester Bricks
+		 */
+		
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockInit.ROTTING_BRICKS.get()), BlockInit.FESTER_BRICK_SLAB.get().asItem(), 2)
+				.unlockedBy("has_" + BlockInit.ROTTING_BRICKS.get().getRegistryName(), has(BlockInit.ROTTING_BRICKS.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_BRICKS.get().getRegistryName().getPath() + "_stonecutting_slab"));
+
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockInit.ROTTING_BRICKS.get()), BlockInit.FESTER_BRICK_STAIRS.get().asItem())
+				.unlockedBy("has_" + BlockInit.ROTTING_BRICKS.get().getRegistryName(), has(BlockInit.ROTTING_BRICKS.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_BRICKS.get().getRegistryName().getPath() + "_stonecutting_stairs"));
+		
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockInit.ROTTING_BRICKS.get()), BlockInit.FESTER_BRICK_WALL.get().asItem())
+				.unlockedBy("has_" + BlockInit.ROTTING_BRICKS.get().getRegistryName(), has(BlockInit.ROTTING_BRICKS.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_BRICKS.get().getRegistryName().getPath() + "_stonecutting_wall"));
+		
+		/*
+		 * Crushed Rotting Stone Bricks
+		 */
+		
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockInit.CRUSHED_ROTTING_STONE.get()), BlockInit.ROTTING_STONE.get().asItem())
+				.unlockedBy("has_" + BlockInit.CRUSHED_ROTTING_STONE.get().getRegistryName(), has(BlockInit.CRUSHED_ROTTING_STONE.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.CRUSHED_ROTTING_STONE.get().getRegistryName().getPath() + "_stonecutting_crushed_to_normal"));
 	
 		
 	}
