@@ -29,8 +29,8 @@ public class ElectricPickaxe extends PickaxeItem {
 		lore.add(new TextComponent("Tool").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("Using this pickaxe fills it with charge, increasing your").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("mining speed. You maintain the charge until you swap off").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("of the pickaxe.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("mining speed on same - type blocks. Breaking a different").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("type of block than last mined negates the bonus charge.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 		for (int x = 0; x < drops.length; x++) {

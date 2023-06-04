@@ -73,34 +73,6 @@ public class CommonEventBusSubscriber {
 		
 	}
 	
-	@SubscribeEvent
-	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		
-		Player player = event.player;
-		
-		InteractionHand hand = player.getUsedItemHand();
-        if (hand == null) return;
-		
-		ItemStack usedItem = player.getItemInHand(hand);
-		
-		if (usedItem.getItem() == ItemInit.ELECTRIC_PICKAXE.get()) {
-			
-			pickaxe = usedItem;
-			
-		}
-		else {
-			
-			if (pickaxe != null) {
-				
-				CompoundTag compound = pickaxe.getOrCreateTag();
-				compound.putInt("momentum", 0);
-				
-			}
-			
-		}
-		
-	}
-	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public static void onBlockBreak(BlockEvent.BreakEvent event) {
 		
@@ -116,11 +88,17 @@ public class CommonEventBusSubscriber {
 		CompoundTag compound = usedItem.getOrCreateTag();
 		int momentum = compound.getInt("momentum");
 		
-		if (momentum < 100) {
-				
-			compound.putInt("momentum", momentum + 1);
-				
-		}
+		String cachedBlock = compound.getString("block");
+        String currentBlock = event.getState().getBlock().getDescriptionId();
+        if (!cachedBlock.equals(currentBlock)) {
+        	compound.putInt("momentum", 0);
+        	compound.putString("block", currentBlock);
+        } 
+        else {
+        	if (momentum < 100) {
+        		compound.putInt("momentum", momentum + 1);
+        	}
+        }
 
 	}
 	

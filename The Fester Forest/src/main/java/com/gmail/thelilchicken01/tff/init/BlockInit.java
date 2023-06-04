@@ -6,6 +6,7 @@ import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.block.CorrodedShroom;
 import com.gmail.thelilchicken01.tff.block.ModFlammableRotatedPillarBlock;
 import com.gmail.thelilchicken01.tff.block.NonFlammableRotatedPillarBlock;
+import com.gmail.thelilchicken01.tff.block.Reetlelight;
 import com.gmail.thelilchicken01.tff.block.RottingFlower;
 import com.gmail.thelilchicken01.tff.block.RottingGraveDirt;
 import com.gmail.thelilchicken01.tff.block.RottingSand;
@@ -21,6 +22,7 @@ import com.google.common.base.Supplier;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Registry;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -40,7 +42,10 @@ import net.minecraft.world.level.block.TallFlowerBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.block.state.BlockBehaviour.StatePredicate;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.structure.StructureSet;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -479,9 +484,7 @@ public class BlockInit {
 	
 	//Reetlelight
 	public static final RegistryObject<Block> REETLELIGHT = register("reetlelight", 
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SHROOMLIGHT).emissiveRendering((state, getter, pos) -> {
-				return true;
-			}).lightLevel(state -> 15)), 
+			() -> new Reetlelight(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Soul Rot
