@@ -34,15 +34,12 @@ public class ModLootTableProvider extends BaseLootTableProvider {
 		dropSelf(BlockInit.CRACKED_ROTTING_STONE.get());
 		dropSelf(BlockInit.MOSSY_ROTTING_STONE.get());
 		dropSelf(BlockInit.ROTTING_STONE_BRICKS.get());
-		dropSelf(BlockInit.ROTTING_STONE_BRICK_SLAB.get());
 		dropSelf(BlockInit.ROTTING_STONE_BRICK_STAIRS.get());
 		dropSelf(BlockInit.ROTTING_STONE_BRICK_WALL.get());
 		dropSelf(BlockInit.ROTTINGWOOD_FENCE.get());
 		dropSelf(BlockInit.ROTTINGWOOD_FENCE_GATE.get());
 		dropSelf(BlockInit.ROTTINGWOOD_STAIRS.get());
-		dropSelf(BlockInit.ROTTINGWOOD_SLAB.get());
 		dropSelf(BlockInit.SLIMY_STAIRS.get());
-		dropSelf(BlockInit.SLIMY_SLAB.get());
 		dropSelf(BlockInit.SLIMY_FENCE.get());
 		dropSelf(BlockInit.SLIMY_FENCE_GATE.get());
 		dropSelf(BlockInit.REETLELIGHT.get());
@@ -51,13 +48,11 @@ public class ModLootTableProvider extends BaseLootTableProvider {
 		dropSelf(BlockInit.SICKENING_FLOWER.get());
 		dropSelf(BlockInit.SLIMY_FLOWER.get());
 		dropSelf(BlockInit.FESTER_BRICK_STAIRS.get());
-		dropSelf(BlockInit.FESTER_BRICK_SLAB.get());
 		dropSelf(BlockInit.WEEPING_GRASS.get());
 		dropSelf(BlockInit.SOUL_ROT.get());
 		dropSelf(BlockInit.ROTTING_SAND.get());
 		dropSelf(BlockInit.COMPRESSED_ROTTING_SAND.get());
 		dropSelf(BlockInit.COMPRESSED_ROTTING_SAND_STAIRS.get());
-		dropSelf(BlockInit.COMPRESSED_ROTTING_SAND_SLAB.get());
 		dropSelf(BlockInit.COMPRESSED_ROTTING_SAND_WALL.get());
 		dropSelf(BlockInit.CRACKED_ROTTING_STONE_BRICKS.get());
 		dropSelf(BlockInit.FESTER_BRICK_WALL.get());
@@ -69,7 +64,6 @@ public class ModLootTableProvider extends BaseLootTableProvider {
 		dropSelf(BlockInit.SICKENING_FLOWER.get());
 		dropSelf(BlockInit.CUBED_FUNGUS.get());
 		dropSelf(BlockInit.CUBED_FUNGUS_STAIRS.get());
-		dropSelf(BlockInit.CUBED_FUNGUS_SLAB.get());
 		dropSelf(BlockInit.CUBED_FUNGUS_FENCE.get());
 		dropSelf(BlockInit.CUBED_FUNGUS_GATE.get());
 		

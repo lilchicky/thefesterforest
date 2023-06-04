@@ -7,7 +7,7 @@
       "model": "tff:block/cubed_fungus"
     },
     "type=top": {
-      "model": "tff:block/cubed_fungus_top"
+      "model": "tff:block/cubed_fungus_slab_top"
     }
   }
 }
