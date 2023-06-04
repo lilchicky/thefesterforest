@@ -4,11 +4,16 @@ import java.util.EnumSet;
 
 import javax.annotation.Nullable;
 
+import com.gmail.thelilchicken01.tff.init.BlockInit;
+
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.EntityType;
@@ -116,6 +121,24 @@ public class CorrodedShroomEntity extends Monster implements IAnimatable {
 		
 		this.playSound(SoundEvents.FISH_SWIM, 0.15f, 0.5f); // VOLUME - PITCH
 		
+	}
+	
+	@Override
+	protected InteractionResult mobInteract(Player player, InteractionHand hand) {
+		
+		if (player.getItemInHand(hand).getItem() == BlockInit.CORRODED_SHROOM.get().asItem()) {
+			
+			if (this.getLevel().isClientSide) {
+				
+				this.getLevel().addParticle(ParticleTypes.HEART, this.getX(), this.getY() + 1, this.getZ(), 0.0d, 0.25d, 0.0d);
+				
+			}
+			
+			player.getItemInHand(hand).shrink(1);
+			
+		}
+		
+		return super.mobInteract(player, hand);
 	}
 	
 	public boolean canBreatheUnderwater() {
