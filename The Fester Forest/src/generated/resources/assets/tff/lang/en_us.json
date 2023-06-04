@@ -194,5 +194,6 @@
   "item.tff.volatile_necklace": "Volatile Necklace",
   "item.tff.volatile_sword": "Volatile Sword",
   "item.tff.wight_spawn_egg": "Wight Spawn Egg",
-  "itemGroup.tff": "The Fester Forest"
+  "itemGroup.tff": "The Fester Forest",
+  "minecraft.regeneration.12": "Regeneration XII"
 }
