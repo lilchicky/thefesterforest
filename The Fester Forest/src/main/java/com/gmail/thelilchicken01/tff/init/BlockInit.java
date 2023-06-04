@@ -338,7 +338,8 @@ public class BlockInit {
 	 */
 	
 	//Fester Ore
-	public static final RegistryObject<Block> FESTER_ORE = register("fester_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
+	public static final RegistryObject<Block> FESTER_ORE = register("fester_ore", () -> new Block(
+			BlockBehaviour.Properties.copy(Blocks.COBBLED_DEEPSLATE).sound(SoundType.STONE).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Fester Bricks
