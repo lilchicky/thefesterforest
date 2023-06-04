@@ -2,12 +2,13 @@
   "type": "minecraft:block",
   "pools": [
     {
+      "name": "tff:rottingwood_slabs",
       "rolls": 1,
       "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tff:slimy_slab",
+          "name": "tff:rottingwood_slabs",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -16,7 +17,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "tff:slimy_slab",
+                  "block": "tff:rottingwood_slabs",
                   "properties": {
                     "type": "double"
                   }

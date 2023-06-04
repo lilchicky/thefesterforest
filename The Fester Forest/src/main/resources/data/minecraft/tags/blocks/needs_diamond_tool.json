@@ -2,7 +2,7 @@
 	"replace": false,
 	"values": [
 		"tff:fester_ore",
-		"tff:fester_brick_slab",
+		"tff:fester_brick_slabs",
 		"tff:fester_brick_stairs",
 		"tff:rotting_bricks"
 	]

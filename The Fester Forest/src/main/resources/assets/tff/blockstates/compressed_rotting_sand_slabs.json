@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "tff:block/compressed_rotting_sand_slab"
+      "model": "tff:block/compressed_rotting_sand_slabs"
     },
     "type=double": {
       "model": "tff:block/compressed_rotting_sand"
     },
     "type=top": {
-      "model": "tff:block/compressed_rotting_sand_slab_top"
+      "model": "tff:block/compressed_rotting_sand_slabs_top"
     }
   }
 }

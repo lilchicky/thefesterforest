@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "tff:rotting_stone_brick_slab"
+      "tff:cubed_fungus_slabs"
     ]
   },
   "criteria": {
-    "has_tff:rotting_stone_bricks": {
+    "has_tff:cubed_fungus": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "tff:rotting_stone_bricks"
+              "tff:cubed_fungus"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "tff:rotting_stone_brick_slab"
+        "recipe": "tff:cubed_fungus_slabs"
       }
     }
   },
   "requirements": [
     [
-      "has_tff:rotting_stone_bricks",
+      "has_tff:cubed_fungus",
       "has_the_recipe"
     ]
   ]

@@ -1,7 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"tff:rottingwood_slab",
-		"tff:slimy_slab"
+		"tff:rottingwood_slabs",
+		"tff:slimy_slabs"
 	]
 }

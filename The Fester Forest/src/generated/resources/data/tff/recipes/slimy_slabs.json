@@ -5,11 +5,11 @@
   ],
   "key": {
     "a": {
-      "item": "tff:cubed_fungus"
+      "item": "tff:slimy_planks"
     }
   },
   "result": {
-    "item": "tff:cubed_fungus_slab",
+    "item": "tff:slimy_slabs",
     "count": 6
   }
 }

@@ -132,7 +132,7 @@ public class BlockInit {
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rottingwood Slab
-	public static final RegistryObject<Block> ROTTINGWOOD_SLAB = register("rottingwood_slab", 
+	public static final RegistryObject<Block> ROTTINGWOOD_SLAB = register("rottingwood_slabs", 
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.NETHERRACK)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
@@ -221,7 +221,7 @@ public class BlockInit {
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 		
 	//Slimy Slab
-	public static final RegistryObject<Block> SLIMY_SLAB = register("slimy_slab", 
+	public static final RegistryObject<Block> SLIMY_SLAB = register("slimy_slabs", 
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.SLIME_BLOCK)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
@@ -282,7 +282,7 @@ public class BlockInit {
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Stone Brick Slab
-	public static final RegistryObject<Block> ROTTING_STONE_BRICK_SLAB = register("rotting_stone_brick_slab", 
+	public static final RegistryObject<Block> ROTTING_STONE_BRICK_SLAB = register("rotting_stone_brick_slabs", 
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
@@ -317,7 +317,7 @@ public class BlockInit {
 					object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Compressed Rotting Sand Slab
-	public static final RegistryObject<Block> COMPRESSED_ROTTING_SAND_SLAB = register("compressed_rotting_sand_slab", 
+	public static final RegistryObject<Block> COMPRESSED_ROTTING_SAND_SLAB = register("compressed_rotting_sand_slabs", 
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
@@ -348,7 +348,7 @@ public class BlockInit {
 				object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 		
 	//Fester Brick Slab
-	public static final RegistryObject<Block> FESTER_BRICK_SLAB = register("fester_brick_slab", 
+	public static final RegistryObject<Block> FESTER_BRICK_SLAB = register("fester_brick_slabs", 
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
@@ -446,7 +446,7 @@ public class BlockInit {
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 		
 	//Cubed Fungus Slab
-	public static final RegistryObject<Block> CUBED_FUNGUS_SLAB = register("cubed_fungus_slab", 
+	public static final RegistryObject<Block> CUBED_FUNGUS_SLAB = register("cubed_fungus_slabs", 
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).strength(2.0f)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	

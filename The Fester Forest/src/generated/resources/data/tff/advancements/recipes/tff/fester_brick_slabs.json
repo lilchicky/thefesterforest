@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "tff:rottingwood_slab"
+      "tff:fester_brick_slabs"
     ]
   },
   "criteria": {
-    "has_tff:rotting_planks": {
+    "has_tff:rotting_bricks": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "tff:rotting_planks"
+              "tff:rotting_bricks"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "tff:rottingwood_slab"
+        "recipe": "tff:fester_brick_slabs"
       }
     }
   },
   "requirements": [
     [
-      "has_tff:rotting_planks",
+      "has_tff:rotting_bricks",
       "has_the_recipe"
     ]
   ]

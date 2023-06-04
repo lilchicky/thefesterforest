@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "tff:slimy_slab"
+      "tff:compressed_rotting_sand_slabs"
     ]
   },
   "criteria": {
-    "has_tff:slimy_planks": {
+    "has_tff:compressed_rotting_sand": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "tff:slimy_planks"
+              "tff:compressed_rotting_sand"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "tff:slimy_slab"
+        "recipe": "tff:compressed_rotting_sand_slabs"
       }
     }
   },
   "requirements": [
     [
-      "has_tff:slimy_planks",
+      "has_tff:compressed_rotting_sand",
       "has_the_recipe"
     ]
   ]

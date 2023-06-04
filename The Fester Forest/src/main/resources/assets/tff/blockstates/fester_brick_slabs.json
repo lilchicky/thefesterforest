@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "tff:block/fester_brick_slab"
+      "model": "tff:block/fester_brick_slabs"
     },
     "type=double": {
       "model": "tff:block/rotting_bricks"
     },
     "type=top": {
-      "model": "tff:block/fester_brick_slab_top"
+      "model": "tff:block/fester_brick_slabs_top"
     }
   }
 }

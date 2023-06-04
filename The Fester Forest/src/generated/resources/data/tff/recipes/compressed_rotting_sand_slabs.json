@@ -5,11 +5,11 @@
   ],
   "key": {
     "a": {
-      "item": "tff:rotting_bricks"
+      "item": "tff:compressed_rotting_sand"
     }
   },
   "result": {
-    "item": "tff:fester_brick_slab",
+    "item": "tff:compressed_rotting_sand_slabs",
     "count": 6
   }
 }

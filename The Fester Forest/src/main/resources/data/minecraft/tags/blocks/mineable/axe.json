@@ -8,15 +8,15 @@
 		"tff:rottingwood_fence",
 		"tff:rottingwood_fence_gate",
 		"tff:rottingwood_stairs",
-		"tff:rottingwood_slab",
-		"tff:slimy_slab",
+		"tff:rottingwood_slabs",
+		"tff:slimy_slabs",
 		"tff:slimy_stairs",
 		"tff:slimy_fence",
 		"tff:slimy_fence_gate",
 		"tff:fester_shroom_stem",
 		"tff:cubed_fungus",
 		"tff:cubed_fungus_stairs",
-		"tff:cubed_fungus_slab",
+		"tff:cubed_fungus_slabs",
 		"tff:cubed_fungus_fence",
 		"tff:cubed_fungus_fence_gate"
 	]

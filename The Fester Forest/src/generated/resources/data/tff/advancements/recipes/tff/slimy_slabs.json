@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "tff:fester_brick_slab"
+      "tff:slimy_slabs"
     ]
   },
   "criteria": {
-    "has_tff:rotting_bricks": {
+    "has_tff:slimy_planks": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "tff:rotting_bricks"
+              "tff:slimy_planks"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "tff:fester_brick_slab"
+        "recipe": "tff:slimy_slabs"
       }
     }
   },
   "requirements": [
     [
-      "has_tff:rotting_bricks",
+      "has_tff:slimy_planks",
       "has_the_recipe"
     ]
   ]

@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "tff:block/cubed_fungus_slab"
+      "model": "tff:block/cubed_fungus_slabs"
     },
     "type=double": {
       "model": "tff:block/cubed_fungus"
     },
     "type=top": {
-      "model": "tff:block/cubed_fungus_slab_top"
+      "model": "tff:block/cubed_fungus_slabs_top"
     }
   }
 }

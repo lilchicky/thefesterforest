@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "tff:block/slimy_slab"
+      "model": "tff:block/slimy_slabs"
     },
     "type=double": {
       "model": "tff:block/slimy_planks"
     },
     "type=top": {
-      "model": "tff:block/slimy_slab_top"
+      "model": "tff:block/slimy_slabs_top"
     }
   }
 }

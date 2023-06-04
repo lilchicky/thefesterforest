@@ -5,11 +5,11 @@
   ],
   "key": {
     "a": {
-      "item": "tff:slimy_planks"
+      "item": "tff:rotting_stone_bricks"
     }
   },
   "result": {
-    "item": "tff:slimy_slab",
+    "item": "tff:rotting_stone_brick_slabs",
     "count": 6
   }
 }
