@@ -86,7 +86,7 @@ public class SeathrownSkeletonEntity extends Monster implements IAnimatable {
 	
 	@Override
 	protected float getWaterSlowDown() {
-		return 0.0f;
+		return 0.9f;
 	}
 	
 	protected void registerGoals() {

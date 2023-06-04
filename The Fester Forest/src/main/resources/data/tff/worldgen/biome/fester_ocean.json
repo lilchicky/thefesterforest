@@ -34,7 +34,15 @@
         		"minCount": 2,
         		"maxCount": 4
       		}
-      	]
+      	],
+    	"water_creature": [
+      		{
+        		"type": "tff:corroded_shroom",
+       			"weight": 5,
+        		"minCount": 4,
+        		"maxCount": 7
+      		}
+    	]
   	
   	},
   	"spawn_costs": {
@@ -64,7 +72,8 @@
     		"tff:rotting_tall_grass_placed",
     		"tff:weeping_grass_rare_placed",
     		"tff:blue_ocean_tree_placed",
-    		"tff:orange_ocean_tree_placed"
+    		"tff:orange_ocean_tree_placed",
+    		"tff:corroded_shroom_placed"
     	],
     	[]
   	]

@@ -3,6 +3,7 @@ package com.gmail.thelilchicken01.tff.init;
 import java.util.function.Function;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
+import com.gmail.thelilchicken01.tff.block.CorrodedShroom;
 import com.gmail.thelilchicken01.tff.block.ModFlammableRotatedPillarBlock;
 import com.gmail.thelilchicken01.tff.block.NonFlammableRotatedPillarBlock;
 import com.gmail.thelilchicken01.tff.block.RottingFlower;
@@ -411,6 +412,21 @@ public class BlockInit {
 	public static final RegistryObject<TallFlowerBlock> WEEPING_GRASS = register("weeping_grass", () -> new WeepingGrass(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	//Corrupted Shroom
+	public static final RegistryObject<FlowerBlock> CORRODED_SHROOM = register("corroded_shroom", () -> new CorrodedShroom(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	/*
+	 * 
+	 * Fester Shroom Stem Blocks
+	 * 
+	 */
+	
+	//Fester Shroom Stem
+	public static final RegistryObject<Block> FESTER_SHROOM_STEM = register("fester_shroom_stem", 
+			() -> new NonFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	/*
 	 * 
 	 * Ocean
@@ -423,11 +439,6 @@ public class BlockInit {
 	
 	//Orange Fester Shroom Block
 	public static final RegistryObject<Block> ORANGE_FESTER_SHROOM_BLOCK = register("orange_fester_shroom_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)),
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
-	
-	//Fester Shroom Stem
-	public static final RegistryObject<Block> FESTER_SHROOM_STEM = register("fester_shroom_stem", 
-			() -> new NonFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Bone Block
@@ -469,6 +480,10 @@ public class BlockInit {
 	//Sickening Flower Pot
 	public static final RegistryObject<FlowerPotBlock> SICKENING_FLOWER_POT = BLOCKS.register("sickening_flower_pot", 
 			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SICKENING_FLOWER, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+	
+	//Corrupted Mushroom Flower Pot
+	public static final RegistryObject<FlowerPotBlock> CORRODED_SHROOM_FLOWER_POT = BLOCKS.register("corroded_shroom_flower_pot", 
+			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, CORRODED_SHROOM, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
 	
 	private static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<? extends T> block) {
 		return BLOCKS.register(name, block);

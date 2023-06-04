@@ -12,32 +12,50 @@
 			},
 			"bones": [
 				{
-					"name": "the_lad",
-					"pivot": [0, 1.83333, 0],
+					"name": "wholeguy",
+					"pivot": [0, 1.83333, 0]
+				},
+				{
+					"name": "bodymass",
+					"parent": "wholeguy",
+					"pivot": [0, 5, 0]
+				},
+				{
+					"name": "mushytop",
+					"parent": "bodymass",
+					"pivot": [0, 6.83333, 0],
 					"cubes": [
 						{"origin": [-4, 9, -4], "size": [8, 2, 8], "uv": [0, 14]},
-						{"origin": [-5, 5, -5], "size": [10, 4, 10], "uv": [0, 0]},
+						{"origin": [-5, 5, -5], "size": [10, 4, 10], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "body",
+					"parent": "bodymass",
+					"pivot": [0, 5, 0],
+					"cubes": [
 						{"origin": [-3, 2, -3], "size": [6, 3, 6], "uv": [0, 24]}
 					]
 				},
 				{
 					"name": "legs",
+					"parent": "wholeguy",
 					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "right_leg",
 					"parent": "legs",
-					"pivot": [-2.25, 2, 0],
+					"pivot": [-1.25, 2, 0],
 					"cubes": [
-						{"origin": [-2.75, 0, -0.5], "size": [1, 2, 1], "uv": [0, 3]}
+						{"origin": [-1.75, 0, -0.5], "size": [1, 2, 1], "uv": [0, 3]}
 					]
 				},
 				{
 					"name": "left_leg",
 					"parent": "legs",
-					"pivot": [2.25, 2, 0],
+					"pivot": [1.25, 2, 0],
 					"cubes": [
-						{"origin": [1.75, 0, -0.5], "size": [1, 2, 1], "uv": [0, 0]}
+						{"origin": [0.75, 0, -0.5], "size": [1, 2, 1], "uv": [0, 0]}
 					]
 				}
 			]
