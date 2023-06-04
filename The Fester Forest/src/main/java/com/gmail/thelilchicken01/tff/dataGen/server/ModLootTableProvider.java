@@ -10,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 public class ModLootTableProvider extends BaseLootTableProvider {
 
@@ -67,10 +68,12 @@ public class ModLootTableProvider extends BaseLootTableProvider {
 		dropSelf(BlockInit.CUBED_FUNGUS_FENCE.get());
 		dropSelf(BlockInit.CUBED_FUNGUS_GATE.get());
 		
-		silkTouch(BlockInit.ROTTING_GLASS.get(), BlockInit.ROTTING_GLASS.get().asItem(), 0, 0);
+		silkTouch(BlockInit.ROTTING_GLASS.get(), Blocks.AIR.asItem(), 0, 0);
 		
 		//silkTouch(BlockInit.volatileOre.get(), Items.BLAZE_POWDER, 1, 4);
-		
+		/*
+		 * DO NOT UNDER ANY CIRCUMSTANCES USE THE DROPSELF FOR SLABS. WRITE THE LOOT TABLE YOURSELF.
+		 */
 	}
 	
 	protected void silkTouch(Block block, Item silk, int fortuneMin, int fortuneMax) {
