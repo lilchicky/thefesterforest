@@ -117,7 +117,7 @@ public class ModEntityTypes {
 	
 	//Corroded Shroom
 	public static final RegistryObject<EntityType<CorrodedShroomEntity>> CORRODED_SHROOM =
-			ENTITY_TYPES.register("corroded_shroom", () -> EntityType.Builder.of(CorrodedShroomEntity::new, MobCategory.CREATURE)
+			ENTITY_TYPES.register("corroded_shroom", () -> EntityType.Builder.of(CorrodedShroomEntity::new, MobCategory.WATER_CREATURE)
 					.sized(1.0f, 1.0f).build(new ResourceLocation(TheFesterForest.MODID, "corroded_shroom").toString()));
 	
 	//Brittle Branch Bullet

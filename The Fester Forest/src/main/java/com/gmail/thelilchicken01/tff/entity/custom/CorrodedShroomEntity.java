@@ -16,6 +16,7 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -24,6 +25,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -42,7 +44,17 @@ public class CorrodedShroomEntity extends Animal implements IAnimatable {
 	
 	@Override
 	public MobType getMobType() {
-		return MobType.UNDEFINED;
+		return MobType.WATER;
+	}
+	
+	@Override
+	protected float getWaterSlowDown() {
+		return 0.0f;
+	}
+	
+	@Override
+	public boolean canBreatheUnderwater() {
+		return true;
 	}
 	
 	public static AttributeSupplier setAttributes() {
@@ -50,7 +62,7 @@ public class CorrodedShroomEntity extends Animal implements IAnimatable {
 				.add(Attributes.MAX_HEALTH, 10.00)
 				.add(Attributes.ATTACK_DAMAGE, 5.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
-				.add(Attributes.MOVEMENT_SPEED, 0.6f).build();
+				.add(Attributes.MOVEMENT_SPEED, 0.3f).build();
 	}
 	
 	@Override
@@ -61,11 +73,9 @@ public class CorrodedShroomEntity extends Animal implements IAnimatable {
 	protected void registerGoals() {
 		
 		//first num is prio
-		
-		this.goalSelector.addGoal(1, new FloatGoal(this));
 		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.005, false)); // speed modifier, follow even if no line of sight (this was PanicGoal(this, speed mod)
 		this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0f)); //look distance
-		this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.00));
+		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1.00));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers(CorrodedShroomEntity.class));
 		

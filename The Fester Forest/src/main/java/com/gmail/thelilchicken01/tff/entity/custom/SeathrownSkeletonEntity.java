@@ -76,12 +76,17 @@ public class SeathrownSkeletonEntity extends Monster implements IAnimatable {
 				.add(Attributes.ATTACK_DAMAGE, 18.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.ARMOR, 10.0f)
-				.add(Attributes.MOVEMENT_SPEED, 0.5f).build();
+				.add(Attributes.MOVEMENT_SPEED, 0.25f).build();
 	}
 	
 	@Override
 	public MobType getMobType() {
 		return MobType.UNDEAD;
+	}
+	
+	@Override
+	protected float getWaterSlowDown() {
+		return 0.0f;
 	}
 	
 	protected void registerGoals() {
