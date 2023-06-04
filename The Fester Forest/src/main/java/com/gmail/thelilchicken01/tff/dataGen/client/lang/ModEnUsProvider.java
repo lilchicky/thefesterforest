@@ -208,6 +208,10 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.CORRODED_SHROOM_FLOWER_POT.get(), "Corroded Shroom Flower Pot");
 		add(BlockInit.SICKENING_FLOWER_POT.get(), "Sickening Amaranth Flower Pot");
 		add(BlockInit.CUBED_FUNGUS.get(), "Cubed Fungus");
+		add(BlockInit.CUBED_FUNGUS_STAIRS.get(), "Cubed Fungus Stairs");
+		add(BlockInit.CUBED_FUNGUS_SLAB.get(), "Cubed Fungus Slab");
+		add(BlockInit.CUBED_FUNGUS_FENCE.get(), "Cubed Fungus Fence");
+		add(BlockInit.CUBED_FUNGUS_GATE.get(), "Cubed Fungus Gate");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

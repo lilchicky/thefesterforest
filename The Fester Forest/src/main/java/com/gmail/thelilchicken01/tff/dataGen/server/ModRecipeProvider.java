@@ -174,6 +174,27 @@ public class ModRecipeProvider extends RecipeProvider {
 					new ResourceLocation(TheFesterForest.MODID, 
 							BlockInit.ROTTINGWOOD_SLAB.get().getRegistryName().getPath()));
 		
+		
+		//Cubed Fungus Stairs
+		ShapedRecipeBuilder.shaped(BlockInit.CUBED_FUNGUS_STAIRS.get(), 4)
+			.define('a', BlockInit.CUBED_FUNGUS.get().asItem())
+			.unlockedBy("has_" + BlockInit.CUBED_FUNGUS.get().getRegistryName(), 
+					has(BlockInit.CUBED_FUNGUS.get().asItem()))
+			.pattern("a  ").pattern("aa ").pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.CUBED_FUNGUS_STAIRS.get().getRegistryName().getPath()));
+		
+		//Cubed Fungus Slabs
+		ShapedRecipeBuilder.shaped(BlockInit.CUBED_FUNGUS_SLAB.get(), 6)
+			.define('a', BlockInit.CUBED_FUNGUS.get().asItem())
+			.unlockedBy("has_" + BlockInit.CUBED_FUNGUS.get().getRegistryName(), 
+					has(BlockInit.CUBED_FUNGUS.get().asItem()))
+			.pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.CUBED_FUNGUS_SLAB.get().getRegistryName().getPath()));
+		
+		
+		
 		//Slimy Slabs
 		ShapedRecipeBuilder.shaped(BlockInit.SLIMY_SLAB.get(), 6)
 			.define('a', BlockInit.SLIMY_PLANKS.get().asItem())
@@ -209,6 +230,27 @@ public class ModRecipeProvider extends RecipeProvider {
 			.pattern("bab").pattern("bab").save(consumer, 
 					new ResourceLocation(TheFesterForest.MODID, 
 							BlockInit.SLIMY_FENCE_GATE.get().getRegistryName().getPath()));
+		
+		
+		// Cubed Fence
+		ShapedRecipeBuilder.shaped(BlockInit.CUBED_FUNGUS_FENCE.get(), 3)
+			.define('a', BlockInit.CUBED_FUNGUS.get().asItem()).define('b', Items.STICK)
+			.unlockedBy("has_" + BlockInit.CUBED_FUNGUS.get().getRegistryName(), 
+					has(BlockInit.CUBED_FUNGUS.get().asItem()))
+			.pattern("aba").pattern("aba").save(consumer, 
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.CUBED_FUNGUS_FENCE.get().getRegistryName().getPath()));
+				
+		// Cubed Fence Gate
+		ShapedRecipeBuilder.shaped(BlockInit.CUBED_FUNGUS_GATE.get())
+			.define('a', BlockInit.CUBED_FUNGUS.get().asItem()).define('b', Items.STICK)
+			.unlockedBy("has_" + BlockInit.CUBED_FUNGUS.get().getRegistryName(), 
+					has(BlockInit.CUBED_FUNGUS.get().asItem()))
+			.pattern("bab").pattern("bab").save(consumer, 
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.CUBED_FUNGUS_GATE.get().getRegistryName().getPath()));
+		
+		
 		
 		//Rotting Pie
 		ShapedRecipeBuilder.shaped(ItemInit.ROTTING_PIE.get())
