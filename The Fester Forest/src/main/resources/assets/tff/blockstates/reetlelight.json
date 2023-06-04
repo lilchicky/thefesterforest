@@ -1,7 +1,10 @@
 {
 	"variants": {
-		"": {
+		"lit=false": {
 			"model":"tff:block/reetlelight"
+		},
+		"lit=true": {
+			"model":"tff:block/reetlelight_off"
 		}
 	}
 }
