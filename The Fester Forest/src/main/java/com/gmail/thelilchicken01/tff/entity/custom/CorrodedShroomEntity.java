@@ -97,7 +97,7 @@ public class CorrodedShroomEntity extends Monster implements IAnimatable {
 	protected void registerGoals() {
 		
 		this.goalSelector.addGoal(2, new CorrodedShroomEntity.WaterMeleeAttackGoal(this, 1.3, false));
-	    this.goalSelector.addGoal(4, new RandomStrollGoal(this, 1.0));
+	    this.goalSelector.addGoal(4, new CorrodedShroomEntity.FishSwimGoal(this));
 	    
 	    this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, CorrodedShroomEntity.class)).setAlertOthers(CorrodedShroomEntity.class));
 		
@@ -119,7 +119,7 @@ public class CorrodedShroomEntity extends Monster implements IAnimatable {
 	
 	protected void playStepSound(BlockPos pos, BlockState blockIn) {
 		
-		this.playSound(SoundEvents.FISH_SWIM, 0.01f, 0.5f); // VOLUME - PITCH
+		this.playSound(SoundEvents.FISH_SWIM, 0.07f, 0.5f); // VOLUME - PITCH
 		
 	}
 	
@@ -145,7 +145,7 @@ public class CorrodedShroomEntity extends Monster implements IAnimatable {
 		return true;
 	}
 	
-	protected SoundEvent getAmbientSound() { return SoundEvents.SKELETON_AMBIENT; }
+	protected SoundEvent getAmbientSound() { return SoundEvents.TROPICAL_FISH_AMBIENT; }
 	
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {return SoundEvents.DOLPHIN_HURT; }
 	
