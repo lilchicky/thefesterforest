@@ -54,6 +54,7 @@ import com.gmail.thelilchicken01.tff.item.food.VolatileApple;
 import com.gmail.thelilchicken01.tff.item.item.ModTiers;
 import com.gmail.thelilchicken01.tff.item.magic.BoneLauncher;
 import com.gmail.thelilchicken01.tff.item.magic.BrittleBranch;
+import com.gmail.thelilchicken01.tff.item.magic.EnergeticFungus;
 import com.gmail.thelilchicken01.tff.item.magic.FrozenPendant;
 import com.gmail.thelilchicken01.tff.item.magic.MeteorWand;
 import com.gmail.thelilchicken01.tff.item.magic.ShieldBook;
@@ -451,6 +452,10 @@ public class ItemInit {
 	//Shock Necklace
 	public static final RegistryObject<Item> SHOCK_NECKLACE = register("shock_necklace",
 			() -> new ShockNecklace());
+	
+	//Energetic Fungus
+	public static final RegistryObject<Item> ENERGETIC_FUNGUS = register("energetic_fungus",
+			() -> new EnergeticFungus());
 	
 	/*
 	 * 

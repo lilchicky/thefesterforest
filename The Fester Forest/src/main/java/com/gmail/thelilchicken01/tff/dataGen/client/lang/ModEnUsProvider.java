@@ -213,6 +213,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.CUBED_FUNGUS_FENCE.get(), "Cubed Fungus Fence");
 		add(BlockInit.CUBED_FUNGUS_GATE.get(), "Cubed Fungus Gate");
 		add(ItemInit.FESTER_CHUNK.get(), "Festering Chunk");
+		add(ItemInit.ENERGETIC_FUNGUS.get(), "Energetic Fungus");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

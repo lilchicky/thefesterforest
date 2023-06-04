@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"tff:reetle_reagents"
+		"tff:reetle_reagents",
+		"tff:energetic_fungus"
 	]
 }
