@@ -119,7 +119,7 @@ public class CorrodedShroomEntity extends Monster implements IAnimatable {
 	
 	protected void playStepSound(BlockPos pos, BlockState blockIn) {
 		
-		this.playSound(SoundEvents.FISH_SWIM, 0.15f, 0.5f); // VOLUME - PITCH
+		this.playSound(SoundEvents.FISH_SWIM, 0.01f, 0.5f); // VOLUME - PITCH
 		
 	}
 	
@@ -145,7 +145,7 @@ public class CorrodedShroomEntity extends Monster implements IAnimatable {
 		return true;
 	}
 	
-	protected SoundEvent getAmbientSound() { return SoundEvents.FISH_SWIM; }
+	protected SoundEvent getAmbientSound() { return SoundEvents.SKELETON_AMBIENT; }
 	
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {return SoundEvents.DOLPHIN_HURT; }
 	
