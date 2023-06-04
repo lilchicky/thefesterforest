@@ -69,7 +69,7 @@ public class ModLootTableProvider extends BaseLootTableProvider {
 		dropSelf(BlockInit.CUBED_FUNGUS_GATE.get());
 		
 		silkTouch(BlockInit.ROTTING_GLASS.get(), Blocks.AIR.asItem(), 0, 0);
-		silkTouch(BlockInit.FESTER_ORE.get(), ItemInit.FESTER_CHUNK.get(), 1, 4);
+		silkTouch(BlockInit.FESTER_ORE.get(), ItemInit.FESTER_CHUNK.get(), 0, 1);
 		
 		//silkTouch(BlockInit.volatileOre.get(), Items.BLAZE_POWDER, 1, 4);
 		/*
