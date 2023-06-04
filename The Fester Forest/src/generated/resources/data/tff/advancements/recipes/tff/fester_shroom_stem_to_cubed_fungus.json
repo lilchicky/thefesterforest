@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:fester_shroom_stem_to_cubed_fungus"
+    ]
+  },
+  "criteria": {
+    "has_tff:fester_shroom_stem": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:fester_shroom_stem"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:fester_shroom_stem_to_cubed_fungus"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:fester_shroom_stem",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:fester_shroom_stem"
+    }
+  ],
+  "result": {
+    "item": "tff:cubed_fungus",
+    "count": 4
+  }
+}

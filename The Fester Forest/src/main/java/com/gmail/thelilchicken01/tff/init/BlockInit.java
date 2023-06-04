@@ -418,18 +418,7 @@ public class BlockInit {
 	
 	/*
 	 * 
-	 * Fester Shroom Stem Blocks
-	 * 
-	 */
-	
-	//Fester Shroom Stem
-	public static final RegistryObject<Block> FESTER_SHROOM_STEM = register("fester_shroom_stem", 
-			() -> new NonFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
-	
-	/*
-	 * 
-	 * Ocean
+	 * Fester Shroom Blocks
 	 * 
 	 */
 	
@@ -440,6 +429,21 @@ public class BlockInit {
 	//Orange Fester Shroom Block
 	public static final RegistryObject<Block> ORANGE_FESTER_SHROOM_BLOCK = register("orange_fester_shroom_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)),
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Fester Shroom Stem
+	public static final RegistryObject<Block> FESTER_SHROOM_STEM = register("fester_shroom_stem", 
+			() -> new NonFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Cubed Fungus
+	public static final RegistryObject<Block> CUBED_FUNGUS = register("cubed_fungus", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)),
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	/*
+	 * 
+	 * Ocean
+	 * 
+	 */
 	
 	//Rotting Bone Block
 	public static final RegistryObject<Block> ROTTING_BONE_BLOCK = register("rotting_bone_block", 

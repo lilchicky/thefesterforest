@@ -248,6 +248,21 @@ public class ModRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_" + BlockInit.ROTTING_BRICKS.get().getRegistryName(), has(BlockInit.ROTTING_BRICKS.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.ROTTING_BRICK.get().getRegistryName().getPath()));
 		
+		// Orange Shroom to Mushrooms
+		ShapelessRecipeBuilder.shapeless(BlockInit.CORRODED_SHROOM.get().asItem(), 3).requires(BlockInit.ORANGE_FESTER_SHROOM_BLOCK.get()) //get item
+		.unlockedBy("has_" + BlockInit.ORANGE_FESTER_SHROOM_BLOCK.get().getRegistryName(), has(BlockInit.ORANGE_FESTER_SHROOM_BLOCK.get().asItem()))
+		.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ORANGE_FESTER_SHROOM_BLOCK.get().getRegistryName().getPath() + "_to_shroom"));
+		
+		// Blue Shroom to Mushrooms
+		ShapelessRecipeBuilder.shapeless(BlockInit.CORRODED_SHROOM.get().asItem(), 3).requires(BlockInit.BLUE_FESTER_SHROOM_BLOCK.get()) //get item
+		.unlockedBy("has_" + BlockInit.BLUE_FESTER_SHROOM_BLOCK.get().getRegistryName(), has(BlockInit.BLUE_FESTER_SHROOM_BLOCK.get().asItem()))
+		.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.BLUE_FESTER_SHROOM_BLOCK.get().getRegistryName().getPath() + "_to_shroom"));
+		
+		// Cubed Fungus
+		ShapelessRecipeBuilder.shapeless(BlockInit.CUBED_FUNGUS.get().asItem(), 4).requires(BlockInit.FESTER_SHROOM_STEM.get()) //get item
+		.unlockedBy("has_" + BlockInit.FESTER_SHROOM_STEM.get().getRegistryName(), has(BlockInit.FESTER_SHROOM_STEM.get().asItem()))
+		.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.FESTER_SHROOM_STEM.get().getRegistryName().getPath() + "_to_cubed_fungus"));
+		
 		// Rotting Flower to Purple
 		ShapelessRecipeBuilder.shapeless(Items.PURPLE_DYE, 1).requires(BlockInit.ROTTING_FLOWER.get()) //get item
 			.unlockedBy("has_" + BlockInit.ROTTING_FLOWER.get().getRegistryName(), has(BlockInit.ROTTING_FLOWER.get().asItem()))

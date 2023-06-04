@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:blue_fester_shroom_block"
+    }
+  ],
+  "result": {
+    "item": "tff:corroded_shroom",
+    "count": 3
+  }
+}
