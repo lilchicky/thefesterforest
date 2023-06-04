@@ -431,6 +431,14 @@ public class ModRecipeProvider extends RecipeProvider {
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.PURIFYING_POWDER.get()
 					.getRegistryName().getPath() + "_quartz"));
 		
+		// Purifying Rotting Bone Block
+		ShapelessRecipeBuilder.shapeless(Blocks.BONE_BLOCK, 3)
+			.requires(ItemInit.PURIFYING_POWDER.get()).requires(BlockInit.ROTTING_BONE_BLOCK.get(), 3)
+			.unlockedBy("has_" + ItemInit.PURIFYING_POWDER.get().getRegistryName(), 
+					has(ItemInit.PURIFYING_POWDER.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.PURIFYING_POWDER.get()
+					.getRegistryName().getPath() + "_rotting_bone_block"));
+		
 		//Cooking Example
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ItemInit.FESTER_CHUNK.get()),
 			ItemInit.ROTTING_BRICK.get(), 15, 200)
