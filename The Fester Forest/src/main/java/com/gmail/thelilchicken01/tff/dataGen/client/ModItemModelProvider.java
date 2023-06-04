@@ -133,6 +133,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.SHOCK_NECKLACE.get());
 		oneLayerItem(ItemInit.AMBECTRUM_DONUT.get());
 		oneLayerItem(ItemInit.AMBECTRUM_JELLY.get());
+		oneLayerItem(ItemInit.FESTER_CHUNK.get());
 		
 		//Simple handheld items
 		handheldItem(ItemInit.BONE_PICKAXE.get());

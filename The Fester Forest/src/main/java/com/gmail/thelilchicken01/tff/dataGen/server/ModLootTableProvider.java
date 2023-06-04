@@ -3,6 +3,7 @@ package com.gmail.thelilchicken01.tff.dataGen.server;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.dataGen.BaseLootTableProvider;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
+import com.gmail.thelilchicken01.tff.init.ItemInit;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.BlockItem;
@@ -24,7 +25,6 @@ public class ModLootTableProvider extends BaseLootTableProvider {
 		dropSelf(BlockInit.ROTTING_BRICKS.get());
 		dropSelf(BlockInit.ROTTING_FLOWER.get());
 		dropSelf(BlockInit.ROTTING_STONE.get());
-		dropSelf(BlockInit.FESTER_ORE.get());
 		dropSelf(BlockInit.SLIMY_LOG.get());
 		dropSelf(BlockInit.SLIMY_SAPLING.get());
 		dropSelf(BlockInit.ROTTINGWOOD_SAPLING.get());
@@ -69,6 +69,7 @@ public class ModLootTableProvider extends BaseLootTableProvider {
 		dropSelf(BlockInit.CUBED_FUNGUS_GATE.get());
 		
 		silkTouch(BlockInit.ROTTING_GLASS.get(), Blocks.AIR.asItem(), 0, 0);
+		silkTouch(BlockInit.FESTER_ORE.get(), ItemInit.FESTER_CHUNK.get(), 1, 4);
 		
 		//silkTouch(BlockInit.volatileOre.get(), Items.BLAZE_POWDER, 1, 4);
 		/*

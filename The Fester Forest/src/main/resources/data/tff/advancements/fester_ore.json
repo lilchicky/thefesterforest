@@ -4,7 +4,7 @@
       "item": "tff:fester_ore"
     },
     "title": "Decaying Stone",
-    "description": "Obtain a piece of Fester Ore",
+    "description": "Obtain a Fester Chunk from mining Fester Ore",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true
@@ -17,7 +17,7 @@
         "items": [
           {
             "items": [
-              "tff:fester_ore"
+              "tff:fester_chunk"
             ]
           }
         ]

@@ -432,10 +432,15 @@ public class ModRecipeProvider extends RecipeProvider {
 					.getRegistryName().getPath() + "_quartz"));
 		
 		//Cooking Example
-		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.FESTER_ORE.get().asItem()),
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ItemInit.FESTER_CHUNK.get()),
 			ItemInit.ROTTING_BRICK.get(), 15, 200)
 			.unlockedBy("has_" + BlockInit.FESTER_ORE.get().getRegistryName(), has(BlockInit.FESTER_ORE.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.FESTER_ORE.get().getRegistryName().getPath() + "_smelting"));
+		
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.FESTER_ORE.get().asItem()),
+			ItemInit.ROTTING_BRICK.get(), 15, 200)
+			.unlockedBy("has_" + BlockInit.FESTER_ORE.get().getRegistryName(), has(BlockInit.FESTER_ORE.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.FESTER_ORE.get().getRegistryName().getPath() + "_smelting_only_ore"));
 		
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.ROTTING_STONE.get().asItem()),
 			BlockInit.CRACKED_ROTTING_STONE.get(), 1, 200)

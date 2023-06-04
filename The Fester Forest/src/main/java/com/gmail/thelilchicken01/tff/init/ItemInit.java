@@ -510,6 +510,10 @@ public class ItemInit {
 	public static final RegistryObject<Item> PURIFYING_POWDER = register("purifying_powder",
 			() -> new PurifyingPowder(new Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	//Fester Chunk
+	public static final RegistryObject<Item> FESTER_CHUNK = register("fester_chunk", 
+			() -> new Item(new Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	//Rotting Brick
 	public static final RegistryObject<Item> ROTTING_BRICK = register("rotting_brick", 
 			() -> new Item(new Properties().tab(TheFesterForest.TFF_TAB)));

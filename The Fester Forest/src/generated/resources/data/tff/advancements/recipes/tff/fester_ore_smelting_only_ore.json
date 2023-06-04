@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:fester_ore_smelting_only_ore"
+    ]
+  },
+  "criteria": {
+    "has_tff:fester_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:fester_ore"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:fester_ore_smelting_only_ore"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:fester_ore",
+      "has_the_recipe"
+    ]
+  ]
+}
