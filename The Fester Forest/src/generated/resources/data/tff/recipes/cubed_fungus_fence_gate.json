@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bab",
+    "bab"
+  ],
+  "key": {
+    "a": {
+      "item": "tff:cubed_fungus"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "tff:cubed_fungus_fence_gate"
+  }
+}
