@@ -11,6 +11,8 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.SeagrassFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.ProbabilityFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -102,8 +104,8 @@ public class TffConfiguredFeatures {
 	
 	// Corroded Mushrooms
 	public static final RegistryObject<ConfiguredFeature<?, ?>> CORRODED_SHROOM = 
-			CONFIGURED_FEATURES.register("corroded_shroom", () -> new ConfiguredFeature<>(Feature.FLOWER,
-					patch(BlockInit.CORRODED_SHROOM.get(), 32)));
+			CONFIGURED_FEATURES.register("corroded_shroom", () -> new ConfiguredFeature<>(ModPatchConfig.CORRODED_SHROOM_FEATURE.get(),
+					new ProbabilityFeatureConfiguration(0.2f)));
 						
     private static RandomPatchConfiguration patch(Block block, int tries) {
     	

@@ -15,6 +15,7 @@ import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.integration.ModCompat;
 import com.gmail.thelilchicken01.tff.villager.ModPOIs;
 import com.gmail.thelilchicken01.tff.world.dimension.ModDimensions;
+import com.gmail.thelilchicken01.tff.world.feature.ModPatchConfig;
 import com.gmail.thelilchicken01.tff.world.feature.TffConfiguredFeatures;
 import com.gmail.thelilchicken01.tff.world.feature.TffPlacedFeature;
 import com.gmail.thelilchicken01.tff.world.structures.ModStructures;
@@ -106,6 +107,8 @@ public class TheFesterForest {
 		
 		ModStructures.register(bus);
 		System.out.println("[The Fester Forest] Structures initialized");
+		
+		ModPatchConfig.MOD_FEATURES.register(bus);
 		
 		ModCompat.initCompat();
 		
