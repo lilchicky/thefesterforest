@@ -73,7 +73,8 @@
     		"tff:weeping_grass_rare_placed",
     		"tff:blue_ocean_tree_placed",
     		"tff:orange_ocean_tree_placed",
-    		"tff:corroded_shroom_placed"
+    		"tff:corroded_shroom_water_placed",
+    		"tff:corroded_shroom_land_placed"
     	],
     	[]
   	]

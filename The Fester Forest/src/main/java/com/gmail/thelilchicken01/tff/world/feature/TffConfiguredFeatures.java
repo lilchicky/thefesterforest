@@ -102,10 +102,15 @@ public class TffConfiguredFeatures {
 			CONFIGURED_FEATURES.register("weeping_grass_rare", () -> new ConfiguredFeature<>(Feature.FLOWER,
 					patch(BlockInit.WEEPING_GRASS.get(), 16)));
 	
-	// Corroded Mushrooms
-	public static final RegistryObject<ConfiguredFeature<?, ?>> CORRODED_SHROOM = 
-			CONFIGURED_FEATURES.register("corroded_shroom", () -> new ConfiguredFeature<>(ModPatchConfig.CORRODED_SHROOM_FEATURE.get(),
-					new ProbabilityFeatureConfiguration(0.2f)));
+	// Corroded Mushrooms Water
+	public static final RegistryObject<ConfiguredFeature<?, ?>> CORRODED_SHROOM_WATER = 
+			CONFIGURED_FEATURES.register("corroded_shroom_water", () -> new ConfiguredFeature<>(ModPatchConfig.CORRODED_SHROOM_FEATURE.get(),
+					new ProbabilityFeatureConfiguration(0.01f)));
+	
+	// Corroded Mushrooms Land
+	public static final RegistryObject<ConfiguredFeature<?, ?>> CORRODED_SHROOM_LAND = 
+			CONFIGURED_FEATURES.register("corroded_shroom_land", () -> new ConfiguredFeature<>(Feature.FLOWER,
+					patch(BlockInit.ROTTING_FLOWER.get(), 32)));
 						
     private static RandomPatchConfiguration patch(Block block, int tries) {
     	
