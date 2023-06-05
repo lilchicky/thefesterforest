@@ -44,6 +44,11 @@ public class FungalGrowthTall extends TallFlowerBlock implements LiquidBlockCont
 		FluidState fluidstate = p_154503_.getLevel().getFluidState(p_154503_.getClickedPos());
 		return fluidstate.is(FluidTags.WATER) && fluidstate.getAmount() == 8 ? super.getStateForPlacement(p_154503_) : null;
 	}
+	
+	@Override
+	protected boolean mayPlaceOn(BlockState p_154539_, BlockGetter p_154540_, BlockPos p_154541_) {
+		return p_154539_.isFaceSturdy(p_154540_, p_154541_, Direction.UP) && !p_154539_.is(Blocks.MAGMA_BLOCK);
+	}
 
 	@Override
 	public BlockState updateShape(BlockState p_154530_, Direction p_154531_, BlockState p_154532_, LevelAccessor p_154533_, BlockPos p_154534_, BlockPos p_154535_) {

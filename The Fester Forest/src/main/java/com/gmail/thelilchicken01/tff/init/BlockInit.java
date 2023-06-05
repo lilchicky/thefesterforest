@@ -421,6 +421,10 @@ public class BlockInit {
 	public static final RegistryObject<FlowerBlock> CORRODED_SHROOM = register("corroded_shroom", () -> new CorrodedShroom(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	//Fungal Growth
+	public static final RegistryObject<BushBlock> FUNGAL_GROWTH = register("fungal_growth", () -> new FungalGrowth(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	/*
 	 * 
 	 * Fester Shroom Blocks
@@ -476,14 +480,6 @@ public class BlockInit {
 			() -> new NonFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).sound(SoundType.BONE_BLOCK).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
-	//Fungal Growth
-	public static final RegistryObject<BushBlock> FUNGAL_GROWTH = register("fungal_growth", () -> new FungalGrowth(), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
-	
-	//Tall Fungal Growth
-	public static final RegistryObject<TallFlowerBlock> TALL_FUNGAL_GROWTH = register("fungal_growth_tall", () -> new FungalGrowthTall(), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties()));
-	
 	/*
 	 * 
 	 * Miscellaneous
@@ -520,6 +516,10 @@ public class BlockInit {
 	//Corrupted Mushroom Flower Pot
 	public static final RegistryObject<FlowerPotBlock> CORRODED_SHROOM_FLOWER_POT = BLOCKS.register("corroded_shroom_flower_pot", 
 			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, CORRODED_SHROOM, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+	
+	//Tall Fungal Growth
+	public static final RegistryObject<TallFlowerBlock> TALL_FUNGAL_GROWTH = register("fungal_growth_tall", () -> new FungalGrowthTall(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties()));
 	
 	private static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<? extends T> block) {
 		return BLOCKS.register(name, block);

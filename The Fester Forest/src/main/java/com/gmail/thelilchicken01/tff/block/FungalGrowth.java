@@ -76,6 +76,11 @@ public class FungalGrowth extends BushBlock implements LiquidBlockContainer, Bon
 	public boolean isBonemealSuccess(Level p_50901_, Random p_50902_, BlockPos p_50903_, BlockState p_50904_) {
 		return true;
 	}
+	
+	@Override
+	protected boolean mayPlaceOn(BlockState p_154539_, BlockGetter p_154540_, BlockPos p_154541_) {
+		return p_154539_.isFaceSturdy(p_154540_, p_154541_, Direction.UP) && !p_154539_.is(Blocks.MAGMA_BLOCK);
+	}
 
 	@Override
 	public void performBonemeal(ServerLevel level, Random rand, BlockPos blockposin, BlockState state) {
