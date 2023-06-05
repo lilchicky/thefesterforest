@@ -31,6 +31,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BushBlock;
+import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.FlowerBlock;
@@ -518,7 +519,7 @@ public class BlockInit {
 			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, CORRODED_SHROOM, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
 	
 	//Tall Fungal Growth
-	public static final RegistryObject<TallFlowerBlock> TALL_FUNGAL_GROWTH = register("fungal_growth_tall", () -> new FungalGrowthTall(), 
+	public static final RegistryObject<DoublePlantBlock> TALL_FUNGAL_GROWTH = register("fungal_growth_tall", () -> new FungalGrowthTall(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties()));
 	
 	private static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<? extends T> block) {

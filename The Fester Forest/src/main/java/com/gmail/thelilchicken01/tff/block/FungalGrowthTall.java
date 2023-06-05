@@ -9,15 +9,20 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.LiquidBlockContainer;
 import net.minecraft.world.level.block.TallFlowerBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 
-public class FungalGrowthTall extends TallFlowerBlock implements LiquidBlockContainer {
+public class FungalGrowthTall extends DoublePlantBlock implements LiquidBlockContainer {
+	
+	public static final EnumProperty<DoubleBlockHalf> HALF = DoublePlantBlock.HALF;
 
 	public FungalGrowthTall() {
 		super(BlockBehaviour.Properties.copy(Blocks.TALL_SEAGRASS));

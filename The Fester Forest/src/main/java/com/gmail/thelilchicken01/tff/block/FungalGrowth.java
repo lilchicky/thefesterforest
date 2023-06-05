@@ -88,7 +88,7 @@ public class FungalGrowth extends BushBlock implements LiquidBlockContainer, Bon
 	    BlockState blockstate1 = blockstate.setValue(FungalGrowthTall.HALF, DoubleBlockHalf.UPPER);
 	    BlockPos blockpos = blockposin.above();
 	    if (level.getBlockState(blockpos).is(Blocks.WATER)) {
-	    	level.setBlock(blockpos, blockstate, 2);
+	    	level.setBlock(blockposin, blockstate, 2);
 	    	level.setBlock(blockpos, blockstate1, 2);
 	    }
 		
