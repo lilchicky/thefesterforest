@@ -7,7 +7,7 @@
         {
           "type": "minecraft:item",
           "weight": 200,
-          "name": "tff:bone"
+          "name": "minecraft:bone"
         },
         {
           "type": "minecraft:item",
@@ -37,7 +37,7 @@
         {
           "type": "minecraft:item",
           "weight": 30,
-          "name": "tff:diamond"
+          "name": "minecraft:diamond"
         },
         {
           "type": "minecraft:item",
