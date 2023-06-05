@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:block/cross",
+	"textures": {
+		"cross": "tff:block/fungal_growth_lower"
+	}
+}

@@ -105,7 +105,12 @@ public class TffConfiguredFeatures {
 	// Corroded Mushrooms Water
 	public static final RegistryObject<ConfiguredFeature<?, ?>> CORRODED_SHROOM_WATER = 
 			CONFIGURED_FEATURES.register("corroded_shroom_water", () -> new ConfiguredFeature<>(ModPatchConfig.CORRODED_SHROOM_FEATURE.get(),
-					new ProbabilityFeatureConfiguration(0.01f)));
+					new ProbabilityFeatureConfiguration(0.2f)));
+	
+	// Corroded Mushrooms Water
+	public static final RegistryObject<ConfiguredFeature<?, ?>> FUNGAL_GROWTH = 
+			CONFIGURED_FEATURES.register("fungal_growth", () -> new ConfiguredFeature<>(ModPatchConfig.FUNGAL_GROWTH.get(),
+					new ProbabilityFeatureConfiguration(0.2f)));
 	
 	// Corroded Mushrooms Land
 	public static final RegistryObject<ConfiguredFeature<?, ?>> CORRODED_SHROOM_LAND = 

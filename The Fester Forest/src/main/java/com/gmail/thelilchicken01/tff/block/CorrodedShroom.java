@@ -30,14 +30,14 @@ public class CorrodedShroom extends FlowerBlock implements SimpleWaterloggedBloc
 
 	public CorrodedShroom() {
 		super(MobEffects.BLINDNESS, 40, BlockBehaviour.Properties.copy(Blocks.DANDELION));
-		this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)));
+		this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(true)));
 	}
 	
 	@Nullable
 	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext p_56361_) {
-		BlockPos blockpos = p_56361_.getClickedPos();
-		FluidState fluidstate = p_56361_.getLevel().getFluidState(blockpos);
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		BlockPos blockpos = context.getClickedPos();
+		FluidState fluidstate = context.getLevel().getFluidState(blockpos);
 		BlockState blockstate1 = this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
 		return blockstate1;
 	}

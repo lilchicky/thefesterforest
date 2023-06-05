@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"half=lower": {"model": "tff:block/fungal_growth_lower"},
+		"half=upper": {"model": "tff:block/fungal_growth_upper"}
+	}
+}

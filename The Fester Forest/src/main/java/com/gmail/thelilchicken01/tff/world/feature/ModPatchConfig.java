@@ -20,4 +20,7 @@ public class ModPatchConfig {
 	public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> CORRODED_SHROOM_FEATURE = MOD_FEATURES.register("corroded_shroom_feature", 
 			() -> new CorrodedShroomFeature(ProbabilityFeatureConfiguration.CODEC));
 	
+	public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> FUNGAL_GROWTH = MOD_FEATURES.register("fungal_growth_feature", 
+			() -> new FungalGrowthFeature(ProbabilityFeatureConfiguration.CODEC));
+	
 }

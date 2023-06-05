@@ -4,6 +4,8 @@ import java.util.function.Function;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.block.CorrodedShroom;
+import com.gmail.thelilchicken01.tff.block.FungalGrowth;
+import com.gmail.thelilchicken01.tff.block.FungalGrowthTall;
 import com.gmail.thelilchicken01.tff.block.ModFlammableRotatedPillarBlock;
 import com.gmail.thelilchicken01.tff.block.NonFlammableRotatedPillarBlock;
 import com.gmail.thelilchicken01.tff.block.Reetlelight;
@@ -22,13 +24,13 @@ import com.google.common.base.Supplier;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Registry;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.FlowerBlock;
@@ -42,10 +44,7 @@ import net.minecraft.world.level.block.TallFlowerBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
-import net.minecraft.world.level.block.state.BlockBehaviour.StatePredicate;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.structure.StructureSet;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -476,6 +475,14 @@ public class BlockInit {
 	public static final RegistryObject<Block> ROTTING_BONE_BLOCK = register("rotting_bone_block", 
 			() -> new NonFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).sound(SoundType.BONE_BLOCK).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Fungal Growth
+	public static final RegistryObject<BushBlock> FUNGAL_GROWTH = register("fungal_growth", () -> new FungalGrowth(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Tall Fungal Growth
+	public static final RegistryObject<TallFlowerBlock> TALL_FUNGAL_GROWTH = register("fungal_growth_tall", () -> new FungalGrowthTall(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties()));
 	
 	/*
 	 * 

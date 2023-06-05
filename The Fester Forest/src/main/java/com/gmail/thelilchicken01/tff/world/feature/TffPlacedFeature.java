@@ -58,12 +58,17 @@ public class TffPlacedFeature {
 	// Corroded Shroom Water
 	public static final RegistryObject<PlacedFeature> CORRODED_SHROOM_WATER_PLACED = PLACED_FEATURES.register(
 			"corroded_shroom_water_placed", () -> new PlacedFeature(TffConfiguredFeatures.CORRODED_SHROOM_WATER.getHolder().get(),
-					patch(80)));
+					patch(18)));
 	
 	// Corroded Shroom Land
 	public static final RegistryObject<PlacedFeature> CORRODED_SHROOM_LAND_PLACED = PLACED_FEATURES.register(
 			"corroded_shroom_land_placed", () -> new PlacedFeature(TffConfiguredFeatures.CORRODED_SHROOM_LAND.getHolder().get(),
 					patch(18)));
+	
+	// Fungal Growth Placed
+	public static final RegistryObject<PlacedFeature> FUNGAL_GROWTH_PLACED = PLACED_FEATURES.register(
+			"fungal_growth_placed", () -> new PlacedFeature(TffConfiguredFeatures.FUNGAL_GROWTH.getHolder().get(),
+					patch(50)));
 	
 	// Slimy Flower
 	public static final RegistryObject<PlacedFeature> SLIMY_FLOWER_PLACED = PLACED_FEATURES.register(
