@@ -22,7 +22,7 @@
         {
           "type": "minecraft:item",
           "weight": 100,
-          "name": "tff:rottingwood_planks"
+          "name": "tff:rotting_planks"
         },
         {
           "type": "minecraft:item",
