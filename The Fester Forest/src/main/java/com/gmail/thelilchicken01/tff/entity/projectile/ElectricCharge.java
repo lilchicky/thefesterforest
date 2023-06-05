@@ -62,7 +62,7 @@ public class ElectricCharge extends Fireball {
 		
 		if (!getLevel().isClientSide) {
 			ticksSinceFired++;
-			if (ticksSinceFired > 160 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
+			if (ticksSinceFired > 320 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
 				remove(RemovalReason.KILLED);
 			}
 			this.setDeltaMovement(startingVelocity);
