@@ -120,8 +120,6 @@ public class CorrodedShroomEntity extends TamableAnimal implements IAnimatable {
 			
 			fedLevel++;
 			
-			player.awardStat(Stats.ITEM_USED.get(BlockInit.CORRODED_SHROOM.get().asItem()));
-			
 			if (getLevel().isClientSide()) {
 				
 				getLevel().addParticle(ParticleTypes.HEART, this.getX(), this.getY() + 1, this.getZ(), 0.0d, 0.25d, 0.0d);
@@ -286,7 +284,7 @@ public class CorrodedShroomEntity extends TamableAnimal implements IAnimatable {
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
 		
-		return ModEntityTypes.CORRODED_SHROOM.get().create(level);
+		return null;
 	}
 
 }

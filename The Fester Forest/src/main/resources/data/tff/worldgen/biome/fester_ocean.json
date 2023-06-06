@@ -39,14 +39,17 @@
       		{
         		"type": "tff:corroded_shroom",
        			"weight": 5,
-        		"minCount": 4,
-        		"maxCount": 7
+        		"minCount": 1,
+        		"maxCount": 1
       		}
     	]
   	
   	},
   	"spawn_costs": {
-  	
+  		"tff:corroded_shroom": {
+  			"energy_budget": 0.15,
+  			"charge": 0.7
+  		}
   	},
   	"carvers": {
     	"air": [
