@@ -12,7 +12,6 @@
     	"grass_color": 599040,
     	"foliage_color": 144128
   	},
-  	"creature_spawn_probability": 0.9,
   	"spawners": {
   	
   		"monster": [
@@ -39,17 +38,13 @@
       		{
         		"type": "tff:corroded_shroom",
        			"weight": 5,
-        		"minCount": 1,
-        		"maxCount": 1
+        		"minCount": 2,
+        		"maxCount": 5
       		}
     	]
   	
   	},
   	"spawn_costs": {
-  		"tff:corroded_shroom": {
-  			"energy_budget": 0.15,
-  			"charge": 0.7
-  		}
   	},
   	"carvers": {
     	"air": [
