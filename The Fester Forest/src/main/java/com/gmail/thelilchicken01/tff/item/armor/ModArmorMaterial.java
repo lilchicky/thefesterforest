@@ -3,6 +3,7 @@ package com.gmail.thelilchicken01.tff.item.armor;
 import java.util.function.Supplier;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
+import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 
 import net.minecraft.sounds.SoundEvent;
@@ -33,6 +34,11 @@ public enum ModArmorMaterial implements ArmorMaterial {
 	//Goopy Armor
 	GOOP("goop", 32, new int[]{3, 6, 8, 3}, 7, SoundEvents.SLIME_BLOCK_BREAK, 2.0F, 0.0F, () -> {
 		return Ingredient.of(ItemInit.ROTTING_SLIMEBALL.get());
+	}),
+	
+	//Shroom Armor
+	SHROOM("shroom", 32, new int[]{3, 6, 8, 3}, 7, SoundEvents.WOOL_BREAK, 2.0F, 0.0F, () -> {
+		return Ingredient.of(BlockInit.CORRODED_SHROOM.get());
 	}),
 	
 	//Reetle Armor

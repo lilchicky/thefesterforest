@@ -15,6 +15,7 @@ import com.gmail.thelilchicken01.tff.entity.client.RottingSkeletonRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.SeathrownSkeletonRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.VolatileGhostRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.WightRenderer;
+import com.gmail.thelilchicken01.tff.entity.client.armor.ShroomHatRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.goop.GoopRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.goop.MediumGoopRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.goop.SmallGoopRenderer;
@@ -42,6 +43,7 @@ import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.item.armor.reetleArmor.ReetleElytra;
+import com.gmail.thelilchicken01.tff.item.armor.shroom_hat.ShroomHat;
 import com.gmail.thelilchicken01.tff.particle.BloodParticle;
 import com.gmail.thelilchicken01.tff.particle.BoneParticle;
 import com.gmail.thelilchicken01.tff.particle.BranchParticle;
@@ -65,6 +67,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
 @Mod.EventBusSubscriber(modid = TheFesterForest.MODID, bus = Bus.MOD, value = Dist.CLIENT)
 public class ClientEventBusSubscriber {
@@ -131,6 +134,14 @@ public class ClientEventBusSubscriber {
 		event.put(ModEntityTypes.AMBECTRUM.get(), AmbectrumEntity.setAttributes());
 		event.put(ModEntityTypes.SEATHROWN_SKELETON.get(), SeathrownSkeletonEntity.setAttributes());
 		event.put(ModEntityTypes.CORRODED_SHROOM.get(), CorrodedShroomEntity.setAttributes());
+		
+	}
+	
+	@SuppressWarnings("removal")
+	@SubscribeEvent
+	public static void registerArmorRenderer(final EntityRenderersEvent.AddLayers event) {
+		
+		GeoArmorRenderer.registerArmorRenderer(ShroomHat.class, new ShroomHatRenderer());
 		
 	}
 	

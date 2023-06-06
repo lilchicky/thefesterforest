@@ -19,6 +19,7 @@ import com.gmail.thelilchicken01.tff.item.armor.reetleArmor.ReetleChestplate;
 import com.gmail.thelilchicken01.tff.item.armor.reetleArmor.ReetleElytra;
 import com.gmail.thelilchicken01.tff.item.armor.reetleArmor.ReetleHelmet;
 import com.gmail.thelilchicken01.tff.item.armor.reetleArmor.ReetleLeggings;
+import com.gmail.thelilchicken01.tff.item.armor.shroom_hat.ShroomHat;
 import com.gmail.thelilchicken01.tff.item.armor.volatileArmor.VolatileBoots;
 import com.gmail.thelilchicken01.tff.item.armor.volatileArmor.VolatileChestplate;
 import com.gmail.thelilchicken01.tff.item.armor.volatileArmor.VolatileHelmet;
@@ -527,6 +528,10 @@ public class ItemInit {
 	//Shroom Bucket
 	public static final RegistryObject<Item> SHROOM_BUCKET = register("shroom_bucket", 
 			() -> new ShroomBucket());
+	
+	//Shroom Hat
+	public static final RegistryObject<Item> SHROOM_HAT = register("shroom_hat", 
+			() -> new ShroomHat());
 		
 	//Rotting Catalyst
 	public static final RegistryObject<Item> ROTTING_CATALYST = register("rotting_catalyst", CatalystItem::new);

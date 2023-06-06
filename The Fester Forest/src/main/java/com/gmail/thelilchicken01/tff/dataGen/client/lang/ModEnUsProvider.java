@@ -217,6 +217,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.FUNGAL_GROWTH.get(), "Fungal Growth");
 		add(BlockInit.TALL_FUNGAL_GROWTH.get(), "Tall Fungal Growth");
 		add(ItemInit.SHROOM_BUCKET.get(), "Shroom Bucket");
+		add(ItemInit.SHROOM_HAT.get(), "Shroom Hat");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");
