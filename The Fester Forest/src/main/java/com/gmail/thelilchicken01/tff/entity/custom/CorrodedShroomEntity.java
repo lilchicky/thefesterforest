@@ -4,6 +4,8 @@ import javax.annotation.Nullable;
 
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
+import com.gmail.thelilchicken01.tff.init.ItemInit;
+import com.gmail.thelilchicken01.tff.item.dull.ShroomBucket;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
@@ -33,6 +35,8 @@ import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
@@ -146,6 +150,18 @@ public class CorrodedShroomEntity extends TamableAnimal implements IAnimatable {
 			}
 			
 			player.getItemInHand(hand).shrink(1);
+			
+		}
+		
+		if ((player.getItemInHand(hand).getItem() == Items.BUCKET || player.getItemInHand(hand).getItem() == Items.WATER_BUCKET) && !isBaby()) {
+			
+			player.getItemInHand(hand).shrink(1);
+			
+			ItemStack bucket = new ItemStack(ItemInit.SHROOM_BUCKET.get());
+			
+			player.addItem(bucket);
+			
+			this.remove(RemovalReason.DISCARDED);
 			
 		}
 		

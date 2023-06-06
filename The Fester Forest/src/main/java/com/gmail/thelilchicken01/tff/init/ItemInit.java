@@ -40,6 +40,7 @@ import com.gmail.thelilchicken01.tff.item.dull.ReetleReagents;
 import com.gmail.thelilchicken01.tff.item.dull.ReetleShellPlates;
 import com.gmail.thelilchicken01.tff.item.dull.RotfishFang;
 import com.gmail.thelilchicken01.tff.item.dull.ShockNecklace;
+import com.gmail.thelilchicken01.tff.item.dull.ShroomBucket;
 import com.gmail.thelilchicken01.tff.item.dull.SlipperyGoop;
 import com.gmail.thelilchicken01.tff.item.food.AmbectrumDonut;
 import com.gmail.thelilchicken01.tff.item.food.AmbectrumJelly;
@@ -522,6 +523,10 @@ public class ItemInit {
 	//Rotting Brick
 	public static final RegistryObject<Item> ROTTING_BRICK = register("rotting_brick", 
 			() -> new Item(new Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Shroom Bucket
+	public static final RegistryObject<Item> SHROOM_BUCKET = register("shroom_bucket", 
+			() -> new ShroomBucket());
 		
 	//Rotting Catalyst
 	public static final RegistryObject<Item> ROTTING_CATALYST = register("rotting_catalyst", CatalystItem::new);
