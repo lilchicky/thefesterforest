@@ -27,7 +27,14 @@ public class CorrodedShroomRenderer extends GeoEntityRenderer<CorrodedShroomEnti
 	@Override
 	public RenderType getRenderType(CorrodedShroomEntity animatable, float partialTick, PoseStack poseStack,
 			MultiBufferSource bufferSource, VertexConsumer buffer, int packedLight, ResourceLocation texture) {
-		poseStack.scale(1.0f, 1.0f, 1.0f); //scale size of entity
+		
+		if (animatable.isBaby()) {
+			poseStack.scale(0.5f, 0.5f, 0.5f); //scale size of entity
+		}
+		else {
+			poseStack.scale(1.0f, 1.0f, 1.0f); //scale size of entity
+		}
+		
 		return super.getRenderType(animatable, partialTick, poseStack, bufferSource, buffer, packedLight, texture);
 	}
 	

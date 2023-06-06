@@ -1,13 +1,15 @@
 package com.gmail.thelilchicken01.tff.entity.custom;
 
-import java.util.EnumSet;
-
 import javax.annotation.Nullable;
 
+import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
@@ -15,40 +17,21 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntitySelector;
+import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.MoveControl;
-import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.MoveTowardsRestrictionGoal;
-import net.minecraft.world.entity.ai.goal.PanicGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
-import net.minecraft.world.entity.ai.goal.ZombieAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
-import net.minecraft.world.entity.animal.AbstractFish;
-import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.animal.Turtle;
-import net.minecraft.world.entity.animal.axolotl.Axolotl;
-import net.minecraft.world.entity.monster.Drowned;
-import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Zombie;
-import net.minecraft.world.entity.monster.ZombifiedPiglin;
-import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -61,13 +44,15 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class CorrodedShroomEntity extends Monster implements IAnimatable {
+public class CorrodedShroomEntity extends TamableAnimal implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
 	
 	protected RandomStrollGoal randomStrollGoal;
+	
+	private int fedLevel = 0;
 
-	public CorrodedShroomEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
+	public CorrodedShroomEntity(EntityType<? extends TamableAnimal> p_33002_, Level p_33003_) {
 		
 		super(p_33002_, p_33003_);
 		
@@ -124,13 +109,39 @@ public class CorrodedShroomEntity extends Monster implements IAnimatable {
 	}
 	
 	@Override
-	protected InteractionResult mobInteract(Player player, InteractionHand hand) {
+	public InteractionResult mobInteract(Player player, InteractionHand hand) {
 		
 		if (player.getItemInHand(hand).getItem() == BlockInit.CORRODED_SHROOM.get().asItem()) {
 			
-			if (this.getLevel().isClientSide) {
+			fedLevel++;
+			
+			if (getLevel().isClientSide()) {
 				
-				this.getLevel().addParticle(ParticleTypes.HEART, this.getX(), this.getY() + 1, this.getZ(), 0.0d, 0.25d, 0.0d);
+				getLevel().addParticle(ParticleTypes.HEART, this.getX(), this.getY() + 1, this.getZ(), 0.0d, 0.25d, 0.0d);
+				
+			}
+			
+			if (fedLevel > (16 + (Math.random() * 16))) {
+				
+				if (isBaby()) {
+					this.setBaby(false);
+				}
+				else {
+					CorrodedShroomEntity baby = new CorrodedShroomEntity(ModEntityTypes.CORRODED_SHROOM.get(), getLevel());
+					baby.setBaby(true);
+					baby.setPos(this.getX(), this.getY(), this.getZ());
+				
+					if (!getLevel().isClientSide()) {
+					
+						getLevel().addFreshEntity(baby);
+					
+					}
+					if ((Player) player instanceof ServerPlayer) {
+				         CriteriaTriggers.BRED_ANIMALS.trigger((ServerPlayer) player, this, this, baby);
+				    }
+				}
+				
+				fedLevel = 0;
 				
 			}
 			
@@ -252,5 +263,11 @@ public class CorrodedShroomEntity extends Monster implements IAnimatable {
 	         return super.canUse();
 	      }
 	   }
+
+	@Override
+	public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
+		
+		return ModEntityTypes.CORRODED_SHROOM.get().create(level);
+	}
 
 }

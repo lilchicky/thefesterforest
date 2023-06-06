@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "tff:corroded_shroom"
+    },
+    "title": "The Birds and the... Nothing?",
+    "description": "Cause a Shroom to duplicate using a Corroded Shroom",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "tff:thefesterforest",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:bred_animals",
+      "conditions": {
+        "parent": {
+          "type": "tff:corroded_shroom"
+        },
+        "partner": {
+          "type": "tff:corroded_shroom"
+        },
+        "child": {
+          "type": "tff:corroded_shroom"
+        }
+      }
+    }
+  }
+}
