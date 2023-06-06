@@ -1,0 +1,60 @@
+{
+  "pools": [
+    {
+      "rolls": 14,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 200,
+          "name": "tff:corroded_shroom"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 90,
+          "name": "minecraft:iron_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 30,
+          "name": "minecraft:diamond"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "minecraft:bowl"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:energetic_fungus"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 50,
+          "name": "minecraft:book",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 45
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 50,
+          "name": "tff:purifying_powder"
+        }
+      ]
+    },
+    {
+    	"rolls": 1,
+    	"entries": [
+        	{
+       	  		"type": "minecraft:item",
+       	  		"weight": 1,
+       	  		"name": "tff:shroom_hat"
+        	}
+    	]
+    }
+  ]
+}
