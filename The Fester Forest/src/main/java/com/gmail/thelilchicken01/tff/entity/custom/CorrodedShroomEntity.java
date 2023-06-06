@@ -14,6 +14,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.stats.Stats;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
@@ -118,6 +119,8 @@ public class CorrodedShroomEntity extends TamableAnimal implements IAnimatable {
 		if (player.getItemInHand(hand).getItem() == BlockInit.CORRODED_SHROOM.get().asItem()) {
 			
 			fedLevel++;
+			
+			player.awardStat(Stats.ITEM_USED.get(BlockInit.CORRODED_SHROOM.get().asItem()));
 			
 			if (getLevel().isClientSide()) {
 				

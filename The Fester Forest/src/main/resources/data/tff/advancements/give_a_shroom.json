@@ -3,8 +3,8 @@
     "icon": {
       "item": "tff:corroded_shroom"
     },
-    "title": "The Birds and the... Nothing?",
-    "description": "Cause a Shroom to duplicate using a Corroded Shroom",
+    "title": "The Parrots and the... Nothing?",
+    "description": "Cause a Shroom to duplicate by giving it a Corroded Shroom",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true
