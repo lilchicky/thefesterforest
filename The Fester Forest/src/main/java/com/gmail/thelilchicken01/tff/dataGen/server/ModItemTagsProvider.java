@@ -23,9 +23,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 	@Override
 	protected void addTags() {
 		
-		tag(Tags.Items.INGOTS).add(ItemInit.ROTTING_BRICK.get().asItem());
-		tag(Tags.Items.COBBLESTONE).add(BlockInit.CRACKED_ROTTING_STONE.get().asItem());
-		tag(Tags.Items.COBBLESTONE).add(BlockInit.MOSSY_ROTTING_STONE.get().asItem());
 		
 	}
 
