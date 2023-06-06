@@ -38,8 +38,8 @@
       		{
         		"type": "tff:corroded_shroom",
        			"weight": 5,
-        		"minCount": 2,
-        		"maxCount": 5
+        		"minCount": 1,
+        		"maxCount": 3
       		}
     	]
   	
