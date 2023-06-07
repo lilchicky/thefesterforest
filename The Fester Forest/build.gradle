@@ -159,8 +159,14 @@ repositories {
     	url = "https://modmaven.dev"
   	}
   	maven {
+  		name = "curios"
         url = "https://maven.theillusivec4.top/"
     }
+    maven {
+    	name "expandability"
+    	url "https://maven.florens.be/releases"
+	}
+    
     // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
     // flatDir {
     //     dir 'libs'
@@ -181,6 +187,8 @@ dependencies {
   	
 	runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.18.2-5.0.7.1")
 	compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.18.2-5.0.7.1:api")
+	
+	implementation fg.deobf("be.florens:expandability-forge:6.0.0")
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency

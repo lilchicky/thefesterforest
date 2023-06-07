@@ -37,6 +37,7 @@ public class SinkPacket {
 	public void handle(Supplier<NetworkEvent.Context> context) {
 		
 		context.get().enqueueWork(() -> DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> ClientPacketHandler.handleSinkPacket(this)));
+		context.get().setPacketHandled(true);
 		
 	}
 	

@@ -14,6 +14,7 @@ import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.integration.ModCompat;
+import com.gmail.thelilchicken01.tff.network.TFFNetworkHandler;
 import com.gmail.thelilchicken01.tff.villager.ModPOIs;
 import com.gmail.thelilchicken01.tff.world.dimension.ModDimensions;
 import com.gmail.thelilchicken01.tff.world.feature.ModPatchConfig;
@@ -21,6 +22,8 @@ import com.gmail.thelilchicken01.tff.world.feature.TffConfiguredFeatures;
 import com.gmail.thelilchicken01.tff.world.feature.TffPlacedFeature;
 import com.gmail.thelilchicken01.tff.world.structures.ModStructures;
 
+import be.florens.expandability.ExpandAbility;
+import be.florens.expandability.forge.ExpandAbilityForge;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.entity.ArmorStandRenderer;
@@ -115,6 +118,7 @@ public class TheFesterForest {
 		SwimHandler.setup();
 		
 		GeckoLib.initialize();
+		ExpandAbility.init();
 		
 		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, TFFClientConfigs.SPEC, "tff-client.toml");
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TFFCommonConfigs.SPEC, "tff-common.toml");

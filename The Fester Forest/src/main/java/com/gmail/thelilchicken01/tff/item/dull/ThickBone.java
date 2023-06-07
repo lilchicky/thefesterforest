@@ -17,19 +17,13 @@ public class ThickBone extends Item implements ICurioItem {
 	}
 	
 	@Override
-	public void curioTick(SlotContext slotContext, ItemStack stack) {
+	public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
 		if (slotContext.entity() instanceof ServerPlayer player) {
 			
-			player.getCapability(SwimHandler.CAPABILITY).ifPresent(
+			slotContext.entity().getCapability(SwimHandler.CAPABILITY).ifPresent(
 					handler -> {
-						if (!handler.isSinking()) {
-							handler.setSinking(true);
-							handler.syncSinking(player);
-						}
-						else if (handler.isSinking()) {
-							handler.setSinking(false);
-							handler.syncSinking(player);
-						}
+						handler.setSinking(true);
+						handler.syncSinking(player);
 					}
 				);
 			
@@ -40,7 +34,7 @@ public class ThickBone extends Item implements ICurioItem {
 	public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
 		if (slotContext.entity() instanceof ServerPlayer player) {
 			
-			player.getCapability(SwimHandler.CAPABILITY).ifPresent(
+			slotContext.entity().getCapability(SwimHandler.CAPABILITY).ifPresent(
 					handler -> {
 						handler.setSinking(false);
 						handler.syncSinking(player);

@@ -1,6 +1,7 @@
 package com.gmail.thelilchicken01.tff;
 
 import com.gmail.thelilchicken01.tff.init.BlockInit;
+import com.gmail.thelilchicken01.tff.network.TFFNetworkHandler;
 
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.level.block.Blocks;
@@ -31,6 +32,8 @@ public class ModCommonEvents {
 			InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BELT.getMessageBuilder().build());
 			InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.HANDS.getMessageBuilder().build());
 			InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> new SlotTypeMessage.Builder("feet").priority(220).icon(InventoryMenu.EMPTY_ARMOR_SLOT_BOOTS).build());
+			
+			TFFNetworkHandler.register();
 			
 		});
 		
