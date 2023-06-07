@@ -11,7 +11,7 @@ loaderVersion="[40,)" #mandatory This is typically bumped every Minecraft versio
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
 license="MIT"
 # A URL to refer people to when problems occur with this mod
-#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
+issueTrackerURL="https://github.com/lilchicky/thefesterforest/issues" #optional
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
@@ -29,7 +29,7 @@ displayName="Chicky's Fester Forest" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="examplemod.png" #optional
 # A text field displayed in the mod UI
-credits="Amaresse and Aklys for the art!" #optional
+credits="Amaresse and Aklys for help with the art!" #optional
 # A text field displayed in the mod UI
 authors="LilChicky" #optional
 # The description text for the mod (multi line!) (#mandatory)
@@ -42,7 +42,7 @@ loadouts to high damage loadouts.
 
 Hopefully your adventures bring some spice to your endgame!
 
-Please report issues on the CurseForge page of this mod.
+Please report issues on the GitHub issue tracker.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.tff]] #optional
@@ -64,15 +64,24 @@ Please report issues on the CurseForge page of this mod.
     versionRange="[1.18.2,1.19)"
     ordering="NONE"
     side="BOTH"
+	
 [[dependencies.tff]]
 	modId="curios"
 	mandatory=true
 	versionRange="[1.18.2-5.0.7.1,)"	
 	side="BOTH"
 	ordering="NONE"
+	
 [[dependencies.tff]]
 	modId="geckolib3"
 	mandatory=true
 	versionRange="[3.0.56,)"	
 	side="BOTH"
-	ordering="BEFORE"
+	ordering="NONE"
+	
+[[dependencies.tff]]
+	modId="expandability"
+	mandatory=true
+	versionRange="[6.0.0,)"	
+	side="BOTH"
+	ordering="NONE"
