@@ -22,7 +22,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ExplosivePowder extends Item {
 	
-	private String[] drops = {"Volatile Ghost"};
+	private String[] drops = {"Volatile Ghost", "Fester Forest Loot Chests"};
 	
 	public ExplosivePowder(Properties properties) {
 		super(properties);

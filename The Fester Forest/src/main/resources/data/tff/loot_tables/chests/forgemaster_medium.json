@@ -2,7 +2,7 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 24,
+      "rolls": 21,
       "entries": [
         {
           "type": "minecraft:item",
@@ -55,6 +55,11 @@
           "type": "minecraft:item",
           "weight": 25,
           "name": "minecraft:diamond"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 30,
+          "name": "minecraft:glowstone_dust"
         },
         {
           "type": "minecraft:item",

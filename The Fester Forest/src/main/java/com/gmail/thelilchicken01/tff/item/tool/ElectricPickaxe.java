@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 
 public class ElectricPickaxe extends PickaxeItem {
 	
-	private String[] drops = {"Ambectrum"};
+	private String[] drops = {"Ambectrum", "Fester Forest Loot Chests"};
 
 	public ElectricPickaxe() {
 		super(ModTiers.ELECTRIC, -4, -3.0f, new Properties().tab(TheFesterForest.TFF_TAB).durability(1750));

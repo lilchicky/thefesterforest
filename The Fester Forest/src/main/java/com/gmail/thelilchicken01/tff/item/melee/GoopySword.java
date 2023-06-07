@@ -21,7 +21,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class GoopySword extends SwordItem {
 	
-	private String[] drops = {"Rotting Goop"};
+	private String[] drops = {"Rotting Goop", "Fester Forest Loot Chests"};
 
 	public GoopySword(Tier tier, int damage, float aspeed, Properties properties) {
 		super(tier, damage, aspeed, properties);

@@ -26,7 +26,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public class SlipperyGoop extends Item implements ICurioItem {
 	
-	private String[] drops = {"Rotting Goop"};
+	private String[] drops = {"Rotting Goop", "Fester Forest Loot Chests"};
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 

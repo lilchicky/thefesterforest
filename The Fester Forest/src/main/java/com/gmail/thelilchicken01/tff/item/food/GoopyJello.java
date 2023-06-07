@@ -17,7 +17,7 @@ import net.minecraft.world.level.Level;
 
 public class GoopyJello extends Item {
 	
-	private String[] drops = {"Rotting Goop"};
+	private String[] drops = {"Rotting Goop", "Fester Forest Loot Chests"};
 
 	public GoopyJello() {
 		super(new Properties().tab(TheFesterForest.TFF_TAB).food(

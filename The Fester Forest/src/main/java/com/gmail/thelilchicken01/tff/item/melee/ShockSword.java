@@ -21,7 +21,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ShockSword extends SwordItem {
 	
-	private String[] drops = {"Ambectrum"};
+	private String[] drops = {"Ambectrum", "Fester Forest Loot Chests"};
 
 	public ShockSword(Tier tier, int damage, float aspeed, Properties properties) {
 		super(tier, damage, aspeed, properties);

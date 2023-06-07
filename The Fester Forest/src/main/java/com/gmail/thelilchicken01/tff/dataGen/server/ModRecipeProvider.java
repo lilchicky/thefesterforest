@@ -40,6 +40,18 @@ public class ModRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_" + BlockInit.ROTTING_SAND.get().getRegistryName(), has(BlockInit.ROTTING_SAND.get().asItem())) // what unlocks the recipe when you get that item
 			.pattern("aa ").pattern("aa ").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.COMPRESSED_ROTTING_SAND.get().getRegistryName().getPath()));
 		
+		// Rottingwood Boat
+		ShapedRecipeBuilder.shaped(Items.OAK_BOAT) // add , int to get number of output
+		.define('a', BlockInit.ROTTING_PLANKS.get().asItem())
+		.unlockedBy("has_" + BlockInit.ROTTING_PLANKS.get().getRegistryName(), has(BlockInit.ROTTING_PLANKS.get().asItem())) // what unlocks the recipe when you get that item
+		.pattern("a a").pattern("aaa").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_PLANKS.get().getRegistryName().getPath() +  "_boat"));
+		
+		// Slimy Boat
+		ShapedRecipeBuilder.shaped(Items.OAK_BOAT) // add , int to get number of output
+		.define('a', BlockInit.SLIMY_PLANKS.get().asItem())
+		.unlockedBy("has_" + BlockInit.SLIMY_PLANKS.get().getRegistryName(), has(BlockInit.SLIMY_PLANKS.get().asItem())) // what unlocks the recipe when you get that item
+		.pattern("a a").pattern("aaa").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.SLIMY_PLANKS.get().getRegistryName().getPath() +  "_boat"));
+		
 		ShapedRecipeBuilder.shaped(BlockInit.ROTTING_STONE_BRICKS.get(), 4) //what am i making
 			.define('a', BlockInit.ROTTING_STONE.get().asItem()) //keys
 			.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), //unlocked when you get this item

@@ -37,7 +37,7 @@ public class ShroomHat extends GeoArmorItem implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
 	
-	private String[] drops = {"Corroded Shroom"};
+	private String[] drops = {"Corroded Shroom", "Fester Forest Loot Chests"};
 	
 	public final Lazy<Multimap<Attribute, AttributeModifier>> LAZY = Lazy.of(() ->  {    
     	ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder(); 

@@ -33,7 +33,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public class EnergeticFungus extends Item implements ICurioItem {
 	
-	private String[] drops = {"Corroded Shroom"};
+	private String[] drops = {"Corroded Shroom", "Fester Forest Loot Chests"};
 	
 	private int regenLevel = 3;
 	

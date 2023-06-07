@@ -43,7 +43,7 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 public class GoopyBoots extends ArmorItem {
 	
-	private String[] drops = {"Rotting Goop"};
+	private String[] drops = {"Rotting Goop", "Fester Forest Loot Chests"};
 	
 	public final Lazy<Multimap<Attribute, AttributeModifier>> LAZY = Lazy.of(() ->  {    
     	ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder(); 

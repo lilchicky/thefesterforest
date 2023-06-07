@@ -35,7 +35,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class BrittleBranch extends ProjectileWeaponItem {
 	
-	private String[] drops = {"Rotting Skeleton"};
+	private String[] drops = {"Rotting Skeleton", "Fester Forest Loot Chests"};
 	
 	protected int bonusDamage;
 	protected double inaccuracy;

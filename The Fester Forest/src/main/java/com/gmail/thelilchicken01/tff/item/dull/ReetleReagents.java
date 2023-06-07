@@ -39,7 +39,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public class ReetleReagents extends Item implements ICuriosUtil {
 	
-	private String[] drops = {"Reetle Queen"};
+	private String[] drops = {"Reetle Queen", "Fester Forest Loot Chests"};
 
 	public ReetleReagents() {
 		super(new Properties().tab(TheFesterForest.TFF_TAB).stacksTo(1));

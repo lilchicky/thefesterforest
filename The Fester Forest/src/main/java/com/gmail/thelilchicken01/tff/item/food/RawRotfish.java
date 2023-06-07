@@ -17,7 +17,7 @@ import net.minecraft.world.level.Level;
 
 public class RawRotfish extends Item {
 	
-	private String[] drops = {"Rotfish"};
+	private String[] drops = {"Rotfish", "Fester Forest Loot Chests"};
 
 	public RawRotfish() {
 		super(new Properties().tab(TheFesterForest.TFF_TAB).food(

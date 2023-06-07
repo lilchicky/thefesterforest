@@ -79,7 +79,7 @@
   "death.attack.tff_branch_damage.player": "%2$s strangled %1$s to death with branches",
   "death.attack.tff_electric_charge": "%1$s met a shocking end",
   "death.attack.tff_goop_acid": "%1$s was melted into a slimy puddle",
-  "death.attack.tff_goop_acid.player": "%1$s turned %2$s into a puddle of slime",
+  "death.attack.tff_goop_acid.player": "%2$s turned %1$s into a puddle of slime",
   "death.attack.tff_knockup_damage": "%1$s was slammed into the ground",
   "death.attack.tff_knockup_damage.player": "%1$s was slammed into the ground by %2$s",
   "death.attack.tff_meteor_damage": "%1$s was crushed by a flying meteor",

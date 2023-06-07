@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 
 public class VolatileApple extends Item {
 	
-	private String[] drops = {"Volatile Ghost"};
+	private String[] drops = {"Volatile Ghost", "Fester Forest Loot Chests"};
 
 	public VolatileApple(Properties properties) {
 		super(properties);

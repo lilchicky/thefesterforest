@@ -26,7 +26,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public class ShockNecklace extends Item implements ICurioItem {
 	
-	private String[] drops = {"Ambectrum"};
+	private String[] drops = {"Ambectrum", "Fester Forest Loot Chests"};
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 

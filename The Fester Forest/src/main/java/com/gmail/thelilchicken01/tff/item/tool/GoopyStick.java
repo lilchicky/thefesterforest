@@ -16,7 +16,7 @@ import net.minecraft.world.level.Level;
 
 public class GoopyStick extends PaxelItem {
 	
-	private String[] drops = {"Rotting Goop"};
+	private String[] drops = {"Rotting Goop", "Fester Forest Loot Chests"};
 
 	public GoopyStick() {
 		super(ModTiers.PAXEL_DIAMOND, 0, 0.0f, new Properties().tab(TheFesterForest.TFF_TAB));

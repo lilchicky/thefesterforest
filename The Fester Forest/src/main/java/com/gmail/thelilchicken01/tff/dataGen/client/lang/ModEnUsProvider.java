@@ -37,7 +37,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("death.attack.tff_volatile_sword", "%1$s burned up by a flaming blade");
 		add("death.attack.tff_volatile_sword.player", "%1$s incinerated %2$s with a fiery blade");
 		add("death.attack.tff_goop_acid", "%1$s was melted into a slimy puddle");
-		add("death.attack.tff_goop_acid.player", "%1$s turned %2$s into a puddle of slime");
+		add("death.attack.tff_goop_acid.player", "%2$s turned %1$s into a puddle of slime");
 		add("death.attack.tff_banshee_mob", "%1$s had their eardrums ruptured by %2$s");
 		add("death.attack.tff_banshee_mob.player", "%1$s had their eardrums ruptured by %2$s");
 		add("death.attack.tff_electric_charge", "%1$s met a shocking end");

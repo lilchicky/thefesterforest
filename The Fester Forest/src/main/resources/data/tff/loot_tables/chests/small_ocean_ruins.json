@@ -21,6 +21,11 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 30,
+          "name": "minecraft:glowstone_dust"
+        },
+        {
+          "type": "minecraft:item",
           "weight": 100,
           "name": "minecraft:iron_ingot"
         },

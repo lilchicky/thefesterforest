@@ -17,7 +17,7 @@ import net.minecraft.world.level.Level;
 
 public class AmbectrumJelly extends Item {
 	
-	private String[] drops = {"Ambectrum"};
+	private String[] drops = {"Ambectrum", "Fester Forest Loot Chests"};
 
 	public AmbectrumJelly() {
 		super(new Properties().tab(TheFesterForest.TFF_TAB).food(
