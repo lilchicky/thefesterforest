@@ -3,6 +3,7 @@ package com.gmail.thelilchicken01.tff;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.gmail.thelilchicken01.tff.client.SwimHandler;
 import com.gmail.thelilchicken01.tff.config.TFFClientConfigs;
 import com.gmail.thelilchicken01.tff.config.TFFCommonConfigs;
 import com.gmail.thelilchicken01.tff.effect.ModEffects;
@@ -111,6 +112,7 @@ public class TheFesterForest {
 		ModPatchConfig.MOD_FEATURES.register(bus);
 		
 		ModCompat.initCompat();
+		SwimHandler.setup();
 		
 		GeckoLib.initialize();
 		

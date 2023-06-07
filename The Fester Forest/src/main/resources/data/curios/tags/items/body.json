@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"tff:forgemaster_heart"
+		"tff:forgemaster_heart",
+		"tff:thick_bone"
 	]
 }

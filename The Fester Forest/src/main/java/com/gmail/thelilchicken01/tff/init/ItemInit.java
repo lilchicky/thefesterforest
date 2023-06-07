@@ -43,6 +43,7 @@ import com.gmail.thelilchicken01.tff.item.dull.RotfishFang;
 import com.gmail.thelilchicken01.tff.item.dull.ShockNecklace;
 import com.gmail.thelilchicken01.tff.item.dull.ShroomBucket;
 import com.gmail.thelilchicken01.tff.item.dull.SlipperyGoop;
+import com.gmail.thelilchicken01.tff.item.dull.ThickBone;
 import com.gmail.thelilchicken01.tff.item.food.AmbectrumDonut;
 import com.gmail.thelilchicken01.tff.item.food.AmbectrumJelly;
 import com.gmail.thelilchicken01.tff.item.food.BugCarcass;
@@ -458,6 +459,10 @@ public class ItemInit {
 	//Energetic Fungus
 	public static final RegistryObject<Item> ENERGETIC_FUNGUS = register("energetic_fungus",
 			() -> new EnergeticFungus());
+	
+	//Thick Bone
+	public static final RegistryObject<Item> THICK_BONE = register("thick_bone",
+			() -> new ThickBone());
 	
 	/*
 	 * 
