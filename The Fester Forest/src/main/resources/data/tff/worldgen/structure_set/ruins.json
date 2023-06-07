@@ -41,6 +41,10 @@
     {
       "structure": "tff:ruins_10",
       "weight": 1
+    },
+    {
+      "structure": "tff:ruins_11",
+      "weight": 1
     }
   ],
   "placement": {

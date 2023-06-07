@@ -45,6 +45,10 @@
     {
       "structure": "tff:ocean_ruins_11",
       "weight": 1
+    },
+    {
+      "structure": "tff:ocean_ruins_12",
+      "weight": 1
     }
   ],
   "placement": {

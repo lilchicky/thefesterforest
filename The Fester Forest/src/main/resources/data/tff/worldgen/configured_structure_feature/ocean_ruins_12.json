@@ -1,0 +1,48 @@
+{
+    // The base structure class to use for the behavior of the structure. (Like extra terrain checks and such)
+  "type": "tff:ocean_floor",
+
+  "config": {
+      // the path to the template pool json file to use
+    "start_pool": "tff:ocean_ruins_12",
+
+      // This is how many pieces away from the starting piece a piece of the structure can spawn
+      // Think of it like the length of the branch of the structure
+    "size": 1
+  },
+
+    // The biome tag to use for what biomes that this structure can spawn in"
+  "biomes": "#tff:has_structure/ocean_ruins",
+
+    // If true, land will be add around the bottom of the structure. (Based on the starting piece's y value)
+  "adapt_noise": true,
+
+    // What mobs can spawn over time in the structure.
+    // Make sure you add the mob to the right category (monster, creature, etc)
+  "spawn_overrides": {
+  	"monster": {
+      "bounding_box": "piece",
+      "spawns": [
+        {
+        	"type": "tff:rotfish",
+        	"weight": 100,
+        	"minCount": 5,
+        	"maxCount": 8
+      	},
+      	{
+        	"type": "tff:ambectrum",
+        	"weight": 40,
+        	"minCount": 1,
+        	"maxCount": 1
+      	},
+      	{
+        	"type": "tff:seathrown_skeleton",
+        	"weight": 100,
+        	"minCount": 2,
+        	"maxCount": 4
+      	}
+      ]
+    }
+  }
+    
+}
