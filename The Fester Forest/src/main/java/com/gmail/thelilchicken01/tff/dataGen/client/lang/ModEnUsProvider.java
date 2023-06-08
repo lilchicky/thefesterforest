@@ -219,6 +219,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.SHROOM_BUCKET.get(), "Shroom Bucket");
 		add(ItemInit.SHROOM_HAT.get(), "Shroom Hat");
 		add(ItemInit.THICK_BONE.get(), "Thick Bone");
+		add(ItemInit.SEATHROWN_PIKE.get(), "Seathrown Pike");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

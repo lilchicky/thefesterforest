@@ -67,6 +67,7 @@ import com.gmail.thelilchicken01.tff.item.melee.BoneScythe;
 import com.gmail.thelilchicken01.tff.item.melee.ForgemasterHammer;
 import com.gmail.thelilchicken01.tff.item.melee.GoopySword;
 import com.gmail.thelilchicken01.tff.item.melee.LifeScythe;
+import com.gmail.thelilchicken01.tff.item.melee.SeathrownPike;
 import com.gmail.thelilchicken01.tff.item.melee.ShockSword;
 import com.gmail.thelilchicken01.tff.item.misc.BugEggs;
 import com.gmail.thelilchicken01.tff.item.misc.CatalystItem;
@@ -87,6 +88,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
@@ -397,6 +399,16 @@ public class ItemInit {
 	//Electric Pickaxe
 	public static final RegistryObject<Item> ELECTRIC_PICKAXE = register("electric_pickaxe",
 			() -> new ElectricPickaxe());
+	
+	/*
+	 * 
+	 * Seathrown Skeleton
+	 * 
+	 */
+	
+	//Seathrown Pike
+	public static final RegistryObject<Item> SEATHROWN_PIKE = register("seathrown_pike", 
+			() -> new SeathrownPike(Tiers.IRON, 4, -3f, new Properties().tab(TheFesterForest.TFF_TAB).durability(550)));
 	
 	/*
 	 * 
