@@ -1,5 +1,6 @@
 package com.gmail.thelilchicken01.tff.client;
 
+import com.gmail.thelilchicken01.tff.capability.SwimHandler;
 import com.gmail.thelilchicken01.tff.network.SinkPacket;
 
 import net.minecraft.client.Minecraft;

@@ -1,7 +1,7 @@
 package com.gmail.thelilchicken01.tff.item.dull;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
-import com.gmail.thelilchicken01.tff.client.SwimHandler;
+import com.gmail.thelilchicken01.tff.capability.SwimHandler;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.Item;
@@ -17,16 +17,15 @@ public class ThickBone extends Item implements ICurioItem {
 	}
 	
 	@Override
-	public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+	public void curioTick(SlotContext slotContext, ItemStack stack) {
 		if (slotContext.entity() instanceof ServerPlayer player) {
-			
 			slotContext.entity().getCapability(SwimHandler.CAPABILITY).ifPresent(
 					handler -> {
+						System.out.println("Sinking set to True");
 						handler.setSinking(true);
 						handler.syncSinking(player);
 					}
 				);
-			
 		}
 	}
 	
