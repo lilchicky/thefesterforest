@@ -1,0 +1,88 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 24,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 300,
+          "name": "minecraft:bone"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 290,
+          "name": "tff:purifying_powder"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 200,
+          "name": "minecraft:iron_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 60,
+          "name": "minecraft:gold_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 40,
+          "name": "minecraft:diamond"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 60,
+          "name": "minecraft:emerald"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 160,
+          "name": "tff:corroded_shroom"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 160,
+          "name": "tff:raw_rotfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 60,
+          "name": "minecraft:glowstone_dust"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 100,
+          "name": "minecraft:book",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 30,
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 8,
+          "name": "tff:thick_bone"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 8,
+          "name": "tff:seathrown_pike",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

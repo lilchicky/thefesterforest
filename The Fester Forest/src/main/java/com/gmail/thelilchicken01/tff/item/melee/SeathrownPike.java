@@ -14,6 +14,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
@@ -32,8 +33,13 @@ public class SeathrownPike extends SwordItem {
 	public final Lazy<Multimap<Attribute, AttributeModifier>> LAZY = Lazy.of(() ->  {    
     	ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder(); 
          
-         if (ForgeMod.REACH_DISTANCE.isPresent() && ForgeMod.ATTACK_RANGE.isPresent()) {
-             builder.put(ForgeMod.ATTACK_RANGE.get(), new AttributeModifier(UUID.randomUUID(), "attack_range", 2.0, AttributeModifier.Operation.ADDITION));
+         if (ForgeMod.ATTACK_RANGE.isPresent()) {
+             builder.put(ForgeMod.ATTACK_RANGE.get(), new AttributeModifier(UUID.randomUUID(), 
+            		 "attack_range", 2.0, AttributeModifier.Operation.ADDITION));
+             builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, 
+     	    		"attack_damage", 7.0, AttributeModifier.Operation.ADDITION));
+             builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, 
+     	    		"attack_speed", -3f, AttributeModifier.Operation.ADDITION));
          }
     	Multimap<Attribute, AttributeModifier> attributeModifiers = ArrayListMultimap.create();
     	attributeModifiers = builder.build();

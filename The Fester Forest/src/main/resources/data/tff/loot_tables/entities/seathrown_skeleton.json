@@ -1,0 +1,64 @@
+{
+  "pools": [
+    {
+      "rolls": 3,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 200,
+          "name": "tff:purifying_powder"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 200,
+          "name": "minecraft:bone"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 200,
+          "name": "tff:corroded_shroom"
+        }
+      ]
+    },
+    {
+    	"rolls": 1,
+    	"entries": [
+    		{
+    			"type": "minecraft:empty",
+          		"weight": 100
+          	},
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:seathrown_pike",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
+                }
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:killed_by_player"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:thick_bone",
+          "conditions": [
+            {
+              "condition": "minecraft:killed_by_player"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

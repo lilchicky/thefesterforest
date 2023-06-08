@@ -106,6 +106,9 @@ minecraft {
             // "REGISTRIES": For firing of registry events.
             // "REGISTRYDUMP": For getting the contents of all registries.
             property 'forge.logging.markers', 'REGISTRIES'
+            
+            property 'mixin.env.remapRefMap', 'true'
+			property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
 
             // Recommended logging level for the console
             // You can set various levels here.
@@ -131,6 +134,9 @@ minecraft {
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             args '--mod', 'tff', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            
+            property 'mixin.env.remapRefMap', 'true'
+			property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
 
             mods {
                 tff {
@@ -159,6 +165,9 @@ repositories {
     	url = "https://modmaven.dev"
   	}
   	maven {
+        url "https://www.cursemaven.com"
+    }
+  	maven {
   		name = "curios"
         url = "https://maven.theillusivec4.top/"
     }
@@ -166,6 +175,13 @@ repositories {
     	name "expandability"
     	url "https://maven.florens.be/releases"
 	}
+	maven {
+        name "mixin-extras"
+        url = "https://jitpack.io/"
+        content {
+            includeGroupByRegex "com.github.*"
+        }
+    }
     
     // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
     // flatDir {
@@ -177,7 +193,9 @@ dependencies {
     // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft', it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.18.2-40.1.86'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.2.0'
+    
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     
 	implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.18:3.0.56')
 	

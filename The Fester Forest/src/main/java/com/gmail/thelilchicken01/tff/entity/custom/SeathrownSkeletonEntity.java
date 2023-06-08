@@ -32,6 +32,7 @@ import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.ZombieAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
 import net.minecraft.world.entity.animal.AbstractFish;
@@ -60,13 +61,18 @@ public class SeathrownSkeletonEntity extends Monster implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
 	
+	protected final WaterBoundPathNavigation waterNavigation;
+	protected final GroundPathNavigation groundNavigation;
+	
 	protected RandomStrollGoal randomStrollGoal;
 
-	public SeathrownSkeletonEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
+	public SeathrownSkeletonEntity(EntityType<? extends Monster> p_33002_, Level level) {
 		
-		super(p_33002_, p_33003_);
+		super(p_33002_, level);
 		
 		this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
+		this.waterNavigation = new WaterBoundPathNavigation(this, level);
+	    this.groundNavigation = new GroundPathNavigation(this, level);
 		this.moveControl = new SeathrownSkeletonEntity.WaterMoveControl(this);
 	}
 	
@@ -89,10 +95,25 @@ public class SeathrownSkeletonEntity extends Monster implements IAnimatable {
 		return 0.9f;
 	}
 	
+	@Override
+	public void updateSwimming() {
+		if (!this.level.isClientSide) {
+	         if (this.isEffectiveAi() && this.isInWater()) {
+	            this.navigation = this.waterNavigation;
+	            this.setSwimming(true);
+	         } else {
+	            this.navigation = this.groundNavigation;
+	            this.setSwimming(false);
+	         }
+	      }
+	}
+	
 	protected void registerGoals() {
 		
 		this.goalSelector.addGoal(2, new SeathrownSkeletonEntity.WaterMeleeAttackGoal(this, 1.3, false));
 	    this.goalSelector.addGoal(4, new SeathrownSkeletonEntity.FishSwimGoal(this));
+	    this.goalSelector.addGoal(6, new MeleeAttackGoal(this, 1.005, false));
+	    this.goalSelector.addGoal(8, new RandomStrollGoal(this, 1.000));
 	    
 	    this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, SeathrownSkeletonEntity.class)).setAlertOthers(SeathrownSkeletonEntity.class));
 	    this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::okTarget));
@@ -101,7 +122,7 @@ public class SeathrownSkeletonEntity extends Monster implements IAnimatable {
 	
 	public boolean okTarget(@Nullable LivingEntity target) {
 		if (target != null) {
-			return target.isInWater();
+			return this.isSwimming() ? target.isInWater() : true;
 		} 
 		
 		else {
@@ -110,7 +131,7 @@ public class SeathrownSkeletonEntity extends Monster implements IAnimatable {
 	}
 	
 	protected PathNavigation createNavigation(Level world) {
-		return new WaterBoundPathNavigation(this, world);
+		return this.navigation == null ? new WaterBoundPathNavigation(this, world) : this.navigation;
 	}
 	
 	protected void playStepSound(BlockPos pos, BlockState blockIn) {
