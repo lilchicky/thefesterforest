@@ -92,7 +92,7 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 			
 			playerCheck:
 			for (int x = 0; x < nearbyEntities.size(); x++) {
-				if (nearbyEntities.get(x) instanceof Player) {
+				if (nearbyEntities.get(x) instanceof Player && !((Player) nearbyEntities.get(x)).isCreative() && !((Player) nearbyEntities.get(x)).isSpectator()) {
 					primed = true;
 					this.playSound(SoundEvents.CREEPER_PRIMED, 1.0f, 1.5f);
 					break playerCheck;
