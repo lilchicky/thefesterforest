@@ -26,7 +26,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public class RotfishFang extends Item implements ICurioItem {
 	
-	private String[] drops = {"Rotfish"};
+	private String[] drops = {"Rotfish", "Fester Forest Loot Chests"};
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
