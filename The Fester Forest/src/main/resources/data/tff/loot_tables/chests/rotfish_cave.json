@@ -2,7 +2,7 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 21,
+      "rolls": 27,
       "entries": [
         {
           "type": "minecraft:item",
@@ -60,6 +60,11 @@
           "type": "minecraft:item",
           "weight": 2,
           "name": "tff:rotfish_fang"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "name": "tff:heavy_stone"
         }
       ]
     }
