@@ -110,6 +110,36 @@
 		  ]
         }
       }
+    },
+    "rotfish_special": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:rotfish_special"
+		  ]
+        }
+      }
+    },
+    "shroom_cluster": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:shroom_cluster"
+		  ]
+        }
+      }
+    },
+    "cooked_shroom_cluster": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:cooked_shroom_cluster"
+		  ]
+        }
+      }
     }
   },
   "requirements": [
@@ -142,6 +172,15 @@
   	],
   	[
   		"ambectrum_donut"
+  	],
+  	[
+  		"rotfish_special"
+  	],
+  	[
+  		"shroom_cluster"
+  	],
+  	[
+  		"cooked_shroom_cluster"
   	]
   ]
 }

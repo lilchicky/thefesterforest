@@ -48,11 +48,14 @@ import com.gmail.thelilchicken01.tff.item.food.AmbectrumDonut;
 import com.gmail.thelilchicken01.tff.item.food.AmbectrumJelly;
 import com.gmail.thelilchicken01.tff.item.food.BugCarcass;
 import com.gmail.thelilchicken01.tff.item.food.CookedRotfish;
+import com.gmail.thelilchicken01.tff.item.food.CookedShroomCluster;
 import com.gmail.thelilchicken01.tff.item.food.GoopyJello;
 import com.gmail.thelilchicken01.tff.item.food.MechanicalApple;
 import com.gmail.thelilchicken01.tff.item.food.RawRotfish;
+import com.gmail.thelilchicken01.tff.item.food.RotfishSpecial;
 import com.gmail.thelilchicken01.tff.item.food.RottingCarrot;
 import com.gmail.thelilchicken01.tff.item.food.RottingPie;
+import com.gmail.thelilchicken01.tff.item.food.ShroomCluster;
 import com.gmail.thelilchicken01.tff.item.food.VolatileApple;
 import com.gmail.thelilchicken01.tff.item.item.ModTiers;
 import com.gmail.thelilchicken01.tff.item.magic.BoneLauncher;
@@ -513,6 +516,18 @@ public class ItemInit {
 	//Ambectrum Donut
 	public static final RegistryObject<Item> AMBECTRUM_DONUT = register("ambectrum_donut", 
 			() -> new AmbectrumDonut());
+	
+	//Rotfish Special
+	public static final RegistryObject<Item> ROTFISH_SPECIAL = register("rotfish_special", 
+			() -> new RotfishSpecial());
+	
+	//Shroom Cluster
+	public static final RegistryObject<Item> SHROOM_CLUSTER = register("shroom_cluster", 
+			() -> new ShroomCluster());
+		
+	//Cooked Shroom Cluster
+	public static final RegistryObject<Item> COOKED_SHROOM_CLUSTER = register("cooked_shroom_cluster", 
+			() -> new CookedShroomCluster());
 	
 	//Volatile Apple
 	public static final RegistryObject<Item> VOLATILE_APPLE = register("volatile_apple", 

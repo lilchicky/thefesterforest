@@ -138,6 +138,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.SHROOM_BUCKET.get());
 		oneLayerItem(ItemInit.SHROOM_HAT.get());
 		oneLayerItem(ItemInit.THICK_BONE.get());
+		oneLayerItem(ItemInit.ROTFISH_SPECIAL.get());
+		oneLayerItem(ItemInit.SHROOM_CLUSTER.get());
+		oneLayerItem(ItemInit.COOKED_SHROOM_CLUSTER.get());
 		
 		//Simple handheld items
 		handheldItem(ItemInit.BONE_PICKAXE.get());

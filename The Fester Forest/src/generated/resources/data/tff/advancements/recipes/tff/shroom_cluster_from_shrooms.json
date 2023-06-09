@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:shroom_cluster_from_shrooms"
+    ]
+  },
+  "criteria": {
+    "has_tff:corroded_shroom": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:corroded_shroom"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:shroom_cluster_from_shrooms"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:corroded_shroom",
+      "has_the_recipe"
+    ]
+  ]
+}

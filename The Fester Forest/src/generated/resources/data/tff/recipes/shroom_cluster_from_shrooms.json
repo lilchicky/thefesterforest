@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:corroded_shroom"
+    },
+    {
+      "item": "tff:corroded_shroom"
+    },
+    {
+      "item": "tff:corroded_shroom"
+    },
+    {
+      "item": "tff:corroded_shroom"
+    }
+  ],
+  "result": {
+    "item": "tff:shroom_cluster"
+  }
+}

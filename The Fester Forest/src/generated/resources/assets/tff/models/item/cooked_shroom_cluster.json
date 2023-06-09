@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tff:item/cooked_shroom_cluster"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "tff:shroom_cluster"
+  },
+  "result": "tff:cooked_shroom_cluster",
+  "experience": 15.0,
+  "cookingtime": 200
+}

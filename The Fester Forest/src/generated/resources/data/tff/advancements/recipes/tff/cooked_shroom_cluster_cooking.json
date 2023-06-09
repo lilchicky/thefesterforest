@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:cooked_shroom_cluster_cooking"
+    ]
+  },
+  "criteria": {
+    "has_tff:shroom_cluster": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:shroom_cluster"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:cooked_shroom_cluster_cooking"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:shroom_cluster",
+      "has_the_recipe"
+    ]
+  ]
+}

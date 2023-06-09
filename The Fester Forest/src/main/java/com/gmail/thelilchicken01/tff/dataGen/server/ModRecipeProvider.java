@@ -300,6 +300,16 @@ public class ModRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_" + BlockInit.ROTTING_BRICKS.get().getRegistryName(), has(BlockInit.ROTTING_BRICKS.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.ROTTING_BRICK.get().getRegistryName().getPath()));
 		
+		// Shroom Cluster
+		ShapelessRecipeBuilder.shapeless(ItemInit.SHROOM_CLUSTER.get().asItem()).requires(BlockInit.CORRODED_SHROOM.get(), 4) //get item
+			.unlockedBy("has_" + BlockInit.CORRODED_SHROOM.get().getRegistryName(), has(BlockInit.CORRODED_SHROOM.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.SHROOM_CLUSTER.get().getRegistryName().getPath() + "_from_shrooms"));
+		
+		// Rotfish Special
+		ShapelessRecipeBuilder.shapeless(ItemInit.ROTFISH_SPECIAL.get().asItem()).requires(ItemInit.COOKED_ROTFISH.get()).requires(BlockInit.CORRODED_SHROOM.get(), 2) //get item
+			.unlockedBy("has_" + ItemInit.COOKED_ROTFISH.get().getRegistryName(), has(ItemInit.COOKED_ROTFISH.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.ROTFISH_SPECIAL.get().getRegistryName().getPath() + "_crafting"));
+		
 		// Orange Shroom to Mushrooms
 		ShapelessRecipeBuilder.shapeless(BlockInit.CORRODED_SHROOM.get().asItem(), 3).requires(BlockInit.ORANGE_FESTER_SHROOM_BLOCK.get()) //get item
 		.unlockedBy("has_" + BlockInit.ORANGE_FESTER_SHROOM_BLOCK.get().getRegistryName(), has(BlockInit.ORANGE_FESTER_SHROOM_BLOCK.get().asItem()))
@@ -461,6 +471,11 @@ public class ModRecipeProvider extends RecipeProvider {
 			ItemInit.ROTTING_BRICK.get(), 15, 200)
 			.unlockedBy("has_" + BlockInit.FESTER_ORE.get().getRegistryName(), has(BlockInit.FESTER_ORE.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.FESTER_ORE.get().getRegistryName().getPath() + "_smelting_only_ore"));
+		
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ItemInit.SHROOM_CLUSTER.get()),
+				ItemInit.COOKED_SHROOM_CLUSTER.get(), 15, 200)
+				.unlockedBy("has_" + ItemInit.SHROOM_CLUSTER.get().getRegistryName(), has(ItemInit.SHROOM_CLUSTER.get()))
+				.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.COOKED_SHROOM_CLUSTER.get().getRegistryName().getPath() + "_cooking"));
 		
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.ROTTING_STONE.get().asItem()),
 			BlockInit.CRACKED_ROTTING_STONE.get(), 1, 200)

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:rotfish_special_crafting"
+    ]
+  },
+  "criteria": {
+    "has_tff:cooked_rotfish": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:cooked_rotfish"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:rotfish_special_crafting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:cooked_rotfish",
+      "has_the_recipe"
+    ]
+  ]
+}
