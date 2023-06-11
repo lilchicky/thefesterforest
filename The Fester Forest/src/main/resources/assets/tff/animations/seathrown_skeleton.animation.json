@@ -1,6 +1,27 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
+		"animation.seathrown_skeleton.idle": {
+			"loop": true,
+			"animation_length": 4,
+			"bones": {
+				"arms": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 5]
+						},
+						"2.0": {
+							"vector": [0, 0, -5],
+							"easing": "easeInOutSine"
+						},
+						"4.0": {
+							"vector": [0, 0, 5],
+							"easing": "easeInOutSine"
+						}
+					}
+				}
+			}
+		},
 		"animation.seathrown_skeleton.walk": {
 			"loop": true,
 			"animation_length": 1,
@@ -15,32 +36,6 @@
 						},
 						"1.0": {
 							"vector": [0, 0, -2.5]
-						}
-					}
-				},
-				"leg_left": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 15]
-						},
-						"0.5": {
-							"vector": [0, 0, -15]
-						},
-						"1.0": {
-							"vector": [0, 0, 15]
-						}
-					}
-				},
-				"leg_right": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, -15]
-						},
-						"0.5": {
-							"vector": [0, 0, 15]
-						},
-						"1.0": {
-							"vector": [0, 0, -15]
 						}
 					}
 				},
@@ -69,28 +64,6 @@
 						},
 						"1.0": {
 							"vector": [0, 0, 82.5]
-						}
-					},
-					"position": {
-						"vector": [9, -8, 0]
-					}
-				}
-			}
-		},
-		"animation.seathrown_skeleton.idle": {
-			"loop": true,
-			"animation_length": 4,
-			"bones": {
-				"arms": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, -5]
-						},
-						"2.0": {
-							"vector": [0, 0, 5]
-						},
-						"4.0": {
-							"vector": [0, 0, -5]
 						}
 					}
 				}

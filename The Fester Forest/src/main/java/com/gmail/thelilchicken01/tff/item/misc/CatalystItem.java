@@ -42,6 +42,7 @@ public class CatalystItem  extends Item {
 					
 					
 					context.getLevel().playSound(context.getPlayer(), framePos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 0.2f, 0.3f);
+					context.getPlayer().getItemInHand(context.getHand()).shrink(1);
 					return InteractionResult.CONSUME;
 					
 				}

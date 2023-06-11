@@ -34,19 +34,9 @@
 					]
 				},
 				{
-					"name": "leg_left",
-					"parent": "body",
-					"pivot": [0, 9.5, -3]
-				},
-				{
-					"name": "leg_right",
-					"parent": "body",
-					"pivot": [0, 9.5, 3]
-				},
-				{
 					"name": "arms",
 					"parent": "body",
-					"pivot": [0, 19.5, 5],
+					"pivot": [0, 12.5, 0],
 					"cubes": [
 						{"origin": [-1, 1, -6], "size": [2, 11, 2], "uv": [8, 26]},
 						{"origin": [-1, 1, 4], "size": [2, 11, 2], "uv": [0, 26]}
