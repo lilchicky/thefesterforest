@@ -9,7 +9,7 @@
       "weight": 1,
       "element": {
         "location": "tff:floating/floating_short_hallway_1",
-        "processors": "tff:forgemaster_randomizer",
+        "processors": "tff:floating_tower",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
@@ -18,7 +18,7 @@
       "weight": 1,
       "element": {
         "location": "tff:floating/floating_short_hallway_2",
-        "processors": "tff:forgemaster_randomizer",
+        "processors": "tff:floating_tower",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
@@ -27,7 +27,7 @@
       "weight": 1,
       "element": {
         "location": "tff:floating/floating_short_hallway_3",
-        "processors": "tff:forgemaster_randomizer",
+        "processors": "tff:floating_tower",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
@@ -36,7 +36,7 @@
       "weight": 1,
       "element": {
         "location": "tff:floating/floating_short_hallway_4",
-        "processors": "tff:forgemaster_randomizer",
+        "processors": "tff:floating_tower",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
@@ -45,7 +45,7 @@
       "weight": 1,
       "element": {
         "location": "tff:floating/floating_short_hallway_5",
-        "processors": "tff:forgemaster_randomizer",
+        "processors": "tff:floating_tower",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
@@ -54,7 +54,7 @@
       "weight": 1,
       "element": {
         "location": "tff:floating/floating_ramp_hallway",
-        "processors": "tff:forgemaster_randomizer",
+        "processors": "tff:floating_tower",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
@@ -63,7 +63,7 @@
       "weight": 2,
       "element": {
         "location": "tff:floating/floating_l_hallway_1",
-        "processors": "tff:forgemaster_randomizer",
+        "processors": "tff:floating_tower",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
@@ -72,7 +72,7 @@
       "weight": 2,
       "element": {
         "location": "tff:floating/floating_l_hallway_2",
-        "processors": "tff:forgemaster_randomizer",
+        "processors": "tff:floating_tower",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
@@ -81,7 +81,7 @@
       "weight": 2,
       "element": {
         "location": "tff:floating/floating_t_hallway_1",
-        "processors": "tff:forgemaster_randomizer",
+        "processors": "tff:floating_tower",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
@@ -90,7 +90,7 @@
       "weight": 2,
       "element": {
         "location": "tff:floating/floating_t_hallway_2",
-        "processors": "tff:forgemaster_randomizer",
+        "processors": "tff:floating_tower",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
@@ -99,7 +99,7 @@
       "weight": 2,
       "element": {
         "location": "tff:floating/floating_end_hallway",
-        "processors": "tff:forgemaster_randomizer",
+        "processors": "tff:floating_tower",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
@@ -108,7 +108,7 @@
       "weight": 1,
       "element": {
         "location": "tff:floating/floating_long_hallway_1",
-        "processors": "tff:forgemaster_randomizer",
+        "processors": "tff:floating_tower",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
@@ -117,7 +117,7 @@
       "weight": 1,
       "element": {
         "location": "tff:floating/floating_long_hallway_2",
-        "processors": "tff:forgemaster_randomizer",
+        "processors": "tff:floating_tower",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
