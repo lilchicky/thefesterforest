@@ -20,7 +20,7 @@
     // What mobs can spawn over time in the structure.
     // Make sure you add the mob to the right category (monster, creature, etc)
   "spawn_overrides": {
-    "monster": {
+    "creature": {
       "bounding_box": "piece",
       "spawns": [
         {

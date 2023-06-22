@@ -14,7 +14,7 @@
   	},
   	"spawners": {
   	
-  		"monster": [
+  		"water_creature": [
       		{
         		"type": "tff:rotfish",
         		"weight": 100,
