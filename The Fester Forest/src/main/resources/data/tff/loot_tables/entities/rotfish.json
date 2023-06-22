@@ -11,7 +11,12 @@
         {
           "type": "minecraft:item",
           "name": "tff:rotfish_fang",
-          "weight": 1
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:killed_by_player"
+            }
+          ]
         }
       ]
     },
