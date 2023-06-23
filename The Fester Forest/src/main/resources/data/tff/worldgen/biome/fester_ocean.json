@@ -14,7 +14,7 @@
   	},
   	"spawners": {
   	
-  		"monster": [
+  		"water_ambient": [
       		{
         		"type": "tff:rotfish",
         		"weight": 100,
@@ -45,6 +45,18 @@
   	
   	},
   	"spawn_costs": {
+  		"tff:ambectrum": {
+  			"energy_budget": 0.3,
+  			"charge": 0.7
+  		},
+  		"tff:seathrown_skeleton": {
+  			"energy_budget": 0.3,
+  			"charge": 0.7
+  		},
+  		"tff:rotfish": {
+  			"energy_budget": 0.3,
+  			"charge": 0.7
+  		}
   	},
   	"carvers": {
     	"air": [

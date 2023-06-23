@@ -2,6 +2,7 @@ package com.gmail.thelilchicken01.tff.entity.custom;
 
 import javax.annotation.Nullable;
 
+import com.gmail.thelilchicken01.tff.entity.ModWaterMonster;
 import com.gmail.thelilchicken01.tff.entity.projectile.ElectricCharge;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.projectile.ElectricShot;
@@ -40,7 +41,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class AmbectrumEntity extends Monster implements IAnimatable {
+public class AmbectrumEntity extends ModWaterMonster implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
 	

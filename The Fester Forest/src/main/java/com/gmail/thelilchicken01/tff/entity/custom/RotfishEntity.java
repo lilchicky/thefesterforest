@@ -2,6 +2,8 @@ package com.gmail.thelilchicken01.tff.entity.custom;
 
 import javax.annotation.Nullable;
 
+import com.gmail.thelilchicken01.tff.entity.ModWaterMonster;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -34,7 +36,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class RotfishEntity extends Monster implements IAnimatable {
+public class RotfishEntity extends ModWaterMonster implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
 	
