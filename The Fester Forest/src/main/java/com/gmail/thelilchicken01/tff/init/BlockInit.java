@@ -242,6 +242,50 @@ public class BlockInit {
 	
 	/*
 	 * 
+	 * Fester Shroom Blocks
+	 * 
+	 */
+	
+	//Blue Fester Shroom Block
+	public static final RegistryObject<Block> BLUE_FESTER_SHROOM_BLOCK = register("blue_fester_shroom_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)),
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Orange Fester Shroom Block
+	public static final RegistryObject<Block> ORANGE_FESTER_SHROOM_BLOCK = register("orange_fester_shroom_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)),
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Fester Shroom Stem
+	public static final RegistryObject<Block> FESTER_SHROOM_STEM = register("fester_shroom_stem", 
+			() -> new NonFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).strength(2.0f)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Cubed Fungus
+	public static final RegistryObject<Block> CUBED_FUNGUS = register("cubed_fungus", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).strength(2.0f)),
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Cubed Fungus Stairs
+	public static final RegistryObject<Block> CUBED_FUNGUS_STAIRS = register("cubed_fungus_stairs", 
+			() -> new StairBlock(() -> BlockInit.CUBED_FUNGUS.get().defaultBlockState(), 
+					BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).strength(2.0f)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+		
+	//Cubed Fungus Slab
+	public static final RegistryObject<Block> CUBED_FUNGUS_SLAB = register("cubed_fungus_slabs", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).strength(2.0f)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Cubed Fungus Fence
+	public static final RegistryObject<Block> CUBED_FUNGUS_FENCE = register("cubed_fungus_fence", 
+			() -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).strength(2.0f)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+			
+	//Cubed Fungus Gate
+	public static final RegistryObject<Block> CUBED_FUNGUS_GATE = register("cubed_fungus_fence_gate", 
+			() -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).strength(2.0f)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	/*
+	 * 
 	 * Rotting Stone
 	 * 
 	 */
@@ -424,50 +468,6 @@ public class BlockInit {
 	
 	//Fungal Growth
 	public static final RegistryObject<BushBlock> FUNGAL_GROWTH = register("fungal_growth", () -> new FungalGrowth(), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
-	
-	/*
-	 * 
-	 * Fester Shroom Blocks
-	 * 
-	 */
-	
-	//Blue Fester Shroom Block
-	public static final RegistryObject<Block> BLUE_FESTER_SHROOM_BLOCK = register("blue_fester_shroom_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)),
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
-	
-	//Orange Fester Shroom Block
-	public static final RegistryObject<Block> ORANGE_FESTER_SHROOM_BLOCK = register("orange_fester_shroom_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)),
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
-	
-	//Fester Shroom Stem
-	public static final RegistryObject<Block> FESTER_SHROOM_STEM = register("fester_shroom_stem", 
-			() -> new NonFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).strength(2.0f)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
-	
-	//Cubed Fungus
-	public static final RegistryObject<Block> CUBED_FUNGUS = register("cubed_fungus", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).strength(2.0f)),
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
-	
-	//Cubed Fungus Stairs
-	public static final RegistryObject<Block> CUBED_FUNGUS_STAIRS = register("cubed_fungus_stairs", 
-			() -> new StairBlock(() -> BlockInit.CUBED_FUNGUS.get().defaultBlockState(), 
-					BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).strength(2.0f)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
-		
-	//Cubed Fungus Slab
-	public static final RegistryObject<Block> CUBED_FUNGUS_SLAB = register("cubed_fungus_slabs", 
-			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).strength(2.0f)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
-	
-	//Cubed Fungus Fence
-	public static final RegistryObject<Block> CUBED_FUNGUS_FENCE = register("cubed_fungus_fence", 
-			() -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).strength(2.0f)), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
-			
-	//Cubed Fungus Gate
-	public static final RegistryObject<Block> CUBED_FUNGUS_GATE = register("cubed_fungus_fence_gate", 
-			() -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).strength(2.0f)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	/*
