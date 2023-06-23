@@ -11,7 +11,6 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 15453ba5369b843d3d1c9d730ccffd33ae458453 assets/tff/blockstates/rotting_glass.json
 4cadb32899ac85c05e90ad707329aef10f073003 assets/tff/blockstates/rotting_grave_dirt.json
 56beee768216330de56b2dc2068c89a821fd9f52 assets/tff/blockstates/rotting_sand.json
-3977ace43b991c7f9d6bd07669e1a48cac38e9a4 assets/tff/blockstates/rotting_stone.json
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
 c5defbedf25b6ecf36bf55b38b2ff99beff20207 assets/tff/blockstates/soul_rot.json
@@ -29,7 +28,6 @@ a321e56fb7e0771726b5b69494f272ccb2a8a170 assets/tff/models/block/rotting_bricks.
 53cf37ba48c09832d4ee50e7d82afd111ce39351 assets/tff/models/block/rotting_glass.json
 46f49f41e0dc9fc88cc82ce152f95ae04cefc1dd assets/tff/models/block/rotting_grave_dirt.json
 dd2b1992053a7f1f137aaee9f56a68ccef7a5719 assets/tff/models/block/rotting_sand.json
-0898b07db1bd7bc7a06bc9f8fdbfc5b0cea73e94 assets/tff/models/block/rotting_stone.json
 8b5defa86c0e94080119bd1760e5ebd6180d99ac assets/tff/models/block/rotting_stone_bricks.json
 50002942b00c9698317479d54c6b900960f472d2 assets/tff/models/block/slimy_planks.json
 03a8f0dbfe7709003477da38d92daf86bb7528ca assets/tff/models/block/soul_rot.json
@@ -104,7 +102,6 @@ b08a670b388ee20a6c200d1f4cbc3567b0d6ec8d assets/tff/models/item/rotting_carrot.j
 65230a1388c563359708dbe3a4ccba0f48555a5a assets/tff/models/item/rotting_pie.json
 15c1bdebe9d1851fc313afc9908bb6404a36929b assets/tff/models/item/rotting_sand.json
 90c171e4c1b5fd9739cb3fefaa7c952788317300 assets/tff/models/item/rotting_slimeball.json
-20eb805785d46392d3828670491a51374af3232a assets/tff/models/item/rotting_stone.json
 e13adc8a9edece6541e28d75e9419060976daeb3 assets/tff/models/item/rotting_stone_bricks.json
 7ea77da900756b7083824d030e272af4cda269b1 assets/tff/models/item/shield_book.json
 443cb9c10e6c327a25ac9150ff9af455e256ca88 assets/tff/models/item/shock_necklace.json

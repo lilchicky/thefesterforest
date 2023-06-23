@@ -57,7 +57,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 	protected void registerModels() {
 		// Block Item
 		simpleBlockItem(BlockInit.ROTTING_BRICKS.get().asItem());
-		simpleBlockItem(BlockInit.ROTTING_STONE.get().asItem());
+		//simpleBlockItem(BlockInit.ROTTING_STONE.get().asItem());
 		simpleBlockItem(BlockInit.FESTER_ORE.get().asItem());
 		simpleBlockItem(BlockInit.SLIMY_PLANKS.get().asItem());
 		simpleBlockItem(BlockInit.CRACKED_ROTTING_STONE.get().asItem());

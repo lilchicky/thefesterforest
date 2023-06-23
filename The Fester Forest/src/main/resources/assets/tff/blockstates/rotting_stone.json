@@ -1,0 +1,18 @@
+{
+	"variants": {
+		"": [
+			{
+				"model": "tff:block/rotting_stone", "weight": 100
+			},
+			{
+				"model": "tff:block/rotting_stone_1", "weight": 20
+			},
+			{
+				"model": "tff:block/rotting_stone_2", "weight": 20
+			},
+			{
+				"model": "tff:block/rotting_stone_3", "weight": 20
+			}
+		]
+	}
+}

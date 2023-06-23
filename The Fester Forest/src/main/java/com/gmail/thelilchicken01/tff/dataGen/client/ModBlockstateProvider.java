@@ -18,7 +18,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
 	protected void registerStatesAndModels() {
 
 		simpleBlock(BlockInit.ROTTING_BRICKS.get());
-		simpleBlock(BlockInit.ROTTING_STONE.get());
+		//simpleBlock(BlockInit.ROTTING_STONE.get());
 		simpleBlock(BlockInit.FESTER_ORE.get());
 		simpleBlock(BlockInit.SLIMY_PLANKS.get());
 		simpleBlock(BlockInit.CRACKED_ROTTING_STONE.get());
