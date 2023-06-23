@@ -88,7 +88,7 @@ public class AmbectrumEntity extends Monster implements IAnimatable {
 		
 		shootCounter++;
 		
-		if(!getLevel().isClientSide) {
+		if(!getLevel().isClientSide()) {
 		
 			if (shootCounter > (shootCooldown * 20) && this.okTarget(this.getTarget())) {
 				
