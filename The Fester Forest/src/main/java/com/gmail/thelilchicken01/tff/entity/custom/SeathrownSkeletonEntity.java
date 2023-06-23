@@ -100,6 +100,7 @@ public class SeathrownSkeletonEntity extends ModWaterMonster implements IAnimata
 		
 	}
 	
+	@Override
 	public boolean okTarget(@Nullable LivingEntity target) {
 		if (target != null) {
 			return this.isSwimming() ? target.isInWater() : true;
