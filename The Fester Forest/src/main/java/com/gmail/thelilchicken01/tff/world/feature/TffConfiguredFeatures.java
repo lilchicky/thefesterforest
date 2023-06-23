@@ -38,7 +38,7 @@ public class TffConfiguredFeatures {
 	public static final RegistryObject<ConfiguredFeature<?, ?>> ROTTINGWOOD_TREE = 
 			CONFIGURED_FEATURES.register("rottingwood_tree", () -> new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
 					BlockStateProvider.simple(BlockInit.ROTTING_LOG.get()), //Block that makes the trunk
-					new GiantTrunkPlacer(8, 12, 13), //place trunks straight up (middle click for more)
+					new StraightTrunkPlacer(8, 12, 13), //place trunks straight up (middle click for more)
 					BlockStateProvider.simple(BlockInit.ROTTING_LEAVES.get()), //Block that makes the leaves
 					new MegaPineFoliagePlacer(ConstantInt.of(0), ConstantInt.of(2), ConstantInt.of(16)), //how are the leaves placed (middle click for more) WIDTH, HEIGHT OFF TRUNK, HEIGHT
 					new TwoLayersFeatureSize(1, 0, 2)).dirt(BlockStateProvider.simple(BlockInit.ROTTING_DIRT.get())).build()));
