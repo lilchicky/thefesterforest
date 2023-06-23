@@ -3154,7 +3154,7 @@
         "type": "minecraft:condition",
         "if_true": {
           "type": "minecraft:vertical_gradient",
-          "random_name": "tff:crushed_rotting_stone",
+          "random_name": "tff:compressed_rotting_stone",
           "true_at_and_below": {
             "absolute": 0
           },
@@ -3165,7 +3165,7 @@
         "then_run": {
           "type": "minecraft:block",
           "result_state": {
-            "Name": "tff:crushed_rotting_stone",
+            "Name": "tff:compressed_rotting_stone",
             "Properties": {
               "axis": "y"
             }
