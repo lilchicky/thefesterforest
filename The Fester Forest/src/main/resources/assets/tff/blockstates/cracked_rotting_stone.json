@@ -1,0 +1,18 @@
+{
+	"variants": {
+		"": [
+			{
+				"model": "tff:block/cracked_rotting_stone"
+			},
+			{
+				"model": "tff:block/cracked_rotting_stone", "y": 90, "x": 90, "z": 90
+			},
+			{
+				"model": "tff:block/cracked_rotting_stone", "y": 180, "x": 180
+			},
+			{
+				"model": "tff:block/cracked_rotting_stone", "y": 180, "z": 90
+			}
+		]
+	}
+}

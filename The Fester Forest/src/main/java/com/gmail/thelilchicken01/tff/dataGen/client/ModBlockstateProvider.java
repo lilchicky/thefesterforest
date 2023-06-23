@@ -21,10 +21,10 @@ public class ModBlockstateProvider extends BlockStateProvider {
 		//simpleBlock(BlockInit.ROTTING_STONE.get());
 		simpleBlock(BlockInit.FESTER_ORE.get());
 		simpleBlock(BlockInit.SLIMY_PLANKS.get());
-		simpleBlock(BlockInit.CRACKED_ROTTING_STONE.get());
+		//simpleBlock(BlockInit.CRACKED_ROTTING_STONE.get());
 		simpleBlock(BlockInit.MOSSY_ROTTING_STONE.get());
 		simpleBlock(BlockInit.ROTTING_STONE_BRICKS.get());
-		simpleBlock(BlockInit.CRUSHED_ROTTING_STONE.get());
+		//simpleBlock(BlockInit.CRUSHED_ROTTING_STONE.get());
 		simpleBlock(BlockInit.ROTTING_GRAVE_DIRT.get());
 		simpleBlock(BlockInit.SOUL_ROT.get());
 		simpleBlock(BlockInit.ROTTING_SAND.get());

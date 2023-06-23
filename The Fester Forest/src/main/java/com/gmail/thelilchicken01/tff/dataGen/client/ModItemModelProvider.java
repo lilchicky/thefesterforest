@@ -60,10 +60,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 		//simpleBlockItem(BlockInit.ROTTING_STONE.get().asItem());
 		simpleBlockItem(BlockInit.FESTER_ORE.get().asItem());
 		simpleBlockItem(BlockInit.SLIMY_PLANKS.get().asItem());
-		simpleBlockItem(BlockInit.CRACKED_ROTTING_STONE.get().asItem());
+		//simpleBlockItem(BlockInit.CRACKED_ROTTING_STONE.get().asItem());
 		simpleBlockItem(BlockInit.MOSSY_ROTTING_STONE.get().asItem());
 		simpleBlockItem(BlockInit.ROTTING_STONE_BRICKS.get().asItem());
-		simpleBlockItem(BlockInit.CRUSHED_ROTTING_STONE.get().asItem());
+		//simpleBlockItem(BlockInit.CRUSHED_ROTTING_STONE.get().asItem());
 		simpleBlockItem(BlockInit.ROTTING_GRAVE_DIRT.get().asItem());
 		simpleBlockItem(BlockInit.SOUL_ROT.get().asItem());
 		simpleBlockItem(BlockInit.ROTTING_SAND.get().asItem());
