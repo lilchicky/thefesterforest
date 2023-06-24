@@ -32,13 +32,18 @@ public enum ModArmorMaterial implements ArmorMaterial {
 	}),
 	
 	//Goopy Armor
-	GOOP("goop", 32, new int[]{3, 6, 8, 3}, 7, SoundEvents.SLIME_BLOCK_BREAK, 2.0F, 0.0F, () -> {
+	GOOP("goop", 40, new int[]{3, 6, 8, 3}, 7, SoundEvents.SLIME_BLOCK_BREAK, 2.0F, 0.0F, () -> {
 		return Ingredient.of(ItemInit.ROTTING_SLIMEBALL.get());
 	}),
 	
 	//Shroom Armor
 	SHROOM("shroom", 32, new int[]{3, 6, 8, 3}, 7, SoundEvents.WOOL_BREAK, 2.0F, 0.0F, () -> {
 		return Ingredient.of(BlockInit.CORRODED_SHROOM.get());
+	}),
+	
+	//Rotfish Armor
+	ROTFISH("rotfish", 18, new int[]{2, 4, 5, 2}, 16, SoundEvents.FISH_SWIM, 1.0F, 0.0F, () -> {
+		return Ingredient.of(ItemInit.RAW_ROTFISH.get());
 	}),
 	
 	//Reetle Armor

@@ -55,11 +55,6 @@ public class GoopyBoots extends ArmorItem {
 	    builder.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), 
 	    		"armor_toughness", ModArmorMaterial.GOOP.getToughness(), 
 	    		AttributeModifier.Operation.ADDITION));
-	    
-        if (ForgeMod.SWIM_SPEED.isPresent()) {
-       	 	builder.put(ForgeMod.SWIM_SPEED.get(), new AttributeModifier(UUID.randomUUID(),
-		    		"swim_speed", 0.2f, AttributeModifier.Operation.MULTIPLY_BASE));
-        }
         
     	Multimap<Attribute, AttributeModifier> attributeModifiers = ArrayListMultimap.create();
     	attributeModifiers = builder.build();
@@ -122,7 +117,7 @@ public class GoopyBoots extends ArmorItem {
 		if(Screen.hasShiftDown()) {
 			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A slimy pair of hydrophobic boots.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("A slimy pair of boots.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("2+ Pieces: Apply level 3 Goopy Acid to any attackers.").withStyle(ChatFormatting.AQUA));
@@ -137,7 +132,7 @@ public class GoopyBoots extends ArmorItem {
 		else {
 			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A slimy pair of hydrophobic boots.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("A slimy pair of boots.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 			lore.add(new TextComponent(""));

@@ -1,4 +1,4 @@
-package com.gmail.thelilchicken01.tff.item.armor.goop;
+package com.gmail.thelilchicken01.tff.item.armor.rotfish;
 
 import java.util.List;
 import java.util.UUID;
@@ -40,7 +40,7 @@ import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.util.Lazy;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
-public class GoopyLeggings extends ArmorItem {
+public class RotfishHelmet extends ArmorItem {
 	
 	private String[] drops = {"Rotting Goop", "Fester Forest Loot Chests"};
 	
@@ -48,62 +48,32 @@ public class GoopyLeggings extends ArmorItem {
     	ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder(); 
 	    
 	    builder.put(Attributes.ARMOR, new AttributeModifier(UUID.randomUUID(), 
-	    		"armor", ModArmorMaterial.GOOP.getDefenseForSlot(EquipmentSlot.LEGS), 
+	    		"armor", ModArmorMaterial.GOOP.getDefenseForSlot(EquipmentSlot.HEAD), 
 	    		AttributeModifier.Operation.ADDITION));
 	    
 	    builder.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), 
 	    		"armor_toughness", ModArmorMaterial.GOOP.getToughness(), 
 	    		AttributeModifier.Operation.ADDITION));
+	    
+        if (ForgeMod.SWIM_SPEED.isPresent()) {
+       	 	builder.put(ForgeMod.SWIM_SPEED.get(), new AttributeModifier(UUID.randomUUID(),
+		    		"swim_speed", 0.15f, AttributeModifier.Operation.MULTIPLY_BASE));
+        }
         
     	Multimap<Attribute, AttributeModifier> attributeModifiers = ArrayListMultimap.create();
     	attributeModifiers = builder.build();
     	return attributeModifiers;
     });
 
-	public GoopyLeggings() {
-		super(ModArmorMaterial.GOOP, EquipmentSlot.LEGS, 
+	public RotfishHelmet() {
+		super(ModArmorMaterial.ROTFISH, EquipmentSlot.HEAD, 
 				new Properties().tab(TheFesterForest.TFF_TAB));
-		
-		CommonEventBusSubscriber.registerPlayerHurtHandlers(new PlayerHurtHandler() {
-			
-			@Override
-			public boolean canApply(Player player, LivingAttackEvent event) {
-				
-				if (event.getSource().getEntity() instanceof LivingEntity && player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ItemInit.GOOPY_LEGGINGS.get()) {
-					
-					LivingEntity entity = (LivingEntity) event.getSource().getEntity();
-					
-					if (ArmorSets.GOOP.getArmorSet(player) == SetCount.TWO) {
-						entity.addEffect(new MobEffectInstance(ModEffects.GOOP_ACID.get(), 100, 2));
-					}
-					
-				}
-				
-				return false;
-				
-			}
-			
-			@Override
-			public boolean apply(Player player, LivingAttackEvent event) {
-				
-				return true;
-				
-			}
-			
-			@Override
-			public HandlerPriority getPriority() {
-				
-				return HandlerPriority.HIGH;
-				
-			}
-			
-		});
 		
 	}
 	
 	@Override
 	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-		return slot == EquipmentSlot.LEGS ? this.LAZY.get() : super.getDefaultAttributeModifiers(slot);
+		return slot == EquipmentSlot.HEAD ? this.LAZY.get() : super.getDefaultAttributeModifiers(slot);
 	}
 	
 	@Override
@@ -113,7 +83,7 @@ public class GoopyLeggings extends ArmorItem {
 		if(Screen.hasShiftDown()) {
 			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A very goopy pair of pants.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("A slimy mass of hydrophobic goop. Seems to fit your head.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("2+ Pieces: Apply level 3 Goopy Acid to any attackers.").withStyle(ChatFormatting.AQUA));
@@ -128,7 +98,7 @@ public class GoopyLeggings extends ArmorItem {
 		else {
 			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A very goopy pair of pants.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("A slimy mass of hydrophobic goop. Seems to fit your head.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 			lore.add(new TextComponent(""));

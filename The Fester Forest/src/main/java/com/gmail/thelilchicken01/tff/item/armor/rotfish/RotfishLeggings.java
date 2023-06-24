@@ -1,4 +1,4 @@
-package com.gmail.thelilchicken01.tff.item.armor.goop;
+package com.gmail.thelilchicken01.tff.item.armor.rotfish;
 
 import java.util.List;
 import java.util.UUID;
@@ -40,7 +40,7 @@ import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.util.Lazy;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
-public class GoopyLeggings extends ArmorItem {
+public class RotfishLeggings extends ArmorItem {
 	
 	private String[] drops = {"Rotting Goop", "Fester Forest Loot Chests"};
 	
@@ -54,50 +54,20 @@ public class GoopyLeggings extends ArmorItem {
 	    builder.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), 
 	    		"armor_toughness", ModArmorMaterial.GOOP.getToughness(), 
 	    		AttributeModifier.Operation.ADDITION));
+	    
+        if (ForgeMod.SWIM_SPEED.isPresent()) {
+       	 	builder.put(ForgeMod.SWIM_SPEED.get(), new AttributeModifier(UUID.randomUUID(),
+		    		"swim_speed", 0.2f, AttributeModifier.Operation.MULTIPLY_BASE));
+        }
         
     	Multimap<Attribute, AttributeModifier> attributeModifiers = ArrayListMultimap.create();
     	attributeModifiers = builder.build();
     	return attributeModifiers;
     });
 
-	public GoopyLeggings() {
-		super(ModArmorMaterial.GOOP, EquipmentSlot.LEGS, 
+	public RotfishLeggings() {
+		super(ModArmorMaterial.ROTFISH, EquipmentSlot.LEGS, 
 				new Properties().tab(TheFesterForest.TFF_TAB));
-		
-		CommonEventBusSubscriber.registerPlayerHurtHandlers(new PlayerHurtHandler() {
-			
-			@Override
-			public boolean canApply(Player player, LivingAttackEvent event) {
-				
-				if (event.getSource().getEntity() instanceof LivingEntity && player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ItemInit.GOOPY_LEGGINGS.get()) {
-					
-					LivingEntity entity = (LivingEntity) event.getSource().getEntity();
-					
-					if (ArmorSets.GOOP.getArmorSet(player) == SetCount.TWO) {
-						entity.addEffect(new MobEffectInstance(ModEffects.GOOP_ACID.get(), 100, 2));
-					}
-					
-				}
-				
-				return false;
-				
-			}
-			
-			@Override
-			public boolean apply(Player player, LivingAttackEvent event) {
-				
-				return true;
-				
-			}
-			
-			@Override
-			public HandlerPriority getPriority() {
-				
-				return HandlerPriority.HIGH;
-				
-			}
-			
-		});
 		
 	}
 	
