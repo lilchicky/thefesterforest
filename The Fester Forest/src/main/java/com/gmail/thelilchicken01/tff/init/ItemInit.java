@@ -19,6 +19,10 @@ import com.gmail.thelilchicken01.tff.item.armor.reetleArmor.ReetleChestplate;
 import com.gmail.thelilchicken01.tff.item.armor.reetleArmor.ReetleElytra;
 import com.gmail.thelilchicken01.tff.item.armor.reetleArmor.ReetleHelmet;
 import com.gmail.thelilchicken01.tff.item.armor.reetleArmor.ReetleLeggings;
+import com.gmail.thelilchicken01.tff.item.armor.rotfish.RotfishBoots;
+import com.gmail.thelilchicken01.tff.item.armor.rotfish.RotfishChestplate;
+import com.gmail.thelilchicken01.tff.item.armor.rotfish.RotfishHelmet;
+import com.gmail.thelilchicken01.tff.item.armor.rotfish.RotfishLeggings;
 import com.gmail.thelilchicken01.tff.item.armor.shroom_hat.ShroomHat;
 import com.gmail.thelilchicken01.tff.item.armor.volatileArmor.VolatileBoots;
 import com.gmail.thelilchicken01.tff.item.armor.volatileArmor.VolatileChestplate;
@@ -412,6 +416,28 @@ public class ItemInit {
 	//Seathrown Pike
 	public static final RegistryObject<Item> SEATHROWN_PIKE = register("seathrown_pike", 
 			() -> new SeathrownPike(Tiers.IRON, 6, -3f, new Properties().tab(TheFesterForest.TFF_TAB).durability(550)));
+	
+	/*
+	 * 
+	 * Rotfish Items
+	 * 
+	 */
+	
+	//Rotfish Helmet
+	public static final RegistryObject<Item> ROTFISH_HELMET = register("rotfish_helmet", 
+			() -> new RotfishHelmet());
+			
+	//Rotfish Chestplate
+	public static final RegistryObject<Item> ROTFISH_CHESTPLATE = register("rotfish_chestplate", 
+			() -> new RotfishChestplate());
+				
+	//Rotfish Leggings
+	public static final RegistryObject<Item> ROTFISH_LEGGINGS = register("rotfish_leggings", 
+			() -> new RotfishLeggings());
+			
+	//Rotfish Boots
+	public static final RegistryObject<Item> ROTFISH_BOOTS = register("rotfish_boots", 
+			() -> new RotfishBoots());
 	
 	/*
 	 * 

@@ -223,6 +223,10 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.ROTFISH_SPECIAL.get(), "Rotfish Special");
 		add(ItemInit.SHROOM_CLUSTER.get(), "Shroom Cluster");
 		add(ItemInit.COOKED_SHROOM_CLUSTER.get(), "Cooked Shroom Cluster");
+		add(ItemInit.ROTFISH_BOOTS.get(), "Rotfish Scale Mail Boots");
+		add(ItemInit.ROTFISH_CHESTPLATE.get(), "Rotfish Scale Mail Chestplate");
+		add(ItemInit.ROTFISH_LEGGINGS.get(), "Rotfish Scale Mail Leggings");
+		add(ItemInit.ROTFISH_HELMET.get(), "Rotfish Scale Mail Leggings");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

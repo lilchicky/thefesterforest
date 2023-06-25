@@ -45,6 +45,8 @@ public class RotfishBoots extends ArmorItem {
 	
 	private String[] drops = {"Rotting Goop", "Fester Forest Loot Chests"};
 	
+	private int dolphinsGraceCounter = 0;
+	
 	public final Lazy<Multimap<Attribute, AttributeModifier>> LAZY = Lazy.of(() ->  {    
     	ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder(); 
 	    
@@ -73,6 +75,31 @@ public class RotfishBoots extends ArmorItem {
 	}
 	
 	@Override
+	public void onArmorTick(ItemStack stack, Level level, Player player) {
+		
+		super.onArmorTick(stack, level, player);
+		
+		if(player.isSwimming()) {
+			dolphinsGraceCounter++;
+		}
+		else {
+			dolphinsGraceCounter = 0;
+		}
+		
+		if (ArmorSets.ROTFISH.getArmorSet(player) == SetCount.TWO) {
+			ItemUtil.registerPotionEffect(MobEffects.WATER_BREATHING, 0, player, 3);
+		}
+		if (ArmorSets.ROTFISH.getArmorSet(player) == SetCount.FOUR) {
+			ItemUtil.registerPotionEffect(MobEffects.CONDUIT_POWER, 0, player, 3);
+			if (dolphinsGraceCounter >= 100) {
+				ItemUtil.registerPotionEffect(MobEffects.DOLPHINS_GRACE, 0, player, 2);
+				dolphinsGraceCounter = 101;
+			}
+		}
+		
+	}
+	
+	@Override
 	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
 		return slot == EquipmentSlot.FEET ? this.LAZY.get() : super.getDefaultAttributeModifiers(slot);
 	}
@@ -84,11 +111,12 @@ public class RotfishBoots extends ArmorItem {
 		if(Screen.hasShiftDown()) {
 			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A slimy pair of hydrophobic boots.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("A pair of hard boots fashioned from the scales of a Rotfish.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("2+ Pieces: Apply level 3 Goopy Acid to any attackers.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("4 Pieces: Apply level 5 Goopy Acid to any attackers").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("2+ Pieces: Gain Water Breathing.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("4 Pieces: Gain Conduit Power. If you swim (holding sprint in water) for").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("over 5 seconds, also gain Dolphin's Grace.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < drops.length; x++) {
@@ -99,7 +127,7 @@ public class RotfishBoots extends ArmorItem {
 		else {
 			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A slimy pair of hydrophobic boots.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("A pair of hard boots fashioned from the scales of a Rotfish.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 			lore.add(new TextComponent(""));
@@ -111,6 +139,7 @@ public class RotfishBoots extends ArmorItem {
 		}
 		
 		super.appendHoverText(stack, world, lore, flag);
+		
 	}
 
 }

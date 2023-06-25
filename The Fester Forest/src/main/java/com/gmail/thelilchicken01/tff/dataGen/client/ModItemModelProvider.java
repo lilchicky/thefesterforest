@@ -141,6 +141,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.ROTFISH_SPECIAL.get());
 		oneLayerItem(ItemInit.SHROOM_CLUSTER.get());
 		oneLayerItem(ItemInit.COOKED_SHROOM_CLUSTER.get());
+		oneLayerItem(ItemInit.ROTFISH_BOOTS.get());
+		oneLayerItem(ItemInit.ROTFISH_CHESTPLATE.get());
+		oneLayerItem(ItemInit.ROTFISH_LEGGINGS.get());
+		oneLayerItem(ItemInit.ROTFISH_HELMET.get());
 		
 		//Simple handheld items
 		handheldItem(ItemInit.BONE_PICKAXE.get());

@@ -47,6 +47,14 @@ public enum ArmorSets {
 				ItemInit.GOOPY_HELMET.get()};
 	}),
 	
+	//Rotfish Set
+	ROTFISH(() -> {
+		return new Item[]{ItemInit.ROTFISH_BOOTS.get(),
+				ItemInit.ROTFISH_LEGGINGS.get(),
+				ItemInit.ROTFISH_CHESTPLATE.get(),
+				ItemInit.ROTFISH_HELMET.get()};
+	}),
+	
 	//Mechanical Set
 	MECHANICAL(() -> {
 		return new Item[]{ItemInit.MECHANICAL_BOOTS.get(),
