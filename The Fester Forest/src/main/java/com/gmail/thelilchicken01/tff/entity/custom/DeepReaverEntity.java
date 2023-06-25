@@ -76,8 +76,8 @@ public class DeepReaverEntity extends ModWaterMonster implements IAnimatable {
 	
 	public static AttributeSupplier setAttributes() {
 		return Monster.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 100.00)
-				.add(Attributes.ATTACK_DAMAGE, 24.0f)
+				.add(Attributes.MAX_HEALTH, 120.00)
+				.add(Attributes.ATTACK_DAMAGE, 28.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.ARMOR, 16.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.2f).build();
