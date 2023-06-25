@@ -43,7 +43,7 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 public class RotfishBoots extends ArmorItem {
 	
-	private String[] drops = {"Rotting Goop", "Fester Forest Loot Chests"};
+	private String[] drops = {"Deep Reaver", "Fester Forest Loot Chests"};
 	
 	private int dolphinsGraceCounter = 0;
 	
