@@ -44,7 +44,7 @@ public class CrunchBeetleEntity extends Animal implements IAnimatable {
 	
 	@Override
 	public MobType getMobType() {
-		return MobType.UNDEFINED;
+		return MobType.ARTHROPOD;
 	}
 	
 	public static AttributeSupplier setAttributes() {

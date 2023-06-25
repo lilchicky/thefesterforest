@@ -148,13 +148,13 @@ public class ReetleQueenEntity extends TamableAnimal implements IAnimatable {
 	
 	@Override
 	public MobType getMobType() {
-		return MobType.UNDEFINED;
+		return MobType.ARTHROPOD;
 	}
 	
 	@Override
 	public boolean canBeLeashed(Player p_21418_) {
 		
-		return pacified ? true : false;
+		return pacified;
 	}
 	
 	protected void playStepSound(BlockPos pos, BlockState blockIn) {
@@ -210,7 +210,6 @@ public class ReetleQueenEntity extends TamableAnimal implements IAnimatable {
 
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

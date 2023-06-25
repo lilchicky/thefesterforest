@@ -61,7 +61,7 @@ public class PlayerCrunchBeetleEntity extends TamableAnimal implements IAnimatab
 	
 	@Override
 	public MobType getMobType() {
-		return MobType.UNDEFINED;
+		return MobType.ARTHROPOD;
 	}
 	
 	public static AttributeSupplier setAttributes() {

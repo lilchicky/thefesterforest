@@ -3,17 +3,24 @@ package com.gmail.thelilchicken01.tff.entity.custom;
 import javax.annotation.Nullable;
 
 import com.gmail.thelilchicken01.tff.entity.ModWaterMonster;
+import com.gmail.thelilchicken01.tff.init.ParticleInit;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.MoveControl;
@@ -28,6 +35,7 @@ import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
@@ -46,7 +54,7 @@ public class DeepReaverEntity extends ModWaterMonster implements IAnimatable {
 	private int dashCooldown = 4;
 	private int dashCounter = 0;
 	
-	private int dashWarmup = 2;
+	private int dashWarmup = 1;
 	private int dashWarmupCounter = 0;
 	
 	private Vec3 targetVector;
@@ -68,16 +76,16 @@ public class DeepReaverEntity extends ModWaterMonster implements IAnimatable {
 	
 	public static AttributeSupplier setAttributes() {
 		return Monster.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 40.00)
-				.add(Attributes.ATTACK_DAMAGE, 18.0f)
+				.add(Attributes.MAX_HEALTH, 100.00)
+				.add(Attributes.ATTACK_DAMAGE, 24.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
-				.add(Attributes.ARMOR, 10.0f)
-				.add(Attributes.MOVEMENT_SPEED, 0.25f).build();
+				.add(Attributes.ARMOR, 16.0f)
+				.add(Attributes.MOVEMENT_SPEED, 0.2f).build();
 	}
 	
 	@Override
 	public MobType getMobType() {
-		return MobType.UNDEAD;
+		return MobType.WATER;
 	}
 	
 	@Override
@@ -99,6 +107,16 @@ public class DeepReaverEntity extends ModWaterMonster implements IAnimatable {
 	}
 	
 	@Override
+	protected void dropExperience() {
+		ExperienceOrb.award((ServerLevel)this.level, this.position(), 400);
+	}
+	
+	@Override
+	public boolean isPersistenceRequired() {
+		return true;
+	}
+	
+	@Override
 	public void tick() {
 		super.tick();
 		
@@ -108,19 +126,7 @@ public class DeepReaverEntity extends ModWaterMonster implements IAnimatable {
 			
 			if (dashWarmupCounter == 0) {
 				
-				if (getLevel().isClientSide()) {
-					
-					for (int x = 0; x < 360; x++) {
-						
-						if (x % 10 == 0) {
-					
-							getLevel().addParticle(ParticleTypes.FLAME, getX(), getY() + 0.5d, getZ(), 
-									((Math.cos(x) * 0.35d) * (Math.random() + 0.5)), 0.0d + ((Math.random() - 0.5) * 0.25), ((Math.sin(x) * 0.35d) * (Math.random() + 0.5)));
-							
-						}
-						
-					}
-				}
+				playSound(SoundEvents.GUARDIAN_ATTACK, 0.5f, 1.0f);
 				
 				Vec3 currentPos = getEyePosition();
 				Vec3 targetPos = getTarget().getPosition(1.0f);
