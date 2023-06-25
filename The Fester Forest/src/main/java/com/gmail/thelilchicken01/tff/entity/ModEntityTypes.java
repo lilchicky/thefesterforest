@@ -5,6 +5,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.AmbectrumEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CorrodedShroomEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.DeepReaverEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PylonEntity;
@@ -119,6 +120,11 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<CorrodedShroomEntity>> CORRODED_SHROOM =
 			ENTITY_TYPES.register("corroded_shroom", () -> EntityType.Builder.of(CorrodedShroomEntity::new, MobCategory.CREATURE)
 					.sized(1.0f, 1.0f).build(new ResourceLocation(TheFesterForest.MODID, "corroded_shroom").toString()));
+	
+	//Deep Reaver
+	public static final RegistryObject<EntityType<DeepReaverEntity>> DEEP_REAVER =
+			ENTITY_TYPES.register("deep_reaver", () -> EntityType.Builder.of(DeepReaverEntity::new, MobCategory.MONSTER)
+					.sized(1.5f, 1.8f).build(new ResourceLocation(TheFesterForest.MODID, "deep_reaver").toString()));
 	
 	//Brittle Branch Bullet
 	

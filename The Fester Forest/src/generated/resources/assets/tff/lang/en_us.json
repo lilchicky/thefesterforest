@@ -96,6 +96,7 @@
   "entity.tff.banshee": "Banshee",
   "entity.tff.corroded_shroom": "Corroded Shroom",
   "entity.tff.crunch_beetle": "Reetle",
+  "entity.tff.deep_reaver": "Deep Reaver",
   "entity.tff.forgemaster": "The Forgemaster",
   "entity.tff.goop": "Rotting Goop",
   "entity.tff.goop_medium": "Condensed Rotting Goop",
@@ -131,6 +132,7 @@
   "item.tff.cooked_shroom_cluster": "Cooked Shroom Cluster",
   "item.tff.corroded_shroom_spawn_egg": "Corroded Shroom Spawn Egg",
   "item.tff.crunch_beetle_spawn_egg": "Reetle Spawn Egg",
+  "item.tff.deep_reaver_spawn_egg": "Deep Reaver Spawn Egg",
   "item.tff.dual_wield_sword": "Dual Wield Sword",
   "item.tff.electric_charge": "Electric Charge",
   "item.tff.electric_pickaxe": "Electric Pickaxe",
@@ -207,6 +209,5 @@
   "item.tff.volatile_necklace": "Volatile Necklace",
   "item.tff.volatile_sword": "Volatile Sword",
   "item.tff.wight_spawn_egg": "Wight Spawn Egg",
-  "itemGroup.tff": "The Fester Forest",
-  "minecraft.regeneration.12": "Regeneration XII"
+  "itemGroup.tff": "The Fester Forest"
 }

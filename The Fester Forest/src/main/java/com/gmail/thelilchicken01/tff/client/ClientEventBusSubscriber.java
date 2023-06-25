@@ -6,6 +6,7 @@ import com.gmail.thelilchicken01.tff.entity.client.AmbectrumRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.BansheeRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.CorrodedShroomRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.CrunchBeetleRenderer;
+import com.gmail.thelilchicken01.tff.entity.client.DeepReaverRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.ForgemasterRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.PlayerCrunchBeetleRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.PylonRenderer;
@@ -23,6 +24,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.AmbectrumEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CorrodedShroomEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.DeepReaverEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PylonEntity;
@@ -110,6 +112,7 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(ModEntityTypes.AMBECTRUM.get(), AmbectrumRenderer::new);
 		EntityRenderers.register(ModEntityTypes.SEATHROWN_SKELETON.get(), SeathrownSkeletonRenderer::new);
 		EntityRenderers.register(ModEntityTypes.CORRODED_SHROOM.get(), CorrodedShroomRenderer::new);
+		EntityRenderers.register(ModEntityTypes.DEEP_REAVER.get(), DeepReaverRenderer::new);
 		
 		ItemProperties.register(ItemInit.REETLE_ELYTRA.get(), new ResourceLocation(TheFesterForest.MODID, "broken"),
 				(stack, arg1, arg2, arg3) -> ReetleElytra.isUsable(stack) ? 0 : 1);
@@ -134,6 +137,7 @@ public class ClientEventBusSubscriber {
 		event.put(ModEntityTypes.AMBECTRUM.get(), AmbectrumEntity.setAttributes());
 		event.put(ModEntityTypes.SEATHROWN_SKELETON.get(), SeathrownSkeletonEntity.setAttributes());
 		event.put(ModEntityTypes.CORRODED_SHROOM.get(), CorrodedShroomEntity.setAttributes());
+		event.put(ModEntityTypes.DEEP_REAVER.get(), DeepReaverEntity.setAttributes());
 		
 	}
 	

@@ -227,10 +227,11 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.ROTFISH_CHESTPLATE.get(), "Rotfish Scale Mail Chestplate");
 		add(ItemInit.ROTFISH_LEGGINGS.get(), "Rotfish Scale Mail Leggings");
 		add(ItemInit.ROTFISH_HELMET.get(), "Rotfish Scale Mail Leggings");
+		add(ModEntityTypes.DEEP_REAVER.get(), "Deep Reaver");
+		add(ItemInit.DEEP_REAVER_SPAWN_EGG.get(), "Deep Reaver Spawn Egg");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");
-		add("minecraft.regeneration.12", "Regeneration XII");
 		
 	}
 

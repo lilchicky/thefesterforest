@@ -177,6 +177,11 @@ public class ItemInit {
 			() -> new ForgeSpawnEggItem(ModEntityTypes.CORRODED_SHROOM, 0x1f1c5c, 0x804617, //Background, Spots
 					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	//Deep Reaver Spawn Egg
+	public static final RegistryObject<Item> DEEP_REAVER_SPAWN_EGG = register("deep_reaver_spawn_egg", 
+			() -> new ForgeSpawnEggItem(ModEntityTypes.DEEP_REAVER, 0x411820, 0x672854, //Background, Spots
+					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	/*
 	 * 
 	 * Volatile Items

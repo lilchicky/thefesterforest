@@ -1,0 +1,44 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.goop.idle": {
+			"loop": true,
+			"animation_length": 4,
+			"bones": {
+				"goop": {
+					"scale": {
+						"0.0": {
+							"vector": [1.1, 0.9, 1.1]
+						},
+						"2.0": {
+							"vector": [1, 1, 1]
+						},
+						"4.0": {
+							"vector": [1.1, 0.9, 1.1]
+						}
+					}
+				}
+			}
+		},
+		"animation.goop.walk": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"goop": {
+					"scale": {
+						"0.0": {
+							"vector": [1.1, 0.9, 1.1]
+						},
+						"1.0": {
+							"vector": [1, 1, 1]
+						},
+						"2.0": {
+							"vector": [1.1, 0.9, 1.1]
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}
