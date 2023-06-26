@@ -23,7 +23,7 @@
           },
             // The actual block to place if the above conditions return true
           "output_state": {
-            "Name": "tff:rotting_stone"
+            "Name": "tff:cracked_rotting_stone_bricks"
           }
         },
         {
