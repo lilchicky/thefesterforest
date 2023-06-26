@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "tff:raw_rotfish"
+    },
+    "title": "Don't Follow the Light",
+    "description": "Defeat the Deep Reaver",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "tff:deep_reaver_fossil",
+  "criteria": {
+    "kill_deep_reaver": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+        	{
+        		"condition": "minecraft:entity_properties",
+        		"predicate": {
+        			"type": "tff:deep_reaver"
+        		},
+        		"entity": "this"
+        	}
+        
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "kill_deep_reaver"
+    ]
+  ]
+}
