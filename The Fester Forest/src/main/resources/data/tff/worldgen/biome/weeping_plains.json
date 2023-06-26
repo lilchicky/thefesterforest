@@ -98,7 +98,9 @@
     		"tff:sickening_flower_placed",
     		"tff:rotting_flower_placed",
     		"tff:rotting_tall_grass_placed",
-    		"tff:weeping_grass_common_placed"
+    		"tff:weeping_grass_common_placed",
+    		"tff:corroded_shroom_water_placed",
+    		"tff:fungal_growth_placed"
     	],
     	[]
   	]
