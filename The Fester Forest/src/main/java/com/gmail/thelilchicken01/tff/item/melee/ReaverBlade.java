@@ -20,7 +20,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ReaverBlade extends SwordItem {
 	
-	private String[] drops = {"Rotting Skeleton", "Fester Forest Loot Chests"};
+	private String[] drops = {"Deep Reaver", "Fester Forest Loot Chests"};
 
 	public ReaverBlade(Tier tier, int damage, float aspeed, Properties properties) {
 		super(tier, damage, aspeed, properties);
