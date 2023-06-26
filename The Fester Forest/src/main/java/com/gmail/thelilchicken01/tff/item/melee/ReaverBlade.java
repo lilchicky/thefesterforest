@@ -30,13 +30,13 @@ public class ReaverBlade extends SwordItem {
 	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
 		
 		EffectsUtil effect = EffectsUtil.getRandomEffect();
-		int strength = (int) Math.random() * 6;
+		int strength = (int) (Math.random() * 6);
 		
 		target.addEffect(new MobEffectInstance(effect.getEffect(), effect.getEffectDuration() * 20, strength));
 		
 		attacker.addEffect(new MobEffectInstance(effect.getEffect(), effect.getEffectDuration() * 20, strength));
 		
-		System.out.println(effect.getEffect().getDescriptionId() + ", " + effect.getEffectDuration() + ", " + strength);
+		//System.out.println(effect.getEffect().getDescriptionId() + ", " + effect.getEffectDuration() + ", " + strength);
 		
 		return super.hurtEnemy(stack, target, attacker);
 	}

@@ -447,7 +447,7 @@ public class ItemInit {
 	
 	//Reaver Blade
 	public static final RegistryObject<Item> REAVER_BLADE = register("reaver_blade", 
-			() -> new ReaverBlade(ModTiers.BONE, -7, -1.2f, new Properties().tab(TheFesterForest.TFF_TAB).durability(1750)));
+			() -> new ReaverBlade(ModTiers.BONE, -6, -1f, new Properties().tab(TheFesterForest.TFF_TAB).durability(1750)));
 	
 	/*
 	 * 
