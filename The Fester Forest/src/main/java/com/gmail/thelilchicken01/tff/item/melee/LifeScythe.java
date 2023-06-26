@@ -38,9 +38,9 @@ public class LifeScythe extends SwordItem {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
 		
-		if (world.isClientSide()) {
+		if (player.getLevel().isClientSide()) {
 			for (int x = 0; x < 50; x++) {
-				world.addParticle(ParticleInit.BLOOD_PARTICLE.get(), player.getX(), player.getY() + 0.5d, player.getZ(), 
+				player.getLevel().addParticle(ParticleInit.BLOOD_PARTICLE.get(), player.getX(), player.getY() + 0.5d, player.getZ(), 
 						((Math.cos(x) * 0.75d) * ((Math.random() - 0.5) * 0.2)), 
 						0.0d + ((Math.random() - 0.5) * 0.5), 
 						((Math.sin(x) * 0.75d) * ((Math.random() - 0.5) * 0.2)));

@@ -74,6 +74,7 @@ import com.gmail.thelilchicken01.tff.item.melee.BoneScythe;
 import com.gmail.thelilchicken01.tff.item.melee.ForgemasterHammer;
 import com.gmail.thelilchicken01.tff.item.melee.GoopySword;
 import com.gmail.thelilchicken01.tff.item.melee.LifeScythe;
+import com.gmail.thelilchicken01.tff.item.melee.ReaverBlade;
 import com.gmail.thelilchicken01.tff.item.melee.SeathrownPike;
 import com.gmail.thelilchicken01.tff.item.melee.ShockSword;
 import com.gmail.thelilchicken01.tff.item.misc.BugEggs;
@@ -443,6 +444,10 @@ public class ItemInit {
 	//Rotfish Boots
 	public static final RegistryObject<Item> ROTFISH_BOOTS = register("rotfish_boots", 
 			() -> new RotfishBoots());
+	
+	//Reaver Blade
+	public static final RegistryObject<Item> REAVER_BLADE = register("reaver_blade", 
+			() -> new ReaverBlade(ModTiers.BONE, -7, -1.2f, new Properties().tab(TheFesterForest.TFF_TAB).durability(1750)));
 	
 	/*
 	 * 

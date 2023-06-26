@@ -229,6 +229,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.ROTFISH_HELMET.get(), "Rotfish Scale Mail Leggings");
 		add(ModEntityTypes.DEEP_REAVER.get(), "Deep Reaver");
 		add(ItemInit.DEEP_REAVER_SPAWN_EGG.get(), "Deep Reaver Spawn Egg");
+		add(ItemInit.REAVER_BLADE.get(), "Reaver Blade");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");
