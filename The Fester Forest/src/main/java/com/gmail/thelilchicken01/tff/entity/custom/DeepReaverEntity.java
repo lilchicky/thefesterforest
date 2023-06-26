@@ -80,7 +80,7 @@ public class DeepReaverEntity extends ModWaterMonster implements IAnimatable {
 				.add(Attributes.ATTACK_DAMAGE, 28.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.ARMOR, 16.0f)
-				.add(Attributes.MOVEMENT_SPEED, 0.2f).build();
+				.add(Attributes.MOVEMENT_SPEED, 0.001f).build();
 	}
 	
 	@Override
@@ -122,28 +122,40 @@ public class DeepReaverEntity extends ModWaterMonster implements IAnimatable {
 		
 		dashCounter++;
 		
-		if (dashCounter > (dashCooldown * 20) && getTarget() != null && getTarget() instanceof Player && isInWater()) {
+		if (getTarget() != null && getTarget() instanceof Player) {
 			
-			if (dashWarmupCounter == 0) {
+			this.setSpeed(0.2f);
+		
+			if (dashCounter > (dashCooldown * 20) && isInWater()) {
+			
+				if (dashWarmupCounter == 0) {
 				
-				playSound(SoundEvents.GUARDIAN_ATTACK, 0.5f, 1.0f);
+					playSound(SoundEvents.GUARDIAN_ATTACK, 0.5f, 1.0f);
 				
-				Vec3 currentPos = getEyePosition();
-				Vec3 targetPos = getTarget().getPosition(1.0f);
-				targetVector = targetPos.subtract(currentPos).normalize();
+					Vec3 currentPos = getEyePosition();
+					Vec3 targetPos = getTarget().getPosition(1.0f);
+					targetVector = targetPos.subtract(currentPos).normalize();
 				
+				}
+			
+				dashWarmupCounter++;
+				
+				if (dashWarmupCounter > (dashWarmup * 20)) {
+				
+					setDeltaMovement(targetVector);
+				
+					dashCounter = 0;
+					dashWarmupCounter = 0;
+				
+				}
+			
 			}
+		
+		}
+		
+		else {
 			
-			dashWarmupCounter++;
-			
-			if (dashWarmupCounter > (dashWarmup * 20)) {
-				
-				setDeltaMovement(targetVector);
-				
-				dashCounter = 0;
-				dashWarmupCounter = 0;
-				
-			}
+			this.setSpeed(0.001f);
 			
 		}
 		
