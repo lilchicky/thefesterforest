@@ -23,7 +23,7 @@
       		},
       		{
         		"type": "tff:ambectrum",
-        		"weight": 40,
+        		"weight": 30,
         		"minCount": 1,
         		"maxCount": 1
       		},
