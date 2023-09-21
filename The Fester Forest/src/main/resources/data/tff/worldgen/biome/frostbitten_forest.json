@@ -1,22 +1,22 @@
 {
   	"temperature": 0.8,
   	"downfall": 0.4,
-  	"precipitation": "rain",
+  	"precipitation": "snow",
   	"temperature_modifier": "none",
   	"category": "forest",
   	"effects": {
-    	"sky_color": 1594392,
-    	"fog_color": 1594392,
-    	"water_color": 1912349,
-    	"water_fog_color": 1912349,
-   		"grass_color": 599040,
-    	"foliage_color": 144128
+    	"sky_color": 11454159,
+    	"fog_color": 11454159,
+    	"water_color": 203295,
+    	"water_fog_color": 203295,
+    	"grass_color": 139,
+    	"foliage_color": 139
   	},
   	"spawners": {
     	"monster": [
       		{
         		"type": "tff:rotting_skeleton",
-        		"weight": 100,
+        		"weight": 120,
         		"minCount": 1,
         		"maxCount": 1
       		},
@@ -28,19 +28,13 @@
       		},
       		{
         		"type": "tff:volatile_ghost",
-        		"weight": 75,
+        		"weight": 60,
         		"minCount": 1,
         		"maxCount": 1
       		},
       		{
         		"type": "tff:wight",
         		"weight": 20,
-        		"minCount": 1,
-        		"maxCount": 1
-      		},
-      		{
-        		"type": "tff:goop",
-        		"weight": 60,
         		"minCount": 1,
         		"maxCount": 1
       		}
@@ -97,8 +91,7 @@
     	[],
     	[],
     	[
-    		"tff:slimy_tree_heavy_placed",
-    		"tff:slimy_flower_placed",
+    		"tff:frostbitten_tree_placed",
     		"tff:sickening_flower_placed",
     		"tff:rotting_flower_placed",
     		"tff:rotting_tall_grass_placed",

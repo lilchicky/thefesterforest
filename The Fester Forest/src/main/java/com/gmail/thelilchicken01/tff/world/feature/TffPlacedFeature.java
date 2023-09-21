@@ -29,6 +29,10 @@ public class TffPlacedFeature {
 	public static final RegistryObject<PlacedFeature> ROTTINGWOOD_TREE_PLACED = PLACED_FEATURES.register(
 			"rottingwood_tree_placed", () -> new PlacedFeature(TffConfiguredFeatures.ROTTINGWOOD_TREE.getHolder().get(), tree(7)));
 	
+	// Frostbitten Tree
+	public static final RegistryObject<PlacedFeature> FROSTBITTEN_TREE_PLACED = PLACED_FEATURES.register(
+			"frostbitten_tree_placed", () -> new PlacedFeature(TffConfiguredFeatures.FROSTBITTEN_TREE.getHolder().get(), tree(7)));
+	
 	// Slimy Tree
 	public static final RegistryObject<PlacedFeature> SLIMY_TREE_PLACED = PLACED_FEATURES.register(
 			"slimy_tree_placed", () -> new PlacedFeature(TffConfiguredFeatures.SLIMY_TREE.getHolder().get(), tree(1)));

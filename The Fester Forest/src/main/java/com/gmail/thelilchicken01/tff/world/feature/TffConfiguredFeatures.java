@@ -9,6 +9,7 @@ import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.SeagrassFeature;
@@ -38,8 +39,17 @@ public class TffConfiguredFeatures {
 	public static final RegistryObject<ConfiguredFeature<?, ?>> ROTTINGWOOD_TREE = 
 			CONFIGURED_FEATURES.register("rottingwood_tree", () -> new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
 					BlockStateProvider.simple(BlockInit.ROTTING_LOG.get()), //Block that makes the trunk
-					new StraightTrunkPlacer(8, 12, 13), //place trunks straight up (middle click for more)
+					new StraightTrunkPlacer(4, 12, 13), //place trunks straight up (middle click for more)
 					BlockStateProvider.simple(BlockInit.ROTTING_LEAVES.get()), //Block that makes the leaves
+					new MegaPineFoliagePlacer(ConstantInt.of(0), ConstantInt.of(2), ConstantInt.of(16)), //how are the leaves placed (middle click for more) WIDTH, HEIGHT OFF TRUNK, HEIGHT
+					new TwoLayersFeatureSize(1, 0, 2)).dirt(BlockStateProvider.simple(BlockInit.ROTTING_DIRT.get())).build()));
+	
+	//Frostbitten Tree
+	public static final RegistryObject<ConfiguredFeature<?, ?>> FROSTBITTEN_TREE = 
+			CONFIGURED_FEATURES.register("frostbitten_tree", () -> new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+					BlockStateProvider.simple(BlockInit.ROTTING_LOG.get()), //Block that makes the trunk
+					new StraightTrunkPlacer(8, 12, 13), //place trunks straight up (middle click for more)
+					BlockStateProvider.simple(Blocks.PACKED_ICE), //Block that makes the leaves
 					new MegaPineFoliagePlacer(ConstantInt.of(0), ConstantInt.of(2), ConstantInt.of(16)), //how are the leaves placed (middle click for more) WIDTH, HEIGHT OFF TRUNK, HEIGHT
 					new TwoLayersFeatureSize(1, 0, 2)).dirt(BlockStateProvider.simple(BlockInit.ROTTING_DIRT.get())).build()));
 	
