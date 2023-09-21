@@ -2,6 +2,7 @@
 	"replace": false,
 	"values": [
 		"tff:rotting_planks",
-		"tff:slimy_planks"
+		"tff:slimy_planks",
+		"tff:frostbitten_planks"
 	]
 }

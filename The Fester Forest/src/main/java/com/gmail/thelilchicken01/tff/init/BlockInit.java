@@ -248,6 +248,27 @@ public class BlockInit {
 	 * 
 	 */
 	
+	//Frostbitten Wood Planks
+	public static final RegistryObject<Block> FROSTBITTEN_PLANKS = register("frostbitten_planks",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)) {
+					
+				@Override
+				public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+					return true;
+				}
+					
+				@Override
+				public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+					return 20;
+				}
+						
+				@Override
+				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+					return 5;
+				}
+						
+			}, object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	//Frostbitten Leaves
 	public static final RegistryObject<Block> FROSTBITTEN_LEAVES = register("frostbitten_leaves",
 			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.GLASS)) {
