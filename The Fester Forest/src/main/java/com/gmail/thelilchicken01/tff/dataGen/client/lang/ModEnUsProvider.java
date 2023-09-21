@@ -231,6 +231,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.DEEP_REAVER_SPAWN_EGG.get(), "Deep Reaver Spawn Egg");
 		add(ItemInit.REAVER_BLADE.get(), "Reaver Blade");
 		add(BlockInit.FROSTBITTEN_LEAVES.get(), "Frostbitten Leaves");
+		add(BlockInit.FROSTBITTEN_SAPLING.get(), "Frostbitten Sapling");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

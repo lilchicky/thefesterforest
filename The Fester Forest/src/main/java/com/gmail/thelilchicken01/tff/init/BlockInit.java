@@ -4,6 +4,7 @@ import java.util.function.Function;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.block.CorrodedShroom;
+import com.gmail.thelilchicken01.tff.block.FrostbittenSapling;
 import com.gmail.thelilchicken01.tff.block.FungalGrowth;
 import com.gmail.thelilchicken01.tff.block.FungalGrowthTall;
 import com.gmail.thelilchicken01.tff.block.ModFlammableRotatedPillarBlock;
@@ -18,6 +19,7 @@ import com.gmail.thelilchicken01.tff.block.SlimyBell;
 import com.gmail.thelilchicken01.tff.block.SlimySapling;
 import com.gmail.thelilchicken01.tff.block.TffPortalBlock;
 import com.gmail.thelilchicken01.tff.block.WeepingGrass;
+import com.gmail.thelilchicken01.tff.world.feature.tree.FrostbittenTreeGrower;
 import com.gmail.thelilchicken01.tff.world.feature.tree.RottingTreeGrower;
 import com.gmail.thelilchicken01.tff.world.feature.tree.SlimyTreeGrower;
 import com.google.common.base.Supplier;
@@ -467,6 +469,11 @@ public class BlockInit {
 	//Slimy Sapling
 	public static final RegistryObject<Block> SLIMY_SAPLING = register("slimy_sapling", 
 			() -> new SlimySapling(new SlimyTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Frostbitten Sapling
+	public static final RegistryObject<Block> FROSTBITTEN_SAPLING = register("frostbitten_sapling", 
+			() -> new FrostbittenSapling(new FrostbittenTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Rotting Flower
