@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:block/leaves",
+	"textures": {
+		"all": "tff:block/frostbitten_leaves"
+	}
+}

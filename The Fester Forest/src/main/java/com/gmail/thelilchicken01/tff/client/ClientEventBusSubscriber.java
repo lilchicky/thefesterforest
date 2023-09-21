@@ -95,6 +95,7 @@ public class ClientEventBusSubscriber {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.CORRODED_SHROOM.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.FUNGAL_GROWTH.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.TALL_FUNGAL_GROWTH.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.FROSTBITTEN_LEAVES.get(), RenderType.cutout());
 		
 		EntityRenderers.register(ModEntityTypes.ROTTING_SKELETON.get(), RottingSkeletonRenderer::new);
 		EntityRenderers.register(ModEntityTypes.CRUNCH_BEETLE.get(), CrunchBeetleRenderer::new);

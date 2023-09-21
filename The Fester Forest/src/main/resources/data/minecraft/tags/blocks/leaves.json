@@ -3,6 +3,7 @@
 	"values": [
 		"tff:rotting_leaves",
 		"tff:rotting_tall_grass",
-		"tff:slimy_leaves"
+		"tff:slimy_leaves",
+		"tff:frostbitten_leaves"
 	]
 }
