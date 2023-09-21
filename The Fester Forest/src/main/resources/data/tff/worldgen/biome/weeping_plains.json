@@ -15,7 +15,7 @@
     	"monster": [
       		{
         		"type": "tff:rotting_skeleton",
-        		"weight": 100,
+        		"weight": 120,
         		"minCount": 1,
         		"maxCount": 1
       		},
