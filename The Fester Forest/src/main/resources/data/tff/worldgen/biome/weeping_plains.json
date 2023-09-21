@@ -36,12 +36,6 @@
         		"weight": 20,
         		"minCount": 1,
         		"maxCount": 1
-      		},
-      		{
-        		"type": "tff:goop",
-        		"weight": 20,
-        		"minCount": 1,
-        		"maxCount": 1
       		}
     	],
     	"creature": [
