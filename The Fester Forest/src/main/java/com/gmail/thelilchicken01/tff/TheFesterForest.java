@@ -20,6 +20,7 @@ import com.gmail.thelilchicken01.tff.world.dimension.ModDimensions;
 import com.gmail.thelilchicken01.tff.world.feature.ModPatchConfig;
 import com.gmail.thelilchicken01.tff.world.feature.TffConfiguredFeatures;
 import com.gmail.thelilchicken01.tff.world.feature.TffPlacedFeature;
+import com.gmail.thelilchicken01.tff.world.feature.TffTreeDecorators;
 import com.gmail.thelilchicken01.tff.world.structures.ModStructures;
 
 import be.florens.expandability.ExpandAbility;
@@ -100,6 +101,7 @@ public class TheFesterForest {
 		
 		TffConfiguredFeatures.CONFIGURED_FEATURES.register(bus);
 		TffPlacedFeature.PLACED_FEATURES.register(bus);
+		TffTreeDecorators.TREE_DECORATORS.register(bus);
 		System.out.println("[The Fester Forest] Features initialized");
 		
 		ModDimensions.register();

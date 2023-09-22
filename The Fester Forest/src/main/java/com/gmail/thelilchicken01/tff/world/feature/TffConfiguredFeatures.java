@@ -1,7 +1,12 @@
 package com.gmail.thelilchicken01.tff.world.feature;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
+import com.gmail.thelilchicken01.tff.world.feature.tree_decorator.IcicleDecorator;
+import com.google.common.collect.ImmutableList;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
@@ -22,6 +27,9 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePl
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaPineFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
+import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
+import net.minecraft.world.level.levelgen.feature.treedecorators.TrunkVineDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
@@ -51,7 +59,7 @@ public class TffConfiguredFeatures {
 					new StraightTrunkPlacer(8, 12, 13), //place trunks straight up (middle click for more)
 					BlockStateProvider.simple(BlockInit.FROSTBITTEN_LEAVES.get()), //Block that makes the leaves
 					new MegaPineFoliagePlacer(ConstantInt.of(0), ConstantInt.of(2), ConstantInt.of(16)), //how are the leaves placed (middle click for more) WIDTH, HEIGHT OFF TRUNK, HEIGHT
-					new TwoLayersFeatureSize(1, 0, 2)).dirt(BlockStateProvider.simple(BlockInit.ROTTING_DIRT.get())).build()));
+					new TwoLayersFeatureSize(1, 0, 2)).dirt(BlockStateProvider.simple(BlockInit.ROTTING_DIRT.get())).decorators(ImmutableList.of(new IcicleDecorator())).build()));
 	
 	//Slimy Tree
 	public static final RegistryObject<ConfiguredFeature<?, ?>> SLIMY_TREE = 
