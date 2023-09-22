@@ -69,6 +69,10 @@ public class ModLootTableProvider extends BaseLootTableProvider {
 		dropSelf(BlockInit.CUBED_FUNGUS_GATE.get());
 		dropSelf(BlockInit.FROSTBITTEN_SAPLING.get());
 		dropSelf(BlockInit.FROSTBITTEN_PLANKS.get());
+		dropSelf(BlockInit.FROSTBITTEN_LOG.get());
+		dropSelf(BlockInit.STRIPPED_FROSTBITTEN_LOG.get());
+		dropSelf(BlockInit.FROSTBITTEN_WOOD.get());
+		dropSelf(BlockInit.STRIPPED_FROSTBITTEN_WOOD.get());
 		
 		silkTouch(BlockInit.ROTTING_GLASS.get(), Blocks.AIR.asItem(), 0, 0);
 		silkTouch(BlockInit.FESTER_ORE.get(), ItemInit.FESTER_CHUNK.get(), 1, 1);

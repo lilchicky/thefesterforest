@@ -63,6 +63,15 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
 			if(state.is(BlockInit.SLIMY_WOOD.get())) {
 				return BlockInit.STRIPPED_SLIMY_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
 			}
+			
+			// Frostbitten Log
+			if(state.is(BlockInit.FROSTBITTEN_LOG.get())) {
+				return BlockInit.STRIPPED_FROSTBITTEN_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+			}
+						
+			if(state.is(BlockInit.FROSTBITTEN_WOOD.get())) {
+				return BlockInit.STRIPPED_FROSTBITTEN_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+			}
 		}
 		
 		return super.getToolModifiedState(state, world, pos, player, stack, toolAction);

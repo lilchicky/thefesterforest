@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:stripped_frostbitten_log"
+    }
+  ],
+  "result": {
+    "item": "tff:frostbitten_planks",
+    "count": 4
+  }
+}

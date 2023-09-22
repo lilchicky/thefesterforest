@@ -248,26 +248,25 @@ public class BlockInit {
 	 * 
 	 */
 	
-	//Frostbitten Wood Planks
-	public static final RegistryObject<Block> FROSTBITTEN_PLANKS = register("frostbitten_planks",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)) {
-					
-				@Override
-				public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return true;
-				}
-					
-				@Override
-				public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 20;
-				}
-						
-				@Override
-				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 5;
-				}
-						
-			}, object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	//Frostbitten Log
+	public static final RegistryObject<Block> FROSTBITTEN_LOG = register("frostbitten_log", 
+			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.WOOD)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+		
+	//Frostbitten Log Stripped
+	public static final RegistryObject<Block> STRIPPED_FROSTBITTEN_LOG = register("stripped_frostbitten_log", 
+			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).sound(SoundType.WOOD)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+				
+	//Frostbitten Wood
+	public static final RegistryObject<Block> FROSTBITTEN_WOOD = register("frostbitten_wood", 
+			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.WOOD)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+				
+	//Frostbitten Wood Stripped
+	public static final RegistryObject<Block> STRIPPED_FROSTBITTEN_WOOD = register("stripped_frostbitten_wood", 
+			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).sound(SoundType.WOOD)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Frostbitten Leaves
 	public static final RegistryObject<Block> FROSTBITTEN_LEAVES = register("frostbitten_leaves",
@@ -286,6 +285,27 @@ public class BlockInit {
 				@Override
 				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
 					return 30;
+				}
+						
+			}, object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Frostbitten Wood Planks
+	public static final RegistryObject<Block> FROSTBITTEN_PLANKS = register("frostbitten_planks",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)) {
+					
+				@Override
+				public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+					return true;
+				}
+					
+				@Override
+				public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+					return 20;
+				}
+						
+				@Override
+				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+					return 5;
 				}
 						
 			}, object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));

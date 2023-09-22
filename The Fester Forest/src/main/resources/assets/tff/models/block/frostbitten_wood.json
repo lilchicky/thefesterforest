@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_column",
+	"textures": {
+		"end": "tff:block/frostbitten_log",
+		"side": "tff:block/frostbitten_log"
+	}
+}

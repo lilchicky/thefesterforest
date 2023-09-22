@@ -35,6 +35,18 @@ public class ModRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_" + ItemInit.ROTTING_BRICK.get().getRegistryName(), has(ItemInit.ROTTING_BRICK.get().asItem())) // what unlocks the recipe when you get that item
 			.pattern("aa ").pattern("aa ").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_BRICKS.get().getRegistryName().getPath()));
 		
+		// Frostbitten Wood
+		ShapedRecipeBuilder.shaped(BlockInit.FROSTBITTEN_WOOD.get(), 3) // add , int to get number of output
+			.define('a', BlockInit.FROSTBITTEN_LOG.get().asItem())
+			.unlockedBy("has_" + BlockInit.FROSTBITTEN_LOG.get().getRegistryName(), has(BlockInit.FROSTBITTEN_LOG.get().asItem())) // what unlocks the recipe when you get that item
+			.pattern("aa ").pattern("aa ").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.FROSTBITTEN_WOOD.get().getRegistryName().getPath()));
+		
+		// Stripped Frostbitten Wood
+		ShapedRecipeBuilder.shaped(BlockInit.STRIPPED_FROSTBITTEN_WOOD.get(), 3) // add , int to get number of output
+			.define('a', BlockInit.STRIPPED_FROSTBITTEN_LOG.get().asItem())
+			.unlockedBy("has_" + BlockInit.STRIPPED_FROSTBITTEN_LOG.get().getRegistryName(), has(BlockInit.STRIPPED_FROSTBITTEN_LOG.get().asItem())) // what unlocks the recipe when you get that item
+			.pattern("aa ").pattern("aa ").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.STRIPPED_FROSTBITTEN_WOOD.get().getRegistryName().getPath()));
+		
 		ShapedRecipeBuilder.shaped(BlockInit.COMPRESSED_ROTTING_SAND.get()) // add , int to get number of output
 			.define('a', BlockInit.ROTTING_SAND.get().asItem())
 			.unlockedBy("has_" + BlockInit.ROTTING_SAND.get().getRegistryName(), has(BlockInit.ROTTING_SAND.get().asItem())) // what unlocks the recipe when you get that item
@@ -42,15 +54,21 @@ public class ModRecipeProvider extends RecipeProvider {
 		
 		// Rottingwood Boat
 		ShapedRecipeBuilder.shaped(Items.OAK_BOAT) // add , int to get number of output
-		.define('a', BlockInit.ROTTING_PLANKS.get().asItem())
-		.unlockedBy("has_" + BlockInit.ROTTING_PLANKS.get().getRegistryName(), has(BlockInit.ROTTING_PLANKS.get().asItem())) // what unlocks the recipe when you get that item
-		.pattern("a a").pattern("aaa").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_PLANKS.get().getRegistryName().getPath() +  "_boat"));
+			.define('a', BlockInit.ROTTING_PLANKS.get().asItem())
+			.unlockedBy("has_" + BlockInit.ROTTING_PLANKS.get().getRegistryName(), has(BlockInit.ROTTING_PLANKS.get().asItem())) // what unlocks the recipe when you get that item
+			.pattern("a a").pattern("aaa").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_PLANKS.get().getRegistryName().getPath() +  "_boat"));
 		
 		// Slimy Boat
 		ShapedRecipeBuilder.shaped(Items.OAK_BOAT) // add , int to get number of output
-		.define('a', BlockInit.SLIMY_PLANKS.get().asItem())
-		.unlockedBy("has_" + BlockInit.SLIMY_PLANKS.get().getRegistryName(), has(BlockInit.SLIMY_PLANKS.get().asItem())) // what unlocks the recipe when you get that item
-		.pattern("a a").pattern("aaa").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.SLIMY_PLANKS.get().getRegistryName().getPath() +  "_boat"));
+			.define('a', BlockInit.SLIMY_PLANKS.get().asItem())
+			.unlockedBy("has_" + BlockInit.SLIMY_PLANKS.get().getRegistryName(), has(BlockInit.SLIMY_PLANKS.get().asItem())) // what unlocks the recipe when you get that item
+			.pattern("a a").pattern("aaa").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.SLIMY_PLANKS.get().getRegistryName().getPath() +  "_boat"));
+		
+		// Frostbitten Boat
+		ShapedRecipeBuilder.shaped(Items.OAK_BOAT) // add , int to get number of output
+			.define('a', BlockInit.FROSTBITTEN_PLANKS.get().asItem())
+			.unlockedBy("has_" + BlockInit.FROSTBITTEN_PLANKS.get().getRegistryName(), has(BlockInit.FROSTBITTEN_PLANKS.get().asItem())) // what unlocks the recipe when you get that item
+			.pattern("a a").pattern("aaa").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.FROSTBITTEN_PLANKS.get().getRegistryName().getPath() +  "_boat"));
 		
 		ShapedRecipeBuilder.shaped(BlockInit.ROTTING_STONE_BRICKS.get(), 4) //what am i making
 			.define('a', BlockInit.ROTTING_STONE.get().asItem()) //keys
@@ -299,6 +317,26 @@ public class ModRecipeProvider extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(ItemInit.ROTTING_BRICK.get().asItem(), 4).requires(BlockInit.ROTTING_BRICKS.get()) //get item
 			.unlockedBy("has_" + BlockInit.ROTTING_BRICKS.get().getRegistryName(), has(BlockInit.ROTTING_BRICKS.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.ROTTING_BRICK.get().getRegistryName().getPath()));
+		
+		// Frostbitten Planks from Logs
+		ShapelessRecipeBuilder.shapeless(BlockInit.FROSTBITTEN_PLANKS.get().asItem(), 4).requires(BlockInit.FROSTBITTEN_LOG.get()) //get item
+			.unlockedBy("has_" + BlockInit.FROSTBITTEN_LOG.get().getRegistryName(), has(BlockInit.FROSTBITTEN_LOG.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.FROSTBITTEN_PLANKS.get().getRegistryName().getPath() + "_log"));
+		
+		// Frostbitten Planks from Stripped Logs
+		ShapelessRecipeBuilder.shapeless(BlockInit.FROSTBITTEN_PLANKS.get().asItem(), 4).requires(BlockInit.STRIPPED_FROSTBITTEN_LOG.get()) //get item
+			.unlockedBy("has_" + BlockInit.STRIPPED_FROSTBITTEN_LOG.get().getRegistryName(), has(BlockInit.STRIPPED_FROSTBITTEN_LOG.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.FROSTBITTEN_PLANKS.get().getRegistryName().getPath() + "_stripped_log"));
+		
+		// Frostbitten Planks from Wood
+		ShapelessRecipeBuilder.shapeless(BlockInit.FROSTBITTEN_PLANKS.get().asItem(), 4).requires(BlockInit.FROSTBITTEN_WOOD.get()) //get item
+			.unlockedBy("has_" + BlockInit.FROSTBITTEN_WOOD.get().getRegistryName(), has(BlockInit.FROSTBITTEN_WOOD.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.FROSTBITTEN_PLANKS.get().getRegistryName().getPath() + "_wood"));
+		
+		// Frostbitten Planks from Stripped Wood
+		ShapelessRecipeBuilder.shapeless(BlockInit.FROSTBITTEN_PLANKS.get().asItem(), 4).requires(BlockInit.STRIPPED_FROSTBITTEN_WOOD.get()) //get item
+			.unlockedBy("has_" + BlockInit.STRIPPED_FROSTBITTEN_WOOD.get().getRegistryName(), has(BlockInit.STRIPPED_FROSTBITTEN_WOOD.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.FROSTBITTEN_PLANKS.get().getRegistryName().getPath() + "_stripped_wood"));
 		
 		// Shroom Cluster
 		ShapelessRecipeBuilder.shapeless(ItemInit.SHROOM_CLUSTER.get().asItem()).requires(BlockInit.CORRODED_SHROOM.get(), 4) //get item

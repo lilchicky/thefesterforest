@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:stripped_frostbitten_wood"
+    ]
+  },
+  "criteria": {
+    "has_tff:stripped_frostbitten_log": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:stripped_frostbitten_log"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:stripped_frostbitten_wood"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:stripped_frostbitten_log",
+      "has_the_recipe"
+    ]
+  ]
+}

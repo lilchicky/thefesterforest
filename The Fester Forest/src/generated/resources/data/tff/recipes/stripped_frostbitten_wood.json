@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aa ",
+    "aa "
+  ],
+  "key": {
+    "a": {
+      "item": "tff:stripped_frostbitten_log"
+    }
+  },
+  "result": {
+    "item": "tff:stripped_frostbitten_wood",
+    "count": 3
+  }
+}
