@@ -47,7 +47,7 @@ public class TffConfiguredFeatures {
 	//Frostbitten Tree
 	public static final RegistryObject<ConfiguredFeature<?, ?>> FROSTBITTEN_TREE = 
 			CONFIGURED_FEATURES.register("frostbitten_tree", () -> new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-					BlockStateProvider.simple(BlockInit.ROTTING_LOG.get()), //Block that makes the trunk
+					BlockStateProvider.simple(BlockInit.FROSTBITTEN_LOG.get()), //Block that makes the trunk
 					new StraightTrunkPlacer(8, 12, 13), //place trunks straight up (middle click for more)
 					BlockStateProvider.simple(BlockInit.FROSTBITTEN_LEAVES.get()), //Block that makes the leaves
 					new MegaPineFoliagePlacer(ConstantInt.of(0), ConstantInt.of(2), ConstantInt.of(16)), //how are the leaves placed (middle click for more) WIDTH, HEIGHT OFF TRUNK, HEIGHT
