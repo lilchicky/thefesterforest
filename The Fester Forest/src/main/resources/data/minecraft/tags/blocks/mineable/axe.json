@@ -19,6 +19,7 @@
 		"tff:cubed_fungus_slabs",
 		"tff:cubed_fungus_fence",
 		"tff:cubed_fungus_fence_gate",
-		"tff:frostbitten_planks"
+		"tff:frostbitten_planks",
+		"#tff:frostbitten_woods"
 	]
 }

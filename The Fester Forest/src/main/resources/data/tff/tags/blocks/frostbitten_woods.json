@@ -1,0 +1,10 @@
+{
+	"replace": false,
+	"values": [
+		"tff:frostbitten_log",
+		"tff:stripped_frostbitten_log",
+		"tff:frostbitten_wood",
+		"tff:stripped_frostbitten_wood"
+	
+	]
+}
