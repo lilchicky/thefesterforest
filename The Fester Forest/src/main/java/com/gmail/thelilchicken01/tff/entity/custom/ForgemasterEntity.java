@@ -82,14 +82,11 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	
 	private static float totalHealth = 800.0f; // entity health
 	
-	private int phase2health;
-	private int phase3health;
+	private double phase2health = 0.8; // Percent health thresholds for phase 2
+	private double phase3health = 0.3; // Percent health thresholds for phase 2
 
 	public ForgemasterEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
-		
-		phase2health = (int) (getMaxHealth() * 0.8); // health threshold for phase 2
-		phase3health = (int) (getMaxHealth() * 0.3); // health threshold for phase 3
 		
 	}
 	
@@ -136,11 +133,11 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 		
 		double cooldownMod = 1;
 		
-		if (getHealth() < phase2health) {
+		if (getHealth() < (getMaxHealth() * phase2health)) {
 			cooldownMod = 0.6;
 		}
 		
-		else if (getHealth() < phase3health) {
+		else if (getHealth() < (getMaxHealth() * phase3health)) {
 			cooldownMod = 0.3;
 		}
 		
@@ -170,7 +167,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 			
 			//Phase 2
 			
-			if (launchCounter > launchCooldown * 20 && this.getTarget() != null && getHealth() < phase2health) {
+			if (launchCounter > launchCooldown * 20 && this.getTarget() != null && getHealth() < (getMaxHealth() * phase2health)) {
 				
 				List<Entity> nearbyEntities = this.getLevel().getEntities(this, 
 						new AABB(this.getX() - launchRange, 
@@ -201,7 +198,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 			
 			// Phase 3
 			
-			if (pylonCounter > pylonCooldown * 20 && getHealth() < phase3health) {
+			if (pylonCounter > pylonCooldown * 20 && getHealth() < (getMaxHealth() * phase3health)) {
 				
 				playSound(SoundEvents.ANVIL_USE, 1.0f, 0.01f);
 				
@@ -254,7 +251,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 				
 			}
 			
-			if (pylonChargeCounter > pylonCharge * 20 && getHealth() < phase3health) {
+			if (pylonChargeCounter > pylonCharge * 20 && getHealth() < (getMaxHealth() * phase3health)) {
 				
 				int livingPylons = 0;
 				
