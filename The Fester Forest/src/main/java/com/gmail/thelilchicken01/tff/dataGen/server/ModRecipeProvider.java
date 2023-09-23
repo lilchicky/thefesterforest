@@ -319,7 +319,13 @@ public class ModRecipeProvider extends RecipeProvider {
 		.pattern(" d ").pattern("cac").pattern(" b ").save(consumer, 
 				new ResourceLocation(TheFesterForest.MODID, ItemInit.ANGELIC_WHISTLE.get().getRegistryName().getPath()));
 		
-		// Shapeless
+		/*
+		 * 
+		 * Shapeless
+		 * 
+		 */
+		
+		// Rotting Bricks from Rotting Brick Block
 		ShapelessRecipeBuilder.shapeless(ItemInit.ROTTING_BRICK.get().asItem(), 4).requires(BlockInit.ROTTING_BRICKS.get()) //get item
 			.unlockedBy("has_" + BlockInit.ROTTING_BRICKS.get().getRegistryName(), has(BlockInit.ROTTING_BRICKS.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.ROTTING_BRICK.get().getRegistryName().getPath()));
@@ -373,6 +379,11 @@ public class ModRecipeProvider extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(Items.PURPLE_DYE, 1).requires(BlockInit.ROTTING_FLOWER.get()) //get item
 			.unlockedBy("has_" + BlockInit.ROTTING_FLOWER.get().getRegistryName(), has(BlockInit.ROTTING_FLOWER.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_FLOWER.get().getRegistryName().getPath() + "_to_purple_dye"));
+		
+		// Frostvine to Green
+		ShapelessRecipeBuilder.shapeless(Items.GREEN_DYE, 1).requires(BlockInit.FROSTVINE.get()) //get item
+			.unlockedBy("has_" + BlockInit.FROSTVINE.get().getRegistryName(), has(BlockInit.FROSTVINE.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.FROSTVINE.get().getRegistryName().getPath() + "_to_green_dye"));
 		
 		// Sickening Flower to Magenta
 		ShapelessRecipeBuilder.shapeless(Items.MAGENTA_DYE, 1).requires(BlockInit.SICKENING_FLOWER.get()) //get item

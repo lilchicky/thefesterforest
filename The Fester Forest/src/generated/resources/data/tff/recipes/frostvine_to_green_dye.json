@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:frostvine"
+    }
+  ],
+  "result": {
+    "item": "minecraft:green_dye"
+  }
+}
