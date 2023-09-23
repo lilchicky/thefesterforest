@@ -464,7 +464,7 @@ public class ItemInit {
 	
 	//Ancient Hatchet
 	public static final RegistryObject<Item> ANCIENT_HATCHET = register("ancient_hatchet", 
-			() -> new AncientHatchet(ModTiers.METAL, -4, -1.6f, new Properties().tab(TheFesterForest.TFF_TAB)));
+			() -> new AncientHatchet(ModTiers.METAL, -4, -1.8f, new Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Ancient Longsword
 	public static final RegistryObject<Item> ANCIENT_LONGSWORD = register("ancient_longsword", 
