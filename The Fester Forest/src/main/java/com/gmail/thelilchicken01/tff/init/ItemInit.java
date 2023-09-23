@@ -457,7 +457,7 @@ public class ItemInit {
 	
 	//Ancient Dagger
 	public static final RegistryObject<Item> ANCIENT_DAGGER = register("ancient_dagger", 
-			() -> new ShockSword(ModTiers.METAL, -7, -1.2f, new Properties().tab(TheFesterForest.TFF_TAB)));
+			() -> new ShockSword(ModTiers.METAL, -7, -1.0f, new Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	/*
 	 * 
