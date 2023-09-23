@@ -79,6 +79,11 @@ public class TffPlacedFeature {
 			"slimy_flower_placed", () -> new PlacedFeature(TffConfiguredFeatures.SLIMY_FLOWER.getHolder().get(),
 					patch(128)));
 	
+	// Frostvine
+	public static final RegistryObject<PlacedFeature> FROSTVINE_PLACED = PLACED_FEATURES.register(
+			"frostvine_placed", () -> new PlacedFeature(TffConfiguredFeatures.FROSTVINE.getHolder().get(),
+					patch(64)));
+	
 	// Rotting Tall Grass
 	public static final RegistryObject<PlacedFeature> ROTTING_TALL_GRASS_PLACED = PLACED_FEATURES.register(
 			"rotting_tall_grass_placed", () -> new PlacedFeature(TffConfiguredFeatures.ROTTING_TALL_GRASS.getHolder().get(),

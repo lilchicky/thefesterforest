@@ -98,6 +98,8 @@ public class ClientEventBusSubscriber {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.FROSTBITTEN_LEAVES.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.FROSTBITTEN_SAPLING.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.ICICLE.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.FROSTVINE.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.FROSTVINE_FLOWER_POT.get(), RenderType.cutout());
 		
 		EntityRenderers.register(ModEntityTypes.ROTTING_SKELETON.get(), RottingSkeletonRenderer::new);
 		EntityRenderers.register(ModEntityTypes.CRUNCH_BEETLE.get(), CrunchBeetleRenderer::new);

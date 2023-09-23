@@ -1,7 +1,6 @@
 {
 	"replace": false,
 	"values": [
-		"tff:slimy_bell",
-		"tff:weeping_grass"
+		"#tff:tff_flowers"
 	]
 }

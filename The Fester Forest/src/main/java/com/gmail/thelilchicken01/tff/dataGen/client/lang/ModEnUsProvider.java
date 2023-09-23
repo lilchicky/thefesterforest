@@ -238,6 +238,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.FROSTBITTEN_WOOD.get(), "Frostbitten Wood");
 		add(BlockInit.STRIPPED_FROSTBITTEN_WOOD.get(), "Stripped Frostbitten Wood");
 		add(BlockInit.ICICLE.get(), "Icicle");
+		add(BlockInit.FROSTVINE.get(), "Frostvine");
+		add(BlockInit.FROSTVINE_FLOWER_POT.get(), "Frostvine Flower Pot");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

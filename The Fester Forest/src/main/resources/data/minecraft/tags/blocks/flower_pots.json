@@ -1,0 +1,9 @@
+{
+	"replace": false,
+	"values": [
+		"tff:rotting_flower_pot",
+		"tff:sickening_flower_pot",
+		"tff:frostvine_flower_pot",
+		"tff:corroded_shroom_flower_pot"
+	]
+}

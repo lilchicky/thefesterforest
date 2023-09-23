@@ -5,6 +5,7 @@ import java.util.function.Function;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.block.CorrodedShroom;
 import com.gmail.thelilchicken01.tff.block.FrostbittenSapling;
+import com.gmail.thelilchicken01.tff.block.Frostvine;
 import com.gmail.thelilchicken01.tff.block.FungalGrowth;
 import com.gmail.thelilchicken01.tff.block.FungalGrowthTall;
 import com.gmail.thelilchicken01.tff.block.Icicle;
@@ -526,6 +527,10 @@ public class BlockInit {
 	public static final RegistryObject<FlowerBlock> SICKENING_FLOWER = register("sickening_flower", () -> new SickeningFlower(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	//Frostvine
+	public static final RegistryObject<FlowerBlock> FROSTVINE = register("frostvine", () -> new Frostvine(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	//Slimy Flower
 	public static final RegistryObject<FlowerBlock> SLIMY_FLOWER = register("slimy_bell", () -> new SlimyBell(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
@@ -593,6 +598,10 @@ public class BlockInit {
 	//Sickening Flower Pot
 	public static final RegistryObject<FlowerPotBlock> SICKENING_FLOWER_POT = BLOCKS.register("sickening_flower_pot", 
 			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SICKENING_FLOWER, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+	
+	//Frostvine Flower Pot
+	public static final RegistryObject<FlowerPotBlock> FROSTVINE_FLOWER_POT = BLOCKS.register("frostvine_flower_pot", 
+			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FROSTVINE, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
 	
 	//Corrupted Mushroom Flower Pot
 	public static final RegistryObject<FlowerPotBlock> CORRODED_SHROOM_FLOWER_POT = BLOCKS.register("corroded_shroom_flower_pot", 

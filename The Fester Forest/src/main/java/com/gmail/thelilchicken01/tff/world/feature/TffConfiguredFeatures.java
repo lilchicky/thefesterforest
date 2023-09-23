@@ -100,6 +100,11 @@ public class TffConfiguredFeatures {
 			CONFIGURED_FEATURES.register("slimy_flower", () -> new ConfiguredFeature<>(Feature.FLOWER,
 					patch(BlockInit.SLIMY_FLOWER.get(), 32)));
 	
+	// Frostvine
+	public static final RegistryObject<ConfiguredFeature<?, ?>> FROSTVINE = 
+			CONFIGURED_FEATURES.register("frostvine", () -> new ConfiguredFeature<>(Feature.FLOWER,
+					patch(BlockInit.FROSTVINE.get(), 24)));
+	
 	// Rotting Flower
 	public static final RegistryObject<ConfiguredFeature<?, ?>> ROTTING_FLOWER = 
 			CONFIGURED_FEATURES.register("rotting_flower", () -> new ConfiguredFeature<>(Feature.FLOWER,
