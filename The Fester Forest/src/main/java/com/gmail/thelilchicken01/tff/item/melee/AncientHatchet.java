@@ -36,7 +36,7 @@ public class AncientHatchet extends SwordItem {
 	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
 		
 		if (target.getArmorValue() <= 2 && attacker instanceof Player) {
-			target.hurt(DamageSource.playerAttack((Player) attacker), 14);
+			target.hurt(DamageSource.playerAttack((Player) attacker), (getDamage() * 3));
 		}
 		
 		return super.hurtEnemy(stack, target, attacker);
