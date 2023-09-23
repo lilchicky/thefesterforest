@@ -242,6 +242,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.FROSTVINE_FLOWER_POT.get(), "Frostvine Flower Pot");
 		add(ItemInit.ANCIENT_DAGGER.get(), "Ancient Dagger");
 		add(ItemInit.ANCIENT_LONGSWORD.get(), "Ancient Longsword");
+		add(ItemInit.FESTERING_CLUB.get(), "Festering Club");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

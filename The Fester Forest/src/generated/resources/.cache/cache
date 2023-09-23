@@ -13,7 +13,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
 c5defbedf25b6ecf36bf55b38b2ff99beff20207 assets/tff/blockstates/soul_rot.json
-6ba3a934490493e8a310bc2535b5a9286589e939 assets/tff/lang/en_us.json
+722bbe12a7b7e216d6afa0f3e2744abdc96ca765 assets/tff/lang/en_us.json
 24d27db74b37f74e514f26a15787d776200bea34 assets/tff/models/block/blue_fester_shroom_block.json
 e48eb80bb4a853e7d3636a9aa2971065e6494c2f assets/tff/models/block/compressed_rotting_sand.json
 f12d6a54881723e53655f55b547fef43d40893ee assets/tff/models/block/cracked_rotting_stone_bricks.json
@@ -56,6 +56,7 @@ fb3789e8c184630cb7d279a5e01dcce292866a96 assets/tff/models/item/energetic_fungus
 61a81680433b6c80847d35ed3e8000bcf3b96f33 assets/tff/models/item/explosive_powder.json
 a5cc7eab79258ab6742ea8dcaccf8fb359327d52 assets/tff/models/item/fester_chunk.json
 c54e2c2e2e77906167442203a23cb518c3a9dbfb assets/tff/models/item/fester_ore.json
+bf887d5ec9b30a203ddd73d558b11e6e9a5f8b02 assets/tff/models/item/festering_club.json
 ffbbd55d61fbedd6c91aac6c4ef8b0a6707d7c66 assets/tff/models/item/flesh_ball.json
 b812a130c005256936ce11549dd1da33e4740737 assets/tff/models/item/forgemaster_heart.json
 20fe85588f55ea3dbf1f699b27f3fe2fa69a58a4 assets/tff/models/item/frostbitten_planks.json

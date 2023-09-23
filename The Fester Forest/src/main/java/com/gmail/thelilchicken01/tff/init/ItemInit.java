@@ -80,6 +80,7 @@ import com.gmail.thelilchicken01.tff.item.melee.SeathrownPike;
 import com.gmail.thelilchicken01.tff.item.melee.ShockSword;
 import com.gmail.thelilchicken01.tff.item.misc.BugEggs;
 import com.gmail.thelilchicken01.tff.item.misc.CatalystItem;
+import com.gmail.thelilchicken01.tff.item.mixed.FesteringClub;
 import com.gmail.thelilchicken01.tff.item.mixed.ReaverBlade;
 import com.gmail.thelilchicken01.tff.item.mixed.ShadowBow;
 import com.gmail.thelilchicken01.tff.item.mixed.VolatileSword;
@@ -463,6 +464,10 @@ public class ItemInit {
 	//Ancient Longsword
 	public static final RegistryObject<Item> ANCIENT_LONGSWORD = register("ancient_longsword", 
 			() -> new AncientLongsword(ModTiers.METAL, 11, -2.4f, new Properties().tab(TheFesterForest.TFF_TAB).durability(10)));
+	
+	//Festering Club
+	public static final RegistryObject<Item> FESTERING_CLUB = register("festering_club", 
+			() -> new FesteringClub(ModTiers.WOODEN, -3, -2.4f, new Properties().tab(TheFesterForest.TFF_TAB).durability(420)));
 	
 	/*
 	 * 

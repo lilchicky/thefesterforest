@@ -32,6 +32,11 @@ public class ModTiers {
 	    return Ingredient.of(Items.IRON_INGOT);
 	});
 	
+	public static final ForgeTier WOODEN = new ForgeTier(4, 1600, 0.0F, 
+			10.0F, 15, BlockTags.NEEDS_STONE_TOOL, () -> {
+	    return Ingredient.of(Items.STICK);
+	});
+	
 	public static final ForgeTier GOOP = new ForgeTier(4, 1600, 0.0F, 
 			4.0F, 15, BlockTags.NEEDS_IRON_TOOL, () -> {
 	    return Ingredient.of(ItemInit.ROTTING_SLIMEBALL.get());
