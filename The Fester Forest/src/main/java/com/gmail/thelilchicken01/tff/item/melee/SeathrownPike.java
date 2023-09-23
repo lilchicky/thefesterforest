@@ -35,11 +35,11 @@ public class SeathrownPike extends SwordItem {
          
          if (ForgeMod.ATTACK_RANGE.isPresent()) {
              builder.put(ForgeMod.ATTACK_RANGE.get(), new AttributeModifier(UUID.randomUUID(), 
-            		 "attack_range", 2.0, AttributeModifier.Operation.ADDITION));
+            		 "attack_range", 3.0, AttributeModifier.Operation.ADDITION));
              builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, 
-     	    		"attack_damage", 7.0, AttributeModifier.Operation.ADDITION));
+     	    		"attack_damage", 13.0, AttributeModifier.Operation.ADDITION));
              builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, 
-     	    		"attack_speed", -3f, AttributeModifier.Operation.ADDITION));
+     	    		"attack_speed", -2.8f, AttributeModifier.Operation.ADDITION));
          }
     	Multimap<Attribute, AttributeModifier> attributeModifiers = ArrayListMultimap.create();
     	attributeModifiers = builder.build();
