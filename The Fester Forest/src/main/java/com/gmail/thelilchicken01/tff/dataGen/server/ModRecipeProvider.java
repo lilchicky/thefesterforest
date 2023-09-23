@@ -41,6 +41,12 @@ public class ModRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_" + BlockInit.FROSTBITTEN_LOG.get().getRegistryName(), has(BlockInit.FROSTBITTEN_LOG.get().asItem())) // what unlocks the recipe when you get that item
 			.pattern("aa ").pattern("aa ").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.FROSTBITTEN_WOOD.get().getRegistryName().getPath()));
 		
+		// Frostbitten Wood
+		ShapedRecipeBuilder.shaped(Blocks.PACKED_ICE) // add , int to get number of output
+			.define('a', BlockInit.ICICLE.get().asItem())
+			.unlockedBy("has_" + BlockInit.ICICLE.get().getRegistryName(), has(BlockInit.ICICLE.get().asItem())) // what unlocks the recipe when you get that item
+			.pattern("aa ").pattern("aa ").save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ICICLE.get().getRegistryName().getPath() + "_into_packed_ice"));
+		
 		// Stripped Frostbitten Wood
 		ShapedRecipeBuilder.shaped(BlockInit.STRIPPED_FROSTBITTEN_WOOD.get(), 3) // add , int to get number of output
 			.define('a', BlockInit.STRIPPED_FROSTBITTEN_LOG.get().asItem())

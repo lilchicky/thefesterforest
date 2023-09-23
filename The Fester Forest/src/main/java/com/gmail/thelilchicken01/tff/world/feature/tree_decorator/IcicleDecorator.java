@@ -30,7 +30,7 @@ public class IcicleDecorator extends TreeDecorator {
 			if(random.nextInt(3) == 0) {
 				BlockPos downPos = pos.below();
 				if(Feature.isAir(level, downPos)) {
-					blockSetter.accept(downPos, BlockInit.FROSTBITTEN_PLANKS.get().defaultBlockState());
+					blockSetter.accept(downPos, BlockInit.ICICLE.get().defaultBlockState());
 				}
 			}
 		}));

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:icicle_into_packed_ice"
+    ]
+  },
+  "criteria": {
+    "has_tff:icicle": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:icicle"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:icicle_into_packed_ice"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:icicle",
+      "has_the_recipe"
+    ]
+  ]
+}

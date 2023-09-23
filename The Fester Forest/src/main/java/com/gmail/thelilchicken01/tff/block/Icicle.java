@@ -3,7 +3,6 @@ package com.gmail.thelilchicken01.tff.block;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.HangingRootsBlock;
 import net.minecraft.world.level.block.state.BlockState;
