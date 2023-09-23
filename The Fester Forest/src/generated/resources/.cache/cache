@@ -13,7 +13,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
 c5defbedf25b6ecf36bf55b38b2ff99beff20207 assets/tff/blockstates/soul_rot.json
-44d63f7d0835ffac620272592fe3e5d7aebe1fd5 assets/tff/lang/en_us.json
+6ba3a934490493e8a310bc2535b5a9286589e939 assets/tff/lang/en_us.json
 24d27db74b37f74e514f26a15787d776200bea34 assets/tff/models/block/blue_fester_shroom_block.json
 e48eb80bb4a853e7d3636a9aa2971065e6494c2f assets/tff/models/block/compressed_rotting_sand.json
 f12d6a54881723e53655f55b547fef43d40893ee assets/tff/models/block/cracked_rotting_stone_bricks.json
@@ -32,6 +32,7 @@ dd2b1992053a7f1f137aaee9f56a68ccef7a5719 assets/tff/models/block/rotting_sand.js
 32c2990eac992ecaf61c7602a37bb6d1f69a0fcc assets/tff/models/item/ambectrum_donut.json
 854940d999ddc8f2f8441f0e983f43b2416a8150 assets/tff/models/item/ambectrum_jelly.json
 e44e7d0b36dbaddc8bea5a5e35d272ea676b6c30 assets/tff/models/item/ancient_dagger.json
+9b8528eead79d8e95c4b77c426c072d7509b6a19 assets/tff/models/item/ancient_longsword.json
 1580673c62d0d4b747f0b32aa6a5282d772e81b7 assets/tff/models/item/ancient_whistle.json
 d71bc059265d7ccdce526415ecbca73f58ca93b4 assets/tff/models/item/angelic_whistle.json
 48e4a553c17534110e35c7b5d67380024bfc9e0e assets/tff/models/item/banshee_boots.json

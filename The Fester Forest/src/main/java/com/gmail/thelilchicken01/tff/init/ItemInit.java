@@ -69,7 +69,9 @@ import com.gmail.thelilchicken01.tff.item.magic.FrozenPendant;
 import com.gmail.thelilchicken01.tff.item.magic.MeteorWand;
 import com.gmail.thelilchicken01.tff.item.magic.ShieldBook;
 import com.gmail.thelilchicken01.tff.item.magic.VolatileNecklace;
+import com.gmail.thelilchicken01.tff.item.melee.AncientDagger;
 import com.gmail.thelilchicken01.tff.item.melee.AncientGreatsword;
+import com.gmail.thelilchicken01.tff.item.melee.AncientLongsword;
 import com.gmail.thelilchicken01.tff.item.melee.BoneScythe;
 import com.gmail.thelilchicken01.tff.item.melee.ForgemasterHammer;
 import com.gmail.thelilchicken01.tff.item.melee.GoopySword;
@@ -96,7 +98,6 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
@@ -457,7 +458,11 @@ public class ItemInit {
 	
 	//Ancient Dagger
 	public static final RegistryObject<Item> ANCIENT_DAGGER = register("ancient_dagger", 
-			() -> new ShockSword(ModTiers.METAL, -7, -1.0f, new Properties().tab(TheFesterForest.TFF_TAB)));
+			() -> new AncientDagger(ModTiers.METAL, -7, -1.0f, new Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Ancient Longsword
+	public static final RegistryObject<Item> ANCIENT_LONGSWORD = register("ancient_longsword", 
+			() -> new AncientLongsword(ModTiers.METAL, 11, -1.4f, new Properties().tab(TheFesterForest.TFF_TAB).durability(10)));
 	
 	/*
 	 * 
