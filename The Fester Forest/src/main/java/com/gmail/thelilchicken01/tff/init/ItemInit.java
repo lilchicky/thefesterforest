@@ -71,6 +71,7 @@ import com.gmail.thelilchicken01.tff.item.magic.ShieldBook;
 import com.gmail.thelilchicken01.tff.item.magic.VolatileNecklace;
 import com.gmail.thelilchicken01.tff.item.melee.AncientDagger;
 import com.gmail.thelilchicken01.tff.item.melee.AncientGreatsword;
+import com.gmail.thelilchicken01.tff.item.melee.AncientHatchet;
 import com.gmail.thelilchicken01.tff.item.melee.AncientLongsword;
 import com.gmail.thelilchicken01.tff.item.melee.BoneScythe;
 import com.gmail.thelilchicken01.tff.item.melee.ForgemasterHammer;
@@ -460,6 +461,10 @@ public class ItemInit {
 	//Ancient Dagger
 	public static final RegistryObject<Item> ANCIENT_DAGGER = register("ancient_dagger", 
 			() -> new AncientDagger(ModTiers.METAL, -7, -1.0f, new Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Ancient Hatchet
+	public static final RegistryObject<Item> ANCIENT_HATCHET = register("ancient_hatchet", 
+			() -> new AncientHatchet(ModTiers.METAL, -4, -1.6f, new Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Ancient Longsword
 	public static final RegistryObject<Item> ANCIENT_LONGSWORD = register("ancient_longsword", 

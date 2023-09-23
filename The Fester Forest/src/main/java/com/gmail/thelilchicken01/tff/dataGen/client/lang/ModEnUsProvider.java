@@ -243,6 +243,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.ANCIENT_DAGGER.get(), "Ancient Dagger");
 		add(ItemInit.ANCIENT_LONGSWORD.get(), "Ancient Longsword");
 		add(ItemInit.FESTERING_CLUB.get(), "Festering Club");
+		add(ItemInit.ANCIENT_HATCHET.get(), "Ancient Hatchet");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");
