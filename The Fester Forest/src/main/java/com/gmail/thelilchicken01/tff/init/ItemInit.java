@@ -421,7 +421,7 @@ public class ItemInit {
 	
 	//Seathrown Pike
 	public static final RegistryObject<Item> SEATHROWN_PIKE = register("seathrown_pike", 
-			() -> new SeathrownPike(Tiers.IRON, 6, -3f, new Properties().tab(TheFesterForest.TFF_TAB).durability(550)));
+			() -> new SeathrownPike(Tiers.IRON, 10, -3f, new Properties().tab(TheFesterForest.TFF_TAB).durability(550)));
 	
 	/*
 	 * 
