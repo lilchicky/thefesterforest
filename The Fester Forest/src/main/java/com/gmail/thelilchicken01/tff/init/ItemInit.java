@@ -462,7 +462,7 @@ public class ItemInit {
 	
 	//Ancient Longsword
 	public static final RegistryObject<Item> ANCIENT_LONGSWORD = register("ancient_longsword", 
-			() -> new AncientLongsword(ModTiers.METAL, 11, -1.4f, new Properties().tab(TheFesterForest.TFF_TAB).durability(10)));
+			() -> new AncientLongsword(ModTiers.METAL, 11, -2.4f, new Properties().tab(TheFesterForest.TFF_TAB).durability(10)));
 	
 	/*
 	 * 
