@@ -22,6 +22,8 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.BossEvent;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ExperienceOrb;
@@ -135,10 +137,12 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 		
 		if (getHealth() < (getMaxHealth() * phase2health)) {
 			cooldownMod = 0.6;
+			addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 0));
 		}
 		
 		else if (getHealth() < (getMaxHealth() * phase3health)) {
 			cooldownMod = 0.3;
+			addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 1));
 		}
 		
 		if(!getLevel().isClientSide) {
