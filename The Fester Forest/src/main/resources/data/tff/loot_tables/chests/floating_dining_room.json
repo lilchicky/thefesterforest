@@ -209,7 +209,7 @@
         {
           "type": "minecraft:item",
           "weight": 3,
-          "name": "tff:ancient_dagger",
+          "name": "tff:ancient_hatchet",
           "functions": [
             {
               "function": "minecraft:enchant_randomly",
