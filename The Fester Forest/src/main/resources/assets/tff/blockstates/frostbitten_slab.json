@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tff:block/frostbitten_slab"
+    },
+    "type=double": {
+      "model": "tff:block/frostbitten_planks"
+    },
+    "type=top": {
+      "model": "tff:block/frostbitten_slab_top"
+    }
+  }
+}

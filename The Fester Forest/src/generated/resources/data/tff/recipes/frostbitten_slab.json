@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "tff:frostbitten_planks"
+    }
+  },
+  "result": {
+    "item": "tff:frostbitten_slab",
+    "count": 6
+  }
+}

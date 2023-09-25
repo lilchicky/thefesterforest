@@ -245,6 +245,10 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.FESTERING_CLUB.get(), "Festering Club");
 		add(ItemInit.ANCIENT_HATCHET.get(), "Ancient Hatchet");
 		add(ItemInit.ANCIENT_HAMMER.get(), "Ancient Hammer");
+		add(BlockInit.FROSTBITTEN_STAIRS.get(), "Frostbitten Stairs");
+		add(BlockInit.FROSTBITTEN_SLAB.get(), "Frostbitten Slab");
+		add(BlockInit.FROSTBITTEN_FENCE.get(), "Frostbitten Fence");
+		add(BlockInit.FROSTBITTEN_FENCE_GATE.get(), "Frostbitten Fence Gate");
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");

@@ -2,6 +2,7 @@
 	"replace": false,
 	"values": [
 		"tff:rottingwood_slabs",
-		"tff:slimy_slabs"
+		"tff:slimy_slabs",
+		"tff:frostbitten_slab"
 	]
 }

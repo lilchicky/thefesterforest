@@ -284,6 +284,42 @@ public class ModRecipeProvider extends RecipeProvider {
 					new ResourceLocation(TheFesterForest.MODID, 
 							BlockInit.CUBED_FUNGUS_GATE.get().getRegistryName().getPath()));
 		
+		// Frostbitten Fence
+		ShapedRecipeBuilder.shaped(BlockInit.FROSTBITTEN_FENCE.get(), 3)
+			.define('a', BlockInit.FROSTBITTEN_PLANKS.get().asItem()).define('b', Items.STICK)
+			.unlockedBy("has_" + BlockInit.FROSTBITTEN_PLANKS.get().getRegistryName(), 
+					has(BlockInit.FROSTBITTEN_PLANKS.get().asItem()))
+			.pattern("aba").pattern("aba").save(consumer, 
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.FROSTBITTEN_FENCE.get().getRegistryName().getPath()));
+				
+		// Frostbitten Fence Gate
+		ShapedRecipeBuilder.shaped(BlockInit.FROSTBITTEN_FENCE_GATE.get())
+			.define('a', BlockInit.FROSTBITTEN_PLANKS.get().asItem()).define('b', Items.STICK)
+			.unlockedBy("has_" + BlockInit.FROSTBITTEN_PLANKS.get().getRegistryName(), 
+					has(BlockInit.FROSTBITTEN_PLANKS.get().asItem()))
+			.pattern("bab").pattern("bab").save(consumer, 
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.FROSTBITTEN_PLANKS.get().getRegistryName().getPath()));
+		
+		//Frostbitten Stairs
+		ShapedRecipeBuilder.shaped(BlockInit.FROSTBITTEN_STAIRS.get(), 4)
+			.define('a', BlockInit.FROSTBITTEN_PLANKS.get().asItem())
+			.unlockedBy("has_" + BlockInit.FROSTBITTEN_PLANKS.get().getRegistryName(), 
+					has(BlockInit.FROSTBITTEN_PLANKS.get().asItem()))
+			.pattern("a  ").pattern("aa ").pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.FROSTBITTEN_STAIRS.get().getRegistryName().getPath()));
+		
+		//Frostbitten Slabs
+		ShapedRecipeBuilder.shaped(BlockInit.FROSTBITTEN_SLAB.get(), 6)
+			.define('a', BlockInit.FROSTBITTEN_PLANKS.get().asItem())
+			.unlockedBy("has_" + BlockInit.FROSTBITTEN_PLANKS.get().getRegistryName(), 
+					has(BlockInit.FROSTBITTEN_PLANKS.get().asItem()))
+			.pattern("aaa").save(consumer, 
+					new ResourceLocation(TheFesterForest.MODID, 
+							BlockInit.FROSTBITTEN_SLAB.get().getRegistryName().getPath()));
+		
 		
 		
 		//Rotting Pie

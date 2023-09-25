@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bab",
+    "bab"
+  ],
+  "key": {
+    "a": {
+      "item": "tff:frostbitten_planks"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "tff:frostbitten_fence_gate"
+  }
+}
