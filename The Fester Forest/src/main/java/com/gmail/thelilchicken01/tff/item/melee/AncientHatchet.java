@@ -52,6 +52,9 @@ public class AncientHatchet extends SwordItem {
 		else if (player.getEffect(MobEffects.DIG_SPEED).getAmplifier() < 20) {
 			player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 40, player.getEffect(MobEffects.DIG_SPEED).getAmplifier() + 1, false, false));
 		}
+		else {
+			player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 40, 20, false, false));
+		}
 		
 		return super.hurtEnemy(stack, player, target);
 	}
@@ -63,7 +66,7 @@ public class AncientHatchet extends SwordItem {
 		lore.add(new TextComponent("Melee").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("An old hatchet, great at quickly slicing at victims.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("Attacking unarmored foes causes you to become enraged,").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("Attacking foes causes you to become enraged,").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("steadily increasing attack speed the more you attack.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
