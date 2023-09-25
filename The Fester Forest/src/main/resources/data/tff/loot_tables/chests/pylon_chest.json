@@ -48,6 +48,22 @@
         {
           "type": "minecraft:item",
           "weight": 1,
+          "name": "tff:ancient_hammer",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
           "name": "tff:festering_club",
           "functions": [
             {
