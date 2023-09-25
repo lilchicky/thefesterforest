@@ -5,6 +5,8 @@ import java.util.List;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
@@ -31,6 +33,7 @@ public class ForgemasterHammer extends SwordItem {
 		Vec3 newVel = ((entityVel.subtract(playerVel)).normalize().add(new Vec3(0.0, 0.3, 0.0)).multiply(2.8, 1.4, 2.8));
 	
 		target.setDeltaMovement(newVel);
+		target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 3));
 		
 		return super.hurtEnemy(stack, target, attacker);
 	}
@@ -44,7 +47,7 @@ public class ForgemasterHammer extends SwordItem {
 		lore.add(new TextComponent("The massive hammer of the Forgemaster,").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("forged from an unknown metal and weighing tons.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("The heavy weight of the hammer throws anything it").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("touches.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("touches, as well as greatly slowing them.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 		for (int x = 0; x < drops.length; x++) {
