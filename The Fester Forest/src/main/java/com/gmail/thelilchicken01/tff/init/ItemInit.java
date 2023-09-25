@@ -81,6 +81,7 @@ import com.gmail.thelilchicken01.tff.item.melee.SeathrownPike;
 import com.gmail.thelilchicken01.tff.item.melee.ShockSword;
 import com.gmail.thelilchicken01.tff.item.misc.BugEggs;
 import com.gmail.thelilchicken01.tff.item.misc.CatalystItem;
+import com.gmail.thelilchicken01.tff.item.mixed.AncientHammer;
 import com.gmail.thelilchicken01.tff.item.mixed.FesteringClub;
 import com.gmail.thelilchicken01.tff.item.mixed.ReaverBlade;
 import com.gmail.thelilchicken01.tff.item.mixed.ShadowBow;
@@ -473,6 +474,10 @@ public class ItemInit {
 	//Festering Club
 	public static final RegistryObject<Item> FESTERING_CLUB = register("festering_club", 
 			() -> new FesteringClub(ModTiers.WOODEN, -3, -2.4f, new Properties().tab(TheFesterForest.TFF_TAB).durability(420)));
+	
+	//Ancient Hammer
+	public static final RegistryObject<Item> ANCIENT_HAMMER = register("ancient_hammer",
+			() -> new AncientHammer());
 	
 	/*
 	 * 

@@ -28,7 +28,7 @@ public class ModTiers {
 	});
 	
 	public static final ForgeTier METAL = new ForgeTier(4, 1600, 0.0F, 
-			10.0F, 15, BlockTags.NEEDS_IRON_TOOL, () -> {
+			10.0F, 15, BlockTags.NEEDS_DIAMOND_TOOL, () -> {
 	    return Ingredient.of(Items.IRON_INGOT);
 	});
 	
