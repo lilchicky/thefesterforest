@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top",
+  "textures": {
+    "top": "tff:block/cubed_fungus_door_top",
+    "bottom": "tff:block/cubed_fungus_door_bottom"
+  }
+}

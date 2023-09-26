@@ -24,6 +24,10 @@
 		"tff:frostbitten_stairs",
 		"tff:frostbitten_slab",
 		"tff:frostbitten_fence",
-		"tff:frostbitten_fence_gate"
+		"tff:frostbitten_fence_gate",
+		"tff:cubed_fungus_button",
+		"tff:cubed_fungus_door",
+		"tff:cubed_fungus_pressure_plate",
+		"tff:cubed_fungus_trapdoor"
 	]
 }

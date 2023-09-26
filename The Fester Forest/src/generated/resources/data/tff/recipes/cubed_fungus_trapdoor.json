@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "tff:cubed_fungus"
+    }
+  },
+  "result": {
+    "item": "tff:cubed_fungus_trapdoor",
+    "count": 2
+  }
+}

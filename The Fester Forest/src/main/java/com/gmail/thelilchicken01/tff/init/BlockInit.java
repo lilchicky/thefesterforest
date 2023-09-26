@@ -444,6 +444,27 @@ public class BlockInit {
 			() -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).strength(2.0f)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	// Cubed Fungus Button
+	public static final RegistryObject<Block> CUBED_FUNGUS_BUTTON = register("cubed_fungus_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).sound(SoundType.WOOD).noCollission()), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	// Cubed Fungus Pressure Plate
+    public static final RegistryObject<Block> CUBED_FUNGUS_PRESSURE_PLATE = register("cubed_fungus_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties
+            		.copy(Blocks.OAK_PRESSURE_PLATE).sound(SoundType.WOOD)), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+    
+    // Cubed Fungus Door
+    public static final RegistryObject<Block> CUBED_FUNGUS_DOOR = register("cubed_fungus_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion().sound(SoundType.WOOD)), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+    
+    // Cubed Fungus Trap Door
+    public static final RegistryObject<Block> CUBED_FUNGUS_TRAPDOOR = register("cubed_fungus_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion().sound(SoundType.WOOD)), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	/*
 	 * 
 	 * Rotting Stone

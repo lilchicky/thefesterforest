@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aa "
+  ],
+  "key": {
+    "a": {
+      "item": "tff:cubed_fungus"
+    }
+  },
+  "result": {
+    "item": "tff:cubed_fungus_pressure_plate"
+  }
+}

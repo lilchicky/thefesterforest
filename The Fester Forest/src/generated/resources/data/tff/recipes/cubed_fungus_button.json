@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:cubed_fungus"
+    }
+  ],
+  "result": {
+    "item": "tff:cubed_fungus_button"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:cubed_fungus_trapdoor"
+    ]
+  },
+  "criteria": {
+    "has_tff:cubed_fungus": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:cubed_fungus"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:cubed_fungus_trapdoor"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:cubed_fungus",
+      "has_the_recipe"
+    ]
+  ]
+}

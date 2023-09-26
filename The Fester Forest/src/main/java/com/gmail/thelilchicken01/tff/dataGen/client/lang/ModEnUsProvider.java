@@ -284,6 +284,17 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		/*
 		 * 
+		 * Cubed Fungus Stuff
+		 * 
+		 */
+		
+		add(BlockInit.CUBED_FUNGUS_BUTTON.get(), "Cubed Fungus Button");
+		add(BlockInit.CUBED_FUNGUS_PRESSURE_PLATE.get(), "Cubed Fungus Pressure Plate");
+		add(BlockInit.CUBED_FUNGUS_DOOR.get(), "Cubed Fungus Door");
+		add(BlockInit.CUBED_FUNGUS_TRAPDOOR.get(), "Cubed Fungus Trapdoor");
+		
+		/*
+		 * 
 		 * Special Cases (Curios, Tabs, Potions, etc.)
 		 * 
 		 */

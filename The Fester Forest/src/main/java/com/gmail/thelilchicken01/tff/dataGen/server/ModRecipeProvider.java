@@ -425,6 +425,33 @@ public class ModRecipeProvider extends RecipeProvider {
 				new ResourceLocation(TheFesterForest.MODID, 
 						BlockInit.FROSTBITTEN_TRAPDOOR.get().getRegistryName().getPath()));
 		
+		// Cubed Fungus Pressure Plate
+		ShapedRecipeBuilder.shaped(BlockInit.CUBED_FUNGUS_PRESSURE_PLATE.get(), 1)
+		.define('a', BlockInit.CUBED_FUNGUS.get().asItem())
+		.unlockedBy("has_" + BlockInit.CUBED_FUNGUS.get().getRegistryName(), 
+				has(BlockInit.CUBED_FUNGUS.get().asItem()))
+		.pattern("aa ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						BlockInit.CUBED_FUNGUS_PRESSURE_PLATE.get().getRegistryName().getPath()));
+		
+		// Cubed Fungus Door
+		ShapedRecipeBuilder.shaped(BlockInit.CUBED_FUNGUS_DOOR.get(), 3)
+		.define('a', BlockInit.CUBED_FUNGUS.get().asItem())
+		.unlockedBy("has_" + BlockInit.CUBED_FUNGUS.get().getRegistryName(), 
+				has(BlockInit.CUBED_FUNGUS.get().asItem()))
+		.pattern("aa ").pattern("aa ").pattern("aa ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						BlockInit.CUBED_FUNGUS_DOOR.get().getRegistryName().getPath()));
+		
+		// Cubed Fungus Trapdoor
+		ShapedRecipeBuilder.shaped(BlockInit.CUBED_FUNGUS_TRAPDOOR.get(), 2)
+		.define('a', BlockInit.CUBED_FUNGUS.get().asItem())
+		.unlockedBy("has_" + BlockInit.CUBED_FUNGUS.get().getRegistryName(), 
+				has(BlockInit.CUBED_FUNGUS.get().asItem()))
+		.pattern("aaa").pattern("aaa").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						BlockInit.CUBED_FUNGUS_TRAPDOOR.get().getRegistryName().getPath()));
+		
 		// Angelic Whistle
 		ShapedRecipeBuilder.shaped(ItemInit.ANGELIC_WHISTLE.get(), 1) // add , int to get number of output
 		.define('a', ItemInit.ANCIENT_WHISTLE.get().asItem())
@@ -456,6 +483,11 @@ public class ModRecipeProvider extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(BlockInit.FROSTBITTEN_BUTTON.get(), 1).requires(BlockInit.FROSTBITTEN_PLANKS.get()) //get item
 			.unlockedBy("has_" + BlockInit.FROSTBITTEN_PLANKS.get().getRegistryName(), has(BlockInit.FROSTBITTEN_PLANKS.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.FROSTBITTEN_BUTTON.get().getRegistryName().getPath()));
+		
+		// Cubed Fungus Button (Shapeless)
+		ShapelessRecipeBuilder.shapeless(BlockInit.CUBED_FUNGUS_BUTTON.get(), 1).requires(BlockInit.CUBED_FUNGUS.get()) //get item
+			.unlockedBy("has_" + BlockInit.CUBED_FUNGUS.get().getRegistryName(), has(BlockInit.CUBED_FUNGUS.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.CUBED_FUNGUS_BUTTON.get().getRegistryName().getPath()));
 		
 		// Rotting Bricks from Rotting Brick Block
 		ShapelessRecipeBuilder.shapeless(ItemInit.ROTTING_BRICK.get().asItem(), 4).requires(BlockInit.ROTTING_BRICKS.get()) //get item
