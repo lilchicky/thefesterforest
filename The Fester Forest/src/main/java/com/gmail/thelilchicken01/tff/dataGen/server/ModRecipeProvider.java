@@ -461,6 +461,15 @@ public class ModRecipeProvider extends RecipeProvider {
 				new ResourceLocation(TheFesterForest.MODID, 
 						BlockInit.ROTTING_STONE_PRESSURE_PLATE.get().getRegistryName().getPath()));
 		
+		// Fester Brick Pressure Plate
+		ShapedRecipeBuilder.shaped(BlockInit.FESTER_BRICK_PRESSURE_PLATE.get(), 1)
+		.define('a', BlockInit.ROTTING_BRICKS.get().asItem())
+		.unlockedBy("has_" + BlockInit.ROTTING_BRICKS.get().getRegistryName(), 
+				has(BlockInit.ROTTING_BRICKS.get().asItem()))
+		.pattern("aa ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						BlockInit.FESTER_BRICK_PRESSURE_PLATE.get().getRegistryName().getPath()));
+		
 		// Angelic Whistle
 		ShapedRecipeBuilder.shaped(ItemInit.ANGELIC_WHISTLE.get(), 1) // add , int to get number of output
 		.define('a', ItemInit.ANCIENT_WHISTLE.get().asItem())

@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "powered=false": { "model": "tff:block/fester_brick_pressure_plate/fester_brick_pressure_plate" },
+    "powered=true": { "model": "tff:block/fester_brick_pressure_plate/fester_brick_pressure_plate_down" }
+  }
+}

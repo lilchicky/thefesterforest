@@ -4,6 +4,7 @@ import java.util.function.Function;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.block.CorrodedShroom;
+import com.gmail.thelilchicken01.tff.block.FesterBrickPressurePlate;
 import com.gmail.thelilchicken01.tff.block.FrostbittenSapling;
 import com.gmail.thelilchicken01.tff.block.Frostvine;
 import com.gmail.thelilchicken01.tff.block.FungalGrowth;
@@ -598,6 +599,11 @@ public class BlockInit {
 	public static final RegistryObject<Block> FESTER_BRICK_WALL = register("fester_brick_wall", 
 			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	// Fester Brick Pressure Plate
+    public static final RegistryObject<Block> FESTER_BRICK_PRESSURE_PLATE = register("fester_brick_pressure_plate",
+            () -> new FesterBrickPressurePlate(), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	/*
 	 * 

@@ -295,12 +295,13 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		/*
 		 * 
-		 * Rotting Stone Stuff
+		 * Rotting Stone and Fester Brick Stuff
 		 * 
 		 */
 		
 		add(BlockInit.ROTTING_STONE_BUTTON.get(), "Rotting Stone Button");
 		add(BlockInit.ROTTING_STONE_PRESSURE_PLATE.get(), "Rotting Stone Pressure Plate");
+		add(BlockInit.FESTER_BRICK_PRESSURE_PLATE.get(), "Player Only Pressure Plate");
 		
 		/*
 		 * 
