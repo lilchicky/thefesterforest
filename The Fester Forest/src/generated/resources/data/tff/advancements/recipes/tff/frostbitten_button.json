@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:frostbitten_button"
+    ]
+  },
+  "criteria": {
+    "has_tff:frostbitten_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:frostbitten_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:frostbitten_button"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:frostbitten_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

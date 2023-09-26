@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "tff:frostbitten_planks"
+    }
+  },
+  "result": {
+    "item": "tff:frostbitten_trapdoor",
+    "count": 2
+  }
+}

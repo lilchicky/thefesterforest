@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:frostbitten_planks"
+    }
+  ],
+  "result": {
+    "item": "tff:frostbitten_button"
+  }
+}

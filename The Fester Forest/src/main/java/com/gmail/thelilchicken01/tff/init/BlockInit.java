@@ -296,27 +296,27 @@ public class BlockInit {
 	 * 
 	 */
 	
-	//Frostbitten Log
+	// Frostbitten Log
 	public static final RegistryObject<Block> FROSTBITTEN_LOG = register("frostbitten_log", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.WOOD)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 		
-	//Frostbitten Log Stripped
+	// Frostbitten Log Stripped
 	public static final RegistryObject<Block> STRIPPED_FROSTBITTEN_LOG = register("stripped_frostbitten_log", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).sound(SoundType.WOOD)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 				
-	//Frostbitten Wood
+	// Frostbitten Wood
 	public static final RegistryObject<Block> FROSTBITTEN_WOOD = register("frostbitten_wood", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.WOOD)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 				
-	//Frostbitten Wood Stripped
+	// Frostbitten Wood Stripped
 	public static final RegistryObject<Block> STRIPPED_FROSTBITTEN_WOOD = register("stripped_frostbitten_wood", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).sound(SoundType.WOOD)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
-	//Frostbitten Leaves
+	// Frostbitten Leaves
 	public static final RegistryObject<Block> FROSTBITTEN_LEAVES = register("frostbitten_leaves",
 			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.GLASS)) {
 
@@ -337,7 +337,7 @@ public class BlockInit {
 						
 			}, object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
-	//Frostbitten Wood Planks
+	// Frostbitten Wood Planks
 	public static final RegistryObject<Block> FROSTBITTEN_PLANKS = register("frostbitten_planks",
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)) {
 					
@@ -358,26 +358,47 @@ public class BlockInit {
 						
 			}, object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
-	//Frostbitten Stairs
+	// Frostbitten Stairs
 	public static final RegistryObject<Block> FROSTBITTEN_STAIRS = register("frostbitten_stairs", 
 			() -> new StairBlock(() -> BlockInit.ROTTING_PLANKS.get().defaultBlockState(), 
 					BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
-	//Frostbitten Slab
+	// Frostbitten Slab
 	public static final RegistryObject<Block> FROSTBITTEN_SLAB = register("frostbitten_slab", 
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
-	//Frostbitten Fence
+	// Frostbitten Fence
 	public static final RegistryObject<Block> FROSTBITTEN_FENCE = register("frostbitten_fence", 
 			() -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 		
-	//Frostbitten Gate
+	// Frostbitten Gate
 	public static final RegistryObject<Block> FROSTBITTEN_FENCE_GATE = register("frostbitten_fence_gate", 
 			() -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	// Frostbitten Button
+	public static final RegistryObject<Block> FROSTBITTEN_BUTTON = register("frostbitten_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).sound(SoundType.WOOD).noCollission()), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	// Frostbitten Pressure Plate
+    public static final RegistryObject<Block> FROSTBITTEN_PRESSURE_PLATE = register("frostbitten_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties
+            		.copy(Blocks.OAK_PRESSURE_PLATE).sound(SoundType.WOOD)), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+    
+    // Frostbitten Door
+    public static final RegistryObject<Block> FROSTBITTEN_DOOR = register("frostbitten_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion().sound(SoundType.WOOD)), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+    
+    // Frostbitten Trap Door
+    public static final RegistryObject<Block> FROSTBITTEN_TRAPDOOR = register("frostbitten_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion().sound(SoundType.WOOD)), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	/*
 	 * 

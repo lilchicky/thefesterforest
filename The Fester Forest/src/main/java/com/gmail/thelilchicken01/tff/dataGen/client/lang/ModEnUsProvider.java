@@ -273,6 +273,17 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		/*
 		 * 
+		 * Frostbitten Wood Stuff
+		 * 
+		 */
+		
+		add(BlockInit.FROSTBITTEN_BUTTON.get(), "Frostbitten Button");
+		add(BlockInit.FROSTBITTEN_PRESSURE_PLATE.get(), "Frostbitten Pressure Plate");
+		add(BlockInit.FROSTBITTEN_DOOR.get(), "Frostbitten Door");
+		add(BlockInit.FROSTBITTEN_TRAPDOOR.get(), "Frostbitten Trapdoor");
+		
+		/*
+		 * 
 		 * Special Cases (Curios, Tabs, Potions, etc.)
 		 * 
 		 */
