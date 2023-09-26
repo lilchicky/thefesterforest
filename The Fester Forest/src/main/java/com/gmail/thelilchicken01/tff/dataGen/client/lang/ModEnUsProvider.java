@@ -249,6 +249,23 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.FROSTBITTEN_SLAB.get(), "Frostbitten Slab");
 		add(BlockInit.FROSTBITTEN_FENCE.get(), "Frostbitten Fence");
 		add(BlockInit.FROSTBITTEN_FENCE_GATE.get(), "Frostbitten Fence Gate");
+		/*
+		 * 
+		 * Rottingwood Stuff
+		 * 
+		 */
+		
+		add(BlockInit.ROTTINGWOOD_BUTTON.get(), "Rottingwood Button");
+		add(BlockInit.ROTTINGWOOD_PRESSURE_PLATE.get(), "Rottingwood Pressure Plate");
+		add(BlockInit.ROTTINGWOOD_DOOR.get(), "Rottingwood Door");
+		add(BlockInit.ROTTINGWOOD_TRAPDOOR.get(), "Rottingwood Trapdoor");
+		
+		/*
+		 * 
+		 * Special Cases (Curios, Tabs, Potions, etc.)
+		 * 
+		 */
+		
 		add("curios.modifiers.feet", "When on feet:");
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");
