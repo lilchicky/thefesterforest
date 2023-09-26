@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom",
+  "textures": {
+    "top": "tff:block/rottingwood_door_top",
+    "bottom": "tff:block/rottingwood_door_bottom"
+  }
+}
