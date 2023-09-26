@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aa "
+  ],
+  "key": {
+    "a": {
+      "item": "tff:rotting_stone"
+    }
+  },
+  "result": {
+    "item": "tff:rotting_stone_pressure_plate"
+  }
+}

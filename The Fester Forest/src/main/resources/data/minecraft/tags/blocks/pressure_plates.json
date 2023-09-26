@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"tff:cubed_fungus_pressure_plate"
+		"tff:cubed_fungus_pressure_plate",
+		"tff:rotting_stone_pressure_plate"
 	]
 }

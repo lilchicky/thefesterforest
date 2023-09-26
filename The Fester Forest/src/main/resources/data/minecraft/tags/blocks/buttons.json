@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"tff:cubed_fungus_button"
+		"tff:cubed_fungus_button",
+		"tff:rotting_stone_button"
 	]
 }

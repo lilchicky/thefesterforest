@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:rotting_stone"
+    }
+  ],
+  "result": {
+    "item": "tff:rotting_stone_button"
+  }
+}

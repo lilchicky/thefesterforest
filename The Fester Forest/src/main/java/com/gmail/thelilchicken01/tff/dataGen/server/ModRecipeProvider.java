@@ -452,6 +452,15 @@ public class ModRecipeProvider extends RecipeProvider {
 				new ResourceLocation(TheFesterForest.MODID, 
 						BlockInit.CUBED_FUNGUS_TRAPDOOR.get().getRegistryName().getPath()));
 		
+		// Rotting Stone Pressure Plate
+		ShapedRecipeBuilder.shaped(BlockInit.ROTTING_STONE_PRESSURE_PLATE.get(), 1)
+		.define('a', BlockInit.ROTTING_STONE.get().asItem())
+		.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), 
+				has(BlockInit.ROTTING_STONE.get().asItem()))
+		.pattern("aa ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						BlockInit.ROTTING_STONE_PRESSURE_PLATE.get().getRegistryName().getPath()));
+		
 		// Angelic Whistle
 		ShapedRecipeBuilder.shaped(ItemInit.ANGELIC_WHISTLE.get(), 1) // add , int to get number of output
 		.define('a', ItemInit.ANCIENT_WHISTLE.get().asItem())
@@ -488,6 +497,11 @@ public class ModRecipeProvider extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(BlockInit.CUBED_FUNGUS_BUTTON.get(), 1).requires(BlockInit.CUBED_FUNGUS.get()) //get item
 			.unlockedBy("has_" + BlockInit.CUBED_FUNGUS.get().getRegistryName(), has(BlockInit.CUBED_FUNGUS.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.CUBED_FUNGUS_BUTTON.get().getRegistryName().getPath()));
+		
+		// Rotting Stone Button (Shapeless)
+		ShapelessRecipeBuilder.shapeless(BlockInit.ROTTING_STONE_BUTTON.get(), 1).requires(BlockInit.ROTTING_STONE.get()) //get item
+			.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), has(BlockInit.ROTTING_STONE.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_STONE_BUTTON.get().getRegistryName().getPath()));
 		
 		// Rotting Bricks from Rotting Brick Block
 		ShapelessRecipeBuilder.shapeless(ItemInit.ROTTING_BRICK.get().asItem(), 4).requires(BlockInit.ROTTING_BRICKS.get()) //get item

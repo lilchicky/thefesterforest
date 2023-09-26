@@ -489,6 +489,17 @@ public class BlockInit {
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	// Rotting Stone Button
+	public static final RegistryObject<Block> ROTTING_STONE_BUTTON = register("rotting_stone_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON).sound(SoundType.STONE).noCollission().requiresCorrectToolForDrops()), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	// Rotting Stone Pressure Plate
+    public static final RegistryObject<Block> ROTTING_STONE_PRESSURE_PLATE = register("rotting_stone_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties
+            		.copy(Blocks.STONE_PRESSURE_PLATE).sound(SoundType.STONE).requiresCorrectToolForDrops()), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	/*
 	 * 
 	 * Rotting Stone Bricks
