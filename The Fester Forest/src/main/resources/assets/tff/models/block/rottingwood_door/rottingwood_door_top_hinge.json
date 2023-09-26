@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/door_bottom_rh",
+  "parent": "minecraft:block/door_top_rh",
   "textures": {
     "top": "tff:block/rottingwood_door_top",
     "bottom": "tff:block/rottingwood_door_bottom"

@@ -1,6 +1,6 @@
 {
   "variants": {
-    "powered=false": { "model": "tff:block/rottingwood_pressure_plate" },
-    "powered=true": { "model": "tff:block/rottingwood_pressure_plate_down" }
+    "powered=false": { "model": "tff:block/rottingwood_pressure_plate/rottingwood_pressure_plate" },
+    "powered=true": { "model": "tff:block/rottingwood_pressure_plate/rottingwood_pressure_plate_down" }
   }
 }
