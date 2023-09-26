@@ -269,6 +269,27 @@ public class BlockInit {
 			() -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.SLIME_BLOCK)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	// Slimy Button
+	public static final RegistryObject<Block> SLIMY_BUTTON = register("slimy_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).sound(SoundType.SLIME_BLOCK).noCollission()), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	// Slimy Pressure Plate
+    public static final RegistryObject<Block> SLIMY_PRESSURE_PLATE = register("slimy_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties
+            		.copy(Blocks.OAK_PRESSURE_PLATE).sound(SoundType.SLIME_BLOCK)), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+    
+    // Slimy Door
+    public static final RegistryObject<Block> SLIMY_DOOR = register("slimy_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion().sound(SoundType.SLIME_BLOCK)), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+    
+    // Slimy Trap Door
+    public static final RegistryObject<Block> SLIMY_TRAPDOOR = register("slimy_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion().sound(SoundType.SLIME_BLOCK)), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	/*
 	 * 
 	 * Frostbitten Blocks

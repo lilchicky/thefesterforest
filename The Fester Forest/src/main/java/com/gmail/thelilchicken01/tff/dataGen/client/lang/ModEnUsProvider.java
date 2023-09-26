@@ -262,6 +262,17 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		/*
 		 * 
+		 * Slimy Wood Stuff
+		 * 
+		 */
+		
+		add(BlockInit.SLIMY_BUTTON.get(), "Slimy Button");
+		add(BlockInit.SLIMY_PRESSURE_PLATE.get(), "Slimy Pressure Plate");
+		add(BlockInit.SLIMY_DOOR.get(), "Slimy Door");
+		add(BlockInit.SLIMY_TRAPDOOR.get(), "Slimy Trapdoor");
+		
+		/*
+		 * 
 		 * Special Cases (Curios, Tabs, Potions, etc.)
 		 * 
 		 */

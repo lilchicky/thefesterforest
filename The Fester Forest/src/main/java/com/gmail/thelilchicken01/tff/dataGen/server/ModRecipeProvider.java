@@ -344,7 +344,61 @@ public class ModRecipeProvider extends RecipeProvider {
 					new ResourceLocation(TheFesterForest.MODID, 
 							BlockInit.REETLELIGHT.get().getRegistryName().getPath()));
 		
+		// Rottingwood Pressure Plate
+		ShapedRecipeBuilder.shaped(BlockInit.ROTTINGWOOD_PRESSURE_PLATE.get(), 1)
+		.define('a', BlockInit.ROTTING_PLANKS.get().asItem())
+		.unlockedBy("has_" + BlockInit.ROTTING_PLANKS.get().getRegistryName(), 
+				has(BlockInit.ROTTING_PLANKS.get().asItem()))
+		.pattern("aa ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						BlockInit.ROTTINGWOOD_PRESSURE_PLATE.get().getRegistryName().getPath()));
 		
+		// Rottingwood Door
+		ShapedRecipeBuilder.shaped(BlockInit.ROTTINGWOOD_DOOR.get(), 3)
+		.define('a', BlockInit.ROTTING_PLANKS.get().asItem())
+		.unlockedBy("has_" + BlockInit.ROTTING_PLANKS.get().getRegistryName(), 
+				has(BlockInit.ROTTING_PLANKS.get().asItem()))
+		.pattern("aa ").pattern("aa ").pattern("aa ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						BlockInit.ROTTINGWOOD_DOOR.get().getRegistryName().getPath()));
+		
+		// Rottingwood Trapdoor
+		ShapedRecipeBuilder.shaped(BlockInit.ROTTINGWOOD_TRAPDOOR.get(), 2)
+		.define('a', BlockInit.ROTTING_PLANKS.get().asItem())
+		.unlockedBy("has_" + BlockInit.ROTTING_PLANKS.get().getRegistryName(), 
+				has(BlockInit.ROTTING_PLANKS.get().asItem()))
+		.pattern("aaa").pattern("aaa").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						BlockInit.ROTTINGWOOD_TRAPDOOR.get().getRegistryName().getPath()));
+		
+		// Slimy Pressure Plate
+		ShapedRecipeBuilder.shaped(BlockInit.SLIMY_PRESSURE_PLATE.get(), 1)
+		.define('a', BlockInit.SLIMY_PLANKS.get().asItem())
+		.unlockedBy("has_" + BlockInit.SLIMY_PLANKS.get().getRegistryName(), 
+				has(BlockInit.SLIMY_PLANKS.get().asItem()))
+		.pattern("aa ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						BlockInit.SLIMY_PRESSURE_PLATE.get().getRegistryName().getPath()));
+		
+		// Slimy Door
+		ShapedRecipeBuilder.shaped(BlockInit.SLIMY_DOOR.get(), 3)
+		.define('a', BlockInit.SLIMY_PLANKS.get().asItem())
+		.unlockedBy("has_" + BlockInit.SLIMY_PLANKS.get().getRegistryName(), 
+				has(BlockInit.SLIMY_PLANKS.get().asItem()))
+		.pattern("aa ").pattern("aa ").pattern("aa ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						BlockInit.SLIMY_DOOR.get().getRegistryName().getPath()));
+		
+		// Slimy Trapdoor
+		ShapedRecipeBuilder.shaped(BlockInit.SLIMY_TRAPDOOR.get(), 2)
+		.define('a', BlockInit.SLIMY_PLANKS.get().asItem())
+		.unlockedBy("has_" + BlockInit.SLIMY_PLANKS.get().getRegistryName(), 
+				has(BlockInit.SLIMY_PLANKS.get().asItem()))
+		.pattern("aaa").pattern("aaa").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						BlockInit.SLIMY_TRAPDOOR.get().getRegistryName().getPath()));
+		
+		// Angelic Whistle
 		ShapedRecipeBuilder.shaped(ItemInit.ANGELIC_WHISTLE.get(), 1) // add , int to get number of output
 		.define('a', ItemInit.ANCIENT_WHISTLE.get().asItem())
 		.define('b', Items.NETHER_STAR)
@@ -360,6 +414,16 @@ public class ModRecipeProvider extends RecipeProvider {
 		 * Shapeless
 		 * 
 		 */
+		
+		// Rottingwood Button (Shapeless)
+		ShapelessRecipeBuilder.shapeless(BlockInit.ROTTINGWOOD_BUTTON.get(), 1).requires(BlockInit.ROTTING_PLANKS.get()) //get item
+			.unlockedBy("has_" + BlockInit.ROTTING_PLANKS.get().getRegistryName(), has(BlockInit.ROTTING_PLANKS.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTINGWOOD_BUTTON.get().getRegistryName().getPath()));
+		
+		// Slimy Button (Shapeless)
+		ShapelessRecipeBuilder.shapeless(BlockInit.SLIMY_BUTTON.get(), 1).requires(BlockInit.SLIMY_PLANKS.get()) //get item
+			.unlockedBy("has_" + BlockInit.SLIMY_PLANKS.get().getRegistryName(), has(BlockInit.SLIMY_PLANKS.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.SLIMY_BUTTON.get().getRegistryName().getPath()));
 		
 		// Rotting Bricks from Rotting Brick Block
 		ShapelessRecipeBuilder.shapeless(ItemInit.ROTTING_BRICK.get().asItem(), 4).requires(BlockInit.ROTTING_BRICKS.get()) //get item

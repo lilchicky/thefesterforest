@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:rotting_planks"
+    }
+  ],
+  "result": {
+    "item": "tff:rottingwood_button"
+  }
+}

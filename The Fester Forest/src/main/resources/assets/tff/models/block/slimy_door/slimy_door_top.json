@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top",
+  "textures": {
+    "top": "tff:block/slimy_door_top",
+    "bottom": "tff:block/slimy_door_bottom"
+  }
+}

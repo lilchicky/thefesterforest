@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aa ",
+    "aa ",
+    "aa "
+  ],
+  "key": {
+    "a": {
+      "item": "tff:rotting_planks"
+    }
+  },
+  "result": {
+    "item": "tff:rottingwood_door",
+    "count": 3
+  }
+}

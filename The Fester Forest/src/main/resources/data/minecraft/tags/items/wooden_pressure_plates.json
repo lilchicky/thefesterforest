@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"tff:rottingwood_pressure_plate"
+		"tff:rottingwood_pressure_plate",
+		"tff:slimy_pressure_plate"
 	]
 }

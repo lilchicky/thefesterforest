@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"tff:rottingwood_button"
+		"tff:rottingwood_button",
+		"tff:slimy_button"
 	]
 }

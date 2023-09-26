@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"tff:rottingwood_door"
+		"tff:rottingwood_door",
+		"tff:slimy_door"
 	]
 }

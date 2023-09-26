@@ -1,0 +1,6 @@
+{
+  "parent": "block/button_inventory",
+  "textures": {
+    "texture": "tff:block/slimy_planks"
+  }
+}

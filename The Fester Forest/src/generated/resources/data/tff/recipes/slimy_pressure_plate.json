@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aa "
+  ],
+  "key": {
+    "a": {
+      "item": "tff:slimy_planks"
+    }
+  },
+  "result": {
+    "item": "tff:slimy_pressure_plate"
+  }
+}

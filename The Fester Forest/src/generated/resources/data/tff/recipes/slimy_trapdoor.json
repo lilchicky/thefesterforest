@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "tff:slimy_planks"
+    }
+  },
+  "result": {
+    "item": "tff:slimy_trapdoor",
+    "count": 2
+  }
+}
