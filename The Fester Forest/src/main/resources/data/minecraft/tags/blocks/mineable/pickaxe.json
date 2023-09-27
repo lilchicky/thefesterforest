@@ -18,6 +18,8 @@
 		"tff:rotting_bone_block",
 		"tff:rotting_stone_button",
 		"tff:rotting_stone_pressure_plate",
-		"tff:fester_brick_pressure_plate"
+		"tff:fester_brick_pressure_plate",
+		"tff:compressed_rotting_sand_pressure_plate",
+		"tff:compressed_rotting_sand_button"
 	]
 }

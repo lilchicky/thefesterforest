@@ -305,6 +305,15 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		/*
 		 * 
+		 * Rotting Sand Stuff
+		 * 
+		 */
+		
+		add(BlockInit.COMPRESSED_ROTTING_SAND_BUTTON.get(), "Compressed Rotting Sand Button");
+		add(BlockInit.COMPRESSED_ROTTING_SAND_PRESSURE_PLATE.get(), "Compressed Rotting Sand Pressure Plate");
+		
+		/*
+		 * 
 		 * Special Cases (Curios, Tabs, Potions, etc.)
 		 * 
 		 */

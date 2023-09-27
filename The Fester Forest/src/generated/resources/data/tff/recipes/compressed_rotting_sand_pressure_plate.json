@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aa "
+  ],
+  "key": {
+    "a": {
+      "item": "tff:compressed_rotting_sand"
+    }
+  },
+  "result": {
+    "item": "tff:compressed_rotting_sand_pressure_plate"
+  }
+}

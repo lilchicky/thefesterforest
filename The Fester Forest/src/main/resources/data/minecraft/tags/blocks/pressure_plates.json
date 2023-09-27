@@ -3,6 +3,7 @@
 	"values": [
 		"tff:cubed_fungus_pressure_plate",
 		"tff:rotting_stone_pressure_plate",
-		"tff:fester_brick_pressure_plate"
+		"tff:fester_brick_pressure_plate",
+		"tff:compressed_rotting_sand_pressure_plate"
 	]
 }

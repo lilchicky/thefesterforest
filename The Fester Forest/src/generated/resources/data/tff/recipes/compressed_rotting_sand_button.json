@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:compressed_rotting_sand"
+    }
+  ],
+  "result": {
+    "item": "tff:compressed_rotting_sand_button"
+  }
+}

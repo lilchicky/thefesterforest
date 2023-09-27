@@ -461,6 +461,15 @@ public class ModRecipeProvider extends RecipeProvider {
 				new ResourceLocation(TheFesterForest.MODID, 
 						BlockInit.ROTTING_STONE_PRESSURE_PLATE.get().getRegistryName().getPath()));
 		
+		// Compressed Rotting Sand Pressure Plate
+		ShapedRecipeBuilder.shaped(BlockInit.COMPRESSED_ROTTING_SAND_PRESSURE_PLATE.get(), 1)
+		.define('a', BlockInit.COMPRESSED_ROTTING_SAND.get().asItem())
+		.unlockedBy("has_" + BlockInit.COMPRESSED_ROTTING_SAND.get().getRegistryName(), 
+				has(BlockInit.COMPRESSED_ROTTING_SAND.get().asItem()))
+		.pattern("aa ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						BlockInit.COMPRESSED_ROTTING_SAND_PRESSURE_PLATE.get().getRegistryName().getPath()));
+		
 		// Fester Brick Pressure Plate
 		ShapedRecipeBuilder.shaped(BlockInit.FESTER_BRICK_PRESSURE_PLATE.get(), 1)
 		.define('a', BlockInit.ROTTING_BRICKS.get().asItem())
@@ -511,6 +520,11 @@ public class ModRecipeProvider extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(BlockInit.ROTTING_STONE_BUTTON.get(), 1).requires(BlockInit.ROTTING_STONE.get()) //get item
 			.unlockedBy("has_" + BlockInit.ROTTING_STONE.get().getRegistryName(), has(BlockInit.ROTTING_STONE.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.ROTTING_STONE_BUTTON.get().getRegistryName().getPath()));
+		
+		// Compressed Rotting Sand Button (Shapeless)
+		ShapelessRecipeBuilder.shapeless(BlockInit.COMPRESSED_ROTTING_SAND_BUTTON.get(), 1).requires(BlockInit.COMPRESSED_ROTTING_SAND.get()) //get item
+			.unlockedBy("has_" + BlockInit.COMPRESSED_ROTTING_SAND.get().getRegistryName(), has(BlockInit.COMPRESSED_ROTTING_SAND.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, BlockInit.COMPRESSED_ROTTING_SAND_BUTTON.get().getRegistryName().getPath()));
 		
 		// Rotting Bricks from Rotting Brick Block
 		ShapelessRecipeBuilder.shapeless(ItemInit.ROTTING_BRICK.get().asItem(), 4).requires(BlockInit.ROTTING_BRICKS.get()) //get item

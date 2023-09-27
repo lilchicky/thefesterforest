@@ -569,6 +569,17 @@ public class BlockInit {
 			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	// Compressed Rotting Sand Button
+	public static final RegistryObject<Block> COMPRESSED_ROTTING_SAND_BUTTON = register("compressed_rotting_sand_button",
+            () -> new StoneButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON).sound(SoundType.STONE).noCollission().requiresCorrectToolForDrops()), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	// Compressed Rotting Sand Pressure Plate
+    public static final RegistryObject<Block> COMPRESSED_ROTTING_SAND_PRESSURE_PLATE = register("compressed_rotting_sand_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties
+            		.copy(Blocks.STONE_PRESSURE_PLATE).sound(SoundType.STONE).requiresCorrectToolForDrops()), 
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	/*
 	 * 
 	 * Fester Bricks and Fester Ore

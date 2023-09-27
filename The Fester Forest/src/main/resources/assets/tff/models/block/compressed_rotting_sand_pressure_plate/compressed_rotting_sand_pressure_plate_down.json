@@ -1,0 +1,6 @@
+{
+  "parent": "block/pressure_plate_down",
+  "textures": {
+    "texture": "tff:block/compressed_rotting_sand"
+  }
+}

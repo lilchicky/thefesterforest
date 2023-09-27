@@ -1,6 +1,8 @@
 {
   "block.tff.blue_fester_shroom_block": "Blue Fester Shroom Block",
   "block.tff.compressed_rotting_sand": "Compressed Rotting Sand",
+  "block.tff.compressed_rotting_sand_button": "Compressed Rotting Sand Button",
+  "block.tff.compressed_rotting_sand_pressure_plate": "Compressed Rotting Sand Pressure Plate",
   "block.tff.compressed_rotting_sand_slabs": "Compressed Rotting Sand Slab",
   "block.tff.compressed_rotting_sand_stairs": "Compressed Rotting Sand Stairs",
   "block.tff.compressed_rotting_sand_wall": "Compressed Rotting Sand Wall",
