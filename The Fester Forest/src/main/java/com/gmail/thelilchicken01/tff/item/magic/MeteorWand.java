@@ -6,20 +6,25 @@ import java.util.function.Supplier;
 
 import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
+import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
+import com.mojang.datafixers.types.templates.Tag;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -29,7 +34,13 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -37,6 +48,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class MeteorWand extends ProjectileWeaponItem {
 	
 	private String[] drops = {"The Forgemaster"};
+	
+	private int counter = 0;
 	
 	protected int shotDamage = 20;
 	protected double inaccuracy;
@@ -49,6 +62,45 @@ public class MeteorWand extends ProjectileWeaponItem {
 	public MeteorWand(Properties properties, double inaccuracy) {
 		super(properties);
 		this.inaccuracy = inaccuracy;
+	}
+	
+	@Override
+	public void inventoryTick(ItemStack stack, Level level, Entity user, int num, boolean bool) {
+		
+		//counter++;
+		
+		//if (counter > 1) {
+		
+			if(user instanceof Player) {
+				Player player = (Player) user;
+				if (player.getMainHandItem() == stack || player.getOffhandItem() == stack) {
+				
+					BlockHitResult blockhitresult = getPlayerPOVHitResult(level, player, ClipContext.Fluid.NONE);
+					if (blockhitresult.getType() == HitResult.Type.BLOCK) {
+						BlockPos lookPos = blockhitresult.getBlockPos();
+					
+						if (player.level.isClientSide() && 
+								player.canInteractWith(lookPos, 1)) {
+						
+							player.level.addParticle(ParticleInit.HELLFLAME_PARTICLES.get(), 
+									lookPos.getX() + 0.5, 
+									lookPos.getY() + 1.1, 
+									lookPos.getZ() + 0.5, 
+									0.0, 0.0, 0.0);
+						
+						}
+					
+					}
+				
+				}
+			}
+			
+			//counter = 0;
+		
+		//}
+		
+		super.inventoryTick(stack, level, user, num, bool);
+		
 	}
 	
 	@Override

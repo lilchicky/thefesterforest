@@ -21,7 +21,7 @@ public class HellflameParticle extends TextureSheetParticle {
 		this.yd = yd;
 		this.zd = zd;
 		this.quadSize *= 1.0f; //size of particle
-		this.lifetime = 60; //lifetime in ticks
+		this.lifetime = 2; //lifetime in ticks
 		this.setSpriteFromAge(spriteSet); //must have
 		
 		this.rCol = 1f; //all of these are colors
@@ -33,7 +33,7 @@ public class HellflameParticle extends TextureSheetParticle {
 	@Override
 	public void tick() {
 		super.tick();
-		fadeOut();
+		//fadeOut();
 	}
 
 	private void fadeOut() {
