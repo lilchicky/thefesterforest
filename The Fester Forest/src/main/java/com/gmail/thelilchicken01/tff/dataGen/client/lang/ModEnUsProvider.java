@@ -251,6 +251,14 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.FROSTBITTEN_FENCE_GATE.get(), "Frostbitten Fence Gate");
 		/*
 		 * 
+		 * Weapons and Armor
+		 * 
+		 */
+		
+		add(ItemInit.SHARD_OF_ICE.get(), "Shard of Ice");
+		
+		/*
+		 * 
 		 * Rottingwood Stuff
 		 * 
 		 */
@@ -311,6 +319,14 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		add(BlockInit.COMPRESSED_ROTTING_SAND_BUTTON.get(), "Compressed Rotting Sand Button");
 		add(BlockInit.COMPRESSED_ROTTING_SAND_PRESSURE_PLATE.get(), "Compressed Rotting Sand Pressure Plate");
+		
+		/*
+		 * 
+		 * Projectiles
+		 * 
+		 */
+		
+		add(ItemInit.ICE_SPIKE.get(), "Ice Spike");
 		
 		/*
 		 * 

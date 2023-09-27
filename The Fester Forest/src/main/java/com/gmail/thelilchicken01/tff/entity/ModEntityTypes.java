@@ -21,6 +21,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.goop.SmallGoopEntity;
 import com.gmail.thelilchicken01.tff.entity.projectile.BoneCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.BranchCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.ElectricCharge;
+import com.gmail.thelilchicken01.tff.entity.projectile.IceSpike;
 import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
 
 import net.minecraft.resources.ResourceLocation;
@@ -40,6 +41,7 @@ public class ModEntityTypes {
 	public static RegistryObject<EntityType<BoneCharge>> bone_charge;
 	public static RegistryObject<EntityType<MeteorCharge>> meteor_charge;
 	public static RegistryObject<EntityType<ElectricCharge>> electric_charge;
+	public static RegistryObject<EntityType<IceSpike>> ice_spike;
 	
 	//Rotting Skeleton
 	public static final RegistryObject<EntityType<RottingSkeletonEntity>> ROTTING_SKELETON =
@@ -160,6 +162,15 @@ public class ModEntityTypes {
 				.<ElectricCharge>of(ElectricCharge::new, MobCategory.MISC)
 				.sized(0.4125f, 0.4125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
 				.build(TheFesterForest.MODID + ":electric_charge"));
+	}
+	
+	//Ice Spike
+	
+	static {
+		ice_spike = ENTITY_TYPES.register("ice_spike", () -> EntityType.Builder
+				.<IceSpike>of(IceSpike::new, MobCategory.MISC)
+				.sized(0.4125f, 0.4125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
+				.build(TheFesterForest.MODID + ":ice_spike"));
 	}
 	
 	

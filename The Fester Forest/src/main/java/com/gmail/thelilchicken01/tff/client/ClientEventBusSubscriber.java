@@ -40,6 +40,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.goop.SmallGoopEntity;
 import com.gmail.thelilchicken01.tff.entity.projectile.BoneCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.BranchCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.ElectricCharge;
+import com.gmail.thelilchicken01.tff.entity.projectile.IceSpike;
 import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
@@ -176,6 +177,9 @@ public class ClientEventBusSubscriber {
     	
     	event.registerEntityRenderer(ModEntityTypes.electric_charge.get(), 
     			(context) -> new ThrownItemRenderer<ElectricCharge>(context));
+    	
+    	event.registerEntityRenderer(ModEntityTypes.ice_spike.get(), 
+    			(context) -> new ThrownItemRenderer<IceSpike>(context));
     }
 	
 	@SubscribeEvent

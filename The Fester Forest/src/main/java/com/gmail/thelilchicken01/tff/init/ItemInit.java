@@ -78,6 +78,7 @@ import com.gmail.thelilchicken01.tff.item.melee.ForgemasterHammer;
 import com.gmail.thelilchicken01.tff.item.melee.GoopySword;
 import com.gmail.thelilchicken01.tff.item.melee.LifeScythe;
 import com.gmail.thelilchicken01.tff.item.melee.SeathrownPike;
+import com.gmail.thelilchicken01.tff.item.melee.ShardOfIce;
 import com.gmail.thelilchicken01.tff.item.melee.ShockSword;
 import com.gmail.thelilchicken01.tff.item.misc.BugEggs;
 import com.gmail.thelilchicken01.tff.item.misc.CatalystItem;
@@ -89,6 +90,7 @@ import com.gmail.thelilchicken01.tff.item.mixed.VolatileSword;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.ElectricShot;
+import com.gmail.thelilchicken01.tff.item.projectile.IceSpikeShot;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
 import com.gmail.thelilchicken01.tff.item.tool.BonePickaxe;
 import com.gmail.thelilchicken01.tff.item.tool.ElectricPickaxe;
@@ -455,6 +457,17 @@ public class ItemInit {
 	
 	/*
 	 * 
+	 * Frozen Items
+	 * 
+	 */
+	
+	//Shard of Ice
+	public static final RegistryObject<Item> SHARD_OF_ICE = register("shard_of_ice",
+			() -> new ShardOfIce(new Properties().tab(TheFesterForest.TFF_TAB).durability(1790), 
+					0.1).repair(() -> Ingredient.of(Items.PACKED_ICE)));
+	
+	/*
+	 * 
 	 * Generic Weapons
 	 * 
 	 */
@@ -655,6 +668,10 @@ public class ItemInit {
 	//Electric Charge
 	public static final RegistryObject<ElectricShot> ELECTRIC_CHARGE = register("electric_charge",
 			() -> new ElectricShot(new Properties().stacksTo(1), 15));
+	
+	//Ice Spike
+	public static final RegistryObject<IceSpikeShot> ICE_SPIKE = register("ice_spike",
+			() -> new IceSpikeShot(new Properties().stacksTo(1), 15));
 	
 	/*
 	 * 

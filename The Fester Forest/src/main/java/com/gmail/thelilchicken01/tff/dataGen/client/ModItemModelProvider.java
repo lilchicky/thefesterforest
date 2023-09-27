@@ -159,6 +159,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		handheldItem(ItemInit.FESTERING_CLUB.get());
 		handheldItem(ItemInit.ANCIENT_HATCHET.get());
 		handheldItem(ItemInit.ANCIENT_HAMMER.get());
+		handheldItem(ItemInit.SHARD_OF_ICE.get());
 		
 	}
 	
