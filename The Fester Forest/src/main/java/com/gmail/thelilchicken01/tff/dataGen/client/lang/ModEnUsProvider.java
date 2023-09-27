@@ -41,6 +41,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("death.attack.tff_banshee_mob", "%1$s had their eardrums ruptured by %2$s");
 		add("death.attack.tff_banshee_mob.player", "%1$s had their eardrums ruptured by %2$s");
 		add("death.attack.tff_electric_charge", "%1$s met a shocking end");
+		add("death.attack.tff_frozen_damage", "%1$s was pierced by an icicle");
+		add("death.attack.tff_frozen_damage.player", "%2$s was pierced by an icicle from %1$s");
 		//Other
 		add(BlockInit.ROTTING_BRICKS.get(), "Fester Bricks");
 		add(ItemInit.ROTTING_BRICK.get(), "Fester Brick");

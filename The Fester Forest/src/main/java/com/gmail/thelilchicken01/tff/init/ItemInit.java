@@ -463,8 +463,7 @@ public class ItemInit {
 	
 	//Shard of Ice
 	public static final RegistryObject<Item> SHARD_OF_ICE = register("shard_of_ice",
-			() -> new ShardOfIce(new Properties().tab(TheFesterForest.TFF_TAB).durability(1790), 
-					0.1).repair(() -> Ingredient.of(Items.PACKED_ICE)));
+			() -> new ShardOfIce(new Properties().tab(TheFesterForest.TFF_TAB).durability(1790), 0.1));
 	
 	/*
 	 * 

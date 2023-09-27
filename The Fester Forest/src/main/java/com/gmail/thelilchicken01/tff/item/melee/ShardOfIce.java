@@ -9,6 +9,8 @@ import com.gmail.thelilchicken01.tff.entity.projectile.IceSpike;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.item.ModTiers;
+import com.gmail.thelilchicken01.tff.item.item.SwordProjectileItem;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 import com.gmail.thelilchicken01.tff.item.projectile.IceSpikeShot;
 import com.google.common.collect.ImmutableMultimap;
@@ -30,16 +32,19 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileWeaponItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class ShardOfIce extends ProjectileWeaponItem {
+public class ShardOfIce extends SwordProjectileItem {
 	
 	protected int bonusDamage;
 	protected double inaccuracy;
@@ -48,28 +53,12 @@ public class ShardOfIce extends ProjectileWeaponItem {
 	
 	protected Supplier<Ingredient> repairMaterial;
 	
-	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
-	
 	private String[] drops = {"Frostbitten King"};
 
 	public ShardOfIce(Properties properties, double inaccuracy) {
-		super(properties);
+		super(ModTiers.FROZEN, 7, -2.4f, properties);
 		this.inaccuracy = inaccuracy;
 		
-		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, 
-	    		"Weapon modifier", 18.0, AttributeModifier.Operation.ADDITION));
-	    builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, 
-	    		"Weapon modifier", -2.4f, AttributeModifier.Operation.ADDITION));
-	    
-	    this.defaultModifiers = builder.build();
-		
-	}
-	
-	@Override
-	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot slot) {
-		
-		return slot == EquipmentSlot.MAINHAND ? this.defaultModifiers : super.getDefaultAttributeModifiers(slot);
 	}
 	
 	@Override
@@ -81,12 +70,16 @@ public class ShardOfIce extends ProjectileWeaponItem {
 			boolean bulletFree = true;
 			
 			ItemStack shotAmmo = new ItemStack(ItemInit.ICE_SPIKE.get());
-			shoot(world, player, gun, shotAmmo, bulletItem, bulletFree);
+			if (hand == InteractionHand.MAIN_HAND) {
+				
+				shoot(world, player, gun, shotAmmo, bulletItem, bulletFree);
+				gun.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand()));
+				
+			}
 			
-			gun.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand()));
 		}
 		
-		world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BONE_BLOCK_BREAK, SoundSource.PLAYERS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+		world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.GLASS_BREAK, SoundSource.PLAYERS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
 		player.awardStat(Stats.ITEM_USED.get(this));
 		
 		player.getCooldowns().addCooldown(this, 100);
@@ -96,7 +89,9 @@ public class ShardOfIce extends ProjectileWeaponItem {
 	protected void shoot(Level world, Player player, ItemStack gun, ItemStack ammo, IceSpikeShot bulletItem, boolean bulletFree) {
 		IceSpike shot = bulletItem.createProjectile(world, ammo, player);
 		shot.shootFromRotation(player, player.getXRot(), player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-		shot.setDamage(getDamage(player.getMainHandItem()));
+		shot.setDamage((EnchantmentHelper.getEnchantments(gun).containsKey(Enchantments.SHARPNESS) ? 
+				((EnchantmentHelper.getEnchantments(gun).get(Enchantments.SHARPNESS) + 1) * 0.5) : 0) + 
+				(player.getAttributeValue(Attributes.ATTACK_DAMAGE)));
 		shot.setIgnoreInvulnerability(ignoreInvulnerability);
 
 		world.addFreshEntity(shot);
@@ -113,7 +108,7 @@ public class ShardOfIce extends ProjectileWeaponItem {
 				super.canApplyAtEnchantingTable(stack, enchantment);
 	}
 
-	private static final Predicate<ItemStack> BULLETS = (stack) -> stack.getItem() instanceof BoneShot;
+	private static final Predicate<ItemStack> BULLETS = (stack) -> stack.getItem() instanceof IceSpikeShot;
 
 	@Override
 	public Predicate<ItemStack> getAllSupportedProjectiles() {
@@ -145,7 +140,8 @@ public class ShardOfIce extends ProjectileWeaponItem {
 			lore.add(new TextComponent("A very sharp shard of solid ice.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Right click to fire a sharp bolt of ice, dealing").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("damage equal to your swords attack damage.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("damage equal to your sword's damage plus any equipment").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("damage buffs.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < drops.length; x++) {

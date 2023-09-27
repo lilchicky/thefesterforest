@@ -56,5 +56,10 @@ public class ModTiers {
 			10.0F, 25, BlockTags.NEEDS_DIAMOND_TOOL, () -> {
 	    return Ingredient.of(Items.IRON_INGOT);
 	});
+	
+	public static final ForgeTier FROZEN = new ForgeTier(4, 1600, 0.0F, 
+			10.0F, 15, BlockTags.NEEDS_DIAMOND_TOOL, () -> {
+	    return Ingredient.of(Items.PACKED_ICE);
+	});
 
 }

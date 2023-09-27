@@ -41,11 +41,11 @@ public class IceSpike extends Fireball {
 	}
 
 	public IceSpike(Level worldIn, LivingEntity shooter, double accelX, double accelY, double accelZ) {
-		super(ModEntityTypes.bone_charge.get(), shooter, accelX, accelY, accelZ, worldIn);
+		super(ModEntityTypes.ice_spike.get(), shooter, accelX, accelY, accelZ, worldIn);
 	}
 
 	public IceSpike(Level worldIn, double x, double y, double z, double accelX, double accelY, double accelZ) {
-		super(ModEntityTypes.bone_charge.get(), x, y, z, accelX, accelY, accelZ, worldIn);
+		super(ModEntityTypes.ice_spike.get(), x, y, z, accelX, accelY, accelZ, worldIn);
 	}
 	
 	private static final double STOP_TRESHOLD = 0.01;
@@ -66,7 +66,7 @@ public class IceSpike extends Fireball {
 	
 	@Override
 	protected ParticleOptions getTrailParticle() {
-		return ParticleInit.BONE_PARTICLE.get();
+		return ParticleTypes.SNOWFLAKE;
 	}
 	
 	@Override
@@ -80,7 +80,7 @@ public class IceSpike extends Fireball {
 			if (isOnFire()) target.setSecondsOnFire(5);
 			int lastHurtResistant = target.invulnerableTime;
 			if (ignoreInvulnerability) target.invulnerableTime = 0;
-			boolean damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_bone_damage",
+			boolean damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_frozen_damage",
 					this, shooter).setProjectile().bypassArmor(),
 					(float) bullet.modifyDamage(damage, this, target, shooter, level));
 			
@@ -92,6 +92,8 @@ public class IceSpike extends Fireball {
 					Vec3 vec = getDeltaMovement().multiply(1, 0, 1).normalize().scale(actualKnockback);
 					if (vec.lengthSqr() > 0) livingTarget.push(vec.x, 0.1, vec.z);
 				}
+				
+				livingTarget.setTicksFrozen(140);
 
 				if (shooter instanceof LivingEntity) doEnchantDamageEffects((LivingEntity)shooter, target);
 				

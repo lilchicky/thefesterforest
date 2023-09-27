@@ -113,6 +113,8 @@
   "death.attack.tff_branch_damage": "%1$s was strangled by branches",
   "death.attack.tff_branch_damage.player": "%2$s strangled %1$s to death with branches",
   "death.attack.tff_electric_charge": "%1$s met a shocking end",
+  "death.attack.tff_frozen_damage": "%1$s was pierced by an icicle",
+  "death.attack.tff_frozen_damage.player": "%2$s was pierced by an icicle from %1$s",
   "death.attack.tff_goop_acid": "%1$s was melted into a slimy puddle",
   "death.attack.tff_goop_acid.player": "%2$s turned %1$s into a puddle of slime",
   "death.attack.tff_knockup_damage": "%1$s was slammed into the ground",
