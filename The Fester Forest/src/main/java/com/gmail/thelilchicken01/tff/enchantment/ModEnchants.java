@@ -12,12 +12,13 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModEnchants {
 
-	public static RegistryObject<Enchantment> arcanePower;
+	public static RegistryObject<Enchantment> arcanePower, quickcast;
 	public static final EnchantmentCategory MAGIC = EnchantmentCategory.create("TFF_MAGIC", (item) -> item instanceof MagicItem);
 	public static final DeferredRegister<Enchantment> MOD_ENCHANTS = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, TheFesterForest.MODID);
 
 	static {
 		arcanePower = MOD_ENCHANTS.register("arcane_power", () -> new ArcanePowerEnchant(MAGIC, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND}));
+		quickcast = MOD_ENCHANTS.register("quickcast", () -> new QuickcastEnchant(MAGIC, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND}));
 	}
 	
 }

@@ -70,7 +70,7 @@ public class BoneLauncher extends ProjectileWeaponItem implements MagicItem {
 		world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BONE_BLOCK_BREAK, SoundSource.PLAYERS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
 		player.awardStat(Stats.ITEM_USED.get(this));
 		
-		player.getCooldowns().addCooldown(this, 2);
+		player.getCooldowns().addCooldown(this, ItemUtil.getQuickcastCooldown(2, gun));
 		return super.use(world, player, hand);
 	}
 	

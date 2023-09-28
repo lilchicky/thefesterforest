@@ -2,6 +2,7 @@ package com.gmail.thelilchicken01.tff.item.mixed;
 
 import java.util.List;
 
+import com.gmail.thelilchicken01.tff.enchantment.ModEnchants;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.EffectsUtil;
@@ -19,6 +20,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -53,9 +55,11 @@ public class ReaverBlade extends SwordItem implements MagicItem {
 			}
 		}
 		
-		target.addEffect(new MobEffectInstance(effect.getEffect(), effect.getEffectDuration() * 20, strength));
+		target.addEffect(new MobEffectInstance(effect.getEffect(), (effect.getEffectDuration() * 20) + 
+				(EnchantmentHelper.getItemEnchantmentLevel(ModEnchants.quickcast.get(), stack) * 20), strength));
 		
-		attacker.addEffect(new MobEffectInstance(effect.getEffect(), effect.getEffectDuration() * 20, strength));
+		attacker.addEffect(new MobEffectInstance(effect.getEffect(), (effect.getEffectDuration() * 20) + 
+				(EnchantmentHelper.getItemEnchantmentLevel(ModEnchants.quickcast.get(), stack) * 20), strength));
 		
 		//System.out.println(effect.getEffect().getDescriptionId() + ", " + effect.getEffectDuration() + ", " + strength);
 		

@@ -6,6 +6,7 @@ import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.capability.SwimHandler;
 import com.gmail.thelilchicken01.tff.enchantment.ArcanePowerEnchant;
 import com.gmail.thelilchicken01.tff.enchantment.ModEnchants;
+import com.gmail.thelilchicken01.tff.enchantment.QuickcastEnchant;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 
 import net.minecraft.world.damagesource.DamageSource;
@@ -80,6 +81,12 @@ public class ItemUtil {
 	public static double getArcanePowerDamageMod(ItemStack stack) {
 		
 		return ArcanePowerEnchant.getDamage(EnchantmentHelper.getItemEnchantmentLevel(ModEnchants.arcanePower.get(), stack));
+		
+	}
+	
+	public static int getQuickcastCooldown(int cooldown, ItemStack stack) {
+		
+		return QuickcastEnchant.cdr(EnchantmentHelper.getItemEnchantmentLevel(ModEnchants.quickcast.get(), stack), cooldown);
 		
 	}
 	

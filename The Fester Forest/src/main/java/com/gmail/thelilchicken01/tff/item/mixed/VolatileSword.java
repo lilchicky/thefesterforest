@@ -65,7 +65,7 @@ public class VolatileSword extends SwordItem implements MagicItem {
 			//run function to interact with surrounding mobs
 			getEnts(nearbyEntities, player, world, player.getItemInHand(hand));
 			//put sword on cooldown
-			player.getCooldowns().addCooldown(this, 60); //default 100
+			player.getCooldowns().addCooldown(this, ItemUtil.getQuickcastCooldown(60, player.getItemInHand(hand))); //default 100
 			
 		}
 		//is client side

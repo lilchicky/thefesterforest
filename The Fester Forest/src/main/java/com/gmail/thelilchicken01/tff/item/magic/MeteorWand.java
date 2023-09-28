@@ -143,7 +143,7 @@ public class MeteorWand extends ProjectileWeaponItem implements MagicItem {
 						1, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand()));
 				
 				player.awardStat(Stats.ITEM_USED.get(this));
-				player.getCooldowns().addCooldown(this, cooldown * 20);
+				player.getCooldowns().addCooldown(this, ItemUtil.getQuickcastCooldown(cooldown * 20, stack));
 			}
 		}
 		
@@ -187,7 +187,8 @@ public class MeteorWand extends ProjectileWeaponItem implements MagicItem {
 		}
 		
 		context.getPlayer().awardStat(Stats.ITEM_USED.get(this));
-		context.getPlayer().getCooldowns().addCooldown(this, cooldown * 20);
+		context.getPlayer().getCooldowns().addCooldown(this, 
+				ItemUtil.getQuickcastCooldown(cooldown * 20, context.getPlayer().getItemInHand(context.getPlayer().getUsedItemHand())));
 		
 		return super.useOn(context);
 	}

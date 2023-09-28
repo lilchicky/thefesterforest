@@ -68,7 +68,7 @@ public class BrittleBranch extends ProjectileWeaponItem implements MagicItem {
 		world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.GRASS_BREAK, SoundSource.PLAYERS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
 		player.awardStat(Stats.ITEM_USED.get(this));
 		
-		player.getCooldowns().addCooldown(this, cooldown * 20);
+		player.getCooldowns().addCooldown(this, ItemUtil.getQuickcastCooldown(cooldown * 20, gun));
 		return super.use(world, player, hand);
 	}
 	
