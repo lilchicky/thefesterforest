@@ -61,7 +61,7 @@ public enum EffectsUtil {
 				SPEED,
 				SLOWNESS,
 				HASTE,
-				MINING_FATIGUE,
+				//MINING_FATIGUE,
 				STRENGTH,
 				STRENGTH,
 				STRENGTH,
