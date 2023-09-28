@@ -5,6 +5,8 @@ import java.util.List;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.EffectsUtil;
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item.MagicItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -21,7 +23,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class ReaverBlade extends SwordItem {
+public class ReaverBlade extends SwordItem implements MagicItem {
 	
 	private String[] drops = {"Deep Reaver", "Fester Forest Loot Chests"};
 	
@@ -39,12 +41,15 @@ public class ReaverBlade extends SwordItem {
 		if (attacker instanceof Player) {
 			if (ArmorSets.BANSHEE.getArmorSet((Player) attacker) == SetCount.TWO) {
 				strength = ((int) (Math.random() * 6)) + 4;
+				strength = (int) (strength * ItemUtil.getArcanePowerDamageMod(stack));
 			}
 			else if (ArmorSets.BANSHEE.getArmorSet((Player) attacker) == SetCount.FOUR) {
 				strength = ((int) (Math.random() * 6)) + 8;
+				strength = (int) (strength * ItemUtil.getArcanePowerDamageMod(stack));
 			}
 			else {
 				strength = (int) (Math.random() * 6);
+				strength = (int) (strength * ItemUtil.getArcanePowerDamageMod(stack));
 			}
 		}
 		

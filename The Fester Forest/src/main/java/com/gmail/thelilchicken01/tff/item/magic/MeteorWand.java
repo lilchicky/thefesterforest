@@ -9,6 +9,8 @@ import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item.MagicItem;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
 import com.mojang.datafixers.types.templates.Tag;
@@ -45,7 +47,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class MeteorWand extends ProjectileWeaponItem {
+public class MeteorWand extends ProjectileWeaponItem implements MagicItem {
 	
 	private String[] drops = {"The Forgemaster"};
 	
@@ -125,13 +127,13 @@ public class MeteorWand extends ProjectileWeaponItem {
 						shot.getY() + 4.0,
 						shot.getZ());
 				if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
-					shot.setDamage(shotDamage + 20);
+					shot.setDamage((shotDamage + 20) * ItemUtil.getArcanePowerDamageMod(stack));
 				}
 				if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
-					shot.setDamage(shotDamage + 60);
+					shot.setDamage((shotDamage + 60) * ItemUtil.getArcanePowerDamageMod(stack));
 				}
 				else {
-					shot.setDamage(shotDamage);
+					shot.setDamage(shotDamage * ItemUtil.getArcanePowerDamageMod(stack));
 				}
 				shot.setIgnoreInvulnerability(false);
 			
@@ -168,13 +170,13 @@ public class MeteorWand extends ProjectileWeaponItem {
 					shot.getY() + 4.0,
 					shot.getZ());
 			if (ArmorSets.BANSHEE.getArmorSet(context.getPlayer()) == SetCount.TWO) {
-				shot.setDamage(shotDamage + 20);
+				shot.setDamage((shotDamage + 20) * ItemUtil.getArcanePowerDamageMod(context.getItemInHand()));
 			}
 			if (ArmorSets.BANSHEE.getArmorSet(context.getPlayer()) == SetCount.FOUR) {
-				shot.setDamage(shotDamage + 60);
+				shot.setDamage((shotDamage + 60) * ItemUtil.getArcanePowerDamageMod(context.getItemInHand()));
 			}
 			else {
-				shot.setDamage(shotDamage);
+				shot.setDamage(shotDamage * ItemUtil.getArcanePowerDamageMod(context.getItemInHand()));
 			}
 			shot.setIgnoreInvulnerability(false);
 			
@@ -195,13 +197,13 @@ public class MeteorWand extends ProjectileWeaponItem {
 		
 		shot.shootFromRotation(player, player.getXRot(), player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
-			shot.setDamage(shotDamage + 20);
+			shot.setDamage((shotDamage + 20) * ItemUtil.getArcanePowerDamageMod(gun));
 		}
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
-			shot.setDamage(shotDamage + 60);
+			shot.setDamage((shotDamage + 60) * ItemUtil.getArcanePowerDamageMod(gun));
 		}
 		else {
-			shot.setDamage(shotDamage);
+			shot.setDamage(shotDamage * ItemUtil.getArcanePowerDamageMod(gun));
 		}
 		shot.setIgnoreInvulnerability(ignoreInvulnerability);
 

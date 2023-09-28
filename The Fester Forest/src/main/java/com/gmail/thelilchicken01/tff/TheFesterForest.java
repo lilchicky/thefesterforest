@@ -9,6 +9,7 @@ import com.gmail.thelilchicken01.tff.config.TFFCommonConfigs;
 import com.gmail.thelilchicken01.tff.effect.ModEffects;
 import com.gmail.thelilchicken01.tff.elytra.ReetleElytraArmorStandLayer;
 import com.gmail.thelilchicken01.tff.elytra.ReetleElytraLayer;
+import com.gmail.thelilchicken01.tff.enchantment.ModEnchants;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
@@ -118,6 +119,9 @@ public class TheFesterForest {
 		
 		ModStructures.register(bus);
 		System.out.println("[The Fester Forest] Structures initialized");
+		
+		ModEnchants.MOD_ENCHANTS.register(bus);
+		System.out.println("[The Fester Forest] Enchantments initialized");
 		
 		ModPatchConfig.MOD_FEATURES.register(bus);
 		

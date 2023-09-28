@@ -6,6 +6,7 @@ import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item.MagicItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -33,7 +34,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class VolatileSword extends SwordItem {
+public class VolatileSword extends SwordItem implements MagicItem {
 	
 	private String[] drops = {"Volatile Ghost", "Fester Forest Loot Chests"};
 	
@@ -62,7 +63,7 @@ public class VolatileSword extends SwordItem {
 			//create a list of nearby entities every time you right click
 			List<LivingEntity> nearbyEntities = ItemUtil.getLivingInArea(player, 4, 2);
 			//run function to interact with surrounding mobs
-			getEnts(nearbyEntities, player, world);
+			getEnts(nearbyEntities, player, world, player.getItemInHand(hand));
 			//put sword on cooldown
 			player.getCooldowns().addCooldown(this, 60); //default 100
 			
@@ -114,7 +115,7 @@ public class VolatileSword extends SwordItem {
 	}
 	
 	
-	public void getEnts(List<LivingEntity> entityList, Player player, Level world) {
+	public void getEnts(List<LivingEntity> entityList, Player player, Level world, ItemStack stack) {
 		
 		//play this blaze shoot sound every time you cast, regardless if you hit something
 		
@@ -140,7 +141,7 @@ public class VolatileSword extends SwordItem {
 			}
 			
 			currentEntity.setRemainingFireTicks(flameSeconds * 20);
-			currentEntity.hurt(ItemUtil.entityDamageSource("volatile_sword", entityList.get(x), player), flameDamage);
+			currentEntity.hurt(ItemUtil.entityDamageSource("volatile_sword", entityList.get(x), player), (float)(flameDamage * ItemUtil.getArcanePowerDamageMod(stack)));
 			currentEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, slowDuration * 20, 2));
 			//isSound = true;
 		}

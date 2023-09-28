@@ -9,6 +9,7 @@ import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item.MagicItem;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 
 import net.minecraft.ChatFormatting;
@@ -33,7 +34,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class BrittleBranch extends ProjectileWeaponItem {
+public class BrittleBranch extends ProjectileWeaponItem implements MagicItem {
 	
 	private String[] drops = {"Rotting Skeleton", "Fester Forest Loot Chests"};
 	
@@ -77,15 +78,15 @@ public class BrittleBranch extends ProjectileWeaponItem {
 		BranchCharge shot3 = bulletItem.createProjectile(world, ammo, player);
 		
 		shot.shootFromRotation(player, player.getXRot(), player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-		shot.setDamage(shot.getDamage());
+		shot.setDamage(shot.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
 		shot.setIgnoreInvulnerability(ignoreInvulnerability);
 		
 		shot2.shootFromRotation(player, player.getXRot(), player.getYRot() + 15, 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-		shot2.setDamage(shot.getDamage());
+		shot2.setDamage(shot.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
 		shot2.setIgnoreInvulnerability(ignoreInvulnerability);
 		
 		shot3.shootFromRotation(player, player.getXRot(), player.getYRot() - 15, 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-		shot3.setDamage(shot.getDamage());
+		shot3.setDamage(shot.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
 		shot3.setIgnoreInvulnerability(ignoreInvulnerability);
 		
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
@@ -93,11 +94,11 @@ public class BrittleBranch extends ProjectileWeaponItem {
 			BranchCharge shot5 = bulletItem.createProjectile(world, ammo, player);
 			
 			shot4.shootFromRotation(player, player.getXRot() + 10, player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-			shot4.setDamage(shot.getDamage());
+			shot4.setDamage(shot.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
 			shot4.setIgnoreInvulnerability(ignoreInvulnerability);
 			
 			shot5.shootFromRotation(player, player.getXRot() - 10, player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-			shot5.setDamage(shot.getDamage());
+			shot5.setDamage(shot.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
 			shot5.setIgnoreInvulnerability(ignoreInvulnerability);
 			
 			world.addFreshEntity(shot4);
@@ -110,19 +111,19 @@ public class BrittleBranch extends ProjectileWeaponItem {
 			BranchCharge shot7 = bulletItem.createProjectile(world, ammo, player);
 			
 			shot4.shootFromRotation(player, player.getXRot() + 10, player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-			shot4.setDamage(shot.getDamage());
+			shot4.setDamage(shot.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
 			shot4.setIgnoreInvulnerability(ignoreInvulnerability);
 			
 			shot5.shootFromRotation(player, player.getXRot() - 10, player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-			shot5.setDamage(shot.getDamage());
+			shot5.setDamage(shot.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
 			shot5.setIgnoreInvulnerability(ignoreInvulnerability);
 			
 			shot6.shootFromRotation(player, player.getXRot(), player.getYRot() + 7, 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-			shot6.setDamage(shot.getDamage());
+			shot6.setDamage(shot.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
 			shot6.setIgnoreInvulnerability(ignoreInvulnerability);
 			
 			shot7.shootFromRotation(player, player.getXRot(), player.getYRot() - 7, 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-			shot7.setDamage(shot.getDamage());
+			shot7.setDamage(shot.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
 			shot7.setIgnoreInvulnerability(ignoreInvulnerability);
 			
 			world.addFreshEntity(shot4);

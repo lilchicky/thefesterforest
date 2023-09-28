@@ -4,10 +4,14 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
+import com.gmail.thelilchicken01.tff.enchantment.ArcanePowerEnchant;
+import com.gmail.thelilchicken01.tff.enchantment.ModEnchants;
 import com.gmail.thelilchicken01.tff.entity.projectile.BoneCharge;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item.MagicItem;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 
 import net.minecraft.ChatFormatting;
@@ -27,12 +31,13 @@ import net.minecraft.world.item.ProjectileWeaponItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class BoneLauncher extends ProjectileWeaponItem {
+public class BoneLauncher extends ProjectileWeaponItem implements MagicItem {
 	
 	protected int bonusDamage;
 	protected double inaccuracy;
@@ -73,13 +78,13 @@ public class BoneLauncher extends ProjectileWeaponItem {
 		BoneCharge shot = bulletItem.createProjectile(world, ammo, player);
 		shot.shootFromRotation(player, player.getXRot(), player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
-			shot.setDamage(shot.getDamage() + 1);
+			shot.setDamage((shot.getDamage() + 1) * ItemUtil.getArcanePowerDamageMod(gun));
 		}
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
-			shot.setDamage(shot.getDamage() + 2);
+			shot.setDamage((shot.getDamage() + 2) * ItemUtil.getArcanePowerDamageMod(gun));
 		}
 		else {
-			shot.setDamage(shot.getDamage());
+			shot.setDamage((shot.getDamage()) * ItemUtil.getArcanePowerDamageMod(gun));
 		}
 		shot.setIgnoreInvulnerability(ignoreInvulnerability);
 
