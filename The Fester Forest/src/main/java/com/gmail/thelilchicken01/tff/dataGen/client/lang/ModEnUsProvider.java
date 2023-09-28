@@ -340,6 +340,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("curios.identifier.feet", "Feet");
 		add("itemGroup.tff", "The Fester Forest");
 		add("enchantment.tff.arcane_power", "Arcane Power");
+		add("enchantment.tff.quickcast", "Quickcast");
 		
 	}
 
