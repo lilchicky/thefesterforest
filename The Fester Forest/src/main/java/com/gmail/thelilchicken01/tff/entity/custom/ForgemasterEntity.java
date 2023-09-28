@@ -5,6 +5,7 @@ import java.util.List;
 import javax.xml.stream.Location;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
+import com.gmail.thelilchicken01.tff.enchantment.ModEnchants;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
@@ -41,6 +42,7 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -75,17 +77,17 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	private int launchCooldown = 5; // knockup cooldown
 	
 	private int pylonCounter;
-	private int pylonCooldown = 25; // main cooldown
-	private int pylonCharge = 15; // cooldown before healing
+	private int pylonCooldown = 20; // main cooldown
+	private int pylonCharge = 12; // cooldown before healing
 	private int pylonCount = 16; // how many pylons are created
 	private int pylonRadius = 12; // radius pylons are created in
 	private int pylonChargeCounter;
 	private boolean pylonActive = false; 
 	
-	private static float totalHealth = 800.0f; // entity health
+	private static float totalHealth = 900.0f; // entity health
 	
 	private double phase2health = 0.8; // Percent health thresholds for phase 2
-	private double phase3health = 0.3; // Percent health thresholds for phase 2
+	private double phase3health = 0.4; // Percent health thresholds for phase 2
 
 	public ForgemasterEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
@@ -205,6 +207,8 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 			if (pylonCounter > pylonCooldown * 20 && getHealth() < (getMaxHealth() * phase3health)) {
 				
 				playSound(SoundEvents.ANVIL_USE, 1.0f, 0.01f);
+				
+				addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, pylonCharge * 20, 100));
 				
 				int spawnedPylons = 0;
 				int spawnTries = 0;
