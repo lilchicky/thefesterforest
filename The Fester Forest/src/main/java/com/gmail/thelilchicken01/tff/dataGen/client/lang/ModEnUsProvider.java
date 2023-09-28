@@ -341,6 +341,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("itemGroup.tff", "The Fester Forest");
 		add("enchantment.tff.arcane_power", "Arcane Power");
 		add("enchantment.tff.quickcast", "Quickcast");
+		add("enchantment.tff.arcane_power.desc", "Increases damage of Fester Forest magic items.");
+		add("enchantment.tff.quickcast.desc", "Decreases cooldowns of Fester Forest magic items.");
 		
 	}
 
