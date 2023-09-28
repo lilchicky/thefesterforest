@@ -7,7 +7,7 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 public class ArcanePowerEnchant extends Enchantment {
 
 	protected ArcanePowerEnchant(EnchantmentCategory category, EquipmentSlot[] slot) {
-		super(Rarity.RARE, category, slot);
+		super(Rarity.UNCOMMON, category, slot);
 	}
 	
 	@Override
