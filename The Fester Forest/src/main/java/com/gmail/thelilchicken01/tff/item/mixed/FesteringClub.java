@@ -2,9 +2,10 @@ package com.gmail.thelilchicken01.tff.item.mixed;
 
 import java.util.List;
 
+import com.gmail.thelilchicken01.tff.enchantment.ModEnchants;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
-import com.gmail.thelilchicken01.tff.item.item.EffectsUtil;
+import com.gmail.thelilchicken01.tff.item.item.MagicItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -18,11 +19,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class FesteringClub extends SwordItem {
+public class FesteringClub extends SwordItem implements MagicItem {
 	
 	private String[] drops = {"Fester Forest Loot Chests"};
 	
@@ -37,20 +39,25 @@ public class FesteringClub extends SwordItem {
 		
 		if (attacker instanceof Player) {
 			if (ArmorSets.BANSHEE.getArmorSet((Player) attacker) == SetCount.TWO) {
-				strength = 3;
+				strength = 3+ 
+						(EnchantmentHelper.getItemEnchantmentLevel(ModEnchants.quickcast.get(), stack));
 			}
 			else if (ArmorSets.BANSHEE.getArmorSet((Player) attacker) == SetCount.FOUR) {
-				strength = 7;
+				strength = 7+ 
+						(EnchantmentHelper.getItemEnchantmentLevel(ModEnchants.quickcast.get(), stack));
 			}
 			else {
-				strength = 1;
+				strength = 1+ 
+						(EnchantmentHelper.getItemEnchantmentLevel(ModEnchants.quickcast.get(), stack));
 			}
 		}
 		
-		target.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, strength));
+		target.addEffect(new MobEffectInstance(MobEffects.WITHER, 100+ 
+				(EnchantmentHelper.getItemEnchantmentLevel(ModEnchants.quickcast.get(), stack) * 20), strength));
 		
 		if (!(target.getMobType() == MobType.UNDEAD)) {
-			target.addEffect(new MobEffectInstance(MobEffects.POISON, 100, strength));
+			target.addEffect(new MobEffectInstance(MobEffects.POISON, 100+ 
+					(EnchantmentHelper.getItemEnchantmentLevel(ModEnchants.quickcast.get(), stack) * 20), strength));
 		}
 		
 		return super.hurtEnemy(stack, target, attacker);
