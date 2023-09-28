@@ -369,7 +369,7 @@ public class ItemInit {
 	
 	//Bone Launcher
 	public static final RegistryObject<Item> BONE_LAUNCHER = register("bone_launcher",
-			() -> new BoneLauncher(new Properties().tab(TheFesterForest.TFF_TAB).durability(340), 
+			() -> new BoneLauncher(new Properties().tab(TheFesterForest.TFF_TAB).durability(734), 
 					0.1).repair(() -> Ingredient.of(Items.BONE_BLOCK)));
 	
 	//Bone Scythe
