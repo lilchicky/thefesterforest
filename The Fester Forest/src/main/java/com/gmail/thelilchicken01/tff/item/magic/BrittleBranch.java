@@ -10,6 +10,7 @@ import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 import com.gmail.thelilchicken01.tff.item.item.MagicItem;
+import com.gmail.thelilchicken01.tff.item.item.MagicWeapon;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 
 import net.minecraft.ChatFormatting;
@@ -22,19 +23,17 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileWeaponItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class BrittleBranch extends ProjectileWeaponItem implements MagicItem {
+public class BrittleBranch extends ProjectileWeaponItem implements MagicItem, MagicWeapon {
 	
 	private String[] drops = {"Rotting Skeleton", "Fester Forest Loot Chests"};
 	

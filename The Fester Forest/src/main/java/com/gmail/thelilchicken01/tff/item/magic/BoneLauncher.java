@@ -4,14 +4,13 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-import com.gmail.thelilchicken01.tff.enchantment.ArcanePowerEnchant;
-import com.gmail.thelilchicken01.tff.enchantment.ModEnchants;
 import com.gmail.thelilchicken01.tff.entity.projectile.BoneCharge;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 import com.gmail.thelilchicken01.tff.item.item.MagicItem;
+import com.gmail.thelilchicken01.tff.item.item.MagicWeapon;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 
 import net.minecraft.ChatFormatting;
@@ -24,20 +23,17 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileWeaponItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class BoneLauncher extends ProjectileWeaponItem implements MagicItem {
+public class BoneLauncher extends ProjectileWeaponItem implements MagicItem, MagicWeapon {
 	
 	protected int bonusDamage;
 	protected double inaccuracy;

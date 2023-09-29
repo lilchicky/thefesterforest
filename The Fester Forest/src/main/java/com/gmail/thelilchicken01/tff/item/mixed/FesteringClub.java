@@ -6,6 +6,7 @@ import com.gmail.thelilchicken01.tff.enchantment.ModEnchants;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.MagicItem;
+import com.gmail.thelilchicken01.tff.item.item.MagicWeapon;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -24,7 +25,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class FesteringClub extends SwordItem implements MagicItem {
+public class FesteringClub extends SwordItem implements MagicItem, MagicWeapon {
 	
 	private String[] drops = {"Fester Forest Loot Chests"};
 	

@@ -5,6 +5,8 @@ import java.util.List;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item.MagicItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -23,7 +25,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class ShieldBook extends Item {
+public class ShieldBook extends Item implements MagicItem {
 	
 	private String[] drops = {"The Forgemaster"};
 	
@@ -57,7 +59,7 @@ public class ShieldBook extends Item {
 				1, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand()));
 		
 		player.awardStat(Stats.ITEM_USED.get(this));
-		player.getCooldowns().addCooldown(this, cooldown * 20);
+		player.getCooldowns().addCooldown(this, ItemUtil.getQuickcastCooldown(cooldown * 20, player.getItemInHand(hand)));
 		
 		return super.use(world, player, hand);
 	}
