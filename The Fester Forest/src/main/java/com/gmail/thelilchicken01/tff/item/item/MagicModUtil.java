@@ -22,7 +22,7 @@ public enum MagicModUtil {
 	
 	public static void getMagicMod(Player shooter, Entity hitEntity, @Nullable MagicModUtil mod) {
 		
-		if (hitEntity instanceof LivingEntity) {
+		if (hitEntity instanceof LivingEntity && mod != null) {
 			
 			LivingEntity target = (LivingEntity) hitEntity;
 		
