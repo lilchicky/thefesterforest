@@ -94,7 +94,7 @@ public class BranchCharge extends Fireball {
 				LivingEntity livingTarget = (LivingEntity)target;
 				
 				if (!livingTarget.hasEffect(MobEffects.POISON)) {
-					livingTarget.addEffect(new MobEffectInstance(MobEffects.POISON, poisonDuration * 20, 0));
+					livingTarget.addEffect(new MobEffectInstance(MobEffects.POISON, poisonDuration * 20, 2));
 				}
 				
 				if (knockbackStrength > 0) {
