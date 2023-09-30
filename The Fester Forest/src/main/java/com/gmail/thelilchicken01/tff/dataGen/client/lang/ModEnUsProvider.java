@@ -128,7 +128,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.MECHANICAL_LEGGINGS.get(), "Mechanical Leggings");
 		add(ItemInit.MECHANICAL_HELMET.get(), "Mechanical Helmet");
 		add(ItemInit.MECHANICAL_APPLE.get(), "Mechanical Apple");
-		add(ItemInit.SHIELD_BOOK.get(), "Shield Book");
+		add(ItemInit.SHIELD_BOOK.get(), "Book of Shielding");
 		add(ItemInit.BONE_PICKAXE.get(), "Bone Pickaxe");
 		add(ItemInit.SHADOW_BOW.get(), "Shadow Bow");
 		add(ItemInit.VOLATILE_BOOTS.get(), "Volatile Boots");
@@ -321,6 +321,14 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		add(BlockInit.COMPRESSED_ROTTING_SAND_BUTTON.get(), "Compressed Rotting Sand Button");
 		add(BlockInit.COMPRESSED_ROTTING_SAND_PRESSURE_PLATE.get(), "Compressed Rotting Sand Pressure Plate");
+		
+		/*
+		 * 
+		 * Magic
+		 * 
+		 */
+		
+		add(ItemInit.FOOD_BOOK.get(), "Book of Gluttony");
 		
 		/*
 		 * 

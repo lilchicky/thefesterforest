@@ -63,6 +63,7 @@ import com.gmail.thelilchicken01.tff.item.food.ShroomCluster;
 import com.gmail.thelilchicken01.tff.item.food.VolatileApple;
 import com.gmail.thelilchicken01.tff.item.item.ModTiers;
 import com.gmail.thelilchicken01.tff.item.magic.BoneLauncher;
+import com.gmail.thelilchicken01.tff.item.magic.BookOfGluttony;
 import com.gmail.thelilchicken01.tff.item.magic.BrittleBranch;
 import com.gmail.thelilchicken01.tff.item.magic.EnergeticFungus;
 import com.gmail.thelilchicken01.tff.item.magic.FrozenPendant;
@@ -457,13 +458,17 @@ public class ItemInit {
 	
 	/*
 	 * 
-	 * Frozen Items
+	 * Frostbitten King Items
 	 * 
 	 */
 	
 	//Shard of Ice
 	public static final RegistryObject<Item> SHARD_OF_ICE = register("shard_of_ice",
 			() -> new ShardOfIce(new Properties().tab(TheFesterForest.TFF_TAB).durability(1790), 0.1));
+	
+	//Book of Gluttony
+	public static final RegistryObject<Item> FOOD_BOOK = register("food_book", 
+			() -> new BookOfGluttony());
 	
 	/*
 	 * 
