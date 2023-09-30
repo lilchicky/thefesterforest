@@ -3,10 +3,11 @@ package com.gmail.thelilchicken01.tff.entity.projectile;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
+import com.gmail.thelilchicken01.tff.item.item.MagicModUtil;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 
 import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.util.Mth;
@@ -15,7 +16,7 @@ import net.minecraft.world.damagesource.IndirectEntityDamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity.RemovalReason;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
@@ -93,7 +94,15 @@ public class BoneCharge extends Fireball {
 					if (vec.lengthSqr() > 0) livingTarget.push(vec.x, 0.1, vec.z);
 				}
 
-				if (shooter instanceof LivingEntity) doEnchantDamageEffects((LivingEntity)shooter, target);
+				if (shooter instanceof LivingEntity) {
+					doEnchantDamageEffects((LivingEntity)shooter, target);
+					if (shooter instanceof Player) {
+						Player player = (Player) shooter;
+						if (player.getOffhandItem().getItem() instanceof MagicOrb) {
+							MagicModUtil.getMagicMod(player, target, ((MagicOrb) (player.getOffhandItem().getItem())).getOrbType());
+						}
+					}
+				}
 				
 				bullet.onLivingEntityHit(this, livingTarget, shooter, level);
 			}

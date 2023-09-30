@@ -11,6 +11,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public enum ArmorSets {
 	
@@ -105,7 +106,7 @@ public enum ArmorSets {
 			return SetCount.TWO;
 			
 		}
-		else if (setCount == 4) {
+		else if (setCount >= 4) {
 			
 			return SetCount.FOUR;
 			

@@ -330,6 +330,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		add(ItemInit.FOOD_BOOK.get(), "Book of Gluttony");
 		add(ItemInit.VERDANT_BRANCH.get(), "Verdant Branch");
+		add(ItemInit.DULL_ORB.get(), "Dull Orb");
 		
 		/*
 		 * 

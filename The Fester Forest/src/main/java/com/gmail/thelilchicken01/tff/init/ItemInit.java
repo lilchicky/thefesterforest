@@ -65,6 +65,7 @@ import com.gmail.thelilchicken01.tff.item.item.ModTiers;
 import com.gmail.thelilchicken01.tff.item.magic.BoneLauncher;
 import com.gmail.thelilchicken01.tff.item.magic.BookOfGluttony;
 import com.gmail.thelilchicken01.tff.item.magic.BrittleBranch;
+import com.gmail.thelilchicken01.tff.item.magic.DullOrb;
 import com.gmail.thelilchicken01.tff.item.magic.EnergeticFungus;
 import com.gmail.thelilchicken01.tff.item.magic.FrozenPendant;
 import com.gmail.thelilchicken01.tff.item.magic.MeteorWand;
@@ -633,6 +634,10 @@ public class ItemInit {
 	 * Misc Items
 	 * 
 	 */
+	
+	//Dull Orb
+	public static final RegistryObject<Item> DULL_ORB = register("dull_orb",
+			() -> new DullOrb());
 	
 	//Purifying Powder
 	public static final RegistryObject<Item> PURIFYING_POWDER = register("purifying_powder",
