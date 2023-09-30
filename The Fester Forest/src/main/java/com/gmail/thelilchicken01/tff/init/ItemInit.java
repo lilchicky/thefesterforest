@@ -69,6 +69,7 @@ import com.gmail.thelilchicken01.tff.item.magic.EnergeticFungus;
 import com.gmail.thelilchicken01.tff.item.magic.FrozenPendant;
 import com.gmail.thelilchicken01.tff.item.magic.MeteorWand;
 import com.gmail.thelilchicken01.tff.item.magic.ShieldBook;
+import com.gmail.thelilchicken01.tff.item.magic.VerdantBranch;
 import com.gmail.thelilchicken01.tff.item.magic.VolatileNecklace;
 import com.gmail.thelilchicken01.tff.item.melee.AncientDagger;
 import com.gmail.thelilchicken01.tff.item.melee.AncientGreatsword;
@@ -401,6 +402,11 @@ public class ItemInit {
 	public static final RegistryObject<Item> BRITTLE_BRANCH = register("brittle_branch",
 			() -> new BrittleBranch(new Properties().tab(TheFesterForest.TFF_TAB).durability(144), 
 					0.1).repair(() -> Ingredient.of(Items.DEAD_BUSH)));
+	
+	//Verdant Branch
+	public static final RegistryObject<Item> VERDANT_BRANCH = register("verdant_branch",
+			() -> new VerdantBranch(new Properties().tab(TheFesterForest.TFF_TAB).durability(288), 
+					0.1).repair(() -> Ingredient.of(BlockInit.ROTTING_TALL_GRASS.get())));
 	
 	//Ancient Greatsword
 	public static final RegistryObject<Item> ANCIENT_GREATSWORD = register("ancient_greatsword", 

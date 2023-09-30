@@ -16,11 +16,11 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.monster.AbstractSkeleton;
-import net.minecraft.world.entity.monster.Zoglin;
-import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -34,6 +34,8 @@ public class BranchCharge extends Fireball {
 	protected int ticksSinceFired;
 	protected LivingEntity target;
 	protected int poisonDuration = 5;
+	
+	private boolean canHitPlayer = true;
 	
 	private static int staticDamage = 10;
 
@@ -70,6 +72,12 @@ public class BranchCharge extends Fireball {
 		
 	}
 	
+	public void canHitPlayer(boolean hitPlayer) {
+		
+		canHitPlayer = hitPlayer;
+		
+	}
+	
 	@Override
 	protected ParticleOptions getTrailParticle() {
 		return ParticleInit.BRANCH_PARTICLE.get();
@@ -86,9 +94,24 @@ public class BranchCharge extends Fireball {
 			if (isOnFire()) target.setSecondsOnFire(5);
 			int lastHurtResistant = target.invulnerableTime;
 			if (ignoreInvulnerability) target.invulnerableTime = 0;
-			boolean damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_branch_damage",
-					this, shooter).setProjectile(),
-					(float) bullet.modifyDamage(damage, this, target, shooter, level));
+			
+			boolean damaged;
+			
+			if (target instanceof Player) {
+				if (canHitPlayer) {
+					damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_branch_damage",
+							this, shooter).setProjectile(),
+							(float) bullet.modifyDamage(damage, this, target, shooter, level));
+				}
+				else {
+					damaged = false;
+				}
+			}
+			else {
+				damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_branch_damage",
+						this, shooter).setProjectile(),
+						(float) bullet.modifyDamage(damage, this, target, shooter, level));
+			}
 			
 			if (damaged && target instanceof LivingEntity) {
 				LivingEntity livingTarget = (LivingEntity)target;
