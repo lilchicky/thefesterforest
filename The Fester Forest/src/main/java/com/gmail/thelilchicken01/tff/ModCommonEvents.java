@@ -4,6 +4,7 @@ import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.ModWaterMonster;
 import com.gmail.thelilchicken01.tff.entity.custom.AmbectrumEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CorrodedShroomEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RotfishEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.SeathrownSkeletonEntity;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
@@ -90,7 +91,7 @@ public class ModCommonEvents {
 		SpawnPlacements.register(ModEntityTypes.CRUNCH_BEETLE.get(), 
 				SpawnPlacements.Type.ON_GROUND, 
 				Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 
-				Animal::checkAnimalSpawnRules);
+				CrunchBeetleEntity::checkTFFAnimalSpawnRules);
 		
 		/*
 		 * Water Monsters
