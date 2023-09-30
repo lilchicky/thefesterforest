@@ -27,6 +27,13 @@ public class BranchProjectile extends Item {
 		return entity;
 	}
 	
+	public BranchCharge createProjectile(Level world, ItemStack stack, LivingEntity shooter, LivingEntity target) {
+		BranchCharge entity = new BranchCharge(world, shooter, target);
+		entity.setItem(stack);
+		entity.setDamage(damage);
+		return entity;
+	}
+	
 	public void onLivingEntityHit(BranchCharge projectile, LivingEntity target, @Nullable Entity shooter, Level world) {
 	}
 	

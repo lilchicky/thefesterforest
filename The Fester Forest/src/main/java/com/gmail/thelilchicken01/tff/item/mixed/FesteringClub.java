@@ -5,8 +5,8 @@ import java.util.List;
 import com.gmail.thelilchicken01.tff.enchantment.ModEnchants;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
-import com.gmail.thelilchicken01.tff.item.item.MagicItem;
-import com.gmail.thelilchicken01.tff.item.item.MagicWeapon;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicItem;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicWeapon;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

@@ -32,7 +32,7 @@ public class BranchCharge extends Fireball {
 	protected boolean ignoreInvulnerability = false;
 	protected double knockbackStrength = 0.1;
 	protected int ticksSinceFired;
-	protected LivingEntity target;
+	protected LivingEntity target = null;
 	protected int poisonDuration = 5;
 	
 	private boolean canHitPlayer = true;
@@ -45,6 +45,12 @@ public class BranchCharge extends Fireball {
 
 	public BranchCharge(Level worldIn, LivingEntity shooter) {
 		this(worldIn, shooter, 0, 0, 0);
+		setPos(shooter.getX(), shooter.getEyeY() - 0.1, shooter.getZ());
+	}
+	
+	public BranchCharge(Level worldIn, LivingEntity shooter, LivingEntity target) {
+		this(worldIn, shooter, 0, 0, 0);
+		this.target = target;
 		setPos(shooter.getX(), shooter.getEyeY() - 0.1, shooter.getZ());
 	}
 
@@ -63,11 +69,25 @@ public class BranchCharge extends Fireball {
 		
 		super.tick();
 		
-		if(!getLevel().isClientSide) {
+		if(!getLevel().isClientSide()) {
 			ticksSinceFired++;
 			if (ticksSinceFired > 80 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
 				remove(RemovalReason.KILLED);
 			}
+			
+			if (target != null) {
+				
+				if (!target.isDeadOrDying()) {
+				
+					Vec3 currentPos = this.getPosition(1.0f);
+					Vec3 targetPos = target.getPosition(1.0f).add(0.0, target.getEyeHeight() * 0.5, 0.0);
+					Vec3 newVector = targetPos.subtract(currentPos).normalize();
+				
+					setDeltaMovement(newVector);
+			    }
+				
+			}
+			
 		}
 		
 	}

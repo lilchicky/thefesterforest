@@ -6,7 +6,7 @@ import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
-import com.gmail.thelilchicken01.tff.item.item.MagicItem;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

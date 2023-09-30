@@ -1,6 +1,7 @@
 package com.gmail.thelilchicken01.tff.item.magic;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
@@ -9,9 +10,12 @@ import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
-import com.gmail.thelilchicken01.tff.item.item.MagicItem;
-import com.gmail.thelilchicken01.tff.item.item.MagicWeapon;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicItem;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicWeapon;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -23,10 +27,10 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileWeaponItem;
@@ -37,6 +41,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.ForgeMod;
+import net.minecraftforge.common.util.Lazy;
 
 public class VerdantBranch extends ProjectileWeaponItem implements MagicItem, MagicWeapon {
 	
@@ -46,13 +52,31 @@ public class VerdantBranch extends ProjectileWeaponItem implements MagicItem, Ma
 	protected double inaccuracy;
 	protected boolean ignoreInvulnerability = true;
 	protected float projectileSpeed = 0.5f;
-	protected int cooldown = 1;
+	protected int cooldown = 8;
 	
 	protected Supplier<Ingredient> repairMaterial;
+	
+	public final Lazy<Multimap<Attribute, AttributeModifier>> LAZY = Lazy.of(() ->  {    
+    	ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder(); 
+         
+         if (ForgeMod.REACH_DISTANCE.isPresent()) {
+             builder.put(ForgeMod.REACH_DISTANCE.get(), new AttributeModifier(UUID.randomUUID(), 
+     	    		"reach_range", 3.0, AttributeModifier.Operation.ADDITION));
+         }
+    	Multimap<Attribute, AttributeModifier> attributeModifiers = ArrayListMultimap.create();
+    	attributeModifiers = builder.build();
+    	return attributeModifiers;
+    });
 
 	public VerdantBranch(Properties properties, double inaccuracy) {
 		super(properties);
 		this.inaccuracy = inaccuracy;
+		
+	}
+	
+	@Override
+	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
+		return slot == EquipmentSlot.MAINHAND ? LAZY.get() : super.getAttributeModifiers(slot, stack);
 	}
 	
 	@Override
@@ -74,7 +98,7 @@ public class VerdantBranch extends ProjectileWeaponItem implements MagicItem, Ma
 			player.level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.GRASS_BREAK, SoundSource.PLAYERS, 1.0F, player.level.getRandom().nextFloat() * 0.4F + 0.8F);
 			player.awardStat(Stats.ITEM_USED.get(this));
 		
-			player.getCooldowns().addCooldown(this, ItemUtil.getQuickcastCooldown(cooldown * 20, stack));
+			player.getCooldowns().addCooldown(this, (int)(ItemUtil.getQuickcastCooldown(cooldown * 20, stack) * 0.9));
 			
 		}
 		
@@ -84,7 +108,7 @@ public class VerdantBranch extends ProjectileWeaponItem implements MagicItem, Ma
 	protected Vec3 shootTowardsTarget(BranchCharge shot, LivingEntity target) {
 		
 		Vec3 currentPos = shot.getPosition(1.0f);
-		Vec3 targetPos = target.getPosition(1.0f);
+		Vec3 targetPos = target.getPosition(1.0f).add(0.0, target.getEyeHeight() * 0.5, 0.0);
 		return targetPos.subtract(currentPos).normalize();
 		
 	}
@@ -103,16 +127,11 @@ public class VerdantBranch extends ProjectileWeaponItem implements MagicItem, Ma
 		
 	}
 	
-	protected void shoot(Level world, Player player, ItemStack gun, ItemStack ammo, BranchProjectile bulletItem, boolean bulletFree, LivingEntity target) {
-		BranchCharge shot = bulletItem.createProjectile(world, ammo, player);
-		BranchCharge shot2 = bulletItem.createProjectile(world, ammo, player); 
-		BranchCharge shot3 = bulletItem.createProjectile(world, ammo, player);
+	protected void setBulletInfo(BranchCharge shot, ItemStack gun, Player player, LivingEntity target, double xMod, double yMod, double zMod) {
 		
-		// Create shot one and set it up
-		
-		shot.setPos(shot.getX() + Math.cos(Math.toRadians(player.getYRot() + 90)),
-				shot.getY() + 2,
-				shot.getZ() + Math.sin(Math.toRadians(player.getYRot() + 90)));
+		shot.setPos(shot.getX() + xMod,
+				shot.getY() + yMod,
+				shot.getZ() + zMod);
 		
 		Vec3 targetVector = shootTowardsTarget(shot, target);
 		
@@ -121,64 +140,43 @@ public class VerdantBranch extends ProjectileWeaponItem implements MagicItem, Ma
 		shot.setIgnoreInvulnerability(ignoreInvulnerability);
 		shot.canHitPlayer(false);
 		
-		// Create shot two and set it up
+	}
+	
+	protected void shoot(Level world, Player player, ItemStack gun, ItemStack ammo, BranchProjectile bulletItem, boolean bulletFree, LivingEntity target) {
+		BranchCharge shot = bulletItem.createProjectile(world, ammo, player, target);
+		BranchCharge shot2 = bulletItem.createProjectile(world, ammo, player, target); 
+		BranchCharge shot3 = bulletItem.createProjectile(world, ammo, player, target);
 		
-		shot2.setPos(shot2.getX() + (getCoordMod(player.getYRot())[0] * 1),
-				shot2.getY() + 1.5,
-				shot2.getZ() + (getCoordMod(player.getYRot())[1] * 1));
+		setBulletInfo(shot, gun, player, target, Math.cos(Math.toRadians(player.getYRot() + 90)), 1.5, Math.sin(Math.toRadians(player.getYRot() + 90)));
 		
-		shot2.shoot(shootTowardsTarget(shot2, target).x, shootTowardsTarget(shot2, target).y + 0.1, shootTowardsTarget(shot2, target).z, projectileSpeed, (float)inaccuracy);
-		shot2.setDamage(shot2.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
-		shot2.setIgnoreInvulnerability(ignoreInvulnerability);
-		shot2.canHitPlayer(false);
+		setBulletInfo(shot2, gun, player, target, (getCoordMod(player.getYRot())[0] * 1), 1.2, (getCoordMod(player.getYRot())[1] * 0.75));
 		
-		// Create shot three and set it up
-		
-		shot3.setPos(shot3.getX() + (-getCoordMod(player.getYRot())[0] * 1),
-				shot3.getY() + 1.5,
-				shot3.getZ() + (-getCoordMod(player.getYRot())[1] * 1));
-		
-		shot3.shoot(shootTowardsTarget(shot3, target).x, shootTowardsTarget(shot3, target).y + 0.1, shootTowardsTarget(shot3, target).z, projectileSpeed, (float)inaccuracy);
-		shot3.setDamage(shot3.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
-		shot3.setIgnoreInvulnerability(ignoreInvulnerability);
-		shot3.canHitPlayer(false);
+		setBulletInfo(shot3, gun, player, target, (-getCoordMod(player.getYRot())[0] * 1), 1.2, (-getCoordMod(player.getYRot())[1] * 0.75));
 		
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
-			BranchCharge shot4 = bulletItem.createProjectile(world, ammo, player);
-			BranchCharge shot5 = bulletItem.createProjectile(world, ammo, player);
+			BranchCharge shot4 = bulletItem.createProjectile(world, ammo, player, target);
+			BranchCharge shot5 = bulletItem.createProjectile(world, ammo, player, target);
 			
-			shot4.shootFromRotation(player, player.getXRot() + 10, player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-			shot4.setDamage(shot.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
-			shot4.setIgnoreInvulnerability(ignoreInvulnerability);
+			setBulletInfo(shot4, gun, player, target, (getCoordMod(player.getYRot())[0] * 1), 1.0, (getCoordMod(player.getYRot())[1] * 1.25));
 			
-			shot5.shootFromRotation(player, player.getXRot() - 10, player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-			shot5.setDamage(shot.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
-			shot5.setIgnoreInvulnerability(ignoreInvulnerability);
+			setBulletInfo(shot5, gun, player, target, (-getCoordMod(player.getYRot())[0] * 1), 1.0, (-getCoordMod(player.getYRot())[1] * 1.25));
 			
 			world.addFreshEntity(shot4);
 			world.addFreshEntity(shot5);
 		}
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
-			BranchCharge shot4 = bulletItem.createProjectile(world, ammo, player);
-			BranchCharge shot5 = bulletItem.createProjectile(world, ammo, player);
-			BranchCharge shot6 = bulletItem.createProjectile(world, ammo, player);
-			BranchCharge shot7 = bulletItem.createProjectile(world, ammo, player);
+			BranchCharge shot4 = bulletItem.createProjectile(world, ammo, player, target);
+			BranchCharge shot5 = bulletItem.createProjectile(world, ammo, player, target);
+			BranchCharge shot6 = bulletItem.createProjectile(world, ammo, player, target);
+			BranchCharge shot7 = bulletItem.createProjectile(world, ammo, player, target);
 			
-			shot4.shootFromRotation(player, player.getXRot() + 10, player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-			shot4.setDamage(shot.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
-			shot4.setIgnoreInvulnerability(ignoreInvulnerability);
+			setBulletInfo(shot4, gun, player, target, (getCoordMod(player.getYRot())[0] * 1), 1.0, (getCoordMod(player.getYRot())[1] * 1.25));
 			
-			shot5.shootFromRotation(player, player.getXRot() - 10, player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-			shot5.setDamage(shot.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
-			shot5.setIgnoreInvulnerability(ignoreInvulnerability);
+			setBulletInfo(shot5, gun, player, target, (-getCoordMod(player.getYRot())[0] * 1), 1.0, (-getCoordMod(player.getYRot())[1] * 1.25));
 			
-			shot6.shootFromRotation(player, player.getXRot(), player.getYRot() + 7, 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-			shot6.setDamage(shot.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
-			shot6.setIgnoreInvulnerability(ignoreInvulnerability);
+			setBulletInfo(shot6, gun, player, target, (getCoordMod(player.getYRot())[0] * 1), 1.6, (getCoordMod(player.getYRot())[1] * 0.6));
 			
-			shot7.shootFromRotation(player, player.getXRot(), player.getYRot() - 7, 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
-			shot7.setDamage(shot.getDamage() * ItemUtil.getArcanePowerDamageMod(gun));
-			shot7.setIgnoreInvulnerability(ignoreInvulnerability);
+			setBulletInfo(shot7, gun, player, target, (-getCoordMod(player.getYRot())[0] * 1), 1.6, (-getCoordMod(player.getYRot())[1] * 0.6));
 			
 			world.addFreshEntity(shot4);
 			world.addFreshEntity(shot5);
@@ -190,7 +188,6 @@ public class VerdantBranch extends ProjectileWeaponItem implements MagicItem, Ma
 		world.addFreshEntity(shot2);
 		world.addFreshEntity(shot3);
 		
-		System.out.println(shot.getX());
 	}
 	
 	public VerdantBranch fireSound(Supplier<SoundEvent> fireSound) {
@@ -232,9 +229,10 @@ public class VerdantBranch extends ProjectileWeaponItem implements MagicItem, Ma
 		if(Screen.hasShiftDown()) {
 			lore.add(new TextComponent("Magic").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("An old, fragile branch.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("A once dead branch, now thriving with life.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Right click launch 3 projectiles in front of you.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Right click an enemy to create 3 shots that").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("lock onto and fire at your target.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("Each projectile does " + BranchCharge.getStaticDamage() + " damage and inflicts").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("poison.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
@@ -247,7 +245,7 @@ public class VerdantBranch extends ProjectileWeaponItem implements MagicItem, Ma
 		else {
 			lore.add(new TextComponent("Magic").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("An old, fragile branch.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("A once dead branch, now thriving with life.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 			lore.add(new TextComponent(""));

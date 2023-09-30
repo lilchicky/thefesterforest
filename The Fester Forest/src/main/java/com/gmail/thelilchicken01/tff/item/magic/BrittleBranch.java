@@ -9,8 +9,8 @@ import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
-import com.gmail.thelilchicken01.tff.item.item.MagicItem;
-import com.gmail.thelilchicken01.tff.item.item.MagicWeapon;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicItem;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicWeapon;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 
 import net.minecraft.ChatFormatting;
@@ -177,7 +177,7 @@ public class BrittleBranch extends ProjectileWeaponItem implements MagicItem, Ma
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("An old, fragile branch.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Right click launch 3 projectiles in front of you.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Right click to launch 3 projectiles in front of you.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("Each projectile does " + BranchCharge.getStaticDamage() + " damage and inflicts").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("poison.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));

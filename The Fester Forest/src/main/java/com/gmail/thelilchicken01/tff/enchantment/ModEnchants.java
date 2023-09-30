@@ -1,8 +1,8 @@
 package com.gmail.thelilchicken01.tff.enchantment;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
-import com.gmail.thelilchicken01.tff.item.item.MagicItem;
-import com.gmail.thelilchicken01.tff.item.item.MagicWeapon;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicItem;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicWeapon;
 
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.enchantment.Enchantment;
