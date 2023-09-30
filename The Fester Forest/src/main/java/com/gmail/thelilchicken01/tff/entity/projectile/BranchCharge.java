@@ -28,7 +28,7 @@ import net.minecraftforge.network.NetworkHooks;
 
 public class BranchCharge extends Fireball {
 	
-	protected double damage = 10;
+	protected double damage = 6;
 	protected boolean ignoreInvulnerability = false;
 	protected double knockbackStrength = 0.1;
 	protected int ticksSinceFired;
