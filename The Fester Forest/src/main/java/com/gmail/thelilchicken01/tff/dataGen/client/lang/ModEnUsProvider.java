@@ -338,6 +338,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.LIFE_ORB.get(), "Orb of Life");
 		add(ItemInit.WITHER_ORB.get(), "Orb of Decay");
 		add(ItemInit.REETLE_ORB.get(), "Orb of Skittering");
+		add(ItemInit.FORGEMASTER_ORB.get(), "Orb of the Machine");
 		
 		/*
 		 * 

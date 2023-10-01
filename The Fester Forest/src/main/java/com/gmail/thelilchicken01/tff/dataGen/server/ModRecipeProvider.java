@@ -528,7 +528,7 @@ public class ModRecipeProvider extends RecipeProvider {
 				new ResourceLocation(TheFesterForest.MODID, 
 						ItemInit.WITHER_ORB.get().getRegistryName().getPath()));
 		
-		// Wither Orb
+		// Reetle Orb
 		ShapedRecipeBuilder.shaped(ItemInit.REETLE_ORB.get(), 1)
 		.define('a', ItemInit.DULL_ORB.get().asItem()).define('b', ItemInit.BUG_EGGS.get()).define('c', ItemInit.BUG_CARCASS.get())
 		.unlockedBy("has_" + ItemInit.DULL_ORB.get().getRegistryName(), 
@@ -536,6 +536,15 @@ public class ModRecipeProvider extends RecipeProvider {
 		.pattern(" b ").pattern("cac").pattern(" c ").save(consumer, 
 				new ResourceLocation(TheFesterForest.MODID, 
 						ItemInit.REETLE_ORB.get().getRegistryName().getPath()));
+		
+		// Forgemaster Orb
+		ShapedRecipeBuilder.shaped(ItemInit.FORGEMASTER_ORB.get(), 1)
+		.define('a', ItemInit.DULL_ORB.get().asItem()).define('b', ItemInit.METAL_SCRAP.get())
+		.unlockedBy("has_" + ItemInit.DULL_ORB.get().getRegistryName(), 
+				has(ItemInit.DULL_ORB.get().asItem()))
+		.pattern(" b ").pattern("bab").pattern(" b ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.FORGEMASTER_ORB.get().getRegistryName().getPath()));
 		
 		// Life Orb
 		ShapedRecipeBuilder.shaped(ItemInit.LIFE_ORB.get(), 1) // add , int to get number of output

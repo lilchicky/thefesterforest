@@ -13,7 +13,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
 c5defbedf25b6ecf36bf55b38b2ff99beff20207 assets/tff/blockstates/soul_rot.json
-5e926754113e621251bbf7ed149721b31903ce21 assets/tff/lang/en_us.json
+23a250777f34e1c7503320f6da17046730d7eb03 assets/tff/lang/en_us.json
 24d27db74b37f74e514f26a15787d776200bea34 assets/tff/models/block/blue_fester_shroom_block.json
 e48eb80bb4a853e7d3636a9aa2971065e6494c2f assets/tff/models/block/compressed_rotting_sand.json
 f12d6a54881723e53655f55b547fef43d40893ee assets/tff/models/block/cracked_rotting_stone_bricks.json
@@ -64,6 +64,7 @@ bf887d5ec9b30a203ddd73d558b11e6e9a5f8b02 assets/tff/models/item/festering_club.j
 ffbbd55d61fbedd6c91aac6c4ef8b0a6707d7c66 assets/tff/models/item/flesh_ball.json
 b3fc3830197e956682a86e1dd9cdfd0a2639ee69 assets/tff/models/item/food_book.json
 b812a130c005256936ce11549dd1da33e4740737 assets/tff/models/item/forgemaster_heart.json
+4450716b24c026d43146d1eb5b86319f46bc02fc assets/tff/models/item/forgemaster_orb.json
 20fe85588f55ea3dbf1f699b27f3fe2fa69a58a4 assets/tff/models/item/frostbitten_planks.json
 efc080bc3e379d6fe78c957eb413ba67a2dfcef1 assets/tff/models/item/frozen_orb.json
 7c9df64ae0afa30bd02e6b91022c3cc2033361f4 assets/tff/models/item/frozen_pendant.json
@@ -193,6 +194,7 @@ ef43bf424c8cd62621606bef35b356b85490ac83 data/tff/advancements/recipes/tff/feste
 b3b87d22788062b9926d194367a8b5ac019e008e data/tff/advancements/recipes/tff/flame_orb.json
 541507766a26f0b8849f6e625b7effe58063e6d9 data/tff/advancements/recipes/tff/forgemaster_hammer.json
 bbc792e1052ff6877d872ac2614c9c7a48c859db data/tff/advancements/recipes/tff/forgemaster_heart.json
+e0c479247fb807a18b1adfb123ad6eeba6ede657 data/tff/advancements/recipes/tff/forgemaster_orb.json
 c508e38095660f0a64c18432960597e4e02593c4 data/tff/advancements/recipes/tff/frostbitten_button.json
 88614232045fb43f6ff80af54b24b4b9532b678a data/tff/advancements/recipes/tff/frostbitten_door.json
 f45c3b250f54e457096ccfac1fa461684317a42c data/tff/advancements/recipes/tff/frostbitten_fence.json
@@ -384,6 +386,7 @@ e17aea334a140b7f715ff3a5b2577280215ace29 data/tff/recipes/fester_shroom_stem_to_
 d43b5500611c22242c59584543ab61c7a84002b6 data/tff/recipes/flame_orb.json
 71771b44594b5bf958bfe64a35d72dbe53f44ec2 data/tff/recipes/forgemaster_hammer.json
 566dfd03581be1ef98d19d254bb356cc0f2d681f data/tff/recipes/forgemaster_heart.json
+2541a4e68553aad22103ad2fe459a54edfb7ee6b data/tff/recipes/forgemaster_orb.json
 20dd4defc86181e2310eee04f3cf2a21c26201e9 data/tff/recipes/frostbitten_button.json
 5a9a95d2588e0f7c7974d5be02cc6f13ae6cc046 data/tff/recipes/frostbitten_door.json
 438feb4e51194f2e91d7efd476308cc5e42e63db data/tff/recipes/frostbitten_fence.json

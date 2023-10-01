@@ -172,6 +172,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		handheldItem(ItemInit.LIFE_ORB.get());
 		handheldItem(ItemInit.WITHER_ORB.get());
 		handheldItem(ItemInit.REETLE_ORB.get());
+		handheldItem(ItemInit.FORGEMASTER_ORB.get());
 		
 	}
 	

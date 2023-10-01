@@ -6,15 +6,16 @@ import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
-import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
 
 import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 
 public enum MagicModUtil {
 	
@@ -24,7 +25,8 @@ public enum MagicModUtil {
 	LEVITATE,
 	LIFE,
 	WITHER,
-	REETLE;
+	REETLE,
+	MECHANICAL;
 	
 	public static void getMagicMod(Player shooter, Entity hitEntity, @Nullable MagicModUtil mod) {
 		
@@ -159,10 +161,49 @@ public enum MagicModUtil {
 								ItemUtil.getQuickcastCooldown(3 * 20, shooter.getOffhandItem()));
 					}
 					break;
+				case MECHANICAL:
+					if (ArmorSets.BANSHEE.getArmorSet(shooter) == SetCount.TWO) {
+						shooter.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 1));
+						shooter.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 1));
+						repairItem(shooter, 2);
+					}
+					if (ArmorSets.BANSHEE.getArmorSet(shooter) == SetCount.FOUR) {
+						shooter.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 120, 2));
+						shooter.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 120, 2));
+						repairItem(shooter, 3);
+					}
+					else {
+						shooter.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 80, 0));
+						shooter.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 80, 0));
+						repairItem(shooter, 1);
+					}
+					break;
 				default:
 					break;
 		
 			}
+		}
+		
+	}
+	
+	private static void repairItem(Player player, int repairAmount) {
+		
+		@Nullable ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
+		@Nullable ItemStack chestplate = player.getItemBySlot(EquipmentSlot.CHEST);
+		@Nullable ItemStack leggings = player.getItemBySlot(EquipmentSlot.LEGS);
+		@Nullable ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
+		
+		if (helmet != null) {
+			helmet.setDamageValue(helmet.getDamageValue() + repairAmount);
+		}
+		if (chestplate != null) {
+			chestplate.setDamageValue(helmet.getDamageValue() + repairAmount);
+		}
+		if (leggings != null) {
+			leggings.setDamageValue(helmet.getDamageValue() + repairAmount);
+		}
+		if (boots != null) {
+			boots.setDamageValue(helmet.getDamageValue() + repairAmount);
 		}
 		
 	}
