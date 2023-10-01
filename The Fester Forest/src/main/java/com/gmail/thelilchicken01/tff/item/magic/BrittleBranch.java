@@ -178,8 +178,7 @@ public class BrittleBranch extends ProjectileWeaponItem implements MagicItem, Ma
 			lore.add(new TextComponent("An old, fragile branch.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Right click to launch 3 projectiles in front of you.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("Each projectile does " + BranchCharge.getStaticDamage() + " damage and inflicts").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("poison.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Each projectile inflicts poison.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < drops.length; x++) {

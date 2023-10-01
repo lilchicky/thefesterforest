@@ -233,8 +233,7 @@ public class VerdantBranch extends ProjectileWeaponItem implements MagicItem, Ma
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Right click an enemy to create 3 shots that").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("lock onto and fire at your target.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("Each projectile does " + BranchCharge.getStaticDamage() + " damage and inflicts").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("poison.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Each projectile inflicts poison.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < drops.length; x++) {
