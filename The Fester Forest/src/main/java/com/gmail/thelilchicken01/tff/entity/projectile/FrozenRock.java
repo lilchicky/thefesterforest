@@ -73,7 +73,7 @@ public class FrozenRock extends Fireball {
 		
 		if(!getLevel().isClientSide()) {
 			ticksSinceFired++;
-			if (ticksSinceFired > 20 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
+			if (ticksSinceFired > 100 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
 				remove(RemovalReason.KILLED);
 			}
 		}
