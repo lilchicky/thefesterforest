@@ -528,6 +528,15 @@ public class ModRecipeProvider extends RecipeProvider {
 				new ResourceLocation(TheFesterForest.MODID, 
 						ItemInit.WITHER_ORB.get().getRegistryName().getPath()));
 		
+		// Wither Orb
+		ShapedRecipeBuilder.shaped(ItemInit.REETLE_ORB.get(), 1)
+		.define('a', ItemInit.DULL_ORB.get().asItem()).define('b', ItemInit.BUG_EGGS.get()).define('c', ItemInit.BUG_CARCASS.get())
+		.unlockedBy("has_" + ItemInit.DULL_ORB.get().getRegistryName(), 
+				has(ItemInit.DULL_ORB.get().asItem()))
+		.pattern(" b ").pattern("cac").pattern(" c ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.REETLE_ORB.get().getRegistryName().getPath()));
+		
 		// Life Orb
 		ShapedRecipeBuilder.shaped(ItemInit.LIFE_ORB.get(), 1) // add , int to get number of output
 		.define('a', ItemInit.DULL_ORB.get().asItem())

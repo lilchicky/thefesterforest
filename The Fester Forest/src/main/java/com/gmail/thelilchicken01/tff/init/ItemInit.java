@@ -75,6 +75,7 @@ import com.gmail.thelilchicken01.tff.item.magic.LevitateOrb;
 import com.gmail.thelilchicken01.tff.item.magic.LifeOrb;
 import com.gmail.thelilchicken01.tff.item.magic.MeteorWand;
 import com.gmail.thelilchicken01.tff.item.magic.PoisonOrb;
+import com.gmail.thelilchicken01.tff.item.magic.ReetleOrb;
 import com.gmail.thelilchicken01.tff.item.magic.ShieldBook;
 import com.gmail.thelilchicken01.tff.item.magic.VerdantBranch;
 import com.gmail.thelilchicken01.tff.item.magic.VolatileNecklace;
@@ -668,6 +669,10 @@ public class ItemInit {
 	//Wither Orb
 	public static final RegistryObject<Item> WITHER_ORB = register("wither_orb",
 			() -> new WitherOrb());
+	
+	//Reetle Orb
+	public static final RegistryObject<Item> REETLE_ORB = register("reetle_orb",
+			() -> new ReetleOrb());
 	
 	//Purifying Powder
 	public static final RegistryObject<Item> PURIFYING_POWDER = register("purifying_powder",

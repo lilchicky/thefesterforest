@@ -2,6 +2,8 @@ package com.gmail.thelilchicken01.tff.item.item;
 
 import javax.annotation.Nullable;
 
+import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
+import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
@@ -21,7 +23,8 @@ public enum MagicModUtil {
 	ICE,
 	LEVITATE,
 	LIFE,
-	WITHER;
+	WITHER,
+	REETLE;
 	
 	public static void getMagicMod(Player shooter, Entity hitEntity, @Nullable MagicModUtil mod) {
 		
@@ -108,6 +111,52 @@ public enum MagicModUtil {
 					}
 					else {
 						target.addEffect(new MobEffectInstance(MobEffects.WITHER, 80, 1));
+					}
+					break;
+				case REETLE:
+					if (!shooter.getCooldowns().isOnCooldown(shooter.getOffhandItem().getItem())) {
+						if (ArmorSets.BANSHEE.getArmorSet(shooter) == SetCount.TWO) {
+							for (int x = 0; x < 2; x++) {
+								
+								PlayerCrunchBeetleEntity beetle = new PlayerCrunchBeetleEntity(ModEntityTypes.PLAYER_CRUNCH_BEETLE.get(), shooter.getLevel());
+								
+								beetle.setOwnerUUID(shooter.getUUID());
+								beetle.setPos(shooter.getX(), shooter.getY(), shooter.getZ());
+								beetle.tame(shooter);
+								
+								if (!shooter.getLevel().isClientSide()) {
+									shooter.getLevel().addFreshEntity(beetle);
+								}
+							}
+						}
+						if (ArmorSets.BANSHEE.getArmorSet(shooter) == SetCount.FOUR) {
+							for (int x = 0; x < 3; x++) {
+								
+								PlayerCrunchBeetleEntity beetle = new PlayerCrunchBeetleEntity(ModEntityTypes.PLAYER_CRUNCH_BEETLE.get(), shooter.getLevel());
+								
+								beetle.setOwnerUUID(shooter.getUUID());
+								beetle.setPos(shooter.getX(), shooter.getY(), shooter.getZ());
+								beetle.tame(shooter);
+								
+								if (!shooter.getLevel().isClientSide()) {
+									shooter.getLevel().addFreshEntity(beetle);
+								}
+							}
+						}
+						else {
+							PlayerCrunchBeetleEntity beetle = new PlayerCrunchBeetleEntity(ModEntityTypes.PLAYER_CRUNCH_BEETLE.get(), shooter.getLevel());
+							
+							beetle.setOwnerUUID(shooter.getUUID());
+							beetle.setPos(shooter.getX(), shooter.getY(), shooter.getZ());
+							beetle.tame(shooter);
+							
+							if (!shooter.getLevel().isClientSide()) {
+								shooter.getLevel().addFreshEntity(beetle);
+							}
+						}
+						shooter.awardStat(Stats.ITEM_USED.get(shooter.getOffhandItem().getItem()));
+						shooter.getCooldowns().addCooldown(shooter.getOffhandItem().getItem(), 
+								ItemUtil.getQuickcastCooldown(3 * 20, shooter.getOffhandItem()));
 					}
 					break;
 				default:

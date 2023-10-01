@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " b ",
+    "cac",
+    " c "
+  ],
+  "key": {
+    "a": {
+      "item": "tff:dull_orb"
+    },
+    "b": {
+      "item": "tff:bug_eggs"
+    },
+    "c": {
+      "item": "tff:bug_carcass"
+    }
+  },
+  "result": {
+    "item": "tff:reetle_orb"
+  }
+}
