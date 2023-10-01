@@ -89,39 +89,39 @@ public class TheFesterForest {
 	public TheFesterForest() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		
-		System.out.println("[The Fester Forest] Initializing the Spook");
+		LOGGER.info("[Chicky's Fester Forest] Initializing the Spook");
 		
 		ItemInit.ITEMS.register(bus);
-		System.out.println("[The Fester Forest] Items initialized");
+		LOGGER.info("[Chicky's Fester Forest] Items initialized");
 		
 		BlockInit.BLOCKS.register(bus);
-		System.out.println("[The Fester Forest] Blocks initialized");
+		LOGGER.info("[Chicky's Fester Forest] Blocks Initialized");
 		
 		ParticleInit.PARTICLES.register(bus);
-		System.out.println("[The Fester Forest] Particles initialized");
+		LOGGER.info("[Chicky's Fester Forest] Particles initialized");
 		
 		TffConfiguredFeatures.CONFIGURED_FEATURES.register(bus);
 		TffPlacedFeature.PLACED_FEATURES.register(bus);
 		TffTreeDecorators.TREE_DECORATORS.register(bus);
-		System.out.println("[The Fester Forest] Features initialized");
+		LOGGER.info("[Chicky's Fester Forest] Features initialized");
 		
 		ModDimensions.register();
-		System.out.println("[The Fester Forest] The Fester Forest dimension initialized");
+		LOGGER.info("[Chicky's Fester Forest] The Fester Forest dimension initialized");
 		
 		ModPOIs.register(bus);
-		System.out.println("[The Fester Forest] POIs initialized");
+		LOGGER.info("[Chicky's Fester Forest] POIs initialized");
 		
 		ModEntityTypes.register(bus);
-		System.out.println("[The Fester Forest] Entities initialized");
+		LOGGER.info("[Chicky's Fester Forest] Entities initialized");
 		
 		ModEffects.register(bus);
-		System.out.println("[The Fester Forest] Potion Effects initialized");
+		LOGGER.info("[Chicky's Fester Forest] Potion Effects initialized");
 		
 		ModStructures.register(bus);
-		System.out.println("[The Fester Forest] Structures initialized");
+		LOGGER.info("[Chicky's Fester Forest] Structures initialized");
 		
 		ModEnchants.MOD_ENCHANTS.register(bus);
-		System.out.println("[The Fester Forest] Enchantments initialized");
+		LOGGER.info("[Chicky's Fester Forest] Enchantments initialized");
 		
 		ModPatchConfig.MOD_FEATURES.register(bus);
 		
@@ -133,13 +133,13 @@ public class TheFesterForest {
 		
 		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, TFFClientConfigs.SPEC, "tff-client.toml");
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TFFCommonConfigs.SPEC, "tff-common.toml");
-		System.out.println("[The Fester Forest] Config Loaded");
+		LOGGER.info("[Chicky's Fester Forest] Config Loaded");
 		
 		MinecraftForge.EVENT_BUS.register(this);
 		
 		if (FMLEnvironment.dist.isClient()) bus.addListener(this::registerElytraLayer);
 		
-		System.out.println("[The Fester Forest] Happy Adventuring!");
+		LOGGER.info("[Chicky's Fester Forest] Happy Adventuring!");
 		
 	}
 	
