@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "tff:metal_scrap"
+    }
+  },
+  "result": {
+    "item": "tff:mechanical_helmet"
+  }
+}

@@ -37,6 +37,7 @@ import com.gmail.thelilchicken01.tff.item.dull.ForgemasterHeart;
 import com.gmail.thelilchicken01.tff.item.dull.GravityGauntlets;
 import com.gmail.thelilchicken01.tff.item.dull.HeavyStone;
 import com.gmail.thelilchicken01.tff.item.dull.MechanicalEye;
+import com.gmail.thelilchicken01.tff.item.dull.MetalScrap;
 import com.gmail.thelilchicken01.tff.item.dull.MoonShoes;
 import com.gmail.thelilchicken01.tff.item.dull.PocketSand;
 import com.gmail.thelilchicken01.tff.item.dull.PurifyingPowder;
@@ -302,6 +303,10 @@ public class ItemInit {
 	public static final RegistryObject<Item> FORGEMASTER_HAMMER = register("forgemaster_hammer", 
 			() -> new ForgemasterHammer(ModTiers.MECHANICAL, 14, -3.5f, new Properties().tab(TheFesterForest.TFF_TAB)
 					.durability(3200)));
+	
+	//Metal Scrap
+	public static final RegistryObject<Item> METAL_SCRAP = register("metal_scrap",
+			() -> new MetalScrap());
 	
 	/*
 	 * 

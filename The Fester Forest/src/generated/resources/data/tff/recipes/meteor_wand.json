@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  b",
+    " a ",
+    "a  "
+  ],
+  "key": {
+    "a": {
+      "item": "tff:metal_scrap"
+    },
+    "b": {
+      "item": "minecraft:fire_charge"
+    }
+  },
+  "result": {
+    "item": "tff:meteor_wand"
+  }
+}

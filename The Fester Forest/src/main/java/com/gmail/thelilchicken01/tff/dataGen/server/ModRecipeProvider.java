@@ -584,6 +584,118 @@ public class ModRecipeProvider extends RecipeProvider {
 		
 		/*
 		 * 
+		 * Forgemaster Crap
+		 * 
+		 */
+		
+		// boots
+		ShapedRecipeBuilder.shaped(ItemInit.MECHANICAL_BOOTS.get(), 1)
+		.define('a', ItemInit.METAL_SCRAP.get().asItem())
+		.unlockedBy("has_" + ItemInit.METAL_SCRAP.get().getRegistryName(), 
+				has(ItemInit.METAL_SCRAP.get().asItem()))
+		.pattern("a a")
+		.pattern("a a")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.MECHANICAL_BOOTS.get().getRegistryName().getPath()));
+		
+		// leggings
+		ShapedRecipeBuilder.shaped(ItemInit.MECHANICAL_LEGGINGS.get(), 1)
+		.define('a', ItemInit.METAL_SCRAP.get().asItem())
+		.unlockedBy("has_" + ItemInit.METAL_SCRAP.get().getRegistryName(), 
+				has(ItemInit.METAL_SCRAP.get().asItem()))
+		.pattern("aaa")
+		.pattern("a a")
+		.pattern("a a")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.MECHANICAL_LEGGINGS.get().getRegistryName().getPath()));
+		
+		// chestplate
+		ShapedRecipeBuilder.shaped(ItemInit.MECHANICAL_CHESTPLATE.get(), 1)
+		.define('a', ItemInit.METAL_SCRAP.get().asItem())
+		.unlockedBy("has_" + ItemInit.METAL_SCRAP.get().getRegistryName(), 
+				has(ItemInit.METAL_SCRAP.get().asItem()))
+		.pattern("a a")
+		.pattern("aaa")
+		.pattern("aaa")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.MECHANICAL_CHESTPLATE.get().getRegistryName().getPath()));
+		
+		// helmet
+		ShapedRecipeBuilder.shaped(ItemInit.MECHANICAL_HELMET.get(), 1)
+		.define('a', ItemInit.METAL_SCRAP.get().asItem())
+		.unlockedBy("has_" + ItemInit.METAL_SCRAP.get().getRegistryName(), 
+				has(ItemInit.METAL_SCRAP.get().asItem()))
+		.pattern("aaa")
+		.pattern("a a")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.MECHANICAL_HELMET.get().getRegistryName().getPath()));
+		
+		// hammer
+		ShapedRecipeBuilder.shaped(ItemInit.FORGEMASTER_HAMMER.get(), 1)
+		.define('a', ItemInit.METAL_SCRAP.get().asItem()).define('b', Items.STICK)
+		.unlockedBy("has_" + ItemInit.METAL_SCRAP.get().getRegistryName(), 
+				has(ItemInit.METAL_SCRAP.get().asItem()))
+		.pattern("aaa")
+		.pattern(" b ")
+		.pattern(" b ")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.FORGEMASTER_HAMMER.get().getRegistryName().getPath()));
+		
+		// heart
+		ShapedRecipeBuilder.shaped(ItemInit.FORGEMASTER_HEART.get(), 1)
+		.define('a', ItemInit.METAL_SCRAP.get().asItem()).define('b', Items.FIRE_CHARGE)
+		.unlockedBy("has_" + ItemInit.METAL_SCRAP.get().getRegistryName(), 
+				has(ItemInit.METAL_SCRAP.get().asItem()))
+		.pattern("aaa")
+		.pattern("aba")
+		.pattern("aaa")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.FORGEMASTER_HEART.get().getRegistryName().getPath()));
+		
+		// meteor wand
+		ShapedRecipeBuilder.shaped(ItemInit.METEOR_WAND.get(), 1)
+		.define('a', ItemInit.METAL_SCRAP.get().asItem()).define('b', Items.FIRE_CHARGE)
+		.unlockedBy("has_" + ItemInit.METAL_SCRAP.get().getRegistryName(), 
+				has(ItemInit.METAL_SCRAP.get().asItem()))
+		.pattern("  b")
+		.pattern(" a ")
+		.pattern("a  ")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.METEOR_WAND.get().getRegistryName().getPath()));
+		
+		// shield book
+		ShapedRecipeBuilder.shaped(ItemInit.SHIELD_BOOK.get(), 1)
+		.define('a', ItemInit.METAL_SCRAP.get().asItem()).define('b', Items.BOOK)
+		.unlockedBy("has_" + ItemInit.METAL_SCRAP.get().getRegistryName(), 
+				has(ItemInit.METAL_SCRAP.get().asItem()))
+		.pattern(" a ")
+		.pattern("aba")
+		.pattern(" a ")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.SHIELD_BOOK.get().getRegistryName().getPath()));
+		
+		// eyedbarl
+		ShapedRecipeBuilder.shaped(ItemInit.MECHANICAL_EYE.get(), 1)
+		.define('a', ItemInit.METAL_SCRAP.get().asItem()).define('b', Items.GOLDEN_CARROT)
+		.unlockedBy("has_" + ItemInit.METAL_SCRAP.get().getRegistryName(), 
+				has(ItemInit.METAL_SCRAP.get().asItem()))
+		.pattern(" a ")
+		.pattern("aba")
+		.pattern(" a ")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.MECHANICAL_EYE.get().getRegistryName().getPath()));
+		
+		/*
+		 * 
 		 * Shapeless
 		 * 
 		 */

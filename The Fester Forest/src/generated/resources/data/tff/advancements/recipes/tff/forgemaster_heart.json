@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:forgemaster_heart"
+    ]
+  },
+  "criteria": {
+    "has_tff:metal_scrap": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:metal_scrap"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:forgemaster_heart"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:metal_scrap",
+      "has_the_recipe"
+    ]
+  ]
+}

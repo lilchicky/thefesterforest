@@ -349,6 +349,14 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		/*
 		 * 
+		 * Mob Drops
+		 * 
+		 */
+		
+		add(ItemInit.METAL_SCRAP.get(), "Metal Scrap");
+		
+		/*
+		 * 
 		 * Special Cases (Curios, Tabs, Potions, etc.)
 		 * 
 		 */
