@@ -5,7 +5,9 @@ import java.util.List;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item.MagicModUtil;
 import com.gmail.thelilchicken01.tff.item.item.item_types.MagicItem;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
 import com.gmail.thelilchicken01.tff.item.item.item_types.MagicWeapon;
 
 import net.minecraft.ChatFormatting;
@@ -138,6 +140,9 @@ public class VolatileSword extends SwordItem implements MagicItem, MagicWeapon {
 			currentEntity.setRemainingFireTicks(flameSeconds * 20);
 			currentEntity.hurt(ItemUtil.entityDamageSource("volatile_sword", entityList.get(x), player), (float)(flameDamage * ItemUtil.getArcanePowerDamageMod(stack)));
 			currentEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, slowDuration * 20, 2));
+			if (player.getOffhandItem().getItem() instanceof MagicOrb) {
+				MagicModUtil.getMagicMod(player, currentEntity, ((MagicOrb) (player.getOffhandItem().getItem())).getOrbType());
+			}
 			//isSound = true;
 		}
 		

@@ -24,11 +24,11 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class FlameOrb extends Item implements MagicOrb {
+public class PoisonOrb extends Item implements MagicOrb {
 	
 	private String[] drops = {"Crafted"};
 
-	public FlameOrb() {
+	public PoisonOrb() {
 		super(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB));
 		
 	}
@@ -39,8 +39,8 @@ public class FlameOrb extends Item implements MagicOrb {
 		
 		lore.add(new TextComponent("Magic").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("A glassy orb imbued with the fires of the").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("Nether.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("A glassy orb imbued with the toxins of").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("spider venom.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("Hold in offhand to apply onhit effects to Fester").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 		lore.add(new TextComponent("Forest magic weapons.").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
@@ -56,7 +56,7 @@ public class FlameOrb extends Item implements MagicOrb {
 
 	@Override
 	public MagicModUtil getOrbType() {
-		return MagicModUtil.FLAME;
+		return MagicModUtil.POISON;
 	}
 
 }

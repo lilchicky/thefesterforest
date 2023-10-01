@@ -3,6 +3,8 @@ package com.gmail.thelilchicken01.tff.entity.projectile;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.effect.ModEffects;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
+import com.gmail.thelilchicken01.tff.item.item.MagicModUtil;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
 import com.gmail.thelilchicken01.tff.item.projectile.ElectricShot;
 
 import net.minecraft.core.particles.ParticleOptions;
@@ -18,6 +20,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
@@ -112,7 +115,15 @@ public class ElectricCharge extends Fireball {
 					if (vec.lengthSqr() > 0) livingTarget.push(vec.x, 0.1, vec.z);
 				}
 
-				if (shooter instanceof LivingEntity) doEnchantDamageEffects((LivingEntity)shooter, target);
+				if (shooter instanceof LivingEntity) {
+					doEnchantDamageEffects((LivingEntity)shooter, target);
+					if (shooter instanceof Player) {
+						Player player = (Player) shooter;
+						if (player.getOffhandItem().getItem() instanceof MagicOrb) {
+							MagicModUtil.getMagicMod(player, target, ((MagicOrb) (player.getOffhandItem().getItem())).getOrbType());
+						}
+					}
+				}
 				
 				livingTarget.addEffect(new MobEffectInstance(ModEffects.PARALYSIS.get(), effectDuration * 20, 0));
 				

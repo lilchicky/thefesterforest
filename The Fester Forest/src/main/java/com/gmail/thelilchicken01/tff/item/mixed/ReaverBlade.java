@@ -7,7 +7,9 @@ import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.EffectsUtil;
 import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item.MagicModUtil;
 import com.gmail.thelilchicken01.tff.item.item.item_types.MagicItem;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
 import com.gmail.thelilchicken01.tff.item.item.item_types.MagicWeapon;
 
 import net.minecraft.ChatFormatting;
@@ -52,6 +54,10 @@ public class ReaverBlade extends SwordItem implements MagicItem, MagicWeapon {
 			else {
 				strength = (int) (Math.random() * 6);
 				strength = (int) (strength * ItemUtil.getArcanePowerDamageMod(stack));
+			}
+			
+			if (((Player)(attacker)).getOffhandItem().getItem() instanceof MagicOrb) {
+				MagicModUtil.getMagicMod(((Player)(attacker)), target, ((MagicOrb) (((Player)(attacker)).getOffhandItem().getItem())).getOrbType());
 			}
 		}
 		

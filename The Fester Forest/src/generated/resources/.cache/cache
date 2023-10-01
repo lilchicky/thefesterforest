@@ -13,7 +13,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
 c5defbedf25b6ecf36bf55b38b2ff99beff20207 assets/tff/blockstates/soul_rot.json
-28917a60306697d361c812085e9dc00f7260ba68 assets/tff/lang/en_us.json
+835de4b89db007b2b7727217f2cce1c72931947c assets/tff/lang/en_us.json
 24d27db74b37f74e514f26a15787d776200bea34 assets/tff/models/block/blue_fester_shroom_block.json
 e48eb80bb4a853e7d3636a9aa2971065e6494c2f assets/tff/models/block/compressed_rotting_sand.json
 f12d6a54881723e53655f55b547fef43d40893ee assets/tff/models/block/cracked_rotting_stone_bricks.json
@@ -60,10 +60,12 @@ fb3789e8c184630cb7d279a5e01dcce292866a96 assets/tff/models/item/energetic_fungus
 a5cc7eab79258ab6742ea8dcaccf8fb359327d52 assets/tff/models/item/fester_chunk.json
 c54e2c2e2e77906167442203a23cb518c3a9dbfb assets/tff/models/item/fester_ore.json
 bf887d5ec9b30a203ddd73d558b11e6e9a5f8b02 assets/tff/models/item/festering_club.json
+9de195147258c26d295ee1e295aecd2f9b7dde5b assets/tff/models/item/flame_orb.json
 ffbbd55d61fbedd6c91aac6c4ef8b0a6707d7c66 assets/tff/models/item/flesh_ball.json
 b3fc3830197e956682a86e1dd9cdfd0a2639ee69 assets/tff/models/item/food_book.json
 b812a130c005256936ce11549dd1da33e4740737 assets/tff/models/item/forgemaster_heart.json
 20fe85588f55ea3dbf1f699b27f3fe2fa69a58a4 assets/tff/models/item/frostbitten_planks.json
+efc080bc3e379d6fe78c957eb413ba67a2dfcef1 assets/tff/models/item/frozen_orb.json
 7c9df64ae0afa30bd02e6b91022c3cc2033361f4 assets/tff/models/item/frozen_pendant.json
 168a7ed06fdd457073fb36e51b6eb98ca36767f4 assets/tff/models/item/goopy_boots.json
 c5a56c89b76e773a09e5d38033b057f35644d787 assets/tff/models/item/goopy_chestplate.json
@@ -75,6 +77,8 @@ f2fb8fb8d9223adee3a7e42a5d883f6210e9ee29 assets/tff/models/item/goopy_stick.json
 83f375afc54cd5e22d6f479fc9c36a62677febaa assets/tff/models/item/gravity_gauntlet.json
 f49446076698afd760cbc84d3857a5ea9431d03b assets/tff/models/item/heavy_stone.json
 d608d6f83c398a9c4d76d60e4d5678d189acdf55 assets/tff/models/item/ice_spike.json
+1010aada874fd55a040e1bced1bddefddd8eba11 assets/tff/models/item/levitate_orb.json
+484c38f85c3e3464e025f65d47eb4bb5e7b84721 assets/tff/models/item/life_orb.json
 94672d38650bc9200aa84ac037187327aed2c8af assets/tff/models/item/mechanical_apple.json
 131b0f9adf7ccd20a75d62346e86faf604fc3eae assets/tff/models/item/mechanical_boots.json
 c6a85d587a6be2abb7af4f1d88d35cb582e1060f assets/tff/models/item/mechanical_chestplate.json
@@ -86,6 +90,7 @@ bc0bbc348ed2ee5bb77bb538c9cbaa39449be9af assets/tff/models/item/moon_shoes.json
 1e3bd84e27ff0a90a9b6187edbb626ac438a1570 assets/tff/models/item/mossy_rotting_stone.json
 efc76c7a4850020502c04096eaf7e9b967ac2593 assets/tff/models/item/orange_fester_shroom_block.json
 9e9368e58029f5338026b14a585f0c95906e9792 assets/tff/models/item/pocket_sand.json
+25df8f609bc2420294ad1ed633436b963f1173ea assets/tff/models/item/poison_orb.json
 a633748954bd8425fe840a6c0850df036923ba84 assets/tff/models/item/purifying_powder.json
 d66454e52ed6f1b8427c3453d5b423ce72545f49 assets/tff/models/item/raw_rotfish.json
 7156e67f730c5d1db6b1873e9a5f5c8850857c07 assets/tff/models/item/reaver_blade.json
@@ -130,6 +135,7 @@ bcda1d4d737233f9885f1da3a0f49f39287c5dac assets/tff/models/item/volatile_boots.j
 164a098f441d335871032b02fd241d6202f1aba7 assets/tff/models/item/volatile_helmet.json
 c0a24ed67098e0b696a850710a207f5f5e3f603d assets/tff/models/item/volatile_leggings.json
 784cda22bbce9818300ab0e973c40c653ae2e466 assets/tff/models/item/volatile_necklace.json
+c08311c2b4dd1a67118df34d44e41a4b90ac31b0 assets/tff/models/item/wither_orb.json
 4b3b395bccc5d3373066d3596475c02d73afa586 data/tff/advancements/recipes/brewing/purifying_powder_blaze_rod.json
 e132de842d24864e033249a9f00a2e37bb98e763 data/tff/advancements/recipes/building_blocks/icicle_into_packed_ice.json
 1a6a7216ee4ea6b338cf785621839e5557a2b86c data/tff/advancements/recipes/building_blocks/purifying_powder_nether_bricks.json

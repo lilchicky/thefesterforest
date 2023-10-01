@@ -332,6 +332,11 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.VERDANT_BRANCH.get(), "Verdant Branch");
 		add(ItemInit.DULL_ORB.get(), "Dull Orb");
 		add(ItemInit.FLAME_ORB.get(), "Orb of Embers");
+		add(ItemInit.LEVITATE_ORB.get(), "Orb of Weightlessness");
+		add(ItemInit.POISON_ORB.get(), "Orb of Toxins");
+		add(ItemInit.FROZEN_ORB.get(), "Orb of Frost");
+		add(ItemInit.LIFE_ORB.get(), "Orb of Life");
+		add(ItemInit.WITHER_ORB.get(), "Orb of Decay");
 		
 		/*
 		 * 

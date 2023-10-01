@@ -5,7 +5,9 @@ import java.util.List;
 import com.gmail.thelilchicken01.tff.enchantment.ModEnchants;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.item.MagicModUtil;
 import com.gmail.thelilchicken01.tff.item.item.item_types.MagicItem;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
 import com.gmail.thelilchicken01.tff.item.item.item_types.MagicWeapon;
 
 import net.minecraft.ChatFormatting;
@@ -50,6 +52,10 @@ public class FesteringClub extends SwordItem implements MagicItem, MagicWeapon {
 			else {
 				strength = 1+ 
 						(EnchantmentHelper.getItemEnchantmentLevel(ModEnchants.quickcast.get(), stack));
+			}
+			
+			if (((Player)(attacker)).getOffhandItem().getItem() instanceof MagicOrb) {
+				MagicModUtil.getMagicMod(((Player)(attacker)), target, ((MagicOrb) (((Player)(attacker)).getOffhandItem().getItem())).getOrbType());
 			}
 		}
 		

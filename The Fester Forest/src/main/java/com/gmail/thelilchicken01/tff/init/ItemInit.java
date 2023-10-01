@@ -68,11 +68,16 @@ import com.gmail.thelilchicken01.tff.item.magic.BrittleBranch;
 import com.gmail.thelilchicken01.tff.item.magic.DullOrb;
 import com.gmail.thelilchicken01.tff.item.magic.EnergeticFungus;
 import com.gmail.thelilchicken01.tff.item.magic.FlameOrb;
+import com.gmail.thelilchicken01.tff.item.magic.FrozenOrb;
 import com.gmail.thelilchicken01.tff.item.magic.FrozenPendant;
+import com.gmail.thelilchicken01.tff.item.magic.LevitateOrb;
+import com.gmail.thelilchicken01.tff.item.magic.LifeOrb;
 import com.gmail.thelilchicken01.tff.item.magic.MeteorWand;
+import com.gmail.thelilchicken01.tff.item.magic.PoisonOrb;
 import com.gmail.thelilchicken01.tff.item.magic.ShieldBook;
 import com.gmail.thelilchicken01.tff.item.magic.VerdantBranch;
 import com.gmail.thelilchicken01.tff.item.magic.VolatileNecklace;
+import com.gmail.thelilchicken01.tff.item.magic.WitherOrb;
 import com.gmail.thelilchicken01.tff.item.melee.AncientDagger;
 import com.gmail.thelilchicken01.tff.item.melee.AncientGreatsword;
 import com.gmail.thelilchicken01.tff.item.melee.AncientHatchet;
@@ -643,6 +648,26 @@ public class ItemInit {
 	//Flame Orb
 	public static final RegistryObject<Item> FLAME_ORB = register("flame_orb",
 			() -> new FlameOrb());
+	
+	//Levitate Orb
+	public static final RegistryObject<Item> LEVITATE_ORB = register("levitate_orb",
+			() -> new LevitateOrb());
+	
+	//Levitate Orb
+	public static final RegistryObject<Item> POISON_ORB = register("poison_orb",
+			() -> new PoisonOrb());
+	
+	//Frozen Orb
+	public static final RegistryObject<Item> FROZEN_ORB = register("frozen_orb",
+			() -> new FrozenOrb());
+	
+	//Life Orb
+	public static final RegistryObject<Item> LIFE_ORB = register("life_orb",
+			() -> new LifeOrb());
+	
+	//Wither Orb
+	public static final RegistryObject<Item> WITHER_ORB = register("wither_orb",
+			() -> new WitherOrb());
 	
 	//Purifying Powder
 	public static final RegistryObject<Item> PURIFYING_POWDER = register("purifying_powder",

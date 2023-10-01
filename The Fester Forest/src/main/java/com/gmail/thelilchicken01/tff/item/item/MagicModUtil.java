@@ -6,6 +6,7 @@ import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
 
+import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -18,7 +19,9 @@ public enum MagicModUtil {
 	FLAME,
 	POISON,
 	ICE,
-	LEVITATE;
+	LEVITATE,
+	LIFE,
+	WITHER;
 	
 	public static void getMagicMod(Player shooter, Entity hitEntity, @Nullable MagicModUtil mod) {
 		
@@ -57,7 +60,7 @@ public enum MagicModUtil {
 						target.setTicksFrozen(140 + 80);
 					}
 					if (ArmorSets.BANSHEE.getArmorSet(shooter) == SetCount.FOUR) {
-						target.setRemainingFireTicks(140 + 100);
+						target.setTicksFrozen(140 + 1000);
 					}
 					else {
 						target.setTicksFrozen(140 + 60);
@@ -72,6 +75,39 @@ public enum MagicModUtil {
 					}
 					else {
 						target.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 40, 0));
+					}
+					break;
+				case LIFE:
+					if (!shooter.getCooldowns().isOnCooldown(shooter.getOffhandItem().getItem())) {
+						if (ArmorSets.BANSHEE.getArmorSet(shooter) == SetCount.TWO) {
+							shooter.heal(3.0f);
+							shooter.awardStat(Stats.ITEM_USED.get(shooter.getOffhandItem().getItem()));
+							shooter.getCooldowns().addCooldown(shooter.getOffhandItem().getItem(), 
+									ItemUtil.getQuickcastCooldown(5 * 20, shooter.getOffhandItem()));
+						}
+						if (ArmorSets.BANSHEE.getArmorSet(shooter) == SetCount.FOUR) {
+							shooter.heal(4.0f);
+							shooter.awardStat(Stats.ITEM_USED.get(shooter.getOffhandItem().getItem()));
+							shooter.getCooldowns().addCooldown(shooter.getOffhandItem().getItem(), 
+									ItemUtil.getQuickcastCooldown(5 * 20, shooter.getOffhandItem()));
+						}
+						else {
+							shooter.heal(2.0f);
+							shooter.awardStat(Stats.ITEM_USED.get(shooter.getOffhandItem().getItem()));
+							shooter.getCooldowns().addCooldown(shooter.getOffhandItem().getItem(), 
+									ItemUtil.getQuickcastCooldown(5 * 20, shooter.getOffhandItem()));
+						}
+					}
+					break;
+				case WITHER:
+					if (ArmorSets.BANSHEE.getArmorSet(shooter) == SetCount.TWO) {
+						target.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 2));
+					}
+					if (ArmorSets.BANSHEE.getArmorSet(shooter) == SetCount.FOUR) {
+						target.addEffect(new MobEffectInstance(MobEffects.WITHER, 120, 4));
+					}
+					else {
+						target.addEffect(new MobEffectInstance(MobEffects.WITHER, 80, 1));
 					}
 					break;
 				default:
