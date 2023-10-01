@@ -247,7 +247,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 					}
 					
 					if (spawnTries > 100) {
-						TheFesterForest.LOGGER.info("[Chicky's Fester Forest]: Reached maximum Pylon spawn attempts.");
+						TheFesterForest.LOGGER.info("Reached maximum Pylon spawn attempts.");
 						break pylonSpawn;
 					}
 					
