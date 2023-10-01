@@ -21,6 +21,11 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:dull_orb"
+        },
+        {
+          "type": "minecraft:item",
           "weight": 40,
           "name": "minecraft:ender_pearl"
         },

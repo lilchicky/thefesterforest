@@ -26,6 +26,11 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:dull_orb"
+        },
+        {
+          "type": "minecraft:item",
           "weight": 3,
           "name": "tff:ancient_dagger",
           "functions": [
