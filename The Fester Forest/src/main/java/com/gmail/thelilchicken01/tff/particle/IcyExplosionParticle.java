@@ -37,7 +37,7 @@ public class IcyExplosionParticle extends TextureSheetParticle {
 	}
 
 	private void fadeOut() {
-		this.alpha = (-(1/lifetime) * age + 1);
+		this.alpha = (-(1/(float)lifetime) * age + 1);
 	}
 	
 	@Override
