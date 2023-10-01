@@ -73,6 +73,7 @@ import com.gmail.thelilchicken01.tff.item.magic.FlameOrb;
 import com.gmail.thelilchicken01.tff.item.magic.ForgemasterOrb;
 import com.gmail.thelilchicken01.tff.item.magic.FrozenOrb;
 import com.gmail.thelilchicken01.tff.item.magic.FrozenPendant;
+import com.gmail.thelilchicken01.tff.item.magic.GlowingBook;
 import com.gmail.thelilchicken01.tff.item.magic.LevitateOrb;
 import com.gmail.thelilchicken01.tff.item.magic.LifeOrb;
 import com.gmail.thelilchicken01.tff.item.magic.MeteorWand;
@@ -475,6 +476,16 @@ public class ItemInit {
 	//Reaver Blade
 	public static final RegistryObject<Item> REAVER_BLADE = register("reaver_blade", 
 			() -> new ReaverBlade(ModTiers.BONE, -6, -1f, new Properties().tab(TheFesterForest.TFF_TAB).durability(1750)));
+	
+	/*
+	 * 
+	 * Glacial Titan Items
+	 * 
+	 */
+	
+	//Book of Glowing
+	public static final RegistryObject<Item> GLOWING_BOOK = register("glowing_book", 
+			() -> new GlowingBook());
 	
 	/*
 	 * 

@@ -188,23 +188,16 @@ public enum MagicModUtil {
 	
 	private static void repairItem(Player player, int repairAmount) {
 		
-		@Nullable ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
-		@Nullable ItemStack chestplate = player.getItemBySlot(EquipmentSlot.CHEST);
-		@Nullable ItemStack leggings = player.getItemBySlot(EquipmentSlot.LEGS);
-		@Nullable ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
+//		@Nullable ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
+//		@Nullable ItemStack chestplate = player.getItemBySlot(EquipmentSlot.CHEST);
+//		@Nullable ItemStack leggings = player.getItemBySlot(EquipmentSlot.LEGS);
+//		@Nullable ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
 		
-		if (helmet != null && helmet.isDamaged()) {
-			helmet.setDamageValue(helmet.getDamageValue() - repairAmount);
-		}
-		if (chestplate != null && chestplate.isDamaged()) {
-			chestplate.setDamageValue(chestplate.getDamageValue() - repairAmount);
-		}
-		if (leggings != null && leggings.isDamaged()) {
-			leggings.setDamageValue(leggings.getDamageValue() - repairAmount);
-		}
-		if (boots != null && boots.isDamaged()) {
-			boots.setDamageValue(boots.getDamageValue() - repairAmount);
-		}
+		player.getArmorSlots().forEach(item -> {
+			
+			item.setDamageValue(item.getDamageValue() - repairAmount);
+			
+		});
 		
 	}
 

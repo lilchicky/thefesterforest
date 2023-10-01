@@ -585,7 +585,7 @@ public class ModRecipeProvider extends RecipeProvider {
 		.define('e', BlockInit.CORRODED_SHROOM.get().asItem())
 		.define('f', BlockInit.WEEPING_GRASS.get().asItem())
 		.define('g', BlockInit.FROSTVINE.get().asItem())
-		.define('h', Items.BONE_MEAL)
+		.define('h', Items.DIAMOND)
 		.unlockedBy("has_" + ItemInit.BRITTLE_BRANCH.get().getRegistryName(), 
 				has(ItemInit.BRITTLE_BRANCH.get().asItem())) // what unlocks the recipe when you get that item
 		.pattern("bcd").pattern("hah").pattern("efg").save(consumer, 

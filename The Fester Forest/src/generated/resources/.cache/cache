@@ -13,7 +13,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
 c5defbedf25b6ecf36bf55b38b2ff99beff20207 assets/tff/blockstates/soul_rot.json
-23a250777f34e1c7503320f6da17046730d7eb03 assets/tff/lang/en_us.json
+d47c3cda8be7f9267ac9e5320d3a851e7c98ea83 assets/tff/lang/en_us.json
 24d27db74b37f74e514f26a15787d776200bea34 assets/tff/models/block/blue_fester_shroom_block.json
 e48eb80bb4a853e7d3636a9aa2971065e6494c2f assets/tff/models/block/compressed_rotting_sand.json
 f12d6a54881723e53655f55b547fef43d40893ee assets/tff/models/block/cracked_rotting_stone_bricks.json
@@ -68,6 +68,7 @@ b812a130c005256936ce11549dd1da33e4740737 assets/tff/models/item/forgemaster_hear
 20fe85588f55ea3dbf1f699b27f3fe2fa69a58a4 assets/tff/models/item/frostbitten_planks.json
 efc080bc3e379d6fe78c957eb413ba67a2dfcef1 assets/tff/models/item/frozen_orb.json
 7c9df64ae0afa30bd02e6b91022c3cc2033361f4 assets/tff/models/item/frozen_pendant.json
+02ca2932ddbdf256d7311f598151e285c57e047b assets/tff/models/item/glowing_book.json
 168a7ed06fdd457073fb36e51b6eb98ca36767f4 assets/tff/models/item/goopy_boots.json
 c5a56c89b76e773a09e5d38033b057f35644d787 assets/tff/models/item/goopy_chestplate.json
 053909672ea0d723192a9c54dfda14e90504319c assets/tff/models/item/goopy_helmet.json
@@ -490,6 +491,6 @@ e6cb617b9eabbb48bda07303d2b0e0a481976df1 data/tff/recipes/slimy_stairs.json
 a49299bb5bf00b1d5460d12dd1743e7e6c296ce9 data/tff/recipes/soul_rot_to_skulls.json
 99d76c946157cd65bcf5cf67ba796c8f449e5ed6 data/tff/recipes/stone.json
 5d98e82bbf257f3b83db4dfe19f4e74fdf3d4458 data/tff/recipes/stripped_frostbitten_wood.json
-b205a242a22e0e09e2b28a999eebb47c9717ad46 data/tff/recipes/verdant_branch.json
+9da55ba06900638a288fc0a30549d578c1c02b74 data/tff/recipes/verdant_branch.json
 10de56ab7225fe4771de5bd032f7b9b8cf501ab0 data/tff/recipes/weeping_grass_to_blue_dye.json
 b97b7b6d51460054ce0c2378fec13890ad882823 data/tff/recipes/wither_orb.json
