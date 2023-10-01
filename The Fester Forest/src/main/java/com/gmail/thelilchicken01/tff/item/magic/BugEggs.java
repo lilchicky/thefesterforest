@@ -2,12 +2,14 @@ package com.gmail.thelilchicken01.tff.item.magic;
 
 import java.util.List;
 
+import com.gmail.thelilchicken01.tff.enchantment.ModEnchants;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 import com.gmail.thelilchicken01.tff.item.item.item_types.MagicItem;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicWeapon;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -20,11 +22,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class BugEggs extends Item implements MagicItem {
+public class BugEggs extends Item implements MagicItem, MagicWeapon {
 	
 	private String[] drops = {"Reetle Queen", "Fester Forest Loot Chests"};
 	
@@ -41,13 +44,13 @@ public class BugEggs extends Item implements MagicItem {
 		int bugs;
 		
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
-			bugs = 5;
+			bugs = 5 + (EnchantmentHelper.getItemEnchantmentLevel(ModEnchants.arcanePower.get(), player.getItemInHand(hand)));
 		}
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
-			bugs = 7;
+			bugs = 7 + (EnchantmentHelper.getItemEnchantmentLevel(ModEnchants.arcanePower.get(), player.getItemInHand(hand)));
 		}
 		else {
-			bugs = 3;
+			bugs = 3 + (EnchantmentHelper.getItemEnchantmentLevel(ModEnchants.arcanePower.get(), player.getItemInHand(hand)));
 		}
 		
 		for (int x = 0; x < bugs; x++) {
