@@ -78,7 +78,7 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 				FrostBolt shot = bulletItem.createProjectile(player.getLevel(), shotAmmo, player);
 			
 				Vec3 currentPos = shot.getPosition(1.0f);
-				Vec3 targetPos = currentEntity.getPosition(1.0f).add(0.0, currentEntity.getEyeHeight() * 0.5, 0.0);
+				Vec3 targetPos = currentEntity.getPosition(1.0f).add(0.0, currentEntity.getBbHeight() * 0.05, 0.0);
 				Vec3 targetVector = targetPos.subtract(currentPos).normalize();
 			
 				shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 1.2f, 0.0f);
@@ -103,7 +103,7 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 				FrostBolt shot = bulletItem.createProjectile(player.getLevel(), shotAmmo, player);
 			
 				Vec3 currentPos = shot.getPosition(1.0f);
-				Vec3 targetPos = nearbyEntities.get(x).getPosition(1.0f).add(0.0, nearbyEntities.get(x).getEyeHeight() * 0.5, 0.0);
+				Vec3 targetPos = nearbyEntities.get(x).getPosition(1.0f).add(0.0, nearbyEntities.get(x).getBbHeight() * 0.05, 0.0);
 				Vec3 targetVector = targetPos.subtract(currentPos).normalize();
 			
 				shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 1.2f, 0.0f);

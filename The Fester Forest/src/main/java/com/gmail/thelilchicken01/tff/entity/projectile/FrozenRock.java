@@ -119,12 +119,12 @@ public class FrozenRock extends Fireball {
 					Player player = (Player) shooter;
 					
 					List<LivingEntity> nearbyEntities = this.getLevel().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, player, new AABB(
-							this.getX() - 4, 
-							this.getY() - 4, 
-							this.getZ() - 4, 
-							this.getX() + 4, 
-							this.getY() + 4, 
-							this.getZ() + 4));
+							this.getX() - 3, 
+							this.getY() - 3, 
+							this.getZ() - 3, 
+							this.getX() + 3, 
+							this.getY() + 3, 
+							this.getZ() + 3));
 					
 					for (LivingEntity currentEntity : nearbyEntities) {
 						
@@ -167,12 +167,12 @@ public class FrozenRock extends Fireball {
 				Player shooter = (Player) owner;
 				
 				List<LivingEntity> nearbyEntities = this.getLevel().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, shooter, new AABB(
-						hitLoc.getX() - 4, 
-						hitLoc.getY() - 4, 
-						hitLoc.getZ() - 4, 
-						hitLoc.getX() + 4, 
-						hitLoc.getY() + 4, 
-						hitLoc.getZ() + 4));
+						hitLoc.getX() - 3, 
+						hitLoc.getY() - 3, 
+						hitLoc.getZ() - 3, 
+						hitLoc.getX() + 3, 
+						hitLoc.getY() + 3, 
+						hitLoc.getZ() + 3));
 				
 				for (LivingEntity currentEntity : nearbyEntities) {
 					
