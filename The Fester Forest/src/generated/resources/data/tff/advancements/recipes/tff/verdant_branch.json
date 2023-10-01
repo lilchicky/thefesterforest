@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:verdant_branch"
+    ]
+  },
+  "criteria": {
+    "has_tff:brittle_branch": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:brittle_branch"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:verdant_branch"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:brittle_branch",
+      "has_the_recipe"
+    ]
+  ]
+}

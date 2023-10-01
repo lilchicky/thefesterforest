@@ -479,16 +479,99 @@ public class ModRecipeProvider extends RecipeProvider {
 				new ResourceLocation(TheFesterForest.MODID, 
 						BlockInit.FESTER_BRICK_PRESSURE_PLATE.get().getRegistryName().getPath()));
 		
+		/*
+		 * Magic Orbs
+		 */
+		
+		// Flame Orb
+		ShapedRecipeBuilder.shaped(ItemInit.FLAME_ORB.get(), 1)
+		.define('a', ItemInit.DULL_ORB.get().asItem()).define('b', Items.BLAZE_POWDER)
+		.unlockedBy("has_" + ItemInit.DULL_ORB.get().getRegistryName(), 
+				has(ItemInit.DULL_ORB.get().asItem()))
+		.pattern(" b ").pattern("bab").pattern(" b ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.FLAME_ORB.get().getRegistryName().getPath()));
+		
+		// Levitate Orb
+		ShapedRecipeBuilder.shaped(ItemInit.LEVITATE_ORB.get(), 1)
+		.define('a', ItemInit.DULL_ORB.get().asItem()).define('b', Items.SHULKER_SHELL)
+		.unlockedBy("has_" + ItemInit.DULL_ORB.get().getRegistryName(), 
+				has(ItemInit.DULL_ORB.get().asItem()))
+		.pattern(" b ").pattern("bab").pattern(" b ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.LEVITATE_ORB.get().getRegistryName().getPath()));
+		
+		// Poison Orb
+		ShapedRecipeBuilder.shaped(ItemInit.POISON_ORB.get(), 1)
+		.define('a', ItemInit.DULL_ORB.get().asItem()).define('b', Items.SPIDER_EYE)
+		.unlockedBy("has_" + ItemInit.DULL_ORB.get().getRegistryName(), 
+				has(ItemInit.DULL_ORB.get().asItem()))
+		.pattern(" b ").pattern("bab").pattern(" b ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.POISON_ORB.get().getRegistryName().getPath()));
+		
+		// Ice Orb
+		ShapedRecipeBuilder.shaped(ItemInit.FROZEN_ORB.get(), 1)
+		.define('a', ItemInit.DULL_ORB.get().asItem()).define('b', Items.BLUE_ICE)
+		.unlockedBy("has_" + ItemInit.DULL_ORB.get().getRegistryName(), 
+				has(ItemInit.DULL_ORB.get().asItem()))
+		.pattern(" b ").pattern("bab").pattern(" b ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.FROZEN_ORB.get().getRegistryName().getPath()));
+		
+		// Wither Orb
+		ShapedRecipeBuilder.shaped(ItemInit.WITHER_ORB.get(), 1)
+		.define('a', ItemInit.DULL_ORB.get().asItem()).define('b', Items.WITHER_ROSE)
+		.unlockedBy("has_" + ItemInit.DULL_ORB.get().getRegistryName(), 
+				has(ItemInit.DULL_ORB.get().asItem()))
+		.pattern(" b ").pattern("bab").pattern(" b ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.WITHER_ORB.get().getRegistryName().getPath()));
+		
+		// Life Orb
+		ShapedRecipeBuilder.shaped(ItemInit.LIFE_ORB.get(), 1) // add , int to get number of output
+		.define('a', ItemInit.DULL_ORB.get().asItem())
+		.define('b', BlockInit.ROTTING_FLOWER.get().asItem())
+		.define('c', BlockInit.SICKENING_FLOWER.get().asItem())
+		.define('d', BlockInit.SLIMY_FLOWER.get().asItem())
+		.define('e', BlockInit.CORRODED_SHROOM.get().asItem())
+		.define('f', BlockInit.WEEPING_GRASS.get().asItem())
+		.define('g', BlockInit.FROSTVINE.get().asItem())
+		.define('h', Items.BONE_MEAL)
+		.unlockedBy("has_" + ItemInit.DULL_ORB.get().getRegistryName(), 
+				has(ItemInit.DULL_ORB.get().asItem())) // what unlocks the recipe when you get that item
+		.pattern("bcd").pattern("hah").pattern("efg").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, ItemInit.LIFE_ORB.get().getRegistryName().getPath()));
+		
+		/*
+		 * Magic Weapons
+		 */
+		
 		// Angelic Whistle
 		ShapedRecipeBuilder.shaped(ItemInit.ANGELIC_WHISTLE.get(), 1) // add , int to get number of output
 		.define('a', ItemInit.ANCIENT_WHISTLE.get().asItem())
-		.define('b', Items.NETHER_STAR)
+		.define('b', Items.DIAMOND)
 		.define('c', Items.FEATHER)
 		.define('d', Items.IRON_INGOT)
 		.unlockedBy("has_" + ItemInit.ANCIENT_WHISTLE.get().getRegistryName(), 
 				has(ItemInit.ANCIENT_WHISTLE.get().asItem())) // what unlocks the recipe when you get that item
 		.pattern(" d ").pattern("cac").pattern(" b ").save(consumer, 
 				new ResourceLocation(TheFesterForest.MODID, ItemInit.ANGELIC_WHISTLE.get().getRegistryName().getPath()));
+		
+		// Verdant Branch
+		ShapedRecipeBuilder.shaped(ItemInit.VERDANT_BRANCH.get(), 1) // add , int to get number of output
+		.define('a', ItemInit.BRITTLE_BRANCH.get().asItem())
+		.define('b', BlockInit.ROTTING_FLOWER.get().asItem())
+		.define('c', BlockInit.SICKENING_FLOWER.get().asItem())
+		.define('d', BlockInit.SLIMY_FLOWER.get().asItem())
+		.define('e', BlockInit.CORRODED_SHROOM.get().asItem())
+		.define('f', BlockInit.WEEPING_GRASS.get().asItem())
+		.define('g', BlockInit.FROSTVINE.get().asItem())
+		.define('h', Items.BONE_MEAL)
+		.unlockedBy("has_" + ItemInit.BRITTLE_BRANCH.get().getRegistryName(), 
+				has(ItemInit.BRITTLE_BRANCH.get().asItem())) // what unlocks the recipe when you get that item
+		.pattern("bcd").pattern("hah").pattern("efg").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, ItemInit.VERDANT_BRANCH.get().getRegistryName().getPath()));
 		
 		/*
 		 * 

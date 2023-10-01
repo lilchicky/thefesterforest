@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bcd",
+    "hah",
+    "efg"
+  ],
+  "key": {
+    "a": {
+      "item": "tff:dull_orb"
+    },
+    "b": {
+      "item": "tff:rotting_flower"
+    },
+    "c": {
+      "item": "tff:sickening_flower"
+    },
+    "d": {
+      "item": "tff:slimy_bell"
+    },
+    "e": {
+      "item": "tff:corroded_shroom"
+    },
+    "f": {
+      "item": "tff:weeping_grass"
+    },
+    "g": {
+      "item": "tff:frostvine"
+    },
+    "h": {
+      "item": "minecraft:bone_meal"
+    }
+  },
+  "result": {
+    "item": "tff:life_orb"
+  }
+}

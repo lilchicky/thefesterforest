@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:frozen_orb"
+    ]
+  },
+  "criteria": {
+    "has_tff:dull_orb": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:dull_orb"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:frozen_orb"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:dull_orb",
+      "has_the_recipe"
+    ]
+  ]
+}
