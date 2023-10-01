@@ -193,17 +193,17 @@ public enum MagicModUtil {
 		@Nullable ItemStack leggings = player.getItemBySlot(EquipmentSlot.LEGS);
 		@Nullable ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
 		
-		if (helmet != null) {
-			helmet.setDamageValue(helmet.getDamageValue() + repairAmount);
+		if (helmet != null && helmet.isDamaged()) {
+			helmet.setDamageValue(helmet.getDamageValue() - repairAmount);
 		}
-		if (chestplate != null) {
-			chestplate.setDamageValue(helmet.getDamageValue() + repairAmount);
+		if (chestplate != null && chestplate.isDamaged()) {
+			chestplate.setDamageValue(chestplate.getDamageValue() - repairAmount);
 		}
-		if (leggings != null) {
-			leggings.setDamageValue(helmet.getDamageValue() + repairAmount);
+		if (leggings != null && leggings.isDamaged()) {
+			leggings.setDamageValue(leggings.getDamageValue() - repairAmount);
 		}
-		if (boots != null) {
-			boots.setDamageValue(helmet.getDamageValue() + repairAmount);
+		if (boots != null && boots.isDamaged()) {
+			boots.setDamageValue(boots.getDamageValue() - repairAmount);
 		}
 		
 	}
