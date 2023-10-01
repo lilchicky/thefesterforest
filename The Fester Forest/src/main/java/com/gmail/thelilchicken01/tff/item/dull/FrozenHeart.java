@@ -36,6 +36,7 @@ public class FrozenHeart extends Item implements ICurioItem {
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "attack_damage", -6, AttributeModifier.Operation.ADDITION));
+	    builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "movement_speed", -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL));
 	    builder.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), "extra_health", 1.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
 	    builder.put(Attributes.ARMOR, new AttributeModifier(UUID.randomUUID(), "extra_armor", 0.5f, AttributeModifier.Operation.MULTIPLY_TOTAL));
 	    builder.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), "extra_armor_toughness", 0.5f, AttributeModifier.Operation.MULTIPLY_TOTAL));
@@ -54,13 +55,6 @@ public class FrozenHeart extends Item implements ICurioItem {
 	
 	@Override
 	public void curioTick(SlotContext slotContext, ItemStack stack) {
-		
-		if (slotContext.entity() instanceof Player) {
-			Player player = (Player)slotContext.entity();
-			
-			player.setTicksFrozen(40);
-			
-		}
 		
 		ICurioItem.super.curioTick(slotContext, stack);
 	}
