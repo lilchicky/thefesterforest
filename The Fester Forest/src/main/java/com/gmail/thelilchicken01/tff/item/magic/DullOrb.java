@@ -29,7 +29,7 @@ public class DullOrb extends Item implements MagicOrb {
 	private String[] drops = {"Fester Forest Loot Chests"};
 
 	public DullOrb() {
-		super(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB));
+		super(new Properties().stacksTo(16).tab(TheFesterForest.TFF_TAB));
 		
 	}
 	
