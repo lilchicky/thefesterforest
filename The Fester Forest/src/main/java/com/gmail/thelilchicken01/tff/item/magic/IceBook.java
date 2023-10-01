@@ -16,6 +16,8 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -51,6 +53,8 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 		
 		ItemStack stack = player.getItemInHand(hand);
 		
+		world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BOOK_PAGE_TURN, SoundSource.PLAYERS, 0.2F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+		
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
 			range = 16;
 			maxTargets = 8;
@@ -77,7 +81,7 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 				Vec3 targetPos = new Vec3(currentEntity.getX(), currentEntity.getY() + (currentEntity.getEyeHeight() * 0.5), currentEntity.getZ());
 				Vec3 targetVector = targetPos.subtract(currentPos).normalize();
 			
-				shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 0.4f, 0.0f);
+				shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 1.2f, 0.0f);
 				shot.setPos(shot.getX(),
 						shot.getY(),
 						shot.getZ());

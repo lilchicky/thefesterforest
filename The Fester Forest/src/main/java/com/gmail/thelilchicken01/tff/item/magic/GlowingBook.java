@@ -13,6 +13,8 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -42,6 +44,8 @@ public class GlowingBook extends Item implements MagicItem {
 	
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
+		
+		world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BOOK_PAGE_TURN, SoundSource.PLAYERS, 0.2F, world.getRandom().nextFloat() * 0.4F + 0.8F);
 		
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
 			range = 16;
