@@ -39,7 +39,7 @@ public class ForgemasterOrb extends Item implements MagicOrb {
 		
 		lore.add(new TextComponent("Magic").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("A glassy orb imbued with the fervor of").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("A glassy orb imbued with the mending fervor of").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent("the Forge.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("Hold in offhand to apply onhit effects to Fester").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
