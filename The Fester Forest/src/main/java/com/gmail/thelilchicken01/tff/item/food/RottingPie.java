@@ -23,7 +23,6 @@ public class RottingPie extends Item {
 		super(new Properties().tab(TheFesterForest.TFF_TAB).food(
 				new FoodProperties.Builder().saturationMod(1.4f).nutrition(14)
 				.effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 100, 255), 1f)
-				.effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 40, 0), 1f)
 				.build()));
 	}
 	
