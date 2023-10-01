@@ -1,9 +1,13 @@
-package com.gmail.thelilchicken01.tff.item.misc;
+package com.gmail.thelilchicken01.tff.item.magic;
 
 import java.util.List;
 
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
+import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -20,7 +24,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class BugEggs extends Item {
+public class BugEggs extends Item implements MagicItem {
 	
 	private String[] drops = {"Reetle Queen", "Fester Forest Loot Chests"};
 	
@@ -34,7 +38,19 @@ public class BugEggs extends Item {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
 		
-		for (int x = 0; x < 5; x++) {
+		int bugs;
+		
+		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
+			bugs = 5;
+		}
+		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
+			bugs = 7;
+		}
+		else {
+			bugs = 3;
+		}
+		
+		for (int x = 0; x < bugs; x++) {
 			
 			PlayerCrunchBeetleEntity beetle = new PlayerCrunchBeetleEntity(ModEntityTypes.PLAYER_CRUNCH_BEETLE.get(), world);
 			
@@ -47,7 +63,7 @@ public class BugEggs extends Item {
 		
 		player.playSound(SoundEvents.TURTLE_EGG_CRACK, 1.2f, 1.7f);
 		
-		player.getCooldowns().addCooldown(this, cooldownSeconds * 20);
+		player.getCooldowns().addCooldown(this, ItemUtil.getQuickcastCooldown(cooldownSeconds * 20, player.getItemInHand(hand)));
 
 		return super.use(world, player, hand);
 		
@@ -58,7 +74,7 @@ public class BugEggs extends Item {
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Summoning").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent("Magic").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("A small collection of Reetle eggs.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
@@ -72,7 +88,7 @@ public class BugEggs extends Item {
 			lore.add(new TextComponent(""));
 		}
 		else {
-			lore.add(new TextComponent("Summoning").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent("Magic").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("A small collection of Reetle eggs.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
