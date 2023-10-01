@@ -29,9 +29,9 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class GlowingBook extends Item implements MagicItem {
 	
-	private String[] drops = {"The Forgemaster"};
+	private String[] drops = {"Glacial Titan"};
 	
-	private int cooldown = 60;
+	private int cooldown = 45;
 	private int range = 8;
 
 	public GlowingBook() {
@@ -45,9 +45,11 @@ public class GlowingBook extends Item implements MagicItem {
 		
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
 			range = 16;
+			cooldown = 30;
 		}
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
 			range = 24;
+			cooldown = 15;
 		}
 		
 		List<LivingEntity> nearbyEntities = ItemUtil.getLivingInArea(player, range, range);
@@ -90,6 +92,9 @@ public class GlowingBook extends Item implements MagicItem {
 			lore.add(new TextComponent("An uncomfortably bright book, with the writings").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("of an old reveiling spell.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Apply glowing to all nearby living things.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Has a max of 32 entities.").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.ITALIC));
+			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < drops.length; x++) {
 				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
@@ -101,6 +106,8 @@ public class GlowingBook extends Item implements MagicItem {
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("An uncomfortably bright book, with the writings").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("of an old reveiling spell.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < drops.length; x++) {
