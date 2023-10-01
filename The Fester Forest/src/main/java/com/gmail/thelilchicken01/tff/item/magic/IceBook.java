@@ -82,9 +82,6 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 				Vec3 targetVector = targetPos.subtract(currentPos).normalize();
 			
 				shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 1.2f, 0.0f);
-				shot.setPos(shot.getX(),
-						shot.getY(),
-						shot.getZ());
 				shot.setDamage(shotDamage * ItemUtil.getArcanePowerDamageMod(stack));
 				shot.setIgnoreInvulnerability(false);
 				shot.canHitPlayer(false);
@@ -110,9 +107,6 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 				Vec3 targetVector = targetPos.subtract(currentPos).normalize();
 			
 				shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 1.2f, 0.0f);
-				shot.setPos(shot.getX(),
-						shot.getY(),
-						shot.getZ());
 				shot.setDamage(shotDamage * ItemUtil.getArcanePowerDamageMod(stack));
 				shot.setIgnoreInvulnerability(false);
 				shot.canHitPlayer(false);
