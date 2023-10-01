@@ -78,7 +78,7 @@ public class BugEggs extends Item implements MagicItem {
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("A small collection of Reetle eggs.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Right click to summon 5 friendly Reetles").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Right click to summon friendly Reetles").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("to fight for you for 20 seconds.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
