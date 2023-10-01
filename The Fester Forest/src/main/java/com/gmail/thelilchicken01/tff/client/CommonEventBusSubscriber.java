@@ -33,8 +33,6 @@ public class CommonEventBusSubscriber {
 	private static final Set<PlayerHurtHandler> PLAYER_HURT_HANDLERS = Sets.newTreeSet(new HandlerPriorityComparator());
 	private static final Set<PlayerDeathHandler> PLAYER_DEATH_HANDLERS = Sets.newTreeSet(new HandlerPriorityComparator());
 	
-	private static ItemStack pickaxe;
-	
 	public static void registerPlayerHurtHandlers(PlayerHurtHandler handler) {
 		PLAYER_HURT_HANDLERS.add(handler);
 	}

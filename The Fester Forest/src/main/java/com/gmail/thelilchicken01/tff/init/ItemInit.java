@@ -73,6 +73,7 @@ import com.gmail.thelilchicken01.tff.item.magic.FlameOrb;
 import com.gmail.thelilchicken01.tff.item.magic.ForgemasterOrb;
 import com.gmail.thelilchicken01.tff.item.magic.FrozenOrb;
 import com.gmail.thelilchicken01.tff.item.magic.FrozenPendant;
+import com.gmail.thelilchicken01.tff.item.magic.GlaciatedStaff;
 import com.gmail.thelilchicken01.tff.item.magic.GlowingBook;
 import com.gmail.thelilchicken01.tff.item.magic.LevitateOrb;
 import com.gmail.thelilchicken01.tff.item.magic.LifeOrb;
@@ -103,6 +104,7 @@ import com.gmail.thelilchicken01.tff.item.mixed.VolatileSword;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.ElectricShot;
+import com.gmail.thelilchicken01.tff.item.projectile.FrozenRockShot;
 import com.gmail.thelilchicken01.tff.item.projectile.IceSpikeShot;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
 import com.gmail.thelilchicken01.tff.item.tool.BonePickaxe;
@@ -487,6 +489,11 @@ public class ItemInit {
 	public static final RegistryObject<Item> GLOWING_BOOK = register("glowing_book", 
 			() -> new GlowingBook());
 	
+	//Glaciated Staff
+	public static final RegistryObject<Item> GLACIATED_STAFF = register("glaciated_staff",
+			() -> new GlaciatedStaff(new Properties().tab(TheFesterForest.TFF_TAB).durability(154), 
+					0.1).repair(() -> Ingredient.of(Items.PACKED_ICE)));
+	
 	/*
 	 * 
 	 * Frostbitten King Items
@@ -743,6 +750,10 @@ public class ItemInit {
 	//Ice Spike
 	public static final RegistryObject<IceSpikeShot> ICE_SPIKE = register("ice_spike",
 			() -> new IceSpikeShot(new Properties().stacksTo(1), 15));
+	
+	//Frozen Rock
+	public static final RegistryObject<FrozenRockShot> FROZEN_ROCK = register("frozen_rock",
+			() -> new FrozenRockShot(new Properties().stacksTo(1), 15));
 	
 	/*
 	 * 

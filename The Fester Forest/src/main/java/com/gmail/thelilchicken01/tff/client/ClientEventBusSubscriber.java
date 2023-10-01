@@ -40,6 +40,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.goop.SmallGoopEntity;
 import com.gmail.thelilchicken01.tff.entity.projectile.BoneCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.BranchCharge;
 import com.gmail.thelilchicken01.tff.entity.projectile.ElectricCharge;
+import com.gmail.thelilchicken01.tff.entity.projectile.FrozenRock;
 import com.gmail.thelilchicken01.tff.entity.projectile.IceSpike;
 import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
@@ -51,6 +52,7 @@ import com.gmail.thelilchicken01.tff.particle.BloodParticle;
 import com.gmail.thelilchicken01.tff.particle.BoneParticle;
 import com.gmail.thelilchicken01.tff.particle.BranchParticle;
 import com.gmail.thelilchicken01.tff.particle.HellflameParticle;
+import com.gmail.thelilchicken01.tff.particle.IcyExplosionParticle;
 import com.gmail.thelilchicken01.tff.particle.PocketSandParticle;
 import com.gmail.thelilchicken01.tff.particle.TffPortalParticle;
 import com.gmail.thelilchicken01.tff.util.ModItemProperties;
@@ -180,6 +182,9 @@ public class ClientEventBusSubscriber {
     	
     	event.registerEntityRenderer(ModEntityTypes.ice_spike.get(), 
     			(context) -> new ThrownItemRenderer<IceSpike>(context));
+    	
+    	event.registerEntityRenderer(ModEntityTypes.frozen_rock.get(), 
+    			(context) -> new ThrownItemRenderer<FrozenRock>(context));
     }
 	
 	@SubscribeEvent
@@ -191,6 +196,7 @@ public class ClientEventBusSubscriber {
 		Minecraft.getInstance().particleEngine.register(ParticleInit.BLOOD_PARTICLE.get(), BloodParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(ParticleInit.BONE_PARTICLE.get(), BoneParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(ParticleInit.BRANCH_PARTICLE.get(), BranchParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(ParticleInit.ICY_EXPLOSION_PARTICLE.get(), IcyExplosionParticle.Provider::new);
 	}
 	
 }
