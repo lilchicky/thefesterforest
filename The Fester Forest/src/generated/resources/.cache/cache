@@ -13,7 +13,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
 c5defbedf25b6ecf36bf55b38b2ff99beff20207 assets/tff/blockstates/soul_rot.json
-f986b383d96d8f2aef31d8bc6d023acf94cd54ef assets/tff/lang/en_us.json
+e99548dcc9a7244fb067a143c8faa76c5cee7b28 assets/tff/lang/en_us.json
 24d27db74b37f74e514f26a15787d776200bea34 assets/tff/models/block/blue_fester_shroom_block.json
 e48eb80bb4a853e7d3636a9aa2971065e6494c2f assets/tff/models/block/compressed_rotting_sand.json
 f12d6a54881723e53655f55b547fef43d40893ee assets/tff/models/block/cracked_rotting_stone_bricks.json
@@ -65,6 +65,7 @@ ffbbd55d61fbedd6c91aac6c4ef8b0a6707d7c66 assets/tff/models/item/flesh_ball.json
 b3fc3830197e956682a86e1dd9cdfd0a2639ee69 assets/tff/models/item/food_book.json
 b812a130c005256936ce11549dd1da33e4740737 assets/tff/models/item/forgemaster_heart.json
 4450716b24c026d43146d1eb5b86319f46bc02fc assets/tff/models/item/forgemaster_orb.json
+39e4545617c8622563b24ae95b8ffc7a67440934 assets/tff/models/item/frost_bolt.json
 20fe85588f55ea3dbf1f699b27f3fe2fa69a58a4 assets/tff/models/item/frostbitten_planks.json
 efc080bc3e379d6fe78c957eb413ba67a2dfcef1 assets/tff/models/item/frozen_orb.json
 7c9df64ae0afa30bd02e6b91022c3cc2033361f4 assets/tff/models/item/frozen_pendant.json
@@ -80,6 +81,7 @@ f2fb8fb8d9223adee3a7e42a5d883f6210e9ee29 assets/tff/models/item/goopy_stick.json
 6b459f283dbe5a1790dc2f15e7437330f3b40e95 assets/tff/models/item/goopy_sword.json
 83f375afc54cd5e22d6f479fc9c36a62677febaa assets/tff/models/item/gravity_gauntlet.json
 f49446076698afd760cbc84d3857a5ea9431d03b assets/tff/models/item/heavy_stone.json
+c3613f74bf6fd9dd835aadd02e724656ecb80b0e assets/tff/models/item/ice_book.json
 d608d6f83c398a9c4d76d60e4d5678d189acdf55 assets/tff/models/item/ice_spike.json
 1010aada874fd55a040e1bced1bddefddd8eba11 assets/tff/models/item/levitate_orb.json
 484c38f85c3e3464e025f65d47eb4bb5e7b84721 assets/tff/models/item/life_orb.json

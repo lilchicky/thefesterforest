@@ -2,6 +2,7 @@ package com.gmail.thelilchicken01.tff.init;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
+import com.gmail.thelilchicken01.tff.entity.projectile.FrostBolt;
 import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeBoots;
 import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeChestplate;
 import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeHelmet;
@@ -75,6 +76,7 @@ import com.gmail.thelilchicken01.tff.item.magic.FrozenOrb;
 import com.gmail.thelilchicken01.tff.item.magic.FrozenPendant;
 import com.gmail.thelilchicken01.tff.item.magic.GlaciatedStaff;
 import com.gmail.thelilchicken01.tff.item.magic.GlowingBook;
+import com.gmail.thelilchicken01.tff.item.magic.IceBook;
 import com.gmail.thelilchicken01.tff.item.magic.LevitateOrb;
 import com.gmail.thelilchicken01.tff.item.magic.LifeOrb;
 import com.gmail.thelilchicken01.tff.item.magic.MeteorWand;
@@ -104,6 +106,7 @@ import com.gmail.thelilchicken01.tff.item.mixed.VolatileSword;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.ElectricShot;
+import com.gmail.thelilchicken01.tff.item.projectile.FrostBoltProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.FrozenRockShot;
 import com.gmail.thelilchicken01.tff.item.projectile.IceSpikeShot;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
@@ -508,6 +511,10 @@ public class ItemInit {
 	public static final RegistryObject<Item> FOOD_BOOK = register("food_book", 
 			() -> new BookOfGluttony());
 	
+	//Book of Frost
+	public static final RegistryObject<Item> ICE_BOOK = register("ice_book", 
+			() -> new IceBook());
+	
 	/*
 	 * 
 	 * Generic Weapons
@@ -754,6 +761,10 @@ public class ItemInit {
 	//Frozen Rock
 	public static final RegistryObject<FrozenRockShot> FROZEN_ROCK = register("frozen_rock",
 			() -> new FrozenRockShot(new Properties().stacksTo(1), 15));
+	
+	//Frost Bolt
+	public static final RegistryObject<FrostBoltProjectile> FROST_BOLT = register("frost_bolt",
+			() -> new FrostBoltProjectile(new Properties().stacksTo(1), 15));
 	
 	/*
 	 * 

@@ -5,7 +5,7 @@ import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.item.item.MagicModUtil;
 import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
-import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
+import com.gmail.thelilchicken01.tff.item.projectile.FrostBoltProjectile;
 
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.nbt.CompoundTag;
@@ -28,71 +28,42 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.NetworkHooks;
 
-public class BranchCharge extends Fireball {
+public class FrostBolt extends Fireball {
 	
 	protected double damage = 6;
 	protected boolean ignoreInvulnerability = false;
 	protected double knockbackStrength = 0.1;
 	protected int ticksSinceFired;
 	protected LivingEntity target = null;
-	protected int poisonDuration = 5;
 	
 	private boolean canHitPlayer = true;
 	
 	private static int staticDamage = 10;
 
-	public BranchCharge(EntityType<? extends BranchCharge> p_i50160_1_, Level p_i50160_2_) {
+	public FrostBolt(EntityType<? extends FrostBolt> p_i50160_1_, Level p_i50160_2_) {
 		super(p_i50160_1_, p_i50160_2_);
 	}
 
-	public BranchCharge(Level worldIn, LivingEntity shooter) {
+	public FrostBolt(Level worldIn, LivingEntity shooter) {
 		this(worldIn, shooter, 0, 0, 0);
 		setPos(shooter.getX(), shooter.getEyeY() - 0.1, shooter.getZ());
 	}
 	
-	public BranchCharge(Level worldIn, LivingEntity shooter, LivingEntity target) {
+	public FrostBolt(Level worldIn, LivingEntity shooter, LivingEntity target) {
 		this(worldIn, shooter, 0, 0, 0);
 		this.target = target;
 		setPos(shooter.getX(), shooter.getEyeY() - 0.1, shooter.getZ());
 	}
 
-	public BranchCharge(Level worldIn, LivingEntity shooter, double accelX, double accelY, double accelZ) {
+	public FrostBolt(Level worldIn, LivingEntity shooter, double accelX, double accelY, double accelZ) {
 		super(ModEntityTypes.branch_charge.get(), shooter, accelX, accelY, accelZ, worldIn);
 	}
 
-	public BranchCharge(Level worldIn, double x, double y, double z, double accelX, double accelY, double accelZ) {
+	public FrostBolt(Level worldIn, double x, double y, double z, double accelX, double accelY, double accelZ) {
 		super(ModEntityTypes.branch_charge.get(), x, y, z, accelX, accelY, accelZ, worldIn);
 	}
 	
 	private static final double STOP_TRESHOLD = 0.01;
-	
-	@Override
-	public void tick() {
-		
-		super.tick();
-		
-		if(!getLevel().isClientSide()) {
-			ticksSinceFired++;
-			if (ticksSinceFired > 80 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
-				remove(RemovalReason.KILLED);
-			}
-			
-			if (target != null && !canHitPlayer) {
-				
-				if (!target.isDeadOrDying()) {
-				
-					Vec3 currentPos = this.getPosition(1.0f);
-					Vec3 targetPos = target.getPosition(1.0f).add(0.0, target.getEyeHeight() * 0.5, 0.0);
-					Vec3 newVector = targetPos.subtract(currentPos).normalize();
-				
-					setDeltaMovement(newVector);
-			    }
-				
-			}
-			
-		}
-		
-	}
 	
 	public void canHitPlayer(boolean hitPlayer) {
 		
@@ -111,7 +82,7 @@ public class BranchCharge extends Fireball {
 		if (!level.isClientSide) {
 			Entity target = raytrace.getEntity();
 			Entity shooter = getOwner();
-			BranchProjectile bullet = (BranchProjectile) getItemRaw().getItem();
+			FrostBoltProjectile bullet = (FrostBoltProjectile) getItemRaw().getItem();
 			
 			if (isOnFire()) target.setSecondsOnFire(5);
 			int lastHurtResistant = target.invulnerableTime;
@@ -121,7 +92,7 @@ public class BranchCharge extends Fireball {
 			
 			if (target instanceof Player) {
 				if (canHitPlayer) {
-					damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_branch_damage",
+					damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_frost_bolt_damage",
 							this, shooter).setProjectile(),
 							(float) bullet.modifyDamage(damage, this, target, shooter, level));
 				}
@@ -130,17 +101,13 @@ public class BranchCharge extends Fireball {
 				}
 			}
 			else {
-				damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_branch_damage",
+				damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_frost_bolt_damage",
 						this, shooter).setProjectile(),
 						(float) bullet.modifyDamage(damage, this, target, shooter, level));
 			}
 			
 			if (damaged && target instanceof LivingEntity) {
 				LivingEntity livingTarget = (LivingEntity)target;
-				
-				if (!livingTarget.hasEffect(MobEffects.POISON)) {
-					livingTarget.addEffect(new MobEffectInstance(MobEffects.POISON, poisonDuration * 20, 2));
-				}
 				
 				if (knockbackStrength > 0) {
 					double actualKnockback = knockbackStrength;

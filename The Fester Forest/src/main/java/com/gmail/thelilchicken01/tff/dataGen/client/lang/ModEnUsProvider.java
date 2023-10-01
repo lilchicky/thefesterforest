@@ -45,6 +45,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("death.attack.tff_frozen_damage.player", "%2$s was pierced by an icicle from %1$s");
 		add("death.attack.tff_frozen_rock_damage", "%1$s was smashed by a large chunk of ice");
 		add("death.attack.tff_frozen_rock_damage.player", "%2$s crushed %1$s with a large chunk of ice");
+		add("death.attack.tff_frost_bolt_damage", "%1$s needed to chill out");
+		add("death.attack.tff_frost_bolt_damage.player", "%2$s forced %1$s to chill out");
 		//Other
 		add(BlockInit.ROTTING_BRICKS.get(), "Fester Bricks");
 		add(ItemInit.ROTTING_BRICK.get(), "Fester Brick");
@@ -343,6 +345,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.FORGEMASTER_ORB.get(), "Orb of the Machine");
 		add(ItemInit.GLOWING_BOOK.get(), "Book of Luminosity");
 		add(ItemInit.GLACIATED_STAFF.get(), "Glacial Staff");
+		add(ItemInit.ICE_BOOK.get(), "Book of Frost");
 		
 		/*
 		 * 
@@ -353,6 +356,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.ICE_SPIKE.get(), "Ice Spike");
 		add(ItemInit.FROZEN_ROCK.get(), "Frozen Rock");
 		add(ModEntityTypes.frozen_rock.get(), "Frozen Rock");
+		add(ItemInit.FROST_BOLT.get(), "Frost Bolt");
+		add(ModEntityTypes.frost_bolt.get(), "Frost Bolt");
 		
 		/*
 		 * 
