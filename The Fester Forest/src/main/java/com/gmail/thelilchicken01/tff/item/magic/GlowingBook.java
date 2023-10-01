@@ -62,7 +62,7 @@ public class GlowingBook extends Item implements MagicItem {
 		
 			for (LivingEntity currentEntity : nearbyEntities) {
 			
-				currentEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 30 * 20, 0));
+				currentEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 30 * 20, 0, false, false));
 			
 			}
 		
@@ -71,7 +71,7 @@ public class GlowingBook extends Item implements MagicItem {
 			
 			for (int x = 0; x < 32; x++) {
 				
-				nearbyEntities.get(x).addEffect(new MobEffectInstance(MobEffects.GLOWING, 30 * 20, 0));
+				nearbyEntities.get(x).addEffect(new MobEffectInstance(MobEffects.GLOWING, 30 * 20, 0, false, false));
 				
 			}
 			

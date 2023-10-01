@@ -34,6 +34,7 @@ import com.gmail.thelilchicken01.tff.item.dull.DualWieldSword;
 import com.gmail.thelilchicken01.tff.item.dull.ExplosivePowder;
 import com.gmail.thelilchicken01.tff.item.dull.FleshBall;
 import com.gmail.thelilchicken01.tff.item.dull.ForgemasterHeart;
+import com.gmail.thelilchicken01.tff.item.dull.FrozenHeart;
 import com.gmail.thelilchicken01.tff.item.dull.GravityGauntlets;
 import com.gmail.thelilchicken01.tff.item.dull.HeavyStone;
 import com.gmail.thelilchicken01.tff.item.dull.MechanicalEye;
@@ -566,6 +567,10 @@ public class ItemInit {
 	//Forgemaster's Heart
 	public static final RegistryObject<Item> FORGEMASTER_HEART = register("forgemaster_heart",
 			() -> new ForgemasterHeart(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
+	
+	//Frozen Heart
+	public static final RegistryObject<Item> FROZEN_HEART = register("frozen_heart",
+			() -> new FrozenHeart(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
 	
 	//Heavy Stone
 	public static final RegistryObject<Item> HEAVY_STONE = register("heavy_stone",
