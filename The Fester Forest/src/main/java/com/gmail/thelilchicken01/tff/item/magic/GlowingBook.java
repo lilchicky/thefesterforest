@@ -94,7 +94,7 @@ public class GlowingBook extends Item implements MagicItem {
 			lore.add(new TextComponent("Magic").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("An uncomfortably bright book, with the writings").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("of an old reveiling spell.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("of an old revealing spell.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Apply glowing to all nearby living things.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("Has a max of 32 entities.").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.ITALIC));
@@ -109,7 +109,7 @@ public class GlowingBook extends Item implements MagicItem {
 			lore.add(new TextComponent("Magic").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("An uncomfortably bright book, with the writings").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("of an old reveiling spell.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("of an old revealing spell.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 			lore.add(new TextComponent(""));
