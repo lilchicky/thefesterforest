@@ -369,6 +369,14 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		/*
 		 * 
+		 * Food
+		 * 
+		 */
+		
+		add(ItemInit.FROZEN_APPLE.get(), "Frozen Apple");
+		
+		/*
+		 * 
 		 * Special Cases (Curios, Tabs, Potions, etc.)
 		 * 
 		 */

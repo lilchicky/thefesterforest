@@ -2,7 +2,6 @@ package com.gmail.thelilchicken01.tff.init;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
-import com.gmail.thelilchicken01.tff.entity.projectile.FrostBolt;
 import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeBoots;
 import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeChestplate;
 import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeHelmet;
@@ -55,6 +54,7 @@ import com.gmail.thelilchicken01.tff.item.food.AmbectrumJelly;
 import com.gmail.thelilchicken01.tff.item.food.BugCarcass;
 import com.gmail.thelilchicken01.tff.item.food.CookedRotfish;
 import com.gmail.thelilchicken01.tff.item.food.CookedShroomCluster;
+import com.gmail.thelilchicken01.tff.item.food.FrozenApple;
 import com.gmail.thelilchicken01.tff.item.food.GoopyJello;
 import com.gmail.thelilchicken01.tff.item.food.MechanicalApple;
 import com.gmail.thelilchicken01.tff.item.food.RawRotfish;
@@ -666,6 +666,11 @@ public class ItemInit {
 	public static final RegistryObject<Item> MECHANICAL_APPLE = register("mechanical_apple", 
 			() -> new MechanicalApple(new Properties().tab(TheFesterForest.TFF_TAB).food(new FoodProperties.Builder().alwaysEat().saturationMod(0.3f).nutrition(4)
 					.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2880, 2), 1f).build())));
+	
+	//Frozen Apple
+	public static final RegistryObject<Item> FROZEN_APPLE = register("frozen_apple", 
+			() -> new FrozenApple(new Properties().tab(TheFesterForest.TFF_TAB).food(new FoodProperties.Builder().alwaysEat().saturationMod(0.3f).nutrition(4)
+					.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2880, 2), 1f).build())));
 	
 	/*
 	 * 
