@@ -73,7 +73,7 @@ public class RottingBolt extends Fireball {
 	
 	@Override
 	protected ParticleOptions getTrailParticle() {
-		return ParticleInit.BRANCH_PARTICLE.get();
+		return ParticleInit.TFF_PORTAL_PARTICLES.get();
 	}
 	
 	@Override
