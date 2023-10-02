@@ -68,7 +68,7 @@ public class RottingStaff extends ProjectileWeaponItem implements MagicItem, Mag
 		world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.SOUL_SAND_BREAK, SoundSource.PLAYERS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
 		player.awardStat(Stats.ITEM_USED.get(this));
 		
-		player.getCooldowns().addCooldown(this, ItemUtil.getQuickcastCooldown(2, gun));
+		player.getCooldowns().addCooldown(this, ItemUtil.getQuickcastCooldown(100, gun));
 		return super.use(world, player, hand);
 	}
 	
@@ -76,13 +76,13 @@ public class RottingStaff extends ProjectileWeaponItem implements MagicItem, Mag
 		RottingBolt shot = bulletItem.createProjectile(world, ammo, player);
 		shot.shootFromRotation(player, player.getXRot(), player.getYRot(), 0, projectileSpeed, (float)inaccuracy); //speed, inaccuracy
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
-			shot.setDamage(15 * ItemUtil.getArcanePowerDamageMod(gun));
+			shot.setDamage(13 * ItemUtil.getArcanePowerDamageMod(gun));
 		}
 		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
-			shot.setDamage(20 * ItemUtil.getArcanePowerDamageMod(gun));
+			shot.setDamage(16 * ItemUtil.getArcanePowerDamageMod(gun));
 		}
 		else {
-			shot.setDamage(15 * ItemUtil.getArcanePowerDamageMod(gun));
+			shot.setDamage(10 * ItemUtil.getArcanePowerDamageMod(gun));
 		}
 		shot.setIgnoreInvulnerability(ignoreInvulnerability);
 
