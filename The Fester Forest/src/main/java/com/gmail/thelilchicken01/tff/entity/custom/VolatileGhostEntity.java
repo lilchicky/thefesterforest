@@ -11,6 +11,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.IndirectEntityDamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -120,7 +121,7 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 		
 					LivingEntity currentEntity = (LivingEntity) nearbyEntities.get(x);
 				
-					nearbyEntities.get(x).hurt(TheFesterForest.VOLATILE_GHOST, explodeDamage);
+					nearbyEntities.get(x).hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_volatile_ghost", nearbyEntities.get(x), this), explodeDamage);
 					currentEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, (nauseaDurationSeconds * 20), 200));
 				}
 		
