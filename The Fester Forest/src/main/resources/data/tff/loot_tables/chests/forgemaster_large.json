@@ -22,6 +22,22 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 30,
+          "name": "minecraft:spider_eye",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
           "weight": 90,
           "name": "tff:bug_carcass",
           "functions": [
