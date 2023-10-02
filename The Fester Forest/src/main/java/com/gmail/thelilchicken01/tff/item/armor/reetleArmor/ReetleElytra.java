@@ -137,9 +137,13 @@ public class ReetleElytra extends ElytraItem {
     	
     	super.onArmorTick(stack, level, player);
 		
-    	if (ArmorSets.REETLE.getArmorSet(player) == SetCount.TWO) {
-			ItemUtil.registerPotionEffect(MobEffects.DAMAGE_RESISTANCE, 0, player, 3);
-		}
+    	if ( player.tickCount % 15 == 0 && !player.getLevel().isClientSide()) {
+    	
+	    	if (ArmorSets.REETLE.getArmorSet(player) == SetCount.TWO) {
+				ItemUtil.registerPotionEffect(MobEffects.DAMAGE_RESISTANCE, 0, player, 39);
+			}
+    	
+    	}
 		
 	}
 	

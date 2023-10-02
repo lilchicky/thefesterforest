@@ -75,10 +75,14 @@ public class VolatileBoots extends ArmorItem {
 		damageTick++;
 		
 		if (ArmorSets.VOLATILE.getArmorSet(player) == SetCount.TWO) {
-			ItemUtil.registerPotionEffect(MobEffects.FIRE_RESISTANCE, 0, player, 3);
+			if ( player.tickCount % 15 == 0 && !player.getLevel().isClientSide()) {
+				ItemUtil.registerPotionEffect(MobEffects.FIRE_RESISTANCE, 0, player, 39);
+			}
 		}
 		if (ArmorSets.VOLATILE.getArmorSet(player) == SetCount.FOUR) {
-			ItemUtil.registerPotionEffect(MobEffects.FIRE_RESISTANCE, 0, player, 3);
+			if ( player.tickCount % 15 == 0 && !player.getLevel().isClientSide()) {
+				ItemUtil.registerPotionEffect(MobEffects.FIRE_RESISTANCE, 0, player, 39);
+			}
 			
 			if (damageTick > damageSeconds * 20) {
 			

@@ -73,12 +73,16 @@ public class ReetleBoots extends ArmorItem {
 		
 		super.onArmorTick(stack, level, player);
 		
-		if (ArmorSets.REETLE.getArmorSet(player) == SetCount.TWO) {
-			ItemUtil.registerPotionEffect(MobEffects.DAMAGE_RESISTANCE, 0, player, 3);
-		}
-		if (ArmorSets.REETLE.getArmorSet(player) == SetCount.FOUR) {
-			ItemUtil.registerPotionEffect(MobEffects.DAMAGE_RESISTANCE, 1, player, 3);
-			ItemUtil.registerPotionEffect(MobEffects.SATURATION, 0, player, 3);
+		if ( player.tickCount % 15 == 0 && !player.getLevel().isClientSide()) {
+		
+			if (ArmorSets.REETLE.getArmorSet(player) == SetCount.TWO) {
+				ItemUtil.registerPotionEffect(MobEffects.DAMAGE_RESISTANCE, 0, player, 39);
+			}
+			if (ArmorSets.REETLE.getArmorSet(player) == SetCount.FOUR) {
+				ItemUtil.registerPotionEffect(MobEffects.DAMAGE_RESISTANCE, 1, player, 39);
+				ItemUtil.registerPotionEffect(MobEffects.SATURATION, 0, player, 39);
+			}
+		
 		}
 		
 	}

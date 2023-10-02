@@ -79,15 +79,19 @@ public class VolatileNecklace extends Item implements ICurioItem {
 			
 		}
 		
-		if (slotContext.entity().isOnFire()) {
-			if (!slotContext.entity().hasEffect(MobEffects.DAMAGE_BOOST)) {
-				slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, strengthLevel, false, false));
-			}
-			else {
-				if (slotContext.entity().getEffect(MobEffects.DAMAGE_BOOST).getDuration() < 40) {
-					slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, strengthLevel, false, false));
+		if ( slotContext.entity().tickCount % 15 == 0 && !slotContext.entity().getLevel().isClientSide()) {
+		
+			if (slotContext.entity().isOnFire()) {
+				if (!slotContext.entity().hasEffect(MobEffects.DAMAGE_BOOST)) {
+					slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 39, strengthLevel, false, false));
+				}
+				else {
+					if (slotContext.entity().getEffect(MobEffects.DAMAGE_BOOST).getDuration() < 39) {
+						slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 39, strengthLevel, false, false));
+					}
 				}
 			}
+			
 		}
 		
 	}

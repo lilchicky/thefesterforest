@@ -86,15 +86,19 @@ public class RotfishBoots extends ArmorItem {
 			dolphinsGraceCounter = 0;
 		}
 		
-		if (ArmorSets.ROTFISH.getArmorSet(player) == SetCount.TWO) {
-			ItemUtil.registerPotionEffect(MobEffects.WATER_BREATHING, 0, player, 3);
-		}
-		if (ArmorSets.ROTFISH.getArmorSet(player) == SetCount.FOUR) {
-			ItemUtil.registerPotionEffect(MobEffects.CONDUIT_POWER, 0, player, 3);
-			if (dolphinsGraceCounter >= 100) {
-				ItemUtil.registerPotionEffect(MobEffects.DOLPHINS_GRACE, 0, player, 2);
-				dolphinsGraceCounter = 101;
+		if ( player.tickCount % 15 == 0 && !player.getLevel().isClientSide()) {
+		
+			if (ArmorSets.ROTFISH.getArmorSet(player) == SetCount.TWO) {
+				ItemUtil.registerPotionEffect(MobEffects.WATER_BREATHING, 0, player, 39);
 			}
+			if (ArmorSets.ROTFISH.getArmorSet(player) == SetCount.FOUR) {
+				ItemUtil.registerPotionEffect(MobEffects.CONDUIT_POWER, 0, player, 39);
+				if (dolphinsGraceCounter >= 100) {
+					ItemUtil.registerPotionEffect(MobEffects.DOLPHINS_GRACE, 0, player, 39);
+					dolphinsGraceCounter = 101;
+				}
+			}
+		
 		}
 		
 	}

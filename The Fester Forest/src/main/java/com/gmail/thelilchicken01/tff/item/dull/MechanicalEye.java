@@ -55,8 +55,8 @@ public class MechanicalEye extends Item implements ICurioItem {
 		
 		ICurioItem.super.curioTick(slotContext, stack);
 		
-		if (slotContext.entity() instanceof Player) {
-			ItemUtil.registerPotionEffect(MobEffects.NIGHT_VISION, 0, (Player) slotContext.entity(), 15);
+		if (slotContext.entity() instanceof Player && slotContext.entity().tickCount % 15 == 0 && !slotContext.entity().getLevel().isClientSide()) {
+			ItemUtil.registerPotionEffect(MobEffects.NIGHT_VISION, 0, (Player) slotContext.entity(), 319);
 		}
 				
 	}
@@ -66,7 +66,7 @@ public class MechanicalEye extends Item implements ICurioItem {
 		
 		if (slotContext.entity().hasEffect(MobEffects.NIGHT_VISION)) {
 			
-			if (slotContext.entity().getEffect(MobEffects.NIGHT_VISION).getDuration() < (16 * 20)) {
+			if (slotContext.entity().getEffect(MobEffects.NIGHT_VISION).getDuration() < (17 * 20)) {
 				
 				slotContext.entity().removeEffect(MobEffects.NIGHT_VISION);
 				

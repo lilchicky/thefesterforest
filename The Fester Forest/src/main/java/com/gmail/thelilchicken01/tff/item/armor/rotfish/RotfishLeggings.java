@@ -76,8 +76,12 @@ public class RotfishLeggings extends ArmorItem {
 		
 		super.onArmorTick(stack, level, player);
 		
-		if (ArmorSets.ROTFISH.getArmorSet(player) == SetCount.TWO) {
-			ItemUtil.registerPotionEffect(MobEffects.WATER_BREATHING, 0, player, 3);
+		if ( player.tickCount % 15 == 0 && !player.getLevel().isClientSide()) {
+		
+			if (ArmorSets.ROTFISH.getArmorSet(player) == SetCount.TWO) {
+				ItemUtil.registerPotionEffect(MobEffects.WATER_BREATHING, 0, player, 39);
+			}
+		
 		}
 		
 	}

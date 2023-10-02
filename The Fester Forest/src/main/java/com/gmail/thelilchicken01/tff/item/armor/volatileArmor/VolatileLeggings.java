@@ -67,9 +67,13 @@ public class VolatileLeggings extends ArmorItem {
 	public void onArmorTick(ItemStack stack, Level level, Player player) {
 		
 		super.onArmorTick(stack, level, player);
+		
+		if ( player.tickCount % 15 == 0 && !player.getLevel().isClientSide()) {
 
-		if (ArmorSets.VOLATILE.getArmorSet(player) == SetCount.TWO) {
-			ItemUtil.registerPotionEffect(MobEffects.FIRE_RESISTANCE, 0, player, 3);
+			if (ArmorSets.VOLATILE.getArmorSet(player) == SetCount.TWO) {
+				ItemUtil.registerPotionEffect(MobEffects.FIRE_RESISTANCE, 0, player, 39);
+			}
+		
 		}
 		
 	}

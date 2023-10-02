@@ -47,13 +47,13 @@ public class AncientHatchet extends SwordItem {
 	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity player) {
 		
 		if (!player.hasEffect(MobEffects.DIG_SPEED)) {
-			player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 40, 0, false, false));
+			player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 39, 0, false, false));
 		}
 		else if (player.getEffect(MobEffects.DIG_SPEED).getAmplifier() < 20) {
-			player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 40, player.getEffect(MobEffects.DIG_SPEED).getAmplifier() + 1, false, false));
+			player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 39, player.getEffect(MobEffects.DIG_SPEED).getAmplifier() + 1, false, false));
 		}
 		else {
-			player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 40, 20, false, false));
+			player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 39, 20, false, false));
 		}
 		
 		return super.hurtEnemy(stack, player, target);

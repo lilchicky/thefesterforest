@@ -34,11 +34,11 @@ public class ItemUtil {
 	public static void registerPotionEffect(MobEffect effect, int power, Player player, int duration) {
 		
 		if (!player.hasEffect(effect)) {
-			player.addEffect(new MobEffectInstance(effect, duration * 20, power, false, false));
+			player.addEffect(new MobEffectInstance(effect, duration, power, false, false));
 		}
 		else {
 			if (player.getEffect(effect).getDuration() < (duration - 1) * 20) {
-				player.addEffect(new MobEffectInstance(effect, duration * 20, power, false, false));
+				player.addEffect(new MobEffectInstance(effect, duration, power, false, false));
 			}
 		}
 		

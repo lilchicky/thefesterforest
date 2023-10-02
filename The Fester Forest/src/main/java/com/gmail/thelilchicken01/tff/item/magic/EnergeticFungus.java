@@ -68,17 +68,21 @@ public class EnergeticFungus extends Item implements ICurioItem {
 				
 			}
 			
-			if (player.getX() == oldX &&
-					player.getY() == oldY &&
-					player.getZ() == oldZ) {
-				if (!slotContext.entity().hasEffect(MobEffects.REGENERATION)) {
-					slotContext.entity().addEffect(new MobEffectInstance(MobEffects.REGENERATION, 40, regenLevel, false, true));
-				}
-				else {
-					if (slotContext.entity().getEffect(MobEffects.REGENERATION).getDuration() < 40) {
-						slotContext.entity().addEffect(new MobEffectInstance(MobEffects.REGENERATION, 40, regenLevel, false, true));
+			if ( player.tickCount % 15 == 0 && !player.getLevel().isClientSide()) {
+			
+				if (player.getX() == oldX &&
+						player.getY() == oldY &&
+						player.getZ() == oldZ) {
+					if (!slotContext.entity().hasEffect(MobEffects.REGENERATION)) {
+						slotContext.entity().addEffect(new MobEffectInstance(MobEffects.REGENERATION, 39, regenLevel, false, true));
+					}
+					else {
+						if (slotContext.entity().getEffect(MobEffects.REGENERATION).getDuration() < 39) {
+							slotContext.entity().addEffect(new MobEffectInstance(MobEffects.REGENERATION, 39, regenLevel, false, true));
+						}
 					}
 				}
+			
 			}
 			
 			oldX = player.getX();
