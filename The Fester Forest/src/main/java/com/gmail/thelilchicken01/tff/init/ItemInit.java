@@ -83,6 +83,7 @@ import com.gmail.thelilchicken01.tff.item.magic.LifeOrb;
 import com.gmail.thelilchicken01.tff.item.magic.MeteorWand;
 import com.gmail.thelilchicken01.tff.item.magic.PoisonOrb;
 import com.gmail.thelilchicken01.tff.item.magic.ReetleOrb;
+import com.gmail.thelilchicken01.tff.item.magic.RottingStaff;
 import com.gmail.thelilchicken01.tff.item.magic.ShieldBook;
 import com.gmail.thelilchicken01.tff.item.magic.VerdantBranch;
 import com.gmail.thelilchicken01.tff.item.magic.VolatileNecklace;
@@ -111,6 +112,7 @@ import com.gmail.thelilchicken01.tff.item.projectile.FrostBoltProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.FrozenRockShot;
 import com.gmail.thelilchicken01.tff.item.projectile.IceSpikeShot;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
+import com.gmail.thelilchicken01.tff.item.projectile.RottingBoltShot;
 import com.gmail.thelilchicken01.tff.item.tool.BonePickaxe;
 import com.gmail.thelilchicken01.tff.item.tool.ElectricPickaxe;
 import com.gmail.thelilchicken01.tff.item.tool.GoopyStick;
@@ -542,6 +544,10 @@ public class ItemInit {
 	public static final RegistryObject<Item> ANCIENT_HAMMER = register("ancient_hammer",
 			() -> new AncientHammer());
 	
+	//Rotting Staff
+	public static final RegistryObject<Item> ROTTING_STAFF = register("rotting_staff", 
+			() -> new RottingStaff());
+	
 	/*
 	 * 
 	 * Baubles
@@ -775,6 +781,10 @@ public class ItemInit {
 	//Frost Bolt
 	public static final RegistryObject<FrostBoltProjectile> FROST_BOLT = register("frost_bolt",
 			() -> new FrostBoltProjectile(new Properties().stacksTo(1), 15));
+	
+	//Rotting Bolt
+	public static final RegistryObject<RottingBoltShot> ROTTING_BOLT = register("rotting_bolt",
+			() -> new RottingBoltShot(new Properties().stacksTo(1), 15));
 	
 	/*
 	 * 

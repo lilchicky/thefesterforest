@@ -13,7 +13,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
 c5defbedf25b6ecf36bf55b38b2ff99beff20207 assets/tff/blockstates/soul_rot.json
-9e8c28a1e11e2d3074d78d009db4d23f7e6026e7 assets/tff/lang/en_us.json
+982aaa2b9cdc09c03f65012186dd3cfc94d9f932 assets/tff/lang/en_us.json
 24d27db74b37f74e514f26a15787d776200bea34 assets/tff/models/block/blue_fester_shroom_block.json
 e48eb80bb4a853e7d3636a9aa2971065e6494c2f assets/tff/models/block/compressed_rotting_sand.json
 f12d6a54881723e53655f55b547fef43d40893ee assets/tff/models/block/cracked_rotting_stone_bricks.json
@@ -118,6 +118,7 @@ e13037ee99cb9e7af5919614c64cb236cd9ddc38 assets/tff/models/item/rotfish_chestpla
 3bddbdac288f62ff6d44c77d21c126363e62c107 assets/tff/models/item/rotfish_helmet.json
 98d9b1000a1a471dd862388a5ee81393f7d9ac30 assets/tff/models/item/rotfish_leggings.json
 17fedf0851b9bcd312c8736a5e6919b080227518 assets/tff/models/item/rotfish_special.json
+d7e2ec18dca3e2336de2014bc9966fb3ac36de15 assets/tff/models/item/rotting_bolt.json
 ca3a2b7e93c7aa18594518dd6a0cf41efd3322dc assets/tff/models/item/rotting_brick.json
 92fd0c5ed54eb448feedb8804e35fcf3d3ca5474 assets/tff/models/item/rotting_bricks.json
 b08a670b388ee20a6c200d1f4cbc3567b0d6ec8d assets/tff/models/item/rotting_carrot.json

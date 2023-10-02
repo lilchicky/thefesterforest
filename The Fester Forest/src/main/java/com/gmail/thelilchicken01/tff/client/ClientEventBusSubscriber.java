@@ -44,6 +44,7 @@ import com.gmail.thelilchicken01.tff.entity.projectile.FrostBolt;
 import com.gmail.thelilchicken01.tff.entity.projectile.FrozenRock;
 import com.gmail.thelilchicken01.tff.entity.projectile.IceSpike;
 import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
+import com.gmail.thelilchicken01.tff.entity.projectile.RottingBolt;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
@@ -189,6 +190,9 @@ public class ClientEventBusSubscriber {
     	
     	event.registerEntityRenderer(ModEntityTypes.frost_bolt.get(), 
     			(context) -> new ThrownItemRenderer<FrostBolt>(context));
+    	
+    	event.registerEntityRenderer(ModEntityTypes.rotting_bolt.get(), 
+    			(context) -> new ThrownItemRenderer<RottingBolt>(context));
     }
 	
 	@SubscribeEvent

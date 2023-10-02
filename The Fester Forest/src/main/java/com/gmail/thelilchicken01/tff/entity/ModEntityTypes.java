@@ -25,6 +25,7 @@ import com.gmail.thelilchicken01.tff.entity.projectile.FrostBolt;
 import com.gmail.thelilchicken01.tff.entity.projectile.FrozenRock;
 import com.gmail.thelilchicken01.tff.entity.projectile.IceSpike;
 import com.gmail.thelilchicken01.tff.entity.projectile.MeteorCharge;
+import com.gmail.thelilchicken01.tff.entity.projectile.RottingBolt;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -46,6 +47,7 @@ public class ModEntityTypes {
 	public static RegistryObject<EntityType<IceSpike>> ice_spike;
 	public static RegistryObject<EntityType<FrozenRock>> frozen_rock;
 	public static RegistryObject<EntityType<FrostBolt>> frost_bolt;
+	public static RegistryObject<EntityType<RottingBolt>> rotting_bolt;
 	
 	//Rotting Skeleton
 	public static final RegistryObject<EntityType<RottingSkeletonEntity>> ROTTING_SKELETON =
@@ -192,7 +194,16 @@ public class ModEntityTypes {
 		frost_bolt = ENTITY_TYPES.register("frost_bolt", () -> EntityType.Builder
 				.<FrostBolt>of(FrostBolt::new, MobCategory.MISC)
 				.sized(0.4125f, 0.4125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
-				.build(TheFesterForest.MODID + ":frost_bolt"));
+				.build(TheFesterForest.MODID + ":rotting_bolt"));
+	}
+	
+	//Rotting Bolt
+	
+	static {
+		rotting_bolt = ENTITY_TYPES.register("rotting_bolt", () -> EntityType.Builder
+				.<RottingBolt>of(RottingBolt::new, MobCategory.MISC)
+				.sized(0.4125f, 0.4125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
+				.build(TheFesterForest.MODID + ":rotting_bolt"));
 	}
 	
 	

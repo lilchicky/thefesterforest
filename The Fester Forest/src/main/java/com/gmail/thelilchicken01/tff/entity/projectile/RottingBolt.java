@@ -5,7 +5,7 @@ import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.item.item.MagicModUtil;
 import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
-import com.gmail.thelilchicken01.tff.item.projectile.FrostBoltProjectile;
+import com.gmail.thelilchicken01.tff.item.projectile.RottingBoltShot;
 
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.nbt.CompoundTag;
@@ -28,7 +28,7 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.NetworkHooks;
 
-public class FrostBolt extends Fireball {
+public class RottingBolt extends Fireball {
 	
 	protected double damage = 6;
 	protected boolean ignoreInvulnerability = false;
@@ -40,27 +40,27 @@ public class FrostBolt extends Fireball {
 	
 	private static int staticDamage = 10;
 
-	public FrostBolt(EntityType<? extends FrostBolt> p_i50160_1_, Level p_i50160_2_) {
+	public RottingBolt(EntityType<? extends RottingBolt> p_i50160_1_, Level p_i50160_2_) {
 		super(p_i50160_1_, p_i50160_2_);
 	}
 
-	public FrostBolt(Level worldIn, LivingEntity shooter) {
+	public RottingBolt(Level worldIn, LivingEntity shooter) {
 		this(worldIn, shooter, 0, 0, 0);
 		setPos(shooter.getX(), shooter.getEyeY() - 0.1, shooter.getZ());
 	}
 	
-	public FrostBolt(Level worldIn, LivingEntity shooter, LivingEntity target) {
+	public RottingBolt(Level worldIn, LivingEntity shooter, LivingEntity target) {
 		this(worldIn, shooter, 0, 0, 0);
 		this.target = target;
 		setPos(shooter.getX(), shooter.getEyeY() - 0.1, shooter.getZ());
 	}
 
-	public FrostBolt(Level worldIn, LivingEntity shooter, double accelX, double accelY, double accelZ) {
-		super(ModEntityTypes.frost_bolt.get(), shooter, accelX, accelY, accelZ, worldIn);
+	public RottingBolt(Level worldIn, LivingEntity shooter, double accelX, double accelY, double accelZ) {
+		super(ModEntityTypes.rotting_bolt.get(), shooter, accelX, accelY, accelZ, worldIn);
 	}
 
-	public FrostBolt(Level worldIn, double x, double y, double z, double accelX, double accelY, double accelZ) {
-		super(ModEntityTypes.frost_bolt.get(), x, y, z, accelX, accelY, accelZ, worldIn);
+	public RottingBolt(Level worldIn, double x, double y, double z, double accelX, double accelY, double accelZ) {
+		super(ModEntityTypes.rotting_bolt.get(), x, y, z, accelX, accelY, accelZ, worldIn);
 	}
 	
 	private static final double STOP_TRESHOLD = 0.01;
@@ -82,7 +82,7 @@ public class FrostBolt extends Fireball {
 		if (!level.isClientSide) {
 			Entity target = raytrace.getEntity();
 			Entity shooter = getOwner();
-			FrostBoltProjectile bullet = (FrostBoltProjectile) getItemRaw().getItem();
+			RottingBoltShot bullet = (RottingBoltShot) getItemRaw().getItem();
 			
 			if (isOnFire()) target.setSecondsOnFire(5);
 			int lastHurtResistant = target.invulnerableTime;
@@ -92,7 +92,7 @@ public class FrostBolt extends Fireball {
 			
 			if (target instanceof Player) {
 				if (canHitPlayer) {
-					damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_frost_bolt_damage",
+					damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_rotting_bolt_damage",
 							this, shooter).setProjectile(),
 							(float) bullet.modifyDamage(damage, this, target, shooter, level));
 				}
@@ -101,7 +101,7 @@ public class FrostBolt extends Fireball {
 				}
 			}
 			else {
-				damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_frost_bolt_damage",
+				damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_rotting_bolt_damage",
 						this, shooter).setProjectile(),
 						(float) bullet.modifyDamage(damage, this, target, shooter, level));
 			}

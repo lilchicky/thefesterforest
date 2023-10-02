@@ -155,6 +155,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.FROST_BOLT.get());
 		oneLayerItem(ItemInit.FROZEN_APPLE.get());
 		oneLayerItem(ItemInit.FROZEN_HEART.get());
+		oneLayerItem(ItemInit.ROTTING_BOLT.get());
 		
 		//Simple handheld items
 		handheldItem(ItemInit.BONE_PICKAXE.get());
@@ -180,6 +181,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		handheldItem(ItemInit.REETLE_ORB.get());
 		handheldItem(ItemInit.FORGEMASTER_ORB.get());
 		handheldItem(ItemInit.GLACIATED_STAFF.get());
+		handheldItem(ItemInit.ROTTING_STAFF.get());
 		
 	}
 	
