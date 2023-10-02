@@ -21,7 +21,7 @@ public class CookedRotfish extends Item {
 
 	public CookedRotfish() {
 		super(new Properties().tab(TheFesterForest.TFF_TAB).food(
-				new FoodProperties.Builder().saturationMod(0.7f).nutrition(6)
+				new FoodProperties.Builder().saturationMod(0.7f).nutrition(6).meat()
 				.build()));
 	}
 	

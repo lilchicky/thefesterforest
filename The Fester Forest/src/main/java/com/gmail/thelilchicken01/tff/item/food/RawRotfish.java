@@ -21,7 +21,7 @@ public class RawRotfish extends Item {
 
 	public RawRotfish() {
 		super(new Properties().tab(TheFesterForest.TFF_TAB).food(
-				new FoodProperties.Builder().saturationMod(0.2f).nutrition(4).effect(() -> new MobEffectInstance(MobEffects.POISON, 400, 0), 1f)
+				new FoodProperties.Builder().saturationMod(0.2f).nutrition(4).meat().effect(() -> new MobEffectInstance(MobEffects.POISON, 400, 0), 1f)
 				.build()));
 	}
 	

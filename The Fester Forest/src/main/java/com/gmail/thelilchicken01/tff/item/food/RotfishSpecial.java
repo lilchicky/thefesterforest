@@ -21,7 +21,7 @@ public class RotfishSpecial extends Item {
 
 	public RotfishSpecial() {
 		super(new Properties().tab(TheFesterForest.TFF_TAB).food(
-				new FoodProperties.Builder().saturationMod(1.4f).nutrition(16)
+				new FoodProperties.Builder().saturationMod(1.4f).nutrition(16).meat()
 				.build()));
 	}
 	
