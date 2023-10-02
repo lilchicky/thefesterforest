@@ -150,38 +150,21 @@
         }
       ]
     },
-    //
-    // Ancient Gear
-    //
     {
     	"rolls": 1,
     	"entries": [
     		{
     			"type": "minecraft:empty",
-    			"weight": 2
+    			"weight": 12
     		},
     		{
           		"type": "minecraft:tag",
           		"weight": 1,
           		"name": "tff:ancient_loot",
-       	  		"expand": true,
-          		"functions": [
-            		{
-              			"function": "minecraft:enchant_randomly",
-              			"conditions": [
-                			{
-                  				"condition": "minecraft:random_chance",
-                  				"chance": 0.6
-                			}
-              			]
-            		}	
-          		]
+       	  		"expand": true
         	}
     	]
     },
-    //
-    // Enchanted Books
-    //
     {
     	"rolls": 1,
     	"entries": [
@@ -196,6 +179,10 @@
           		"functions": [
             		{
               			"function": "minecraft:enchant_with_levels",
+              			"levels": {
+              				"min": 5,
+              				"max": 30
+              			},
               			"treasure": true
             		}
           		]	
