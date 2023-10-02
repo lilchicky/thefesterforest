@@ -6,12 +6,34 @@
         {
           "type": "minecraft:item",
           "weight": 200,
-          "name": "tff:rotting_carrot"
+          "name": "tff:rotting_carrot",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 30,
-          "name": "minecraft:iron_ingot"
+          "name": "minecraft:iron_ingot",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
@@ -20,24 +42,19 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
-          "name": "tff:dull_orb"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 30,
-          "name": "minecraft:book",
+          "weight": 50,
+          "name": "tff:purifying_powder",
           "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 45
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
             }
           ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 50,
-          "name": "tff:purifying_powder"
         }
       ]
     },
@@ -48,7 +65,18 @@
        	  		"type": "minecraft:tag",
        	  		"weight": 10,
        	  		"name": "forge:seeds",
-       	  		"expand": true
+       	  		"expand": true,
+          		"functions": [
+          			{
+            			"function": "minecraft:set_count",
+              			"count": {
+                			"type": "minecraft:uniform",
+                			"min": 1,
+                			"max": 16
+              			},
+              			"add": false
+           			}
+          		]
         	}
     	]
     },
@@ -59,7 +87,18 @@
        	  		"type": "minecraft:tag",
        	  		"weight": 10,
        	  		"name": "tff:tff_foods",
-       	  		"expand": true
+       	  		"expand": true,
+          		"functions": [
+          			{
+            			"function": "minecraft:set_count",
+              			"count": {
+                			"type": "minecraft:uniform",
+                			"min": 1,
+                			"max": 4
+              			},
+              			"add": false
+           			}
+          		]
         	}
     	]
     }

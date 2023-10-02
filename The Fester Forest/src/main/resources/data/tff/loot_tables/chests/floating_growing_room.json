@@ -2,47 +2,119 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 14,
+      "rolls": 12,
       "entries": [
         {
           "type": "minecraft:item",
           "weight": 200,
-          "name": "minecraft:grass_block"
+          "name": "minecraft:grass_block",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 200,
-          "name": "tff:rotting_grass"
+          "name": "tff:rotting_grass",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 100,
-          "name": "tff:corroded_shroom"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "tff:dull_orb"
+          "name": "tff:corroded_shroom",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 30,
-          "name": "tff:rotting_tall_grass"
+          "name": "tff:rotting_tall_grass",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 120,
-          "name": "minecraft:iron_ingot"
+          "name": "minecraft:iron_ingot",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 80,
-          "name": "minecraft:coal"
+          "name": "minecraft:coal",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 60,
-          "name": "minecraft:string"
+          "name": "minecraft:string",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
@@ -57,17 +129,16 @@
         {
           "type": "minecraft:item",
           "weight": 60,
-          "name": "minecraft:gold_ingot"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 30,
-          "name": "minecraft:book",
+          "name": "minecraft:gold_ingot",
           "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 30,
-              "treasure": true
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
             }
           ]
         }
@@ -161,86 +232,6 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 3,
-          "name": "tff:ancient_dagger",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "name": "tff:festering_club",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "name": "tff:ancient_hammer",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "name": "tff:ancient_hatchet",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "name": "tff:ancient_longsword",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
           "weight": 1,
           "name": "tff:thick_bone"
         },
@@ -269,9 +260,72 @@
        	  		"type": "minecraft:tag",
        	  		"weight": 10,
        	  		"name": "minecraft:flowers",
-       	  		"expand": true
+       	  		"expand": true,
+          		"functions": [
+          			{
+            			"function": "minecraft:set_count",
+              			"count": {
+                			"type": "minecraft:uniform",
+                			"min": 1,
+                			"max": 4
+              			},
+              			"add": false
+           			}
+          		]
         	}
     	]
+    },
+    //
+    // Ancient Gear
+    //
+    {
+    	"rolls": 1,
+    	"entries": [
+    		{
+    			"type": "minecraft:empty",
+    			"weight": 2
+    		},
+    		{
+          		"type": "minecraft:tag",
+          		"weight": 1,
+          		"name": "tff:ancient_loot",
+          		"functions": [
+            		{
+              			"function": "minecraft:enchant_randomly",
+              			"conditions": [
+                			{
+                  				"condition": "minecraft:random_chance",
+                  				"chance": 0.6
+                			}
+              			]
+            		}	
+          		]
+        	}
+    	]
+    },
+    //
+    // Enchanted Books
+    //
+    {
+    	"rolls": 1,
+    	"entries": [
+    		{
+    			"type": "minecraft:empty",
+    			"weight": 1
+    		},
+    		{
+          		"type": "minecraft:item",
+          		"weight": 1,
+          		"name": "minecraft:book",
+          		"functions": [
+            		{
+              			"function": "minecraft:enchant_with_levels",
+              			"treasure": true
+            		}
+          		]	
+    		}
+    	]
+    		
     }
     
     

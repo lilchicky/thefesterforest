@@ -2,17 +2,39 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 18,
+      "rolls": 12,
       "entries": [
         {
           "type": "minecraft:item",
           "weight": 200,
-          "name": "minecraft:bone"
+          "name": "minecraft:bone",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 100,
-          "name": "tff:corroded_shroom"
+          "name": "tff:corroded_shroom",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
@@ -21,18 +43,35 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
-          "name": "tff:dull_orb"
-        },
-        {
-          "type": "minecraft:item",
           "weight": 120,
-          "name": "minecraft:iron_ingot"
+          "name": "minecraft:iron_ingot",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 80,
-          "name": "minecraft:coal"
+          "name": "minecraft:coal",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
@@ -52,42 +91,96 @@
         {
           "type": "minecraft:item",
           "weight": 200,
-          "name": "tff:ambectrum_jelly"
+          "name": "tff:ambectrum_jelly",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 200,
-          "name": "tff:rotfish_special"
+          "name": "tff:rotfish_special",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 200,
-          "name": "tff:rotting_pie"
+          "name": "tff:rotting_pie",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 300,
-          "name": "tff:ambectrum_donut"
+          "name": "tff:ambectrum_donut",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 300,
-          "name": "tff:cooked_shroom_cluster"
+          "name": "tff:cooked_shroom_cluster",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 60,
-          "name": "minecraft:gold_ingot"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 30,
-          "name": "minecraft:book",
+          "name": "minecraft:gold_ingot",
           "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 30,
-              "treasure": true
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
             }
           ]
         }
@@ -181,86 +274,6 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 3,
-          "name": "tff:ancient_dagger",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "name": "tff:festering_club",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "name": "tff:ancient_hammer",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "name": "tff:ancient_hatchet",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "name": "tff:ancient_longsword",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
           "weight": 1,
           "name": "tff:thick_bone"
         },
@@ -289,9 +302,72 @@
        	  		"type": "minecraft:tag",
        	  		"weight": 10,
        	  		"name": "tff:tff_foods",
-       	  		"expand": true
+       	  		"expand": true,
+          		"functions": [
+          			{
+            			"function": "minecraft:set_count",
+              			"count": {
+                			"type": "minecraft:uniform",
+                			"min": 1,
+                			"max": 4
+              			},
+              			"add": false
+           			}
+          		]
         	}
     	]
+    },
+    //
+    // Ancient Gear
+    //
+    {
+    	"rolls": 1,
+    	"entries": [
+    		{
+    			"type": "minecraft:empty",
+    			"weight": 2
+    		},
+    		{
+          		"type": "minecraft:tag",
+          		"weight": 1,
+          		"name": "tff:ancient_loot",
+          		"functions": [
+            		{
+              			"function": "minecraft:enchant_randomly",
+              			"conditions": [
+                			{
+                  				"condition": "minecraft:random_chance",
+                  				"chance": 0.6
+                			}
+              			]
+            		}	
+          		]
+        	}
+    	]
+    },
+    //
+    // Enchanted Books
+    //
+    {
+    	"rolls": 1,
+    	"entries": [
+    		{
+    			"type": "minecraft:empty",
+    			"weight": 1
+    		},
+    		{
+          		"type": "minecraft:item",
+          		"weight": 1,
+          		"name": "minecraft:book",
+          		"functions": [
+            		{
+              			"function": "minecraft:enchant_with_levels",
+              			"treasure": true
+            		}
+          		]	
+    		}
+    	]
+    		
     }
   ]
 }

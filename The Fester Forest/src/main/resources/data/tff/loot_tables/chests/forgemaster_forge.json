@@ -2,15 +2,37 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 24,
+      "rolls": 12,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:iron_ingot"
+          "name": "minecraft:iron_ingot",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:gold_ingot"
+          "name": "minecraft:gold_ingot",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
@@ -19,24 +41,97 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:emerald"
+        },
+        {
+        	"type": "minecraft:item",
+        	"name": "minecraft:coal",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         }
       ]
     },
     {
       "rolls": 1,
       "entries": [
+      	{
+      		"type": "minecraft:empty",
+      		"weight": 1
+      	},
         {
           "type": "minecraft:item",
           "name": "tff:bone_pickaxe",
+          "weight": 1,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
-              "levels": 45,
+              "levels": 30,
               "treasure": true
             }
           ]
         }
       ]
+    },
+    //
+    // Ancient Gear
+    //
+    {
+    	"rolls": 1,
+    	"entries": [
+    		{
+    			"type": "minecraft:empty",
+    			"weight": 2
+    		},
+    		{
+          		"type": "minecraft:tag",
+          		"weight": 1,
+          		"name": "tff:ancient_loot",
+          		"functions": [
+            		{
+              			"function": "minecraft:enchant_randomly",
+              			"conditions": [
+                			{
+                  				"condition": "minecraft:random_chance",
+                  				"chance": 0.6
+                			}
+              			]
+            		}	
+          		]
+        	}
+    	]
+    },
+    //
+    // Enchanted Books
+    //
+    {
+    	"rolls": 1,
+    	"entries": [
+    		{
+    			"type": "minecraft:empty",
+    			"weight": 2
+    		},
+    		{
+          		"type": "minecraft:item",
+          		"weight": 1,
+          		"name": "minecraft:book",
+          		"functions": [
+            		{
+              			"function": "minecraft:enchant_with_levels",
+              			"levels": 30,
+              			"treasure": true
+            		}
+          		]	
+    		}
+    	]
+    		
     }
   ]
 }

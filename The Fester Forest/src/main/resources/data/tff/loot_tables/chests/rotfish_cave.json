@@ -2,17 +2,39 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 27,
+      "rolls": 16,
       "entries": [
         {
           "type": "minecraft:item",
           "weight": 100,
-          "name": "tff:raw_rotfish"
+          "name": "tff:raw_rotfish",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 200,
-          "name": "minecraft:bone"
+          "name": "minecraft:bone",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
@@ -22,102 +44,16 @@
         {
           "type": "minecraft:item",
           "weight": 30,
-          "name": "minecraft:glowstone_dust"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "tff:dull_orb"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 2,
-          "name": "tff:ancient_hatchet",
+          "name": "minecraft:glowstone_dust",
           "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 2,
-          "name": "tff:festering_club",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 2,
-          "name": "tff:ancient_hammer",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 2,
-          "name": "tff:ancient_dagger",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 2,
-          "name": "tff:ancient_longsword",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 50,
-          "name": "minecraft:book",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 30,
-              "treasure": true
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
             }
           ]
         },
@@ -134,12 +70,34 @@
         {
           "type": "minecraft:item",
           "weight": 60,
-          "name": "minecraft:stick"
+          "name": "minecraft:stick",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 60,
-          "name": "tff:purifying_powder"
+          "name": "tff:purifying_powder",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
@@ -152,6 +110,59 @@
           "name": "tff:heavy_stone"
         }
       ]
+    },
+    //
+    // Ancient Gear
+    //
+    {
+    	"rolls": 1,
+    	"entries": [
+    		{
+    			"type": "minecraft:empty",
+    			"weight": 2
+    		},
+    		{
+          		"type": "minecraft:tag",
+          		"weight": 1,
+          		"name": "tff:ancient_loot",
+          		"functions": [
+            		{
+              			"function": "minecraft:enchant_randomly",
+              			"conditions": [
+                			{
+                  				"condition": "minecraft:random_chance",
+                  				"chance": 0.6
+                			}
+              			]
+            		}	
+          		]
+        	}
+    	]
+    },
+    //
+    // Enchanted Books
+    //
+    {
+    	"rolls": 3,
+    	"entries": [
+    		{
+    			"type": "minecraft:empty",
+    			"weight": 2
+    		},
+    		{
+          		"type": "minecraft:item",
+          		"weight": 1,
+          		"name": "minecraft:book",
+          		"functions": [
+            		{
+              			"function": "minecraft:enchant_with_levels",
+              			"levels": 30,
+              			"treasure": true
+            		}
+          		]	
+    		}
+    	]
+    		
     }
   ]
 }
