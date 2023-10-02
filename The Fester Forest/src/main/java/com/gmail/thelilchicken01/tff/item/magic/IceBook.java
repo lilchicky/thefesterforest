@@ -72,23 +72,27 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 		
 			for (LivingEntity currentEntity : nearbyEntities) {
 				
-				FrostBoltProjectile bulletItem = ItemInit.FROST_BOLT.get();
-				ItemStack shotAmmo = new ItemStack(ItemInit.FROST_BOLT.get());
+				if (!(currentEntity instanceof Player)) {
 				
-				FrostBolt shot = bulletItem.createProjectile(player.getLevel(), shotAmmo, player);
-			
-				Vec3 currentPos = shot.getPosition(1.0f);
-				Vec3 targetPos = currentEntity.getPosition(1.0f).add(0.0, currentEntity.getBbHeight() * 0.05, 0.0);
-				Vec3 targetVector = targetPos.subtract(currentPos).normalize();
-			
-				shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 1.2f, 0.0f);
-				shot.setDamage(shotDamage * ItemUtil.getArcanePowerDamageMod(stack));
-				shot.setIgnoreInvulnerability(false);
-				shot.canHitPlayer(false);
+					FrostBoltProjectile bulletItem = ItemInit.FROST_BOLT.get();
+					ItemStack shotAmmo = new ItemStack(ItemInit.FROST_BOLT.get());
 				
-				currentEntity.setTicksFrozen(240);
+					FrostBolt shot = bulletItem.createProjectile(player.getLevel(), shotAmmo, player);
 			
-				player.getLevel().addFreshEntity(shot);
+					Vec3 currentPos = shot.getPosition(1.0f);
+					Vec3 targetPos = currentEntity.getPosition(1.0f).add(0.0, currentEntity.getBbHeight() * 0.05, 0.0);
+					Vec3 targetVector = targetPos.subtract(currentPos).normalize();
+			
+					shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 1.2f, 0.0f);
+					shot.setDamage(shotDamage * ItemUtil.getArcanePowerDamageMod(stack));
+					shot.setIgnoreInvulnerability(false);
+					shot.canHitPlayer(false);
+				
+					currentEntity.setTicksFrozen(240);
+			
+					player.getLevel().addFreshEntity(shot);
+				
+				}
 			
 			}
 		

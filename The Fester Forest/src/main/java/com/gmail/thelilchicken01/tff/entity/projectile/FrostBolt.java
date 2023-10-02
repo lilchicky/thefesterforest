@@ -36,7 +36,7 @@ public class FrostBolt extends Fireball {
 	protected int ticksSinceFired;
 	protected LivingEntity target = null;
 	
-	private boolean canHitPlayer = true;
+	private boolean canHitPlayer = false;
 	
 	private static int staticDamage = 10;
 
