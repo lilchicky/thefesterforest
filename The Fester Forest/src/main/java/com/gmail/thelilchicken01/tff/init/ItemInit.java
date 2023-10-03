@@ -39,6 +39,7 @@ import com.gmail.thelilchicken01.tff.item.dull.ExplosivePowder;
 import com.gmail.thelilchicken01.tff.item.dull.FleshBall;
 import com.gmail.thelilchicken01.tff.item.dull.ForgemasterHeart;
 import com.gmail.thelilchicken01.tff.item.dull.FrozenHeart;
+import com.gmail.thelilchicken01.tff.item.dull.FrozenShard;
 import com.gmail.thelilchicken01.tff.item.dull.GravityGauntlets;
 import com.gmail.thelilchicken01.tff.item.dull.HeavyStone;
 import com.gmail.thelilchicken01.tff.item.dull.MechanicalEye;
@@ -542,6 +543,10 @@ public class ItemInit {
 	//Book of Frost
 	public static final RegistryObject<Item> ICE_BOOK = register("ice_book", 
 			() -> new IceBook());
+	
+	//Frozen Shard
+	public static final RegistryObject<Item> FROZEN_SHARD = register("frozen_shard",
+			() -> new FrozenShard());
 	
 	/*
 	 * 
