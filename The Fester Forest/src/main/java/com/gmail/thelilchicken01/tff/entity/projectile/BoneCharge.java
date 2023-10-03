@@ -56,7 +56,7 @@ public class BoneCharge extends Fireball {
 		
 		super.tick();
 		
-		if(!getLevel().isClientSide) {
+		if(!getLevel().isClientSide()) {
 			ticksSinceFired++;
 			if (ticksSinceFired > 20 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
 				remove(RemovalReason.KILLED);

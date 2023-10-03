@@ -18,6 +18,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity.RemovalReason;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.level.Level;
@@ -136,6 +137,20 @@ public class RottingBolt extends Fireball {
 	protected void onHit(HitResult result) {
 		super.onHit(result);
 		if (!level.isClientSide && (!noPhysics || result.getType() != HitResult.Type.BLOCK)) remove(RemovalReason.KILLED);
+	}
+	
+	@Override
+	public void tick() {
+		
+		super.tick();
+		
+		if(!getLevel().isClientSide()) {
+			ticksSinceFired++;
+			if (ticksSinceFired > 100 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
+				remove(RemovalReason.KILLED);
+			}
+		}
+		
 	}
 	
 	public void setDamage(double damage) {
