@@ -143,6 +143,8 @@ public class ShardOfIce extends SwordProjectileItem {
 			lore.add(new TextComponent("damage equal to your sword's damage plus any equipment").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("damage buffs.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Affected by negative damage from equipment as well.").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.ITALIC));
+			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < drops.length; x++) {
 				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
