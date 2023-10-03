@@ -28,7 +28,11 @@ public enum ArmorSets {
 		return new Item[]{ItemInit.BANSHEE_BOOTS.get(),
 				ItemInit.BANSHEE_LEGGINGS.get(),
 				ItemInit.BANSHEE_CHESTPLATE.get(),
-				ItemInit.BANSHEE_HELMET.get()};
+				ItemInit.BANSHEE_HELMET.get(),
+				ItemInit.FROZEN_BOOTS.get(),
+				ItemInit.FROZEN_LEGGINGS.get(),
+				ItemInit.FROZEN_CHESTPLATE.get(),
+				ItemInit.FROZEN_HELMET.get()};
 	}),
 	
 	//Reetle Set
@@ -62,6 +66,14 @@ public enum ArmorSets {
 				ItemInit.MECHANICAL_LEGGINGS.get(),
 				ItemInit.MECHANICAL_CHESTPLATE.get(),
 				ItemInit.MECHANICAL_HELMET.get()};
+	}),
+	
+	//Frozen Set
+	FROZEN(() -> {
+		return new Item[]{ItemInit.FROZEN_BOOTS.get(),
+				ItemInit.FROZEN_LEGGINGS.get(),
+				ItemInit.FROZEN_CHESTPLATE.get(),
+				ItemInit.FROZEN_HELMET.get()};
 	});
 	
 	private final LazyLoadedValue<Item[]> armorSet;

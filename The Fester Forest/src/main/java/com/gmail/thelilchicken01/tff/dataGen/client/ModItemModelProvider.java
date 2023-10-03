@@ -156,6 +156,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.FROZEN_APPLE.get());
 		oneLayerItem(ItemInit.FROZEN_HEART.get());
 		oneLayerItem(ItemInit.ROTTING_BOLT.get());
+		oneLayerItem(ItemInit.FROZEN_BOOTS.get());
+		oneLayerItem(ItemInit.FROZEN_LEGGINGS.get());
+		oneLayerItem(ItemInit.FROZEN_CHESTPLATE.get());
+		oneLayerItem(ItemInit.FROZEN_HELMET.get());
 		
 		//Simple handheld items
 		handheldItem(ItemInit.BONE_PICKAXE.get());

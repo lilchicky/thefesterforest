@@ -1,12 +1,12 @@
-package com.gmail.thelilchicken01.tff.item.armor.bansheeArmor;
+package com.gmail.thelilchicken01.tff.item.armor.frozenArmor;
 
 import java.util.List;
 import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
-import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
+import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 import com.google.common.collect.ArrayListMultimap;
@@ -24,40 +24,45 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.util.Lazy;
 
-public class BansheeBoots extends ArmorItem {
+public class FrozenHelmet extends ArmorItem {
 	
-	private String[] drops = {"Banshee", "Fester Forest Loot Chests"};
+	private String[] drops = {"Frostbitten King"};
 	
 	public final Lazy<Multimap<Attribute, AttributeModifier>> LAZY = Lazy.of(() ->  {    
     	ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder(); 
     	
     	builder.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), 
-	    		"max_health", ModArmorMaterial.BANSHEE.getDefenseForSlot(EquipmentSlot.FEET) + 4, AttributeModifier.Operation.ADDITION));
-    	
-    	builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), 
-	    		"move_speed", 0.25, AttributeModifier.Operation.MULTIPLY_BASE));
+	    		"max_health", ModArmorMaterial.FROZEN.getDefenseForSlot(EquipmentSlot.HEAD) + 9, AttributeModifier.Operation.ADDITION));
 	    
 	    builder.put(Attributes.ARMOR, new AttributeModifier(UUID.randomUUID(), 
-	    		"armor", ModArmorMaterial.BANSHEE.getDefenseForSlot(EquipmentSlot.FEET), 
+	    		"armor", ModArmorMaterial.FROZEN.getDefenseForSlot(EquipmentSlot.HEAD), 
 	    		AttributeModifier.Operation.ADDITION));
 	    
 	    builder.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), 
-	    		"armor_toughness", ModArmorMaterial.BANSHEE.getToughness(), 
+	    		"armor_toughness", ModArmorMaterial.FROZEN.getToughness(), 
 	    		AttributeModifier.Operation.ADDITION));
-         
-        if (ForgeMod.STEP_HEIGHT_ADDITION.isPresent()) {
-        	 builder.put(ForgeMod.STEP_HEIGHT_ADDITION.get(), new AttributeModifier(UUID.randomUUID(),
- 		    		"step_height", 0.5f, AttributeModifier.Operation.ADDITION));
+        
+        if (ForgeMod.ATTACK_RANGE.isPresent()) {
+       	 	builder.put(ForgeMod.ATTACK_RANGE.get(), new AttributeModifier(UUID.randomUUID(),
+		    		"attack_range", 1.0f, AttributeModifier.Operation.ADDITION));
+        }
+        
+        if (ForgeMod.REACH_DISTANCE.isPresent()) {
+       	 	builder.put(ForgeMod.REACH_DISTANCE.get(), new AttributeModifier(UUID.randomUUID(),
+		    		"reach_distance", 1.0f, AttributeModifier.Operation.ADDITION));
         }
         
     	Multimap<Attribute, AttributeModifier> attributeModifiers = ArrayListMultimap.create();
@@ -65,8 +70,8 @@ public class BansheeBoots extends ArmorItem {
     	return attributeModifiers;
     });
 
-	public BansheeBoots() {
-		super(ModArmorMaterial.BANSHEE, EquipmentSlot.FEET, 
+	public FrozenHelmet() {
+		super(ModArmorMaterial.FROZEN, EquipmentSlot.HEAD, 
 				new Properties().tab(TheFesterForest.TFF_TAB));
 		
 	}
@@ -76,11 +81,23 @@ public class BansheeBoots extends ArmorItem {
 		
 		super.onArmorTick(stack, level, player);
 		
+		if (ArmorSets.FROZEN.getArmorSet(player) == SetCount.TWO) {
+			if ( player.tickCount % 15 == 0 && !player.getLevel().isClientSide()) {
+				List<Monster> nearbyEntities = ItemUtil.getMonstersInArea(player, 5, 5);
+				
+				for (Monster currentMonster : nearbyEntities) {
+				
+					currentMonster.setTicksFrozen(180);
+					
+				}
+			}
+		}
+		
 	}
 	
 	@Override
 	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-		return slot == EquipmentSlot.FEET ? this.LAZY.get() : super.getDefaultAttributeModifiers(slot);
+		return slot == EquipmentSlot.HEAD ? this.LAZY.get() : super.getDefaultAttributeModifiers(slot);
 	}
 	
 	@Override
@@ -90,12 +107,14 @@ public class BansheeBoots extends ArmorItem {
 		if(Screen.hasShiftDown()) {
 			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A light pair of dark, cloth boots.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("They seem to be pulsing with magic.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("An extremely hard helmet. Gives you a brain").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("freeze.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("2+ Pieces: Minor buffs to all Magic items").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("4 Pieces: Major buffs to all Magic items").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("2+ Pieces: Freeze all monsters within 5 blocks.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Minor buffs to all Magic items.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("4 Pieces: Freeze all monsters within 10 blocks.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Major buffs to all Magic items.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Pairs with other Magic buff armors.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
@@ -108,8 +127,8 @@ public class BansheeBoots extends ArmorItem {
 		else {
 			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A light pair of dark, cloth boots.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("They seem to be pulsing with magic.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("An extremely hard helmet. Gives you a brain").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("freeze.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 			lore.add(new TextComponent(""));

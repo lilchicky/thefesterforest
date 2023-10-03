@@ -265,6 +265,10 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		add(ItemInit.SHARD_OF_ICE.get(), "Shard of Ice");
 		add(ItemInit.FROST_MALLET.get(), "Frost Mallet");
+		add(ItemInit.FROZEN_BOOTS.get(), "Frozen Boots");
+		add(ItemInit.FROZEN_LEGGINGS.get(), "Frozen Leggings");
+		add(ItemInit.FROZEN_CHESTPLATE.get(), "Frozen Chestplate");
+		add(ItemInit.FROZEN_HELMET.get(), "Frozen Helmet");
 		
 		/*
 		 * 

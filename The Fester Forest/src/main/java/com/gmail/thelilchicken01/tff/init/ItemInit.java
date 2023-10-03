@@ -6,6 +6,10 @@ import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeBoots;
 import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeChestplate;
 import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeHelmet;
 import com.gmail.thelilchicken01.tff.item.armor.bansheeArmor.BansheeLeggings;
+import com.gmail.thelilchicken01.tff.item.armor.frozenArmor.FrozenBoots;
+import com.gmail.thelilchicken01.tff.item.armor.frozenArmor.FrozenChestplate;
+import com.gmail.thelilchicken01.tff.item.armor.frozenArmor.FrozenHelmet;
+import com.gmail.thelilchicken01.tff.item.armor.frozenArmor.FrozenLeggings;
 import com.gmail.thelilchicken01.tff.item.armor.goop.GoopyBoots;
 import com.gmail.thelilchicken01.tff.item.armor.goop.GoopyChestplate;
 import com.gmail.thelilchicken01.tff.item.armor.goop.GoopyHelmet;
@@ -510,6 +514,22 @@ public class ItemInit {
 	 * Frostbitten King Items
 	 * 
 	 */
+	
+	//Frozen Helmet
+	public static final RegistryObject<Item> FROZEN_HELMET = register("frozen_helmet", 
+			() -> new FrozenHelmet());
+			
+	//Frozen Chestplate
+	public static final RegistryObject<Item> FROZEN_CHESTPLATE = register("frozen_chestplate", 
+			() -> new FrozenChestplate());
+				
+	//Frozen Leggings
+	public static final RegistryObject<Item> FROZEN_LEGGINGS = register("frozen_leggings", 
+			() -> new FrozenLeggings());
+			
+	//Frozen Boots
+	public static final RegistryObject<Item> FROZEN_BOOTS = register("frozen_boots", 
+			() -> new FrozenBoots());
 	
 	//Shard of Ice
 	public static final RegistryObject<Item> SHARD_OF_ICE = register("shard_of_ice",

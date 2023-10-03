@@ -49,6 +49,11 @@ public enum ModArmorMaterial implements ArmorMaterial {
 	//Reetle Armor
 	REETLE("reetle", 37, new int[]{4, 6, 8, 4}, 15, SoundEvents.TURTLE_EGG_CRACK, 4.0F, 0.2F, () -> {
 	    return Ingredient.of(ItemInit.BUG_CARCASS.get());
+	}),
+	
+	//Frozen Armor
+	FROZEN("frozen", -1, new int[]{2, 3, 4, 1}, 40, SoundEvents.ARMOR_EQUIP_DIAMOND, 1.0F, 0.0F, () -> {
+		return Ingredient.of(Items.PACKED_ICE);
 	});
 
 	private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
