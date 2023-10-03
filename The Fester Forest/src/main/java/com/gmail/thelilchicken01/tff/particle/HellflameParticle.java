@@ -33,7 +33,7 @@ public class HellflameParticle extends TextureSheetParticle {
 	@Override
 	public void tick() {
 		super.tick();
-		//fadeOut();
+		fadeOut();
 	}
 
 	private void fadeOut() {
