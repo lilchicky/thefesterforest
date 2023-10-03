@@ -56,6 +56,7 @@ import com.gmail.thelilchicken01.tff.particle.BranchParticle;
 import com.gmail.thelilchicken01.tff.particle.HellflameParticle;
 import com.gmail.thelilchicken01.tff.particle.IcyExplosionParticle;
 import com.gmail.thelilchicken01.tff.particle.PocketSandParticle;
+import com.gmail.thelilchicken01.tff.particle.RottingBubbleParticle;
 import com.gmail.thelilchicken01.tff.particle.TffPortalParticle;
 import com.gmail.thelilchicken01.tff.util.ModItemProperties;
 
@@ -205,6 +206,7 @@ public class ClientEventBusSubscriber {
 		Minecraft.getInstance().particleEngine.register(ParticleInit.BONE_PARTICLE.get(), BoneParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(ParticleInit.BRANCH_PARTICLE.get(), BranchParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(ParticleInit.ICY_EXPLOSION_PARTICLE.get(), IcyExplosionParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(ParticleInit.ROTTING_BUBBLE_PARTICLE.get(), RottingBubbleParticle.Provider::new);
 	}
 	
 }

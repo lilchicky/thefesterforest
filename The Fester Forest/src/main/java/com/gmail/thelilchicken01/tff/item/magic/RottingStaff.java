@@ -38,7 +38,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class RottingStaff extends ProjectileWeaponItem implements MagicItem, MagicWeapon {
 	
 	protected int bonusDamage;
-	protected double inaccuracy;
+	protected double inaccuracy = 0.1;
 	protected boolean ignoreInvulnerability = false;
 	protected float projectileSpeed = 0.9f;
 	
@@ -48,7 +48,6 @@ public class RottingStaff extends ProjectileWeaponItem implements MagicItem, Mag
 
 	public RottingStaff() {
 		super(new Properties().tab(TheFesterForest.TFF_TAB).durability(264));
-		this.inaccuracy = inaccuracy;
 	}
 	
 	@Override

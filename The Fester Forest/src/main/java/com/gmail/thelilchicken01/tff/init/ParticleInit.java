@@ -34,6 +34,9 @@ public class ParticleInit {
 	public static final RegistryObject<SimpleParticleType> ICY_EXPLOSION_PARTICLE = register("icy_explosion_particle",
 			() -> new SimpleParticleType(true));
 	
+	public static final RegistryObject<SimpleParticleType> ROTTING_BUBBLE_PARTICLE = register("rotting_bubble",
+			() -> new SimpleParticleType(true));
+	
 	private static <T extends ParticleType<?>> RegistryObject<T> register(final String name, final Supplier<T> particle) {
 		return PARTICLES.register(name, particle);
 	}
