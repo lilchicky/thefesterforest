@@ -55,16 +55,6 @@ public class BansheeHelmet extends ArmorItem {
 	    		"armor_toughness", ModArmorMaterial.BANSHEE.getToughness(), 
 	    		AttributeModifier.Operation.ADDITION));
         
-        if (ForgeMod.ATTACK_RANGE.isPresent()) {
-       	 	builder.put(ForgeMod.ATTACK_RANGE.get(), new AttributeModifier(UUID.randomUUID(),
-		    		"attack_range", 0.5f, AttributeModifier.Operation.ADDITION));
-        }
-        
-        if (ForgeMod.REACH_DISTANCE.isPresent()) {
-       	 	builder.put(ForgeMod.REACH_DISTANCE.get(), new AttributeModifier(UUID.randomUUID(),
-		    		"reach_distance", 0.5f, AttributeModifier.Operation.ADDITION));
-        }
-        
     	Multimap<Attribute, AttributeModifier> attributeModifiers = ArrayListMultimap.create();
     	attributeModifiers = builder.build();
     	return attributeModifiers;
