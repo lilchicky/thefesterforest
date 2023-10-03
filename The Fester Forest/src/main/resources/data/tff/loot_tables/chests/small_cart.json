@@ -81,7 +81,18 @@
        	  		"type": "minecraft:tag",
        	  		"weight": 10,
        	  		"name": "forge:seeds",
-       	  		"expand": true
+       	  		"expand": true,
+          		"functions": [
+          			{
+            			"function": "minecraft:set_count",
+              			"count": {
+                			"type": "minecraft:uniform",
+                			"min": 1,
+                			"max": 16
+              			},
+              			"add": false
+            		}
+          		]
         	}
     	]
     },
@@ -92,7 +103,18 @@
        	  		"type": "minecraft:tag",
        	  		"weight": 10,
        	  		"name": "tff:tff_foods",
-       	  		"expand": true
+       	  		"expand": true,
+          		"functions": [
+          			{
+            			"function": "minecraft:set_count",
+              			"count": {
+                			"type": "minecraft:uniform",
+                			"min": 1,
+                			"max": 6
+              			},
+              			"add": false
+            		}
+          		]
         	}
     	]
     }

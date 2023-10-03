@@ -7,37 +7,114 @@
         {
           "type": "minecraft:item",
           "weight": 100,
-          "name": "minecraft:cooked_beef"
+          "name": "minecraft:cooked_beef",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 6
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 100,
-          "name": "minecraft:golden_carrot"
+          "name": "minecraft:golden_carrot",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 6
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 80,
-          "name": "minecraft:leather"
+          "name": "minecraft:leather",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 6
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 80,
-          "name": "tff:rotting_carrot"
+          "name": "tff:rotting_carrot",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 6
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 100,
-          "name": "minecraft:cooked_porkchop"
+          "name": "minecraft:cooked_porkchop",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 6
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 100,
-          "name": "minecraft:cooked_mutton"
+          "name": "minecraft:cooked_mutton",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 6
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "weight": 100,
-          "name": "tff:bug_carcass"
+          "name": "tff:bug_carcass",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 6
+              	},
+              	"add": false
+            }
+          ]
         },
         {
           "type": "minecraft:item",
@@ -52,7 +129,18 @@
         {
           "type": "minecraft:item",
           "weight": 45,
-          "name": "tff:rotting_pie"
+          "name": "tff:rotting_pie",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 6
+              	},
+              	"add": false
+            }
+          ]
         }
       ]
     },
@@ -63,7 +151,18 @@
        	  		"type": "minecraft:tag",
        	  		"weight": 10,
        	  		"name": "tff:tff_foods",
-       	  		"expand": true
+       	  		"expand": true,
+          		"functions": [
+          			{
+            			"function": "minecraft:set_count",
+              			"count": {
+                			"type": "minecraft:uniform",
+                			"min": 1,
+                			"max": 6
+              			},
+              			"add": false
+            		}
+          		]
         	}
     	]
     }

@@ -119,7 +119,18 @@
        	  		"type": "minecraft:tag",
        	  		"weight": 10,
        	  		"name": "tff:tff_foods",
-       	  		"expand": true
+       	  		"expand": true,
+          		"functions": [
+          			{
+            			"function": "minecraft:set_count",
+              			"count": {
+                			"type": "minecraft:uniform",
+                			"min": 1,
+                			"max": 6
+              			},
+              			"add": false
+            		}
+          		]
         	}
     	]
     },
@@ -134,7 +145,18 @@
           		"type": "minecraft:tag",
           		"weight": 1,
           		"name": "tff:ancient_loot",
-       	  		"expand": true
+       	  		"expand": true,
+          		"functions": [
+            		{
+              			"function": "minecraft:enchant_randomly",
+              			"conditions": [
+                			{
+                 				"condition": "minecraft:random_chance",
+                  				"chance": 0.6
+                			}
+              			]
+            		}
+          		]
         	}
     	]
     },
