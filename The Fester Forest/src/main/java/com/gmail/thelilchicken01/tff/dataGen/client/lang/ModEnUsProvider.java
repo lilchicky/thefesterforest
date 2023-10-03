@@ -264,6 +264,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		 */
 		
 		add(ItemInit.SHARD_OF_ICE.get(), "Shard of Ice");
+		add(ItemInit.FROST_MALLET.get(), "Frost Mallet");
 		
 		/*
 		 * 

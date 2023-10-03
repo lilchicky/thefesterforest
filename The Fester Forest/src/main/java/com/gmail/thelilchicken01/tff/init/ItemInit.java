@@ -94,6 +94,7 @@ import com.gmail.thelilchicken01.tff.item.melee.AncientHatchet;
 import com.gmail.thelilchicken01.tff.item.melee.AncientLongsword;
 import com.gmail.thelilchicken01.tff.item.melee.BoneScythe;
 import com.gmail.thelilchicken01.tff.item.melee.ForgemasterHammer;
+import com.gmail.thelilchicken01.tff.item.melee.FrostMallet;
 import com.gmail.thelilchicken01.tff.item.melee.GoopySword;
 import com.gmail.thelilchicken01.tff.item.melee.LifeScythe;
 import com.gmail.thelilchicken01.tff.item.melee.SeathrownPike;
@@ -499,6 +500,10 @@ public class ItemInit {
 	public static final RegistryObject<Item> GLACIATED_STAFF = register("glaciated_staff",
 			() -> new GlaciatedStaff(new Properties().tab(TheFesterForest.TFF_TAB).durability(154), 
 					0.1).repair(() -> Ingredient.of(Items.PACKED_ICE)));
+	
+	//Frost Mallet
+	public static final RegistryObject<Item> FROST_MALLET = register("frost_mallet",
+			() -> new FrostMallet());
 	
 	/*
 	 * 
