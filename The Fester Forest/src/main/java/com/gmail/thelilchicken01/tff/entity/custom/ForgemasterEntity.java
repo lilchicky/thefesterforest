@@ -22,6 +22,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.BossEvent;
+import net.minecraft.world.BossEvent.BossBarColor;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -209,6 +210,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 				playSound(SoundEvents.ANVIL_USE, 1.0f, 0.01f);
 				
 				addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, pylonCharge * 20, 100));
+				bossEvent.setColor(BossBarColor.WHITE);
 				
 				int spawnedPylons = 0;
 				int spawnTries = 0;
@@ -265,6 +267,8 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 				
 				playSound(SoundEvents.ANVIL_DESTROY, 1.0f, 0.01f);
 				
+				bossEvent.setColor(BossBarColor.BLUE);
+				
 				List<Entity> nearbyPylons = this.getLevel().getEntities(this, 
 					new AABB(this.getX() - (pylonRadius + 16), 
 							this.getY() - pylonRadius, 
@@ -294,7 +298,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 			}
 		}
 		
-		if (getLevel().isClientSide) {
+		if (getLevel().isClientSide()) {
 			
 			if(launchCounter > launchCooldown * 20 && this.getTarget() != null && getHealth() < phase2health) {
 				for (int x = 0; x < 10; x++) {
