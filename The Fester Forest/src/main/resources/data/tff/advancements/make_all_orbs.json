@@ -11,91 +11,104 @@
   },
   "parent": "tff:find_dull_orb",
   "criteria": {
-    "poison_orb": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "item": {
-          "items": [
-            "tff:poison_orb"
-		  ]
-        }
-      }
-    },
     "flame_orb": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "item": {
-          "items": [
-            "tff:flame_orb"
-		  ]
-        }
+        "items": [
+          {
+            "items": [
+              "tff:flame_orb"
+            ]
+          }
+        ]
       }
     },
     "levitate_orb": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "item": {
-          "items": [
-            "tff:levitate_orb"
-		  ]
-        }
+        "items": [
+          {
+            "items": [
+              "tff:levitate_orb"
+            ]
+          }
+        ]
       }
     },
     "frozen_orb": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "item": {
-          "items": [
-            "tff:frozen_orb"
-		  ]
-        }
+        "items": [
+          {
+            "items": [
+              "tff:frozen_orb"
+            ]
+          }
+        ]
       }
     },
-    "life_orb": {
+    "poison_orb": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "item": {
-          "items": [
-            "tff:life_orb"
-		  ]
-        }
-      }
-    },
-    "wither_orb": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "item": {
-          "items": [
-            "tff:wither_orb"
-		  ]
-        }
+        "items": [
+          {
+            "items": [
+              "tff:poison_orb"
+            ]
+          }
+        ]
       }
     },
     "reetle_orb": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "item": {
-          "items": [
-            "tff:reetle_orb"
-		  ]
-        }
+        "items": [
+          {
+            "items": [
+              "tff:reetle_orb"
+            ]
+          }
+        ]
+      }
+    },
+    "life_orb": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:life_orb"
+            ]
+          }
+        ]
+      }
+    },
+    "wither_orb": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:wither_orb"
+            ]
+          }
+        ]
       }
     },
     "forgemaster_orb": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "item": {
-          "items": [
-            "tff:forgemaster_orb"
-		  ]
-        }
+        "items": [
+          {
+            "items": [
+              "tff:forgemaster_orb"
+            ]
+          }
+        ]
       }
     }
   },
   "requirements": [
-  	[
-  		"poison_orb"
-  	],
   	[
   		"flame_orb"
   	],
@@ -104,6 +117,9 @@
   	],
   	[
   		"frozen_orb"
+  	],
+  	[
+  		"poison_orb"
   	],
   	[
   		"life_orb"
