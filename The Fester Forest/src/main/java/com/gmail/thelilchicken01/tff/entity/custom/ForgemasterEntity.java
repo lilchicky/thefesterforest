@@ -72,7 +72,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	private int shootCounter;
 	private int shootDamage = 15; // meteor damage
 	
-	private int launchRange = 3; // radius the knockup can hit you
+	private int launchRange = 5; // radius the knockup can hit you
 	private int launchCounter;
 	private int launchCooldown = 5; // knockup cooldown
 	
