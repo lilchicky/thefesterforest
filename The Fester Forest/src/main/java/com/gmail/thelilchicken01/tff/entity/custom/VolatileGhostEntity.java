@@ -117,7 +117,7 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 		
 			for (int x = 0; x < nearbyEntities.size(); x++) {
 		
-				if (nearbyEntities.get(x) instanceof LivingEntity) {						
+				if (nearbyEntities.get(x) instanceof LivingEntity && this.hasLineOfSight(nearbyEntities.get(x))) {						
 		
 					LivingEntity currentEntity = (LivingEntity) nearbyEntities.get(x);
 				

@@ -116,7 +116,7 @@ public class BansheeEntity extends Monster implements IAnimatable {
 						playerIsTargetable = !(player.isCreative() || player.isSpectator());
 					}
 				
-					if ((!(nearbyEntities.get(x) instanceof BansheeEntity)) && nearbyEntities.get(x) instanceof LivingEntity && playerIsTargetable) {
+					if ((!(nearbyEntities.get(x) instanceof BansheeEntity)) && nearbyEntities.get(x) instanceof LivingEntity && playerIsTargetable && this.hasLineOfSight(nearbyEntities.get(x))) {
 					
 						Vec3 playerVel = this.getPosition(1.0f);
 						Vec3 entityVel = nearbyEntities.get(x).getPosition(1.0f);
