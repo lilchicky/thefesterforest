@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "item": "tff:reetle_queen_antennae"
+    },
+    "title": "Imbuement Apprentice",
+    "description": "Infuse a dull orb with ingredients from the world",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "tff:thefesterforest",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:poison_orb",
+              "tff:flame_orb",
+              "tff:levitate_orb",
+              "tff:frozen_orb",
+              "tff:life_orb",
+              "tff:wither_orb",
+              "tff:reetle_orb",
+              "tff:forgemaster_orb"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

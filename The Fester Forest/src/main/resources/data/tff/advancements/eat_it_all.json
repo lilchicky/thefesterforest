@@ -140,6 +140,16 @@
 		  ]
         }
       }
+    },
+    "frozen_apple": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:frozen_apple"
+		  ]
+        }
+      }
     }
   },
   "requirements": [
@@ -181,6 +191,9 @@
   	],
   	[
   		"cooked_shroom_cluster"
+  	],
+  	[
+  		"frozen_apple"	
   	]
   ]
 }
