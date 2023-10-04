@@ -288,7 +288,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 					
 				}
 				
-				heal((float) (livingPylons * (getMaxHealth() * 0.045)));
+				heal((float) (livingPylons * (getMaxHealth() * 0.03)));
 				
 				playSound(SoundEvents.REDSTONE_TORCH_BURNOUT, 1.0f, 0.1f);
 				
