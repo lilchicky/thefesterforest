@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " a ",
+    " a ",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "tff:frozen_shard"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "tff:shard_of_ice"
+  }
+}

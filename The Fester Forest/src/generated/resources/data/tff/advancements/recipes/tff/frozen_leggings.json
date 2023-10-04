@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:frozen_leggings"
+    ]
+  },
+  "criteria": {
+    "has_tff:frozen_shard": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:frozen_shard"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:frozen_leggings"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:frozen_shard",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -705,6 +705,106 @@ public class ModRecipeProvider extends RecipeProvider {
 		
 		/*
 		 * 
+		 * Frostbitten King stuff
+		 * 
+		 */
+		
+		// food book
+		ShapedRecipeBuilder.shaped(ItemInit.FOOD_BOOK.get(), 1)
+		.define('a', ItemInit.FROZEN_SHARD.get().asItem()).define('b', Items.BOOK)
+		.unlockedBy("has_" + ItemInit.FROZEN_SHARD.get().getRegistryName(), 
+				has(ItemInit.FROZEN_SHARD.get().asItem()))
+		.pattern(" a ")
+		.pattern("aba")
+		.pattern(" a ")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.FOOD_BOOK.get().getRegistryName().getPath()));
+		
+		// ice book
+		ShapedRecipeBuilder.shaped(ItemInit.ICE_BOOK.get(), 1)
+		.define('a', ItemInit.FROZEN_SHARD.get().asItem()).define('b', Items.BOOK)
+		.unlockedBy("has_" + ItemInit.FROZEN_SHARD.get().getRegistryName(), 
+				has(ItemInit.FROZEN_SHARD.get().asItem()))
+		.pattern("aaa")
+		.pattern(" b ")
+		.pattern(" a ")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.ICE_BOOK.get().getRegistryName().getPath()));
+		
+		// shard of ice
+		ShapedRecipeBuilder.shaped(ItemInit.SHARD_OF_ICE.get(), 1)
+		.define('a', ItemInit.FROZEN_SHARD.get().asItem()).define('b', Items.STICK)
+		.unlockedBy("has_" + ItemInit.FROZEN_SHARD.get().getRegistryName(), 
+				has(ItemInit.FROZEN_SHARD.get().asItem()))
+		.pattern(" a ")
+		.pattern(" a ")
+		.pattern("aba")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.SHARD_OF_ICE.get().getRegistryName().getPath()));
+		
+		// frozen heart
+		ShapedRecipeBuilder.shaped(ItemInit.FROZEN_HEART.get(), 1)
+		.define('a', ItemInit.FROZEN_SHARD.get().asItem()).define('b', Items.PACKED_ICE)
+		.unlockedBy("has_" + ItemInit.FROZEN_SHARD.get().getRegistryName(), 
+				has(ItemInit.FROZEN_SHARD.get().asItem()))
+		.pattern("aaa")
+		.pattern("aba")
+		.pattern("aaa")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.FROZEN_HEART.get().getRegistryName().getPath()));
+		
+		// frozen helmet
+		ShapedRecipeBuilder.shaped(ItemInit.FROZEN_HELMET.get(), 1)
+		.define('a', ItemInit.FROZEN_SHARD.get().asItem())
+		.unlockedBy("has_" + ItemInit.FROZEN_SHARD.get().getRegistryName(), 
+				has(ItemInit.FROZEN_SHARD.get().asItem()))
+		.pattern("aaa")
+		.pattern("a a")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.FROZEN_HELMET.get().getRegistryName().getPath()));
+		
+		// frozen chestplate
+		ShapedRecipeBuilder.shaped(ItemInit.FROZEN_CHESTPLATE.get(), 1)
+		.define('a', ItemInit.FROZEN_SHARD.get().asItem())
+		.unlockedBy("has_" + ItemInit.FROZEN_SHARD.get().getRegistryName(), 
+				has(ItemInit.FROZEN_SHARD.get().asItem()))
+		.pattern("a a")
+		.pattern("aaa")
+		.pattern("aaa")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.FROZEN_CHESTPLATE.get().getRegistryName().getPath()));
+		
+		// frozen leggings
+		ShapedRecipeBuilder.shaped(ItemInit.FROZEN_LEGGINGS.get(), 1)
+		.define('a', ItemInit.FROZEN_SHARD.get().asItem())
+		.unlockedBy("has_" + ItemInit.FROZEN_SHARD.get().getRegistryName(), 
+				has(ItemInit.FROZEN_SHARD.get().asItem()))
+		.pattern("aaa")
+		.pattern("a a")
+		.pattern("a a")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.FROZEN_LEGGINGS.get().getRegistryName().getPath()));
+		
+		// frozen boots
+		ShapedRecipeBuilder.shaped(ItemInit.FROZEN_BOOTS.get(), 1)
+		.define('a', ItemInit.FROZEN_SHARD.get().asItem())
+		.unlockedBy("has_" + ItemInit.FROZEN_SHARD.get().getRegistryName(), 
+				has(ItemInit.FROZEN_SHARD.get().asItem()))
+		.pattern("a a")
+		.pattern("a a")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.FROZEN_BOOTS.get().getRegistryName().getPath()));
+		
+		/*
+		 * 
 		 * Shapeless
 		 * 
 		 */

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "tff:frozen_shard"
+    },
+    "b": {
+      "item": "minecraft:packed_ice"
+    }
+  },
+  "result": {
+    "item": "tff:frozen_heart"
+  }
+}
