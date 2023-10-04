@@ -109,7 +109,7 @@ public class FrozenLeggings extends ArmorItem {
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("A pair of stiff, freezing, unshattering leggings.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Set Bonus: Cryostasis, Magicka").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent("2+ Pieces: Freeze all monsters within 5 blocks.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("Minor buffs to all Magic items.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("4 Pieces: Freeze all monsters within 10 blocks.").withStyle(ChatFormatting.AQUA));
@@ -134,6 +134,8 @@ public class FrozenLeggings extends ArmorItem {
 			for (int x = 0; x < drops.length; x++) {
 				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
 			}
+			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Unbreakable").withStyle(ChatFormatting.BLUE));
 			lore.add(new TextComponent(""));
 		}
 		

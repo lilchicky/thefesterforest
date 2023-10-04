@@ -94,7 +94,7 @@ public class ReetleLeggings extends ArmorItem {
 			lore.add(new TextComponent("The heavy weight offers great protection, but").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("makes it difficult to move your legs.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Set Bonus: Caraplate").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent("2+ Pieces: Resistance 1").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("4 Pieces: Resistance 2 and Saturation").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));

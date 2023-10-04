@@ -92,7 +92,7 @@ public class MechanicalLeggings extends ArmorItem {
 			lore.add(new TextComponent("The Forgemaster's leggings.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("Equipping grants a large boost to move speed.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Set Bonus: Overcharge").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent("2+ Pieces: Haste 1").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("4 Pieces: Haste 2 and Regeneration 2").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));

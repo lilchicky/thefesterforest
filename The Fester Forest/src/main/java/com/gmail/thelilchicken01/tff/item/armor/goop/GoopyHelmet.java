@@ -115,7 +115,7 @@ public class GoopyHelmet extends ArmorItem {
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("A slimy mass of goop. Seems to fit your head.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Set Bonus: Deliquesce").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent("2+ Pieces: Apply level 3 Goopy Acid to any attackers.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("4 Pieces: Apply level 5 Goopy Acid to any attackers").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));

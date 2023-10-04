@@ -123,7 +123,7 @@ public class VolatileBoots extends ArmorItem {
 			lore.add(new TextComponent("A delicate pair of boots, searing").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("to the touch.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Set Bonus: Enflame").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent("2+ Pieces: Fire Resistance").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("4 Pieces: Fire Resistance, and do 4 damage to surrounding").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("monsters every 3 seconds.").withStyle(ChatFormatting.AQUA));

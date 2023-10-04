@@ -93,7 +93,7 @@ public class BansheeBoots extends ArmorItem {
 			lore.add(new TextComponent("A light pair of dark, cloth boots.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("They seem to be pulsing with magic.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Set Bonus: Magicka").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent("2+ Pieces: Minor buffs to all Magic items").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("4 Pieces: Major buffs to all Magic items").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));

@@ -88,7 +88,7 @@ public class BansheeLeggings extends ArmorItem {
 			lore.add(new TextComponent("Some dark cloth pants.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("They're a little ripped up.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Set Bonus: Magicka").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent("2+ Pieces: Minor buffs to all Magic items").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("4 Pieces: Major buffs to all Magic items").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));

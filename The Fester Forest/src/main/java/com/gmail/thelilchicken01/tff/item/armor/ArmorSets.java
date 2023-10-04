@@ -57,7 +57,8 @@ public enum ArmorSets {
 		return new Item[]{ItemInit.ROTFISH_BOOTS.get(),
 				ItemInit.ROTFISH_LEGGINGS.get(),
 				ItemInit.ROTFISH_CHESTPLATE.get(),
-				ItemInit.ROTFISH_HELMET.get()};
+				ItemInit.ROTFISH_HELMET.get(),
+				ItemInit.SHROOM_HAT.get()};
 	}),
 	
 	//Mechanical Set

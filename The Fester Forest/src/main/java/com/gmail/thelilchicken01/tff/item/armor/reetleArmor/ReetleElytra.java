@@ -158,7 +158,7 @@ public class ReetleElytra extends ElytraItem {
 			lore.add(new TextComponent("The heavy weight offers great protection, but").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("somewhat limits your ability to move your arms.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Set Bonus: Caraplate").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent("2+ Pieces: Resistance 1").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("4 Pieces: Resistance 2 and Saturation").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));

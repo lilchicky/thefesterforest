@@ -92,7 +92,7 @@ public class VolatileLeggings extends ArmorItem {
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("A pair of extremely uncomfortable leggings.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Set Bonus: Enflame").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent("2+ Pieces: Fire Resistance").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("4 Pieces: Fire Resistance, and do 4 damage to surrounding").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("monsters every 3 seconds.").withStyle(ChatFormatting.AQUA));

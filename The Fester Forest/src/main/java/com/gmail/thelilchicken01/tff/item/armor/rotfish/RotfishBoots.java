@@ -117,7 +117,7 @@ public class RotfishBoots extends ArmorItem {
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("A pair of hard boots fashioned from the scales of a Rotfish.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Set Bonus:").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Set Bonus: Aqueatic").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent("2+ Pieces: Gain Water Breathing.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("4 Pieces: Gain Conduit Power. If you swim (holding sprint in water) for").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("over 5 seconds, also gain Dolphin's Grace.").withStyle(ChatFormatting.AQUA));
