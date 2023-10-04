@@ -22,6 +22,22 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 30,
+          "name": "minecraft:experience_bottle",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
           "weight": 190,
           "name": "tff:raw_rotfish",
           "functions": [
@@ -128,7 +144,7 @@
     	"entries": [
     		{
     			"type": "minecraft:empty",
-    			"weight": 12
+    			"weight": 49
     		},
     		{
           		"type": "minecraft:tag",
