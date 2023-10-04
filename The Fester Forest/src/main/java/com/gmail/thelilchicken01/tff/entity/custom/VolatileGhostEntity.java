@@ -107,7 +107,7 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 			
 		}
 		
-		if (primed && primedTimer >= 80) {
+		if (primed && primedTimer >= 80 && !this.isDeadOrDying()) {
 			
 			this.playSound(SoundEvents.GENERIC_EXPLODE, 1.2f, 0.5f);
 			
