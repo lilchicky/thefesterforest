@@ -378,6 +378,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.METAL_SCRAP.get(), "Metal Scrap");
 		add(ItemInit.FROZEN_HEART.get(), "Frozen Heart");
 		add(ItemInit.FROZEN_SHARD.get(), "Frozen Shard");
+		add(ItemInit.GLACIAL_STOMACH.get(), "Glacial Stomach");
 		
 		/*
 		 * 
