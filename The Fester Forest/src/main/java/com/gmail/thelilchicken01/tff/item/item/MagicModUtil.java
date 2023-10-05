@@ -65,7 +65,7 @@ public enum MagicModUtil {
 						target.setTicksFrozen(140 + 80);
 					}
 					if (ArmorSets.BANSHEE.getArmorSet(shooter) == SetCount.FOUR) {
-						target.setTicksFrozen(140 + 1000);
+						target.setTicksFrozen(140 + 100);
 					}
 					else {
 						target.setTicksFrozen(140 + 60);
