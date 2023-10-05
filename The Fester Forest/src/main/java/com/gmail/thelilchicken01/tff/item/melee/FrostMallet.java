@@ -32,7 +32,7 @@ public class FrostMallet extends SwordItem {
 	
 	private String[] drops = {"Glacial Titan"};
 	
-	private int cooldown = 15;
+	private int cooldown = 25;
 
 	public FrostMallet() {
 		super(ModTiers.FROZEN, 5, -3.3f, new Properties().tab(TheFesterForest.TFF_TAB).durability(1384));
