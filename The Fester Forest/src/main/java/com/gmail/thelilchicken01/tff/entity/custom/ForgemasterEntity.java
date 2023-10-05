@@ -209,7 +209,8 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 				
 				playSound(SoundEvents.ANVIL_USE, 1.0f, 0.01f);
 				
-				addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, pylonCharge * 20, 100));
+				//addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, pylonCharge * 20, 100));
+				setInvulnerable(true);
 				bossEvent.setColor(BossBarColor.WHITE);
 				
 				int spawnedPylons = 0;
@@ -267,6 +268,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 				
 				playSound(SoundEvents.ANVIL_DESTROY, 1.0f, 0.01f);
 				
+				setInvulnerable(false);
 				bossEvent.setColor(BossBarColor.BLUE);
 				
 				List<Entity> nearbyPylons = this.getLevel().getEntities(this, 
