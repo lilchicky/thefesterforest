@@ -511,10 +511,6 @@ public class ItemInit {
 	public static final RegistryObject<Item> FROST_MALLET = register("frost_mallet",
 			() -> new FrostMallet());
 	
-	//Glacial Stomach
-	public static final RegistryObject<Item> GLACIAL_STOMACH = register("glacial_stomach",
-			() -> new GlacialStomach());
-	
 	/*
 	 * 
 	 * Frostbitten King Items
@@ -652,6 +648,10 @@ public class ItemInit {
 	//Thick Bone
 	public static final RegistryObject<Item> THICK_BONE = register("thick_bone",
 			() -> new ThickBone());
+	
+	//Glacial Stomach
+	public static final RegistryObject<Item> GLACIAL_STOMACH = register("glacial_stomach",
+			() -> new GlacialStomach());
 	
 	/*
 	 * 
