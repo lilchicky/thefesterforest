@@ -371,7 +371,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		/*
 		 * 
-		 * Mob Drops
+		 * Random Items
 		 * 
 		 */
 		
@@ -379,6 +379,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.FROZEN_HEART.get(), "Frozen Heart");
 		add(ItemInit.FROZEN_SHARD.get(), "Frozen Shard");
 		add(ItemInit.GLACIAL_STOMACH.get(), "Glacial Stomach");
+		add(ItemInit.GOOPY_STONE.get(), "Goopy Stone");
 		
 		/*
 		 * 

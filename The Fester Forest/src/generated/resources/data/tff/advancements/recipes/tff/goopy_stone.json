@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:goopy_stone"
+    ]
+  },
+  "criteria": {
+    "has_tff:heavy_stone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:heavy_stone"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:goopy_stone"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:heavy_stone",
+      "has_the_recipe"
+    ]
+  ]
+}

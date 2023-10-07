@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:heavy_stone"
+    },
+    {
+      "item": "tff:slippery_goop"
+    }
+  ],
+  "result": {
+    "item": "tff:goopy_stone"
+  }
+}

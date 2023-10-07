@@ -41,6 +41,7 @@ import com.gmail.thelilchicken01.tff.item.dull.ForgemasterHeart;
 import com.gmail.thelilchicken01.tff.item.dull.FrozenHeart;
 import com.gmail.thelilchicken01.tff.item.dull.FrozenShard;
 import com.gmail.thelilchicken01.tff.item.dull.GlacialStomach;
+import com.gmail.thelilchicken01.tff.item.dull.GoopyStone;
 import com.gmail.thelilchicken01.tff.item.dull.GravityGauntlets;
 import com.gmail.thelilchicken01.tff.item.dull.HeavyStone;
 import com.gmail.thelilchicken01.tff.item.dull.MechanicalEye;
@@ -652,6 +653,10 @@ public class ItemInit {
 	//Glacial Stomach
 	public static final RegistryObject<Item> GLACIAL_STOMACH = register("glacial_stomach",
 			() -> new GlacialStomach());
+	
+	//Goopy Stone
+	public static final RegistryObject<Item> GOOPY_STONE = register("goopy_stone",
+			() -> new GoopyStone());
 	
 	/*
 	 * 

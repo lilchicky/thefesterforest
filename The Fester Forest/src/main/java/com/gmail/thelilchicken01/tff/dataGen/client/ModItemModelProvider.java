@@ -162,6 +162,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.FROZEN_HELMET.get());
 		oneLayerItem(ItemInit.FROZEN_SHARD.get());
 		oneLayerItem(ItemInit.GLACIAL_STOMACH.get());
+		oneLayerItem(ItemInit.GOOPY_STONE.get());
 		
 		//Simple handheld items
 		handheldItem(ItemInit.BONE_PICKAXE.get());

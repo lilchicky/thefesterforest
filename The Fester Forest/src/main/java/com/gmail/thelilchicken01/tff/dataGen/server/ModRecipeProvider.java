@@ -926,6 +926,20 @@ public class ModRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_" + ItemInit.AMBECTRUM_JELLY.get().getRegistryName(), has(ItemInit.AMBECTRUM_JELLY.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.AMBECTRUM_DONUT.get().getRegistryName().getPath()));
 		
+		// Goopy Stone
+		ShapelessRecipeBuilder.shapeless(ItemInit.GOOPY_STONE.get())
+			.requires(ItemInit.HEAVY_STONE.get()).requires(ItemInit.SLIPPERY_GOOP.get())
+			.unlockedBy("has_" + ItemInit.HEAVY_STONE.get().getRegistryName(), 
+					has(ItemInit.HEAVY_STONE.get()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.GOOPY_STONE.get()
+					.getRegistryName().getPath()));
+		
+		/*
+		 * 
+		 * Purifying Recipes
+		 * 
+		 */
+		
 		// Purifying Rotten Flesh
 		ShapelessRecipeBuilder.shapeless(Items.LEATHER, 3)
 			.requires(ItemInit.PURIFYING_POWDER.get()).requires(Items.ROTTEN_FLESH, 3)
