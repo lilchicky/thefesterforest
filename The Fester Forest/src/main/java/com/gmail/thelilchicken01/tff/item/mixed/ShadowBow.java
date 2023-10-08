@@ -12,10 +12,13 @@ import com.google.common.collect.ImmutableMultimap.Builder;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -35,11 +38,11 @@ public class ShadowBow extends BowItem {
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, 
-	    		"Weapon modifier", 8.0, AttributeModifier.Operation.ADDITION));
+	    		"attack_damage", 8.0, AttributeModifier.Operation.ADDITION));
 	    builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, 
-	    		"Weapon modifier", -2.4f, AttributeModifier.Operation.ADDITION));
+	    		"attack_speed", -2.4f, AttributeModifier.Operation.ADDITION));
 	    builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), 
-	    		"Weapon modifier", 0.15, AttributeModifier.Operation.MULTIPLY_BASE));
+	    		"movement_speed", 0.15, AttributeModifier.Operation.MULTIPLY_BASE));
 	    
 	    this.defaultModifiers = builder.build();
 		

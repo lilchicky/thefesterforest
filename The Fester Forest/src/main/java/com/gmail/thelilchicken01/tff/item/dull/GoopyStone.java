@@ -34,7 +34,7 @@ public class GoopyStone extends Item implements ICurioItem {
 		super(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-	    builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "bonus move speed", 0.1, AttributeModifier.Operation.MULTIPLY_BASE));
+	    builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "bonus_movement_speed", 0.1, AttributeModifier.Operation.MULTIPLY_BASE));
 
 	    this.defaultModifiers = builder.build();
 		

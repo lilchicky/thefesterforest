@@ -220,7 +220,7 @@ public class ItemInit {
 	
 	/*
 	 * 
-	 * Volatile Items
+	 * Armors
 	 * 
 	 */
 	
@@ -240,13 +240,43 @@ public class ItemInit {
 	public static final RegistryObject<Item> VOLATILE_BOOTS = register("volatile_boots", 
 			() -> new VolatileBoots());
 	
-	//Explosive Powder
-	public static final RegistryObject<Item> EXPLOSIVE_POWDER = register("explosive_powder",
-			() -> new ExplosivePowder(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
+	/*
+	 * 
+	 * Melee
+	 * 
+	 */
 	
 	// Volatile Sword
 	public static final RegistryObject<Item> VOLATILE_SWORD = register("volatile_sword", 
 			() -> new VolatileSword(ModTiers.VOLATILE, -3, -2.2f, new Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	/*
+	 * 
+	 * Magic
+	 * 
+	 */
+	
+	/*
+	 * 
+	 * Ranged
+	 * 
+	 */
+	
+	/*
+	 * 
+	 * Tools
+	 * 
+	 */
+	
+	/*
+	 * 
+	 * Dull
+	 * 
+	 */
+	
+	//Explosive Powder
+	public static final RegistryObject<Item> EXPLOSIVE_POWDER = register("explosive_powder",
+			() -> new ExplosivePowder(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
 	
 	/*
 	 * 
