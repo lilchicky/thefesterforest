@@ -831,7 +831,6 @@ public class ModRecipeProvider extends RecipeProvider {
 		
 		// Life Orb
 		ShapedRecipeBuilder.shaped(ItemInit.FLOWER_CROWN.get(), 1) // add , int to get number of output
-		.define('a', ItemInit.DULL_ORB.get().asItem())
 		.define('b', BlockInit.ROTTING_FLOWER.get().asItem())
 		.define('c', BlockInit.SICKENING_FLOWER.get().asItem())
 		.define('d', BlockInit.SLIMY_FLOWER.get().asItem())
@@ -841,7 +840,7 @@ public class ModRecipeProvider extends RecipeProvider {
 		.define('h', Items.EXPERIENCE_BOTTLE)
 		.unlockedBy("has_" + Items.EXPERIENCE_BOTTLE.getRegistryName(), 
 				has(Items.EXPERIENCE_BOTTLE.asItem())) // what unlocks the recipe when you get that item
-		.pattern("bcd").pattern("hah").pattern("efg").save(consumer, 
+		.pattern("bcd").pattern("h h").pattern("efg").save(consumer, 
 				new ResourceLocation(TheFesterForest.MODID, ItemInit.FLOWER_CROWN.get().getRegistryName().getPath()));
 		
 		/*

@@ -2,13 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "bcd",
-    "hah",
+    "h h",
     "efg"
   ],
   "key": {
-    "a": {
-      "item": "tff:dull_orb"
-    },
     "b": {
       "item": "tff:rotting_flower"
     },
