@@ -106,6 +106,18 @@
           }
         ]
       }
+    },
+    "frostbitten_orb": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:frostbitten_orb"
+            ]
+          }
+        ]
+      }
     }
   },
   "requirements": [
@@ -132,6 +144,9 @@
   	],
   	[
   		"forgemaster_orb"
+  	],
+  	[
+  		"frostbitten_orb"
   	]
   ]
 }
