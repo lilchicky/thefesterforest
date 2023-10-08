@@ -195,7 +195,7 @@ public enum MagicModUtil {
 							
 							FrostBolt shot = bulletItem.createProjectile(shooter.getLevel(), shotAmmo, shooter);
 							
-							shot.setPos(hitEntity.getX(), hitEntity.getY() + 1.0, hitEntity.getZ());
+							shot.setPos(hitEntity.getX(), hitEntity.getY() + (hitEntity.getBbHeight() * 0.5), hitEntity.getZ());
 						
 							shot.shootFromRotation(hitEntity, 0.0f, x, 0.0f, 1.2f, 0.0f);
 							
