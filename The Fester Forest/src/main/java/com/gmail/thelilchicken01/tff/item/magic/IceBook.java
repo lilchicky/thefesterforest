@@ -71,7 +71,6 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 			else {
 				player.displayClientMessage(new TextComponent("Now targeting all living things.").withStyle(ChatFormatting.WHITE), true);
 			}
-			((ServerPlayer)player).awardStat(Stats.ITEM_USED.get(this));
 			
 		}
 		else {
@@ -162,12 +161,13 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 			
 			if (player instanceof ServerPlayer) {
 			
-				((ServerPlayer)player).awardStat(Stats.ITEM_USED.get(this));
 				((ServerPlayer)player).getCooldowns().addCooldown(this, ItemUtil.getQuickcastCooldown(cooldown * 20, player.getItemInHand(hand)));
 			
 			}
 			
 		}
+		
+		player.awardStat(Stats.ITEM_USED.get(this));
 		
 		return super.use(world, player, hand);
 		
