@@ -21,6 +21,7 @@ public interface ICuriosUtil {
 	enum Type {
 		
 		BELT("belt"),
+		HEAD("head"),
 		NONE("none");
 		
 		private final String identifier;

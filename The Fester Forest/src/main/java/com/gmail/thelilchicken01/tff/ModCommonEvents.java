@@ -8,8 +8,10 @@ import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.RotfishEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.SeathrownSkeletonEntity;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
+import com.gmail.thelilchicken01.tff.item.magic.FlowerCrown;
 import com.gmail.thelilchicken01.tff.network.TFFNetworkHandler;
 
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Monster;
@@ -17,6 +19,7 @@ import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;

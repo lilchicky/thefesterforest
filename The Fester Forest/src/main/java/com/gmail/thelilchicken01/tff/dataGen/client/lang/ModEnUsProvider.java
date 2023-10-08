@@ -356,6 +356,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.ROTTING_STAFF.get(), "Rotting Staff");
 		add(ItemInit.FROSTBITTEN_ORB.get(), "Orb of the Eternal Winter");
 		add(ItemInit.ROTFISH_ORB.get(), "Orb of the Depths");
+		add(ItemInit.FLOWER_CROWN.get(), "Flower Crown");
 		
 		/*
 		 * 

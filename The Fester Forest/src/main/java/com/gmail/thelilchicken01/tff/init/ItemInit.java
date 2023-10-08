@@ -79,6 +79,7 @@ import com.gmail.thelilchicken01.tff.item.magic.BugEggs;
 import com.gmail.thelilchicken01.tff.item.magic.DullOrb;
 import com.gmail.thelilchicken01.tff.item.magic.EnergeticFungus;
 import com.gmail.thelilchicken01.tff.item.magic.FlameOrb;
+import com.gmail.thelilchicken01.tff.item.magic.FlowerCrown;
 import com.gmail.thelilchicken01.tff.item.magic.ForgemasterOrb;
 import com.gmail.thelilchicken01.tff.item.magic.FrostbittenOrb;
 import com.gmail.thelilchicken01.tff.item.magic.FrozenOrb;
@@ -667,6 +668,10 @@ public class ItemInit {
 	//Goopy Stone
 	public static final RegistryObject<Item> GOOPY_STONE = register("goopy_stone",
 			() -> new GoopyStone());
+	
+	//Flower Crown
+	public static final RegistryObject<Item> FLOWER_CROWN = register("flower_crown",
+			() -> new FlowerCrown(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
 	
 	/*
 	 * 

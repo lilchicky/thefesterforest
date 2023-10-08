@@ -5,18 +5,21 @@ import java.util.Set;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.init.TagInit;
+import com.gmail.thelilchicken01.tff.item.magic.FlowerCrown;
 import com.google.common.collect.Sets;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -40,6 +43,17 @@ public class CommonEventBusSubscriber {
 	public static void registerPlayerDeathHandler(PlayerDeathHandler handler) {
 		PLAYER_DEATH_HANDLERS.add(handler);
 	}
+	
+	@SubscribeEvent
+	public static void getModifiedExperienceDrops(LivingExperienceDropEvent event) {
+		
+		if (event.getEntity() instanceof LivingEntity) {
+		
+			event.setDroppedExperience(FlowerCrown.getModifiedExperience(event.getOriginalExperience(), (LivingEntity) event.getEntity(), event.getAttackingPlayer()));
+			
+		}
+		
+    }
 	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public static void beforePlayerHurt(LivingAttackEvent event) {
