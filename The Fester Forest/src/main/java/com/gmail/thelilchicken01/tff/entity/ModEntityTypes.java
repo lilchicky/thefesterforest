@@ -202,7 +202,7 @@ public class ModEntityTypes {
 	static {
 		rotting_bolt = ENTITY_TYPES.register("rotting_bolt", () -> EntityType.Builder
 				.<RottingBolt>of(RottingBolt::new, MobCategory.MISC)
-				.sized(0.4125f, 0.4125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
+				.sized(0.6125f, 0.6125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
 				.build(TheFesterForest.MODID + ":rotting_bolt"));
 	}
 	

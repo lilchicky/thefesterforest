@@ -240,54 +240,6 @@ public class ItemInit {
 	public static final RegistryObject<Item> VOLATILE_BOOTS = register("volatile_boots", 
 			() -> new VolatileBoots());
 	
-	/*
-	 * 
-	 * Melee
-	 * 
-	 */
-	
-	// Volatile Sword
-	public static final RegistryObject<Item> VOLATILE_SWORD = register("volatile_sword", 
-			() -> new VolatileSword(ModTiers.VOLATILE, -3, -2.2f, new Properties().tab(TheFesterForest.TFF_TAB)));
-	
-	/*
-	 * 
-	 * Magic
-	 * 
-	 */
-	
-	/*
-	 * 
-	 * Ranged
-	 * 
-	 */
-	
-	/*
-	 * 
-	 * Tools
-	 * 
-	 */
-	
-	/*
-	 * 
-	 * Dull
-	 * 
-	 */
-	
-	//Explosive Powder
-	public static final RegistryObject<Item> EXPLOSIVE_POWDER = register("explosive_powder",
-			() -> new ExplosivePowder(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
-	
-	/*
-	 * 
-	 * Reetle Items
-	 * 
-	 */
-	
-	//Reetle Shell
-	public static final RegistryObject<Item> REETLE_SHELL = register("reetle_shell", 
-			() -> new ReetleShellPlates());
-	
 	//Reetle Elytra
 	public static final RegistryObject<Item> REETLE_ELYTRA = register("reetle_elytra", 
 			() -> new ReetleElytra());
@@ -308,20 +260,6 @@ public class ItemInit {
 	public static final RegistryObject<Item> REETLE_BOOTS = register("reetle_boots", 
 			() -> new ReetleBoots());
 	
-	//Bug Eggs
-	public static final RegistryObject<BugEggs> BUG_EGGS = register("bug_eggs",
-			() -> new BugEggs(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
-	
-	//Pocket Sand
-	public static final RegistryObject<Item> POCKET_SAND = register("pocket_sand",
-			() -> new PocketSand(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
-	
-	/*
-	 * 
-	 * Mechanical Items
-	 * 
-	 */
-	
 	//Mechanical Helmet
 	public static final RegistryObject<Item> MECHANICAL_HELMET = register("mechanical_helmet", 
 			() -> new MechanicalHelmet());
@@ -337,30 +275,6 @@ public class ItemInit {
 	//Mechanical Boots
 	public static final RegistryObject<Item> MECHANICAL_BOOTS = register("mechanical_boots", 
 			() -> new MechanicalBoots());
-	
-	//Shield Book
-	public static final RegistryObject<Item> SHIELD_BOOK = register("shield_book", 
-			() -> new ShieldBook());
-	
-	//Meteor Wand
-	public static final RegistryObject<Item> METEOR_WAND = register("meteor_wand",
-			() -> new MeteorWand(new Properties().tab(TheFesterForest.TFF_TAB).durability(875), 
-					0.1).repair(() -> Ingredient.of(Items.IRON_INGOT)));
-	
-	//Forgemaster Hammer
-	public static final RegistryObject<Item> FORGEMASTER_HAMMER = register("forgemaster_hammer", 
-			() -> new ForgemasterHammer(ModTiers.MECHANICAL, 14, -3.5f, new Properties().tab(TheFesterForest.TFF_TAB)
-					.durability(3200)));
-	
-	//Metal Scrap
-	public static final RegistryObject<Item> METAL_SCRAP = register("metal_scrap",
-			() -> new MetalScrap());
-	
-	/*
-	 * 
-	 * Goopy Items
-	 * 
-	 */
 	
 	//Goopy Helmet
 	public static final RegistryObject<Item> GOOPY_HELMET = register("goopy_helmet", 
@@ -378,24 +292,6 @@ public class ItemInit {
 	public static final RegistryObject<Item> GOOPY_BOOTS = register("goopy_boots", 
 			() -> new GoopyBoots());
 	
-	//Goopy Paxel
-	public static final RegistryObject<Item> GOOPY_STICK = register("goopy_stick",
-			() -> new GoopyStick());
-	
-	//Goopy Sword
-	public static final RegistryObject<Item> GOOPY_SWORD = register("goopy_sword", 
-			() -> new GoopySword(ModTiers.GOOP, 0, -2.4f, new Properties().tab(TheFesterForest.TFF_TAB).durability(1678)));
-	
-	//Rotting Slimeball
-	public static final RegistryObject<Item> ROTTING_SLIMEBALL = register("rotting_slimeball", 
-			() -> new Item(new Properties().tab(TheFesterForest.TFF_TAB)));
-	
-	/*
-	 * 
-	 * Banshee Items
-	 * 
-	 */
-	
 	//Banshee Helmet
 	public static final RegistryObject<Item> BANSHEE_HELMET = register("banshee_helmet", 
 			() -> new BansheeHelmet());
@@ -411,97 +307,6 @@ public class ItemInit {
 	//Banshee Boots
 	public static final RegistryObject<Item> BANSHEE_BOOTS = register("banshee_boots", 
 			() -> new BansheeBoots());
-	
-	//Shadow Bow
-	public static final RegistryObject<Item> SHADOW_BOW = register("shadow_bow", 
-			() -> new ShadowBow());
-	
-	//Ancient Whistle
-	public static final RegistryObject<Item> ANCIENT_WHISTLE = register("ancient_whistle",
-			() -> new AncientWhistle(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
-	
-	//Angelic Whistle
-	public static final RegistryObject<Item> ANGELIC_WHISTLE = register("angelic_whistle",
-			() -> new AngelicWhistle(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
-	
-	/*
-	 * 
-	 * Wight Items
-	 * 
-	 */
-	
-	//Bone Launcher
-	public static final RegistryObject<Item> BONE_LAUNCHER = register("bone_launcher",
-			() -> new BoneLauncher(new Properties().tab(TheFesterForest.TFF_TAB).durability(734), 
-					0.1).repair(() -> Ingredient.of(Items.BONE_BLOCK)));
-	
-	//Bone Scythe
-	public static final RegistryObject<Item> BONE_SCYTHE = register("bone_scythe", 
-			() -> new BoneScythe(ModTiers.BONE, 4, -3.0f, new Properties().tab(TheFesterForest.TFF_TAB)
-					.durability(561)));
-	
-	//Flesh Ball
-	public static final RegistryObject<Item> FLESH_BALL = register("flesh_ball", 
-			() -> new FleshBall(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
-	
-	//Life Scythe
-	public static final RegistryObject<Item> LIFE_SCYTHE = register("life_scythe", 
-			() -> new LifeScythe(ModTiers.BONE, 2, -3.2f, new Properties().tab(TheFesterForest.TFF_TAB)
-					.durability(1400)));
-	
-	//Bone Pickaxe
-	public static final RegistryObject<Item> BONE_PICKAXE = register("bone_pickaxe",
-			() -> new BonePickaxe());
-	
-	/*
-	 * 
-	 * Rotting Skeleton Items
-	 * 
-	 */
-	
-	//Brittle Branch
-	public static final RegistryObject<Item> BRITTLE_BRANCH = register("brittle_branch",
-			() -> new BrittleBranch(new Properties().tab(TheFesterForest.TFF_TAB).durability(144), 
-					0.1).repair(() -> Ingredient.of(Items.DEAD_BUSH)));
-	
-	//Verdant Branch
-	public static final RegistryObject<Item> VERDANT_BRANCH = register("verdant_branch",
-			() -> new VerdantBranch(new Properties().tab(TheFesterForest.TFF_TAB).durability(288), 
-					0.1).repair(() -> Ingredient.of(BlockInit.ROTTING_TALL_GRASS.get())));
-	
-	//Ancient Greatsword
-	public static final RegistryObject<Item> ANCIENT_GREATSWORD = register("ancient_greatsword", 
-			() -> new AncientGreatsword(ModTiers.METAL, -1, -3f, new Properties().tab(TheFesterForest.TFF_TAB).durability(550)));
-	
-	/*
-	 * 
-	 * Ambectrum
-	 * 
-	 */
-	
-	//Shock Sword
-	public static final RegistryObject<Item> SHOCK_SWORD = register("shock_sword", 
-			() -> new ShockSword(ModTiers.ELECTRIC, -5, -1.8f, new Properties().tab(TheFesterForest.TFF_TAB)));
-	
-	//Electric Pickaxe
-	public static final RegistryObject<Item> ELECTRIC_PICKAXE = register("electric_pickaxe",
-			() -> new ElectricPickaxe());
-	
-	/*
-	 * 
-	 * Seathrown Skeleton
-	 * 
-	 */
-	
-	//Seathrown Pike
-	public static final RegistryObject<Item> SEATHROWN_PIKE = register("seathrown_pike", 
-			() -> new SeathrownPike(ModTiers.METAL, -1, -2.8f, new Properties().tab(TheFesterForest.TFF_TAB).durability(550)));
-	
-	/*
-	 * 
-	 * Rotfish Items
-	 * 
-	 */
 	
 	//Rotfish Helmet
 	public static final RegistryObject<Item> ROTFISH_HELMET = register("rotfish_helmet", 
@@ -519,35 +324,6 @@ public class ItemInit {
 	public static final RegistryObject<Item> ROTFISH_BOOTS = register("rotfish_boots", 
 			() -> new RotfishBoots());
 	
-	//Reaver Blade
-	public static final RegistryObject<Item> REAVER_BLADE = register("reaver_blade", 
-			() -> new ReaverBlade(ModTiers.BONE, -6, -1f, new Properties().tab(TheFesterForest.TFF_TAB).durability(1750)));
-	
-	/*
-	 * 
-	 * Glacial Titan Items
-	 * 
-	 */
-	
-	//Book of Glowing
-	public static final RegistryObject<Item> GLOWING_BOOK = register("glowing_book", 
-			() -> new GlowingBook());
-	
-	//Glaciated Staff
-	public static final RegistryObject<Item> GLACIATED_STAFF = register("glaciated_staff",
-			() -> new GlaciatedStaff(new Properties().tab(TheFesterForest.TFF_TAB).durability(154), 
-					0.1).repair(() -> Ingredient.of(Items.PACKED_ICE)));
-	
-	//Frost Mallet
-	public static final RegistryObject<Item> FROST_MALLET = register("frost_mallet",
-			() -> new FrostMallet());
-	
-	/*
-	 * 
-	 * Frostbitten King Items
-	 * 
-	 */
-	
 	//Frozen Helmet
 	public static final RegistryObject<Item> FROZEN_HELMET = register("frozen_helmet", 
 			() -> new FrozenHelmet());
@@ -564,27 +340,58 @@ public class ItemInit {
 	public static final RegistryObject<Item> FROZEN_BOOTS = register("frozen_boots", 
 			() -> new FrozenBoots());
 	
+	/*
+	 * 
+	 * Melee
+	 * 
+	 */
+	
+	// Volatile Sword
+	public static final RegistryObject<Item> VOLATILE_SWORD = register("volatile_sword", 
+			() -> new VolatileSword(ModTiers.VOLATILE, -3, -2.2f, new Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Forgemaster Hammer
+	public static final RegistryObject<Item> FORGEMASTER_HAMMER = register("forgemaster_hammer", 
+			() -> new ForgemasterHammer(ModTiers.MECHANICAL, 14, -3.5f, new Properties().tab(TheFesterForest.TFF_TAB)
+					.durability(3200)));
+	
+	//Goopy Sword
+	public static final RegistryObject<Item> GOOPY_SWORD = register("goopy_sword", 
+			() -> new GoopySword(ModTiers.GOOP, 0, -2.4f, new Properties().tab(TheFesterForest.TFF_TAB).durability(1678)));
+	
+	//Bone Scythe
+	public static final RegistryObject<Item> BONE_SCYTHE = register("bone_scythe", 
+			() -> new BoneScythe(ModTiers.BONE, 4, -3.0f, new Properties().tab(TheFesterForest.TFF_TAB)
+					.durability(561)));
+	
+	//Life Scythe
+	public static final RegistryObject<Item> LIFE_SCYTHE = register("life_scythe", 
+			() -> new LifeScythe(ModTiers.BONE, 2, -3.2f, new Properties().tab(TheFesterForest.TFF_TAB)
+					.durability(1400)));
+	
+	//Shock Sword
+	public static final RegistryObject<Item> SHOCK_SWORD = register("shock_sword", 
+			() -> new ShockSword(ModTiers.ELECTRIC, -5, -1.8f, new Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Seathrown Pike
+	public static final RegistryObject<Item> SEATHROWN_PIKE = register("seathrown_pike", 
+			() -> new SeathrownPike(ModTiers.METAL, -1, -2.8f, new Properties().tab(TheFesterForest.TFF_TAB).durability(550)));
+	
+	//Reaver Blade
+	public static final RegistryObject<Item> REAVER_BLADE = register("reaver_blade", 
+			() -> new ReaverBlade(ModTiers.BONE, -6, -1f, new Properties().tab(TheFesterForest.TFF_TAB).durability(1750)));
+	
+	//Frost Mallet
+	public static final RegistryObject<Item> FROST_MALLET = register("frost_mallet",
+			() -> new FrostMallet());
+	
 	//Shard of Ice
 	public static final RegistryObject<Item> SHARD_OF_ICE = register("shard_of_ice",
 			() -> new ShardOfIce(new Properties().tab(TheFesterForest.TFF_TAB).durability(1790), 0.1));
 	
-	//Book of Gluttony
-	public static final RegistryObject<Item> FOOD_BOOK = register("food_book", 
-			() -> new BookOfGluttony());
-	
-	//Book of Frost
-	public static final RegistryObject<Item> ICE_BOOK = register("ice_book", 
-			() -> new IceBook());
-	
-	//Frozen Shard
-	public static final RegistryObject<Item> FROZEN_SHARD = register("frozen_shard",
-			() -> new FrozenShard());
-	
-	/*
-	 * 
-	 * Generic Weapons
-	 * 
-	 */
+	//Ancient Greatsword
+	public static final RegistryObject<Item> ANCIENT_GREATSWORD = register("ancient_greatsword", 
+			() -> new AncientGreatsword(ModTiers.METAL, -1, -3f, new Properties().tab(TheFesterForest.TFF_TAB).durability(550)));
 	
 	//Ancient Dagger
 	public static final RegistryObject<Item> ANCIENT_DAGGER = register("ancient_dagger", 
@@ -606,9 +413,172 @@ public class ItemInit {
 	public static final RegistryObject<Item> ANCIENT_HAMMER = register("ancient_hammer",
 			() -> new AncientHammer());
 	
+	/*
+	 * 
+	 * Magic
+	 * 
+	 */
+	
+	//Bug Eggs
+	public static final RegistryObject<BugEggs> BUG_EGGS = register("bug_eggs",
+			() -> new BugEggs(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
+	
+	//Shield Book
+	public static final RegistryObject<Item> SHIELD_BOOK = register("shield_book", 
+			() -> new ShieldBook());
+	
+	//Meteor Wand
+	public static final RegistryObject<Item> METEOR_WAND = register("meteor_wand",
+			() -> new MeteorWand(new Properties().tab(TheFesterForest.TFF_TAB).durability(875), 
+					0.1).repair(() -> Ingredient.of(Items.IRON_INGOT)));
+	
+	//Bone Launcher
+	public static final RegistryObject<Item> BONE_LAUNCHER = register("bone_launcher",
+			() -> new BoneLauncher(new Properties().tab(TheFesterForest.TFF_TAB).durability(734), 
+					0.1).repair(() -> Ingredient.of(Items.BONE_BLOCK)));
+	
+	//Brittle Branch
+	public static final RegistryObject<Item> BRITTLE_BRANCH = register("brittle_branch",
+			() -> new BrittleBranch(new Properties().tab(TheFesterForest.TFF_TAB).durability(144), 
+					0.1).repair(() -> Ingredient.of(Items.DEAD_BUSH)));
+	
+	//Verdant Branch
+	public static final RegistryObject<Item> VERDANT_BRANCH = register("verdant_branch",
+			() -> new VerdantBranch(new Properties().tab(TheFesterForest.TFF_TAB).durability(288), 
+					0.1).repair(() -> Ingredient.of(BlockInit.ROTTING_TALL_GRASS.get())));
+	
+	//Book of Glowing
+	public static final RegistryObject<Item> GLOWING_BOOK = register("glowing_book", 
+			() -> new GlowingBook());
+	
+	//Glaciated Staff
+	public static final RegistryObject<Item> GLACIATED_STAFF = register("glaciated_staff",
+			() -> new GlaciatedStaff(new Properties().tab(TheFesterForest.TFF_TAB).durability(154), 
+					0.1).repair(() -> Ingredient.of(Items.PACKED_ICE)));
+	
+	//Book of Gluttony
+	public static final RegistryObject<Item> FOOD_BOOK = register("food_book", 
+			() -> new BookOfGluttony());
+	
+	//Book of Frost
+	public static final RegistryObject<Item> ICE_BOOK = register("ice_book", 
+			() -> new IceBook());
+	
 	//Rotting Staff
 	public static final RegistryObject<Item> ROTTING_STAFF = register("rotting_staff", 
 			() -> new RottingStaff());
+	
+	//Dull Orb
+	public static final RegistryObject<Item> DULL_ORB = register("dull_orb",
+			() -> new DullOrb());
+	
+	//Flame Orb
+	public static final RegistryObject<Item> FLAME_ORB = register("flame_orb",
+			() -> new FlameOrb());
+	
+	//Levitate Orb
+	public static final RegistryObject<Item> LEVITATE_ORB = register("levitate_orb",
+			() -> new LevitateOrb());
+	
+	//Levitate Orb
+	public static final RegistryObject<Item> POISON_ORB = register("poison_orb",
+			() -> new PoisonOrb());
+	
+	//Frozen Orb
+	public static final RegistryObject<Item> FROZEN_ORB = register("frozen_orb",
+			() -> new FrozenOrb());
+	
+	//Life Orb
+	public static final RegistryObject<Item> LIFE_ORB = register("life_orb",
+			() -> new LifeOrb());
+	
+	//Wither Orb
+	public static final RegistryObject<Item> WITHER_ORB = register("wither_orb",
+			() -> new WitherOrb());
+	
+	//Reetle Orb
+	public static final RegistryObject<Item> REETLE_ORB = register("reetle_orb",
+			() -> new ReetleOrb());
+	
+	//Forgemaster Orb
+	public static final RegistryObject<Item> FORGEMASTER_ORB = register("forgemaster_orb",
+			() -> new ForgemasterOrb());
+	
+	/*
+	 * 
+	 * Ranged
+	 * 
+	 */
+	
+	//Shadow Bow
+	public static final RegistryObject<Item> SHADOW_BOW = register("shadow_bow", 
+			() -> new ShadowBow());
+	
+	/*
+	 * 
+	 * Tools
+	 * 
+	 */
+	
+	//Goopy Paxel
+	public static final RegistryObject<Item> GOOPY_STICK = register("goopy_stick",
+			() -> new GoopyStick());
+	
+	//Bone Pickaxe
+	public static final RegistryObject<Item> BONE_PICKAXE = register("bone_pickaxe",
+			() -> new BonePickaxe());
+	
+	//Electric Pickaxe
+	public static final RegistryObject<Item> ELECTRIC_PICKAXE = register("electric_pickaxe",
+			() -> new ElectricPickaxe());
+	
+	/*
+	 * 
+	 * Dull
+	 * 
+	 */
+	
+	//Explosive Powder
+	public static final RegistryObject<Item> EXPLOSIVE_POWDER = register("explosive_powder",
+			() -> new ExplosivePowder(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
+	
+	//Reetle Shell
+	public static final RegistryObject<Item> REETLE_SHELL = register("reetle_shell", 
+			() -> new ReetleShellPlates());
+	
+	//Pocket Sand
+	public static final RegistryObject<Item> POCKET_SAND = register("pocket_sand",
+			() -> new PocketSand(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
+	
+	//Rotting Slimeball
+	public static final RegistryObject<Item> ROTTING_SLIMEBALL = register("rotting_slimeball", 
+			() -> new Item(new Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Ancient Whistle
+	public static final RegistryObject<Item> ANCIENT_WHISTLE = register("ancient_whistle",
+			() -> new AncientWhistle(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
+	
+	//Angelic Whistle
+	public static final RegistryObject<Item> ANGELIC_WHISTLE = register("angelic_whistle",
+			() -> new AngelicWhistle(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
+	
+	//Flesh Ball
+	public static final RegistryObject<Item> FLESH_BALL = register("flesh_ball", 
+			() -> new FleshBall(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB)));
+	
+	/*
+	 * 
+	 * Boss Scraps
+	 * 
+	 */
+	
+	//Metal Scrap
+	public static final RegistryObject<Item> METAL_SCRAP = register("metal_scrap",
+			() -> new MetalScrap());
+	
+	//Frozen Shard
+	public static final RegistryObject<Item> FROZEN_SHARD = register("frozen_shard",
+			() -> new FrozenShard());
 	
 	/*
 	 * 
@@ -758,42 +728,6 @@ public class ItemInit {
 	 * Misc Items
 	 * 
 	 */
-	
-	//Dull Orb
-	public static final RegistryObject<Item> DULL_ORB = register("dull_orb",
-			() -> new DullOrb());
-	
-	//Flame Orb
-	public static final RegistryObject<Item> FLAME_ORB = register("flame_orb",
-			() -> new FlameOrb());
-	
-	//Levitate Orb
-	public static final RegistryObject<Item> LEVITATE_ORB = register("levitate_orb",
-			() -> new LevitateOrb());
-	
-	//Levitate Orb
-	public static final RegistryObject<Item> POISON_ORB = register("poison_orb",
-			() -> new PoisonOrb());
-	
-	//Frozen Orb
-	public static final RegistryObject<Item> FROZEN_ORB = register("frozen_orb",
-			() -> new FrozenOrb());
-	
-	//Life Orb
-	public static final RegistryObject<Item> LIFE_ORB = register("life_orb",
-			() -> new LifeOrb());
-	
-	//Wither Orb
-	public static final RegistryObject<Item> WITHER_ORB = register("wither_orb",
-			() -> new WitherOrb());
-	
-	//Reetle Orb
-	public static final RegistryObject<Item> REETLE_ORB = register("reetle_orb",
-			() -> new ReetleOrb());
-	
-	//Forgemaster Orb
-	public static final RegistryObject<Item> FORGEMASTER_ORB = register("forgemaster_orb",
-			() -> new ForgemasterOrb());
 	
 	//Purifying Powder
 	public static final RegistryObject<Item> PURIFYING_POWDER = register("purifying_powder",
