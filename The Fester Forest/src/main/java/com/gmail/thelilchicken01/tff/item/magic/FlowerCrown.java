@@ -3,6 +3,8 @@ package com.gmail.thelilchicken01.tff.item.magic;
 import java.util.List;
 import java.util.UUID;
 
+import javax.annotation.Nullable;
+
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
@@ -62,8 +64,8 @@ public class FlowerCrown extends Item implements ICurioItem {
 	 * Code by ochitonida
 	 */
 	
-	public static int getModifiedExperience(int originalXP, LivingEntity entity, Player attacker) {
-        if (InventoryHelper.playerHasItem(attacker, ItemInit.FLOWER_CROWN.get(), Type.HEAD)) {
+	public static int getModifiedExperience(int originalXP, @Nullable LivingEntity entity, Player attacker) {
+        if (entity != null && InventoryHelper.playerHasItem(attacker, ItemInit.FLOWER_CROWN.get(), Type.HEAD)) {
             if (entity instanceof Player) {
                 return originalXP; // players shouldn't drop extra XP
             }

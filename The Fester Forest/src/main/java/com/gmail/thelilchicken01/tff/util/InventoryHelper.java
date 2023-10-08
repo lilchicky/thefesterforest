@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.function.BiFunction;
 
+import javax.annotation.Nullable;
+
 import com.gmail.thelilchicken01.tff.item.item.ICuriosUtil;
 
 import net.minecraft.world.entity.player.Player;
@@ -29,9 +31,9 @@ public class InventoryHelper {
 		
 	}
 	
-	public static boolean playerHasItem(Player player, Item item, ICuriosUtil.Type baubleType) {
+	public static boolean playerHasItem(@Nullable Player player, Item item, ICuriosUtil.Type baubleType) {
 		
-		return hasItemInBaubleInventories(player, item, baubleType);
+		return player != null ? hasItemInBaubleInventories(player, item, baubleType) : false;
 		
 	}
 	
