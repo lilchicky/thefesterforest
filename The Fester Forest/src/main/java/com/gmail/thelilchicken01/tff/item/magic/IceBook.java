@@ -1,5 +1,6 @@
 package com.gmail.thelilchicken01.tff.item.magic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
@@ -14,15 +15,16 @@ import com.gmail.thelilchicken01.tff.item.projectile.FrostBoltProjectile;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
@@ -30,6 +32,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -42,6 +45,8 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 	private int range = 12;
 	private int maxTargets = 4;
 	private int shotDamage = 15;
+	
+	private boolean targetOnlyHostile = true;
 
 	public IceBook() {
 		
@@ -50,85 +55,121 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 	}
 	
 	@Override
+	public boolean isFoil(ItemStack stack) {
+		return targetOnlyHostile ? super.isFoil(stack) : true;
+	}
+	
+	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
 		
-		ItemStack stack = player.getItemInHand(hand);
-		
-		world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BOOK_PAGE_TURN, SoundSource.PLAYERS, 0.2F, world.getRandom().nextFloat() * 0.4F + 0.8F);
-		
-		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
-			range = 16;
-			maxTargets = 8;
-			shotDamage = 20;
+		if (player instanceof ServerPlayer && ((ServerPlayer) player).isCrouching()) {
+			
+			targetOnlyHostile = !targetOnlyHostile;
+			if (targetOnlyHostile) {
+				player.displayClientMessage(new TextComponent("Now targeting monsters.").withStyle(ChatFormatting.WHITE), true);
+			}
+			else {
+				player.displayClientMessage(new TextComponent("Now targeting all living things.").withStyle(ChatFormatting.WHITE), true);
+			}
+			
 		}
-		if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
-			range = 20;
-			maxTargets = 16;
-			shotDamage = 25;
-		}
+		else {
 		
-		List<Monster> nearbyEntities = ItemUtil.getMonstersInArea(player, range, 2);
-		
-		if (nearbyEntities.size() <= maxTargets) {
-		
-			for (LivingEntity currentEntity : nearbyEntities) {
+			ItemStack stack = player.getItemInHand(hand);
+			
+			world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BOOK_PAGE_TURN, SoundSource.PLAYERS, 0.2F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+			
+			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
+				range = 16;
+				maxTargets = 8;
+				shotDamage = 20;
+			}
+			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.FOUR) {
+				range = 20;
+				maxTargets = 16;
+				shotDamage = 25;
+			}
+			
+			List<LivingEntity> nearbyEntities = new ArrayList<LivingEntity>();
+			
+			if (targetOnlyHostile) {
+			
+				List<Monster> nearbyMonsters = ItemUtil.getMonstersInArea(player, range, 2);
+				for (Monster monsters : nearbyMonsters) {
+					nearbyEntities.add((LivingEntity) monsters);
+				}
+			}
+			else {
+				nearbyEntities = ItemUtil.getLivingInArea(player, range, 2);
+			}
+			
+			if (nearbyEntities.size() <= maxTargets) {
+			
+				for (LivingEntity currentEntity : nearbyEntities) {
+					
+					if (!(currentEntity instanceof Player)) {
+					
+						FrostBoltProjectile bulletItem = ItemInit.FROST_BOLT.get();
+						ItemStack shotAmmo = new ItemStack(ItemInit.FROST_BOLT.get());
+					
+						FrostBolt shot = bulletItem.createProjectile(player.getLevel(), shotAmmo, player);
 				
-				if (!(currentEntity instanceof Player)) {
+						Vec3 currentPos = shot.getPosition(1.0f);
+						Vec3 targetPos = currentEntity.getPosition(1.0f).add(0.0, currentEntity.getBbHeight() * 0.05, 0.0);
+						Vec3 targetVector = targetPos.subtract(currentPos).normalize();
 				
+						shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 1.2f, 0.0f);
+						shot.setDamage(shotDamage * ItemUtil.getArcanePowerDamageMod(stack));
+						shot.setIgnoreInvulnerability(false);
+						shot.canHitPlayer(false);
+					
+						currentEntity.setTicksFrozen(240);
+				
+						player.getLevel().addFreshEntity(shot);
+					
+					}
+				
+				}
+			
+			}
+			else {
+				
+				for (int x = 0; x < maxTargets; x++) {
+					
 					FrostBoltProjectile bulletItem = ItemInit.FROST_BOLT.get();
 					ItemStack shotAmmo = new ItemStack(ItemInit.FROST_BOLT.get());
-				
+					
 					FrostBolt shot = bulletItem.createProjectile(player.getLevel(), shotAmmo, player);
-			
+				
 					Vec3 currentPos = shot.getPosition(1.0f);
-					Vec3 targetPos = currentEntity.getPosition(1.0f).add(0.0, currentEntity.getBbHeight() * 0.05, 0.0);
+					Vec3 targetPos = nearbyEntities.get(x).getPosition(1.0f).add(0.0, nearbyEntities.get(x).getBbHeight() * 0.05, 0.0);
 					Vec3 targetVector = targetPos.subtract(currentPos).normalize();
-			
+				
 					shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 1.2f, 0.0f);
 					shot.setDamage(shotDamage * ItemUtil.getArcanePowerDamageMod(stack));
 					shot.setIgnoreInvulnerability(false);
 					shot.canHitPlayer(false);
 				
-					currentEntity.setTicksFrozen(240);
-			
 					player.getLevel().addFreshEntity(shot);
-				
+					
 				}
-			
-			}
-		
-		}
-		else {
-			
-			for (int x = 0; x < maxTargets; x++) {
-				
-				FrostBoltProjectile bulletItem = ItemInit.FROST_BOLT.get();
-				ItemStack shotAmmo = new ItemStack(ItemInit.FROST_BOLT.get());
-				
-				FrostBolt shot = bulletItem.createProjectile(player.getLevel(), shotAmmo, player);
-			
-				Vec3 currentPos = shot.getPosition(1.0f);
-				Vec3 targetPos = nearbyEntities.get(x).getPosition(1.0f).add(0.0, nearbyEntities.get(x).getBbHeight() * 0.05, 0.0);
-				Vec3 targetVector = targetPos.subtract(currentPos).normalize();
-			
-				shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 1.2f, 0.0f);
-				shot.setDamage(shotDamage * ItemUtil.getArcanePowerDamageMod(stack));
-				shot.setIgnoreInvulnerability(false);
-				shot.canHitPlayer(false);
-			
-				player.getLevel().addFreshEntity(shot);
 				
 			}
 			
+			player.getItemInHand(hand).hurtAndBreak(
+					1, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand()));
+			
+			if (player instanceof ServerPlayer) {
+			
+				((ServerPlayer)player).awardStat(Stats.ITEM_USED.get(this));
+				((ServerPlayer)player).getCooldowns().addCooldown(this, ItemUtil.getQuickcastCooldown(cooldown * 20, player.getItemInHand(hand)));
+			
+			}
+			
 		}
-		
-		player.getItemInHand(hand).hurtAndBreak(
-				1, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand()));
-		
-		player.awardStat(Stats.ITEM_USED.get(this));
-		player.getCooldowns().addCooldown(this, ItemUtil.getQuickcastCooldown(cooldown * 20, player.getItemInHand(hand)));
 		
 		return super.use(world, player, hand);
+		
 	}
 	
 	@Override
@@ -143,6 +184,14 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Right click to shoot nearby entities.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("Max targets scales with Magic buffs.").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.ITALIC));
+			lore.add(new TextComponent("Crouch + Right Click to toggle targeting mode.").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.ITALIC));
+			lore.add(new TextComponent(""));
+			if (targetOnlyHostile) {
+				lore.add(new TextComponent("Targeting monsters.").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
+			}
+			else {
+				lore.add(new TextComponent("Targeting all living things.").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
+			}
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < drops.length; x++) {
@@ -157,6 +206,13 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 			lore.add(new TextComponent("of icy projectiles.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(""));
+			if (targetOnlyHostile) {
+				lore.add(new TextComponent("Targeting monsters.").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
+			}
+			else {
+				lore.add(new TextComponent("Targeting all living things.").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
+			}
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < drops.length; x++) {
