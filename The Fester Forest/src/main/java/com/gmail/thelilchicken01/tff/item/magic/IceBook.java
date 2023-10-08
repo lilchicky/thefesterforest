@@ -24,6 +24,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -66,7 +67,7 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 			shotDamage = 25;
 		}
 		
-		List<LivingEntity> nearbyEntities = ItemUtil.getLivingInArea(player, range, 2);
+		List<Monster> nearbyEntities = ItemUtil.getMonstersInArea(player, range, 2);
 		
 		if (nearbyEntities.size() <= maxTargets) {
 		
