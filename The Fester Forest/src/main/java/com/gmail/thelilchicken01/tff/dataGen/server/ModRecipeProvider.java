@@ -557,6 +557,15 @@ public class ModRecipeProvider extends RecipeProvider {
 				new ResourceLocation(TheFesterForest.MODID, 
 						ItemInit.FROSTBITTEN_ORB.get().getRegistryName().getPath()));
 		
+		// Rotfish Orb
+		ShapedRecipeBuilder.shaped(ItemInit.ROTFISH_ORB.get(), 1)
+		.define('a', ItemInit.DULL_ORB.get().asItem()).define('b', ItemInit.RAW_ROTFISH.get()).define('c', BlockInit.ROTTING_BONE_BLOCK.get())
+		.unlockedBy("has_" + ItemInit.DULL_ORB.get().getRegistryName(), 
+				has(ItemInit.DULL_ORB.get().asItem()))
+		.pattern(" c ").pattern("bab").pattern(" b ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.ROTFISH_ORB.get().getRegistryName().getPath()));
+		
 		// Life Orb
 		ShapedRecipeBuilder.shaped(ItemInit.LIFE_ORB.get(), 1) // add , int to get number of output
 		.define('a', ItemInit.DULL_ORB.get().asItem())

@@ -91,6 +91,7 @@ import com.gmail.thelilchicken01.tff.item.magic.LifeOrb;
 import com.gmail.thelilchicken01.tff.item.magic.MeteorWand;
 import com.gmail.thelilchicken01.tff.item.magic.PoisonOrb;
 import com.gmail.thelilchicken01.tff.item.magic.ReetleOrb;
+import com.gmail.thelilchicken01.tff.item.magic.RotfishOrb;
 import com.gmail.thelilchicken01.tff.item.magic.RottingStaff;
 import com.gmail.thelilchicken01.tff.item.magic.ShieldBook;
 import com.gmail.thelilchicken01.tff.item.magic.VerdantBranch;
@@ -508,6 +509,10 @@ public class ItemInit {
 	//Frostbitten Orb
 	public static final RegistryObject<Item> FROSTBITTEN_ORB = register("frostbitten_orb",
 			() -> new FrostbittenOrb());
+	
+	//Rotfish Orb
+	public static final RegistryObject<Item> ROTFISH_ORB = register("rotfish_orb",
+			() -> new RotfishOrb());
 	
 	/*
 	 * 

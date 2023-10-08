@@ -191,6 +191,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 		handheldItem(ItemInit.ROTTING_STAFF.get());
 		handheldItem(ItemInit.FROST_MALLET.get());
 		handheldItem(ItemInit.FROSTBITTEN_ORB.get());
+		handheldItem(ItemInit.ROTFISH_ORB.get());
 		
 	}
 	

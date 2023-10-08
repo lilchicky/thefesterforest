@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " c ",
+    "bab",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "tff:dull_orb"
+    },
+    "b": {
+      "item": "tff:raw_rotfish"
+    },
+    "c": {
+      "item": "tff:rotting_bone_block"
+    }
+  },
+  "result": {
+    "item": "tff:rotfish_orb"
+  }
+}

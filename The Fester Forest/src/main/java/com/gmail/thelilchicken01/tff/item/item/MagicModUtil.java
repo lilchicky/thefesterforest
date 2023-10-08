@@ -2,12 +2,14 @@ package com.gmail.thelilchicken01.tff.item.item;
 
 import javax.annotation.Nullable;
 
+import com.gmail.thelilchicken01.tff.enchantment.ModEnchants;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.projectile.FrostBolt;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
 import com.gmail.thelilchicken01.tff.item.projectile.FrostBoltProjectile;
 
 import net.minecraft.core.particles.ParticleTypes;
@@ -20,6 +22,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.phys.Vec3;
 
 public enum MagicModUtil {
@@ -32,7 +35,8 @@ public enum MagicModUtil {
 	WITHER,
 	REETLE,
 	MECHANICAL,
-	FROSTBITTEN;
+	FROSTBITTEN,
+	ROTFISH;
 	
 	public static void getMagicMod(Player shooter, Entity hitEntity, @Nullable MagicModUtil mod) {
 		
@@ -216,6 +220,29 @@ public enum MagicModUtil {
 							
 						}
 						
+					}
+					
+					break;
+				case ROTFISH:
+					
+					EffectsUtil effect = EffectsUtil.getRandomEffect();
+					
+					int strength;
+					
+					if (ArmorSets.BANSHEE.getArmorSet(shooter) == SetCount.TWO) {
+						strength = ((int) (Math.random() * 3)) + 2;
+					}
+					else if (ArmorSets.BANSHEE.getArmorSet(shooter) == SetCount.FOUR) {
+						strength = ((int) (Math.random() * 3)) + 4;
+					}
+					else {
+						strength = (int) (Math.random() * 3);
+					}
+					
+					shooter.addEffect(new MobEffectInstance(effect.getEffect(), (effect.getEffectDuration() * 20), strength));
+					
+					if (hitEntity instanceof LivingEntity) {
+						((LivingEntity) hitEntity).addEffect(new MobEffectInstance(effect.getEffect(), (effect.getEffectDuration() * 20), strength));
 					}
 					
 					break;
