@@ -127,6 +127,7 @@ import com.gmail.thelilchicken01.tff.item.projectile.RottingBoltShot;
 import com.gmail.thelilchicken01.tff.item.tool.BonePickaxe;
 import com.gmail.thelilchicken01.tff.item.tool.ElectricPickaxe;
 import com.gmail.thelilchicken01.tff.item.tool.GoopyStick;
+import com.gmail.thelilchicken01.tff.item.tool.IcyPaxel;
 import com.google.common.base.Supplier;
 
 import net.minecraft.world.effect.MobEffectInstance;
@@ -542,6 +543,10 @@ public class ItemInit {
 	//Electric Pickaxe
 	public static final RegistryObject<Item> ELECTRIC_PICKAXE = register("electric_pickaxe",
 			() -> new ElectricPickaxe());
+	
+	//Icy Paxel
+	public static final RegistryObject<Item> ICY_PAXEL = register("icy_paxel",
+			() -> new IcyPaxel());
 	
 	/*
 	 * 
