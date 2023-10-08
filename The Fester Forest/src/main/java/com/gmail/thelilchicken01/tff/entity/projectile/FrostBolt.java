@@ -8,6 +8,7 @@ import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
 import com.gmail.thelilchicken01.tff.item.projectile.FrostBoltProjectile;
 
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.util.Mth;
@@ -18,6 +19,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity.RemovalReason;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.level.Level;
@@ -72,8 +74,22 @@ public class FrostBolt extends Fireball {
 	}
 	
 	@Override
+	public void tick() {
+		
+		super.tick();
+		
+		if(!getLevel().isClientSide()) {
+			ticksSinceFired++;
+			if (ticksSinceFired > 80 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
+				remove(RemovalReason.KILLED);
+			}
+		}
+		
+	}
+	
+	@Override
 	protected ParticleOptions getTrailParticle() {
-		return ParticleInit.BRANCH_PARTICLE.get();
+		return ParticleTypes.SNOWFLAKE;
 	}
 	
 	@Override
@@ -115,6 +131,8 @@ public class FrostBolt extends Fireball {
 					Vec3 vec = getDeltaMovement().multiply(1, 0, 1).normalize().scale(actualKnockback);
 					if (vec.lengthSqr() > 0) livingTarget.push(vec.x, 0.1, vec.z);
 				}
+				
+				livingTarget.setTicksFrozen(240);
 				
 				if (shooter instanceof LivingEntity) {
 					doEnchantDamageEffects((LivingEntity)shooter, target);

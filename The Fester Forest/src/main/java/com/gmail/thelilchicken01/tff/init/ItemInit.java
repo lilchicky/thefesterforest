@@ -80,6 +80,7 @@ import com.gmail.thelilchicken01.tff.item.magic.DullOrb;
 import com.gmail.thelilchicken01.tff.item.magic.EnergeticFungus;
 import com.gmail.thelilchicken01.tff.item.magic.FlameOrb;
 import com.gmail.thelilchicken01.tff.item.magic.ForgemasterOrb;
+import com.gmail.thelilchicken01.tff.item.magic.FrostbittenOrb;
 import com.gmail.thelilchicken01.tff.item.magic.FrozenOrb;
 import com.gmail.thelilchicken01.tff.item.magic.FrozenPendant;
 import com.gmail.thelilchicken01.tff.item.magic.GlaciatedStaff;
@@ -503,6 +504,10 @@ public class ItemInit {
 	//Forgemaster Orb
 	public static final RegistryObject<Item> FORGEMASTER_ORB = register("forgemaster_orb",
 			() -> new ForgemasterOrb());
+	
+	//Frostbitten Orb
+	public static final RegistryObject<Item> FROSTBITTEN_ORB = register("frostbitten_orb",
+			() -> new FrostbittenOrb());
 	
 	/*
 	 * 

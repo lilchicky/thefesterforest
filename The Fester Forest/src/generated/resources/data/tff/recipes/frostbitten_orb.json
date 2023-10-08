@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " b ",
+    "bab",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "tff:dull_orb"
+    },
+    "b": {
+      "item": "tff:frozen_shard"
+    }
+  },
+  "result": {
+    "item": "tff:frostbitten_orb"
+  }
+}

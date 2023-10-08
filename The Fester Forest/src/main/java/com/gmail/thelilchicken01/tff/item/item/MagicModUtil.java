@@ -4,9 +4,13 @@ import javax.annotation.Nullable;
 
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
+import com.gmail.thelilchicken01.tff.entity.projectile.FrostBolt;
+import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.projectile.FrostBoltProjectile;
 
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -16,6 +20,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.Vec3;
 
 public enum MagicModUtil {
 	
@@ -26,7 +31,8 @@ public enum MagicModUtil {
 	LIFE,
 	WITHER,
 	REETLE,
-	MECHANICAL;
+	MECHANICAL,
+	FROSTBITTEN;
 	
 	public static void getMagicMod(Player shooter, Entity hitEntity, @Nullable MagicModUtil mod) {
 		
@@ -178,6 +184,41 @@ public enum MagicModUtil {
 						repairItem(shooter, 1);
 					}
 					break;
+				case FROSTBITTEN:
+					
+					for (int x = 0; x < 360; x++) {
+						
+						if (x % 72 == 0) {
+							
+							FrostBoltProjectile bulletItem = ItemInit.FROST_BOLT.get();
+							ItemStack shotAmmo = new ItemStack(ItemInit.FROST_BOLT.get());
+							
+							FrostBolt shot = bulletItem.createProjectile(shooter.getLevel(), shotAmmo, shooter);
+							
+							shot.setPos(hitEntity.getX(), hitEntity.getY() + 1.0, hitEntity.getZ());
+						
+							shot.shootFromRotation(hitEntity, 0.0f, x, 0.0f, 1.2f, 0.0f);
+							
+							if (ArmorSets.BANSHEE.getArmorSet(shooter) == SetCount.TWO) {
+								shot.setDamage(10);
+							}
+							if (ArmorSets.BANSHEE.getArmorSet(shooter) == SetCount.FOUR) {
+								shot.setDamage(15);
+							}
+							else {
+								shot.setDamage(5);
+							}
+							
+							shot.setIgnoreInvulnerability(false);
+							shot.canHitPlayer(false);
+						
+							shooter.getLevel().addFreshEntity(shot);
+							
+						}
+						
+					}
+					
+					break;
 				default:
 					break;
 		
@@ -187,11 +228,6 @@ public enum MagicModUtil {
 	}
 	
 	private static void repairItem(Player player, int repairAmount) {
-		
-//		@Nullable ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
-//		@Nullable ItemStack chestplate = player.getItemBySlot(EquipmentSlot.CHEST);
-//		@Nullable ItemStack leggings = player.getItemBySlot(EquipmentSlot.LEGS);
-//		@Nullable ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
 		
 		player.getArmorSlots().forEach(item -> {
 			

@@ -480,7 +480,9 @@ public class ModRecipeProvider extends RecipeProvider {
 						BlockInit.FESTER_BRICK_PRESSURE_PLATE.get().getRegistryName().getPath()));
 		
 		/*
+		 *
 		 * Magic Orbs
+		 * 
 		 */
 		
 		// Flame Orb
@@ -545,6 +547,15 @@ public class ModRecipeProvider extends RecipeProvider {
 		.pattern(" b ").pattern("bab").pattern(" b ").save(consumer, 
 				new ResourceLocation(TheFesterForest.MODID, 
 						ItemInit.FORGEMASTER_ORB.get().getRegistryName().getPath()));
+		
+		// Frostbitten Orb
+		ShapedRecipeBuilder.shaped(ItemInit.FROSTBITTEN_ORB.get(), 1)
+		.define('a', ItemInit.DULL_ORB.get().asItem()).define('b', ItemInit.FROZEN_SHARD.get())
+		.unlockedBy("has_" + ItemInit.DULL_ORB.get().getRegistryName(), 
+				has(ItemInit.DULL_ORB.get().asItem()))
+		.pattern(" b ").pattern("bab").pattern(" b ").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.FROSTBITTEN_ORB.get().getRegistryName().getPath()));
 		
 		// Life Orb
 		ShapedRecipeBuilder.shaped(ItemInit.LIFE_ORB.get(), 1) // add , int to get number of output

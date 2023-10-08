@@ -62,7 +62,7 @@ public class MeteorCharge extends Fireball {
 		
 		super.tick();
 		
-		if (!getLevel().isClientSide) {
+		if (!getLevel().isClientSide()) {
 			ticksSinceFired++;
 			if (ticksSinceFired > 160 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
 				remove(RemovalReason.KILLED);

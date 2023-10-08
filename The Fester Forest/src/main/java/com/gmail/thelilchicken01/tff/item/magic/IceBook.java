@@ -114,8 +114,6 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 				shot.setDamage(shotDamage * ItemUtil.getArcanePowerDamageMod(stack));
 				shot.setIgnoreInvulnerability(false);
 				shot.canHitPlayer(false);
-				
-				nearbyEntities.get(x).setTicksFrozen(240);
 			
 				player.getLevel().addFreshEntity(shot);
 				

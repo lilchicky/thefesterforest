@@ -354,6 +354,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.GLACIATED_STAFF.get(), "Glacial Staff");
 		add(ItemInit.ICE_BOOK.get(), "Book of Frost");
 		add(ItemInit.ROTTING_STAFF.get(), "Rotting Staff");
+		add(ItemInit.FROSTBITTEN_ORB.get(), "Orb of the Eternal Winter");
 		
 		/*
 		 * 
