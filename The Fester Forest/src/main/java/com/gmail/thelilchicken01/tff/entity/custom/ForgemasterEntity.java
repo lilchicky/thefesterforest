@@ -66,7 +66,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	
 	private final ServerBossEvent bossEvent = (ServerBossEvent)(new ServerBossEvent(
 			this.getDisplayName(), 
-			BossEvent.BossBarColor.BLUE, 
+			BossEvent.BossBarColor.PURPLE, 
 			BossEvent.BossBarOverlay.NOTCHED_20)).setDarkenScreen(true);
 	
 	private double shootCooldown = 1; // default shot cooldown in seconds, before modifiers
@@ -269,7 +269,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 				playSound(SoundEvents.ANVIL_DESTROY, 1.0f, 0.01f);
 				
 				setInvulnerable(false);
-				bossEvent.setColor(BossBarColor.BLUE);
+				bossEvent.setColor(BossBarColor.PURPLE);
 				
 				List<Entity> nearbyPylons = this.getLevel().getEntities(this, 
 					new AABB(this.getX() - (pylonRadius + 16), 
