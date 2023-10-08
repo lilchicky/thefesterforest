@@ -71,6 +71,7 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 			else {
 				player.displayClientMessage(new TextComponent("Now targeting all living things.").withStyle(ChatFormatting.WHITE), true);
 			}
+			((ServerPlayer)player).awardStat(Stats.ITEM_USED.get(this));
 			
 		}
 		else {
