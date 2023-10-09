@@ -39,12 +39,12 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class FrozenBow extends BowItem {
 	
-	private String[] drops = {"Glacial Titan"};
+	private String[] drops = {"Frostbitten King"};
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
 	public FrozenBow() {
-		super(new Properties().durability(966).tab(TheFesterForest.TFF_TAB));
+		super(new Properties().durability(-1).tab(TheFesterForest.TFF_TAB));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		
@@ -80,7 +80,7 @@ public class FrozenBow extends BowItem {
 
 			if (!itemstack.isEmpty() || flag) {
 				if (itemstack.isEmpty()) {
-					itemstack = new ItemStack(Items.ARROW);
+					itemstack = new ItemStack(ItemInit.ICY_ARROW.get());
 				}
 
 				float f = getPowerForTime(i);
@@ -89,36 +89,60 @@ public class FrozenBow extends BowItem {
 					if (!p_40668_.isClientSide) {
 						ArrowItem arrowitem = (ArrowItem)(itemstack.getItem() instanceof ArrowItem ? itemstack.getItem() : Items.ARROW);
 						AbstractArrow abstractarrow = arrowitem.createArrow(p_40668_, itemstack, player);
+						AbstractArrow abstractarrow2 = arrowitem.createArrow(p_40668_, itemstack, player);
+						AbstractArrow abstractarrow3 = arrowitem.createArrow(p_40668_, itemstack, player);
+						
 						abstractarrow = customArrow(abstractarrow);
+						abstractarrow2 = customArrow(abstractarrow);
+						abstractarrow3 = customArrow(abstractarrow);
+						
 						abstractarrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, f * 3.0F, 1.0F);
+						abstractarrow2.shootFromRotation(player, player.getXRot(), player.getYRot() - 15, 0.0F, f * 3.0F, 1.0F);
+						abstractarrow3.shootFromRotation(player, player.getXRot(), player.getYRot() + 15, 0.0F, f * 3.0F, 1.0F);
 						if (f == 1.0F) {
 							abstractarrow.setCritArrow(true);
+							abstractarrow2.setCritArrow(true);
+							abstractarrow3.setCritArrow(true);
 						}
 
 						int j = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, p_40667_);
 						if (j > 0) {
 							abstractarrow.setBaseDamage(abstractarrow.getBaseDamage() + (double)j * 0.5D + 0.5D);
+							abstractarrow2.setBaseDamage(abstractarrow.getBaseDamage() + (double)j * 0.5D + 0.5D);
+							abstractarrow3.setBaseDamage(abstractarrow.getBaseDamage() + (double)j * 0.5D + 0.5D);
 						}
 
 						int k = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.PUNCH_ARROWS, p_40667_);
 						if (k > 0) {
 							abstractarrow.setKnockback(k);
+							abstractarrow2.setKnockback(k);
+							abstractarrow3.setKnockback(k);
 						}
 
 						if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FLAMING_ARROWS, p_40667_) > 0) {
 							abstractarrow.setSecondsOnFire(100);
+							abstractarrow2.setSecondsOnFire(100);
+							abstractarrow3.setSecondsOnFire(100);
 						}
 
 						p_40667_.hurtAndBreak(1, player, (p_40665_) -> {
 							p_40665_.broadcastBreakEvent(player.getUsedItemHand());
 						});
-						if (flag1 || player.getAbilities().instabuild && (itemstack.is(Items.SPECTRAL_ARROW) || itemstack.is(Items.TIPPED_ARROW))) {
+						
+						if (!flag1) {
+							abstractarrow.pickup = AbstractArrow.Pickup.ALLOWED;
+							abstractarrow2.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
+							abstractarrow3.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
+						}
+						else {
 							abstractarrow.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
+							abstractarrow2.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
+							abstractarrow3.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
 						}
 		                  
-						for (int x = 0; x < 4; x++) {
-							p_40668_.addFreshEntity(abstractarrow);
-						}
+						p_40668_.addFreshEntity(abstractarrow);
+						p_40668_.addFreshEntity(abstractarrow2);
+						p_40668_.addFreshEntity(abstractarrow3);
 					}
 
 					p_40668_.playSound((Player)null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F / (p_40668_.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);
@@ -141,8 +165,9 @@ public class FrozenBow extends BowItem {
 		
 		lore.add(new TextComponent("Ranged").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("A glassy bow made of very cold ice.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("Converts all shot arrows into Icy Arrows.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("A bow crafted of the ice that held the Frostbitten King.").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("Converts all shot arrows into Icy Arrows. Also fires").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent("3 arrows one arrow fired.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 		for (int x = 0; x < drops.length; x++) {

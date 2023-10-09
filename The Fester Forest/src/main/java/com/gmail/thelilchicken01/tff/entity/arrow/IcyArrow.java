@@ -14,6 +14,8 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraftforge.network.NetworkHooks;
 
 public class IcyArrow extends AbstractArrow {
+	
+	private boolean extraShot = false;
 
 	public IcyArrow(EntityType<? extends IcyArrow> p_37411_, Level p_37412_) {
 		super(p_37411_, p_37412_);
@@ -32,15 +34,20 @@ public class IcyArrow extends AbstractArrow {
 		
 		if (result.getEntity() instanceof LivingEntity) {
 			((LivingEntity) result.getEntity()).setTicksFrozen(240);
+			
 		}
 		
 		super.onHitEntity(result);
 	} 
+	
+	public void isExtraShot(boolean extra) {
+		extraShot = extra;
+	}
 
 	@Override
 	protected ItemStack getPickupItem() {
 		
-		return new ItemStack(ItemInit.ICY_ARROW.get(), 1);
+		return !extraShot ? new ItemStack(ItemInit.ICY_ARROW.get(), 1) : ItemStack.EMPTY;
 	}
 	
 	@Override

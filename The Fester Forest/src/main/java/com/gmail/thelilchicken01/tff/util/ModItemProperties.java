@@ -10,6 +10,7 @@ public class ModItemProperties {
     public static void addCustomItemProperties() {
         makeBow(ItemInit.SHADOW_BOW.get());
         makeBow(ItemInit.ICY_BOW.get());
+        makeBow(ItemInit.FROZEN_BOW.get());
     }
 
     private static void makeBow(Item item) {

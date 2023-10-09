@@ -1,0 +1,6 @@
+{
+    "parent": "tff:item/frozen_bow",
+    "textures": {
+        "layer0": "tff:item/frozen_bow_pulling_1"
+    }
+}

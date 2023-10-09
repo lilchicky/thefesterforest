@@ -374,6 +374,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.ROTTING_BOLT.get(), "Rotting Bolt");
 		add(ModEntityTypes.rotting_bolt.get(), "Rotting Bolt");
 		add(ItemInit.ICY_ARROW.get(), "Icy Arrow");
+		add(ItemInit.FROZEN_BOW.get(), "Frozen Bow");
 		
 		/*
 		 * 

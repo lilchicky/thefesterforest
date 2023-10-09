@@ -24,6 +24,12 @@ public class IcyArrowItem extends ArrowItem {
 	}
 	
 	@Override
+	public boolean isInfinite(ItemStack stack, ItemStack bow, net.minecraft.world.entity.player.Player player) {
+		int enchant = net.minecraft.world.item.enchantment.EnchantmentHelper.getItemEnchantmentLevel(net.minecraft.world.item.enchantment.Enchantments.INFINITY_ARROWS, bow);
+		return enchant <= 0 ? false : this.getClass() == IcyArrowItem.class;
+	}
+	
+	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		

@@ -124,6 +124,7 @@ import com.gmail.thelilchicken01.tff.item.projectile.FrozenRockShot;
 import com.gmail.thelilchicken01.tff.item.projectile.IceSpikeShot;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
 import com.gmail.thelilchicken01.tff.item.projectile.RottingBoltShot;
+import com.gmail.thelilchicken01.tff.item.ranged.FrozenBow;
 import com.gmail.thelilchicken01.tff.item.ranged.IcyBow;
 import com.gmail.thelilchicken01.tff.item.ranged.arrows.IcyArrowItem;
 import com.gmail.thelilchicken01.tff.item.tool.BonePickaxe;
@@ -531,6 +532,10 @@ public class ItemInit {
 	//Icy Bow
 	public static final RegistryObject<Item> ICY_BOW = register("icy_bow", 
 			() -> new IcyBow());
+	
+	//Frozen Bow
+	public static final RegistryObject<Item> FROZEN_BOW = register("frozen_bow", 
+			() -> new FrozenBow());
 	
 	/*
 	 * Arrows
