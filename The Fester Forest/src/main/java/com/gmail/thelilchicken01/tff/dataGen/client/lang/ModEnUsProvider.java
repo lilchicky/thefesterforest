@@ -270,6 +270,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.FROZEN_CHESTPLATE.get(), "Frozen Chestplate");
 		add(ItemInit.FROZEN_HELMET.get(), "Frozen Helmet");
 		add(ItemInit.ICY_PAXEL.get(), "Icy Paxel");
+		add(ItemInit.ICY_BOW.get(), "Icy Bow");
 		
 		/*
 		 * 
@@ -372,6 +373,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ModEntityTypes.frost_bolt.get(), "Frost Bolt");
 		add(ItemInit.ROTTING_BOLT.get(), "Rotting Bolt");
 		add(ModEntityTypes.rotting_bolt.get(), "Rotting Bolt");
+		add(ItemInit.ICY_ARROW.get(), "Icy Arrow");
 		
 		/*
 		 * 

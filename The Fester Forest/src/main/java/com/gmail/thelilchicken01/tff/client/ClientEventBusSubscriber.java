@@ -2,6 +2,8 @@ package com.gmail.thelilchicken01.tff.client;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
+import com.gmail.thelilchicken01.tff.entity.arrow.IcyArrow;
+import com.gmail.thelilchicken01.tff.entity.arrow.arrow_renderers.IcyArrowRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.AmbectrumRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.BansheeRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.CorrodedShroomRenderer;
@@ -132,6 +134,8 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(ModEntityTypes.SEATHROWN_SKELETON.get(), SeathrownSkeletonRenderer::new);
 		EntityRenderers.register(ModEntityTypes.CORRODED_SHROOM.get(), CorrodedShroomRenderer::new);
 		EntityRenderers.register(ModEntityTypes.DEEP_REAVER.get(), DeepReaverRenderer::new);
+		
+		EntityRenderers.register(ModEntityTypes.icy_arrow.get(), IcyArrowRenderer::new);
 		
 		ItemProperties.register(ItemInit.REETLE_ELYTRA.get(), new ResourceLocation(TheFesterForest.MODID, "broken"),
 				(stack, arg1, arg2, arg3) -> ReetleElytra.isUsable(stack) ? 0 : 1);

@@ -1,6 +1,7 @@
 package com.gmail.thelilchicken01.tff.entity;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
+import com.gmail.thelilchicken01.tff.entity.arrow.IcyArrow;
 import com.gmail.thelilchicken01.tff.entity.custom.AmbectrumEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CorrodedShroomEntity;
@@ -48,6 +49,8 @@ public class ModEntityTypes {
 	public static RegistryObject<EntityType<FrozenRock>> frozen_rock;
 	public static RegistryObject<EntityType<FrostBolt>> frost_bolt;
 	public static RegistryObject<EntityType<RottingBolt>> rotting_bolt;
+	
+	public static RegistryObject<EntityType<IcyArrow>> icy_arrow;
 	
 	//Rotting Skeleton
 	public static final RegistryObject<EntityType<RottingSkeletonEntity>> ROTTING_SKELETON =
@@ -204,6 +207,15 @@ public class ModEntityTypes {
 				.<RottingBolt>of(RottingBolt::new, MobCategory.MISC)
 				.sized(0.6125f, 0.6125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
 				.build(TheFesterForest.MODID + ":rotting_bolt"));
+	}
+	
+	//Icy Arrow
+	
+	static {
+		icy_arrow = ENTITY_TYPES.register("icy_arrow", () -> EntityType.Builder
+				.<IcyArrow>of(IcyArrow::new, MobCategory.MISC)
+				.sized(0.5f, 0.5f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
+				.build(TheFesterForest.MODID + ":icy_arrow"));
 	}
 	
 	

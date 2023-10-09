@@ -124,6 +124,8 @@ import com.gmail.thelilchicken01.tff.item.projectile.FrozenRockShot;
 import com.gmail.thelilchicken01.tff.item.projectile.IceSpikeShot;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
 import com.gmail.thelilchicken01.tff.item.projectile.RottingBoltShot;
+import com.gmail.thelilchicken01.tff.item.ranged.IcyBow;
+import com.gmail.thelilchicken01.tff.item.ranged.arrows.IcyArrowItem;
 import com.gmail.thelilchicken01.tff.item.tool.BonePickaxe;
 import com.gmail.thelilchicken01.tff.item.tool.ElectricPickaxe;
 import com.gmail.thelilchicken01.tff.item.tool.GoopyStick;
@@ -525,6 +527,17 @@ public class ItemInit {
 	//Shadow Bow
 	public static final RegistryObject<Item> SHADOW_BOW = register("shadow_bow", 
 			() -> new ShadowBow());
+	
+	//Icy Bow
+	public static final RegistryObject<Item> ICY_BOW = register("icy_bow", 
+			() -> new IcyBow());
+	
+	/*
+	 * Arrows
+	 */
+	
+	public static final RegistryObject<Item> ICY_ARROW = register("icy_arrow",
+			() -> new IcyArrowItem());
 	
 	/*
 	 * 
