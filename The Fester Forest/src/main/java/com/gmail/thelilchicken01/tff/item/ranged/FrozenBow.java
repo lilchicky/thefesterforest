@@ -108,9 +108,9 @@ public class FrozenBow extends BowItem {
 
 						int j = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, p_40667_);
 						if (j > 0) {
-							abstractarrow.setBaseDamage(abstractarrow.getBaseDamage() + (double)j * 0.5D + 0.5D);
-							abstractarrow2.setBaseDamage(abstractarrow.getBaseDamage() + (double)j * 0.5D + 0.5D);
-							abstractarrow3.setBaseDamage(abstractarrow.getBaseDamage() + (double)j * 0.5D + 0.5D);
+							abstractarrow.setBaseDamage((abstractarrow.getBaseDamage() * 1.2) + (double)j * 0.5D + 0.5D);
+							abstractarrow2.setBaseDamage((abstractarrow.getBaseDamage() * 1.2) + (double)j * 0.5D + 0.5D);
+							abstractarrow3.setBaseDamage((abstractarrow.getBaseDamage() * 1.2) + (double)j * 0.5D + 0.5D);
 						}
 
 						int k = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.PUNCH_ARROWS, p_40667_);
@@ -172,6 +172,7 @@ public class FrozenBow extends BowItem {
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Converts all shot arrows into Icy Arrows.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("Fires 3 arrows for the cost of one.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Arrows do an additional 20% damage.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < drops.length; x++) {
