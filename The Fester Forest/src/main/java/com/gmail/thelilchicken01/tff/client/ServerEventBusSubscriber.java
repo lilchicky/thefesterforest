@@ -8,6 +8,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.CorrodedShroomEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.DeepReaverEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.IceRambleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PylonEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ReetleQueenEntity;
@@ -52,6 +53,7 @@ public class ServerEventBusSubscriber {
 		event.put(ModEntityTypes.SEATHROWN_SKELETON.get(), SeathrownSkeletonEntity.setAttributes());
 		event.put(ModEntityTypes.CORRODED_SHROOM.get(), CorrodedShroomEntity.setAttributes());
 		event.put(ModEntityTypes.DEEP_REAVER.get(), DeepReaverEntity.setAttributes());
+		event.put(ModEntityTypes.ICE_RAMBLE.get(), IceRambleEntity.setAttributes());
 		
 	}
 	

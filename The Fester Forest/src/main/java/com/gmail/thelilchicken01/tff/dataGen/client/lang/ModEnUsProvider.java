@@ -257,12 +257,6 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(BlockInit.FROSTBITTEN_SLAB.get(), "Frostbitten Slab");
 		add(BlockInit.FROSTBITTEN_FENCE.get(), "Frostbitten Fence");
 		add(BlockInit.FROSTBITTEN_FENCE_GATE.get(), "Frostbitten Fence Gate");
-		/*
-		 * 
-		 * Weapons and Armor
-		 * 
-		 */
-		
 		add(ItemInit.SHARD_OF_ICE.get(), "Shard of Ice");
 		add(ItemInit.FROST_MALLET.get(), "Frost Mallet");
 		add(ItemInit.FROZEN_BOOTS.get(), "Frozen Boots");
@@ -271,76 +265,27 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.FROZEN_HELMET.get(), "Frozen Helmet");
 		add(ItemInit.ICY_PAXEL.get(), "Icy Paxel");
 		add(ItemInit.ICY_BOW.get(), "Icy Bow");
-		
-		/*
-		 * 
-		 * Rottingwood Stuff
-		 * 
-		 */
-		
 		add(BlockInit.ROTTINGWOOD_BUTTON.get(), "Rottingwood Button");
 		add(BlockInit.ROTTINGWOOD_PRESSURE_PLATE.get(), "Rottingwood Pressure Plate");
 		add(BlockInit.ROTTINGWOOD_DOOR.get(), "Rottingwood Door");
 		add(BlockInit.ROTTINGWOOD_TRAPDOOR.get(), "Rottingwood Trapdoor");
-		
-		/*
-		 * 
-		 * Slimy Wood Stuff
-		 * 
-		 */
-		
 		add(BlockInit.SLIMY_BUTTON.get(), "Slimy Button");
 		add(BlockInit.SLIMY_PRESSURE_PLATE.get(), "Slimy Pressure Plate");
 		add(BlockInit.SLIMY_DOOR.get(), "Slimy Door");
 		add(BlockInit.SLIMY_TRAPDOOR.get(), "Slimy Trapdoor");
-		
-		/*
-		 * 
-		 * Frostbitten Wood Stuff
-		 * 
-		 */
-		
 		add(BlockInit.FROSTBITTEN_BUTTON.get(), "Frostbitten Button");
 		add(BlockInit.FROSTBITTEN_PRESSURE_PLATE.get(), "Frostbitten Pressure Plate");
 		add(BlockInit.FROSTBITTEN_DOOR.get(), "Frostbitten Door");
 		add(BlockInit.FROSTBITTEN_TRAPDOOR.get(), "Frostbitten Trapdoor");
-		
-		/*
-		 * 
-		 * Cubed Fungus Stuff
-		 * 
-		 */
-		
 		add(BlockInit.CUBED_FUNGUS_BUTTON.get(), "Cubed Fungus Button");
 		add(BlockInit.CUBED_FUNGUS_PRESSURE_PLATE.get(), "Cubed Fungus Pressure Plate");
 		add(BlockInit.CUBED_FUNGUS_DOOR.get(), "Cubed Fungus Door");
 		add(BlockInit.CUBED_FUNGUS_TRAPDOOR.get(), "Cubed Fungus Trapdoor");
-		
-		/*
-		 * 
-		 * Rotting Stone and Fester Brick Stuff
-		 * 
-		 */
-		
 		add(BlockInit.ROTTING_STONE_BUTTON.get(), "Rotting Stone Button");
 		add(BlockInit.ROTTING_STONE_PRESSURE_PLATE.get(), "Rotting Stone Pressure Plate");
 		add(BlockInit.FESTER_BRICK_PRESSURE_PLATE.get(), "Player Only Pressure Plate");
-		
-		/*
-		 * 
-		 * Rotting Sand Stuff
-		 * 
-		 */
-		
 		add(BlockInit.COMPRESSED_ROTTING_SAND_BUTTON.get(), "Compressed Rotting Sand Button");
 		add(BlockInit.COMPRESSED_ROTTING_SAND_PRESSURE_PLATE.get(), "Compressed Rotting Sand Pressure Plate");
-		
-		/*
-		 * 
-		 * Magic
-		 * 
-		 */
-		
 		add(ItemInit.FOOD_BOOK.get(), "Book of Gluttony");
 		add(ItemInit.VERDANT_BRANCH.get(), "Verdant Branch");
 		add(ItemInit.DULL_ORB.get(), "Dull Orb");
@@ -359,13 +304,6 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.FROSTBITTEN_ORB.get(), "Orb of the Eternal Winter");
 		add(ItemInit.ROTFISH_ORB.get(), "Orb of the Depths");
 		add(ItemInit.FLOWER_CROWN.get(), "Flower Crown");
-		
-		/*
-		 * 
-		 * Projectiles
-		 * 
-		 */
-		
 		add(ItemInit.ICE_SPIKE.get(), "Ice Spike");
 		add(ItemInit.FROZEN_ROCK.get(), "Frozen Rock");
 		add(ModEntityTypes.frozen_rock.get(), "Frozen Rock");
@@ -375,26 +313,14 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ModEntityTypes.rotting_bolt.get(), "Rotting Bolt");
 		add(ItemInit.ICY_ARROW.get(), "Icy Arrow");
 		add(ItemInit.FROZEN_BOW.get(), "Frostbitten Bow");
-		
-		/*
-		 * 
-		 * Random Items
-		 * 
-		 */
-		
 		add(ItemInit.METAL_SCRAP.get(), "Metal Scrap");
 		add(ItemInit.FROZEN_HEART.get(), "Frozen Heart");
 		add(ItemInit.FROZEN_SHARD.get(), "Frozen Shard");
 		add(ItemInit.GLACIAL_STOMACH.get(), "Glacial Stomach");
 		add(ItemInit.GOOPY_STONE.get(), "Goopy Stone");
-		
-		/*
-		 * 
-		 * Food
-		 * 
-		 */
-		
+		add(ItemInit.ICE_RAMBLE_SPAWN_EGG.get(), "Ice Ramble Spawn Egg");
 		add(ItemInit.FROZEN_APPLE.get(), "Frozen Apple");
+		add(ModEntityTypes.ICE_RAMBLE.get(), "Ice Ramble");
 		
 		/*
 		 * 

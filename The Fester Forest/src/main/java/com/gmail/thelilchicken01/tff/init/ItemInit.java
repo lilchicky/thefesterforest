@@ -225,6 +225,11 @@ public class ItemInit {
 			() -> new ForgeSpawnEggItem(ModEntityTypes.DEEP_REAVER, 0x411820, 0x672854, //Background, Spots
 					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	//Ice Ramble Spawn Egg
+	public static final RegistryObject<Item> ICE_RAMBLE_SPAWN_EGG = register("ice_ramble_spawn_egg", 
+			() -> new ForgeSpawnEggItem(ModEntityTypes.ICE_RAMBLE, 0x5288e9, 0xbbcfff, //Background, Spots
+					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	/*
 	 * 
 	 * Armors
