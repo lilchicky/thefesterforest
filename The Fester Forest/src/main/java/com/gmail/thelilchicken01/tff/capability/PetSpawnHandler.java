@@ -131,7 +131,11 @@ public class PetSpawnHandler implements INBTSerializable<CompoundTag> {
 		@SubscribeEvent
 		public static void playerChangeDimension(final PlayerEvent.PlayerChangedDimensionEvent event) {
 			
-			getHasPet(event.getPlayer()).ifPresent(PetSpawnHandler::syncronise);
+			getHasPet(event.getPlayer()).ifPresent(
+						resetPet -> {
+							resetPet.setHasPet(false);
+						}
+					);
 			
 		}
 		
