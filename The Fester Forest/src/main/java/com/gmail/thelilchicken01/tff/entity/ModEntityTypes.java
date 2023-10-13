@@ -141,7 +141,7 @@ public class ModEntityTypes {
 	//Ice Ramble
 	public static final RegistryObject<EntityType<IceRambleEntity>> ICE_RAMBLE =
 			ENTITY_TYPES.register("ice_ramble", () -> EntityType.Builder.of(IceRambleEntity::new, MobCategory.CREATURE)
-					.sized(1.0f, 1.0f).build(new ResourceLocation(TheFesterForest.MODID, "ice_ramble").toString()));
+					.sized(0.8f, 0.6f).build(new ResourceLocation(TheFesterForest.MODID, "ice_ramble").toString()));
 	
 	//Brittle Branch Bullet
 	
