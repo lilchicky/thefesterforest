@@ -10,6 +10,10 @@ import com.gmail.thelilchicken01.tff.item.armor.frozenArmor.FrozenBoots;
 import com.gmail.thelilchicken01.tff.item.armor.frozenArmor.FrozenChestplate;
 import com.gmail.thelilchicken01.tff.item.armor.frozenArmor.FrozenHelmet;
 import com.gmail.thelilchicken01.tff.item.armor.frozenArmor.FrozenLeggings;
+import com.gmail.thelilchicken01.tff.item.armor.glacialArmor.GlacialBoots;
+import com.gmail.thelilchicken01.tff.item.armor.glacialArmor.GlacialChestplate;
+import com.gmail.thelilchicken01.tff.item.armor.glacialArmor.GlacialHelmet;
+import com.gmail.thelilchicken01.tff.item.armor.glacialArmor.GlacialLeggings;
 import com.gmail.thelilchicken01.tff.item.armor.goop.GoopyBoots;
 import com.gmail.thelilchicken01.tff.item.armor.goop.GoopyChestplate;
 import com.gmail.thelilchicken01.tff.item.armor.goop.GoopyHelmet;
@@ -351,6 +355,22 @@ public class ItemInit {
 	//Frozen Boots
 	public static final RegistryObject<Item> FROZEN_BOOTS = register("frozen_boots", 
 			() -> new FrozenBoots());
+	
+	//Glacial Helmet
+	public static final RegistryObject<Item> GLACIAL_HELMET = register("glacial_helmet", 
+			() -> new GlacialHelmet());
+			
+	//Glacial Chestplate
+	public static final RegistryObject<Item> GLACIAL_CHESTPLATE = register("glacial_chestplate", 
+			() -> new GlacialChestplate());
+				
+	//Glacial Leggings
+	public static final RegistryObject<Item> GLACIAL_LEGGINGS = register("glacial_leggings", 
+			() -> new GlacialLeggings());
+			
+	//Glacial Boots
+	public static final RegistryObject<Item> GLACIAL_BOOTS = register("glacial_boots", 
+			() -> new GlacialBoots());
 	
 	/*
 	 * 

@@ -3,16 +3,22 @@ package com.gmail.thelilchicken01.tff.entity.custom;
 import java.util.Optional;
 import java.util.UUID;
 
+import com.gmail.thelilchicken01.tff.capability.PetSpawnHandler;
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
+import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobType;
@@ -32,7 +38,6 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.network.NetworkHooks;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -97,6 +102,41 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 	public void tick() {
 		
 		super.tick();
+		
+		if (this.getOwner() != null && this.getOwner() instanceof Player player) {
+			if (ArmorSets.GLACIAL.getArmorSet((Player) this.getOwner()) == SetCount.FOUR) {
+				addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 15, 0));
+				addEffect(new MobEffectInstance(MobEffects.REGENERATION, 15, 0));
+				addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 15, 0));
+			}
+			else if (ArmorSets.GLACIAL.getArmorSet((Player) this.getOwner()) == SetCount.EMPTY) {
+				if (player instanceof ServerPlayer serverPlayer) {
+					player.getCapability(PetSpawnHandler.CAPABILITY).ifPresent(
+							handler -> {
+								
+								handler.setHasPet(false);
+								handler.syncPet(serverPlayer);
+							}
+						);
+				}
+				this.remove(RemovalReason.KILLED);
+			}
+		}
+		
+		if (this.getHealth() <= 0) {
+			if (this.getOwner() != null && this.getOwner() instanceof Player player) {
+				if (player instanceof ServerPlayer serverPlayer) {
+					player.getCapability(PetSpawnHandler.CAPABILITY).ifPresent(
+							handler -> {
+								
+								handler.setHasPet(false);
+								handler.syncPet(serverPlayer);
+							}
+						);
+				}
+			}
+			this.remove(RemovalReason.KILLED);
+		}
 		
 	}
 	

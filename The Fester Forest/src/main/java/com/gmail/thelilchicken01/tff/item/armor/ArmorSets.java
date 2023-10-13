@@ -75,6 +75,14 @@ public enum ArmorSets {
 				ItemInit.FROZEN_LEGGINGS.get(),
 				ItemInit.FROZEN_CHESTPLATE.get(),
 				ItemInit.FROZEN_HELMET.get()};
+	}),
+	
+	//Glacial Set
+	GLACIAL(() -> {
+		return new Item[]{ItemInit.GLACIAL_BOOTS.get(),
+				ItemInit.GLACIAL_LEGGINGS.get(),
+				ItemInit.GLACIAL_CHESTPLATE.get(),
+				ItemInit.GLACIAL_HELMET.get()};
 	});
 	
 	private final LazyLoadedValue<Item[]> armorSet;

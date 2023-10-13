@@ -321,6 +321,10 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.ICE_RAMBLE_SPAWN_EGG.get(), "Ice Ramble Spawn Egg");
 		add(ItemInit.FROZEN_APPLE.get(), "Frozen Apple");
 		add(ModEntityTypes.ICE_RAMBLE.get(), "Ice Ramble");
+		add(ItemInit.GLACIAL_BOOTS.get(), "Glacial Boots");
+		add(ItemInit.GLACIAL_CHESTPLATE.get(), "Glacial Chestplate");
+		add(ItemInit.GLACIAL_HELMET.get(), "Glacial Helmet");
+		add(ItemInit.GLACIAL_LEGGINGS.get(), "Glacial Leggings");
 		
 		/*
 		 * 

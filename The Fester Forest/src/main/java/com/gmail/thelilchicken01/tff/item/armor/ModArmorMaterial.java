@@ -54,6 +54,11 @@ public enum ModArmorMaterial implements ArmorMaterial {
 	//Frozen Armor
 	FROZEN("frozen", -1, new int[]{2, 3, 4, 1}, 40, SoundEvents.ARMOR_EQUIP_DIAMOND, 1.0F, 0.0F, () -> {
 		return Ingredient.of(Items.PACKED_ICE);
+	}),
+	
+	//Glacial Armor
+	GLACIAL("glacial", 10, new int[]{2, 3, 4, 1}, 24, SoundEvents.ARMOR_EQUIP_DIAMOND, 1.0F, 0.0F, () -> {
+		return Ingredient.of(Items.PACKED_ICE);
 	});
 
 	private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
