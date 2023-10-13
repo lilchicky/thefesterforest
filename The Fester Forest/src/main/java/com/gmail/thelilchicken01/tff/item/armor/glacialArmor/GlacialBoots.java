@@ -81,28 +81,22 @@ public class GlacialBoots extends ArmorItem {
 		if(Screen.hasShiftDown()) {
 			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Cold boots made of mysterious, unbreaking ice.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("Lightweight boots made of an odd, cold ice.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Set Bonus: Cryostasis, Magicka").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent("2+ Pieces: Freeze all monsters within 5 blocks.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("Minor buffs to all Magic items.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("4 Pieces: Freeze all monsters within 10 blocks.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("Major buffs to all Magic items.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Pairs with other Magic buff armors.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("Set Bonus: Beastmaster (Glacial)").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent("2+ Pieces: Summon an Ice Ramble to fight for you.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent("4 Pieces: Your Ice Ramble familiar becomes much stronger.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < drops.length; x++) {
 				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
 			}
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Unbreakable").withStyle(ChatFormatting.BLUE));
-			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Cold boots made of mysterious, unbreaking ice.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("Lightweight boots made of an odd, cold ice.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 			lore.add(new TextComponent(""));
@@ -110,8 +104,6 @@ public class GlacialBoots extends ArmorItem {
 			for (int x = 0; x < drops.length; x++) {
 				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
 			}
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Unbreakable").withStyle(ChatFormatting.BLUE));
 			lore.add(new TextComponent(""));
 		}
 		
