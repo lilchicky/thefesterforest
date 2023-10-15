@@ -6,17 +6,11 @@ import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.capability.PetNameHandler;
 import com.gmail.thelilchicken01.tff.capability.PetSpawnHandler;
-import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
-import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
-import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
-
 import net.minecraft.Util;
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -32,10 +26,8 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.Entity.RemovalReason;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
@@ -71,7 +63,7 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 	public IceRambleEntity(EntityType<? extends TamableAnimal> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
 		setInvulnerable(true);
-		//setPersistenceRequired();
+		setPersistenceRequired();
 		
 	}
 	
@@ -196,8 +188,8 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 		if (this.getHealth() <= 0 || getOwner() == null) {
 			if (this.getOwner() != null && this.getOwner() instanceof Player player) {
 				killSelf(player);
+				this.remove(RemovalReason.KILLED);
 			}
-			this.remove(RemovalReason.KILLED);
 		}
 		
 	}
