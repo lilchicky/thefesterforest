@@ -113,6 +113,8 @@ public class GlacialChestplate extends ArmorItem {
 			lore.add(new TextComponent("2+ Pieces: Summon an Ice Ramble to fight for you.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent("4 Pieces: Your Ice Ramble familiar becomes much stronger.").withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(""));
+			lore.add(new TextComponent("Ice Rambles can be picked up and moved with a bucket.").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < drops.length; x++) {
 				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));

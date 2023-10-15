@@ -64,7 +64,7 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 
 	public IceRambleEntity(EntityType<? extends TamableAnimal> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
-		setInvulnerable(true);
+		//setInvulnerable(true);
 		setPersistenceRequired();
 		
 	}
@@ -82,7 +82,7 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 	
 	public static AttributeSupplier setAttributes() {
 		return Monster.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 20.0f)
+				.add(Attributes.MAX_HEALTH, 2000.0f)
 				.add(Attributes.ATTACK_DAMAGE, 5.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.24f).build();
@@ -202,6 +202,8 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 				killSelf(player);
 			}
 		}
+		
+		System.out.println(this.getRestrictRadius());
 		
 	}
 	
