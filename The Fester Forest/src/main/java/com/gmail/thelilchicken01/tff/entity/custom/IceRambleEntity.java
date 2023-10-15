@@ -9,8 +9,10 @@ import com.gmail.thelilchicken01.tff.capability.PetSpawnHandler;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -179,6 +181,16 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 				addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 15, 0));
 			}
 			
+			if (player instanceof ServerPlayer serverPlayer) {
+				player.getCapability(PetNameHandler.CAPABILITY).ifPresent(
+						handler -> {
+							if (handler.getCurrentUUID() != getUUID()) {
+								killSelf(player);
+							};
+						}
+					);
+			}
+			
 			if (ArmorSets.GLACIAL.getArmorSet((Player) this.getOwner()) == SetCount.EMPTY || !ownerNearby()) {
 				killSelf(player);
 			}
@@ -188,7 +200,6 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 		if (this.getHealth() <= 0 || getOwner() == null) {
 			if (this.getOwner() != null && this.getOwner() instanceof Player player) {
 				killSelf(player);
-				this.remove(RemovalReason.KILLED);
 			}
 		}
 		
@@ -201,7 +212,11 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 			
 			player.getItemInHand(hand).shrink(1);
 			
+			CompoundTag nbt = new CompoundTag();
+			nbt.putUUID("tff.owner", player.getUUID());
+			
 			ItemStack bucket = new ItemStack(ItemInit.ICE_RAMBLE_BUCKET.get());
+			bucket.setTag(nbt);
 			
 			player.addItem(bucket);
 			

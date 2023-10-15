@@ -1,6 +1,7 @@
 package com.gmail.thelilchicken01.tff.item.pet_buckets;
 
 import java.util.List;
+import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
@@ -37,10 +38,22 @@ public class IceRambleBucket extends Item {
 		if (state == Blocks.AIR.defaultBlockState() || state == Blocks.WATER.defaultBlockState()) {
 		
 			IceRambleEntity ramble = new IceRambleEntity(ModEntityTypes.ICE_RAMBLE.get(), context.getLevel());
-			ramble.setOwnerUUID(context.getPlayer().getUUID());
-			ramble.tame(context.getPlayer());
-			ramble.connectToPlayer(context.getPlayer());
-			ramble.moveTo(context.getClickedPos().above(), 0.0f, 0.0f);
+			if (context.getItemInHand().hasTag()) {
+				
+				UUID ownerUUID = context.getItemInHand().getTag().getUUID("tff.owner");
+				Player player = context.getLevel().getPlayerByUUID(ownerUUID);
+				
+				ramble.setOwnerUUID(ownerUUID);
+				ramble.tame(player);
+				ramble.connectToPlayer(player);
+				ramble.moveTo(context.getClickedPos().above(), 0.0f, 0.0f);
+			}
+			else {
+				//ramble.setOwnerUUID(context.getPlayer().getUUID());
+				//ramble.tame(context.getPlayer());
+				//ramble.connectToPlayer(context.getPlayer());
+				ramble.moveTo(context.getClickedPos().above(), 0.0f, 0.0f);
+			}
 		
 			if (!context.getLevel().isClientSide()) {
 				context.getLevel().addFreshEntity(ramble);
@@ -70,6 +83,11 @@ public class IceRambleBucket extends Item {
 		lore.add(new TextComponent(""));
 		lore.add(new TextComponent("A bucket holding an Ice Ramble.").withStyle(ChatFormatting.GRAY));
 		lore.add(new TextComponent(""));
+		if (stack.hasTag()) {
+			UUID owner = stack.getTag().getUUID("tff.owner");
+			lore.add(new TextComponent("Belongs to " + world.getPlayerByUUID(owner).getName().getString()).withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent(""));
+		}
 		
 		super.appendHoverText(stack, world, lore, flag);
 	}
