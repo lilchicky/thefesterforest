@@ -120,6 +120,7 @@ import com.gmail.thelilchicken01.tff.item.mixed.FesteringClub;
 import com.gmail.thelilchicken01.tff.item.mixed.ReaverBlade;
 import com.gmail.thelilchicken01.tff.item.mixed.ShadowBow;
 import com.gmail.thelilchicken01.tff.item.mixed.VolatileSword;
+import com.gmail.thelilchicken01.tff.item.pet_buckets.IceRambleBucket;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.ElectricShot;
@@ -804,16 +805,20 @@ public class ItemInit {
 	public static final RegistryObject<Item> ROTTING_BRICK = register("rotting_brick", 
 			() -> new Item(new Properties().tab(TheFesterForest.TFF_TAB)));
 	
-	//Shroom Bucket
-	public static final RegistryObject<Item> SHROOM_BUCKET = register("shroom_bucket", 
-			() -> new ShroomBucket());
-	
 	//Shroom Hat
 	public static final RegistryObject<Item> SHROOM_HAT = register("shroom_hat", 
 			() -> new ShroomHat());
 		
 	//Rotting Catalyst
 	public static final RegistryObject<Item> ROTTING_CATALYST = register("rotting_catalyst", CatalystItem::new);
+	
+	//Shroom Bucket
+	public static final RegistryObject<Item> SHROOM_BUCKET = register("shroom_bucket", 
+			() -> new ShroomBucket());
+	
+	//Ice Ramble Bucket
+	public static final RegistryObject<Item> ICE_RAMBLE_BUCKET = register("ice_ramble_bucket", 
+			() -> new IceRambleBucket());
 	
 	/*
 	 * 

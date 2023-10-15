@@ -325,6 +325,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.GLACIAL_CHESTPLATE.get(), "Glacial Chestplate");
 		add(ItemInit.GLACIAL_HELMET.get(), "Glacial Helmet");
 		add(ItemInit.GLACIAL_LEGGINGS.get(), "Glacial Leggings");
+		add(ItemInit.ICE_RAMBLE_BUCKET.get(), "Bucket of Ice Ramble");
 		
 		/*
 		 * 
