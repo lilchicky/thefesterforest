@@ -9,12 +9,12 @@ import net.minecraft.nbt.Tag;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.INBTSerializable;
 
-public class SwimHandlerProvider<HANDLER> extends TFFCapabilityProvider<HANDLER> implements INBTSerializable<Tag> {
+public class TFFHandlerProvider<HANDLER> extends TFFCapabilityProvider<HANDLER> implements INBTSerializable<Tag> {
 	
 	private final INBTSerializable<Tag> serializableInstance;
 	
 	@SuppressWarnings("unchecked")
-	public SwimHandlerProvider(final Capability<HANDLER> cap, @Nullable final Direction facing, final HANDLER instance) {
+	public TFFHandlerProvider(final Capability<HANDLER> cap, @Nullable final Direction facing, final HANDLER instance) {
 		
 		super(cap, facing, instance);
 		

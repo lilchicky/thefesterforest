@@ -1,12 +1,14 @@
 package com.gmail.thelilchicken01.tff.capability;
 
+import java.util.UUID;
+
 import javax.annotation.Nullable;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
-import com.gmail.thelilchicken01.tff.network.PetPacket;
+import com.gmail.thelilchicken01.tff.network.PetNamePacket;
 import com.gmail.thelilchicken01.tff.network.TFFNetworkHandler;
 
-import be.florens.expandability.api.forge.PlayerSwimEvent;
+import net.minecraft.Util;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
@@ -23,70 +25,69 @@ import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.network.PacketDistributor;
 
-public class PetSpawnHandler implements INBTSerializable<CompoundTag> {
+public class PetNameHandler implements INBTSerializable<CompoundTag> {
 	
 	/*
 	 * Code thanks to ochotonida on GitHub!
 	 */
 	
-	public static final Capability<PetSpawnHandler> CAPABILITY = CapabilityManager.get(new CapabilityToken<>() {});
+	public static final Capability<PetNameHandler> CAPABILITY = CapabilityManager.get(new CapabilityToken<>() {});
 	
-	private boolean hasPet;
+	private UUID petUUID = Util.NIL_UUID;
 	
 	private final LivingEntity entity;
 	private static final Direction DEFAULT_FACING = null;
 	
-	public PetSpawnHandler(@Nullable final LivingEntity entity) {
+	public PetNameHandler(@Nullable final LivingEntity entity) {
 		this.entity = entity;
 	}
 	
-	public void setHasPet(boolean hasPet) {
-		this.hasPet = hasPet;
+	public void setPetUUID(UUID petUUID) {
+		this.petUUID = petUUID;
 	}
 	
-	public void syncPet(ServerPlayer player) {
+	public void syncPetUUID(ServerPlayer player) {
 		
-		TFFNetworkHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() -> player), new PetPacket(hasPet));
+		TFFNetworkHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() -> player), new PetNamePacket(petUUID));
 		
 	}
 	
-	public static LazyOptional<PetSpawnHandler> getHasPet(final LivingEntity entity) {
+	public static LazyOptional<PetNameHandler> getSavedUUID(final LivingEntity entity) {
 		return entity.getCapability(CAPABILITY, DEFAULT_FACING);
 	}
 	
-	public boolean hasPet() {
-		return hasPet;
+	public UUID getCurrentUUID() {
+		return petUUID;
 	}
 	
-	public static ICapabilityProvider createProvider(final PetSpawnHandler hasPet) {
-		return new TFFCapabilityProvider<>(CAPABILITY, DEFAULT_FACING, hasPet);
+	public static ICapabilityProvider createProvider(final PetNameHandler uuid) {
+		return new TFFCapabilityProvider<>(CAPABILITY, DEFAULT_FACING, uuid);
 	}
 
 	@Override
 	public CompoundTag serializeNBT() {
 		CompoundTag nbt = new CompoundTag();
-		nbt.putBoolean("HasPet", hasPet());
+		nbt.putUUID("ArmorPetUUID", getCurrentUUID());
 		return nbt;
 	}
 
 	@Override
 	public void deserializeNBT(CompoundTag nbt) {
-		setHasPet(nbt.getBoolean("HasPet"));
+		setPetUUID(nbt.getUUID("ArmorPetUUID"));
 		
 	}
 	
 	public static void setup() {
-		MinecraftForge.EVENT_BUS.addListener(PetSpawnHandler::onRegisterCapabilities);
+		MinecraftForge.EVENT_BUS.addListener(PetNameHandler::onRegisterCapabilities);
 	}
 	
 	public static void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
 		
-		event.register(PetSpawnHandler.class);
+		event.register(PetNameHandler.class);
 		
 	}
 	
@@ -104,8 +105,8 @@ public class PetSpawnHandler implements INBTSerializable<CompoundTag> {
 			
 			if (event.getObject() instanceof LivingEntity) {
 				
-				final PetSpawnHandler hasPet = new PetSpawnHandler((LivingEntity) event.getObject());
-				event.addCapability(new ResourceLocation(TheFesterForest.MODID, "has_pet"), createProvider(hasPet));
+				final PetNameHandler handler = new PetNameHandler((LivingEntity) event.getObject());
+				event.addCapability(new ResourceLocation(TheFesterForest.MODID, "_pet_uuid"), createProvider(handler));
 				
 			}
 			
@@ -114,12 +115,12 @@ public class PetSpawnHandler implements INBTSerializable<CompoundTag> {
 		@SubscribeEvent
 		public static void playerClone(final PlayerEvent.Clone event) {
 			
-			getHasPet(event.getOriginal()).ifPresent(
-					oldHasPet -> {
+			getSavedUUID(event.getOriginal()).ifPresent(
+					oldUUID -> {
 						
-						getHasPet(event.getPlayer()).ifPresent(
-								newHasPet -> {
-									newHasPet.setHasPet(oldHasPet.hasPet());
+						getSavedUUID(event.getPlayer()).ifPresent(
+								newUUID -> {
+									newUUID.setPetUUID(oldUUID.getCurrentUUID());
 								}
 							);
 						
@@ -131,7 +132,7 @@ public class PetSpawnHandler implements INBTSerializable<CompoundTag> {
 		@SubscribeEvent
 		public static void playerChangeDimension(final PlayerEvent.PlayerChangedDimensionEvent event) {
 			
-			getHasPet(event.getPlayer()).ifPresent(PetSpawnHandler::syncronise);
+			getSavedUUID(event.getPlayer()).ifPresent(PetNameHandler::syncronise);
 			
 		}
 		

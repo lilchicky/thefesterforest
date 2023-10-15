@@ -1,7 +1,9 @@
 package com.gmail.thelilchicken01.tff.client;
 
+import com.gmail.thelilchicken01.tff.capability.PetNameHandler;
 import com.gmail.thelilchicken01.tff.capability.PetSpawnHandler;
 import com.gmail.thelilchicken01.tff.capability.SwimHandler;
+import com.gmail.thelilchicken01.tff.network.PetNamePacket;
 import com.gmail.thelilchicken01.tff.network.PetPacket;
 import com.gmail.thelilchicken01.tff.network.SinkPacket;
 
@@ -24,6 +26,15 @@ public class ClientPacketHandler {
 		Player player = Minecraft.getInstance().player;
 		if (player != null) {
 			player.getCapability(PetSpawnHandler.CAPABILITY).ifPresent(handler -> handler.setHasPet(packet.HAS_PET));
+		}
+		
+	}
+	
+	public static void handlePetNamePacket(PetNamePacket packet) {
+		
+		Player player = Minecraft.getInstance().player;
+		if (player != null) {
+			player.getCapability(PetNameHandler.CAPABILITY).ifPresent(handler -> handler.setPetUUID(packet.PET_NAME));
 		}
 		
 	}

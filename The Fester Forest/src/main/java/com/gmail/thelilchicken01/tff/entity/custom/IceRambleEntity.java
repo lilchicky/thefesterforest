@@ -1,11 +1,14 @@
 package com.gmail.thelilchicken01.tff.entity.custom;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import com.gmail.thelilchicken01.tff.capability.PetNameHandler;
 import com.gmail.thelilchicken01.tff.capability.PetSpawnHandler;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
 
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -20,7 +23,9 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -38,6 +43,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -54,6 +60,9 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 
 	public IceRambleEntity(EntityType<? extends TamableAnimal> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
+		setInvulnerable(true);
+		setPersistenceRequired();
+		
 	}
 	
 	@Override
@@ -98,18 +107,55 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 		
 	}
 	
+	public void connectToPlayer(Player player) {
+		if (player instanceof ServerPlayer serverPlayer) {
+			player.getCapability(PetNameHandler.CAPABILITY).ifPresent(
+					handler -> {
+						
+						handler.setPetUUID(getUUID());
+						handler.syncPetUUID(serverPlayer);
+					}
+				);
+		}
+	}
+	
+	private boolean ownerNearby() {
+		boolean nearby = false;
+		
+		List<Entity> nearbyEntities = this.getLevel().getEntities(this, new AABB(
+				this.getX() - 32, 
+				this.getY() - 32, 
+				this.getZ() - 32, 
+				this.getX() + 32, 
+				this.getY() + 32, 
+				this.getZ() + 32));
+		
+		playerCheck:
+		for (int x = 0; x < nearbyEntities.size(); x++) {
+			if (nearbyEntities.get(x) instanceof Player) {
+				Player playerCheck = (Player) nearbyEntities.get(x);
+				if (this.isOwnedBy(playerCheck)) {
+					nearby = true;
+					break playerCheck;
+				}
+			}
+		}
+		
+		return nearby;
+		
+	}
+	
 	@Override
 	public void tick() {
 		
 		super.tick();
 		
 		if (this.getOwner() != null && this.getOwner() instanceof Player player) {
+			
 			if (ArmorSets.GLACIAL.getArmorSet((Player) this.getOwner()) == SetCount.FOUR) {
-				addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 15, 0));
-				addEffect(new MobEffectInstance(MobEffects.REGENERATION, 15, 0));
 				addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 15, 0));
 			}
-			else if (ArmorSets.GLACIAL.getArmorSet((Player) this.getOwner()) == SetCount.EMPTY) {
+			else if (ArmorSets.GLACIAL.getArmorSet((Player) this.getOwner()) == SetCount.EMPTY || !ownerNearby()) {
 				if (player instanceof ServerPlayer serverPlayer) {
 					player.getCapability(PetSpawnHandler.CAPABILITY).ifPresent(
 							handler -> {
@@ -118,9 +164,18 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 								handler.syncPet(serverPlayer);
 							}
 						);
+					// set UUID to player, as placeholder
+					player.getCapability(PetNameHandler.CAPABILITY).ifPresent(
+							handler -> {
+								
+								handler.setPetUUID(Util.NIL_UUID);
+								handler.syncPetUUID(serverPlayer);
+							}
+						);
 				}
 				this.remove(RemovalReason.KILLED);
 			}
+			
 		}
 		
 		if (this.getHealth() <= 0) {
@@ -133,10 +188,20 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 								handler.syncPet(serverPlayer);
 							}
 						);
+					// set UUID to player, as placeholder
+					player.getCapability(PetNameHandler.CAPABILITY).ifPresent(
+							handler -> {
+								
+								handler.setPetUUID(Util.NIL_UUID);
+								handler.syncPetUUID(serverPlayer);
+							}
+						);
 				}
 			}
 			this.remove(RemovalReason.KILLED);
 		}
+		
+		System.out.println(ownerNearby());
 		
 	}
 	

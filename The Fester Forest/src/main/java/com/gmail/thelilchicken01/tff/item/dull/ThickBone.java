@@ -32,8 +32,10 @@ public class ThickBone extends Item implements ICurioItem {
 		if (slotContext.entity() instanceof ServerPlayer player) {
 			slotContext.entity().getCapability(SwimHandler.CAPABILITY).ifPresent(
 					handler -> {
-						handler.setSinking(true);
-						handler.syncSinking(player);
+						if (!handler.isSinking()) {
+							handler.setSinking(true);
+							handler.syncSinking(player);
+						}
 					}
 				);
 		}

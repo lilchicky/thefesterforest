@@ -66,7 +66,7 @@ public class SwimHandler implements INBTSerializable<CompoundTag> {
 	}
 	
 	public static ICapabilityProvider createProvider(final SwimHandler shouldSink) {
-		return new SwimHandlerProvider<>(CAPABILITY, DEFAULT_FACING, shouldSink);
+		return new TFFCapabilityProvider<>(CAPABILITY, DEFAULT_FACING, shouldSink);
 	}
 
 	@Override

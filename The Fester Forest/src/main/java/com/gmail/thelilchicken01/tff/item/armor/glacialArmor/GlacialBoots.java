@@ -3,6 +3,7 @@ package com.gmail.thelilchicken01.tff.item.armor.glacialArmor;
 import java.util.List;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
+import com.gmail.thelilchicken01.tff.capability.PetNameHandler;
 import com.gmail.thelilchicken01.tff.capability.PetSpawnHandler;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.custom.IceRambleEntity;
@@ -11,6 +12,7 @@ import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.Util;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
@@ -46,17 +48,23 @@ public class GlacialBoots extends ArmorItem {
 				player.getCapability(PetSpawnHandler.CAPABILITY).ifPresent(
 						handler -> {
 							if (!handler.hasPet()) {
+								player.getCapability(PetNameHandler.CAPABILITY).ifPresent(
+										nameHandler -> {
+											if (nameHandler.getCurrentUUID() == Util.NIL_UUID) {
+												IceRambleEntity ramble = new IceRambleEntity(ModEntityTypes.ICE_RAMBLE.get(), player.getLevel());
 								
-								IceRambleEntity ramble = new IceRambleEntity(ModEntityTypes.ICE_RAMBLE.get(), player.getLevel());
+												ramble.setOwnerUUID(player.getUUID());
+												ramble.setPos(player.getX(), player.getY(), player.getZ());
+												ramble.tame(player);
+												ramble.connectToPlayer(player);
 								
-								ramble.setOwnerUUID(player.getUUID());
-								ramble.setPos(player.getX(), player.getY(), player.getZ());
-								ramble.tame(player);
-								
-								player.getLevel().addFreshEntity(ramble);
+												player.getLevel().addFreshEntity(ramble);
+											}
+										}
+									);
+								handler.setHasPet(true);
+								handler.syncPet(serverPlayer);
 							}
-							handler.setHasPet(true);
-							handler.syncPet(serverPlayer);
 						}
 					);
 			}
@@ -65,9 +73,10 @@ public class GlacialBoots extends ArmorItem {
 			if (player instanceof ServerPlayer serverPlayer) {
 				player.getCapability(PetSpawnHandler.CAPABILITY).ifPresent(
 						handler -> {
-							
-							handler.setHasPet(false);
-							handler.syncPet(serverPlayer);
+							if (handler.hasPet()) {
+								handler.setHasPet(false);
+								handler.syncPet(serverPlayer);
+							}
 						}
 					);
 			}

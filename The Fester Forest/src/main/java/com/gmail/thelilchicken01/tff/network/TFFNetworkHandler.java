@@ -18,8 +18,9 @@ public class TFFNetworkHandler {
 		);
 	
 	public static void register() {
-		INSTANCE.registerMessage(0, SinkPacket.class, SinkPacket::encode, SinkPacket::new, SinkPacket::handle);
-		INSTANCE.registerMessage(0, PetPacket.class, PetPacket::encode, PetPacket::new, PetPacket::handle);
+		INSTANCE.registerMessage(43380, SinkPacket.class, SinkPacket::encode, SinkPacket::new, SinkPacket::handle);
+		INSTANCE.registerMessage(43381, PetPacket.class, PetPacket::encode, PetPacket::new, PetPacket::handle);
+		INSTANCE.registerMessage(43382, PetNamePacket.class, PetNamePacket::encode, PetNamePacket::new, PetNamePacket::handle);
 	}
 	
 }

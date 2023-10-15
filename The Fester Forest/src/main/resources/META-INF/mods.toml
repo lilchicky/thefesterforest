@@ -27,9 +27,9 @@ displayName="Chicky's Fester Forest" #mandatory
 # A URL for the "homepage" for this mod, displayed in the mod UI
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="tff_portal.png" #optional
+logoFile="tff_logo.png" #optional
 # A text field displayed in the mod UI
-credits="Amaresse and Aklys for help with the art, and Brigham for debugging help!" #optional
+credits="Art: Amaresse, Akhlys, Strawberreiii | Debugging and Playtesting: Insomnium" #optional
 # A text field displayed in the mod UI
 authors="LilChicky" #optional
 # The description text for the mod (multi line!) (#mandatory)
