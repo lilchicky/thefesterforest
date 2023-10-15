@@ -60,8 +60,8 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 
 	public IceRambleEntity(EntityType<? extends TamableAnimal> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
-		setInvulnerable(true);
-		setPersistenceRequired();
+		//setInvulnerable(true);
+		//setPersistenceRequired();
 		
 	}
 	
@@ -145,6 +145,27 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 		
 	}
 	
+	private void killSelf(Player player) {
+		if (player instanceof ServerPlayer serverPlayer) {
+			player.getCapability(PetSpawnHandler.CAPABILITY).ifPresent(
+					handler -> {
+						
+						handler.setHasPet(false);
+						handler.syncPet(serverPlayer);
+					}
+				);
+			// set UUID to player, as placeholder
+			player.getCapability(PetNameHandler.CAPABILITY).ifPresent(
+					handler -> {
+						
+						handler.setPetUUID(Util.NIL_UUID);
+						handler.syncPetUUID(serverPlayer);
+					}
+				);
+		}
+		this.remove(RemovalReason.KILLED);
+	}
+	
 	@Override
 	public void tick() {
 		
@@ -155,53 +176,19 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 			if (ArmorSets.GLACIAL.getArmorSet((Player) this.getOwner()) == SetCount.FOUR) {
 				addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 15, 0));
 			}
-			else if (ArmorSets.GLACIAL.getArmorSet((Player) this.getOwner()) == SetCount.EMPTY || !ownerNearby()) {
-				if (player instanceof ServerPlayer serverPlayer) {
-					player.getCapability(PetSpawnHandler.CAPABILITY).ifPresent(
-							handler -> {
-								
-								handler.setHasPet(false);
-								handler.syncPet(serverPlayer);
-							}
-						);
-					// set UUID to player, as placeholder
-					player.getCapability(PetNameHandler.CAPABILITY).ifPresent(
-							handler -> {
-								
-								handler.setPetUUID(Util.NIL_UUID);
-								handler.syncPetUUID(serverPlayer);
-							}
-						);
-				}
-				this.remove(RemovalReason.KILLED);
+			
+			if (ArmorSets.GLACIAL.getArmorSet((Player) this.getOwner()) == SetCount.EMPTY || !ownerNearby()) {
+				killSelf(player);
 			}
 			
 		}
 		
-		if (this.getHealth() <= 0) {
+		if (this.getHealth() <= 0 || getOwner() == null) {
 			if (this.getOwner() != null && this.getOwner() instanceof Player player) {
-				if (player instanceof ServerPlayer serverPlayer) {
-					player.getCapability(PetSpawnHandler.CAPABILITY).ifPresent(
-							handler -> {
-								
-								handler.setHasPet(false);
-								handler.syncPet(serverPlayer);
-							}
-						);
-					// set UUID to player, as placeholder
-					player.getCapability(PetNameHandler.CAPABILITY).ifPresent(
-							handler -> {
-								
-								handler.setPetUUID(Util.NIL_UUID);
-								handler.syncPetUUID(serverPlayer);
-							}
-						);
-				}
+				killSelf(player);
 			}
 			this.remove(RemovalReason.KILLED);
 		}
-		
-		System.out.println(ownerNearby());
 		
 	}
 	
