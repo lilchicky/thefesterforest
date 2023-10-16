@@ -30,7 +30,7 @@ import net.minecraft.world.level.Level;
 
 public class FrostMallet extends SwordItem {
 	
-	private String[] drops = {"Glacial Titan"};
+	private String[] drops = {"Glacial Titan", "Fester Forest Loot Chests"};
 	
 	private int cooldown = 25;
 

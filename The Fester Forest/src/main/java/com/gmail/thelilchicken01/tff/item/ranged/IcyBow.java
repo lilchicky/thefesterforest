@@ -32,7 +32,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class IcyBow extends BowItem {
 	
-	private String[] drops = {"Glacial Titan"};
+	private String[] drops = {"Glacial Titan", "Fester Forest Loot Chests"};
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 

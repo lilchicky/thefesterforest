@@ -28,7 +28,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class GlacialBoots extends ArmorItem {
 	
-	private String[] drops = {"Glacial Titan"};
+	private String[] drops = {"Glacial Titan", "Fester Forest Loot Chests"};
 
 	public GlacialBoots() {
 		super(ModArmorMaterial.GLACIAL, EquipmentSlot.FEET, 

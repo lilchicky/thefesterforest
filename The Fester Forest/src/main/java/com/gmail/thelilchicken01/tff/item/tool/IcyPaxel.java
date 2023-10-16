@@ -16,7 +16,7 @@ import net.minecraft.world.level.Level;
 
 public class IcyPaxel extends PaxelItem {
 	
-	private String[] drops = {"Glacial Titan"};
+	private String[] drops = {"Glacial Titan", "Fester Forest Loot Chests"};
 
 	public IcyPaxel() {
 		super(ModTiers.PAXEL_DIAMOND, 0, 0.0f, new Properties().tab(TheFesterForest.TFF_TAB).durability(1650));

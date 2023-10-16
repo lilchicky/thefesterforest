@@ -26,7 +26,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public class GlacialStomach extends Item implements ICurioItem {
 	
-	private String[] drops = {"Glacial Titan"};
+	private String[] drops = {"Glacial Titan", "Fester Forest Loot Chests"};
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 

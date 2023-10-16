@@ -45,7 +45,7 @@ import net.minecraftforge.common.util.Lazy;
 
 public class GlacialLeggings extends ArmorItem {
 	
-	private String[] drops = {"Glacial Titan"};
+	private String[] drops = {"Glacial Titan", "Fester Forest Loot Chests"};
 
 	public GlacialLeggings() {
 		super(ModArmorMaterial.GLACIAL, EquipmentSlot.LEGS, 

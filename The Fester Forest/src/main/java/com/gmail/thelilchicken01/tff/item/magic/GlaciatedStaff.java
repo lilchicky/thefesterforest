@@ -43,7 +43,7 @@ public class GlaciatedStaff extends ProjectileWeaponItem implements MagicItem, M
 	
 	protected Supplier<Ingredient> repairMaterial;
 	
-	private String[] drops = {"Glacial Titan"};
+	private String[] drops = {"Glacial Titan", "Fester Forest Loot Chests"};
 
 	public GlaciatedStaff(Properties properties, double inaccuracy) {
 		super(properties);
