@@ -2,7 +2,7 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 12,
+      "rolls": 8,
       "entries": [
         {
           "type": "minecraft:item",
@@ -91,7 +91,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 40,
+          "weight": 80,
           "name": "minecraft:coal",
           "functions": [
           	{
@@ -107,7 +107,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 50,
+          "weight": 60,
           "name": "minecraft:iron_ingot",
           "functions": [
           	{
@@ -128,7 +128,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 50,
+          "weight": 60,
           "name": "minecraft:gold_ingot",
           "functions": [
           	{

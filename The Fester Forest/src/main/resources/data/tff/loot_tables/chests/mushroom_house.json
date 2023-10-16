@@ -1,7 +1,7 @@
 {
   "pools": [
     {
-      "rolls": 12,
+      "rolls": 8,
       "entries": [
         {
           "type": "minecraft:item",
