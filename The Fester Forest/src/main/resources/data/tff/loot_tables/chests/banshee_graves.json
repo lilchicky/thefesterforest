@@ -1,0 +1,184 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 8,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 150,
+          "name": "minecraft:iron_ingot",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 30,
+          "name": "minecraft:spider_eye",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 200,
+          "name": "minecraft:bone",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 120,
+          "name": "minecraft:black_dye",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 120,
+          "name": "minecraft:coal",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 60,
+          "name": "minecraft:ender_pearl"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 30,
+          "name": "minecraft:experience_bottle",
+          "functions": [
+          	{
+            	"function": "minecraft:set_count",
+              	"count": {
+                	"type": "minecraft:uniform",
+                	"min": 1,
+                	"max": 4
+              	},
+              	"add": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+    	"rolls": 6,
+    	"entries": [
+        	{
+       	  		"type": "minecraft:tag",
+       	  		"weight": 10,
+       	  		"name": "tff:tff_foods",
+       	  		"expand": true,
+          		"functions": [
+          			{
+            			"function": "minecraft:set_count",
+              			"count": {
+                			"type": "minecraft:uniform",
+                			"min": 1,
+                			"max": 6
+              			},
+              			"add": false
+            		}
+          		]
+        	}
+    	]
+    },
+    {
+    	"rolls": 1,
+    	"entries": [
+    		{
+    			"type": "minecraft:empty",
+    			"weight": 49
+    		},
+    		{
+          		"type": "minecraft:tag",
+          		"weight": 1,
+          		"name": "tff:ancient_loot",
+       	  		"expand": true,
+          		"functions": [
+            		{
+              			"function": "minecraft:enchant_randomly",
+              			"conditions": [
+                			{
+                 				"condition": "minecraft:random_chance",
+                  				"chance": 0.6
+                			}
+              			]
+            		}
+          		]
+        	}
+    	]
+    },
+    {
+    	"rolls": 3,
+    	"entries": [
+    		{
+    			"type": "minecraft:empty",
+    			"weight": 2
+    		},
+    		{
+          		"type": "minecraft:item",
+          		"weight": 1,
+          		"name": "minecraft:book",
+          		"functions": [
+            		{
+              			"function": "minecraft:enchant_with_levels",
+              			"levels": {
+              				"min": 20,
+              				"max": 50
+              			},
+              			"treasure": true
+            		}
+          		]	
+    		}
+    	]
+    		
+    }
+  ]
+}
