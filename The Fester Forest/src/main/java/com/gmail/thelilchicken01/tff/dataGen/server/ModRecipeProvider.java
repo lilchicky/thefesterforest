@@ -723,6 +723,18 @@ public class ModRecipeProvider extends RecipeProvider {
 				new ResourceLocation(TheFesterForest.MODID, 
 						ItemInit.MECHANICAL_EYE.get().getRegistryName().getPath()));
 		
+		// mechanical apple
+		ShapedRecipeBuilder.shaped(ItemInit.MECHANICAL_APPLE.get(), 8)
+		.define('a', ItemInit.METAL_SCRAP.get().asItem()).define('b', Items.APPLE)
+		.unlockedBy("has_" + ItemInit.METAL_SCRAP.get().getRegistryName(), 
+				has(ItemInit.METAL_SCRAP.get().asItem()))
+		.pattern(" a ")
+		.pattern("aba")
+		.pattern(" a ")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.MECHANICAL_APPLE.get().getRegistryName().getPath()));
+		
 		/*
 		 * 
 		 * Frostbitten King stuff
@@ -822,6 +834,30 @@ public class ModRecipeProvider extends RecipeProvider {
 		.save(consumer, 
 				new ResourceLocation(TheFesterForest.MODID, 
 						ItemInit.FROZEN_BOOTS.get().getRegistryName().getPath()));
+		
+		// frostbitten bow
+		ShapedRecipeBuilder.shaped(ItemInit.FROZEN_BOW.get(), 8)
+		.define('a', ItemInit.FROZEN_SHARD.get().asItem()).define('b', Items.STRING)
+		.unlockedBy("has_" + ItemInit.FROZEN_SHARD.get().getRegistryName(), 
+				has(ItemInit.FROZEN_SHARD.get().asItem()))
+		.pattern(" ab")
+		.pattern("a b")
+		.pattern(" ab")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.FROZEN_BOW.get().getRegistryName().getPath()));
+		
+		// frozen apple
+		ShapedRecipeBuilder.shaped(ItemInit.FROZEN_APPLE.get(), 8)
+		.define('a', ItemInit.FROZEN_SHARD.get().asItem()).define('b', Items.APPLE)
+		.unlockedBy("has_" + ItemInit.FROZEN_SHARD.get().getRegistryName(), 
+				has(ItemInit.FROZEN_SHARD.get().asItem()))
+		.pattern(" a ")
+		.pattern("aba")
+		.pattern(" a ")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						ItemInit.FROZEN_APPLE.get().getRegistryName().getPath()));
 		
 		/*
 		 * 

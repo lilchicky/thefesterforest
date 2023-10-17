@@ -238,7 +238,9 @@ efcc58bc3af3b55a5fc8f50b3bf4b274c14c38c9 data/tff/advancements/recipes/tff/frost
 ee172467c3e2b78481e2a8441e58d5a92a59d853 data/tff/advancements/recipes/tff/frostbitten_stairs.json
 9aa97eaf046daf5d516c24ebba3e50cf4426e08e data/tff/advancements/recipes/tff/frostbitten_trapdoor.json
 7980245037e58204b8e6390a94199ded706b5ac6 data/tff/advancements/recipes/tff/frostbitten_wood.json
+0f282a95eebeff35c8a56cb6e343858cc4a78e8e data/tff/advancements/recipes/tff/frozen_apple.json
 1d94d7339c163d08256505c62902ab11da860bb3 data/tff/advancements/recipes/tff/frozen_boots.json
+86ed502b44ee2669e7a60d9b3e413180a0250179 data/tff/advancements/recipes/tff/frozen_bow.json
 4e82f55b3c4676631e4211b5978605b0a6585b97 data/tff/advancements/recipes/tff/frozen_chestplate.json
 ec180dec37f89b0710f7404726ab1f8bc85d620d data/tff/advancements/recipes/tff/frozen_heart.json
 9d2e25b874ae1f8ad810368e8a9544601bd729e4 data/tff/advancements/recipes/tff/frozen_helmet.json
@@ -253,6 +255,7 @@ be2562e984b92ea92295ae258ce8818d3b3258bf data/tff/advancements/recipes/tff/goopy
 ce2a4215c29c14a0f2c52c2063b9b7ac73e5b088 data/tff/advancements/recipes/tff/ice_book.json
 6b1e32b6b7edaab4d127317370aebe10c2cd1b05 data/tff/advancements/recipes/tff/levitate_orb.json
 b3946239469c2551a8700fe7c9d117521f4e5092 data/tff/advancements/recipes/tff/life_orb.json
+61baacadd2ca6e3dc1e4c79d77a5cf2dc7d93ca9 data/tff/advancements/recipes/tff/mechanical_apple.json
 eeed4fdcc3fc71382a78ce8de34e5fbed7d8d894 data/tff/advancements/recipes/tff/mechanical_boots.json
 9a8dc960f0a999a55056e0c4cf0c507a93612eac data/tff/advancements/recipes/tff/mechanical_chestplate.json
 c79c0253c6b8e64f5fe8516218c6237a4c6be2ac data/tff/advancements/recipes/tff/mechanical_eye.json
@@ -445,7 +448,9 @@ f0e730f80291d704aa5bc6492b78b7cecc1608d1 data/tff/recipes/frostbitten_pressure_p
 d728d42b6e643f4407256bfc09577a3f6d9aa407 data/tff/recipes/frostbitten_trapdoor.json
 b98f5d761507dd06af61a0ba7bd6b68ee1b5c2d1 data/tff/recipes/frostbitten_wood.json
 96545aea0bd0d34b96eecce9fca22cc37404cad8 data/tff/recipes/frostvine_to_green_dye.json
+d7785d248648e7b63ca49cbecfd91a085af1e772 data/tff/recipes/frozen_apple.json
 95bce96b729ee366c41df9a916509ac946b5a731 data/tff/recipes/frozen_boots.json
+1423e19f0bd03245b71694bd615fdaa032bcb283 data/tff/recipes/frozen_bow.json
 055be9af1e78d4a6c2eed858906778335438ba7f data/tff/recipes/frozen_chestplate.json
 0194b973a28f2344f40160759aadb51a3eaeacb1 data/tff/recipes/frozen_heart.json
 59823ff5282f4d34f797fce52f03373137bb9b9d data/tff/recipes/frozen_helmet.json
@@ -462,6 +467,7 @@ e7c79e162c46e4cb6d9658b185513ccaf2225e29 data/tff/recipes/goopy_stone.json
 ab445938146e498c6aaa1ad526296dd7536a6ae3 data/tff/recipes/leather.json
 065d8800e8170368a4d96f14ffc62d30ad1b8eab data/tff/recipes/levitate_orb.json
 5dcfee67173219a17a645be1c95d493138d09068 data/tff/recipes/life_orb.json
+7804a884d233b9b0393ea87fa7b18f8d6c77aba8 data/tff/recipes/mechanical_apple.json
 a7da4d93753940a1ccd9eb904e5b48006b0ca88d data/tff/recipes/mechanical_boots.json
 ed513b9b43a10ef1a32cbf67734d1022b40a463e data/tff/recipes/mechanical_chestplate.json
 fe90c833b5ddce6c62ac30b34184ad0d42de28ca data/tff/recipes/mechanical_eye.json
