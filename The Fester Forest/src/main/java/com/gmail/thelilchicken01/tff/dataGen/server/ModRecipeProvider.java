@@ -836,7 +836,7 @@ public class ModRecipeProvider extends RecipeProvider {
 						ItemInit.FROZEN_BOOTS.get().getRegistryName().getPath()));
 		
 		// frostbitten bow
-		ShapedRecipeBuilder.shaped(ItemInit.FROZEN_BOW.get(), 8)
+		ShapedRecipeBuilder.shaped(ItemInit.FROZEN_BOW.get(), 1)
 		.define('a', ItemInit.FROZEN_SHARD.get().asItem()).define('b', Items.STRING)
 		.unlockedBy("has_" + ItemInit.FROZEN_SHARD.get().getRegistryName(), 
 				has(ItemInit.FROZEN_SHARD.get().asItem()))
