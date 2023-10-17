@@ -203,8 +203,6 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 			}
 		}
 		
-		System.out.println(this.getRestrictRadius());
-		
 	}
 	
 	@Override
