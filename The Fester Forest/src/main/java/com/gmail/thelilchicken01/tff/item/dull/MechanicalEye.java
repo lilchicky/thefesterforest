@@ -28,7 +28,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public class MechanicalEye extends Item implements ICurioItem {
 	
-	private String[] drops = {"The Forgemaster"};
+	private String[] drops = {"The Forgemaster", "Crafted"};
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 

@@ -27,7 +27,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public class FrozenHeart extends Item implements ICurioItem {
 	
-	private String[] drops = {"Frostbitten King"};
+	private String[] drops = {"Frostbitten King", "Crafted"};
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 

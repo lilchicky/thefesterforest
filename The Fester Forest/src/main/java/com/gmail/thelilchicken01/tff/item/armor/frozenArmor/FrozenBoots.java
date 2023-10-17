@@ -39,7 +39,7 @@ import net.minecraftforge.common.util.Lazy;
 
 public class FrozenBoots extends ArmorItem {
 	
-	private String[] drops = {"Frostbitten King"};
+	private String[] drops = {"Frostbitten King", "Crafted"};
 	
 	public final Lazy<Multimap<Attribute, AttributeModifier>> LAZY = Lazy.of(() ->  {    
     	ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder(); 

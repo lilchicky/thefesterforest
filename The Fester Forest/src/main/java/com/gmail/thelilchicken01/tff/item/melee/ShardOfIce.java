@@ -53,7 +53,7 @@ public class ShardOfIce extends SwordProjectileItem {
 	
 	protected Supplier<Ingredient> repairMaterial;
 	
-	private String[] drops = {"Frostbitten King"};
+	private String[] drops = {"Frostbitten King", "Crafted"};
 
 	public ShardOfIce(Properties properties, double inaccuracy) {
 		super(ModTiers.FROZEN, 7, -2.4f, properties);

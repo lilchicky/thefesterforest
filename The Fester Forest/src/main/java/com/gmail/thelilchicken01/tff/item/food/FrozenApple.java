@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 
 public class FrozenApple extends Item {
 	
-	private String[] drops = {"Frostbitten King"};
+	private String[] drops = {"Frostbitten King", "Crafted"};
 
 	public FrozenApple(Properties properties) {
 		super(properties);

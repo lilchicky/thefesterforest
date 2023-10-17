@@ -19,7 +19,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ForgemasterHammer extends SwordItem {
 	
-	private String[] drops = {"The Forgemaster"};
+	private String[] drops = {"The Forgemaster", "Crafted"};
 
 	public ForgemasterHammer(Tier tier, int damage, float aspeed, Properties properties) {
 		super(tier, damage, aspeed, properties);

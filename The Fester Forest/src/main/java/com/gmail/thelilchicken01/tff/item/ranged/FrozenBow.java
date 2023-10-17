@@ -40,7 +40,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class FrozenBow extends BowItem {
 	
-	private String[] drops = {"Frostbitten King"};
+	private String[] drops = {"Frostbitten King", "Crafted"};
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 

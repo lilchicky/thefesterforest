@@ -29,7 +29,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ShieldBook extends Item implements MagicItem {
 	
-	private String[] drops = {"The Forgemaster"};
+	private String[] drops = {"The Forgemaster", "Crafted"};
 	
 	private int cooldown = 20;
 	private int absorptionLength = 5;

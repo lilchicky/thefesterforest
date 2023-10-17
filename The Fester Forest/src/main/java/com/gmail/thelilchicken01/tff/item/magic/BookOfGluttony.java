@@ -22,7 +22,7 @@ import net.minecraft.world.level.Level;
 
 public class BookOfGluttony extends Item implements MagicItem {
 	
-	private String[] drops = {"Frostbitten King"};
+	private String[] drops = {"Frostbitten King", "Crafted"};
 	
 	private int cooldown = 10;
 

@@ -33,7 +33,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class MechanicalHelmet extends ArmorItem {
 	
-	private String[] drops = {"The Forgemaster"};
+	private String[] drops = {"The Forgemaster", "Crafted"};
 	
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 

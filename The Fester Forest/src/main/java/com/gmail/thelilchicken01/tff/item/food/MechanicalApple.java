@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 
 public class MechanicalApple extends Item {
 	
-	private String[] drops = {"The Forgemaster"};
+	private String[] drops = {"The Forgemaster", "Crafted"};
 
 	public MechanicalApple(Properties properties) {
 		super(properties);

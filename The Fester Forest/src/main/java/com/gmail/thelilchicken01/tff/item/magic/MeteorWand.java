@@ -43,7 +43,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class MeteorWand extends ProjectileWeaponItem implements MagicItem, MagicWeapon {
 	
-	private String[] drops = {"The Forgemaster"};
+	private String[] drops = {"The Forgemaster", "Crafted"};
 	
 	private int counter = 0;
 	

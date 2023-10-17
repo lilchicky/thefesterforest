@@ -39,7 +39,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class IceBook extends Item implements MagicItem, MagicWeapon {
 	
-	private String[] drops = {"Frostbitten King"};
+	private String[] drops = {"Frostbitten King", "Crafted"};
 	
 	private int cooldown = 15;
 	private int range = 12;
