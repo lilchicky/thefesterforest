@@ -8,6 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -51,7 +52,6 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 
 	public VolatileGhostEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
-		
 	}
 	
 	public static AttributeSupplier setAttributes() {
@@ -61,6 +61,11 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.ARMOR, 2.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.2f).build();
+	}
+	
+	@Override
+	public boolean fireImmune() {
+		return true;
 	}
 	
 	@Override
