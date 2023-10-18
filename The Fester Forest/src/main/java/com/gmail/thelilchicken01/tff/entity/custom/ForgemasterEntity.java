@@ -40,6 +40,7 @@ import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -176,24 +177,22 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 			
 			if (launchCounter > launchCooldown * 20 && this.getTarget() != null && getHealth() < (getMaxHealth() * phase2health)) {
 				
-				List<Entity> nearbyEntities = this.getLevel().getEntities(this, 
-						new AABB(this.getX() - launchRange, 
-								this.getY() - launchRange, 
-								this.getZ() - launchRange, 
-								this.getX() + launchRange, 
-								this.getY() + launchRange, 
-								this.getZ() + launchRange));
+				List<LivingEntity> nearbyEntities = this.getLevel().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, this, new AABB(
+						this.getX() - launchRange, 
+						this.getY() - launchRange, 
+						this.getZ() - launchRange, 
+						this.getX() + launchRange, 
+						this.getY() + launchRange, 
+						this.getZ() + launchRange));
 				
 				this.playSound(SoundEvents.GENERIC_EXPLODE, 1.0f, 0.4f);
 				
-				for (int x = 0; x < nearbyEntities.size(); x++) {
+				for (LivingEntity entity : nearbyEntities) {
 				
-					if (nearbyEntities.get(x) instanceof LivingEntity && !(nearbyEntities.get(x) instanceof PylonEntity)) {
+					if (!(entity instanceof PylonEntity)) {
 						
-						LivingEntity current = (LivingEntity)nearbyEntities.get(x);
-						
-						current.setDeltaMovement(current.getDeltaMovement().add(0.0, 1.0, 0.0).multiply(0.0, 2.0, 0.0));
-						current.hurt(TheFesterForest.KNOCKUP_DAMAGE, 10);
+						entity.setDeltaMovement(entity.getDeltaMovement().add(0.0, 1.0, 0.0).multiply(0.0, 2.0, 0.0));
+						entity.hurt(TheFesterForest.KNOCKUP_DAMAGE, 10);
 					
 					}
 					
@@ -271,7 +270,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 				setInvulnerable(false);
 				bossEvent.setColor(BossBarColor.PURPLE);
 				
-				List<Entity> nearbyPylons = this.getLevel().getEntities(this, 
+				List<PylonEntity> nearbyPylons = this.getLevel().getNearbyEntities(PylonEntity.class, TargetingConditions.DEFAULT, this,
 					new AABB(this.getX() - (pylonRadius + 16), 
 							this.getY() - pylonRadius, 
 							this.getZ() - (pylonRadius + 16), 
@@ -279,14 +278,10 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 							this.getY() + pylonRadius, 
 							this.getZ() + (pylonRadius + 16)));
 				
-				for (int x = 0; x < nearbyPylons.size(); x++) {
-					
-					if (nearbyPylons.get(x) instanceof PylonEntity) {
+				for (PylonEntity pylon : nearbyPylons) {
 						
-						((PylonEntity) nearbyPylons.get(x)).remove(RemovalReason.KILLED);
-						livingPylons++;
-						
-					}
+					pylon.remove(RemovalReason.KILLED);
+					livingPylons++;
 					
 				}
 				

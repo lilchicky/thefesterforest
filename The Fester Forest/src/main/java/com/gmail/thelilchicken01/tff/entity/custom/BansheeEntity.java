@@ -28,6 +28,7 @@ import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -45,8 +46,6 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class BansheeEntity extends Monster implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
-	
-	private int timer = 0;
 
 	public BansheeEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
@@ -85,53 +84,41 @@ public class BansheeEntity extends Monster implements IAnimatable {
 	public void tick() {
 		
 		super.tick();
-		timer++;
 		
-		if (timer > 100 && this.getHealth() > 0.0f) {
+		if (this.tickCount % 100 == 0 && this.getHealth() > 0.0f) {
 			
-			List<Entity> nearbyEntities = this.getLevel().getEntities(this, new AABB(this.getX() - 4, this.getY() - 4, this.getZ() - 4, this.getX() + 4, this.getY() + 4, this.getZ() + 4));
-			boolean playerNear = false;
+			List<Player> nearbyPlayers = this.getLevel().getNearbyEntities(Player.class, TargetingConditions.DEFAULT, this, new AABB(
+					this.getX() - 4, 
+					this.getY() - 4, 
+					this.getZ() - 4, 
+					this.getX() + 4, 
+					this.getY() + 4, 
+					this.getZ() + 4));
 			
-			playerCheck:
-			for (int x = 0; x < nearbyEntities.size(); x++) {
-				if (nearbyEntities.get(x) instanceof Player) {
-					Player playerCheck = (Player) nearbyEntities.get(x);
-					if (!(playerCheck.isCreative() || playerCheck.isSpectator())) {
-						playerNear = true;
-						break playerCheck;
-					}
-				}
-			}
-			
-			if (playerNear) {
-				
-				this.playSound(SoundEvents.PHANTOM_AMBIENT, 1.2f, 1.4f);
+			if (nearbyPlayers.size() != 0) {
 				
 				boolean playerIsTargetable = true;
 				
-				for (int x = 0; x < nearbyEntities.size(); x++) {
+				for (Player player : nearbyPlayers) {
 					
-					if (nearbyEntities.get(x) instanceof Player) {
-						Player player = (Player) nearbyEntities.get(x);
-						playerIsTargetable = !(player.isCreative() || player.isSpectator());
-					}
+					playerIsTargetable = !(player.isCreative() || player.isSpectator());
 				
-					if ((!(nearbyEntities.get(x) instanceof BansheeEntity)) && nearbyEntities.get(x) instanceof LivingEntity && playerIsTargetable && this.hasLineOfSight(nearbyEntities.get(x))) {
+					if (playerIsTargetable && this.hasLineOfSight(player)) {
 					
 						Vec3 playerVel = this.getPosition(1.0f);
-						Vec3 entityVel = nearbyEntities.get(x).getPosition(1.0f);
-						Vec3 newVel = ((entityVel.subtract(playerVel)).normalize().add(new Vec3(0.0, 0.4, 0.0)).multiply(1.2, 1.2, 1.2));
+						Vec3 entityVel = player.getPosition(1.0f);
+						Vec3 newVel = ((entityVel.subtract(playerVel)).add(new Vec3(0.0, 0.6, 0.0)).multiply(0.4, 0.8, 0.4).normalize());
 					
-						nearbyEntities.get(x).setDeltaMovement(newVel);
-						nearbyEntities.get(x).hurt(ItemUtil.entityDamageSource("banshee_mob", nearbyEntities.get(x), this).bypassArmor(), 10);
+						player.setDeltaMovement(newVel);
+						player.hurt(ItemUtil.entityDamageSource("banshee_mob", player, this).bypassArmor(), 10);
 					
 					}
 				
 				}
+				
+				this.playSound(SoundEvents.PHANTOM_AMBIENT, 1.2f, 1.4f);
 			
 			}
-			
-			timer = 0;
 			
 		}
 		

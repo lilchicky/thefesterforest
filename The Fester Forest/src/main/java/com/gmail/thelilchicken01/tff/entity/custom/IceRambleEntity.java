@@ -41,6 +41,7 @@ import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -126,7 +127,7 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 	private boolean ownerNearby() {
 		boolean nearby = false;
 		
-		List<Entity> nearbyEntities = this.getLevel().getEntities(this, new AABB(
+		List<Player> nearbyPlayers = this.getLevel().getNearbyEntities(Player.class, TargetingConditions.DEFAULT, this, new AABB(
 				this.getX() - 32, 
 				this.getY() - 32, 
 				this.getZ() - 32, 
@@ -135,13 +136,10 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 				this.getZ() + 32));
 		
 		playerCheck:
-		for (int x = 0; x < nearbyEntities.size(); x++) {
-			if (nearbyEntities.get(x) instanceof Player) {
-				Player playerCheck = (Player) nearbyEntities.get(x);
-				if (this.isOwnedBy(playerCheck)) {
-					nearby = true;
-					break playerCheck;
-				}
+		for (Player player : nearbyPlayers) {
+			if (this.isOwnedBy(player)) {
+				nearby = true;
+				break playerCheck;
 			}
 		}
 		
