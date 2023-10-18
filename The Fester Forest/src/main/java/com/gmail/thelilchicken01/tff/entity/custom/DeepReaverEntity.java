@@ -120,13 +120,11 @@ public class DeepReaverEntity extends ModWaterMonster implements IAnimatable {
 	public void tick() {
 		super.tick();
 		
-		dashCounter++;
-		
 		if (getTarget() != null && getTarget() instanceof Player) {
 			
 			this.setSpeed(0.2f);
 		
-			if (dashCounter > (dashCooldown * 20) && isInWater()) {
+			if (this.tickCount % (dashCooldown * 20) == 0 && isInWater()) {
 			
 				if (dashWarmupCounter == 0) {
 				
@@ -143,8 +141,6 @@ public class DeepReaverEntity extends ModWaterMonster implements IAnimatable {
 				if (dashWarmupCounter > (dashWarmup * 20)) {
 				
 					setDeltaMovement(targetVector);
-				
-					dashCounter = 0;
 					dashWarmupCounter = 0;
 				
 				}

@@ -4,6 +4,7 @@ import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -46,7 +47,7 @@ public class WightEntity extends Monster implements IAnimatable {
 		return Monster.createMobAttributes()
 				.add(Attributes.MAX_HEALTH, 120.00)
 				.add(Attributes.ATTACK_DAMAGE, 30.0f)
-				.add(Attributes.ARMOR, 10.0f)
+				.add(Attributes.ARMOR, 15.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.25f).build();
 	}
@@ -80,8 +81,12 @@ public class WightEntity extends Monster implements IAnimatable {
 	public boolean doHurtTarget(Entity target) {
 		
 		if (!target.getLevel().isClientSide()) {
+			
 			this.heal((float) 0.5 * (getMaxHealth() - getHealth()));
 			this.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 2));
+			
+			this.getLevel().addParticle(ParticleTypes.EXPLOSION, this.getX(), this.getY(), this.getZ(), 0.5, 0.5, 0.5);
+			
 		}
 		
 		return super.doHurtTarget(target);
