@@ -170,7 +170,7 @@
         {
           "type": "minecraft:item",
           "name": "tff:reetle_reagents",
-          "weight": 1
+          "weight": 2
         }
       ]
     },
