@@ -1,10 +1,10 @@
 package com.gmail.thelilchicken01.tff.entity.custom;
 
 import com.gmail.thelilchicken01.tff.init.ItemInit;
-import com.gmail.thelilchicken01.tff.init.ParticleInit;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -84,8 +84,6 @@ public class WightEntity extends Monster implements IAnimatable {
 			
 			this.heal((float) 0.5 * (getMaxHealth() - getHealth()));
 			this.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 2));
-			
-			this.getLevel().addParticle(ParticleTypes.EXPLOSION, this.getX(), this.getY(), this.getZ(), 0.5, 0.5, 0.5);
 			
 		}
 		

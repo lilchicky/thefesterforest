@@ -111,7 +111,15 @@ public class VolatileGhostEntity extends Monster implements IAnimatable {
 			
 			this.playSound(SoundEvents.GENERIC_EXPLODE, 1.2f, 0.5f);
 			
-			this.getLevel().addParticle(ParticleTypes.EXPLOSION, this.getX(), this.getY(), this.getZ(), 0.5, 0.5, 0.5);
+			for (int x = 0; x < 10; x++) {
+				
+				this.getLevel().addParticle(ParticleTypes.EXPLOSION, 
+						this.getX() + ((Math.random() - 0.5) * x),
+						this.getY() + ((Math.random() - 0.5) * x), 
+						this.getZ() + ((Math.random() - 0.5) * x), 
+						0.5, 0.5, 0.5);
+			
+			}
 			
 			nearbyEntities = this.getLevel().getEntities(this, new AABB(this.getX() - 4, this.getY() - 4, this.getZ() - 4, this.getX() + 4, this.getY() + 4, this.getZ() + 4));
 		
