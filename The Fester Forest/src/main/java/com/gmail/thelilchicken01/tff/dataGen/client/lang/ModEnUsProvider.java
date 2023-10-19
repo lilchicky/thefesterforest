@@ -49,6 +49,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("death.attack.tff_frost_bolt_damage.player", "%2$s forced %1$s to chill out");
 		add("death.attack.tff_rotting_bolt_damage", "%1$s rotted away into nothingness");
 		add("death.attack.tff_rotting_bolt_damage.player", "%1$s was rotted away by %2$s");
+		add("death.attack.tff_frostbitten_bolt_damage", "%1$s was frozen by the Frostbitten King");
+		add("death.attack.tff_frostbitten_bolt_damage.player", "%1$s was frozen by %2$s");
 		//Other
 		add(BlockInit.ROTTING_BRICKS.get(), "Fester Bricks");
 		add(ItemInit.ROTTING_BRICK.get(), "Fester Brick");
@@ -326,6 +328,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.GLACIAL_HELMET.get(), "Glacial Helmet");
 		add(ItemInit.GLACIAL_LEGGINGS.get(), "Glacial Leggings");
 		add(ItemInit.ICE_RAMBLE_BUCKET.get(), "Bucket of Ice Ramble");
+		add(ItemInit.FROSTBITTEN_BOLT.get(), "Frostbitten Bolt");
+		add(ModEntityTypes.frostbitten_bolt.get(), "Frostbitten Bolt");
 		
 		/*
 		 * 

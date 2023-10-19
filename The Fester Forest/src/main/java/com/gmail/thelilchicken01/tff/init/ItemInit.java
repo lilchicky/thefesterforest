@@ -125,6 +125,7 @@ import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.ElectricShot;
 import com.gmail.thelilchicken01.tff.item.projectile.FrostBoltProjectile;
+import com.gmail.thelilchicken01.tff.item.projectile.FrostbittenBoltProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.FrozenRockShot;
 import com.gmail.thelilchicken01.tff.item.projectile.IceSpikeShot;
 import com.gmail.thelilchicken01.tff.item.projectile.Meteor;
@@ -853,6 +854,10 @@ public class ItemInit {
 	//Frost Bolt
 	public static final RegistryObject<FrostBoltProjectile> FROST_BOLT = register("frost_bolt",
 			() -> new FrostBoltProjectile(new Properties().stacksTo(1), 15));
+	
+	//Frostbitten Bolt
+	public static final RegistryObject<FrostbittenBoltProjectile> FROSTBITTEN_BOLT = register("frostbitten_bolt",
+			() -> new FrostbittenBoltProjectile(new Properties().stacksTo(1), 15));
 	
 	//Rotting Bolt
 	public static final RegistryObject<RottingBoltShot> ROTTING_BOLT = register("rotting_bolt",
