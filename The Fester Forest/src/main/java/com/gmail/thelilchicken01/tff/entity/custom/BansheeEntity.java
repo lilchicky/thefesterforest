@@ -110,7 +110,7 @@ public class BansheeEntity extends Monster implements IAnimatable {
 						Vec3 newVel = ((entityVel.subtract(playerVel)).add(new Vec3(0.0, 0.6, 0.0)).multiply(0.4, 0.8, 0.4).normalize());
 					
 						player.setDeltaMovement(newVel);
-						player.hurt(ItemUtil.entityDamageSource("banshee_mob", player, this).bypassArmor(), 10);
+						player.hurt(ItemUtil.entityDamageSource("banshee_mob", player, this).bypassArmor(), 2);
 					
 					}
 				
