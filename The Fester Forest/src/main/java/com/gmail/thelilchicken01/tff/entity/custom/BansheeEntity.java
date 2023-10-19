@@ -63,7 +63,7 @@ public class BansheeEntity extends Monster implements IAnimatable {
 				.add(Attributes.ATTACK_DAMAGE, 14.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.ARMOR, 5.0f)
-				.add(Attributes.MOVEMENT_SPEED, 0.35f).build();
+				.add(Attributes.MOVEMENT_SPEED, 0.27f).build();
 	}
 	
 	protected void registerGoals() {
