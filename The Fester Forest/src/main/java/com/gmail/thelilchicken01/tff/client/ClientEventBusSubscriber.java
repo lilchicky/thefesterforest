@@ -9,6 +9,7 @@ import com.gmail.thelilchicken01.tff.entity.client.CorrodedShroomRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.CrunchBeetleRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.DeepReaverRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.ForgemasterRenderer;
+import com.gmail.thelilchicken01.tff.entity.client.FrostbittenKingRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.IceRambleRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.PlayerCrunchBeetleRenderer;
 import com.gmail.thelilchicken01.tff.entity.client.PylonRenderer;
@@ -28,6 +29,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.CorrodedShroomEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.DeepReaverEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.FrostbittenKingEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.IceRambleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PylonEntity;
@@ -137,6 +139,7 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(ModEntityTypes.CORRODED_SHROOM.get(), CorrodedShroomRenderer::new);
 		EntityRenderers.register(ModEntityTypes.DEEP_REAVER.get(), DeepReaverRenderer::new);
 		EntityRenderers.register(ModEntityTypes.ICE_RAMBLE.get(), IceRambleRenderer::new);
+		EntityRenderers.register(ModEntityTypes.FROSTBITTEN_KING.get(), FrostbittenKingRenderer::new);
 		
 		EntityRenderers.register(ModEntityTypes.icy_arrow.get(), IcyArrowRenderer::new);
 		
@@ -165,6 +168,7 @@ public class ClientEventBusSubscriber {
 		event.put(ModEntityTypes.CORRODED_SHROOM.get(), CorrodedShroomEntity.setAttributes());
 		event.put(ModEntityTypes.DEEP_REAVER.get(), DeepReaverEntity.setAttributes());
 		event.put(ModEntityTypes.ICE_RAMBLE.get(), IceRambleEntity.setAttributes());
+		event.put(ModEntityTypes.FROSTBITTEN_KING.get(), FrostbittenKingEntity.setAttributes());
 		
 	}
 	

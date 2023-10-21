@@ -330,6 +330,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.ICE_RAMBLE_BUCKET.get(), "Bucket of Ice Ramble");
 		add(ItemInit.FROSTBITTEN_BOLT.get(), "Frostbitten Bolt");
 		add(ModEntityTypes.frostbitten_bolt.get(), "Frostbitten Bolt");
+		add(ModEntityTypes.FROSTBITTEN_KING.get(), "Frostbitten King");
+		add(ItemInit.FROSTBITTEN_KING_SPAWN_EGG.get(), "Frostbitten King Spawn Egg");
 		
 		/*
 		 * 

@@ -8,6 +8,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.CorrodedShroomEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.DeepReaverEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.FrostbittenKingEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.IceRambleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PylonEntity;
@@ -144,6 +145,11 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<IceRambleEntity>> ICE_RAMBLE =
 			ENTITY_TYPES.register("ice_ramble", () -> EntityType.Builder.of(IceRambleEntity::new, MobCategory.CREATURE)
 					.sized(0.8f, 0.6f).build(new ResourceLocation(TheFesterForest.MODID, "ice_ramble").toString()));
+	
+	//Frostbitten King
+	public static final RegistryObject<EntityType<FrostbittenKingEntity>> FROSTBITTEN_KING =
+			ENTITY_TYPES.register("frostbitten_king", () -> EntityType.Builder.of(FrostbittenKingEntity::new, MobCategory.CREATURE)
+					.sized(1.0f, 1.2f).build(new ResourceLocation(TheFesterForest.MODID, "frostbitten_king").toString()));
 	
 	//Brittle Branch Bullet
 	

@@ -2,6 +2,7 @@ package com.gmail.thelilchicken01.tff.entity.projectile;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
+import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.item.item.MagicModUtil;
 import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
 import com.gmail.thelilchicken01.tff.item.projectile.FrostbittenBoltProjectile;
@@ -10,6 +11,7 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.IndirectEntityDamageSource;
@@ -83,7 +85,7 @@ public class FrostbittenBolt extends Fireball {
 	
 	@Override
 	protected ParticleOptions getTrailParticle() {
-		return ParticleTypes.SNOWFLAKE;
+		return ParticleInit.BONE_PARTICLE.get();
 	}
 	
 	@Override
@@ -116,8 +118,7 @@ public class FrostbittenBolt extends Fireball {
 						(float) bullet.modifyDamage(damage, this, target, shooter, level));
 			}
 			
-			if (damaged && target instanceof LivingEntity) {
-				LivingEntity livingTarget = (LivingEntity)target;
+			if (damaged && target instanceof LivingEntity livingTarget) {
 				
 				if (knockbackStrength > 0) {
 					double actualKnockback = knockbackStrength;
@@ -126,7 +127,7 @@ public class FrostbittenBolt extends Fireball {
 					if (vec.lengthSqr() > 0) livingTarget.push(vec.x, 0.1, vec.z);
 				}
 				
-				livingTarget.setTicksFrozen(240);
+				livingTarget.setTicksFrozen(60);
 				
 				if (shooter instanceof LivingEntity) {
 					doEnchantDamageEffects((LivingEntity)shooter, target);
@@ -141,6 +142,7 @@ public class FrostbittenBolt extends Fireball {
 	@Override
 	protected void onHit(HitResult result) {
 		super.onHit(result);
+		playSound(SoundEvents.GLASS_BREAK, 0.2f, 1.0f);
 		if (!level.isClientSide && (!noPhysics || result.getType() != HitResult.Type.BLOCK)) remove(RemovalReason.KILLED);
 	}
 	

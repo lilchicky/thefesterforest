@@ -1,0 +1,220 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.frostbitten_king.walk": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -2.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 2.5]
+						},
+						"1.0": {
+							"vector": [0, 0, -2.5]
+						}
+					}
+				},
+				"leg_left": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 15]
+						},
+						"0.5": {
+							"vector": [0, 0, -15]
+						},
+						"1.0": {
+							"vector": [0, 0, 15]
+						}
+					}
+				},
+				"leg_right": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -15]
+						},
+						"0.5": {
+							"vector": [0, 0, 15]
+						},
+						"1.0": {
+							"vector": [0, 0, -15]
+						}
+					}
+				},
+				"head": {
+					"rotation": {
+						"0.0": {
+							"vector": [-5, 0, 0]
+						},
+						"0.5": {
+							"vector": [5, 0, 0],
+							"easing": "linear"
+						},
+						"1.0": {
+							"vector": [-5, 0, 0],
+							"easing": "linear"
+						}
+					}
+				}
+			}
+		},
+		"animation.frostbitten_king.pursue": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -2.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 2.5]
+						},
+						"1.0": {
+							"vector": [0, 0, -2.5]
+						}
+					}
+				},
+				"leg_left": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 15]
+						},
+						"0.5": {
+							"vector": [0, 0, -15]
+						},
+						"1.0": {
+							"vector": [0, 0, 15]
+						}
+					}
+				},
+				"leg_right": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -15]
+						},
+						"0.5": {
+							"vector": [0, 0, 15]
+						},
+						"1.0": {
+							"vector": [0, 0, -15]
+						}
+					}
+				},
+				"head": {
+					"rotation": {
+						"0.0": {
+							"vector": [-5, 0, 0]
+						},
+						"0.5": {
+							"vector": [5, 0, 0],
+							"easing": "linear"
+						},
+						"1.0": {
+							"vector": [-5, 0, 0],
+							"easing": "linear"
+						}
+					}
+				},
+				"arms": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 82.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 87.5]
+						},
+						"1.0": {
+							"vector": [0, 0, 82.5]
+						}
+					}
+				}
+			}
+		},
+		"animation.frostbitten_king.idle": {
+			"loop": true,
+			"animation_length": 4,
+			"bones": {
+				"arms": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 16]
+						},
+						"2.5": {
+							"vector": [0, 0, 22],
+							"easing": "easeInOutSine"
+						},
+						"4.0": {
+							"vector": [0, 0, 16],
+							"easing": "easeInOutSine"
+						}
+					}
+				},
+				"body": {
+					"rotation": {
+						"0.0": {
+							"vector": [90, 20, -90]
+						},
+						"2.0": {
+							"vector": [90, 18, -90],
+							"easing": "easeInOutSine"
+						},
+						"4.0": {
+							"vector": [90, 20, -90],
+							"easing": "easeInOutSine"
+						}
+					}
+				},
+				"leg_left": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 20]
+						},
+						"2.0": {
+							"vector": [0, 0, 17.5],
+							"easing": "easeInOutSine"
+						},
+						"4.0": {
+							"vector": [0, 0, 20],
+							"easing": "easeInOutSine"
+						}
+					}
+				},
+				"leg_right": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 20]
+						},
+						"2.0": {
+							"vector": [0, 0, 17.5],
+							"easing": "easeInOutSine"
+						},
+						"4.0": {
+							"vector": [0, 0, 20],
+							"easing": "easeInOutSine"
+						}
+					}
+				},
+				"head": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 320]
+						},
+						"2.0": {
+							"vector": [0, 0, 318],
+							"easing": "easeInOutBack"
+						},
+						"4.0": {
+							"vector": [0, 0, 320],
+							"easing": "easeInOutCubic"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

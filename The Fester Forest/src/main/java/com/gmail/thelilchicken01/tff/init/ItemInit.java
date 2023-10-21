@@ -236,6 +236,11 @@ public class ItemInit {
 			() -> new ForgeSpawnEggItem(ModEntityTypes.ICE_RAMBLE, 0x5288e9, 0xbbcfff, //Background, Spots
 					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	//Frostbitten King Spawn Egg
+	public static final RegistryObject<Item> FROSTBITTEN_KING_SPAWN_EGG = register("frostbitten_king_spawn_egg", 
+			() -> new ForgeSpawnEggItem(ModEntityTypes.FROSTBITTEN_KING, 0xb4c9fd, 0xffffff, //Background, Spots
+					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	/*
 	 * 
 	 * Armors

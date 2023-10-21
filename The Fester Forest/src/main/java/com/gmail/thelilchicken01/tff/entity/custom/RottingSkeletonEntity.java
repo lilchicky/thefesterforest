@@ -74,8 +74,12 @@ public class RottingSkeletonEntity extends Monster implements IAnimatable {
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
-		if(event.isMoving()) {
+		if(event.isMoving() && getTarget() == null) {
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rotting_skeleton.walk", true));
+			return PlayState.CONTINUE;
+		}
+		else if (event.isMoving() && getTarget() != null) {
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rotting_skeleton.pursue", true));
 			return PlayState.CONTINUE;
 		}
 		
