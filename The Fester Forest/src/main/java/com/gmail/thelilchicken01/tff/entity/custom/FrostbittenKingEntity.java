@@ -49,10 +49,10 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	private int shotDamage = 30;
 	
 	// Phase and invulnerability related
-	private double phase1 = 0.8;
-	private double phase2 = 0.6;
-	private double phase3 = 0.4;
-	private double phase4 = 0.15;
+	private double phase1 = 0.9;
+	private double phase2 = 0.75;
+	private double phase3 = 0.5;
+	private double phase4 = 0.25;
 	
 	private int vLength = 10 * 20;
 	private int ivLength = 30 * 20;
@@ -154,10 +154,10 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 			attackCooldown = 20;
 		}
 		else if (getHealth() < (getMaxHealth() * phase1)) {
-			attackCooldown = 50;
+			attackCooldown = 80;
 		}
 		else {
-			attackCooldown = 80;
+			attackCooldown = 100;
 		}
 		
 		if (nearbyPlayers.size() != 0) {
@@ -220,7 +220,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				 */
 				if (!canAttack && this.tickCount % attackCooldown == 0) {
 					canAttack = true;
-					attackValue = (int)(Math.random() * 6);
+					attackValue = (int)(Math.random() * 5);
 					lines = (int)(Math.random() * 7) + 6;
 					spiralLines = (int)(Math.random() * 6) + 4;
 					rings = (int)(Math.random() * 5) + 3;
