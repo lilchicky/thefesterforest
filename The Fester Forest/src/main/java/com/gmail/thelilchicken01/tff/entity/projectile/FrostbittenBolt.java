@@ -193,16 +193,9 @@ public class FrostbittenBolt extends NoParticleProjectile implements ItemSupplie
 		
 		super.onHitBlock(result);
 		
-		BlockPos block = result.getBlockPos();
-		
 		if (getLevel() instanceof ServerLevel serverlevel) {
 		
-			if (!(serverlevel.getBlockState(block).getBlock() == Blocks.BLUE_ICE)) {
-				serverlevel.destroyBlock(block, true);
-			}
-			if (serverlevel.getBlockState(block).getBlock() == Blocks.BLUE_ICE && isExtraShot) {
-				serverlevel.destroyBlock(block, true);
-			}
+			serverlevel.destroyBlock(result.getBlockPos(), true);
 			
 		}
 		
