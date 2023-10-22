@@ -67,10 +67,10 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	int randoms = 25;
 	
 	// Counters for pulses on attacks
-	private int defaultStraight = 7;
-	private int straightCounter = 7;
-	private int defaultSpiral = 20;
-	private int spiralCounter = 20;
+	private int defaultStraight = 20;
+	private int straightCounter = 20;
+	private int defaultSpiral = 35;
+	private int spiralCounter = 35;
 	
 	private final ServerBossEvent bossEvent = (ServerBossEvent)(new ServerBossEvent(
 			this.getDisplayName(), 
@@ -136,13 +136,13 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 			attackCooldown = 10;
 		}
 		else if (getHealth() < (getMaxHealth() * phase2)) {
-			attackCooldown = 15;
-		}
-		else if (getHealth() < (getMaxHealth() * phase1)) {
 			attackCooldown = 20;
 		}
+		else if (getHealth() < (getMaxHealth() * phase1)) {
+			attackCooldown = 40;
+		}
 		else {
-			attackCooldown = 25;
+			attackCooldown = 60;
 		}
 		
 		if (vCounter <= ivLength) {
@@ -163,8 +163,8 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				canAttack = true;
 				attackValue = (int)(Math.random() * 5);
 				lines = (int)(Math.random() * 7) + 2;
-				rings = (int)(Math.random() * 5) + 1;
-				randoms = (int)(Math.random() * 50) + 25;
+				rings = (int)(Math.random() * 5) + 3;
+				randoms = (int)(Math.random() * 50) + 50;
 				rand = (int)(Math.random() * 361);
 				attackSpacer = 100;
 			}
@@ -358,7 +358,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				shot = bulletItem.createProjectile(getLevel(), shotAmmo, this); 
 		
 				shot.setPos(getX(), getY() + getEyeHeight(), getZ());
-				shot.shootFromRotation(this, 0.0f, x + (angle * 11), 0.0f, 0.5f, 0.0f);
+				shot.shootFromRotation(this, 0.0f, x + (angle * 8), 0.0f, 0.5f, 0.0f);
 				shot.setDamage(shotDamage);
 				shot.setIgnoreInvulnerability(true);
 	
