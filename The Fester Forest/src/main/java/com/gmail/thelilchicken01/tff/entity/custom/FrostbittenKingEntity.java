@@ -46,7 +46,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	// Bullets
 	FrostbittenBoltProjectile bulletItem = ItemInit.FROSTBITTEN_BOLT.get();
 	ItemStack shotAmmo = new ItemStack(ItemInit.FROSTBITTEN_BOLT.get());
-	private int shotDamage = 20;
+	private int shotDamage = 30;
 	
 	// Phase and invulnerability related
 	private double phase1 = 0.8;
@@ -222,7 +222,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 					canAttack = true;
 					attackValue = (int)(Math.random() * 6);
 					lines = (int)(Math.random() * 7) + 6;
-					spiralLines = (int)(Math.random() * 7) + 4;
+					spiralLines = (int)(Math.random() * 6) + 4;
 					rings = (int)(Math.random() * 5) + 3;
 					randoms = (int)(Math.random() * 50) + 50;
 					rand = (int)(Math.random() * 361);
@@ -271,7 +271,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 							break;
 						// Block shot
 						case 3:
-							if (attackSpacer >= 3 && straightCounter > 0) {
+							if (attackSpacer >= 10 && straightCounter > 0) {
 								fireBlock(rand);
 								//fireBlock(rand + 90);
 								fireBlock(rand + 180);
