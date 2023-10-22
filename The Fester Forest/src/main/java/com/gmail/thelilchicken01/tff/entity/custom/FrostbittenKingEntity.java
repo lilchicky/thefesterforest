@@ -164,7 +164,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 		
 		if (nearbyPlayers.size() != 0) {
 			
-			if (this.tickCount % 40 == 0) {
+			if (this.tickCount % 20 == 0) {
 			
 				for (Player player : nearbyPlayers) {
 					if (!(player.isSpectator() || player.isCreative()) && (getY() + 2) <= player.getY()) {
@@ -176,9 +176,9 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 						Vec3 targetPos = player.getPosition(1.0f);
 						Vec3 targetVector = targetPos.subtract(currentPos).normalize();
 						
-						shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 0.4f, 0.0f);
+						shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 0.6f, 0.0f);
 						
-						shot.setDamage(shotDamage);
+						shot.setDamage(shotDamage * 2);
 						shot.setIgnoreInvulnerability(true);
 			
 						getLevel().addFreshEntity(shot);
