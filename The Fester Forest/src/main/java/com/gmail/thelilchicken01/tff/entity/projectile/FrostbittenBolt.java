@@ -9,6 +9,7 @@ import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
 import com.gmail.thelilchicken01.tff.item.projectile.FrostbittenBoltProjectile;
 
 import net.minecraft.Util;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -16,13 +17,17 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.IndirectEntityDamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.animal.Fox;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.entity.projectile.ItemSupplier;
@@ -31,6 +36,8 @@ import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -47,6 +54,7 @@ public class FrostbittenBolt extends NoParticleProjectile implements ItemSupplie
 	protected LivingEntity target = null;
 	
 	private boolean canHitPlayer = true;
+	private boolean isExtraShot = false;
 	
 	private static int staticDamage = 20;
 
@@ -79,6 +87,10 @@ public class FrostbittenBolt extends NoParticleProjectile implements ItemSupplie
 		
 		canHitPlayer = hitPlayer;
 		
+	}
+	
+	public void setExtraShot(boolean extraShot) {
+		isExtraShot = extraShot;
 	}
 	
 	@Override
@@ -143,10 +155,57 @@ public class FrostbittenBolt extends NoParticleProjectile implements ItemSupplie
 					doEnchantDamageEffects((LivingEntity)shooter, target);
 				}
 				
+				if (isExtraShot) {
+					
+					if (!getLevel().isClientSide()) {
+				         double d0 = livingTarget.getX();
+				         double d1 = livingTarget.getY();
+				         double d2 = livingTarget.getZ();
+
+				         for(int i = 0; i < 16; ++i) {
+				            double d3 = livingTarget.getX() + (livingTarget.getRandom().nextDouble() - 0.5D) * 16.0D;
+				            double d4 = Mth.clamp(livingTarget.getY() + (double)(livingTarget.getRandom().nextInt(16) - 8), (double)getLevel().getMinBuildHeight(), (double)(getLevel().getMinBuildHeight() + ((ServerLevel)getLevel()).getLogicalHeight() - 1));
+				            double d5 = livingTarget.getZ() + (livingTarget.getRandom().nextDouble() - 0.5D) * 16.0D;
+				            if (livingTarget.isPassenger()) {
+				            	livingTarget.stopRiding();
+				            }
+
+				            net.minecraftforge.event.entity.EntityTeleportEvent.ChorusFruit event = net.minecraftforge.event.ForgeEventFactory.onChorusFruitTeleport(livingTarget, d3, d4, d5);
+				            if (livingTarget.randomTeleport(event.getTargetX(), event.getTargetY(), event.getTargetZ(), true)) {
+				               SoundEvent soundevent = livingTarget instanceof Fox ? SoundEvents.FOX_TELEPORT : SoundEvents.CHORUS_FRUIT_TELEPORT;
+				               getLevel().playSound((Player)null, d0, d1, d2, soundevent, SoundSource.PLAYERS, 1.0F, 1.0F);
+				               livingTarget.playSound(soundevent, 1.0F, 1.0F);
+				               break;
+				            }
+				         }
+				      }
+					
+				}
+				
 				bullet.onLivingEntityHit(this, livingTarget, shooter, level);
 			}
 			else if (!damaged && ignoreInvulnerability) target.invulnerableTime = lastHurtResistant;
 		}
+	}
+	
+	@Override
+	protected void onHitBlock(BlockHitResult result) {
+		
+		super.onHitBlock(result);
+		
+		BlockPos block = result.getBlockPos();
+		
+		if (getLevel() instanceof ServerLevel serverlevel) {
+		
+			if (!(serverlevel.getBlockState(block).getBlock() == Blocks.BLUE_ICE)) {
+				serverlevel.destroyBlock(block, true);
+			}
+			if (serverlevel.getBlockState(block).getBlock() == Blocks.BLUE_ICE && isExtraShot) {
+				serverlevel.destroyBlock(block, true);
+			}
+			
+		}
+		
 	}
 	
 	@Override

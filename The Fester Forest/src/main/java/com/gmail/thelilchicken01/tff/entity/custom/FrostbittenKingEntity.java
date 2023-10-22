@@ -133,8 +133,6 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	public void tick() {
 		super.tick();
 		
-		vCounter++;
-		
 		nearbyPlayers = this.getLevel().getNearbyEntities(Player.class, TargetingConditions.DEFAULT, this, new AABB(
 				this.getX() - arenaRadius, 
 				this.getY() - arenaRadius, 
@@ -164,6 +162,8 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 		
 		if (nearbyPlayers.size() != 0) {
 			
+			vCounter++;
+			
 			if (this.tickCount % 20 == 0) {
 			
 				for (Player player : nearbyPlayers) {
@@ -177,8 +177,8 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 						Vec3 targetVector = targetPos.subtract(currentPos).normalize();
 						
 						shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 0.6f, 0.0f);
-						
-						shot.setDamage(shotDamage * 2);
+						shot.setExtraShot(true);
+						shot.setDamage(shotDamage / 2);
 						shot.setIgnoreInvulnerability(true);
 			
 						getLevel().addFreshEntity(shot);
@@ -352,6 +352,11 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				bossEvent.setProgress(getHealth() / getMaxHealth());
 			}
 		
+		}
+		
+		else {
+			setInvulnerable(true);
+			bossEvent.setColor(BossBarColor.WHITE);
 		}
 		
 	}
