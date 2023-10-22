@@ -111,8 +111,8 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 		return Monster.createMobAttributes()
 				.add(Attributes.MAX_HEALTH, 1200.00)
 				.add(Attributes.ATTACK_DAMAGE, 69.0f)
-				.add(Attributes.ATTACK_SPEED, 2.0f)
-				.add(Attributes.ARMOR, 10.0f)
+				.add(Attributes.ATTACK_SPEED, 420.0f)
+				.add(Attributes.ARMOR, 20.0f)
 				.add(Attributes.KNOCKBACK_RESISTANCE, 10.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.0001f).build();
 	}
@@ -373,7 +373,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				shot.setPos(getX(), getY() + getEyeHeight(), getZ());
 				shot.shootFromRotation(this, 0.0f, x, 0.0f, 0.5f, 0.0f);
 				shot.setDamage(shotDamage);
-				shot.setIgnoreInvulnerability(true);
+				shot.setIgnoreInvulnerability(false);
 	
 				getLevel().addFreshEntity(shot);
 			
@@ -393,7 +393,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				shot.setPos(getX(), getY() + getEyeHeight(), getZ());
 				shot.shootFromRotation(this, 0.0f, rand + x, 0.0f, 0.3f, 0.0f);
 				shot.setDamage(shotDamage);
-				shot.setIgnoreInvulnerability(true);
+				shot.setIgnoreInvulnerability(false);
 				getLevel().addFreshEntity(shot);
 				
 			}
@@ -408,7 +408,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 		shot.setPos(getX(), getY() + getEyeHeight(), getZ());
 		shot.shootFromRotation(this, 0.0f, (int)(Math.random() * 361), 0.0f, 0.4f, 0.0f);
 		shot.setDamage(shotDamage);
-		shot.setIgnoreInvulnerability(true);
+		shot.setIgnoreInvulnerability(false);
 
 		getLevel().addFreshEntity(shot);
 	}
@@ -425,7 +425,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				shot.setPos(getX(), getY() + 0.1, getZ());
 				shot.shootFromRotation(this, 0.0f, x, 0.0f, 0.3f, 0.0f);
 				shot.setDamage(shotDamage);
-				shot.setIgnoreInvulnerability(true);
+				shot.setIgnoreInvulnerability(false);
 	
 				getLevel().addFreshEntity(shot);
 			
@@ -445,7 +445,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				shot.setPos(getX(), getY() + getEyeHeight(), getZ());
 				shot.shootFromRotation(this, 0.0f, x + (angle * 3), 0.0f, 0.5f, 0.0f);
 				shot.setDamage(shotDamage);
-				shot.setIgnoreInvulnerability(true);
+				shot.setIgnoreInvulnerability(false);
 	
 				getLevel().addFreshEntity(shot);
 			

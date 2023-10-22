@@ -100,16 +100,11 @@ public class FrostbittenBolt extends NoParticleProjectile implements ItemSupplie
 		
 		if(!getLevel().isClientSide()) {
 			ticksSinceFired++;
-			if (ticksSinceFired > 280 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
+			if (ticksSinceFired > 60 || getDeltaMovement().lengthSqr() < STOP_TRESHOLD) {
 				remove(RemovalReason.KILLED);
 			}
 		}
 		
-	}
-	
-	@Override
-	protected ParticleOptions getTrailParticle() {
-		return ParticleInit.BONE_PARTICLE.get();
 	}
 	
 	@Override
