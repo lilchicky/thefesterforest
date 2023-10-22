@@ -1,5 +1,7 @@
 package com.gmail.thelilchicken01.tff.entity.custom;
 
+import java.util.List;
+
 import com.gmail.thelilchicken01.tff.entity.projectile.FrostbittenBolt;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.projectile.FrostbittenBoltProjectile;
@@ -21,11 +23,14 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -60,6 +65,8 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	int attackValue = 0;
 	int attackSpacer = 0;
 	int rand = 0;
+	List<Player> nearbyPlayers;
+	int arenaRadius = 24;
 	
 	// Values for attack functions to be generated on attack
 	int lines = 2;
@@ -81,6 +88,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	public FrostbittenKingEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
 		setPersistenceRequired();
+		setInvulnerable(true);
 		bossEvent.setColor(BossBarColor.WHITE);
 	}
 	
@@ -127,6 +135,14 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 		
 		vCounter++;
 		
+		nearbyPlayers = this.getLevel().getNearbyEntities(Player.class, TargetingConditions.DEFAULT, this, new AABB(
+				this.getX() - arenaRadius, 
+				this.getY() - arenaRadius, 
+				this.getZ() - arenaRadius, 
+				this.getX() + arenaRadius, 
+				this.getY() + arenaRadius, 
+				this.getZ() + arenaRadius));
+		
 		/*
 		 * Get tick mod based on current health
 		 */
@@ -146,169 +162,196 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 			attackCooldown = 60;
 		}
 		
-		if (vCounter <= ivLength) {
+		if (nearbyPlayers.size() != 0) {
 			
-			setInvulnerable(true);
+			if (this.tickCount % 40 == 0) {
 			
-			if (vCounter >= ivLength - 60) {
-				if (vCounter == ivLength - 60) {
-					bossEvent.setColor(BossBarColor.RED);
+				for (Player player : nearbyPlayers) {
+					if (!(player.isSpectator() || player.isCreative()) && (getY() + 2) <= player.getY()) {
+						FrostbittenBolt shot = bulletItem.createProjectile(getLevel(), shotAmmo, this); 
+						
+						shot.setPos(getX(), getY() + getEyeHeight(), getZ());
+						
+						Vec3 currentPos = getEyePosition();
+						Vec3 targetPos = player.getPosition(1.0f);
+						Vec3 targetVector = targetPos.subtract(currentPos).normalize();
+						
+						shot.shoot(targetVector.x, targetVector.y + 0.1, targetVector.z, 0.4f, 0.0f);
+						
+						shot.setDamage(shotDamage);
+						shot.setIgnoreInvulnerability(true);
+			
+						getLevel().addFreshEntity(shot);
+					}
 				}
-				else if (vCounter == ivLength - 50) {
-					bossEvent.setColor(BossBarColor.WHITE);
-				}
-				else if (vCounter == ivLength - 40) {
-					bossEvent.setColor(BossBarColor.RED);
-				}
-				else if (vCounter == ivLength - 30) {
-					bossEvent.setColor(BossBarColor.WHITE);
-				}
-				else if (vCounter == ivLength - 20) {
-					bossEvent.setColor(BossBarColor.RED);
-				}
-				else if (vCounter == ivLength - 10) {
-					bossEvent.setColor(BossBarColor.WHITE);
-				}
+			
 			}
+		
+			if (vCounter <= ivLength) {
+				
+				setInvulnerable(true);
+				
+				if (vCounter >= ivLength - 60) {
+					if (vCounter == ivLength - 60) {
+						bossEvent.setColor(BossBarColor.RED);
+					}
+					else if (vCounter == ivLength - 50) {
+						bossEvent.setColor(BossBarColor.WHITE);
+					}
+					else if (vCounter == ivLength - 40) {
+						bossEvent.setColor(BossBarColor.RED);
+					}
+					else if (vCounter == ivLength - 30) {
+						bossEvent.setColor(BossBarColor.WHITE);
+					}
+					else if (vCounter == ivLength - 20) {
+						bossEvent.setColor(BossBarColor.RED);
+					}
+					else if (vCounter == ivLength - 10) {
+						bossEvent.setColor(BossBarColor.WHITE);
+					}
+				}
+				else {
+					bossEvent.setColor(BossBarColor.WHITE);
+				}
+			
+				/*
+				 * Begin the Ability to Attack
+				 */
+				if (!canAttack && this.tickCount % attackCooldown == 0) {
+					canAttack = true;
+					attackValue = (int)(Math.random() * 5);
+					lines = (int)(Math.random() * 7) + 2;
+					spiralLines = (int)(Math.random() * 4) + 2;
+					rings = (int)(Math.random() * 5) + 3;
+					randoms = (int)(Math.random() * 50) + 50;
+					rand = (int)(Math.random() * 361);
+					attackSpacer = 100;
+				}
+				
+				if (canAttack) {
+					attackSpacer++;
+					switch (attackValue) {
+						// Straight line attack
+						case 0:
+							if (attackSpacer >= 3 && straightCounter > 0) {
+								fireLaser(lines);
+								straightCounter--;
+								attackSpacer = 0;
+								
+								if (straightCounter == 0) {
+									straightCounter = defaultStraight;
+									canAttack = false;
+								}
+							}
+							break;
+						// Ring attack
+						case 1:
+							if (attackSpacer >= 20 && rings > 0) {
+								fireRing();
+								rings--;
+								attackSpacer = 0;
+								
+								if (rings == 0) {
+									canAttack = false;
+								}
+							}
+							break;
+						// Random Spread
+						case 2:
+							if (attackSpacer >= 1 && randoms > 0) {
+								fireRandom();
+								randoms--;
+								attackSpacer = 0;
+								
+								if (randoms == 0) {
+									canAttack = false;
+								}
+							}
+							break;
+						// Block shot
+						case 3:
+							if (attackSpacer >= 3 && straightCounter > 0) {
+								fireBlock(rand);
+								fireBlock(rand + 180);
+								straightCounter--;
+								attackSpacer = 0;
+								
+								if (straightCounter == 0) {
+									straightCounter = defaultStraight;
+									canAttack = false;
+								}
+							}
+							break;
+						// Spiral shot
+						case 4:
+							if (attackSpacer >= 2 && spiralCounter > 0) {
+								fireSpiral(spiralCounter);
+								spiralCounter--;
+								attackSpacer = 0;
+								
+								if (spiralCounter == 0) {
+									spiralCounter = defaultSpiral;
+									canAttack = false;
+								}
+							}
+							break;
+						default:
+							if (attackSpacer >= 3 && straightCounter > 0) {
+								fireLaser(lines);
+								straightCounter--;
+								attackSpacer = 0;
+								
+								if (straightCounter == 0) {
+									straightCounter = defaultStraight;
+									canAttack = false;
+								}
+							}
+							break;
+					}
+						
+				}
+			
+			}
+			
 			else {
-				bossEvent.setColor(BossBarColor.WHITE);
-			}
-		
-			/*
-			 * Begin the Ability to Attack
-			 */
-			if (!canAttack && this.tickCount % attackCooldown == 0) {
-				canAttack = true;
-				attackValue = (int)(Math.random() * 5);
-				lines = (int)(Math.random() * 7) + 2;
-				spiralLines = (int)(Math.random() * 4) + 2;
-				rings = (int)(Math.random() * 5) + 3;
-				randoms = (int)(Math.random() * 50) + 50;
-				rand = (int)(Math.random() * 361);
-				attackSpacer = 100;
-			}
-			
-			if (canAttack) {
-				attackSpacer++;
-				switch (attackValue) {
-					// Straight line attack
-					case 0:
-						if (attackSpacer >= 3 && straightCounter > 0) {
-							fireLaser(lines);
-							straightCounter--;
-							attackSpacer = 0;
-							
-							if (straightCounter == 0) {
-								straightCounter = defaultStraight;
-								canAttack = false;
-							}
+				
+				setInvulnerable(false);
+				
+				if (vCounter <= ivLength + vLength) {
+					if (vCounter >= (ivLength + vLength) - 60) {
+						if (vCounter == (ivLength + vLength) - 60) {
+							bossEvent.setColor(BossBarColor.RED);
 						}
-						break;
-					// Ring attack
-					case 1:
-						if (attackSpacer >= 20 && rings > 0) {
-							fireRing();
-							rings--;
-							attackSpacer = 0;
-							
-							if (rings == 0) {
-								canAttack = false;
-							}
+						else if (vCounter == (ivLength + vLength) - 50) {
+							bossEvent.setColor(BossBarColor.PURPLE);
 						}
-						break;
-					// Random Spread
-					case 2:
-						if (attackSpacer >= 1 && randoms > 0) {
-							fireRandom();
-							randoms--;
-							attackSpacer = 0;
-							
-							if (randoms == 0) {
-								canAttack = false;
-							}
+						else if (vCounter == (ivLength + vLength) - 40) {
+							bossEvent.setColor(BossBarColor.RED);
 						}
-						break;
-					// Block shot
-					case 3:
-						if (attackSpacer >= 3 && straightCounter > 0) {
-							fireBlock(rand);
-							fireBlock(rand + 180);
-							straightCounter--;
-							attackSpacer = 0;
-							
-							if (straightCounter == 0) {
-								straightCounter = defaultStraight;
-								canAttack = false;
-							}
+						else if (vCounter == (ivLength + vLength) - 30) {
+							bossEvent.setColor(BossBarColor.PURPLE);
 						}
-						break;
-					// Spiral shot
-					case 4:
-						if (attackSpacer >= 2 && spiralCounter > 0) {
-							fireSpiral(spiralCounter);
-							spiralCounter--;
-							attackSpacer = 0;
-							
-							if (spiralCounter == 0) {
-								spiralCounter = defaultSpiral;
-								canAttack = false;
-							}
+						else if (vCounter == (ivLength + vLength) - 20) {
+							bossEvent.setColor(BossBarColor.RED);
 						}
-						break;
-					default:
-						if (attackSpacer >= 3 && straightCounter > 0) {
-							fireLaser(lines);
-							straightCounter--;
-							attackSpacer = 0;
-							
-							if (straightCounter == 0) {
-								straightCounter = defaultStraight;
-								canAttack = false;
-							}
+						else if (vCounter == (ivLength + vLength) - 10) {
+							bossEvent.setColor(BossBarColor.PURPLE);
 						}
-						break;
-				}
-					
-			}
-		
-		}
-		
-		else {
-			
-			setInvulnerable(false);
-			
-			if (vCounter <= ivLength + vLength) {
-				if (vCounter >= (ivLength + vLength) - 60) {
-					if (vCounter == (ivLength + vLength) - 60) {
-						bossEvent.setColor(BossBarColor.RED);
 					}
-					else if (vCounter == (ivLength + vLength) - 50) {
-						bossEvent.setColor(BossBarColor.PURPLE);
-					}
-					else if (vCounter == (ivLength + vLength) - 40) {
-						bossEvent.setColor(BossBarColor.RED);
-					}
-					else if (vCounter == (ivLength + vLength) - 30) {
-						bossEvent.setColor(BossBarColor.PURPLE);
-					}
-					else if (vCounter == (ivLength + vLength) - 20) {
-						bossEvent.setColor(BossBarColor.RED);
-					}
-					else if (vCounter == (ivLength + vLength) - 10) {
+					else {
 						bossEvent.setColor(BossBarColor.PURPLE);
 					}
 				}
 				else {
-					bossEvent.setColor(BossBarColor.PURPLE);
+					vCounter = 0;
 				}
 			}
-			else {
-				vCounter = 0;
+			
+			if (!getLevel().isClientSide()) {
+				bossEvent.setProgress(getHealth() / getMaxHealth());
 			}
-		}
 		
-		if (!getLevel().isClientSide()) {
-			bossEvent.setProgress(getHealth() / getMaxHealth());
 		}
 		
 	}
@@ -395,7 +438,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				shot = bulletItem.createProjectile(getLevel(), shotAmmo, this); 
 		
 				shot.setPos(getX(), getY() + getEyeHeight(), getZ());
-				shot.shootFromRotation(this, 0.0f, x + (angle * 5), 0.0f, 0.5f, 0.0f);
+				shot.shootFromRotation(this, 0.0f, x + (angle * 3), 0.0f, 0.5f, 0.0f);
 				shot.setDamage(shotDamage);
 				shot.setIgnoreInvulnerability(true);
 	
