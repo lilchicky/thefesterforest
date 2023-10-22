@@ -220,8 +220,8 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				 */
 				if (!canAttack && this.tickCount % attackCooldown == 0) {
 					canAttack = true;
-					attackValue = (int)(Math.random() * 5);
-					lines = (int)(Math.random() * 7) + 2;
+					attackValue = (int)(Math.random() * 6);
+					lines = (int)(Math.random() * 7) + 6;
 					spiralLines = (int)(Math.random() * 7) + 2;
 					rings = (int)(Math.random() * 5) + 3;
 					randoms = (int)(Math.random() * 50) + 50;
@@ -299,13 +299,13 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 							}
 							break;
 						default:
-							if (attackSpacer >= 3 && straightCounter > 0) {
-								fireLaser(lines);
-								straightCounter--;
+							if (attackSpacer >= 2 && spiralCounter > 0) {
+								fireSpiral(spiralCounter);
+								spiralCounter--;
 								attackSpacer = 0;
 								
-								if (straightCounter == 0) {
-									straightCounter = defaultStraight;
+								if (spiralCounter == 0) {
+									spiralCounter = defaultSpiral;
 									canAttack = false;
 								}
 							}
@@ -448,7 +448,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				shot = bulletItem.createProjectile(getLevel(), shotAmmo, this); 
 		
 				shot.setPos(getX(), getY() + getEyeHeight(), getZ());
-				shot.shootFromRotation(this, 0.0f, x + (angle * 3), 0.0f, 0.5f, 0.0f);
+				shot.shootFromRotation(this, 0.0f, x + (angle * 4), 0.0f, 0.5f, 0.0f);
 				shot.setDamage(shotDamage);
 				shot.setIgnoreInvulnerability(false);
 	
