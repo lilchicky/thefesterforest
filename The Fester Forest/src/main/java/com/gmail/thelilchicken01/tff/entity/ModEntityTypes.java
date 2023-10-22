@@ -219,7 +219,7 @@ public class ModEntityTypes {
 	static {
 		frostbitten_bolt = ENTITY_TYPES.register("frostbitten_bolt", () -> EntityType.Builder
 				.<FrostbittenBolt>of(FrostbittenBolt::new, MobCategory.MISC)
-				.sized(0.1f, 0.1f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
+				.sized(0.2f, 0.2f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true)
 				.build(TheFesterForest.MODID + ":frostbitten_bolt"));
 	}
 	

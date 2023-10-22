@@ -222,7 +222,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 					canAttack = true;
 					attackValue = (int)(Math.random() * 6);
 					lines = (int)(Math.random() * 7) + 6;
-					spiralLines = (int)(Math.random() * 7) + 2;
+					spiralLines = (int)(Math.random() * 7) + 4;
 					rings = (int)(Math.random() * 5) + 3;
 					randoms = (int)(Math.random() * 50) + 50;
 					rand = (int)(Math.random() * 361);
@@ -273,9 +273,9 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 						case 3:
 							if (attackSpacer >= 3 && straightCounter > 0) {
 								fireBlock(rand);
-								fireBlock(rand + 90);
+								//fireBlock(rand + 90);
 								fireBlock(rand + 180);
-								fireBlock(rand + 270);
+								//fireBlock(rand + 270);
 								straightCounter--;
 								attackSpacer = 0;
 								
@@ -373,7 +373,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				shot = bulletItem.createProjectile(getLevel(), shotAmmo, this); 
 		
 				shot.setPos(getX(), getY() + getEyeHeight(), getZ());
-				shot.shootFromRotation(this, 0.0f, x, 0.0f, 0.5f, 0.0f);
+				shot.shootFromRotation(this, 0.0f, x, 0.0f, 0.6f, 0.0f);
 				shot.setDamage(shotDamage);
 				shot.setIgnoreInvulnerability(false);
 	
@@ -386,19 +386,15 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	private void fireBlock(int rand) {
 		FrostbittenBolt shot;
 			
-		for (int x = -15; x < 15; x++) {
-				
-			if (x % 5 == 0) {
+		for (int x = -45; x < 45; x += 5) {
 			
-				shot = bulletItem.createProjectile(getLevel(), shotAmmo, this); 
+			shot = bulletItem.createProjectile(getLevel(), shotAmmo, this); 
 		
-				shot.setPos(getX(), getY() + getEyeHeight(), getZ());
-				shot.shootFromRotation(this, 0.0f, rand + x, 0.0f, 0.3f, 0.0f);
-				shot.setDamage(shotDamage);
-				shot.setIgnoreInvulnerability(false);
-				getLevel().addFreshEntity(shot);
-				
-			}
+			shot.setPos(getX(), getY() + getEyeHeight(), getZ());
+			shot.shootFromRotation(this, 0.0f, rand + x, 0.0f, 0.3f, 0.0f);
+			shot.setDamage(shotDamage);
+			shot.setIgnoreInvulnerability(false);
+			getLevel().addFreshEntity(shot);
 		}
 	}
 	
@@ -428,7 +424,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				shot = bulletItem.createProjectile(getLevel(), shotAmmo, this); 
 		
 				shot.setPos(getX(), getY() + 0.1, getZ());
-				shot.shootFromRotation(this, 0.0f, x, 0.0f, 0.3f, 0.0f);
+				shot.shootFromRotation(this, 0.0f, x, 0.0f, 0.35f, 0.0f);
 				shot.setDamage(shotDamage);
 				shot.setIgnoreInvulnerability(false);
 	
