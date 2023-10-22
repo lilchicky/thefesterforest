@@ -167,7 +167,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 			if (this.tickCount % 20 == 0) {
 			
 				for (Player player : nearbyPlayers) {
-					if (!(player.isSpectator() || player.isCreative()) && (getY() + 2) <= player.getY()) {
+					if (!(player.isSpectator() || player.isCreative()) && ((getY() + 2) <= player.getY() || getY() > player.getY())) {
 						FrostbittenBolt shot = bulletItem.createProjectile(getLevel(), shotAmmo, this); 
 						
 						shot.setPos(getX(), getY() + getEyeHeight(), getZ());
