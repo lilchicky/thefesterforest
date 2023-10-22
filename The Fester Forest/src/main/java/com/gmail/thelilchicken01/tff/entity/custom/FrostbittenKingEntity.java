@@ -63,6 +63,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	
 	// Values for attack functions to be generated on attack
 	int lines = 2;
+	int spiralLines = 2;
 	int rings = 1;
 	int randoms = 25;
 	
@@ -150,7 +151,24 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 			setInvulnerable(true);
 			
 			if (vCounter >= ivLength - 60) {
-				bossEvent.setColor(BossBarColor.RED);
+				if (vCounter == ivLength - 60) {
+					bossEvent.setColor(BossBarColor.RED);
+				}
+				else if (vCounter == ivLength - 50) {
+					bossEvent.setColor(BossBarColor.WHITE);
+				}
+				else if (vCounter == ivLength - 40) {
+					bossEvent.setColor(BossBarColor.RED);
+				}
+				else if (vCounter == ivLength - 30) {
+					bossEvent.setColor(BossBarColor.WHITE);
+				}
+				else if (vCounter == ivLength - 20) {
+					bossEvent.setColor(BossBarColor.RED);
+				}
+				else if (vCounter == ivLength - 10) {
+					bossEvent.setColor(BossBarColor.WHITE);
+				}
 			}
 			else {
 				bossEvent.setColor(BossBarColor.WHITE);
@@ -163,6 +181,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				canAttack = true;
 				attackValue = (int)(Math.random() * 5);
 				lines = (int)(Math.random() * 7) + 2;
+				spiralLines = (int)(Math.random() * 4) + 2;
 				rings = (int)(Math.random() * 5) + 3;
 				randoms = (int)(Math.random() * 50) + 50;
 				rand = (int)(Math.random() * 361);
@@ -213,6 +232,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 					case 3:
 						if (attackSpacer >= 3 && straightCounter > 0) {
 							fireBlock(rand);
+							fireBlock(rand + 180);
 							straightCounter--;
 							attackSpacer = 0;
 							
@@ -259,7 +279,24 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 			
 			if (vCounter <= ivLength + vLength) {
 				if (vCounter >= (ivLength + vLength) - 60) {
-					bossEvent.setColor(BossBarColor.RED);
+					if (vCounter == (ivLength + vLength) - 60) {
+						bossEvent.setColor(BossBarColor.RED);
+					}
+					else if (vCounter == (ivLength + vLength) - 50) {
+						bossEvent.setColor(BossBarColor.PURPLE);
+					}
+					else if (vCounter == (ivLength + vLength) - 40) {
+						bossEvent.setColor(BossBarColor.RED);
+					}
+					else if (vCounter == (ivLength + vLength) - 30) {
+						bossEvent.setColor(BossBarColor.PURPLE);
+					}
+					else if (vCounter == (ivLength + vLength) - 20) {
+						bossEvent.setColor(BossBarColor.RED);
+					}
+					else if (vCounter == (ivLength + vLength) - 10) {
+						bossEvent.setColor(BossBarColor.PURPLE);
+					}
 				}
 				else {
 					bossEvent.setColor(BossBarColor.PURPLE);
@@ -321,7 +358,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 		shot = bulletItem.createProjectile(getLevel(), shotAmmo, this); 
 		
 		shot.setPos(getX(), getY() + getEyeHeight(), getZ());
-		shot.shootFromRotation(this, 0.0f, (int)(Math.random() * 361), 0.0f, 0.5f, 0.0f);
+		shot.shootFromRotation(this, 0.0f, (int)(Math.random() * 361), 0.0f, 0.4f, 0.0f);
 		shot.setDamage(shotDamage);
 		shot.setIgnoreInvulnerability(true);
 
@@ -353,12 +390,12 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 		
 		for (int x = 0; x < 360; x++) {
 			
-			if (x % (int)(360 / lines) == 0) {
+			if (x % (int)(360 / spiralLines) == 0) {
 			
 				shot = bulletItem.createProjectile(getLevel(), shotAmmo, this); 
 		
 				shot.setPos(getX(), getY() + getEyeHeight(), getZ());
-				shot.shootFromRotation(this, 0.0f, x + (angle * 8), 0.0f, 0.5f, 0.0f);
+				shot.shootFromRotation(this, 0.0f, x + (angle * 5), 0.0f, 0.5f, 0.0f);
 				shot.setDamage(shotDamage);
 				shot.setIgnoreInvulnerability(true);
 	

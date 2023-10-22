@@ -2,15 +2,20 @@ package com.gmail.thelilchicken01.tff.entity.projectile;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
+import com.gmail.thelilchicken01.tff.entity.NoParticleProjectile;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.item.item.MagicModUtil;
 import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
 import com.gmail.thelilchicken01.tff.item.projectile.FrostbittenBoltProjectile;
 
+import net.minecraft.Util;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
@@ -20,13 +25,20 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Fireball;
+import net.minecraft.world.entity.projectile.ItemSupplier;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.ProjectileUtil;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.NetworkHooks;
 
-public class FrostbittenBolt extends Fireball {
+public class FrostbittenBolt extends NoParticleProjectile implements ItemSupplier {
+	
+	private static final EntityDataAccessor<ItemStack> DATA_ITEM_STACK = SynchedEntityData.defineId(Fireball.class, EntityDataSerializers.ITEM_STACK);
 	
 	protected double damage = 20;
 	protected boolean ignoreInvulnerability = true;
@@ -127,8 +139,6 @@ public class FrostbittenBolt extends Fireball {
 					if (vec.lengthSqr() > 0) livingTarget.push(vec.x, 0.1, vec.z);
 				}
 				
-				livingTarget.setTicksFrozen(60);
-				
 				if (shooter instanceof LivingEntity) {
 					doEnchantDamageEffects((LivingEntity)shooter, target);
 				}
@@ -177,6 +187,10 @@ public class FrostbittenBolt extends Fireball {
 		compound.putDouble("damage", damage);
 		if (ignoreInvulnerability) compound.putBoolean("ignoreinv", ignoreInvulnerability);
 		if (knockbackStrength != 0) compound.putDouble("knockback", knockbackStrength);
+		ItemStack itemstack = this.getItemRaw();
+	    if (!itemstack.isEmpty()) {
+	    	compound.put("Item", itemstack.save(new CompoundTag()));
+	    }
 	}
 
 	@Override
@@ -186,6 +200,8 @@ public class FrostbittenBolt extends Fireball {
 		damage = compound.getDouble("damage");
 		ignoreInvulnerability = compound.getBoolean("ignoreinv");
 		knockbackStrength = compound.getDouble("knockback");
+		ItemStack itemstack = ItemStack.of(compound.getCompound("Item"));
+	    this.setItem(itemstack);
 	}
 	
 	public void setKnockbackStrength(double knockbackStrength) {
@@ -215,6 +231,28 @@ public class FrostbittenBolt extends Fireball {
 	@Override
 	public Packet<?> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+	
+	public void setItem(ItemStack p_37011_) {
+		if (!p_37011_.is(Items.FIRE_CHARGE) || p_37011_.hasTag()) {
+			this.getEntityData().set(DATA_ITEM_STACK, Util.make(p_37011_.copy(), (p_37015_) -> {
+				p_37015_.setCount(1);
+			}));
+		}
+
+	}
+
+	protected ItemStack getItemRaw() {
+		return this.getEntityData().get(DATA_ITEM_STACK);
+	}
+
+	public ItemStack getItem() {
+		ItemStack itemstack = this.getItemRaw();
+		return itemstack.isEmpty() ? new ItemStack(Items.FIRE_CHARGE) : itemstack;
+	}
+
+	protected void defineSynchedData() {
+		this.getEntityData().define(DATA_ITEM_STACK, ItemStack.EMPTY);
 	}
 	
 }
