@@ -46,7 +46,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	// Bullets
 	FrostbittenBoltProjectile bulletItem = ItemInit.FROSTBITTEN_BOLT.get();
 	ItemStack shotAmmo = new ItemStack(ItemInit.FROSTBITTEN_BOLT.get());
-	private int shotDamage = 10;
+	private int shotDamage = 20;
 	
 	// Phase and invulnerability related
 	private double phase1 = 0.8;
@@ -66,7 +66,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	int attackSpacer = 0;
 	int rand = 0;
 	List<Player> nearbyPlayers;
-	int arenaRadius = 24;
+	int arenaRadius = 18;
 	
 	// Values for attack functions to be generated on attack
 	int lines = 2;
@@ -109,10 +109,10 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	
 	public static AttributeSupplier setAttributes() {
 		return Monster.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 1200.00)
+				.add(Attributes.MAX_HEALTH, 2000.00)
 				.add(Attributes.ATTACK_DAMAGE, 69.0f)
 				.add(Attributes.ATTACK_SPEED, 420.0f)
-				.add(Attributes.ARMOR, 20.0f)
+				.add(Attributes.ARMOR, 30.0f)
 				.add(Attributes.KNOCKBACK_RESISTANCE, 10.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.0001f).build();
 	}
@@ -154,10 +154,10 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 			attackCooldown = 20;
 		}
 		else if (getHealth() < (getMaxHealth() * phase1)) {
-			attackCooldown = 40;
+			attackCooldown = 50;
 		}
 		else {
-			attackCooldown = 60;
+			attackCooldown = 80;
 		}
 		
 		if (nearbyPlayers.size() != 0) {
@@ -222,7 +222,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 					canAttack = true;
 					attackValue = (int)(Math.random() * 5);
 					lines = (int)(Math.random() * 7) + 2;
-					spiralLines = (int)(Math.random() * 4) + 2;
+					spiralLines = (int)(Math.random() * 7) + 2;
 					rings = (int)(Math.random() * 5) + 3;
 					randoms = (int)(Math.random() * 50) + 50;
 					rand = (int)(Math.random() * 361);
@@ -273,7 +273,9 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 						case 3:
 							if (attackSpacer >= 3 && straightCounter > 0) {
 								fireBlock(rand);
+								fireBlock(rand + 90);
 								fireBlock(rand + 180);
+								fireBlock(rand + 270);
 								straightCounter--;
 								attackSpacer = 0;
 								
@@ -403,14 +405,17 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	private void fireRandom() {
 		FrostbittenBolt shot;
 		
-		shot = bulletItem.createProjectile(getLevel(), shotAmmo, this); 
+			for (int x = 0; x < 3; x++) {
+			shot = bulletItem.createProjectile(getLevel(), shotAmmo, this); 
+			
+			shot.setPos(getX(), getY() + getEyeHeight(), getZ());
+			shot.shootFromRotation(this, 0.0f, (int)(Math.random() * 361), 0.0f, 0.4f, 0.0f);
+			shot.setDamage(shotDamage);
+			shot.setIgnoreInvulnerability(false);
+	
+			getLevel().addFreshEntity(shot);
 		
-		shot.setPos(getX(), getY() + getEyeHeight(), getZ());
-		shot.shootFromRotation(this, 0.0f, (int)(Math.random() * 361), 0.0f, 0.4f, 0.0f);
-		shot.setDamage(shotDamage);
-		shot.setIgnoreInvulnerability(false);
-
-		getLevel().addFreshEntity(shot);
+		}
 	}
 	
 	private void fireRing() {
