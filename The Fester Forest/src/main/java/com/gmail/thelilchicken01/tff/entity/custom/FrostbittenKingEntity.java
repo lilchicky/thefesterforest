@@ -386,7 +386,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	private void fireBlock(int rand) {
 		FrostbittenBolt shot;
 			
-		for (int x = -45; x < 45; x += 9) {
+		for (int x = -50; x < 50; x += 5) {
 			
 			shot = bulletItem.createProjectile(getLevel(), shotAmmo, this); 
 		
