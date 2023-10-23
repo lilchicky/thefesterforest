@@ -101,7 +101,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 				.add(Attributes.MAX_HEALTH, totalHealth)
 				.add(Attributes.ATTACK_DAMAGE, 30.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
-				.add(Attributes.ARMOR, 10.0f)
+				.add(Attributes.ARMOR, 20.0f)
 				.add(Attributes.KNOCKBACK_RESISTANCE, 10.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.15f).build();
 	}
