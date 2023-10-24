@@ -45,8 +45,6 @@ public class MeteorWand extends ProjectileWeaponItem implements MagicItem, Magic
 	
 	private String[] drops = {"The Forgemaster", "Crafted"};
 	
-	private int counter = 0;
-	
 	protected int shotDamage = 20;
 	protected double inaccuracy;
 	protected boolean ignoreInvulnerability = true;
@@ -67,8 +65,7 @@ public class MeteorWand extends ProjectileWeaponItem implements MagicItem, Magic
 		
 		//if (counter > 1) {
 		
-			if(user instanceof Player) {
-				Player player = (Player) user;
+			if(user instanceof Player player) {
 				if (player.getMainHandItem() == stack || player.getOffhandItem() == stack) {
 				
 					BlockHitResult blockhitresult = getPlayerPOVHitResult(level, player, ClipContext.Fluid.NONE);
@@ -103,7 +100,7 @@ public class MeteorWand extends ProjectileWeaponItem implements MagicItem, Magic
 	public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity target,
 			InteractionHand hand) {
 		
-		if (!player.getLevel().isClientSide) {
+		if (!player.getLevel().isClientSide()) {
 			
 			if (!player.getCooldowns().isOnCooldown(this)) {
 				

@@ -27,14 +27,14 @@
         		"maxCount": 1
       		},
       		{
-        		"type": "tff:volatile_ghost",
-        		"weight": 60,
+        		"type": "tff:wight",
+        		"weight": 20,
         		"minCount": 1,
         		"maxCount": 1
       		},
       		{
-        		"type": "tff:wight",
-        		"weight": 20,
+        		"type": "tff:glacial_titan",
+        		"weight": 30,
         		"minCount": 1,
         		"maxCount": 1
       		}
@@ -58,15 +58,11 @@
   			"energy_budget": 0.25,
   			"charge": 0.5
   		},
-  		"tff:volatile_ghost": {
+  		"tff:glacial_titan": {
   			"energy_budget": 0.25,
   			"charge": 0.5
   		},
   		"tff:wight": {
-  			"energy_budget": 0.25,
-  			"charge": 0.5
-  		},
-  		"tff:goop": {
   			"energy_budget": 0.25,
   			"charge": 0.5
   		}

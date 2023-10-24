@@ -332,6 +332,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ModEntityTypes.frostbitten_bolt.get(), "Frostbitten Bolt");
 		add(ModEntityTypes.FROSTBITTEN_KING.get(), "Frostbitten King");
 		add(ItemInit.FROSTBITTEN_KING_SPAWN_EGG.get(), "Frostbitten King Spawn Egg");
+		add(ItemInit.GLACIAL_TITAN_SPAWN_EGG.get(), "Glacial Titan Spawn Egg");
+		add(ModEntityTypes.GLACIAL_TITAN.get(), "Glacial Titan");
 		
 		/*
 		 * 

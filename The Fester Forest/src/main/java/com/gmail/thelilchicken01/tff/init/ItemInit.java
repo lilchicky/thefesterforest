@@ -241,6 +241,11 @@ public class ItemInit {
 			() -> new ForgeSpawnEggItem(ModEntityTypes.FROSTBITTEN_KING, 0xb4c9fd, 0xffffff, //Background, Spots
 					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
+	//Glacial Titan Spawn Egg
+	public static final RegistryObject<Item> GLACIAL_TITAN_SPAWN_EGG = register("glacial_titan_spawn_egg", 
+			() -> new ForgeSpawnEggItem(ModEntityTypes.GLACIAL_TITAN, 0x88aaff, 0x4069b4, //Background, Spots
+					new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
 	/*
 	 * 
 	 * Armors

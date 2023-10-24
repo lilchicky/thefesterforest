@@ -9,6 +9,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.DeepReaverEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.FrostbittenKingEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.GlacialTitanEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.IceRambleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PylonEntity;
@@ -56,6 +57,7 @@ public class ServerEventBusSubscriber {
 		event.put(ModEntityTypes.DEEP_REAVER.get(), DeepReaverEntity.setAttributes());
 		event.put(ModEntityTypes.ICE_RAMBLE.get(), IceRambleEntity.setAttributes());
 		event.put(ModEntityTypes.FROSTBITTEN_KING.get(), FrostbittenKingEntity.setAttributes());
+		event.put(ModEntityTypes.GLACIAL_TITAN.get(), GlacialTitanEntity.setAttributes());
 		
 	}
 	

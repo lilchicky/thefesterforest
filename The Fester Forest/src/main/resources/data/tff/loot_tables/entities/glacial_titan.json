@@ -1,0 +1,167 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 5,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 100,
+          "name": "minecraft:packed_ice"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 30,
+          "name": "tff:rotting_stone"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 30,
+          "name": "tff:fester_chunk"
+        }
+      ]
+    },
+    {
+    	"rolls": 1,
+    	"entries": [
+    		{
+    			"type": "minecraft:empty",
+          		"weight": 100
+          	},
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:frost_mallet",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:glacial_stomach"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:glaciated_staff",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:glowing_book",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:icy_bow",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:glacial_helmet",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:glacial_chestplate",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:glacial_leggings",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "tff:glacial_boots",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

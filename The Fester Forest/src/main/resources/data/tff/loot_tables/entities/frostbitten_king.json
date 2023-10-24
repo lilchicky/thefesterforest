@@ -1,0 +1,140 @@
+{
+  "pools": [
+    {
+      "rolls": 120,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 100,
+          "name": "minecraft:blue_ice"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 50,
+          "name": "minecraft:diamond"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 50,
+          "name": "minecraft:bone"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 20,
+          "name": "tff:frozen_apple"
+        }
+      ]
+    },
+    {
+      "rolls": 2,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tff:frozen_helmet",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 45,
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:frozen_chestplate",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 45,
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:frozen_leggings",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 45,
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:frozen_boots",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 45,
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:shard_of_ice",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 45,
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:ice_book",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 45,
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:frozen_heart"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:frozen_bow",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 45,
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tff:food_book",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 45,
+              "treasure": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+    	"rolls": 5,
+    	"entries": [
+    		{
+         		"type": "minecraft:empty",
+          		"weight": 1
+        	},
+        	{
+          		"type": "minecraft:item",
+          		"weight": 2,
+          		"name": "tff:frozen_shard"
+        	}
+    	]
+    }
+  ]
+}

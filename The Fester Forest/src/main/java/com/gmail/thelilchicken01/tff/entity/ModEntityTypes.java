@@ -9,6 +9,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.CrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.DeepReaverEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.ForgemasterEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.FrostbittenKingEntity;
+import com.gmail.thelilchicken01.tff.entity.custom.GlacialTitanEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.IceRambleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.entity.custom.PylonEntity;
@@ -148,8 +149,13 @@ public class ModEntityTypes {
 	
 	//Frostbitten King
 	public static final RegistryObject<EntityType<FrostbittenKingEntity>> FROSTBITTEN_KING =
-			ENTITY_TYPES.register("frostbitten_king", () -> EntityType.Builder.of(FrostbittenKingEntity::new, MobCategory.CREATURE)
+			ENTITY_TYPES.register("frostbitten_king", () -> EntityType.Builder.of(FrostbittenKingEntity::new, MobCategory.MONSTER)
 					.sized(1.0f, 1.2f).build(new ResourceLocation(TheFesterForest.MODID, "frostbitten_king").toString()));
+	
+	//Glacial Titan
+	public static final RegistryObject<EntityType<GlacialTitanEntity>> GLACIAL_TITAN =
+			ENTITY_TYPES.register("glacial_titan", () -> EntityType.Builder.of(GlacialTitanEntity::new, MobCategory.MONSTER)
+					.sized(1.75f, 4.2f).build(new ResourceLocation(TheFesterForest.MODID, "glacial_titan").toString()));
 	
 	//Brittle Branch Bullet
 	

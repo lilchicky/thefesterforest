@@ -104,8 +104,7 @@ public class FrozenRock extends Fireball {
 					this, shooter).setProjectile(),
 					(float) bullet.modifyDamage(damage, this, target, shooter, level));
 			
-			if (damaged && target instanceof LivingEntity) {
-				LivingEntity livingTarget = (LivingEntity)target;
+			if (damaged && target instanceof LivingEntity livingTarget) {
 				if (knockbackStrength > 0) {
 					double actualKnockback = knockbackStrength;
 					
@@ -115,10 +114,11 @@ public class FrozenRock extends Fireball {
 				
 				livingTarget.setTicksFrozen(240);
 				
-				if (shooter instanceof Player) {
-					Player player = (Player) shooter;
+				List<LivingEntity> nearbyEntities;
+				
+				if (shooter instanceof Player player) {
 					
-					List<LivingEntity> nearbyEntities = this.getLevel().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, player, new AABB(
+					nearbyEntities = this.getLevel().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, player, new AABB(
 							this.getX() - 3, 
 							this.getY() - 3, 
 							this.getZ() - 3, 
@@ -132,6 +132,25 @@ public class FrozenRock extends Fireball {
 							MagicModUtil.getMagicMod(player, currentEntity, ((MagicOrb) (player.getOffhandItem().getItem())).getOrbType());
 						}
 						
+						currentEntity.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_frozen_rock_damage",
+						this, shooter), (float)shatterDamage);
+						currentEntity.setTicksFrozen(240);
+						
+					}
+					
+				}
+				
+				else {
+					
+					nearbyEntities = this.getLevel().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, (LivingEntity)shooter, new AABB(
+							this.getX() - 3, 
+							this.getY() - 3, 
+							this.getZ() - 3, 
+							this.getX() + 3, 
+							this.getY() + 3, 
+							this.getZ() + 3));
+					
+					for (LivingEntity currentEntity : nearbyEntities) {
 						currentEntity.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_frozen_rock_damage",
 						this, shooter), (float)shatterDamage);
 						currentEntity.setTicksFrozen(240);

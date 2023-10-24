@@ -87,6 +87,11 @@ public class ModCommonEvents {
 				Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 
 				Monster::checkMonsterSpawnRules);
 		
+		SpawnPlacements.register(ModEntityTypes.GLACIAL_TITAN.get(), 
+				SpawnPlacements.Type.ON_GROUND, 
+				Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 
+				Monster::checkMonsterSpawnRules);
+		
 		/*
 		 * Land Creatures
 		 */
