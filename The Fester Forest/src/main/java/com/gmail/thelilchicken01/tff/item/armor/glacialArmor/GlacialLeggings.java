@@ -76,6 +76,9 @@ public class GlacialLeggings extends ArmorItem {
 												ramble.connectToPlayer(player);
 								
 												player.getLevel().addFreshEntity(ramble);
+												
+												nameHandler.setPetUUID(ramble.getUUID());
+												nameHandler.syncPetUUID(serverPlayer);
 											}
 										}
 									);
