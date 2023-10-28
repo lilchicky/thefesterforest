@@ -37,7 +37,7 @@ public class EnergeticFungus extends Item implements ICurioItem {
 	
 	private int regenLevel = 3;
 	
-	private Vec3 oldLoc;
+	private double[] oldLoc = new double[3];
 
 	public EnergeticFungus() {
 		super(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB));
@@ -64,20 +64,22 @@ public class EnergeticFungus extends Item implements ICurioItem {
 			
 			if ( player.tickCount % 15 == 0 && !player.getLevel().isClientSide()) {
 			
-				if (oldLoc == player.getPosition(1.0f)) {
+				if (oldLoc[0] == player.getX() && oldLoc[1] == player.getY() && oldLoc[2] == player.getZ()) {
 					if (!slotContext.entity().hasEffect(MobEffects.REGENERATION)) {
-						slotContext.entity().addEffect(new MobEffectInstance(MobEffects.REGENERATION, 39, regenLevel, false, true));
+						slotContext.entity().addEffect(new MobEffectInstance(MobEffects.REGENERATION, 19, regenLevel, false, true));
 					}
 					else {
-						if (slotContext.entity().getEffect(MobEffects.REGENERATION).getDuration() < 39) {
-							slotContext.entity().addEffect(new MobEffectInstance(MobEffects.REGENERATION, 39, regenLevel, false, true));
+						if (slotContext.entity().getEffect(MobEffects.REGENERATION).getDuration() < 19) {
+							slotContext.entity().addEffect(new MobEffectInstance(MobEffects.REGENERATION, 19, regenLevel, false, true));
 						}
 					}
 				}
 			
 			}
 			
-			oldLoc = player.getPosition(1.0f);
+			oldLoc[0] = player.getX();
+			oldLoc[1] = player.getY();
+			oldLoc[2] = player.getZ();
 			
 		}
 		
