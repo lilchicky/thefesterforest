@@ -37,11 +37,7 @@ public class EnergeticFungus extends Item implements ICurioItem {
 	
 	private int regenLevel = 3;
 	
-	private double oldX;
-	private double oldY;
-	private double oldZ;
-	
-	private int secondCounter;
+	private Vec3 oldLoc;
 
 	public EnergeticFungus() {
 		super(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB));
@@ -53,9 +49,7 @@ public class EnergeticFungus extends Item implements ICurioItem {
 		
 		ICurioItem.super.curioTick(slotContext, stack);
 		
-		if (slotContext.entity() instanceof Player && secondCounter > 20) {
-			
-			Player player = (Player) slotContext.entity();
+		if (slotContext.entity() instanceof Player player) {
 			
 			if (ArmorSets.BANSHEE.getArmorSet(player) == SetCount.TWO) {
 				
@@ -70,9 +64,7 @@ public class EnergeticFungus extends Item implements ICurioItem {
 			
 			if ( player.tickCount % 15 == 0 && !player.getLevel().isClientSide()) {
 			
-				if (player.getX() == oldX &&
-						player.getY() == oldY &&
-						player.getZ() == oldZ) {
+				if (oldLoc == player.getPosition(1.0f)) {
 					if (!slotContext.entity().hasEffect(MobEffects.REGENERATION)) {
 						slotContext.entity().addEffect(new MobEffectInstance(MobEffects.REGENERATION, 39, regenLevel, false, true));
 					}
@@ -85,15 +77,9 @@ public class EnergeticFungus extends Item implements ICurioItem {
 			
 			}
 			
-			oldX = player.getX();
-			oldY = player.getY();
-			oldZ = player.getZ();
-			
-			secondCounter = 0;
+			oldLoc = player.getPosition(1.0f);
 			
 		}
-		
-		secondCounter++;
 		
 	}
 	
