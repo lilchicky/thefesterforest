@@ -86,6 +86,7 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 				.add(Attributes.MAX_HEALTH, 2000.0f)
 				.add(Attributes.ATTACK_DAMAGE, 5.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
+				.add(Attributes.ARMOR, 69.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.24f).build();
 	}
 	
