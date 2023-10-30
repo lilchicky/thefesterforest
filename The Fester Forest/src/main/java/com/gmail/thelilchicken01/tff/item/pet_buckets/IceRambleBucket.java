@@ -44,8 +44,10 @@ public class IceRambleBucket extends Item {
 				Player player = context.getLevel().getPlayerByUUID(ownerUUID);
 				
 				ramble.setOwnerUUID(ownerUUID);
-				ramble.tame(player);
-				ramble.connectToPlayer(player);
+				if (player != null) {
+					ramble.tame(player);
+					ramble.connectToPlayer(player);
+				}
 				ramble.moveTo(context.getClickedPos().above(), 0.0f, 0.0f);
 			}
 			else {
