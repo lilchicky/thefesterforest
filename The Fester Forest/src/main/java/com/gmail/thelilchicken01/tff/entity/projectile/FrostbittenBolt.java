@@ -125,7 +125,7 @@ public class FrostbittenBolt extends NoParticleProjectile implements ItemSupplie
 				if (canHitPlayer) {
 					damaged = target.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_frostbitten_bolt_damage",
 							this, shooter).setProjectile().bypassArmor(),
-							(float) bullet.modifyDamage((player.getMaxHealth() * 2), this, target, shooter, level));
+							(float) bullet.modifyDamage(damage, this, target, shooter, level));
 				}
 				else {
 					damaged = false;
