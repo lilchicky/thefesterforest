@@ -52,7 +52,7 @@ public enum ModArmorMaterial implements ArmorMaterial {
 	}),
 	
 	//Frozen Armor
-	FROZEN("frozen", -1, new int[]{2, 3, 4, 1}, 40, SoundEvents.ARMOR_EQUIP_DIAMOND, 1.0F, 0.0F, () -> {
+	FROZEN("frozen", 1, new int[]{2, 3, 4, 1}, 40, SoundEvents.ARMOR_EQUIP_DIAMOND, 1.0F, 0.0F, () -> {
 		return Ingredient.of(Items.PACKED_ICE);
 	}),
 	

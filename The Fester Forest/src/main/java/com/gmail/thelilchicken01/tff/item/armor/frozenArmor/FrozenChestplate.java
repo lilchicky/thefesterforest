@@ -72,7 +72,7 @@ public class FrozenChestplate extends ArmorItem {
 
 	public FrozenChestplate() {
 		super(ModArmorMaterial.FROZEN, EquipmentSlot.CHEST, 
-				new Properties().tab(TheFesterForest.TFF_TAB));
+				new Properties().tab(TheFesterForest.TFF_TAB).durability(-1));
 		
 	}
 	

@@ -72,7 +72,7 @@ public class FrozenLeggings extends ArmorItem {
 
 	public FrozenLeggings() {
 		super(ModArmorMaterial.FROZEN, EquipmentSlot.LEGS, 
-				new Properties().tab(TheFesterForest.TFF_TAB));
+				new Properties().tab(TheFesterForest.TFF_TAB).durability(-1));
 		
 	}
 	

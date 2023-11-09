@@ -72,7 +72,7 @@ public class FrozenBoots extends ArmorItem {
 
 	public FrozenBoots() {
 		super(ModArmorMaterial.FROZEN, EquipmentSlot.FEET, 
-				new Properties().tab(TheFesterForest.TFF_TAB));
+				new Properties().tab(TheFesterForest.TFF_TAB).durability(-1));
 		
 	}
 	

@@ -72,7 +72,7 @@ public class FrozenHelmet extends ArmorItem {
 
 	public FrozenHelmet() {
 		super(ModArmorMaterial.FROZEN, EquipmentSlot.HEAD, 
-				new Properties().tab(TheFesterForest.TFF_TAB));
+				new Properties().tab(TheFesterForest.TFF_TAB).durability(-1));
 		
 	}
 	
