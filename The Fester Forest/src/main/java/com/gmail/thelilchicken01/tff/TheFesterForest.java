@@ -60,8 +60,9 @@ import software.bernie.geckolib3.GeckoLib;
 // Thanks to WafflesAreBetter for all the dimension help
 // Thanks to Undergarden for the portal code
 // Thanks to TelepathicGrunt for the structure code!
-// Thanks to GunsWithoutRoses (The best gun mod ever created) for being the only projectile reference I could find
+// Thanks to GunsWithoutRoses (The best gun mod ever created) for custom projectiles
 // Thanks to Reliquary for help with doing things on player death/hurt events
+// Thanks to ochotonida for help with capabilities and network code
 
 @Mod("tff")
 public class TheFesterForest {
