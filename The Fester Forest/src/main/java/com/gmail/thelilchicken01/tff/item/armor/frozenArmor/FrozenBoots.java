@@ -29,7 +29,9 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.api.distmarker.Dist;
@@ -72,7 +74,7 @@ public class FrozenBoots extends ArmorItem {
 
 	public FrozenBoots() {
 		super(ModArmorMaterial.FROZEN, EquipmentSlot.FEET, 
-				new Properties().tab(TheFesterForest.TFF_TAB).durability(-1));
+				new Properties().tab(TheFesterForest.TFF_TAB));
 		
 	}
 	
@@ -118,7 +120,7 @@ public class FrozenBoots extends ArmorItem {
 		if(Screen.hasShiftDown()) {
 			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Cold boots made of mysterious, unbreaking ice.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("Cold boots made of mysterious, near unbreakable ice.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Set Bonus: Cryostasis, Magicka").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent("2+ Pieces: Freeze all monsters within 5 blocks.").withStyle(ChatFormatting.AQUA));
@@ -132,14 +134,11 @@ public class FrozenBoots extends ArmorItem {
 			for (int x = 0; x < drops.length; x++) {
 				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
 			}
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Unbreakable").withStyle(ChatFormatting.BLUE));
-			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Cold boots made of mysterious, unbreaking ice.").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("Cold boots made of mysterious, near unbreakable ice.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 			lore.add(new TextComponent(""));
@@ -147,9 +146,6 @@ public class FrozenBoots extends ArmorItem {
 			for (int x = 0; x < drops.length; x++) {
 				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
 			}
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Unbreakable").withStyle(ChatFormatting.BLUE));
-			lore.add(new TextComponent(""));
 		}
 		
 		super.appendHoverText(stack, world, lore, flag);
