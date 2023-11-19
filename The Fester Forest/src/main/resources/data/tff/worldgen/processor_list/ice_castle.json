@@ -1,0 +1,96 @@
+{
+    // Processor lists will run a processor for every block placed by the nbt file.
+    // The resultant block of the processor list is the block that actually gets placed in the world.
+  "processors": [
+      // A single Rule processor for this list.
+    {
+      "processor_type": "minecraft:rule",
+
+      // The rules for this Rule processor to use
+      "rules": [
+      	// Rotting Stone Bricks
+        {
+          "input_predicate": {
+            "block": "tff:rotting_stone_bricks",
+            "probability": 0.25,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "tff:cracked_rotting_stone_bricks"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "tff:rotting_stone_bricks",
+            "probability": 0.15,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:blue_ice"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "tff:rotting_stone_bricks",
+            "probability": 0.13,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:packed_ice"
+          }
+        },
+        // Blue Carpet
+        {
+          "input_predicate": {
+            "block": "minecraft:blue_carpet",
+            "probability": 0.7,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
+          }
+        },
+        // Icicle
+        {
+          "input_predicate": {
+            "block": "tff:icicle",
+            "probability": 0.7,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
+          }
+        },
+        // Melons
+        {
+          "input_predicate": {
+            "block": "minecraft:hay_block",
+            "probability": 0.5,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:melon"
+          }
+        }
+      ]
+    }
+  ]
+}

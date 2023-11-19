@@ -1,0 +1,192 @@
+{
+  // More info on template pools can be found here: https://minecraft.gamepedia.com/Custom_world_generation#JSON_format_8
+  // Yes, worldgen json files can have comments. Minecraft does "lenient" parsing of these json files.
+
+  "name": "tff:ice_castle/room_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "location": "tff:ice_castle/hallway_basic",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "tff:ice_castle/hallway_cave",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "tff:ice_castle/hallway_clutter",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "tff:ice_castle/hallway_four",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "location": "tff:ice_castle/hallway_left",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "tff:ice_castle/hallway_middle_door",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "location": "tff:ice_castle/hallway_right",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "tff:ice_castle/hallway_shelf",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "tff:ice_castle/hallway_stairs",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "tff:ice_castle/hallway_t_left",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "tff:ice_castle/hallway_t_right",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    
+    //Rooms
+    
+    {
+      "weight": 4,
+      "element": {
+        "location": "tff:ice_castle/room_bedroom",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 4,
+      "element": {
+        "location": "tff:ice_castle/room_broken",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 4,
+      "element": {
+        "location": "tff:ice_castle/room_double",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 4,
+      "element": {
+        "location": "tff:ice_castle/room_empty",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 4,
+      "element": {
+        "location": "tff:ice_castle/room_forge",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 4,
+      "element": {
+        "location": "tff:ice_castle/room_library",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 4,
+      "element": {
+        "location": "tff:ice_castle/room_overgrown",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 4,
+      "element": {
+        "location": "tff:ice_castle/room_pool",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 4,
+      "element": {
+        "location": "tff:ice_castle/room_storage",
+        "processors": "tff:ice_castle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

@@ -31,6 +31,7 @@ public class ModStructures {
     public static final RegistryObject<StructureFeature<?>> BOAT = DEFERRED_REGISTRY_STRUCTURE.register("boat", Boat::new);
     public static final RegistryObject<StructureFeature<?>> SKY_STRUCTURE = DEFERRED_REGISTRY_STRUCTURE.register("sky_structure", SkyStructure::new);
     public static final RegistryObject<StructureFeature<?>> FLOATING_TOWER = DEFERRED_REGISTRY_STRUCTURE.register("floating_tower", FloatingTower::new);
+    public static final RegistryObject<StructureFeature<?>> ICE_CASTLE = DEFERRED_REGISTRY_STRUCTURE.register("ice_castle", IceCastle::new);
     
     public static void register(IEventBus bus) {
     	DEFERRED_REGISTRY_STRUCTURE.register(bus);
