@@ -45,7 +45,7 @@ public class FrozenBow extends BowItem {
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
 	public FrozenBow() {
-		super(new Properties().durability(-1).tab(TheFesterForest.TFF_TAB));
+		super(new Properties().tab(TheFesterForest.TFF_TAB).durability(13568));
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		
@@ -167,7 +167,7 @@ public class FrozenBow extends BowItem {
 		if(Screen.hasShiftDown()) {
 			lore.add(new TextComponent("Ranged").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("An ancient bow, corrupted by the same indestructible").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("An ancient bow, corrupted by the same near indestructible").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("ice that once held the Frostbitten King.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Converts all shot arrows into Icy Arrows.").withStyle(ChatFormatting.AQUA));
@@ -178,14 +178,11 @@ public class FrozenBow extends BowItem {
 			for (int x = 0; x < drops.length; x++) {
 				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
 			}
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Unbreakable").withStyle(ChatFormatting.BLUE));
-			lore.add(new TextComponent(""));
 		}
 		else {
 			lore.add(new TextComponent("Ranged").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("An ancient bow, corrupted by the same indestructible").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent("An ancient bow, corrupted by the same near indestructible").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent("ice that once held the Frostbitten King.").withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(""));
 			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
@@ -194,9 +191,6 @@ public class FrozenBow extends BowItem {
 			for (int x = 0; x < drops.length; x++) {
 				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
 			}
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Unbreakable").withStyle(ChatFormatting.BLUE));
-			lore.add(new TextComponent(""));
 		}
 
 		
