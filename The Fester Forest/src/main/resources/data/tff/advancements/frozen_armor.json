@@ -1,0 +1,77 @@
+{
+  "display": {
+    "icon": {
+      "item": "tff:frozen_chestplate"
+    },
+    "title": "Encased in Ice",
+    "description": "Collect all 4 pieces of the Frozen Armor set",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "tff:kill_frostbitten_king",
+  "criteria": {
+    "frozen_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:frozen_helmet"
+            ]
+          }
+        ]
+      }
+    },
+    "frozen_chestplate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:frozen_chestplate"
+            ]
+          }
+        ]
+      }
+    },
+    "frozen_leggings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:frozen_leggings"
+            ]
+          }
+        ]
+      }
+    },
+    "frozen_boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:frozen_boots"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+  	[
+  		"frozen_helmet"
+  	],
+  	[
+  		"frozen_chestplate"
+  	],
+  	[
+  		"frozen_leggings"
+  	],
+  	[
+  		"frozen_boots"
+  	]
+  ]
+}
