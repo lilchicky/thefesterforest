@@ -13,7 +13,7 @@
             // This has a 50% chance of allowing the found stone bricks block to be replaced
           "input_predicate": {
             "block": "tff:rotting_stone_bricks",
-            "probability": 0.1,
+            "probability": 0.2,
             "predicate_type": "minecraft:random_block_match"
           },
             // This is always true
@@ -28,21 +28,8 @@
         },
         {
           "input_predicate": {
-            "block": "tff:rotting_stone_bricks",
-            "probability": 0.1,
-            "predicate_type": "minecraft:random_block_match"
-          },
-          "location_predicate": {
-            "predicate_type": "minecraft:always_true"
-          },
-          "output_state": {
-            "Name": "tff:cracked_rotting_stone_bricks"
-          }
-        },
-        {
-          "input_predicate": {
             "block": "tff:rotting_dirt",
-            "probability": 0.5,
+            "probability": 0.15,
             "predicate_type": "minecraft:random_block_match"
           },
           "location_predicate": {
@@ -145,6 +132,19 @@
           },
           "output_state": {
             "Name": "minecraft:raw_copper_block"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:purple_carpet",
+            "probability": 0.3,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
           }
         }
       ]
