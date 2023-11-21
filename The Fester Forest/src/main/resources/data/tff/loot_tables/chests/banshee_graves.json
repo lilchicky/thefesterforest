@@ -55,7 +55,7 @@
         {
           "type": "minecraft:item",
           "weight": 120,
-          "name": "minecraft:black_dye",
+          "name": "minecraft:rotten_flesh",
           "functions": [
           	{
             	"function": "minecraft:set_count",
