@@ -30,7 +30,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class AngelicWhistle extends Item {
 	
 	private int whistleDamage = 10;
-	private int slowFallDuration = 10;
+	private int slowFallDuration = 5;
 	
 	private String[] drops = {"Crafted"};
 	
@@ -61,7 +61,7 @@ public class AngelicWhistle extends Item {
 					nearbyEntities.get(x).setDeltaMovement(newVel);
 					nearbyEntities.get(x).hurt(ItemUtil.entityDamageSource("banshee", nearbyEntities.get(x), player).bypassArmor(), whistleDamage);
 					nearbyEntities.get(x).addEffect(
-							new MobEffectInstance(MobEffects.SLOW_FALLING, slowFallDuration * 20, 19));
+							new MobEffectInstance(MobEffects.LEVITATION, slowFallDuration * 20, 0));
 				
 				}
 				
