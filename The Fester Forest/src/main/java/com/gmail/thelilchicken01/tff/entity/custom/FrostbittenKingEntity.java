@@ -31,6 +31,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -41,7 +42,10 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	
+	// Animation
 	private AnimationFactory factory = new AnimationFactory(this);
+	private boolean aboutToAttack = false;
+	private boolean aboutToCooldown = false;
 	
 	// Bullets
 	FrostbittenBoltProjectile bulletItem = ItemInit.FROSTBITTEN_BOLT.get();
@@ -192,6 +196,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				setInvulnerable(true);
 				
 				if (vCounter >= ivLength - 60) {
+					
 					if (vCounter == ivLength - 60) {
 						bossEvent.setColor(BossBarColor.RED);
 					}
@@ -206,6 +211,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 					}
 					else if (vCounter == ivLength - 20) {
 						bossEvent.setColor(BossBarColor.RED);
+						aboutToCooldown = true;
 					}
 					else if (vCounter == ivLength - 10) {
 						bossEvent.setColor(BossBarColor.WHITE);
@@ -322,6 +328,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				
 				if (vCounter <= ivLength + vLength) {
 					if (vCounter >= (ivLength + vLength) - 60) {
+						
 						if (vCounter == (ivLength + vLength) - 60) {
 							bossEvent.setColor(BossBarColor.RED);
 						}
@@ -336,6 +343,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 						}
 						else if (vCounter == (ivLength + vLength) - 20) {
 							bossEvent.setColor(BossBarColor.RED);
+							aboutToAttack = true;
 						}
 						else if (vCounter == (ivLength + vLength) - 10) {
 							bossEvent.setColor(BossBarColor.PURPLE);
@@ -468,14 +476,42 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	
 	protected float getSoundVolume() {return 1.0f;}
 	
+	@SuppressWarnings("removal")
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
-		if(event.isMoving()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.walk", true));
+		if(isInvulnerable()) {
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.attack_phase", true));
+			return PlayState.CONTINUE;
+		}
+		else {
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.vuln_phase", true));
 			return PlayState.CONTINUE;
 		}
 		
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.idle", true));
+	}
+	
+	private PlayState transitionPredicate(AnimationEvent event) {
+		
+		if (aboutToAttack) {
+			
+			event.getController().markNeedsReload();
+			
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.vuln_to_attack_transition", false));
+			
+			aboutToAttack = false;
+			
+		}
+		
+		else if (aboutToCooldown) {
+			
+			event.getController().markNeedsReload();
+			
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.attack_to_vuln_transition", false));
+			
+			aboutToCooldown = false;
+			
+		}
+		
 		return PlayState.CONTINUE;
 		
 	}
@@ -489,6 +525,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	public void registerControllers(AnimationData data) {
 		
 		data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+		data.addAnimationController(new AnimationController(this, "transitioncontroller", 0, this::transitionPredicate));
 		
 	}
 	

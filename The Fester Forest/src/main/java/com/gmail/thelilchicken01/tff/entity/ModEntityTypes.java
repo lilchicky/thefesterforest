@@ -150,7 +150,7 @@ public class ModEntityTypes {
 	//Frostbitten King
 	public static final RegistryObject<EntityType<FrostbittenKingEntity>> FROSTBITTEN_KING =
 			ENTITY_TYPES.register("frostbitten_king", () -> EntityType.Builder.of(FrostbittenKingEntity::new, MobCategory.MONSTER)
-					.sized(1.0f, 1.2f).build(new ResourceLocation(TheFesterForest.MODID, "frostbitten_king").toString()));
+					.sized(1.0f, 2.5f).build(new ResourceLocation(TheFesterForest.MODID, "frostbitten_king").toString()));
 	
 	//Glacial Titan
 	public static final RegistryObject<EntityType<GlacialTitanEntity>> GLACIAL_TITAN =
