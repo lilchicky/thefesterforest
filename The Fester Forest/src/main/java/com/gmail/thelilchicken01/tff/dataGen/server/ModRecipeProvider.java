@@ -591,9 +591,10 @@ public class ModRecipeProvider extends RecipeProvider {
 		.define('b', Items.DIAMOND)
 		.define('c', Items.FEATHER)
 		.define('d', Items.IRON_INGOT)
+		.define('e', ItemInit.PURIFYING_POWDER.get())
 		.unlockedBy("has_" + ItemInit.ANCIENT_WHISTLE.get().getRegistryName(), 
 				has(ItemInit.ANCIENT_WHISTLE.get().asItem())) // what unlocks the recipe when you get that item
-		.pattern(" d ").pattern("cac").pattern(" b ").save(consumer, 
+		.pattern("ede").pattern("cac").pattern("ebe").save(consumer, 
 				new ResourceLocation(TheFesterForest.MODID, ItemInit.ANGELIC_WHISTLE.get().getRegistryName().getPath()));
 		
 		// Verdant Branch

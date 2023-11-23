@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " d ",
+    "ede",
     "cac",
-    " b "
+    "ebe"
   ],
   "key": {
     "a": {
@@ -17,6 +17,9 @@
     },
     "d": {
       "item": "minecraft:iron_ingot"
+    },
+    "e": {
+      "item": "tff:purifying_powder"
     }
   },
   "result": {
