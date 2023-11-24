@@ -6,7 +6,9 @@ import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraftforge.common.data.LanguageProvider;
 
 public class ModEnUsProvider extends LanguageProvider {
@@ -348,6 +350,33 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("enchantment.tff.quickcast", "Quickcast");
 		add("enchantment.tff.arcane_power.desc", "Increases damage of Fester Forest magic items.");
 		add("enchantment.tff.quickcast.desc", "Decreases cooldowns of Fester Forest magic items.");
+		
+		/*
+		 * 
+		 * Item Types
+		 * 
+		 */
+		
+		add("type.tff.more_info", "Press SHIFT for more info.");
+		add("type.tff.drops_from", "Drops From:");
+		
+		add("type.tff.dull", "Dull");
+		
+		/*
+		 * 
+		 * Item Descriptions
+		 * 
+		 */
+		
+		add("description.tff.ancient_whistle", "An ancient whistle, releasing a deafening pitch when blown.");
+		
+		/*
+		 * 
+		 * Item Abilities
+		 * 
+		 */
+		
+		add("ability.tff.ancient_whistle", "Right click to emit a powerful shockwave of sound around you.Any entities hit will fly away from you. Both yourself and any entities hit will take armor piercing damage.");
 		
 	}
 

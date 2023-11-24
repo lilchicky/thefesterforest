@@ -5,11 +5,13 @@ import java.util.List;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item.TFFItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -25,7 +27,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class AncientWhistle extends Item {
+public class AncientWhistle extends TFFItem {
 	
 	private int whistleDamage = 5;
 	
@@ -67,42 +69,25 @@ public class AncientWhistle extends Item {
 		
 		return super.use(world, player, hand);
 	}
+
+	@Override
+	public String itemType() {
+		return "dull";
+	}
+
+	@Override
+	public String itemName() {
+		return "ancient_whistle";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Dull").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("An ancient whistle, releasing a deafening pitch when blown.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Right click to emit a powerful shockwave of sound").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("around you. Any entities hit will fly away from you.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("Both yourself and any entities hit will take " + whistleDamage).withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("armor piercing damage.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		else {
-			lore.add(new TextComponent("Dull").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("An ancient whistle, releasing a deafening pitch when blown.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		
-		super.appendHoverText(stack, world, lore, flag);
+	public boolean isShiftable() {
+		return true;
 	}
 
 }

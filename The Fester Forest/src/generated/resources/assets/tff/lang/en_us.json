@@ -1,4 +1,5 @@
 {
+  "ability.tff.ancient_whistle": "Right click to emit a powerful shockwave of sound around you.Any entities hit will fly away from you. Both yourself and any entities hit will take armor piercing damage.",
   "block.tff.blue_fester_shroom_block": "Blue Fester Shroom Block",
   "block.tff.compressed_rotting_sand": "Compressed Rotting Sand",
   "block.tff.compressed_rotting_sand_button": "Compressed Rotting Sand Button",
@@ -135,6 +136,7 @@
   "death.attack.tff_volatile_ghost.player": "%1$s was obliterated by %2$s",
   "death.attack.tff_volatile_sword": "%1$s burned up by a flaming blade",
   "death.attack.tff_volatile_sword.player": "%1$s incinerated %2$s with a fiery blade",
+  "description.tff.ancient_whistle": "An ancient whistle, releasing a deafening pitch when blown.",
   "effect.tff.goop_acid": "Acidic Goop",
   "effect.tff.paralysis": "Paralysis",
   "enchantment.tff.arcane_power": "Arcane Power",
@@ -318,5 +320,8 @@
   "item.tff.volatile_sword": "Volatile Sword",
   "item.tff.wight_spawn_egg": "Wight Spawn Egg",
   "item.tff.wither_orb": "Orb of Decay",
-  "itemGroup.tff": "The Fester Forest"
+  "itemGroup.tff": "The Fester Forest",
+  "type.tff.drops_from": "Drops From:",
+  "type.tff.dull": "Dull",
+  "type.tff.more_info": "Press SHIFT for more info."
 }
