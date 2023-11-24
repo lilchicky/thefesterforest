@@ -14,8 +14,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
 public abstract class TFFSwordItem extends SwordItem {
-	
-	public String[] dropsFrom;
 
 	public TFFSwordItem(Tier p_43269_, int p_43270_, float p_43271_, Properties p_43272_) {
 		super(p_43269_, p_43270_, p_43271_, p_43272_);
@@ -23,10 +21,7 @@ public abstract class TFFSwordItem extends SwordItem {
 	
 	public abstract String itemType();
 	public abstract String itemName();
-	
-	public void setDrops(String[] drops) {
-		dropsFrom = drops;
-	}
+	public abstract String[] dropsFrom();
 	
 	public boolean isShiftable() {
 		return false;
@@ -44,8 +39,8 @@ public abstract class TFFSwordItem extends SwordItem {
 			lore.add(new TextComponent(" "));
 			lore.add(new TranslatableComponent("type.tff.drops_from").withStyle(ChatFormatting.LIGHT_PURPLE));
 			lore.add(new TextComponent(" "));
-			for (int x = 0; x < dropsFrom.length; x++) {
-				lore.add(new TextComponent(dropsFrom[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < dropsFrom().length; x++) {
+				lore.add(new TextComponent(dropsFrom()[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
 			}
 			lore.add(new TextComponent(" "));
 		}
@@ -60,8 +55,8 @@ public abstract class TFFSwordItem extends SwordItem {
 			}
 			lore.add(new TranslatableComponent("type.tff.drops_from").withStyle(ChatFormatting.LIGHT_PURPLE));
 			lore.add(new TextComponent(" "));
-			for (int x = 0; x < dropsFrom.length; x++) {
-				lore.add(new TextComponent(dropsFrom[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < dropsFrom().length; x++) {
+				lore.add(new TextComponent(dropsFrom()[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
 			}
 			lore.add(new TextComponent(" "));
 		}

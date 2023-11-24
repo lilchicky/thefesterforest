@@ -35,7 +35,6 @@ public class AncientWhistle extends TFFItem {
 	
 	public AncientWhistle(Properties properties) {
 		super(properties);
-		this.setDrops(drops);
 	}
 	
 	@Override
@@ -83,6 +82,11 @@ public class AncientWhistle extends TFFItem {
 	@Override
 	public boolean isShiftable() {
 		return true;
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
 	}
 
 }

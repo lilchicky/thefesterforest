@@ -13,8 +13,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
 public abstract class TFFItem extends Item {
-	
-	private String[] dropsFrom;
 
 	public TFFItem(Properties properties) {
 		super(properties);
@@ -22,10 +20,7 @@ public abstract class TFFItem extends Item {
 	
 	public abstract String itemType();
 	public abstract String itemName();
-	
-	public void setDrops(String[] drops) {
-		dropsFrom = drops;
-	}
+	public abstract String[] dropsFrom();
 	
 	public boolean isShiftable() {
 		return false;
@@ -42,8 +37,8 @@ public abstract class TFFItem extends Item {
 			lore.add(new TranslatableComponent("ability.tff." + itemName()).withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(" "));
 			lore.add(new TranslatableComponent("type.tff.drops_from").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < dropsFrom.length; x++) {
-				lore.add(new TextComponent(dropsFrom[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < dropsFrom().length; x++) {
+				lore.add(new TextComponent(dropsFrom()[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
 			}
 			lore.add(new TextComponent(" "));
 		}
@@ -57,8 +52,8 @@ public abstract class TFFItem extends Item {
 				lore.add(new TextComponent(" "));
 			}
 			lore.add(new TranslatableComponent("type.tff.drops_from").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < dropsFrom.length; x++) {
-				lore.add(new TextComponent(dropsFrom[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			for (int x = 0; x < dropsFrom().length; x++) {
+				lore.add(new TextComponent(dropsFrom()[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
 			}
 			lore.add(new TextComponent(" "));
 		}

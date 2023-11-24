@@ -36,7 +36,6 @@ public class DualWieldSword extends TFFItem {
 	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "weapon damage", 6.0, AttributeModifier.Operation.ADDITION));
 
 	    this.defaultModifiers = builder.build();
-	    this.setDrops(drops);
 		
 	}
 	
@@ -54,6 +53,11 @@ public class DualWieldSword extends TFFItem {
 	@Override
 	public String itemName() {
 		return "dual_wield_sword";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
 	}
 
 }
