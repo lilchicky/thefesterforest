@@ -33,6 +33,8 @@ public class CorrodedShroom extends FlowerBlock implements SimpleWaterloggedBloc
 		this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(true)));
 	}
 	
+	// This is on master branch.
+	
 	@Nullable
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
