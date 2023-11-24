@@ -9,7 +9,7 @@ modLoader="javafml" #mandatory
 loaderVersion="[40,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
-license="MIT"
+license="CC-BY-NC-4.0"
 # A URL to refer people to when problems occur with this mod
 issueTrackerURL="https://github.com/lilchicky/thefesterforest/issues" #optional
 # A list of mods - how many allowed here is determined by the individual mod loader
@@ -33,17 +33,7 @@ credits="Art: Amaresse, Akhlys, Strawberreiii | Debugging and Playtesting: Insom
 # A text field displayed in the mod UI
 authors="LilChicky" #optional
 # The description text for the mod (multi line!) (#mandatory)
-description='''
-What lies in the darkness...
-
-The Fester Forest is a dimension mod aimed at adding
-lots and lots of fun loot to mix and match, from tanky
-loadouts to high damage loadouts. 
-
-Hopefully your adventures bring some spice to your endgame!
-
-Please report issues on the GitHub issue tracker.
-'''
+description="Welcome to the Fester Forest!\n\nThe Fester Forest mod is aimed at providing post-\nvanilla end game content, focusing on customization and\nexploration. Find the armor and weapons that suit your playstyle,\nfrom magic to melee to tank, all while exploring a mysterious\nrotting forest. Fight hard bosses, delve into large structures,\nand more.\n\nHappy adventuring!\n\nPlease report issues on the GitHub issue tracker."
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.tff]] #optional
     # the modid of the dependency
