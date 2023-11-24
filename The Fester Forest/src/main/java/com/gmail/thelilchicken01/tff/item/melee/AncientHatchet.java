@@ -5,8 +5,8 @@ import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
-import com.gmail.thelilchicken01.tff.item.item.EffectsUtil;
-import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.EffectsUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap.Builder;

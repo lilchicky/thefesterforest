@@ -1,4 +1,4 @@
-package com.gmail.thelilchicken01.tff.item.item;
+package com.gmail.thelilchicken01.tff.item.item_util;
 
 import java.util.List;
 

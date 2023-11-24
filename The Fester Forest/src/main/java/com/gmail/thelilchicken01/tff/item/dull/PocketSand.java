@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
-import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

@@ -6,7 +6,7 @@ import java.util.function.BiFunction;
 
 import javax.annotation.Nullable;
 
-import com.gmail.thelilchicken01.tff.item.item.ICuriosUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.ICuriosUtil;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;

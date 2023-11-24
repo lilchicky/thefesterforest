@@ -4,7 +4,8 @@ import java.util.List;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
-import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -27,7 +28,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class AngelicWhistle extends Item {
+public class AngelicWhistle extends TFFItem {
 	
 	private int whistleDamage = 10;
 	private int slowFallDuration = 5;
@@ -36,7 +37,7 @@ public class AngelicWhistle extends Item {
 	
 	public AngelicWhistle(Properties properties) {
 		super(properties);
-		
+		this.setDrops(drops);
 	}
 	
 	@Override
@@ -70,42 +71,20 @@ public class AngelicWhistle extends Item {
 		
 		return super.use(world, player, hand);
 	}
+
+	@Override
+	public String itemType() {
+		return "dull";
+	}
+
+	@Override
+	public String itemName() {
+		return "angelic_whistle";
+	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Dull").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("An impossibly light whistle, crafted from an old Ancient Whistle.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Right click to play an angelic harmony of sound").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("around you. Any entities that hear it will fly away from you and").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("recieve slow falling for " + slowFallDuration + " seconds.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("Mobs hit around you take " + whistleDamage + " armor piercing damage.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		else {
-			lore.add(new TextComponent("Dull").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("An impossibly light whistle, crafted from an old Ancient Whistle.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		
-		super.appendHoverText(stack, world, lore, flag);
+	public boolean isShiftable() {
+		return true;
 	}
 
 }

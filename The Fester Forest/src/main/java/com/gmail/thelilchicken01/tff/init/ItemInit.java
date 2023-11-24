@@ -75,7 +75,7 @@ import com.gmail.thelilchicken01.tff.item.food.RottingCarrot;
 import com.gmail.thelilchicken01.tff.item.food.RottingPie;
 import com.gmail.thelilchicken01.tff.item.food.ShroomCluster;
 import com.gmail.thelilchicken01.tff.item.food.VolatileApple;
-import com.gmail.thelilchicken01.tff.item.item.ModTiers;
+import com.gmail.thelilchicken01.tff.item.item_util.ModTiers;
 import com.gmail.thelilchicken01.tff.item.magic.BoneLauncher;
 import com.gmail.thelilchicken01.tff.item.magic.BookOfGluttony;
 import com.gmail.thelilchicken01.tff.item.magic.BrittleBranch;

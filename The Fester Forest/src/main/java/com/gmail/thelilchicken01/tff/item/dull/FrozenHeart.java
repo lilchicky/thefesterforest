@@ -3,7 +3,7 @@ package com.gmail.thelilchicken01.tff.item.dull;
 import java.util.List;
 import java.util.UUID;
 
-import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;

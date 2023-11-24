@@ -5,8 +5,8 @@ import java.util.List;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
-import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
-import com.gmail.thelilchicken01.tff.item.item.ModTiers;
+import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.ModTiers;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

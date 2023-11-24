@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFItem;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
@@ -22,7 +23,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class DualWieldSword extends Item {
+public class DualWieldSword extends TFFItem {
 	
 	private String[] drops = {"Fester Forest Loot Chests"};
 	
@@ -35,6 +36,7 @@ public class DualWieldSword extends Item {
 	    builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "weapon damage", 6.0, AttributeModifier.Operation.ADDITION));
 
 	    this.defaultModifiers = builder.build();
+	    this.setDrops(drops);
 		
 	}
 	
@@ -43,23 +45,15 @@ public class DualWieldSword extends Item {
 		
 		return slot == EquipmentSlot.OFFHAND ? this.defaultModifiers : super.getDefaultAttributeModifiers(slot);
 	}
-	
+
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		lore.add(new TextComponent("Dull").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("A short sword, extremely effective when used").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("alongside another weapon.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-		for (int x = 0; x < drops.length; x++) {
-			lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-		}
-		lore.add(new TextComponent(""));
-		
-		super.appendHoverText(stack, world, lore, flag);
+	public String itemType() {
+		return "dull";
+	}
+
+	@Override
+	public String itemName() {
+		return "dual_wield_sword";
 	}
 
 }

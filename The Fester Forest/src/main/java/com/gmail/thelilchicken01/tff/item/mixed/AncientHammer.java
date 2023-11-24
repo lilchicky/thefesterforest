@@ -6,8 +6,8 @@ import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
-import com.gmail.thelilchicken01.tff.item.item.EffectsUtil;
-import com.gmail.thelilchicken01.tff.item.item.ModTiers;
+import com.gmail.thelilchicken01.tff.item.item_util.EffectsUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.ModTiers;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

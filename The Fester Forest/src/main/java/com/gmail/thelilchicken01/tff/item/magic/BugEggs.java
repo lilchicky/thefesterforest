@@ -7,9 +7,9 @@ import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.custom.PlayerCrunchBeetleEntity;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
-import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
-import com.gmail.thelilchicken01.tff.item.item.item_types.MagicItem;
-import com.gmail.thelilchicken01.tff.item.item.item_types.MagicWeapon;
+import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.MagicItem;
+import com.gmail.thelilchicken01.tff.item.item_util.MagicWeapon;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

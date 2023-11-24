@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
-import com.gmail.thelilchicken01.tff.item.item.MagicModUtil;
-import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
+import com.gmail.thelilchicken01.tff.item.item_util.MagicModUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.MagicOrb;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;

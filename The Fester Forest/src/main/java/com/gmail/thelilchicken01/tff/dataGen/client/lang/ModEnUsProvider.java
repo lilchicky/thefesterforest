@@ -361,6 +361,9 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("type.tff.drops_from", "Drops From:");
 		
 		add("type.tff.dull", "Dull");
+		add("type.tff.magic", "Magic");
+		add("type.tff.melee", "Melee");
+		add("type.tff.ranged", "Ranged");
 		
 		/*
 		 * 
@@ -368,7 +371,9 @@ public class ModEnUsProvider extends LanguageProvider {
 		 * 
 		 */
 		
-		add("description.tff.ancient_whistle", "An ancient whistle, releasing a deafening pitch when blown.");
+		add("description.tff.ancient_whistle", "An ancient, crumbling, black whistle.");
+		add("description.tff.dual_wield_sword", "A short, lightweight sword, easy to wield alongside another weapon.");
+		add("description.tff.angelic_whistle", "An impossibly light whistle.");
 		
 		/*
 		 * 
@@ -376,7 +381,12 @@ public class ModEnUsProvider extends LanguageProvider {
 		 * 
 		 */
 		
-		add("ability.tff.ancient_whistle", "Right click to emit a powerful shockwave of sound around you.Any entities hit will fly away from you. Both yourself and any entities hit will take armor piercing damage.");
+		add("ability.tff.ancient_whistle", "Right click to emit a powerful shockwave of sound around you. "
+				+ "Any mobs hit will fly away from you. Both yourself and any mobs hit "
+				+ "will take armor piercing damage.");
+		add("ability.tff.angelic_whistle", "Right click to create a beautiful harmony of music, launching"
+				+ " and lifting all surrounding mobs away from you. Any mobs that hear your music "
+				+ "take armor piercing damage.");
 		
 	}
 

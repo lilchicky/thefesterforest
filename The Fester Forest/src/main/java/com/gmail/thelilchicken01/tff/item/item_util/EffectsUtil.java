@@ -1,4 +1,4 @@
-package com.gmail.thelilchicken01.tff.item.item;
+package com.gmail.thelilchicken01.tff.item.item_util;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;

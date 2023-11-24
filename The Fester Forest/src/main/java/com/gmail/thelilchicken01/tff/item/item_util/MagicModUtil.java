@@ -1,4 +1,4 @@
-package com.gmail.thelilchicken01.tff.item.item;
+package com.gmail.thelilchicken01.tff.item.item_util;
 
 import javax.annotation.Nullable;
 
@@ -9,7 +9,6 @@ import com.gmail.thelilchicken01.tff.entity.projectile.FrostBolt;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
-import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
 import com.gmail.thelilchicken01.tff.item.projectile.FrostBoltProjectile;
 
 import net.minecraft.core.particles.ParticleTypes;

@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
-import com.gmail.thelilchicken01.tff.item.item.ICuriosUtil.Type;
+import com.gmail.thelilchicken01.tff.item.item_util.ICuriosUtil.Type;
 import com.gmail.thelilchicken01.tff.util.InventoryHelper;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;

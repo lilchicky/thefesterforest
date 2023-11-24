@@ -7,9 +7,9 @@ import javax.annotation.Nullable;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
-import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
-import com.gmail.thelilchicken01.tff.item.item.MagicModUtil;
-import com.gmail.thelilchicken01.tff.item.item.item_types.MagicOrb;
+import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.MagicModUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.MagicOrb;
 import com.gmail.thelilchicken01.tff.item.projectile.FrozenRockShot;
 
 import net.minecraft.core.BlockPos;

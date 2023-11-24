@@ -11,7 +11,7 @@ import com.gmail.thelilchicken01.tff.client.CommonEventBusSubscriber;
 import com.gmail.thelilchicken01.tff.client.HandlerPriority;
 import com.gmail.thelilchicken01.tff.client.PlayerHurtHandler;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
-import com.gmail.thelilchicken01.tff.item.item.ICuriosUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.ICuriosUtil;
 import com.gmail.thelilchicken01.tff.util.InventoryHelper;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;

@@ -4,8 +4,8 @@ import java.util.List;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
-import com.gmail.thelilchicken01.tff.item.item.ItemUtil;
-import com.gmail.thelilchicken01.tff.item.item.TFFItem;
+import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -35,7 +35,7 @@ public class AncientWhistle extends TFFItem {
 	
 	public AncientWhistle(Properties properties) {
 		super(properties);
-		
+		this.setDrops(drops);
 	}
 	
 	@Override
@@ -78,11 +78,6 @@ public class AncientWhistle extends TFFItem {
 	@Override
 	public String itemName() {
 		return "ancient_whistle";
-	}
-
-	@Override
-	public String[] dropsFrom() {
-		return drops;
 	}
 	
 	@Override
