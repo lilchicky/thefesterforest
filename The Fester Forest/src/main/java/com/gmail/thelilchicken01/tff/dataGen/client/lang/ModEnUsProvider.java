@@ -400,7 +400,20 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.thick_bone", "A very, very heavy bone. Makes you much too heavy to float.");
 		
 		// Food
-		
+		add("description.tff.ambectrum_donut", "A sweet donut, coated in a layer of Ambectrum jelly.");
+		add("description.tff.ambectrum_jelly", "A slightly minty glowing blue jelly");
+		add("description.tff.bug_carcass", "The crunchy remains of a Reetle");
+		add("description.tff.cooked_rotfish", "Salt, pepper, and love go a long way");
+		add("description.tff.cooked_shroom_cluster", "A collection of earthy, slightly salty roasted mushrooms.");
+		add("description.tff.frozen_apple", "An apple encased in crunchy ice.");
+		add("description.tff.goopy_jello", "A very slimy block of bitter jello.");
+		add("description.tff.mechanical_apple", "A metallic apple full of small wires and electronics.");
+		add("description.tff.raw_rotfish", "A disgusting fish carcass, barely held together.");
+		add("description.tff.rotfish_special", "A cooked rotfish, complimented by roasted mushrooms.");
+		add("description.tff.rotting_carrot", "An old, squishy carrot.");
+		add("description.tff.rotting_pie", "A delectable combination of rot and decay.");
+		add("description.tff.shroom_cluster", "A bundle of wet, salty mushrooms.");
+		add("description.tff.volatile_apple", "A cruncy, burning apple");
 		
 		/*
 		 * 
