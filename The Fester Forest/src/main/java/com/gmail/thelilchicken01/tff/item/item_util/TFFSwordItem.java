@@ -20,12 +20,8 @@ public abstract class TFFSwordItem extends SwordItem {
 	}
 	
 	public abstract String itemType();
-	public abstract String itemName();
 	public abstract String[] dropsFrom();
-	
-	public boolean isShiftable() {
-		return false;
-	}
+	public abstract boolean isShiftable();
 	
 	@Override
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
@@ -33,12 +29,11 @@ public abstract class TFFSwordItem extends SwordItem {
 		if(isShiftable() && Screen.hasShiftDown()) {
 			lore.add(new TranslatableComponent("type.tff." + itemType()).withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(" "));
-			lore.add(new TranslatableComponent("description.tff." + itemName()).withStyle(ChatFormatting.GRAY));
+			lore.add(new TranslatableComponent("description.tff." + this.getRegistryName().getPath()).withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(" "));
-			lore.add(new TranslatableComponent("ability.tff." + itemName()).withStyle(ChatFormatting.AQUA));
+			lore.add(new TranslatableComponent("ability.tff." + this.getRegistryName().getPath()).withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(" "));
 			lore.add(new TranslatableComponent("type.tff.drops_from").withStyle(ChatFormatting.LIGHT_PURPLE));
-			lore.add(new TextComponent(" "));
 			for (int x = 0; x < dropsFrom().length; x++) {
 				lore.add(new TextComponent(dropsFrom()[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
 			}
@@ -47,14 +42,13 @@ public abstract class TFFSwordItem extends SwordItem {
 		else {
 			lore.add(new TranslatableComponent("type.tff." + itemType()).withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(" "));
-			lore.add(new TranslatableComponent("description.tff." + itemName()).withStyle(ChatFormatting.GRAY));
+			lore.add(new TranslatableComponent("description.tff." + this.getRegistryName().getPath()).withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(" "));
 			if (isShiftable()) {
 				lore.add(new TranslatableComponent("type.tff.more_info").withStyle(ChatFormatting.YELLOW));
 				lore.add(new TextComponent(" "));
 			}
 			lore.add(new TranslatableComponent("type.tff.drops_from").withStyle(ChatFormatting.LIGHT_PURPLE));
-			lore.add(new TextComponent(" "));
 			for (int x = 0; x < dropsFrom().length; x++) {
 				lore.add(new TextComponent(dropsFrom()[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
 			}

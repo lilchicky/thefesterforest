@@ -3,6 +3,7 @@ package com.gmail.thelilchicken01.tff.item.dull;
 import java.util.List;
 import java.util.UUID;
 
+import com.gmail.thelilchicken01.tff.item.item_util.TFFItem;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
@@ -22,7 +23,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
-public class HeavyStone extends Item implements ICurioItem {
+public class HeavyStone extends TFFItem implements ICurioItem {
 	
 	private String[] drops = {"Fester Forest Loot Chests"};
 	
@@ -74,6 +75,21 @@ public class HeavyStone extends Item implements ICurioItem {
 		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);
+	}
+
+	@Override
+	public String itemType() {
+		return "dull";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
+
+	@Override
+	public boolean isShiftable() {
+		return false;
 	}
 	
 

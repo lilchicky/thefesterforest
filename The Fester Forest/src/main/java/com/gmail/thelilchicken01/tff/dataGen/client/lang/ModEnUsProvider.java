@@ -375,6 +375,13 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.dual_wield_sword", "A short, lightweight sword, easy to wield alongside another weapon.");
 		add("description.tff.angelic_whistle", "An impossibly light whistle.");
 		add("description.tff.explosive_powder", "A bottle of a mysterious, highly reactive powder.");
+		add("description.tff.flesh_ball", "A wet ball of warm, pulsating flesh.");
+		add("description.tff.forgemaster_heart", "The still-beating mechanical heart of the Forgemaster.");
+		add("description.tff.frozen_heart", "The cold, hard heart of the Frostbitten King.");
+		add("description.tff.glacial_stomach", "A powerful stomach granting immunity to Hunger and Nausea.");
+		add("description.tff.goopy_stone", "A sticky stone, preventing you from receiving Levitation or Slowness.");
+		add("description.tff.gravity_gauntlet", "A stone gauntlet infused with a mysterious magic.");
+		add("description.tff.heavy_stone", "A heavy stone that makes you much too heavy to levitate.");
 		
 		/*
 		 * 
@@ -382,13 +389,14 @@ public class ModEnUsProvider extends LanguageProvider {
 		 * 
 		 */
 		
-		add("ability.tff.ancient_whistle", "Right click to emit a powerful shockwave of sound around you. "
+		add("ability.tff.ancient_whistle", "Use item to emit a powerful shockwave of sound around you. "
 				+ "Any mobs hit will fly away from you. Both yourself and any mobs hit "
 				+ "will take armor piercing damage.");
-		add("ability.tff.angelic_whistle", "Right click to create a beautiful harmony of music, launching"
+		add("ability.tff.angelic_whistle", "Use item to create a beautiful harmony of music, launching"
 				+ " and lifting all surrounding mobs away from you. Any mobs that hear your music "
 				+ "take armor piercing damage.");
-		add("ability.tff.explosive_powder", "Right click to violently launch yourself forward.");
+		add("ability.tff.explosive_powder", "Use item to violently launch yourself forward.");
+		add("ability.tff.flesh_ball", "Use item to squeeze the ball and give yourself very high regeneration at the expense of your movement speed.");
 		
 	}
 

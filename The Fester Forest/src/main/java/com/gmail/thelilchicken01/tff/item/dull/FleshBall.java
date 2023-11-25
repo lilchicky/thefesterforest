@@ -2,6 +2,8 @@ package com.gmail.thelilchicken01.tff.item.dull;
 
 import java.util.List;
 
+import com.gmail.thelilchicken01.tff.item.item_util.TFFItem;
+
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -19,7 +21,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class FleshBall extends Item {
+public class FleshBall extends TFFItem {
 	
 	private String[] drops = {"Wight", "Fester Forest Loot Chests"};
 	
@@ -42,40 +44,20 @@ public class FleshBall extends Item {
 		
 		return super.use(world, player, hand);
 	}
+
+	@Override
+	public String itemType() {
+		return "dull";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Dull").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A goopy ball of warm, pulsating flesh.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Right click to apply regeneration 20 and slowness").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("5 for " + duration + " seconds.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		else {
-			lore.add(new TextComponent("Dull").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A goopy ball of warm, pulsating flesh.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		
-		super.appendHoverText(stack, world, lore, flag);
+	public boolean isShiftable() {
+		return true;
 	}
 
 }

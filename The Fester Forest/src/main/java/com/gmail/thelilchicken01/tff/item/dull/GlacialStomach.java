@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFItem;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
@@ -24,7 +25,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
-public class GlacialStomach extends Item implements ICurioItem {
+public class GlacialStomach extends TFFItem implements ICurioItem {
 	
 	private String[] drops = {"Glacial Titan", "Fester Forest Loot Chests"};
 	
@@ -65,23 +66,20 @@ public class GlacialStomach extends Item implements ICurioItem {
 		
 		ICurioItem.super.curioTick(slotContext, stack);
 	}
-	
+
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		lore.add(new TextComponent("Dull").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("An iron stomach is so yesterday.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("Grants immunity to Hunger and Nausea.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-		for (int x = 0; x < drops.length; x++) {
-			lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-		}
-		lore.add(new TextComponent(""));
-		
-		super.appendHoverText(stack, world, lore, flag);
+	public String itemType() {
+		return "dull";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
+
+	@Override
+	public boolean isShiftable() {
+		return false;
 	}
 	
 

@@ -20,10 +20,7 @@ public abstract class TFFItem extends Item {
 	
 	public abstract String itemType();
 	public abstract String[] dropsFrom();
-	
-	public boolean isShiftable() {
-		return false;
-	}
+	public abstract boolean isShiftable();
 	
 	@Override
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
@@ -31,9 +28,9 @@ public abstract class TFFItem extends Item {
 		if(isShiftable() && Screen.hasShiftDown()) {
 			lore.add(new TranslatableComponent("type.tff." + itemType()).withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(" "));
-			lore.add(new TranslatableComponent("description.tff." + this.getRegistryName()).withStyle(ChatFormatting.GRAY));
+			lore.add(new TranslatableComponent("description.tff." + this.getRegistryName().getPath()).withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(" "));
-			lore.add(new TranslatableComponent("ability.tff." + this.getRegistryName()).withStyle(ChatFormatting.AQUA));
+			lore.add(new TranslatableComponent("ability.tff." + this.getRegistryName().getPath()).withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(" "));
 			lore.add(new TranslatableComponent("type.tff.drops_from").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < dropsFrom().length; x++) {
@@ -44,7 +41,7 @@ public abstract class TFFItem extends Item {
 		else {
 			lore.add(new TranslatableComponent("type.tff." + itemType()).withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(" "));
-			lore.add(new TranslatableComponent("description.tff." + this.getRegistryName()).withStyle(ChatFormatting.GRAY));
+			lore.add(new TranslatableComponent("description.tff." + this.getRegistryName().getPath()).withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(" "));
 			if (isShiftable()) {
 				lore.add(new TranslatableComponent("type.tff.more_info").withStyle(ChatFormatting.YELLOW));

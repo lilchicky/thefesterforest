@@ -55,4 +55,9 @@ public class DualWieldSword extends TFFItem {
 		return drops;
 	}
 
+	@Override
+	public boolean isShiftable() {
+		return false;
+	}
+
 }
