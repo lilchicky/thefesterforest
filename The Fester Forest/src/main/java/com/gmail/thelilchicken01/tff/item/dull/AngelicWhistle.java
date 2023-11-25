@@ -64,11 +64,6 @@ public class AngelicWhistle extends TFFItem {
 	public String itemType() {
 		return "dull";
 	}
-
-	@Override
-	public String itemName() {
-		return "angelic_whistle";
-	}
 	
 	@Override
 	public boolean isShiftable() {

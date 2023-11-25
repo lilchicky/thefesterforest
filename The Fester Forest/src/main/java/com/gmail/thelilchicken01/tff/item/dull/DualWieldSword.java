@@ -51,11 +51,6 @@ public class DualWieldSword extends TFFItem {
 	}
 
 	@Override
-	public String itemName() {
-		return "dual_wield_sword";
-	}
-
-	@Override
 	public String[] dropsFrom() {
 		return drops;
 	}

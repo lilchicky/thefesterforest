@@ -374,6 +374,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.ancient_whistle", "An ancient, crumbling, black whistle.");
 		add("description.tff.dual_wield_sword", "A short, lightweight sword, easy to wield alongside another weapon.");
 		add("description.tff.angelic_whistle", "An impossibly light whistle.");
+		add("description.tff.explosive_powder", "A bottle of a mysterious, highly reactive powder.");
 		
 		/*
 		 * 
@@ -387,6 +388,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("ability.tff.angelic_whistle", "Right click to create a beautiful harmony of music, launching"
 				+ " and lifting all surrounding mobs away from you. Any mobs that hear your music "
 				+ "take armor piercing damage.");
+		add("ability.tff.explosive_powder", "Right click to violently launch yourself forward.");
 		
 	}
 

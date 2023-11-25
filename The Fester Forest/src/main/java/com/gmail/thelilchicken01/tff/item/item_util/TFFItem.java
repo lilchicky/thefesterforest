@@ -19,7 +19,6 @@ public abstract class TFFItem extends Item {
 	}
 	
 	public abstract String itemType();
-	public abstract String itemName();
 	public abstract String[] dropsFrom();
 	
 	public boolean isShiftable() {
@@ -32,9 +31,9 @@ public abstract class TFFItem extends Item {
 		if(isShiftable() && Screen.hasShiftDown()) {
 			lore.add(new TranslatableComponent("type.tff." + itemType()).withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(" "));
-			lore.add(new TranslatableComponent("description.tff." + itemName()).withStyle(ChatFormatting.GRAY));
+			lore.add(new TranslatableComponent("description.tff." + this.getRegistryName()).withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(" "));
-			lore.add(new TranslatableComponent("ability.tff." + itemName()).withStyle(ChatFormatting.AQUA));
+			lore.add(new TranslatableComponent("ability.tff." + this.getRegistryName()).withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(" "));
 			lore.add(new TranslatableComponent("type.tff.drops_from").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < dropsFrom().length; x++) {
@@ -45,7 +44,7 @@ public abstract class TFFItem extends Item {
 		else {
 			lore.add(new TranslatableComponent("type.tff." + itemType()).withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
 			lore.add(new TextComponent(" "));
-			lore.add(new TranslatableComponent("description.tff." + itemName()).withStyle(ChatFormatting.GRAY));
+			lore.add(new TranslatableComponent("description.tff." + this.getRegistryName()).withStyle(ChatFormatting.GRAY));
 			lore.add(new TextComponent(" "));
 			if (isShiftable()) {
 				lore.add(new TranslatableComponent("type.tff.more_info").withStyle(ChatFormatting.YELLOW));
