@@ -6,6 +6,7 @@ import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.custom.CorrodedShroomEntity;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -25,7 +26,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class ShroomBucket extends Item {
+public class ShroomBucket extends TFFItem {
 
 	public ShroomBucket() {
 		super(new Properties().tab(TheFesterForest.TFF_TAB).stacksTo(1));
@@ -60,19 +61,20 @@ public class ShroomBucket extends Item {
 		
 		return InteractionResult.FAIL;
 	}
-	
+
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		lore.add(new TextComponent("Dull").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("A bucket with a shroom in it.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("Mushrum... Mushrum... Mushrum...").withStyle(ChatFormatting.DARK_GRAY).withStyle(ChatFormatting.ITALIC));
-		lore.add(new TextComponent(""));
-		
-		super.appendHoverText(stack, world, lore, flag);
+	public String itemType() {
+		return "dull";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return null;
+	}
+
+	@Override
+	public boolean isShiftable() {
+		return false;
 	}
 
 }

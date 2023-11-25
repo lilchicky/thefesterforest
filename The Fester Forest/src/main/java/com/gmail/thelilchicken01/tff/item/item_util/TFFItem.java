@@ -32,11 +32,13 @@ public abstract class TFFItem extends Item {
 			lore.add(new TextComponent(" "));
 			lore.add(new TranslatableComponent("ability.tff." + this.getRegistryName().getPath()).withStyle(ChatFormatting.AQUA));
 			lore.add(new TextComponent(" "));
-			lore.add(new TranslatableComponent("type.tff.drops_from").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < dropsFrom().length; x++) {
-				lore.add(new TextComponent(dropsFrom()[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			if (dropsFrom() != null) {
+				lore.add(new TranslatableComponent("type.tff.drops_from").withStyle(ChatFormatting.LIGHT_PURPLE));
+				for (int x = 0; x < dropsFrom().length; x++) {
+					lore.add(new TextComponent(dropsFrom()[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+				}
+				lore.add(new TextComponent(" "));
 			}
-			lore.add(new TextComponent(" "));
 		}
 		else {
 			lore.add(new TranslatableComponent("type.tff." + itemType()).withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
@@ -47,11 +49,13 @@ public abstract class TFFItem extends Item {
 				lore.add(new TranslatableComponent("type.tff.more_info").withStyle(ChatFormatting.YELLOW));
 				lore.add(new TextComponent(" "));
 			}
-			lore.add(new TranslatableComponent("type.tff.drops_from").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < dropsFrom().length; x++) {
-				lore.add(new TextComponent(dropsFrom()[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+			if (dropsFrom() != null) {
+				lore.add(new TranslatableComponent("type.tff.drops_from").withStyle(ChatFormatting.LIGHT_PURPLE));
+				for (int x = 0; x < dropsFrom().length; x++) {
+					lore.add(new TextComponent(dropsFrom()[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
+				}
+				lore.add(new TextComponent(" "));
 			}
-			lore.add(new TextComponent(" "));
 		}
 		
 		super.appendHoverText(stack, world, lore, flag);

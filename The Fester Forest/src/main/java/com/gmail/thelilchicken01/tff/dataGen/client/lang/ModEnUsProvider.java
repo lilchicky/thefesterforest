@@ -364,6 +364,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("type.tff.magic", "Magic");
 		add("type.tff.melee", "Melee");
 		add("type.tff.ranged", "Ranged");
+		add("type.tff.food", "Food");
 		
 		/*
 		 * 
@@ -371,6 +372,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		 * 
 		 */
 		
+		// Dull
 		add("description.tff.ancient_whistle", "An ancient, crumbling, black whistle.");
 		add("description.tff.dual_wield_sword", "A short, lightweight sword, easy to wield alongside another weapon.");
 		add("description.tff.angelic_whistle", "An impossibly light whistle.");
@@ -382,6 +384,23 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.goopy_stone", "A sticky stone, preventing you from receiving Levitation or Slowness.");
 		add("description.tff.gravity_gauntlet", "A stone gauntlet infused with a mysterious magic.");
 		add("description.tff.heavy_stone", "A heavy stone that makes you much too heavy to levitate.");
+		add("description.tff.mechanical_eye", "One of the Forgemaster's eyes. Using it grants Night Vision.");
+		add("description.tff.metal_scrap", "Some old pieces of the Forgemaster's armor.");
+		add("description.tff.frozen_shard", "Small slivers of the ice that once held the Frostbitten King");
+		add("description.tff.moon_shoes", "A pair of incredibly lightweight stone shoes.");
+		add("description.tff.pocket_sand", "A small pile of sand, seemingly never decreasing in size");
+		add("description.tff.purifying_powder", "A mysterious powder capable of changing the properties of items.");
+		add("description.tff.reetle_queen_antennae", "The Reetles follow their Queen.");
+		add("description.tff.reetle_reagents", "A small bag of reetle limbs, seemingly protecting the holder from fall damage.");
+		add("description.tff.reetle_shell", "The tough exoskeleton of the Reetle Queen");
+		add("description.tff.rotfish_fang", "The fang of a Deep Reaver. The venom grants immunity to Poison and Wither");
+		add("description.tff.shock_necklace", "A small ball of energy on a gold chain");
+		add("description.tff.shroom_bucket", "A bucket with a Shroom in it. Mushrum...");
+		add("description.tff.slippery_goop", "A bottle of a very slippery slime. Grants immunity to Slowness.");
+		add("description.tff.thick_bone", "A very, very heavy bone. Makes you much too heavy to float.");
+		
+		// Food
+		
 		
 		/*
 		 * 
@@ -397,6 +416,7 @@ public class ModEnUsProvider extends LanguageProvider {
 				+ "take armor piercing damage.");
 		add("ability.tff.explosive_powder", "Use item to violently launch yourself forward.");
 		add("ability.tff.flesh_ball", "Use item to squeeze the ball and give yourself very high regeneration at the expense of your movement speed.");
+		add("ability.tff.pocket_sand", "Use item to throw sand from your pocket, blinding any mobs hit.");
 		
 	}
 
