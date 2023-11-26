@@ -3,6 +3,7 @@ package com.gmail.thelilchicken01.tff.item.melee;
 import java.util.List;
 
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFSwordItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -23,7 +24,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class LifeScythe extends SwordItem {
+public class LifeScythe extends TFFSwordItem {
 	
 	private String[] drops = {"Wight", "Fester Forest Loot Chests"};
 	
@@ -65,45 +66,20 @@ public class LifeScythe extends SwordItem {
 		
 		return super.hurtEnemy(stack, target, attacker);
 	}
-	
+
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Melee").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A vibrating, living scythe, capable of healing").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("its wielder on every attack.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Right click to momentarily power yourself up,").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("gaining absorption hearts for " + absorptionSeconds + " seconds and").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("resistance for " + resistanceSeconds + " seconds. This boost comes").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("at a cost, however - you become ravenously hungry for").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(hungerSeconds + " seconds.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		else {
-			lore.add(new TextComponent("Melee").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A vibrating, living scythe, capable of healing").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("its wielder on every attack.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		
-		super.appendHoverText(stack, world, lore, flag);
+	public String itemType() {
+		return "melee";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
+
+	@Override
+	public boolean isShiftable() {
+		return true;
 	}
 
 }

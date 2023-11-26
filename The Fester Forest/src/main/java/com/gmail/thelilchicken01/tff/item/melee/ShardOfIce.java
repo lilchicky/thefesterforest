@@ -10,7 +10,7 @@ import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item_util.ModTiers;
-import com.gmail.thelilchicken01.tff.item.item_util.SwordProjectileItem;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFSwordProjectileItem;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 import com.gmail.thelilchicken01.tff.item.projectile.IceSpikeShot;
 import com.google.common.collect.ImmutableMultimap;
@@ -44,7 +44,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class ShardOfIce extends SwordProjectileItem {
+public class ShardOfIce extends TFFSwordProjectileItem {
 	
 	protected int bonusDamage;
 	protected double inaccuracy;
@@ -129,43 +129,20 @@ public class ShardOfIce extends SwordProjectileItem {
 	public int getDefaultProjectileRange() {
 		return 15;
 	}
-	
+
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Melee").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A very sharp shard of solid ice.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Right click to fire a sharp bolt of ice, dealing").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("damage equal to your sword's damage plus any equipment").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("damage buffs.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Affected by negative damage from equipment as well.").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.ITALIC));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		else {
-			lore.add(new TextComponent("Melee").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A very sharp shard of solid ice.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		
-		super.appendHoverText(stack, world, lore, flag);
+	public String itemType() {
+		return "melee";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
+
+	@Override
+	public boolean isShiftable() {
+		return true;
 	}
 
 }

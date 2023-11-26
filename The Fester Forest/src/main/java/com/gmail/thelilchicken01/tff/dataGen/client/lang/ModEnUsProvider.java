@@ -445,6 +445,20 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.volatile_necklace", "A scorching necklace fitted with a fiery charm.");
 		add("description.tff.wither_orb", "A glassy orb imbued with the souls of the dead.");
 		
+		// Melee
+		add("description.tff.ancient_dagger", "An ancient dagger, quick and sharp.");
+		add("description.tff.ancient_greatsword", "A massive, ancient iron blade.");
+		add("description.tff.ancient_hatchet", "An old, lightweight hatchet.");
+		add("description.tff.ancient_longsword", "A once powerful blade, now chipped and crumbling.");
+		add("description.tff.bone_scythe", "A razor-sharp scythe made of ancient bone.");
+		add("description.tff.forgemaster_hammer", "The massive, incredibly heavy hammer of the Forgemaster.");
+		add("description.tff.frost_mallet", "A large block of ice on the end of a heavy handle.");
+		add("description.tff.goopy_sword", "A big slimy sword. Coats anything hit in an acidic goop. Seems edible...");
+		add("description.tff.life_scythe", "A warm scythe that pulses with a soft heartbeat.");
+		add("description.tff.seathrown_pike", "A sharp point on the end of a very long, wet stick.");
+		add("description.tff.shard_of_ice", "A very sharp shard of solid ice.");
+		add("description.tff.shock_sword", "An electric beam stabilised by two prongs.");
+		
 		/*
 		 * 
 		 * Item Abilities
@@ -464,12 +478,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("ability.tff.wither_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
 		
 		// Other
-		add("ability.tff.ancient_whistle", "Use item to emit a powerful shockwave of sound around you. "
-				+ "Any mobs hit will fly away from you. Both yourself and any mobs hit "
-				+ "will take armor piercing damage.");
-		add("ability.tff.angelic_whistle", "Use item to create a beautiful harmony of music, launching"
-				+ " and lifting all surrounding mobs away from you. Any mobs that hear your music "
-				+ "take armor piercing damage.");
+		add("ability.tff.ancient_whistle", "Use item to emit a powerful shockwave of sound around you. Any mobs hit will fly away from you. Both yourself and any mobs hit will take armor piercing damage.");
+		add("ability.tff.angelic_whistle", "Use item to create a beautiful harmony of music, launching and lifting all surrounding mobs away from you. Any mobs that hear your music take armor piercing damage.");
 		add("ability.tff.explosive_powder", "Use item to violently launch yourself forward.");
 		add("ability.tff.flesh_ball", "Use item to squeeze the ball and give yourself very high regeneration at the expense of your movement speed.");
 		add("ability.tff.pocket_sand", "Use item to throw sand from your pocket, blinding any mobs hit.");
@@ -487,6 +497,12 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("ability.tff.shield_book", "Use item to temporarily grant yourself a large number of Absorption hearts.");
 		add("ability.tff.verdant_branch", "Use item on a mob to summon multiple poisoned homing projectiles.");
 		add("ability.tff.volatile_necklace", "While on fire, gain Strength");
+		add("ability.tff.ancient_hatchet", "Continuous attacks grant stacking attack speed.");
+		add("ability.tff.forgemaster_hammer", "The massive weight of the hammer applies large amounts of knockback to any mob hit.");
+		add("ability.tff.frost_mallet", "Use item to slam the mallet into the ground, dealing 50% of your max health to all nearby mobs.");
+		add("ability.tff.life_scythe", "Use item to grant yourself absorption and resistance for a short time. This power does, however, make you very hungry...");
+		add("ability.tff.shard_of_ice", "Use item to launch an icy projectile, dealing the same damage you would with a melee attack.");
+		add("ability.tff.shock_sword", "Has a chance to paralyze any mob hit.");
 		
 	}
 

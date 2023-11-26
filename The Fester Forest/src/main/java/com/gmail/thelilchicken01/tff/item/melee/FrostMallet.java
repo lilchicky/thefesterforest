@@ -7,6 +7,7 @@ import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
 import com.gmail.thelilchicken01.tff.item.item_util.ModTiers;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFSwordItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -28,7 +29,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 
-public class FrostMallet extends SwordItem {
+public class FrostMallet extends TFFSwordItem {
 	
 	private String[] drops = {"Glacial Titan", "Fester Forest Loot Chests"};
 	
@@ -91,39 +92,20 @@ public class FrostMallet extends SwordItem {
 		
 		return super.canApplyAtEnchantingTable(stack, enchantment);
 	}
-	
+
 	@Override
-	public void appendHoverText(ItemStack p_41421_, Level p_41422_, List<Component> lore, TooltipFlag p_41424_) {
-		
-		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Melee").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A large block of ice on the end of a heavy handle.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Right click to slam the mallet into the ground,").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("dealing 50% of your max HP to nearby entities.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		else {
-			lore.add(new TextComponent("Melee").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A large block of ice on the end of a heavy handle.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		
-		super.appendHoverText(p_41421_, p_41422_, lore, p_41424_);
+	public String itemType() {
+		return "melee";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
+
+	@Override
+	public boolean isShiftable() {
+		return true;
 	}
 
 }
