@@ -70,7 +70,7 @@ public class MechanicalHelmet extends ArmorItem {
 		if ( player.tickCount % 15 == 0 && !player.getLevel().isClientSide()) {
 		
 			if (ArmorSets.MECHANICAL.getArmorSet(player) == SetCount.TWO) {
-				ItemUtil.registerPotionEffect(MobEffects.DIG_SPEED, 0, player, 39);
+				ItemUtil.registerPotionEffect(MobEffects.DIG_SPEED, 1, player, 39);
 			}
 		
 		}
