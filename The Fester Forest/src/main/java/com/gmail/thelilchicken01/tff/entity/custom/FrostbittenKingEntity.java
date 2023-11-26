@@ -6,7 +6,9 @@ import com.gmail.thelilchicken01.tff.entity.projectile.FrostbittenBolt;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.projectile.FrostbittenBoltProjectile;
 
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
@@ -20,6 +22,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -46,6 +49,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	private AnimationFactory factory = new AnimationFactory(this);
 	private boolean aboutToAttack = false;
 	private boolean aboutToCooldown = false;
+	private boolean rolling = false;
 	
 	// Bullets
 	FrostbittenBoltProjectile bulletItem = ItemInit.FROSTBITTEN_BOLT.get();
@@ -137,6 +141,19 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	public void tick() {
 		
 		super.tick();
+		
+		if (this.tickCount % 20 == 0) {
+		
+			if (this.hasCustomName()) {
+				if (this.getCustomName().equals(new TextComponent("do a barrel roll"))) {
+					rolling = true;
+				}
+				else {
+					rolling = false;
+				}
+			}
+		
+		}
 		
 		nearbyPlayers = this.getLevel().getNearbyEntities(Player.class, TargetingConditions.DEFAULT, this, new AABB(
 				this.getX() - arenaRadius, 
@@ -480,37 +497,47 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	@SuppressWarnings("removal")
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
-		if(isInvulnerable()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.attack_phase", true));
+		if (rolling) {
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.do_a_barrel_roll", true));
 			return PlayState.CONTINUE;
 		}
 		else {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.vuln_phase", true));
-			return PlayState.CONTINUE;
+			if(isInvulnerable()) {
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.attack_phase", true));
+				return PlayState.CONTINUE;
+			}
+			else {
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.vuln_phase", true));
+				return PlayState.CONTINUE;
+			}
 		}
 		
 	}
 	
 	private PlayState transitionPredicate(AnimationEvent event) {
 		
-		if (aboutToAttack) {
-			
-			event.getController().markNeedsReload();
-			
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.vuln_to_attack_transition", false));
-			
-			aboutToAttack = false;
-			
-		}
+		if (!rolling) {
 		
-		else if (aboutToCooldown) {
+			if (aboutToAttack) {
+				
+				event.getController().markNeedsReload();
+				
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.vuln_to_attack_transition", false));
+				
+				aboutToAttack = false;
+				
+			}
 			
-			event.getController().markNeedsReload();
-			
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.attack_to_vuln_transition", false));
-			
-			aboutToCooldown = false;
-			
+			else if (aboutToCooldown) {
+				
+				event.getController().markNeedsReload();
+				
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.attack_to_vuln_transition", false));
+				
+				aboutToCooldown = false;
+				
+			}
+		
 		}
 		
 		return PlayState.CONTINUE;

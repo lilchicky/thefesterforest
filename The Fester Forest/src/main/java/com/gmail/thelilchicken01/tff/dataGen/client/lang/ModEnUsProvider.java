@@ -400,6 +400,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.shroom_bucket", "A bucket with a Shroom in it. Mushrum...");
 		add("description.tff.slippery_goop", "A bottle of a very slippery slime. Grants immunity to Slowness.");
 		add("description.tff.thick_bone", "A very, very heavy bone. Makes you much too heavy to float.");
+		add("description.tff.rotting_catalyst", "A rotting pile of organic material.");
 		
 		// Food
 		add("description.tff.ambectrum_donut", "A sweet donut, coated in a layer of Ambectrum jelly.");
@@ -503,6 +504,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("ability.tff.life_scythe", "Use item to grant yourself absorption and resistance for a short time. This power does, however, make you very hungry...");
 		add("ability.tff.shard_of_ice", "Use item to launch an icy projectile, dealing the same damage you would with a melee attack.");
 		add("ability.tff.shock_sword", "Has a chance to paralyze any mob hit.");
+		add("ability.tff.rotting_catalyst", "Used to ignite a portal to the Fester Forest made of Fester Bricks, similar to a Nether portal.");
 		
 	}
 

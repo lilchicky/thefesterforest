@@ -99,7 +99,7 @@ public class ReetleQueenEntity extends TamableAnimal implements IAnimatable {
 		
 		super.tick();
 		
-		if(!getLevel().isClientSide) {
+		if(!getLevel().isClientSide()) {
 		
 			if(!pacified) spawnCooldown++;
 		
