@@ -3,6 +3,7 @@ package com.gmail.thelilchicken01.tff.item.melee;
 import java.util.List;
 
 import com.gmail.thelilchicken01.tff.effect.ModEffects;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFSwordItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -19,12 +20,14 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class GoopySword extends SwordItem {
+public class GoopySword extends TFFSwordItem {
 	
 	private String[] drops = {"Rotting Goop", "Fester Forest Loot Chests"};
 
 	public GoopySword(Tier tier, int damage, float aspeed, Properties properties) {
-		super(tier, damage, aspeed, properties);
+		super(tier, damage, aspeed, properties.food(
+				new FoodProperties.Builder().saturationMod(0.1f).nutrition(1)
+				.build()));
 	}
 	
 	@Override
@@ -52,6 +55,21 @@ public class GoopySword extends SwordItem {
 		lore.add(new TextComponent(""));
 		
 		super.appendHoverText(stack, world, lore, flag);
+	}
+
+	@Override
+	public String itemType() {
+		return "melee";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
+
+	@Override
+	public boolean isShiftable() {
+		return false;
 	}
 
 }
