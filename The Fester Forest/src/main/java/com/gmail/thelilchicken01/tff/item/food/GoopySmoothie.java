@@ -8,6 +8,8 @@ import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -22,6 +24,11 @@ public class GoopySmoothie extends TFFItem {
 
 	public GoopySmoothie(Properties properties) {
 		super(properties);
+	}
+	
+	@Override
+	public SoundEvent getEatingSound() {
+		return SoundEvents.HONEY_DRINK;
 	}
 
 	@Override

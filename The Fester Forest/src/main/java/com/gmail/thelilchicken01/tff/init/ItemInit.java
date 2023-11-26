@@ -788,7 +788,7 @@ public class ItemInit {
 	
 	//Goopy Smoothie
 	public static final RegistryObject<Item> GOOPY_SMOOTHIE = register("goopy_smoothie", 
-			() -> new GoopySmoothie(new Properties().tab(TheFesterForest.TFF_TAB).food(new FoodProperties.Builder().alwaysEat().saturationMod(0.3f).nutrition(6)
+			() -> new GoopySmoothie(new Properties().tab(TheFesterForest.TFF_TAB).food(new FoodProperties.Builder().saturationMod(0.3f).nutrition(6)
 					.effect(() -> new MobEffectInstance(MobEffects.HEAL, 20, 1), 1f).build())));
 	
 	//Slimy Sundae
