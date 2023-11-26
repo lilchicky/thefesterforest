@@ -8,6 +8,7 @@ import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item_util.EffectsUtil;
 import com.gmail.thelilchicken01.tff.item.item_util.ModTiers;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFPickaxeItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -22,7 +23,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 
-public class AncientHammer extends PickaxeItem {
+public class AncientHammer extends TFFPickaxeItem {
 	
 	private String[] drops = {"Fester Forest Loot Chests"};
 
@@ -44,22 +45,20 @@ public class AncientHammer extends PickaxeItem {
 		return enchantment.category.canEnchant(ItemInit.ANCIENT_GREATSWORD.get()) ||
 				super.canApplyAtEnchantingTable(stack, enchantment);
 	}
-	
+
 	@Override
-	public void appendHoverText(ItemStack p_41421_, Level p_41422_, List<Component> lore, TooltipFlag p_41424_) {
-		
-		lore.add(new TextComponent("Melee/Tool").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("An old, heavy hammer. Slows enemies hit, and also functions").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("as a diamond pickaxe.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-		for (int x = 0; x < drops.length; x++) {
-			lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-		}
-		lore.add(new TextComponent(""));
-		
-		super.appendHoverText(p_41421_, p_41422_, lore, p_41424_);
+	public String itemType() {
+		return "melee.tool";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
+
+	@Override
+	public boolean isShiftable() {
+		return true;
 	}
 
 }

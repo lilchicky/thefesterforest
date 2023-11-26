@@ -33,27 +33,6 @@ public class FrozenOrb extends TFFItem implements MagicOrb {
 		super(new Properties().stacksTo(1).tab(TheFesterForest.TFF_TAB));
 		
 	}
-	
-	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		lore.add(new TextComponent("Magic").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("A glassy orb imbued with the freezing winds").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("of glaciers.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("Hold in offhand to apply onhit effects to Fester").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
-		lore.add(new TextComponent("Forest magic weapons.").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-		for (int x = 0; x < drops.length; x++) {
-			lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-		}
-		lore.add(new TextComponent(""));
-		
-		super.appendHoverText(stack, world, lore, flag);
-	}
 
 	@Override
 	public MagicModUtil getOrbType() {

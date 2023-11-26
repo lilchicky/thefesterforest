@@ -9,6 +9,7 @@ import com.gmail.thelilchicken01.tff.item.item_util.MagicItem;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicModUtil;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicOrb;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicWeapon;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFSwordItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -31,7 +32,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class VolatileSword extends SwordItem implements MagicItem, MagicWeapon {
+public class VolatileSword extends TFFSwordItem implements MagicItem, MagicWeapon {
 	
 	private String[] drops = {"Volatile Ghost", "Fester Forest Loot Chests"};
 	
@@ -147,43 +148,20 @@ public class VolatileSword extends SwordItem implements MagicItem, MagicWeapon {
 		}
 		
 	}
-	
+
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Magic, Melee").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A flaming blade fitted to a scorching hilt.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Right click to create a fiery burst around you.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("Anything within 4 blocks of you will be dealt " + flameDamage).withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("damage and set on fire for " + flameSeconds + " seconds,").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("as well as being slowed for " + slowDuration + " seconds.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("The sword will also ignite anything hit for " + flameSeconds + " seconds.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		else {
-			lore.add(new TextComponent("Magic, Melee").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A flaming blade fitted to a scorching hilt.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		
-		super.appendHoverText(stack, world, lore, flag);
+	public String itemType() {
+		return "melee.magic";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
+
+	@Override
+	public boolean isShiftable() {
+		return true;
 	}
 
 }

@@ -367,6 +367,9 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("type.tff.melee", "Melee");
 		add("type.tff.ranged", "Ranged");
 		add("type.tff.food", "Food");
+		add("type.tff.melee.tool", "Melee/Tool");
+		add("type.tff.melee.magic", "Melee/Magic");
+		add("type.tff.melee.ranged", "Melee/Ranged");
 		
 		/*
 		 * 
@@ -388,15 +391,15 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.heavy_stone", "A heavy stone that makes you much too heavy to levitate.");
 		add("description.tff.mechanical_eye", "One of the Forgemaster's eyes. Using it grants Night Vision.");
 		add("description.tff.metal_scrap", "Some old pieces of the Forgemaster's armor.");
-		add("description.tff.frozen_shard", "Small slivers of the ice that once held the Frostbitten King");
+		add("description.tff.frozen_shard", "Small slivers of the ice that once held the Frostbitten King.");
 		add("description.tff.moon_shoes", "A pair of incredibly lightweight stone shoes.");
-		add("description.tff.pocket_sand", "A small pile of sand, seemingly never decreasing in size");
+		add("description.tff.pocket_sand", "A small pile of sand, seemingly never decreasing in size.");
 		add("description.tff.purifying_powder", "A mysterious powder capable of changing the properties of items.");
 		add("description.tff.reetle_queen_antennae", "The Reetles follow their Queen.");
 		add("description.tff.reetle_reagents", "A small bag of reetle limbs, seemingly protecting the holder from fall damage.");
-		add("description.tff.reetle_shell", "The tough exoskeleton of the Reetle Queen");
-		add("description.tff.rotfish_fang", "The fang of a Deep Reaver. The venom grants immunity to Poison and Wither");
-		add("description.tff.shock_necklace", "A small ball of energy on a gold chain");
+		add("description.tff.reetle_shell", "The tough exoskeleton of the Reetle Queen.");
+		add("description.tff.rotfish_fang", "The fang of a Rotfish. The venom grants immunity to Poison and Wither.");
+		add("description.tff.shock_necklace", "A small ball of energy on a gold chain.");
 		add("description.tff.shroom_bucket", "A bucket with a Shroom in it. Mushrum...");
 		add("description.tff.slippery_goop", "A bottle of a very slippery slime. Grants immunity to Slowness.");
 		add("description.tff.thick_bone", "A very, very heavy bone. Makes you much too heavy to float.");
@@ -404,9 +407,9 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		// Food
 		add("description.tff.ambectrum_donut", "A sweet donut, coated in a layer of Ambectrum jelly.");
-		add("description.tff.ambectrum_jelly", "A slightly minty glowing blue jelly");
-		add("description.tff.bug_carcass", "The crunchy remains of a Reetle");
-		add("description.tff.cooked_rotfish", "Salt, pepper, and love go a long way");
+		add("description.tff.ambectrum_jelly", "A slightly minty glowing blue jelly.");
+		add("description.tff.bug_carcass", "The crunchy remains of a Reetle.");
+		add("description.tff.cooked_rotfish", "Salt, pepper, and love go a long way.");
 		add("description.tff.cooked_shroom_cluster", "A collection of earthy, slightly salty roasted mushrooms.");
 		add("description.tff.frozen_apple", "An apple encased in crunchy ice.");
 		add("description.tff.goopy_jello", "A very slimy block of bitter jello.");
@@ -416,7 +419,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.rotting_carrot", "An old, squishy carrot.");
 		add("description.tff.rotting_pie", "A delectable combination of rot and decay.");
 		add("description.tff.shroom_cluster", "A bundle of wet, salty mushrooms.");
-		add("description.tff.volatile_apple", "A cruncy, burning apple");
+		add("description.tff.volatile_apple", "A crunchy, burning apple.");
 		
 		// Magic
 		add("description.tff.bone_launcer", "An old stick with a broken bone fitted to one end.");
@@ -441,7 +444,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.reetle_orb", "A glassy orb imbued with the soul of the Reetle Queen.");
 		add("description.tff.rotfish_orb", "A glassy orb imbued with the chaos of the ocean.");
 		add("description.tff.rotting_staff", "A mushy staff with an odd purple flame on one end.");
-		add("description.tff.shield_book", "An old dusty spellbook, detailing the encantations of a shielding spell");
+		add("description.tff.shield_book", "An old dusty spellbook, detailing the encantations of a shielding spell.");
 		add("description.tff.verdant_branch", "A once dead branch, now thriving with life.");
 		add("description.tff.volatile_necklace", "A scorching necklace fitted with a fiery charm.");
 		add("description.tff.wither_orb", "A glassy orb imbued with the souls of the dead.");
@@ -459,6 +462,13 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.seathrown_pike", "A sharp point on the end of a very long, wet stick.");
 		add("description.tff.shard_of_ice", "A very sharp shard of solid ice.");
 		add("description.tff.shock_sword", "An electric beam stabilised by two prongs.");
+		
+		// Mixed
+		add("description.tff.ancient_hammer", "An old, heavy hammer.");
+		add("description.tff.festering_club", "A rotting wooden club, laced with dark tendrils.");
+		add("description.tff.reaver_blade", "The massive fang of a Deep Reaver.");
+		add("description.tff.shadow_bow", "A dark, shadowy bow with razor sharp limbs.");
+		add("description.tff.volatile_sword", "A flaming blade fitted to a scorching hilt.");
 		
 		/*
 		 * 
@@ -497,7 +507,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("ability.tff.rotting_staff", "Use item to launch a rotting bolt.");
 		add("ability.tff.shield_book", "Use item to temporarily grant yourself a large number of Absorption hearts.");
 		add("ability.tff.verdant_branch", "Use item on a mob to summon multiple poisoned homing projectiles.");
-		add("ability.tff.volatile_necklace", "While on fire, gain Strength");
+		add("ability.tff.volatile_necklace", "While on fire, gain Strength.");
 		add("ability.tff.ancient_hatchet", "Continuous attacks grant stacking attack speed.");
 		add("ability.tff.forgemaster_hammer", "The massive weight of the hammer applies large amounts of knockback to any mob hit.");
 		add("ability.tff.frost_mallet", "Use item to slam the mallet into the ground, dealing 50% of your max health to all nearby mobs.");
@@ -505,6 +515,11 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("ability.tff.shard_of_ice", "Use item to launch an icy projectile, dealing the same damage you would with a melee attack.");
 		add("ability.tff.shock_sword", "Has a chance to paralyze any mob hit.");
 		add("ability.tff.rotting_catalyst", "Used to ignite a portal to the Fester Forest made of Fester Bricks, similar to a Nether portal.");
+		add("ability.tff.ancient_hammer", "Slows enemies on hit. Can also be used as a Diamond pickaxe.");
+		add("ability.tff.festering_club", "Mobs hit are given Poison and Wither for a short time.");
+		add("ability.tff.reaver_blade", "Hitting a mob afflicts both yourself and the target with the same random effect of a random strength.");
+		add("ability.tff.shadow_bow", "Functions as both a bow and a sword, accepting both kinds of enchantments.");
+		add("ability.tff.volatile_sword", "Use item to emit a burst of flame, damaging and igniting all nearby mobs.");
 		
 	}
 

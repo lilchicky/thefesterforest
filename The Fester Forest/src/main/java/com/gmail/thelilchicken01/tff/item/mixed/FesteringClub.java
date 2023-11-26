@@ -9,6 +9,7 @@ import com.gmail.thelilchicken01.tff.item.item_util.MagicItem;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicModUtil;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicOrb;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicWeapon;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFSwordItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -27,7 +28,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class FesteringClub extends SwordItem implements MagicItem, MagicWeapon {
+public class FesteringClub extends TFFSwordItem implements MagicItem, MagicWeapon {
 	
 	private String[] drops = {"Fester Forest Loot Chests"};
 	
@@ -69,24 +70,20 @@ public class FesteringClub extends SwordItem implements MagicItem, MagicWeapon {
 		
 		return super.hurtEnemy(stack, target, attacker);
 	}
-	
+
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		lore.add(new TextComponent("Magic, Melee").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("An ancient wooden club, full of rot and decay.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("Applies wither and poison to anything hit for").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("5 seconds. Only applies poison to non Undead mobs.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-		for (int x = 0; x < drops.length; x++) {
-			lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-		}
-		lore.add(new TextComponent(""));
-		
-		super.appendHoverText(stack, world, lore, flag);
+	public String itemType() {
+		return "melee.magic";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
+
+	@Override
+	public boolean isShiftable() {
+		return true;
 	}
 
 }

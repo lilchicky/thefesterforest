@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFBowItem;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
@@ -27,7 +28,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class ShadowBow extends BowItem {
+public class ShadowBow extends TFFBowItem {
 	
 	private String[] drops = {"Banshee", "Fester Forest Loot Chests"};
 	
@@ -60,25 +61,20 @@ public class ShadowBow extends BowItem {
 		return enchantment.category.canEnchant(ItemInit.ANCIENT_GREATSWORD.get()) ||
 				super.canApplyAtEnchantingTable(stack, enchantment);
 	}
-	
-	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		lore.add(new TextComponent("Melee, Ranged").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("A dark, shadowy bow with razor sharp limbs.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("Functions as both a sword and a bow, accepting").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("both kinds of enchantments.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-		for (int x = 0; x < drops.length; x++) {
-			lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-		}
-		lore.add(new TextComponent(""));
 
-		
-		super.appendHoverText(stack, world, lore, flag);
+	@Override
+	public String itemType() {
+		return "melee.ranged";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
+
+	@Override
+	public boolean isShiftable() {
+		return true;
 	}
 
 }
