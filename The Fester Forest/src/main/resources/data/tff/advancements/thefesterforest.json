@@ -4,7 +4,7 @@
       "item": "tff:rottingwood_sapling"
     },
     "title": "What a Spooky Place",
-    "description": "Travel to the Fester Forest",
+    "description": "Using a portal made from Fester Bricks, travel to the Fester Forest",
     "frame": "goal",
     "show_toast": true,
     "announce_to_chat": true
