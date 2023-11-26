@@ -6,6 +6,7 @@ import java.util.UUID;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.arrow.IcyArrow;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFBowItem;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
@@ -30,7 +31,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class IcyBow extends BowItem {
+public class IcyBow extends TFFBowItem {
 	
 	private String[] drops = {"Glacial Titan", "Fester Forest Loot Chests"};
 	
@@ -65,24 +66,20 @@ public class IcyBow extends BowItem {
 		
 		return new IcyArrow(arrow.getLevel(), (LivingEntity)arrow.getOwner());
 	}
-	
-	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		lore.add(new TextComponent("Ranged").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("A glassy bow made of very cold ice.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent("Converts all shot arrows into Icy Arrows.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-		for (int x = 0; x < drops.length; x++) {
-			lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-		}
-		lore.add(new TextComponent(""));
 
-		
-		super.appendHoverText(stack, world, lore, flag);
+	@Override
+	public String itemType() {
+		return "ranged";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
+
+	@Override
+	public boolean isShiftable() {
+		return true;
 	}
 
 }

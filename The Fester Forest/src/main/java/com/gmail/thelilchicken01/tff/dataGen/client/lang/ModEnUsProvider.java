@@ -361,12 +361,15 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("type.tff.drops_from", "Drops From:");
 		add("type.tff.hostile_target", "Targeting Hostile Mobs");
 		add("type.tff.all_target", "Targeting All Living Things");
+		add("type.tff.belongs_to", "Belongs to:");
 		
 		add("type.tff.dull", "Dull");
 		add("type.tff.magic", "Magic");
 		add("type.tff.melee", "Melee");
 		add("type.tff.ranged", "Ranged");
 		add("type.tff.food", "Food");
+		add("type.tff.arrow", "Arrow");
+		add("type.tff.tool", "Tool");
 		add("type.tff.melee.tool", "Melee/Tool");
 		add("type.tff.melee.magic", "Melee/Magic");
 		add("type.tff.melee.ranged", "Melee/Ranged");
@@ -470,6 +473,20 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.shadow_bow", "A dark, shadowy bow with razor sharp limbs.");
 		add("description.tff.volatile_sword", "A flaming blade fitted to a scorching hilt.");
 		
+		// Pet Buckets
+		add("description.tff.ice_ramble_bucket", "A bucket holding an Ice Ramble.");
+		
+		// Ranged
+		add("description.tff.icy_arrow", "Freezes mobs on hit.");
+		add("description.tff.frozen_bow", "A near indestructible bow, crafted from an ancient ice.");
+		add("description.tff.icy_bow", "A glassy bow made of a mysterious ice.");
+		
+		// Tool
+		add("description.tff.bone_pickaxe", "A lightweight pickaxe crafted from an assortment of sturdy bones.");
+		add("description.tff.electric_pickaxe", "A pickaxe formed almost entirely of an odd electric plasma.");
+		add("description.tff.goopy_stick", "A tree branch dripping with acidic goop.");
+		add("description.tff.icy_paxel", "An old multitool frozen in ice.");
+		
 		/*
 		 * 
 		 * Item Abilities
@@ -520,6 +537,11 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("ability.tff.reaver_blade", "Hitting a mob afflicts both yourself and the target with the same random effect of a random strength.");
 		add("ability.tff.shadow_bow", "Functions as both a bow and a sword, accepting both kinds of enchantments.");
 		add("ability.tff.volatile_sword", "Use item to emit a burst of flame, damaging and igniting all nearby mobs.");
+		add("ability.tff.frozen_bow", "Converts all shot arrows into Icy Arrows. Shoots 3 arrows at a time, for the cost of one. All shot arrows do an additional 20% damage.");
+		add("ability.tff.icy_bow", "Converts all shot arrows into Icy Arrows.");
+		add("ability.tff.electric_pickaxe", "Breaking an \"Underground\" block adds a charge, with each charge increasing mining speed. Breaking a non \"Underground\" block dissipates all charges.");
+		add("ability.tff.goopy_pickaxe", "The goop is able to break any block with diamond efficiency.");
+		add("ability.tff.icy_paxel", "This tool can break any block with diamond efficiency.");
 		
 	}
 

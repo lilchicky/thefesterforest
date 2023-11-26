@@ -6,6 +6,7 @@ import java.util.UUID;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.arrow.IcyArrow;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFBowItem;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
@@ -38,7 +39,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class FrozenBow extends BowItem {
+public class FrozenBow extends TFFBowItem {
 	
 	private String[] drops = {"Frostbitten King", "Crafted"};
 	
@@ -159,42 +160,20 @@ public class FrozenBow extends BowItem {
 			}
 		}
 	}
-	
-	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Ranged").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("An ancient bow, corrupted by the same near indestructible").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("ice that once held the Frostbitten King.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Converts all shot arrows into Icy Arrows.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("Fires 3 arrows for the cost of one.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("Arrows do an additional 20% damage.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-		}
-		else {
-			lore.add(new TextComponent("Ranged").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("An ancient bow, corrupted by the same near indestructible").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("ice that once held the Frostbitten King.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-		}
 
-		
-		super.appendHoverText(stack, world, lore, flag);
+	@Override
+	public String itemType() {
+		return "ranged";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
+
+	@Override
+	public boolean isShiftable() {
+		return true;
 	}
 
 }

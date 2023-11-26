@@ -10,6 +10,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.IceRambleEntity;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -81,14 +82,15 @@ public class IceRambleBucket extends Item {
 	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
-		lore.add(new TextComponent("Dull").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-		lore.add(new TextComponent(""));
-		lore.add(new TextComponent("A bucket holding an Ice Ramble.").withStyle(ChatFormatting.GRAY));
-		lore.add(new TextComponent(""));
+		lore.add(new TranslatableComponent("type.tff.dull").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
+		lore.add(new TextComponent(" "));
+		lore.add(new TranslatableComponent("description.tff.ice_ramble_bucket").withStyle(ChatFormatting.GRAY));
+		lore.add(new TextComponent(" "));
 		if (stack.hasTag()) {
 			UUID owner = stack.getTag().getUUID("tff.owner");
-			lore.add(new TextComponent("Belongs to " + world.getPlayerByUUID(owner).getName().getString()).withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
+			lore.add(new TranslatableComponent("type.tff.belongs_to").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent(world.getPlayerByUUID(owner).getName().getString()).withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent(" "));
 		}
 		
 		super.appendHoverText(stack, world, lore, flag);
