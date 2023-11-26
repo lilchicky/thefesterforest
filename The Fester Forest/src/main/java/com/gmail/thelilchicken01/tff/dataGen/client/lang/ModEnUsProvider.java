@@ -336,6 +336,9 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.FROSTBITTEN_KING_SPAWN_EGG.get(), "Frostbitten King Spawn Egg");
 		add(ItemInit.GLACIAL_TITAN_SPAWN_EGG.get(), "Glacial Titan Spawn Egg");
 		add(ModEntityTypes.GLACIAL_TITAN.get(), "Glacial Titan");
+		add(ItemInit.GOOPY_SMOOTHIE.get(), "Goopy Smoothie");
+		add(ItemInit.SLIMY_SUNDAE.get(), "Slimy Sundae");
+		add(ItemInit.AMBECTRUM_ICE_CREAM_SANDWICH.get(), "Ambectrum Ice Cream Sandwich");
 		
 		/*
 		 * 
@@ -465,6 +468,9 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.rotting_pie", "A delectable combination of rot and decay.");
 		add("description.tff.shroom_cluster", "A bundle of wet, salty mushrooms.");
 		add("description.tff.volatile_apple", "A crunchy, burning apple.");
+		add("description.tff.goopy_smoothie", "The sugar doesn't completely hide the bitterness, but it is very healthy.");
+		add("description.tff.slimy_sundae", "A little stringy, but a delight nonetheless.");
+		add("description.tff.ambectrum_ice_cream_sandwich", "Light and fresh ice cream packed between two cold wafers.");
 		
 		// Magic
 		add("description.tff.bone_launcher", "An old stick with a broken bone fitted to one end.");

@@ -62,18 +62,21 @@ import com.gmail.thelilchicken01.tff.item.dull.ShroomBucket;
 import com.gmail.thelilchicken01.tff.item.dull.SlipperyGoop;
 import com.gmail.thelilchicken01.tff.item.dull.ThickBone;
 import com.gmail.thelilchicken01.tff.item.food.AmbectrumDonut;
+import com.gmail.thelilchicken01.tff.item.food.AmbectrumIceCreamSandwich;
 import com.gmail.thelilchicken01.tff.item.food.AmbectrumJelly;
 import com.gmail.thelilchicken01.tff.item.food.BugCarcass;
 import com.gmail.thelilchicken01.tff.item.food.CookedRotfish;
 import com.gmail.thelilchicken01.tff.item.food.CookedShroomCluster;
 import com.gmail.thelilchicken01.tff.item.food.FrozenApple;
 import com.gmail.thelilchicken01.tff.item.food.GoopyJello;
+import com.gmail.thelilchicken01.tff.item.food.GoopySmoothie;
 import com.gmail.thelilchicken01.tff.item.food.MechanicalApple;
 import com.gmail.thelilchicken01.tff.item.food.RawRotfish;
 import com.gmail.thelilchicken01.tff.item.food.RotfishSpecial;
 import com.gmail.thelilchicken01.tff.item.food.RottingCarrot;
 import com.gmail.thelilchicken01.tff.item.food.RottingPie;
 import com.gmail.thelilchicken01.tff.item.food.ShroomCluster;
+import com.gmail.thelilchicken01.tff.item.food.SlimySundae;
 import com.gmail.thelilchicken01.tff.item.food.VolatileApple;
 import com.gmail.thelilchicken01.tff.item.item_util.ModTiers;
 import com.gmail.thelilchicken01.tff.item.magic.BoneLauncher;
@@ -782,6 +785,19 @@ public class ItemInit {
 	//Cooked Shroom Cluster
 	public static final RegistryObject<Item> COOKED_SHROOM_CLUSTER = register("cooked_shroom_cluster", 
 			() -> new CookedShroomCluster());
+	
+	//Goopy Smoothie
+	public static final RegistryObject<Item> GOOPY_SMOOTHIE = register("goopy_smoothie", 
+			() -> new GoopySmoothie(new Properties().tab(TheFesterForest.TFF_TAB).food(new FoodProperties.Builder().alwaysEat().saturationMod(0.3f).nutrition(6)
+					.effect(() -> new MobEffectInstance(MobEffects.HEAL, 20, 1), 1f).build())));
+	
+	//Slimy Sundae
+	public static final RegistryObject<Item> SLIMY_SUNDAE = register("slimy_sundae", 
+			() -> new SlimySundae());
+	
+	//Ambectrum Ice Cream Sandwich
+	public static final RegistryObject<Item> AMBECTRUM_ICE_CREAM_SANDWICH = register("ambectrum_ice_cream_sandwich", 
+			() -> new AmbectrumIceCreamSandwich());
 	
 	//Volatile Apple
 	public static final RegistryObject<Item> VOLATILE_APPLE = register("volatile_apple", 

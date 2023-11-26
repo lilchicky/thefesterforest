@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bbb",
+    "cdc",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:snowball"
+    },
+    "c": {
+      "item": "tff:ambectrum_jelly"
+    },
+    "d": {
+      "item": "minecraft:milk_bucket"
+    }
+  },
+  "result": {
+    "item": "tff:ambectrum_ice_cream_sandwich"
+  }
+}

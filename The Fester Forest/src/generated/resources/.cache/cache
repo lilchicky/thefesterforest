@@ -13,7 +13,7 @@ b8447bca64a4be14df463c9a200ee24e061cc673 assets/tff/blockstates/rotting_bricks.j
 43eca221b68217c0cb9d8ee5c477ca9f3177f92c assets/tff/blockstates/rotting_stone_bricks.json
 33c1ae6ba85f530c2df5b76074c27aa8af3ae324 assets/tff/blockstates/slimy_planks.json
 c5defbedf25b6ecf36bf55b38b2ff99beff20207 assets/tff/blockstates/soul_rot.json
-31ee2fe129e606e75315ab46c032c705e619ae75 assets/tff/lang/en_us.json
+9bcd94cd619ec066e33bcc313c1dab8f04f45049 assets/tff/lang/en_us.json
 24d27db74b37f74e514f26a15787d776200bea34 assets/tff/models/block/blue_fester_shroom_block.json
 e48eb80bb4a853e7d3636a9aa2971065e6494c2f assets/tff/models/block/compressed_rotting_sand.json
 f12d6a54881723e53655f55b547fef43d40893ee assets/tff/models/block/cracked_rotting_stone_bricks.json
@@ -30,6 +30,7 @@ dd2b1992053a7f1f137aaee9f56a68ccef7a5719 assets/tff/models/block/rotting_sand.js
 50002942b00c9698317479d54c6b900960f472d2 assets/tff/models/block/slimy_planks.json
 03a8f0dbfe7709003477da38d92daf86bb7528ca assets/tff/models/block/soul_rot.json
 32c2990eac992ecaf61c7602a37bb6d1f69a0fcc assets/tff/models/item/ambectrum_donut.json
+21c53b3c53e840668e6d255fa2d09d29d98f1fd0 assets/tff/models/item/ambectrum_ice_cream_sandwich.json
 854940d999ddc8f2f8441f0e983f43b2416a8150 assets/tff/models/item/ambectrum_jelly.json
 e44e7d0b36dbaddc8bea5a5e35d272ea676b6c30 assets/tff/models/item/ancient_dagger.json
 633c141f7715edaef68f9729ba22dbeb55bf0e87 assets/tff/models/item/ancient_hammer.json
@@ -93,6 +94,7 @@ c5a56c89b76e773a09e5d38033b057f35644d787 assets/tff/models/item/goopy_chestplate
 053909672ea0d723192a9c54dfda14e90504319c assets/tff/models/item/goopy_helmet.json
 abd1adf01c18f1a776512be516f787e5a38a7011 assets/tff/models/item/goopy_jello.json
 ed5dd6d8be9931e58e6d34e53d75fb00d2592476 assets/tff/models/item/goopy_leggings.json
+6b87199c2558c85d1d8cc8f2b1e99e4b223de745 assets/tff/models/item/goopy_smoothie.json
 f2fb8fb8d9223adee3a7e42a5d883f6210e9ee29 assets/tff/models/item/goopy_stick.json
 4133880121ae4675c00bcc6031eb96b07fd128bd assets/tff/models/item/goopy_stone.json
 6b459f283dbe5a1790dc2f15e7437330f3b40e95 assets/tff/models/item/goopy_sword.json
@@ -157,6 +159,7 @@ e13adc8a9edece6541e28d75e9419060976daeb3 assets/tff/models/item/rotting_stone_br
 8c865d476f2c3ef6ef6c12a68a58f258c9110fb1 assets/tff/models/item/shroom_cluster.json
 1a104ba29731cd439bfc15ef1c06cd0ad9223659 assets/tff/models/item/shroom_hat.json
 15b181e8e1aea4c8a5b302ac94ed51c5348bcf29 assets/tff/models/item/slimy_planks.json
+7d9e7d34790be94618f6ed0b3bea5893a0ae5898 assets/tff/models/item/slimy_sundae.json
 da31db73483b117c57e34455a1260575e1d4244a assets/tff/models/item/slippery_goop.json
 85b84d8e4d18e1e17ae9d053b217002f8ecd2643 assets/tff/models/item/soul_rot.json
 f2e334f2fd10ba3294b85f3fa7bf0b8db029f16e assets/tff/models/item/thick_bone.json
@@ -190,6 +193,7 @@ d8fe739909a9d51b66dc74aab244dd66561eb1c9 data/tff/advancements/recipes/misc/sick
 552847576df2166bdb35f4d34b577e29acc9fc4f data/tff/advancements/recipes/misc/slimy_bell_to_lime_dye.json
 d30f3cd523fadad37354ac9f39923d43708784ee data/tff/advancements/recipes/misc/weeping_grass_to_blue_dye.json
 fb54d5c5d64f8a5a9f9bd72a3d1955ed70200bf0 data/tff/advancements/recipes/tff/ambectrum_donut.json
+10b9866472c2edd51a9b1ded45e7e4cbe260cf05 data/tff/advancements/recipes/tff/ambectrum_ice_cream_sandwich.json
 abaaea0d8800b4b5054e546fd3fb5adefff5f0aa data/tff/advancements/recipes/tff/angelic_whistle.json
 80ded80d1a6897cb7700588c9d9072a304b2eb08 data/tff/advancements/recipes/tff/blue_fester_shroom_block_to_shroom.json
 2d2ba50840915c15220e21f2395f244fdb75ff4c data/tff/advancements/recipes/tff/compressed_rotting_sand.json
@@ -251,6 +255,7 @@ dc1ae8f8428336bdd84941aa5b324bb1ac798cc0 data/tff/advancements/recipes/tff/goopy
 e4a1308e2086b59220ba5caaa03c6ba61276ef08 data/tff/advancements/recipes/tff/goopy_chestplate_smelting.json
 26dd67314f245eddc630411c669910d7c9e2a383 data/tff/advancements/recipes/tff/goopy_helmet_smelting.json
 be2562e984b92ea92295ae258ce8818d3b3258bf data/tff/advancements/recipes/tff/goopy_leggings_smelting.json
+6b6544bd60d8914f968a0776a22dcd67da5ec9b9 data/tff/advancements/recipes/tff/goopy_smoothie_crafting.json
 838d4bbb4b86a068dacee83b311b8989086e411a data/tff/advancements/recipes/tff/goopy_stone.json
 1a6dca86054ad9f61c55b0fe8d63a0d10cee9841 data/tff/advancements/recipes/tff/goopy_sword_smelting.json
 ce2a4215c29c14a0f2c52c2063b9b7ac73e5b088 data/tff/advancements/recipes/tff/ice_book.json
@@ -317,6 +322,7 @@ aa8131092c87eb53eae25342f91c8573d281e29f data/tff/advancements/recipes/tff/shroo
 cae63b27bdceccf53214281b939abd9e64b02f0d data/tff/advancements/recipes/tff/slimy_pressure_plate.json
 19d6eabbb349b6e5d25af4c532c919caa7380409 data/tff/advancements/recipes/tff/slimy_slabs.json
 1c414a1d5c34944f733263784a5395f551f7e200 data/tff/advancements/recipes/tff/slimy_stairs.json
+048cd586bd6db5813712de410181fb6c12f5df80 data/tff/advancements/recipes/tff/slimy_sundae_crafting.json
 8296c613277e2c48a7620c8658648bc1f907540c data/tff/advancements/recipes/tff/slimy_trapdoor.json
 2155b33336ee777db959d04b1b42c0a6695376cc data/tff/advancements/recipes/tff/stripped_frostbitten_wood.json
 e4a81f686f95235c6ec250e29f38bb294f2a7771 data/tff/advancements/recipes/tff/verdant_branch.json
@@ -399,6 +405,7 @@ e2af66a942e2aa1f3800f73a0b0bb0a76a65d842 data/tff/loot_tables/blocks/stripped_fr
 0059ceadba454e7194d77198e059ef4c2342153a data/tff/loot_tables/blocks/stripped_slimy_wood.json
 ed623e982e5b0c19b76b7fdd5830b1038d7684be data/tff/loot_tables/blocks/weeping_grass.json
 f3bd56dca76299aac9a88398b0dddf35bafcf843 data/tff/recipes/ambectrum_donut.json
+98eb9e29c9a00f14c5e7e76be0a2adee88b79fd7 data/tff/recipes/ambectrum_ice_cream_sandwich.json
 1b60a040822f077fcbd2842c16495e10dd41770e data/tff/recipes/angelic_whistle.json
 95dc9c69cc6f3d9b32f172da269156daaeee6f95 data/tff/recipes/blue_fester_shroom_block_to_shroom.json
 1570dac7e1038a71f46120afbb0a457c30543fc2 data/tff/recipes/compressed_rotting_sand.json
@@ -462,6 +469,7 @@ dcfb2d8f53eee6bd59d7378b01eaa0b267d3660c data/tff/recipes/frozen_leggings.json
 1420d2640d202508487ee48f0c27f73b3dfe2b86 data/tff/recipes/goopy_chestplate_smelting.json
 a9fc99631d4dba55e71906f2d4829ab094d5fc2a data/tff/recipes/goopy_helmet_smelting.json
 4e552c35e98d01401d793d0a85d54da2a1bab350 data/tff/recipes/goopy_leggings_smelting.json
+e1422126ab4af08acc20d0a074a7bfd4cea15edd data/tff/recipes/goopy_smoothie_crafting.json
 e7c79e162c46e4cb6d9658b185513ccaf2225e29 data/tff/recipes/goopy_stone.json
 10a0eaead5436fe1e42d7395db64a93c2ebbc54c data/tff/recipes/goopy_sword_smelting.json
 65ac277c2f1a6be46a74bc607e9d023d730a7876 data/tff/recipes/ice_book.json
@@ -547,6 +555,7 @@ a70b052edb9c5b7f1a4441b014ede26acec432f3 data/tff/recipes/slimy_button.json
 b8baf60d66535a5507733bf5bcd7a196e55a8a65 data/tff/recipes/slimy_pressure_plate.json
 3b5f12265a63ab219939cae71b78f7edf0cd6741 data/tff/recipes/slimy_slabs.json
 e6cb617b9eabbb48bda07303d2b0e0a481976df1 data/tff/recipes/slimy_stairs.json
+ea8578fef8dc3810da44f6f058147f1dcaa6b5f1 data/tff/recipes/slimy_sundae_crafting.json
 9087b5ddc4e8595364a247af81881e3a6b8189a9 data/tff/recipes/slimy_trapdoor.json
 8f48b0e42ae0730e0019d1365b86e4aa5d1345da data/tff/recipes/soul_rot_smelting_to_bone_block.json
 a49299bb5bf00b1d5460d12dd1743e7e6c296ce9 data/tff/recipes/soul_rot_to_skulls.json

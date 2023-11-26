@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:ambectrum_ice_cream_sandwich"
+    ]
+  },
+  "criteria": {
+    "has_tff:ambectrum_jelly": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:ambectrum_jelly"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:ambectrum_ice_cream_sandwich"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:ambectrum_jelly",
+      "has_the_recipe"
+    ]
+  ]
+}

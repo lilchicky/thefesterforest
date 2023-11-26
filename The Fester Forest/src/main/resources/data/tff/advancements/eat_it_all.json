@@ -150,6 +150,36 @@
 		  ]
         }
       }
+    },
+    "goopy_smoothie": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:goopy_smoothie"
+		  ]
+        }
+      }
+    },
+    "slimy_sundae": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:slimy_sundae"
+		  ]
+        }
+      }
+    },
+    "ambectrum_ice_cream_sandwich": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "tff:ambectrum_ice_cream_sandwich"
+		  ]
+        }
+      }
     }
   },
   "requirements": [
@@ -194,6 +224,15 @@
   	],
   	[
   		"frozen_apple"	
+  	],
+  	[
+  		"goopy_smoothie"	
+  	],
+  	[
+  		"slimy_sundae"	
+  	],
+  	[
+  		"ambectrum_ice_cream_sandwich"	
   	]
   ]
 }

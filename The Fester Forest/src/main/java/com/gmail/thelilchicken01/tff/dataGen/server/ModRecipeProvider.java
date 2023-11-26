@@ -882,6 +882,22 @@ public class ModRecipeProvider extends RecipeProvider {
 		
 		/*
 		 * 
+		 * Foods
+		 * 
+		 */
+		
+		// Ambectrum Ice Cream Sandwich
+		ShapedRecipeBuilder.shaped(ItemInit.AMBECTRUM_ICE_CREAM_SANDWICH.get(), 1) // add , int to get number of output
+		.define('b', Items.SNOWBALL)
+		.define('c', ItemInit.AMBECTRUM_JELLY.get())
+		.define('d', Items.MILK_BUCKET)
+		.unlockedBy("has_" + ItemInit.AMBECTRUM_JELLY.get().getRegistryName(), 
+				has(ItemInit.AMBECTRUM_JELLY.get())) // what unlocks the recipe when you get that item
+		.pattern("bbb").pattern("cdc").pattern("bbb").save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, ItemInit.AMBECTRUM_ICE_CREAM_SANDWICH.get().getRegistryName().getPath()));
+		
+		/*
+		 * 
 		 * Shapeless
 		 * 
 		 */
@@ -955,6 +971,16 @@ public class ModRecipeProvider extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(ItemInit.ROTFISH_SPECIAL.get().asItem()).requires(ItemInit.COOKED_ROTFISH.get()).requires(ItemInit.SHROOM_CLUSTER.get()) //get item
 			.unlockedBy("has_" + ItemInit.COOKED_ROTFISH.get().getRegistryName(), has(ItemInit.COOKED_ROTFISH.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.ROTFISH_SPECIAL.get().getRegistryName().getPath() + "_crafting_cluster"));
+		
+		// Goopy Smoothie
+		ShapelessRecipeBuilder.shapeless(ItemInit.GOOPY_SMOOTHIE.get().asItem()).requires(ItemInit.GOOPY_JELLO.get()).requires(BlockInit.ICICLE.get()).requires(Items.SWEET_BERRIES).requires(Blocks.ICE) //get item
+			.unlockedBy("has_" + ItemInit.GOOPY_JELLO.get().getRegistryName(), has(ItemInit.GOOPY_JELLO.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.GOOPY_SMOOTHIE.get().getRegistryName().getPath() + "_crafting"));
+		
+		// Slimy Sundae
+		ShapelessRecipeBuilder.shapeless(ItemInit.SLIMY_SUNDAE.get().asItem()).requires(Items.SLIME_BALL, 3).requires(Items.SNOWBALL, 2).requires(Items.SUGAR, 2).requires(Items.BOWL).requires(ItemInit.ROTTING_SLIMEBALL.get()) //get item
+			.unlockedBy("has_" + ItemInit.ROTTING_SLIMEBALL.get().getRegistryName(), has(ItemInit.ROTTING_SLIMEBALL.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.SLIMY_SUNDAE.get().getRegistryName().getPath() + "_crafting"));
 		
 		// Orange Shroom to Mushrooms
 		ShapelessRecipeBuilder.shapeless(BlockInit.CORRODED_SHROOM.get().asItem(), 3).requires(BlockInit.ORANGE_FESTER_SHROOM_BLOCK.get()) //get item
