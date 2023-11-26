@@ -9,6 +9,7 @@ import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFArmorItem;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
@@ -34,7 +35,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.util.Lazy;
 
-public class BansheeHelmet extends ArmorItem {
+public class BansheeHelmet extends TFFArmorItem {
 	
 	private String[] drops = {"Banshee", "Fester Forest Loot Chests"};
 	
@@ -77,45 +78,15 @@ public class BansheeHelmet extends ArmorItem {
 	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
 		return slot == EquipmentSlot.HEAD ? this.LAZY.get() : super.getDefaultAttributeModifiers(slot);
 	}
-	
+
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A very lightweight cloak hood.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("Pulling it over your head makes you feel uneasy.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Set Bonus: Magicka").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent("2+ Pieces: Minor buffs to all Magic items").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("4 Pieces: Major buffs to all Magic items").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Pairs with other Magic buff armors.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		else {
-			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A very lightweight cloak hood.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("Pulling it over your head makes you feel uneasy.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		
-		super.appendHoverText(stack, world, lore, flag);
+	public ArmorSets getSet() {
+		return ArmorSets.BANSHEE;
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
 	}
 
 }

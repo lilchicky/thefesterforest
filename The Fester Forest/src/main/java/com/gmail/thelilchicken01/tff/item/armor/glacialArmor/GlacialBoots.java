@@ -10,6 +10,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.IceRambleEntity;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFArmorItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
@@ -26,7 +27,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class GlacialBoots extends ArmorItem {
+public class GlacialBoots extends TFFArmorItem {
 	
 	private String[] drops = {"Glacial Titan", "Fester Forest Loot Chests"};
 
@@ -85,43 +86,15 @@ public class GlacialBoots extends ArmorItem {
 			}
 		}
 	}
-	
+
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Lightweight boots made of an odd, cold ice.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Set Bonus: Beastmaster (Glacial)").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent("2+ Pieces: Summon an Ice Ramble to fight for you.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("4 Pieces: Your Ice Ramble familiar becomes much stronger.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Ice Rambles can be picked up and moved with a bucket.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		else {
-			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Lightweight boots made of an odd, cold ice.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		
-		super.appendHoverText(stack, world, lore, flag);
+	public ArmorSets getSet() {
+		return ArmorSets.GLACIAL;
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
 	}
 
 }

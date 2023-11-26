@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.UUID;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
+import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFGeoArmorItem;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
@@ -33,7 +35,7 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.item.GeoArmorItem;
 
-public class ShroomHat extends GeoArmorItem implements IAnimatable {
+public class ShroomHat extends TFFGeoArmorItem implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
 	
@@ -68,46 +70,6 @@ public class ShroomHat extends GeoArmorItem implements IAnimatable {
 	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
 		return slot == EquipmentSlot.HEAD ? this.LAZY.get() : super.getDefaultAttributeModifiers(slot);
 	}
-	
-	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("The squishy top of a Corroded Shroom.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("Makes you quite hydrodynamic.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Set Bonus: Aqueatic").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent("2+ Pieces: Gain Water Breathing.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("4 Pieces: Gain Conduit Power. If you swim (holding sprint in water) for").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("over 5 seconds, also gain Dolphin's Grace.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		else {
-			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("The squishy top of a Corroded Shroom.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("Makes you quite hydrodynamic.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-
-		
-		super.appendHoverText(stack, world, lore, flag);
-	}
 
 	@Override
 	public void registerControllers(AnimationData data) {
@@ -126,6 +88,16 @@ public class ShroomHat extends GeoArmorItem implements IAnimatable {
 		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shroom_hat.idle", true));
 		return PlayState.CONTINUE;
 		
+	}
+
+	@Override
+	public ArmorSets getSet() {
+		return ArmorSets.ROTFISH;
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
 	}
 
 }

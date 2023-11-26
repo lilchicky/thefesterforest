@@ -13,6 +13,7 @@ import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFArmorItem;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
@@ -40,7 +41,7 @@ import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.util.Lazy;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
-public class GoopyChestplate extends ArmorItem {
+public class GoopyChestplate extends TFFArmorItem {
 	
 	private String[] drops = {"Rotting Goop", "Fester Forest Loot Chests"};
 	
@@ -105,41 +106,15 @@ public class GoopyChestplate extends ArmorItem {
 	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
 		return slot == EquipmentSlot.CHEST ? this.LAZY.get() : super.getDefaultAttributeModifiers(slot);
 	}
-	
+
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A very slimy body covering made of goop.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Set Bonus: Deliquesce").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent("2+ Pieces: Apply level 3 Goopy Acid to any attackers.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("4 Pieces: Apply level 5 Goopy Acid to any attackers").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		else {
-			lore.add(new TextComponent("Armor").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A very slimy body covering made of goop.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		
-		super.appendHoverText(stack, world, lore, flag);
+	public ArmorSets getSet() {
+		return ArmorSets.GOOP;
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
 	}
 
 }

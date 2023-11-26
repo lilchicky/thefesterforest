@@ -16,7 +16,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 public enum ArmorSets {
 	
 	//Volatile Set
-	VOLATILE(() -> {
+	VOLATILE("volatile", () -> {
 		return new Item[]{ItemInit.VOLATILE_BOOTS.get(),
 				ItemInit.VOLATILE_LEGGINGS.get(),
 				ItemInit.VOLATILE_CHESTPLATE.get(),
@@ -24,7 +24,7 @@ public enum ArmorSets {
 	}),
 	
 	//Banshee Set
-	BANSHEE(() -> {
+	BANSHEE("magic", () -> {
 		return new Item[]{ItemInit.BANSHEE_BOOTS.get(),
 				ItemInit.BANSHEE_LEGGINGS.get(),
 				ItemInit.BANSHEE_CHESTPLATE.get(),
@@ -36,7 +36,7 @@ public enum ArmorSets {
 	}),
 	
 	//Reetle Set
-	REETLE(() -> {
+	REETLE("reetle", () -> {
 		return new Item[]{ItemInit.REETLE_BOOTS.get(),
 				ItemInit.REETLE_LEGGINGS.get(),
 				ItemInit.REETLE_CHESTPLATE.get(),
@@ -45,7 +45,7 @@ public enum ArmorSets {
 	}),
 	
 	//Goopy Set
-	GOOP(() -> {
+	GOOP("goopy", () -> {
 		return new Item[]{ItemInit.GOOPY_BOOTS.get(),
 				ItemInit.GOOPY_LEGGINGS.get(),
 				ItemInit.GOOPY_CHESTPLATE.get(),
@@ -53,7 +53,7 @@ public enum ArmorSets {
 	}),
 	
 	//Rotfish Set
-	ROTFISH(() -> {
+	ROTFISH("rotfish", () -> {
 		return new Item[]{ItemInit.ROTFISH_BOOTS.get(),
 				ItemInit.ROTFISH_LEGGINGS.get(),
 				ItemInit.ROTFISH_CHESTPLATE.get(),
@@ -62,7 +62,7 @@ public enum ArmorSets {
 	}),
 	
 	//Mechanical Set
-	MECHANICAL(() -> {
+	MECHANICAL("mechanical", () -> {
 		return new Item[]{ItemInit.MECHANICAL_BOOTS.get(),
 				ItemInit.MECHANICAL_LEGGINGS.get(),
 				ItemInit.MECHANICAL_CHESTPLATE.get(),
@@ -70,7 +70,7 @@ public enum ArmorSets {
 	}),
 	
 	//Frozen Set
-	FROZEN(() -> {
+	FROZEN("frozen", () -> {
 		return new Item[]{ItemInit.FROZEN_BOOTS.get(),
 				ItemInit.FROZEN_LEGGINGS.get(),
 				ItemInit.FROZEN_CHESTPLATE.get(),
@@ -78,7 +78,7 @@ public enum ArmorSets {
 	}),
 	
 	//Glacial Set
-	GLACIAL(() -> {
+	GLACIAL("glacial", () -> {
 		return new Item[]{ItemInit.GLACIAL_BOOTS.get(),
 				ItemInit.GLACIAL_LEGGINGS.get(),
 				ItemInit.GLACIAL_CHESTPLATE.get(),
@@ -86,11 +86,17 @@ public enum ArmorSets {
 	});
 	
 	private final LazyLoadedValue<Item[]> armorSet;
+	private final String name;
 	
-	private ArmorSets(Supplier<Item[]> armorSet) {
+	private ArmorSets(String name, Supplier<Item[]> armorSet) {
 		
+		this.name = name;
 		this.armorSet = new LazyLoadedValue<>(armorSet);
 		
+	}
+	
+	public String getName() {
+		return this.name;
 	}
 	
 	public Item[] getSet() {

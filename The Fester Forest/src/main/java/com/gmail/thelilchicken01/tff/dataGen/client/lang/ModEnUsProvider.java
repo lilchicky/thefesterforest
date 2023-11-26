@@ -370,9 +370,48 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("type.tff.food", "Food");
 		add("type.tff.arrow", "Arrow");
 		add("type.tff.tool", "Tool");
+		add("type.tff.armor", "Armor");
 		add("type.tff.melee.tool", "Melee/Tool");
 		add("type.tff.melee.magic", "Melee/Magic");
 		add("type.tff.melee.ranged", "Melee/Ranged");
+		
+		/*
+		 * 
+		 * Armor Sets
+		 * 
+		 */
+		
+		add("set.tff.volatile", "Enflame");
+		add("set.tff.volatile.half_set", "2+ Pieces: Gain Fire Resistance.");
+		add("set.tff.volatile.full_set", "4 Pieces: Gain Fire Resistance, and deal damage to surrounding mobs every 3 seconds.");
+		
+		add("set.tff.magic", "Magicka");
+		add("set.tff.magic.half_set", "2+ Pieces: Minor buffs to all Fester Forest Magic items.");
+		add("set.tff.magic.full_set", "4 Pieces: Major buffs to all Fester Forest Magic items.");
+		
+		add("set.tff.reetle", "Caraplate");
+		add("set.tff.reetle.half_set", "2+ Pieces: Gain Resistance 1.");
+		add("set.tff.reetle.full_set", "4 Pieces: Gain Resistance 2 and Saturation.");
+		
+		add("set.tff.goopy", "Deliquesce");
+		add("set.tff.goopy.half_set", "2+ Pieces: Apply Acidic Goop 3 to any attackers.");
+		add("set.tff.goopy.full_set", "4 Pieces: Apply Acidic Goop 5 to any attackers.");
+		
+		add("set.tff.rotfish", "Aqueatic");
+		add("set.tff.rotfish.half_set", "2+ Pieces: Gain Water Breathing.");
+		add("set.tff.rotfish.full_set", "4 Pieces: Gain Conduit Power. Swimming (sprinting in water) for 5 seconds also grants Dolphin's Grace.");
+		
+		add("set.tff.mechanical", "Overcharge");
+		add("set.tff.mechanical.half_set", "2+ Pieces: Gain Haste 2.");
+		add("set.tff.mechanical.full_set", "4 Pieces: Gain Haste 3 and Regeneration 2.");
+		
+		add("set.tff.frozen", "Cryostasis, Magicka");
+		add("set.tff.frozen.half_set", "2+ Pieces: Freeze all mobs within 5 blocks. Minor buffs to all Fester Forest Magic items.");
+		add("set.tff.frozen.full_set", "4 Pieces: Freeze all mobs within 10 blocks. Major buffs to all Fester Forest Magic items.");
+		
+		add("set.tff.glacial", "Beastmaster (Glacial)");
+		add("set.tff.glacial.half_set", "2+ Pieces: Summon an Ice Ramble to fight for you.");
+		add("set.tff.glacial.full_set", "4 Pieces: Your Ice Ramble familiar becomes much stronger.");
 		
 		/*
 		 * 
@@ -486,6 +525,50 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.electric_pickaxe", "A pickaxe formed almost entirely of an odd electric plasma.");
 		add("description.tff.goopy_stick", "A tree branch dripping with acidic goop.");
 		add("description.tff.icy_paxel", "An old multitool frozen in ice.");
+		
+		// Armor
+		add("description.tff.banshee_helmet", "A very lightweight cloak hood.");
+		add("description.tff.banshee_chestplate", "A dark cloth cloak.");
+		add("description.tff.banshee_leggings", "Some dark cloth pants.");
+		add("description.tff.banshee_boots", "A light pair of dark, cloth boots.");
+		
+		add("description.tff.frozen_helmet", "An extremely hard helmet. Gives you a brain freeze.");
+		add("description.tff.frozen_chestplate", "A chilling chestplate, seemingly almost indestructible.");
+		add("description.tff.frozen_leggings", "A pair of stiff, freezing, unshattering leggings.");
+		add("description.tff.frozen_boots", "Cold boots made of mysterious, near unbreakable ice.");
+		
+		add("description.tff.glacial_helmet", "An interesting cap made of delicate ice. Doesn't fit very well.");
+		add("description.tff.glacial_chestplate", "A chestpiece made of solid, blue ice.");
+		add("description.tff.glacial_leggings", "A pair of rather cold pants.");
+		add("description.tff.glacial_boots", "Lightweight boots made of an odd, cold ice.");
+		
+		add("description.tff.goopy_helmet", "A slimy mass of goop. Seems to fit your head.");
+		add("description.tff.goopy_chestplate", "A very slimy body covering made of goop.");
+		add("description.tff.goopy_leggings", "A very goopy pair of pants.");
+		add("description.tff.goopy_boots", "A slimy pair of boots.");
+		
+		add("description.tff.mechanical_helmet", "A metal helmet, seemingly fitting perfectly to your head.");
+		add("description.tff.mechanical_chestplate", "A metallic chestplate fitted with a mysterious purple gem.");
+		add("description.tff.mechanical_leggings", "A pair of unnaturally lightweight leggings.");
+		add("description.tff.mechanical_boots", "A pair of extremely comfortable metal boots.");
+		
+		add("description.tff.reetle_helmet", "A netherite helmet covered in Reetle exoskeletons.");
+		add("description.tff.reetle_chestplate", "A netherite chestplate reinforced with a Reetle exoskeleton.");
+		add("description.tff.reetle_leggings", "Netherite leggings reinforced with Reetle exoskeletons.");
+		add("description.tff.reetle_boots", "Netherite boots plated in Reetle exoskeletons.");
+		add("description.tff.reetle_elytra", "An elytra fitted with Reetle wings.");
+		
+		add("description.tff.rotfish_helmet", "A rotfish scale helmet fitted with a small viewing port.");
+		add("description.tff.rotfish_chestplate", "A slippery chestplate crafted from Rotfish scales.");
+		add("description.tff.rotfish_leggings", "A scale mail pair of pants.");
+		add("description.tff.rotfish_boots", "A pair of hard boots fashioned from the scales of a Rotfish.");
+		
+		add("description.tff.volatile_helmet", "A light helmet made of scorching metal.");
+		add("description.tff.volatile_chestplate", "An extremely hot chestplate.");
+		add("description.tff.volatile_leggings", "A pair of extremely uncomfortable leggings.");
+		add("description.tff.volatile_boots", "A delicate pair of boots, searing to the touch.");
+		
+		add("description.tff.shroom_hat", "The squishy top of a Corroded Shroom.");
 		
 		/*
 		 * 
