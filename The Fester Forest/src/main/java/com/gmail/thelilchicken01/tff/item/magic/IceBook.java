@@ -68,10 +68,10 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 			
 			targetOnlyHostile = !targetOnlyHostile;
 			if (targetOnlyHostile) {
-				player.displayClientMessage(new TextComponent("Now targeting monsters.").withStyle(ChatFormatting.WHITE), true);
+				player.displayClientMessage(new TranslatableComponent("type.tff.hostile_target.player").withStyle(ChatFormatting.WHITE), true);
 			}
 			else {
-				player.displayClientMessage(new TextComponent("Now targeting all living things.").withStyle(ChatFormatting.WHITE), true);
+				player.displayClientMessage(new TranslatableComponent("type.tff.all_target.player").withStyle(ChatFormatting.WHITE), true);
 			}
 			
 		}

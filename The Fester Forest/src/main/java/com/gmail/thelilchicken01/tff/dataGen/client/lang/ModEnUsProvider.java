@@ -359,9 +359,12 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		add("type.tff.more_info", "Press SHIFT for more info.");
 		add("type.tff.drops_from", "Drops From:");
-		add("type.tff.hostile_target", "Targeting Hostile Mobs");
-		add("type.tff.all_target", "Targeting All Living Things");
+		add("type.tff.hostile_target", "Targeting monsters");
+		add("type.tff.all_target", "Targeting everything");
 		add("type.tff.belongs_to", "Belongs to:");
+		
+		add("type.tff.hostile_target.player", "Now targeting monsters.");
+		add("type.tff.all_target.player", "Now targeting everything.");
 		
 		add("type.tff.dull", "Dull");
 		add("type.tff.magic", "Magic");
@@ -381,35 +384,35 @@ public class ModEnUsProvider extends LanguageProvider {
 		 * 
 		 */
 		
-		add("set.tff.volatile", "Enflame");
+		add("set.tff.volatile", "Set Bonus: Enflame");
 		add("set.tff.volatile.half_set", "2+ Pieces: Gain Fire Resistance.");
 		add("set.tff.volatile.full_set", "4 Pieces: Gain Fire Resistance, and deal damage to surrounding mobs every 3 seconds.");
 		
-		add("set.tff.magic", "Magicka");
+		add("set.tff.magic", "Set Bonus: Magicka");
 		add("set.tff.magic.half_set", "2+ Pieces: Minor buffs to all Fester Forest Magic items.");
 		add("set.tff.magic.full_set", "4 Pieces: Major buffs to all Fester Forest Magic items.");
 		
-		add("set.tff.reetle", "Caraplate");
+		add("set.tff.reetle", "Set Bonus: Caraplate");
 		add("set.tff.reetle.half_set", "2+ Pieces: Gain Resistance 1.");
 		add("set.tff.reetle.full_set", "4 Pieces: Gain Resistance 2 and Saturation.");
 		
-		add("set.tff.goopy", "Deliquesce");
+		add("set.tff.goopy", "Set Bonus: Deliquesce");
 		add("set.tff.goopy.half_set", "2+ Pieces: Apply Acidic Goop 3 to any attackers.");
 		add("set.tff.goopy.full_set", "4 Pieces: Apply Acidic Goop 5 to any attackers.");
 		
-		add("set.tff.rotfish", "Aqueatic");
+		add("set.tff.rotfish", "Set Bonus: Aqueatic");
 		add("set.tff.rotfish.half_set", "2+ Pieces: Gain Water Breathing.");
 		add("set.tff.rotfish.full_set", "4 Pieces: Gain Conduit Power. Swimming (sprinting in water) for 5 seconds also grants Dolphin's Grace.");
 		
-		add("set.tff.mechanical", "Overcharge");
+		add("set.tff.mechanical", "Set Bonus: Overcharge");
 		add("set.tff.mechanical.half_set", "2+ Pieces: Gain Haste 2.");
 		add("set.tff.mechanical.full_set", "4 Pieces: Gain Haste 3 and Regeneration 2.");
 		
-		add("set.tff.frozen", "Cryostasis, Magicka");
+		add("set.tff.frozen", "Set Bonuses: Cryostasis, Magicka");
 		add("set.tff.frozen.half_set", "2+ Pieces: Freeze all mobs within 5 blocks. Minor buffs to all Fester Forest Magic items.");
 		add("set.tff.frozen.full_set", "4 Pieces: Freeze all mobs within 10 blocks. Major buffs to all Fester Forest Magic items.");
 		
-		add("set.tff.glacial", "Beastmaster (Glacial)");
+		add("set.tff.glacial", "Set Bonus: Beastmaster (Glacial)");
 		add("set.tff.glacial.half_set", "2+ Pieces: Summon an Ice Ramble to fight for you.");
 		add("set.tff.glacial.full_set", "4 Pieces: Your Ice Ramble familiar becomes much stronger.");
 		
@@ -438,13 +441,13 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.pocket_sand", "A small pile of sand, seemingly never decreasing in size.");
 		add("description.tff.purifying_powder", "A mysterious powder capable of changing the properties of items.");
 		add("description.tff.reetle_queen_antennae", "The Reetles follow their Queen.");
-		add("description.tff.reetle_reagents", "A small bag of reetle limbs, seemingly protecting the holder from fall damage.");
+		add("description.tff.reetle_reagents", "A small bag of reetle limbs, protecting the holder from fall damage.");
 		add("description.tff.reetle_shell", "The tough exoskeleton of the Reetle Queen.");
 		add("description.tff.rotfish_fang", "The fang of a Rotfish. The venom grants immunity to Poison and Wither.");
 		add("description.tff.shock_necklace", "A small ball of energy on a gold chain.");
 		add("description.tff.shroom_bucket", "A bucket with a Shroom in it. Mushrum...");
 		add("description.tff.slippery_goop", "A bottle of a very slippery slime. Grants immunity to Slowness.");
-		add("description.tff.thick_bone", "A very, very heavy bone. Makes you much too heavy to float.");
+		add("description.tff.thick_bone", "A very, very heavy bone. Makes you much too heavy to float in water.");
 		add("description.tff.rotting_catalyst", "A rotting pile of organic material.");
 		
 		// Food
@@ -464,11 +467,11 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.volatile_apple", "A crunchy, burning apple.");
 		
 		// Magic
-		add("description.tff.bone_launcer", "An old stick with a broken bone fitted to one end.");
+		add("description.tff.bone_launcher", "An old stick with a broken bone fitted to one end.");
 		add("description.tff.food_book", "A dusty leather book detailing a spell of hungerlessness.");
 		add("description.tff.brittle_branch", "An ancient, delicate branch.");
 		add("description.tff.bug_eggs", "A small collection of Reetle eggs.");
-		add("description.tff.dull_orb", "A dull Magic Orb... Perhaps it can be crafted into something?");
+		add("description.tff.dull_orb", "A dull magic orb... Perhaps it can be crafted into something?");
 		add("description.tff.energetic_fungus", "A bizarre bundle of fragile fungus.");
 		add("description.tff.flame_orb", "A glassy orb imbued with the fires of the Nether.");
 		add("description.tff.flower_crown", "A beautiful collection of vibrant flowers woven into a crown.");
@@ -507,7 +510,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		// Mixed
 		add("description.tff.ancient_hammer", "An old, heavy hammer.");
-		add("description.tff.festering_club", "A rotting wooden club, laced with dark tendrils.");
+		add("description.tff.festering_club", "A rotting wooden club, riddled with dark veins.");
 		add("description.tff.reaver_blade", "The massive fang of a Deep Reaver.");
 		add("description.tff.shadow_bow", "A dark, shadowy bow with razor sharp limbs.");
 		add("description.tff.volatile_sword", "A flaming blade fitted to a scorching hilt.");
@@ -533,7 +536,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.banshee_boots", "A light pair of dark, cloth boots.");
 		
 		add("description.tff.frozen_helmet", "An extremely hard helmet. Gives you a brain freeze.");
-		add("description.tff.frozen_chestplate", "A chilling chestplate, seemingly almost indestructible.");
+		add("description.tff.frozen_chestplate", "A chilling chestplate. It seems almost indestructible.");
 		add("description.tff.frozen_leggings", "A pair of stiff, freezing, unshattering leggings.");
 		add("description.tff.frozen_boots", "Cold boots made of mysterious, near unbreakable ice.");
 		
@@ -547,7 +550,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.goopy_leggings", "A very goopy pair of pants.");
 		add("description.tff.goopy_boots", "A slimy pair of boots.");
 		
-		add("description.tff.mechanical_helmet", "A metal helmet, seemingly fitting perfectly to your head.");
+		add("description.tff.mechanical_helmet", "A metal helmet that fits perfectly to your head.");
 		add("description.tff.mechanical_chestplate", "A metallic chestplate fitted with a mysterious purple gem.");
 		add("description.tff.mechanical_leggings", "A pair of unnaturally lightweight leggings.");
 		add("description.tff.mechanical_boots", "A pair of extremely comfortable metal boots.");
@@ -577,16 +580,16 @@ public class ModEnUsProvider extends LanguageProvider {
 		 */
 		
 		// Orbs
-		add("ability.tff.flame_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
-		add("ability.tff.forgemaster_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
-		add("ability.tff.frostbitten_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
-		add("ability.tff.frozen_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
-		add("ability.tff.levitate_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
-		add("ability.tff.life_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
-		add("ability.tff.poison_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
-		add("ability.tff.reetle_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
-		add("ability.tff.rotfish_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
-		add("ability.tff.wither_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.flame_orb", "Hold in your offhand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.forgemaster_orb", "Hold in your offhand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.frostbitten_orb", "Hold in your offhand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.frozen_orb", "Hold in your offhand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.levitate_orb", "Hold in your offhand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.life_orb", "Hold in your offhand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.poison_orb", "Hold in your offhand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.reetle_orb", "Hold in your offhand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.rotfish_orb", "Hold in your offhand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.wither_orb", "Hold in your offhand to apply onhit effects to Fester Forest Magic items.");
 		
 		// Other
 		add("ability.tff.ancient_whistle", "Use item to emit a powerful shockwave of sound around you. Any mobs hit will fly away from you. Both yourself and any mobs hit will take armor piercing damage.");
@@ -594,7 +597,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("ability.tff.explosive_powder", "Use item to violently launch yourself forward.");
 		add("ability.tff.flesh_ball", "Use item to squeeze the ball and give yourself very high regeneration at the expense of your movement speed.");
 		add("ability.tff.pocket_sand", "Use item to throw sand from your pocket, blinding any mobs hit.");
-		add("ability.tff.bone_launcer", "Use item to launch a low damage, armor piercing bone projectile.");
+		add("ability.tff.bone_launcher", "Use item to launch a low damage, armor piercing bone projectile.");
 		add("ability.tff.brittle_branch", "Use item to launch multiple poisoned projectiles.");
 		add("ability.tff.bug_eggs", "Use item to summon a collection of friendly Reetles to fight for you.");
 		add("ability.tff.energetic_fungus", "Gain Regeneration when you are not moving.");
@@ -620,10 +623,10 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("ability.tff.reaver_blade", "Hitting a mob afflicts both yourself and the target with the same random effect of a random strength.");
 		add("ability.tff.shadow_bow", "Functions as both a bow and a sword, accepting both kinds of enchantments.");
 		add("ability.tff.volatile_sword", "Use item to emit a burst of flame, damaging and igniting all nearby mobs.");
-		add("ability.tff.frozen_bow", "Converts all shot arrows into Icy Arrows. Shoots 3 arrows at a time, for the cost of one. All shot arrows do an additional 20% damage.");
-		add("ability.tff.icy_bow", "Converts all shot arrows into Icy Arrows.");
+		add("ability.tff.frozen_bow", "Converts all arrows shot into Icy Arrows. Shoots 3 arrows at a time, for the cost of one. All arrows shot do an additional 20% damage.");
+		add("ability.tff.icy_bow", "Converts all arrows shot into Icy Arrows.");
 		add("ability.tff.electric_pickaxe", "Breaking an \"Underground\" block adds a charge, with each charge increasing mining speed. Breaking a non \"Underground\" block dissipates all charges.");
-		add("ability.tff.goopy_pickaxe", "The goop is able to break any block with diamond efficiency.");
+		add("ability.tff.goopy_stick", "The goop is able to break any block with diamond efficiency.");
 		add("ability.tff.icy_paxel", "This tool can break any block with diamond efficiency.");
 		
 	}
