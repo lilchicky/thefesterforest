@@ -10,7 +10,7 @@ import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item_util.ModTiers;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFSwordProjectileItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFSwordProjectileItem;
 import com.gmail.thelilchicken01.tff.item.projectile.BoneShot;
 import com.gmail.thelilchicken01.tff.item.projectile.IceSpikeShot;
 import com.google.common.collect.ImmutableMultimap;

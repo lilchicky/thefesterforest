@@ -1,4 +1,4 @@
-package com.gmail.thelilchicken01.tff.item.item_util;
+package com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides;
 
 import java.util.List;
 
@@ -7,15 +7,15 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.world.item.ArrowItem;
+import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
-public abstract class TFFArrowItem extends ArrowItem {
+public abstract class TFFBowItem extends BowItem {
 
-	public TFFArrowItem(Properties properties) {
+	public TFFBowItem(Properties properties) {
 		super(properties);
 	}
 	

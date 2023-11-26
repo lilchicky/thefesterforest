@@ -11,7 +11,7 @@ import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFElytraItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFElytraItem;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;

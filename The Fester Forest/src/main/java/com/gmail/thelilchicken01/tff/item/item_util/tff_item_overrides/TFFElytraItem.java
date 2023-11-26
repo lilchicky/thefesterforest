@@ -1,4 +1,4 @@
-package com.gmail.thelilchicken01.tff.item.item_util;
+package com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides;
 
 import java.util.List;
 
@@ -12,15 +12,15 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib3.item.GeoArmorItem;
 
-public abstract class TFFGeoArmorItem extends GeoArmorItem {
+public abstract class TFFElytraItem extends ElytraItem {
 
-	public TFFGeoArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
-		super(material, slot, properties);
+	public TFFElytraItem(Properties properties) {
+		super(properties);
 	}
 	
 	public abstract ArmorSets getSet();

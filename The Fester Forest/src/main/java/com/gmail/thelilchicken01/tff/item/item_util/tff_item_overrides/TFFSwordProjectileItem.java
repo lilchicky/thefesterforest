@@ -1,4 +1,4 @@
-package com.gmail.thelilchicken01.tff.item.item_util;
+package com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides;
 
 import java.util.List;
 import java.util.function.Predicate;

@@ -3,7 +3,7 @@ package com.gmail.thelilchicken01.tff.item.melee;
 import java.util.List;
 
 import com.gmail.thelilchicken01.tff.effect.ModEffects;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFSwordItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFSwordItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

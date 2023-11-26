@@ -8,7 +8,7 @@ import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item_util.EffectsUtil;
 import com.gmail.thelilchicken01.tff.item.item_util.ModTiers;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFPickaxeItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFPickaxeItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

@@ -7,7 +7,7 @@ import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicItem;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

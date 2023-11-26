@@ -6,7 +6,7 @@ import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.ModEntityTypes;
 import com.gmail.thelilchicken01.tff.entity.custom.CorrodedShroomEntity;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

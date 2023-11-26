@@ -5,7 +5,7 @@ import java.util.List;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.custom.BansheeEntity;
 import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

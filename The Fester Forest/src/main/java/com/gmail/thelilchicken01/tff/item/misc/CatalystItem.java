@@ -5,7 +5,7 @@ import java.util.List;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.block.TffPortalBlock;
 import com.gmail.thelilchicken01.tff.init.BlockInit;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFItem;
 import com.gmail.thelilchicken01.tff.world.dimension.ModDimensions;
 
 import net.minecraft.ChatFormatting;

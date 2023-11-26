@@ -6,7 +6,7 @@ import java.util.UUID;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.entity.arrow.IcyArrow;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFBowItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFBowItem;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap.Builder;

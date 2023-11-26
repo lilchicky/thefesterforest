@@ -1,33 +1,28 @@
-package com.gmail.thelilchicken01.tff.item.item_util;
+package com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides;
 
 import java.util.List;
-import java.util.function.Predicate;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ProjectileWeaponItem;
+import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
-public abstract class TFFProjectileWeaponItem extends ProjectileWeaponItem {
+public abstract class TFFPickaxeItem extends PickaxeItem {
 
-	public TFFProjectileWeaponItem(Properties properties) {
-		super(properties);
+	public TFFPickaxeItem(Tier tier, int damage, float speed, Item.Properties properties) {
+		super(tier, damage, speed, properties);
 	}
 	
 	public abstract String itemType();
 	public abstract String[] dropsFrom();
 	public abstract boolean isShiftable();
-
-	@Override
-	public abstract Predicate<ItemStack> getAllSupportedProjectiles();
-
-	@Override
-	public abstract int getDefaultProjectileRange();
 	
 	@Override
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {

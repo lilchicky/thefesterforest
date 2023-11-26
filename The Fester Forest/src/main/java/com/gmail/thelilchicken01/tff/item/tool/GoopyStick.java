@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.item.item_util.ModTiers;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFPaxelItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFPaxelItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

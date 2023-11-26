@@ -2,7 +2,7 @@ package com.gmail.thelilchicken01.tff.item.dull;
 
 import java.util.List;
 
-import com.gmail.thelilchicken01.tff.item.item_util.TFFItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

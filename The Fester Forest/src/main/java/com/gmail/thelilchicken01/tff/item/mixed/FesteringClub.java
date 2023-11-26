@@ -9,7 +9,7 @@ import com.gmail.thelilchicken01.tff.item.item_util.MagicItem;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicModUtil;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicOrb;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicWeapon;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFSwordItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFSwordItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

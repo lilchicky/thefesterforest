@@ -11,7 +11,7 @@ import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicItem;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicWeapon;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFProjectileWeaponItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFProjectileWeaponItem;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 
 import net.minecraft.ChatFormatting;

@@ -10,7 +10,7 @@ import com.gmail.thelilchicken01.tff.entity.custom.IceRambleEntity;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
 import com.gmail.thelilchicken01.tff.item.armor.SetCount;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFArmorItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFArmorItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;

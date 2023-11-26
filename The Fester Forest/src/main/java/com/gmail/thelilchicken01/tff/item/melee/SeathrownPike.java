@@ -3,7 +3,7 @@ package com.gmail.thelilchicken01.tff.item.melee;
 import java.util.List;
 import java.util.UUID;
 
-import com.gmail.thelilchicken01.tff.item.item_util.TFFSwordItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFSwordItem;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;

@@ -1,4 +1,4 @@
-package com.gmail.thelilchicken01.tff.item.item_util;
+package com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides;
 
 import java.util.List;
 
@@ -7,16 +7,15 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
-public abstract class TFFSwordItem extends SwordItem {
+public abstract class TFFItem extends Item {
 
-	public TFFSwordItem(Tier p_43269_, int p_43270_, float p_43271_, Properties p_43272_) {
-		super(p_43269_, p_43270_, p_43271_, p_43272_);
+	public TFFItem(Properties properties) {
+		super(properties);
 	}
 	
 	public abstract String itemType();

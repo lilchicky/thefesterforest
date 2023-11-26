@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.capability.SwimHandler;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

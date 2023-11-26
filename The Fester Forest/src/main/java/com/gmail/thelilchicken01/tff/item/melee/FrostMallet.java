@@ -7,7 +7,7 @@ import com.gmail.thelilchicken01.tff.init.ItemInit;
 import com.gmail.thelilchicken01.tff.init.ParticleInit;
 import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
 import com.gmail.thelilchicken01.tff.item.item_util.ModTiers;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFSwordItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFSwordItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

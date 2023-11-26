@@ -1,4 +1,4 @@
-package com.gmail.thelilchicken01.tff.item.item_util;
+package com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides;
 
 import java.util.List;
 
@@ -15,10 +15,11 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import software.bernie.geckolib3.item.GeoArmorItem;
 
-public abstract class TFFArmorItem extends ArmorItem {
+public abstract class TFFGeoArmorItem extends GeoArmorItem {
 
-	public TFFArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
+	public TFFGeoArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
 		super(material, slot, properties);
 	}
 	

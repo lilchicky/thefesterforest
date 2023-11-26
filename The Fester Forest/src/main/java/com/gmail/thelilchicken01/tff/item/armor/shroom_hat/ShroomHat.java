@@ -6,7 +6,7 @@ import java.util.UUID;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.item.armor.ArmorSets;
 import com.gmail.thelilchicken01.tff.item.armor.ModArmorMaterial;
-import com.gmail.thelilchicken01.tff.item.item_util.TFFGeoArmorItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFGeoArmorItem;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;

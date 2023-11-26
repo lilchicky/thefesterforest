@@ -1,6 +1,6 @@
 package com.gmail.thelilchicken01.tff.item.melee;
 
-import com.gmail.thelilchicken01.tff.item.item_util.TFFSwordItem;
+import com.gmail.thelilchicken01.tff.item.item_util.tff_item_overrides.TFFSwordItem;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
