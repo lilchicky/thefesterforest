@@ -947,9 +947,14 @@ public class ModRecipeProvider extends RecipeProvider {
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.SHROOM_CLUSTER.get().getRegistryName().getPath() + "_from_shrooms"));
 		
 		// Rotfish Special
-		ShapelessRecipeBuilder.shapeless(ItemInit.ROTFISH_SPECIAL.get().asItem()).requires(ItemInit.COOKED_ROTFISH.get()).requires(BlockInit.CORRODED_SHROOM.get(), 2) //get item
+		ShapelessRecipeBuilder.shapeless(ItemInit.ROTFISH_SPECIAL.get().asItem()).requires(ItemInit.COOKED_ROTFISH.get()).requires(BlockInit.CORRODED_SHROOM.get(), 4) //get item
 			.unlockedBy("has_" + ItemInit.COOKED_ROTFISH.get().getRegistryName(), has(ItemInit.COOKED_ROTFISH.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.ROTFISH_SPECIAL.get().getRegistryName().getPath() + "_crafting"));
+		
+		// Rotfish Special
+		ShapelessRecipeBuilder.shapeless(ItemInit.ROTFISH_SPECIAL.get().asItem()).requires(ItemInit.COOKED_ROTFISH.get()).requires(ItemInit.SHROOM_CLUSTER.get()) //get item
+			.unlockedBy("has_" + ItemInit.COOKED_ROTFISH.get().getRegistryName(), has(ItemInit.COOKED_ROTFISH.get().asItem()))
+			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.ROTFISH_SPECIAL.get().getRegistryName().getPath() + "_crafting_cluster"));
 		
 		// Orange Shroom to Mushrooms
 		ShapelessRecipeBuilder.shapeless(BlockInit.CORRODED_SHROOM.get().asItem(), 3).requires(BlockInit.ORANGE_FESTER_SHROOM_BLOCK.get()) //get item

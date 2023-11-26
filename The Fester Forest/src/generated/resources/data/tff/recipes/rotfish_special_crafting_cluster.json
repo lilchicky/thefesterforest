@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tff:cooked_rotfish"
+    },
+    {
+      "item": "tff:shroom_cluster"
+    }
+  ],
+  "result": {
+    "item": "tff:rotfish_special"
+  }
+}
