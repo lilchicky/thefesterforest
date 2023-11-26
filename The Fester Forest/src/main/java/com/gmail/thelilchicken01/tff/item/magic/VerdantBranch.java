@@ -12,6 +12,7 @@ import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicItem;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicWeapon;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFProjectileWeaponItem;
 import com.gmail.thelilchicken01.tff.item.projectile.BranchProjectile;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableMultimap;
@@ -44,7 +45,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.util.Lazy;
 
-public class VerdantBranch extends ProjectileWeaponItem implements MagicItem, MagicWeapon {
+public class VerdantBranch extends TFFProjectileWeaponItem implements MagicItem, MagicWeapon {
 	
 	private String[] drops = {"Crafted"};
 	
@@ -221,41 +222,20 @@ public class VerdantBranch extends ProjectileWeaponItem implements MagicItem, Ma
 	public int getDefaultProjectileRange() {
 		return 15;
 	}
-	
+
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
-		
-		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Magic").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A once dead branch, now thriving with life.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Right click an enemy to create 3 shots that").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("lock onto and fire at your target.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("Each projectile inflicts poison.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		else {
-			lore.add(new TextComponent("Magic").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A once dead branch, now thriving with life.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
-			for (int x = 0; x < drops.length; x++) {
-				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
-			}
-			lore.add(new TextComponent(""));
-		}
-		
-		super.appendHoverText(stack, world, lore, flag);
+	public String itemType() {
+		return "magic";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
+
+	@Override
+	public boolean isShiftable() {
+		return true;
 	}
 
 }

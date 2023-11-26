@@ -6,6 +6,7 @@ import java.util.UUID;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicModUtil;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicOrb;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFItem;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
@@ -24,7 +25,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class FrozenOrb extends Item implements MagicOrb {
+public class FrozenOrb extends TFFItem implements MagicOrb {
 	
 	private String[] drops = {"Crafted"};
 
@@ -57,6 +58,21 @@ public class FrozenOrb extends Item implements MagicOrb {
 	@Override
 	public MagicModUtil getOrbType() {
 		return MagicModUtil.ICE;
+	}
+
+	@Override
+	public String itemType() {
+		return "magic";
+	}
+
+	@Override
+	public String[] dropsFrom() {
+		return drops;
+	}
+
+	@Override
+	public boolean isShiftable() {
+		return true;
 	}
 
 }

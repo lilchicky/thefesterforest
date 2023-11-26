@@ -97,7 +97,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.VOLATILE_GHOST_SPAWN_EGG.get(), "Volatile Ghost Spawn Egg");
 		add(ModEntityTypes.VOLATILE_GHOST.get(), "Volatile Ghost");
 		add(ItemInit.VOLATILE_NECKLACE.get(), "Volatile Necklace");
-		add(ItemInit.FROZEN_PENDANT.get(), "Frozen Pendant");
+		add(ItemInit.FROZEN_PENDANT.get(), "Frozen Charm");
 		add(ItemInit.POCKET_SAND.get(), "Pocket Sand");
 		add(ItemInit.FLESH_BALL.get(), "Ball of Flesh");
 		add(ItemInit.LIFE_SCYTHE.get(), "Scythe of Draining");
@@ -359,6 +359,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		add("type.tff.more_info", "Press SHIFT for more info.");
 		add("type.tff.drops_from", "Drops From:");
+		add("type.tff.hostile_target", "Targeting Hostile Mobs");
+		add("type.tff.all_target", "Targeting All Living Things");
 		
 		add("type.tff.dull", "Dull");
 		add("type.tff.magic", "Magic");
@@ -415,12 +417,53 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("description.tff.shroom_cluster", "A bundle of wet, salty mushrooms.");
 		add("description.tff.volatile_apple", "A cruncy, burning apple");
 		
+		// Magic
+		add("description.tff.bone_launcer", "An old stick with a broken bone fitted to one end.");
+		add("description.tff.food_book", "A dusty leather book detailing a spell of hungerlessness.");
+		add("description.tff.brittle_branch", "An ancient, delicate branch.");
+		add("description.tff.bug_eggs", "A small collection of Reetle eggs.");
+		add("description.tff.dull_orb", "A dull Magic Orb... Perhaps it can be crafted into something?");
+		add("description.tff.energetic_fungus", "A bizarre bundle of fragile fungus.");
+		add("description.tff.flame_orb", "A glassy orb imbued with the fires of the Nether.");
+		add("description.tff.flower_crown", "A beautiful collection of vibrant flowers woven into a crown.");
+		add("description.tff.forgemaster_orb", "A glassy orb imbued with the mending fervor of the Forge.");
+		add("description.tff.frostbitten_orb", "A glassy orb imbued with the living, growing ice that encased the Frostbitten King.");
+		add("description.tff.frozen_orb", "A glassy orb imbued with the freezing winds of glaciers.");
+		add("description.tff.frozen_pendant", "A small, ice cold metal charm.");
+		add("description.tff.glaciated_staff", "A cold staff, once wielded by a mighty titan.");
+		add("description.tff.glowing_book", "A glowing book, containing the writings of an old revealing spell.");
+		add("description.tff.ice_book", "A frosty book explaining how to cast an explosion of icy projectiles.");
+		add("description.tff.levitate_orb", "A glassy orb imbued with the weightlessness of the End.");
+		add("description.tff.life_orb", "A glassy orb imbued with the life of the Fester Forest.");
+		add("description.tff.meteor_wand", "A scorching metal rod with a molten ball of rock fixed to one end.");
+		add("description.tff.poison_orb", "A glassy orb imbued with the toxins of spider venom.");
+		add("description.tff.reetle_orb", "A glassy orb imbued with the soul of the Reetle Queen.");
+		add("description.tff.rotfish_orb", "A glassy orb imbued with the chaos of the ocean.");
+		add("description.tff.rotting_staff", "A mushy staff with an odd purple flame on one end.");
+		add("description.tff.shield_book", "An old dusty spellbook, detailing the encantations of a shielding spell");
+		add("description.tff.verdant_branch", "A once dead branch, now thriving with life.");
+		add("description.tff.volatile_necklace", "A scorching necklace fitted with a fiery charm.");
+		add("description.tff.wither_orb", "A glassy orb imbued with the souls of the dead.");
+		
 		/*
 		 * 
 		 * Item Abilities
 		 * 
 		 */
 		
+		// Orbs
+		add("ability.tff.flame_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.forgemaster_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.frostbitten_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.frozen_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.levitate_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.life_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.poison_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.reetle_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.rotfish_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
+		add("ability.tff.wither_orb", "Hold in your Off Hand to apply onhit effects to Fester Forest Magic items.");
+		
+		// Other
 		add("ability.tff.ancient_whistle", "Use item to emit a powerful shockwave of sound around you. "
 				+ "Any mobs hit will fly away from you. Both yourself and any mobs hit "
 				+ "will take armor piercing damage.");
@@ -430,6 +473,20 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("ability.tff.explosive_powder", "Use item to violently launch yourself forward.");
 		add("ability.tff.flesh_ball", "Use item to squeeze the ball and give yourself very high regeneration at the expense of your movement speed.");
 		add("ability.tff.pocket_sand", "Use item to throw sand from your pocket, blinding any mobs hit.");
+		add("ability.tff.bone_launcer", "Use item to launch a low damage, armor piercing bone projectile.");
+		add("ability.tff.brittle_branch", "Use item to launch multiple poisoned projectiles.");
+		add("ability.tff.bug_eggs", "Use item to summon a collection of friendly Reetles to fight for you.");
+		add("ability.tff.energetic_fungus", "Gain Regeneration when you are not moving.");
+		add("ability.tff.flower_crown", "When worn, slain mobs drop more experience.");
+		add("ability.tff.frozen_pendant", "When worn, the charm leeches the movement from nearby mobs, and returns it to the wearer.");
+		add("ability.tff.glaciated_staff", "Use item to launch a massive ice boulder. The boulder explodes on impact, damaging nearby mobs.");
+		add("ability.tff.glowing_book", "Use item to apply Glowing to nearby mobs.");
+		add("ability.tff.ice_book", "Use item to launch a projectile at nearby mobs. Crouch while using item to change targeting mode.");
+		add("ability.tff.meteor_wand", "Use item on a block or mob to summon a meteor above your head that will land at that location. Does not work well under a roof!");
+		add("ability.tff.rotting_staff", "Use item to launch a rotting bolt.");
+		add("ability.tff.shield_book", "Use item to temporarily grant yourself a large number of Absorption hearts.");
+		add("ability.tff.verdant_branch", "Use item on a mob to summon multiple poisoned homing projectiles.");
+		add("ability.tff.volatile_necklace", "While on fire, gain Strength");
 		
 	}
 

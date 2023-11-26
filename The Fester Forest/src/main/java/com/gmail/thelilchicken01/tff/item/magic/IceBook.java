@@ -11,6 +11,7 @@ import com.gmail.thelilchicken01.tff.item.armor.SetCount;
 import com.gmail.thelilchicken01.tff.item.item_util.ItemUtil;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicItem;
 import com.gmail.thelilchicken01.tff.item.item_util.MagicWeapon;
+import com.gmail.thelilchicken01.tff.item.item_util.TFFItem;
 import com.gmail.thelilchicken01.tff.item.projectile.FrostBoltProjectile;
 
 import net.minecraft.ChatFormatting;
@@ -18,6 +19,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -178,48 +180,44 @@ public class IceBook extends Item implements MagicItem, MagicWeapon {
 	public void appendHoverText(ItemStack stack, Level world, List<Component> lore, TooltipFlag flag) {
 		
 		if(Screen.hasShiftDown()) {
-			lore.add(new TextComponent("Magic").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A frosty book explaining how to cast an explosion").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("of icy projectiles.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Right click to shoot nearby entities.").withStyle(ChatFormatting.AQUA));
-			lore.add(new TextComponent("Max targets scales with Magic buffs.").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.ITALIC));
-			lore.add(new TextComponent("Crouch + Right Click to toggle targeting mode.").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.ITALIC));
-			lore.add(new TextComponent(""));
+			lore.add(new TranslatableComponent("type.tff.magic").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent(" "));
+			lore.add(new TranslatableComponent("description.tff.ice_book").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent(" "));
+			lore.add(new TranslatableComponent("ability.tff.ice_book").withStyle(ChatFormatting.AQUA));
+			lore.add(new TextComponent(" "));
 			if (targetOnlyHostile) {
-				lore.add(new TextComponent("Targeting monsters.").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
+				lore.add(new TranslatableComponent("type.tff.hostile_target").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
 			}
 			else {
-				lore.add(new TextComponent("Targeting all living things.").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
+				lore.add(new TranslatableComponent("type.tff.all_target").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
 			}
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			lore.add(new TextComponent(" "));
+			lore.add(new TranslatableComponent("type.tff.drops_from").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < drops.length; x++) {
 				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
 			}
-			lore.add(new TextComponent(""));
+			lore.add(new TextComponent(" "));
 		}
 		else {
-			lore.add(new TextComponent("Magic").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("A frosty book explaining how to cast an explosion").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent("of icy projectiles.").withStyle(ChatFormatting.GRAY));
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Press SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			lore.add(new TextComponent(""));
+			lore.add(new TranslatableComponent("type.tff.magic").withStyle(ChatFormatting.DARK_AQUA).withStyle(ChatFormatting.BOLD));
+			lore.add(new TextComponent(" "));
+			lore.add(new TranslatableComponent("description.tff.ice_book").withStyle(ChatFormatting.GRAY));
+			lore.add(new TextComponent(" "));
+			lore.add(new TranslatableComponent("type.tff.more_info").withStyle(ChatFormatting.YELLOW));
+			lore.add(new TextComponent(" "));
 			if (targetOnlyHostile) {
-				lore.add(new TextComponent("Targeting monsters.").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
+				lore.add(new TranslatableComponent("type.tff.hostile_target").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
 			}
 			else {
-				lore.add(new TextComponent("Targeting all living things.").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
+				lore.add(new TranslatableComponent("type.tff.all_target").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD));
 			}
-			lore.add(new TextComponent(""));
-			lore.add(new TextComponent("Drops From:").withStyle(ChatFormatting.LIGHT_PURPLE));
+			lore.add(new TextComponent(" "));
+			lore.add(new TranslatableComponent("type.tff.drops_from").withStyle(ChatFormatting.LIGHT_PURPLE));
 			for (int x = 0; x < drops.length; x++) {
 				lore.add(new TextComponent(drops[x]).withStyle(ChatFormatting.LIGHT_PURPLE));
 			}
-			lore.add(new TextComponent(""));
+			lore.add(new TextComponent(" "));
 		}
 		
 		super.appendHoverText(stack, world, lore, flag);
