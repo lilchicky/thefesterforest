@@ -40,7 +40,7 @@ public class GoopySmoothie extends TFFItem {
 			if (user instanceof Player player) {
 			
 				if (!player.isCreative()) {
-					player.heal(4.0f);
+					player.heal(6.0f);
 					ItemStack bottle = new ItemStack(Items.GLASS_BOTTLE);
 					player.addItem(bottle);
 				}
