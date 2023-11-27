@@ -973,12 +973,12 @@ public class ModRecipeProvider extends RecipeProvider {
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.ROTFISH_SPECIAL.get().getRegistryName().getPath() + "_crafting_cluster"));
 		
 		// Goopy Smoothie
-		ShapelessRecipeBuilder.shapeless(ItemInit.GOOPY_SMOOTHIE.get().asItem()).requires(ItemInit.GOOPY_JELLO.get()).requires(BlockInit.ICICLE.get()).requires(Items.SWEET_BERRIES).requires(Blocks.ICE) //get item
+		ShapelessRecipeBuilder.shapeless(ItemInit.GOOPY_SMOOTHIE.get().asItem()).requires(ItemInit.GOOPY_JELLO.get()).requires(Items.GLASS_BOTTLE).requires(Items.SWEET_BERRIES).requires(Blocks.ICE) //get item
 			.unlockedBy("has_" + ItemInit.GOOPY_JELLO.get().getRegistryName(), has(ItemInit.GOOPY_JELLO.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.GOOPY_SMOOTHIE.get().getRegistryName().getPath() + "_crafting"));
 		
 		// Slimy Sundae
-		ShapelessRecipeBuilder.shapeless(ItemInit.SLIMY_SUNDAE.get().asItem()).requires(Items.SLIME_BALL, 3).requires(Items.SNOWBALL, 2).requires(Items.SUGAR, 2).requires(Items.BOWL).requires(ItemInit.ROTTING_SLIMEBALL.get()) //get item
+		ShapelessRecipeBuilder.shapeless(ItemInit.SLIMY_SUNDAE.get().asItem()).requires(Items.SLIME_BALL, 2).requires(ItemInit.ROTTING_SLIMEBALL.get()).requires(Items.SNOWBALL, 1).requires(Items.BOWL).requires(Items.SUGAR, 1) //get item
 			.unlockedBy("has_" + ItemInit.ROTTING_SLIMEBALL.get().getRegistryName(), has(ItemInit.ROTTING_SLIMEBALL.get().asItem()))
 			.save(consumer, new ResourceLocation(TheFesterForest.MODID, ItemInit.SLIMY_SUNDAE.get().getRegistryName().getPath() + "_crafting"));
 		

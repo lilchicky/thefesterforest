@@ -8,25 +8,16 @@
       "item": "minecraft:slime_ball"
     },
     {
-      "item": "minecraft:slime_ball"
+      "item": "tff:rotting_slimeball"
     },
     {
       "item": "minecraft:snowball"
-    },
-    {
-      "item": "minecraft:snowball"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
     },
     {
       "item": "minecraft:bowl"
     },
     {
-      "item": "tff:rotting_slimeball"
+      "item": "minecraft:sugar"
     }
   ],
   "result": {
