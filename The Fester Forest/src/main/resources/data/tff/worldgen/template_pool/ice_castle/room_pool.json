@@ -3,7 +3,7 @@
   // Yes, worldgen json files can have comments. Minecraft does "lenient" parsing of these json files.
 
   "name": "tff:ice_castle/room_pool",
-  "fallback": "minecraft:empty",
+  "fallback": "tff:ice_castle/fallback_pool",
   "elements": [
     {
       "weight": 3,

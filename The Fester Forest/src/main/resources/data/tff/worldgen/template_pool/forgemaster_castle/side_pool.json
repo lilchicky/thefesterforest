@@ -15,6 +15,15 @@
       }
     },
     {
+      "weight": 100,
+      "element": {
+        "location": "tff:forgemaster_carpet_hallway",
+        "processors": "tff:forgemaster_randomizer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
       "weight": 70,
       "element": {
         "location": "tff:forgemaster_cross",

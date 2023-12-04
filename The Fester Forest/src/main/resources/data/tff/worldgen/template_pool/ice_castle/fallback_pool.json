@@ -8,17 +8,8 @@
     {
       "weight": 1,
       "element": {
-        "location": "tff:forgemaster_door",
-        "processors": "tff:forgemaster_randomizer",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 2,
-      "element": {
-        "location": "tff:forgemaster_hallway_end",
-        "processors": "tff:forgemaster_randomizer",
+        "location": "tff:ice_castle/hallway_end",
+        "processors": "tff:ice_castle",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
