@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tff:frostbitten_lamp"
+    ]
+  },
+  "criteria": {
+    "has_tff:icicle": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tff:icicle"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tff:frostbitten_lamp"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tff:icicle",
+      "has_the_recipe"
+    ]
+  ]
+}

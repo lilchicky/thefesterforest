@@ -339,6 +339,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.GOOPY_SMOOTHIE.get(), "Goopy Smoothie");
 		add(ItemInit.SLIMY_SUNDAE.get(), "Slimy Sundae");
 		add(ItemInit.AMBECTRUM_ICE_CREAM_SANDWICH.get(), "Ambectrum Ice Cream Sandwich");
+		add(BlockInit.FROSTBITTEN_LAMP.get(), "Frostbitten Lamp");
 		
 		/*
 		 * 

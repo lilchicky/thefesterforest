@@ -78,6 +78,7 @@ public class ModLootTableProvider extends BaseLootTableProvider {
 		dropSelf(BlockInit.FROSTBITTEN_STAIRS.get());
 		dropSelf(BlockInit.FROSTBITTEN_FENCE.get());
 		dropSelf(BlockInit.FROSTBITTEN_FENCE_GATE.get());
+		dropSelf(BlockInit.FROSTBITTEN_LAMP.get());
 		
 		dropSelf(BlockInit.ROTTINGWOOD_BUTTON.get());
 		dropSelf(BlockInit.ROTTINGWOOD_TRAPDOOR.get());

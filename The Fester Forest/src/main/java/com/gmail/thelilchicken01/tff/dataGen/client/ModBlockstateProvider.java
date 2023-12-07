@@ -35,6 +35,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
 		simpleBlock(BlockInit.ORANGE_FESTER_SHROOM_BLOCK.get());
 		simpleBlock(BlockInit.CUBED_FUNGUS.get());
 		simpleBlock(BlockInit.FROSTBITTEN_PLANKS.get());
+		simpleBlock(BlockInit.FROSTBITTEN_LAMP.get());
 		
 	}
 

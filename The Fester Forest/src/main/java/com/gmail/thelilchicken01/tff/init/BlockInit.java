@@ -5,6 +5,7 @@ import java.util.function.Function;
 import com.gmail.thelilchicken01.tff.TheFesterForest;
 import com.gmail.thelilchicken01.tff.block.CorrodedShroom;
 import com.gmail.thelilchicken01.tff.block.FesterBrickPressurePlate;
+import com.gmail.thelilchicken01.tff.block.FrostbittenLamp;
 import com.gmail.thelilchicken01.tff.block.FrostbittenSapling;
 import com.gmail.thelilchicken01.tff.block.Frostvine;
 import com.gmail.thelilchicken01.tff.block.FungalGrowth;
@@ -709,6 +710,11 @@ public class BlockInit {
 	//Reetlelight
 	public static final RegistryObject<Block> REETLELIGHT = register("reetlelight", 
 			() -> new Reetlelight(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
+	
+	//Frostbitten Lamp
+	public static final RegistryObject<Block> FROSTBITTEN_LAMP = register("frostbitten_lamp", 
+			() -> new FrostbittenLamp(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(TheFesterForest.TFF_TAB)));
 	
 	//Soul Rot

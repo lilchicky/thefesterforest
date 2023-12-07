@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " a ",
+    "aba",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "tff:icicle"
+    },
+    "b": {
+      "item": "minecraft:glowstone"
+    }
+  },
+  "result": {
+    "item": "tff:frostbitten_lamp"
+  }
+}

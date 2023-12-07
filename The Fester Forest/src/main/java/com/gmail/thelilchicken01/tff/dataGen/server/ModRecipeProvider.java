@@ -479,6 +479,18 @@ public class ModRecipeProvider extends RecipeProvider {
 				new ResourceLocation(TheFesterForest.MODID, 
 						BlockInit.FESTER_BRICK_PRESSURE_PLATE.get().getRegistryName().getPath()));
 		
+		// Frostbitten Lamp
+		ShapedRecipeBuilder.shaped(BlockInit.FROSTBITTEN_LAMP.get(), 1)
+		.define('a', BlockInit.ICICLE.get().asItem()).define('b', Blocks.GLOWSTONE)
+		.unlockedBy("has_" + BlockInit.ICICLE.get().getRegistryName(), 
+				has(BlockInit.ICICLE.get().asItem()))
+		.pattern(" a ")
+		.pattern("aba")
+		.pattern(" a ")
+		.save(consumer, 
+				new ResourceLocation(TheFesterForest.MODID, 
+						BlockInit.FROSTBITTEN_LAMP.get().getRegistryName().getPath()));
+		
 		/*
 		 *
 		 * Magic Orbs
