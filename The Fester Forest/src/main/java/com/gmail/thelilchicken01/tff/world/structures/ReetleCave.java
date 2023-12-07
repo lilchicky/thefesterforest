@@ -99,7 +99,7 @@ public class ReetleCave extends StructureFeature<JigsawConfiguration> {
         // Set's our spawning blockpos's y offset to be 60 blocks up.
         // Since we are going to have heightmap/terrain height spawning set to true further down, this will make it so we spawn 60 blocks above terrain.
         // If we wanted to spawn on ocean floor, we would set heightmap/terrain height spawning to false and the grab the y value of the terrain with OCEAN_FLOOR_WG heightmap.
-        blockpos = blockpos.above(-10);
+        blockpos = blockpos.above(-29);
 
         Optional<PieceGenerator<JigsawConfiguration>> structurePiecesGenerator =
                 JigsawPlacement.addPieces(
