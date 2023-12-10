@@ -34,10 +34,11 @@ import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class GlacialTitanEntity extends Monster implements IAnimatable {
 	
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	
 	private boolean isThrowing = false;
 
@@ -156,8 +157,8 @@ public class GlacialTitanEntity extends Monster implements IAnimatable {
 	@Override
 	public void registerControllers(AnimationData data) {
 		
-		data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
-		data.addAnimationController(new AnimationController(this, "throwcontroller", 0, this::throwPredicate));
+		data.addAnimationController(new AnimationController<>(this, "controller", 0, this::predicate));
+		data.addAnimationController(new AnimationController<>(this, "throwcontroller", 0, this::throwPredicate));
 		
 	}
 

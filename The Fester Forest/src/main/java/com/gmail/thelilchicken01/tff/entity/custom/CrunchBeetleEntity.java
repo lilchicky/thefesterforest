@@ -32,14 +32,16 @@ import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType.EDefaultLoopTypes;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class CrunchBeetleEntity extends Animal implements IAnimatable {
 	
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	
 	private boolean summonedByQueen = false;
 
@@ -111,11 +113,11 @@ public class CrunchBeetleEntity extends Animal implements IAnimatable {
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
 		if(event.isMoving()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.crunch_beetle.walk", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.crunch_beetle.walk", EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 		
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.crunch_beetle.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.crunch_beetle.idle", EDefaultLoopTypes.LOOP));
 		return PlayState.CONTINUE;
 		
 	}
@@ -123,7 +125,7 @@ public class CrunchBeetleEntity extends Animal implements IAnimatable {
 	@Override
 	public void registerControllers(AnimationData data) {
 		
-		data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+		data.addAnimationController(new AnimationController<>(this, "controller", 0, this::predicate));
 		
 	}
 

@@ -35,14 +35,16 @@ import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType.EDefaultLoopTypes;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class ReetleQueenEntity extends TamableAnimal implements IAnimatable {
 	
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	
 	private int spawnSeconds = 1;
 	private int spawnCooldown;
@@ -173,19 +175,19 @@ public class ReetleQueenEntity extends TamableAnimal implements IAnimatable {
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.reetle_queen.idlevar2", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.reetle_queen.idlevar2", EDefaultLoopTypes.LOOP));
 		
 		return PlayState.CONTINUE;
 		
 	}
 	
-	private PlayState attackPredicate(AnimationEvent event) {
+	private <E extends IAnimatable> PlayState attackPredicate(AnimationEvent<E> event) {
 		
 		if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
 			
 			event.getController().markNeedsReload();
 			
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.reetle_queen.attack", false));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.reetle_queen.attack", EDefaultLoopTypes.PLAY_ONCE));
 			
 			this.swinging = false;
 			
@@ -198,8 +200,8 @@ public class ReetleQueenEntity extends TamableAnimal implements IAnimatable {
 	@Override
 	public void registerControllers(AnimationData data) {
 		
-		data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
-		data.addAnimationController(new AnimationController(this, "attackcontroller", 0, this::attackPredicate));
+		data.addAnimationController(new AnimationController<>(this, "controller", 0, this::predicate));
+		data.addAnimationController(new AnimationController<>(this, "attackcontroller", 0, this::attackPredicate));
 		
 	}
 

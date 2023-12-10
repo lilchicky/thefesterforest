@@ -56,14 +56,16 @@ import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType.EDefaultLoopTypes;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class ForgemasterEntity extends Monster implements IAnimatable {
 	
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	
 	private final ServerBossEvent bossEvent = (ServerBossEvent)(new ServerBossEvent(
 			this.getDisplayName(), 
@@ -344,11 +346,11 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
 		if(event.isMoving()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.forgemaster.walk", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.forgemaster.walk", EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 		
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.forgemaster.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.forgemaster.idle", EDefaultLoopTypes.LOOP));
 		return PlayState.CONTINUE;
 		
 	}
@@ -359,7 +361,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 			
 			event.getController().markNeedsReload();
 			
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.forgemaster.attack", false));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.forgemaster.attack", EDefaultLoopTypes.PLAY_ONCE));
 			
 			this.swinging = false;
 			
@@ -372,8 +374,8 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 	@Override
 	public void registerControllers(AnimationData data) {
 		
-		data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
-		data.addAnimationController(new AnimationController(this, "attackcontroller", 0, this::attackPredicate));
+		data.addAnimationController(new AnimationController<>(this, "controller", 0, this::predicate));
+		data.addAnimationController(new AnimationController<>(this, "attackcontroller", 0, this::attackPredicate));
 		
 	}
 	

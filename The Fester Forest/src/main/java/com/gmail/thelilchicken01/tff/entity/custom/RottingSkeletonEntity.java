@@ -21,14 +21,16 @@ import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType.EDefaultLoopTypes;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class RottingSkeletonEntity extends Monster implements IAnimatable {
 	
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
 	public RottingSkeletonEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
@@ -75,15 +77,15 @@ public class RottingSkeletonEntity extends Monster implements IAnimatable {
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
 		if(event.isMoving() && getTarget() == null) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rotting_skeleton.walk", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rotting_skeleton.walk", EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 		else if (event.isMoving() && getTarget() != null) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rotting_skeleton.pursue", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rotting_skeleton.pursue", EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 		
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rotting_skeleton.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rotting_skeleton.idle", EDefaultLoopTypes.LOOP));
 		return PlayState.CONTINUE;
 		
 	}
@@ -96,7 +98,7 @@ public class RottingSkeletonEntity extends Monster implements IAnimatable {
 	@Override
 	public void registerControllers(AnimationData data) {
 		
-		data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+		data.addAnimationController(new AnimationController<>(this, "controller", 0, this::predicate));
 		
 	}
 

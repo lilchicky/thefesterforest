@@ -38,15 +38,17 @@ import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType.EDefaultLoopTypes;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	
 	// Animation
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	private boolean aboutToAttack = false;
 	private boolean aboutToCooldown = false;
 	private boolean rolling = false;
@@ -494,20 +496,19 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	
 	protected float getSoundVolume() {return 1.0f;}
 	
-	@SuppressWarnings("removal")
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
 		if (rolling) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.do_a_barrel_roll", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.do_a_barrel_roll", EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 		else {
 			if(isInvulnerable()) {
-				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.attack_phase", true));
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.attack_phase", EDefaultLoopTypes.LOOP));
 				return PlayState.CONTINUE;
 			}
 			else {
-				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.vuln_phase", true));
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.vuln_phase", EDefaultLoopTypes.LOOP));
 				return PlayState.CONTINUE;
 			}
 		}
@@ -522,7 +523,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				
 				event.getController().markNeedsReload();
 				
-				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.vuln_to_attack_transition", false));
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.vuln_to_attack_transition", EDefaultLoopTypes.PLAY_ONCE));
 				
 				aboutToAttack = false;
 				
@@ -532,7 +533,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 				
 				event.getController().markNeedsReload();
 				
-				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.attack_to_vuln_transition", false));
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.frostbitten_king.attack_to_vuln_transition", EDefaultLoopTypes.PLAY_ONCE));
 				
 				aboutToCooldown = false;
 				
@@ -552,8 +553,8 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 	@Override
 	public void registerControllers(AnimationData data) {
 		
-		data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
-		data.addAnimationController(new AnimationController(this, "transitioncontroller", 0, this::transitionPredicate));
+		data.addAnimationController(new AnimationController<>(this, "controller", 0, this::predicate));
+		data.addAnimationController(new AnimationController<>(this, "transitioncontroller", 0, this::transitionPredicate));
 		
 	}
 	

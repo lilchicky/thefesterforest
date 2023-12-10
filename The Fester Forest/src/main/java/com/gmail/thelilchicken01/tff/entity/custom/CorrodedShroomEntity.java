@@ -41,14 +41,16 @@ import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType.EDefaultLoopTypes;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class CorrodedShroomEntity extends TamableAnimal implements IAnimatable {
 	
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	
 	protected RandomStrollGoal randomStrollGoal;
 	
@@ -178,22 +180,21 @@ public class CorrodedShroomEntity extends TamableAnimal implements IAnimatable {
 	
 	protected float getSoundVolume() {return 1.0f;}
 	
-	@SuppressWarnings("removal")
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
 		if (this.isInWater()) {
 			
 			if (event.isMoving()) {
-				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.corroded_shroom.swim", true));
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.corroded_shroom.swim", EDefaultLoopTypes.LOOP));
 				return PlayState.CONTINUE;
 			}
 			
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.corroded_shroom.idle", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.corroded_shroom.idle", EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 			
 		}
 		
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.corroded_shroom.walk", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.corroded_shroom.walk", EDefaultLoopTypes.LOOP));
 		return PlayState.CONTINUE;
 		
 	}

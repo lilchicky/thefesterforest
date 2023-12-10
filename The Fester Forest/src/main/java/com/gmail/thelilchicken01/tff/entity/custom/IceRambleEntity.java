@@ -52,14 +52,16 @@ import net.minecraft.world.phys.AABB;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType.EDefaultLoopTypes;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 	
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	
 	private static final EntityDataAccessor<Optional<UUID>> OWNER_UUID = SynchedEntityData.defineId(IceRambleEntity.class, EntityDataSerializers.OPTIONAL_UUID);
 
@@ -221,11 +223,11 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
 		if(event.isMoving()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.ice_ramble.walk", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.ice_ramble.walk", EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 		
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.ice_ramble.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.ice_ramble.idle", EDefaultLoopTypes.LOOP));
 		return PlayState.CONTINUE;
 		
 	}
@@ -233,7 +235,7 @@ public class IceRambleEntity extends TamableAnimal implements IAnimatable {
 	@Override
 	public void registerControllers(AnimationData data) {
 		
-		data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+		data.addAnimationController(new AnimationController<>(this, "controller", 0, this::predicate));
 		
 	}
 
