@@ -353,7 +353,7 @@ public class ForgemasterEntity extends Monster implements IAnimatable {
 		
 	}
 	
-	private PlayState attackPredicate(AnimationEvent event) {
+	private <E extends IAnimatable> PlayState attackPredicate(AnimationEvent<E> event) {
 		
 		if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
 			

@@ -155,7 +155,7 @@ public class ModEntityTypes {
 	//Glacial Titan
 	public static final RegistryObject<EntityType<GlacialTitanEntity>> GLACIAL_TITAN =
 			ENTITY_TYPES.register("glacial_titan", () -> EntityType.Builder.of(GlacialTitanEntity::new, MobCategory.MONSTER)
-					.sized(1.75f, 4.2f).build(new ResourceLocation(TheFesterForest.MODID, "glacial_titan").toString()));
+					.sized(1.75f, 3.2f).build(new ResourceLocation(TheFesterForest.MODID, "glacial_titan").toString()));
 	
 	//Brittle Branch Bullet
 	

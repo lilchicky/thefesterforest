@@ -514,7 +514,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 		
 	}
 	
-	private PlayState transitionPredicate(AnimationEvent event) {
+	private <E extends IAnimatable> PlayState transitionPredicate(AnimationEvent<E> event) {
 		
 		if (!rolling) {
 		

@@ -29,6 +29,7 @@ import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType.EDefaultLoopTypes;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
@@ -37,6 +38,8 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class GlacialTitanEntity extends Monster implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
+	
+	private boolean isThrowing = false;
 
 	public GlacialTitanEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
@@ -78,6 +81,8 @@ public class GlacialTitanEntity extends Monster implements IAnimatable {
 	
 				getLevel().addFreshEntity(shot);
 				
+				isThrowing = true;
+				
 			}
 		}
 		
@@ -105,6 +110,11 @@ public class GlacialTitanEntity extends Monster implements IAnimatable {
 	
 	protected SoundEvent getAmbientSound() { return SoundEvents.ZOMBIE_AMBIENT; }
 	
+	@Override
+	public float getVoicePitch() {
+		return 0.05f;
+	}
+	
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {return SoundEvents.GLASS_BREAK; }
 	
 	protected SoundEvent getDeathSound() {return SoundEvents.ZOMBIE_DEATH; }
@@ -114,11 +124,26 @@ public class GlacialTitanEntity extends Monster implements IAnimatable {
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
 		if(event.isMoving()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.glacial_titan.walk", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.glacial_titan.walk", EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 		
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.glacial_titan.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.glacial_titan.idle", EDefaultLoopTypes.LOOP));
+		return PlayState.CONTINUE;
+		
+	}
+	
+	private <E extends IAnimatable> PlayState throwPredicate(AnimationEvent<E> event) {
+		
+		if (isThrowing) {
+				
+			event.getController().markNeedsReload();
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.glacial_titan.attack", EDefaultLoopTypes.PLAY_ONCE));
+			
+			isThrowing = false;
+			
+		}
+		
 		return PlayState.CONTINUE;
 		
 	}
@@ -132,6 +157,7 @@ public class GlacialTitanEntity extends Monster implements IAnimatable {
 	public void registerControllers(AnimationData data) {
 		
 		data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+		data.addAnimationController(new AnimationController(this, "throwcontroller", 0, this::throwPredicate));
 		
 	}
 
