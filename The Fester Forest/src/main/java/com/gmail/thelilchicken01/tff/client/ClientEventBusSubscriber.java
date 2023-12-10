@@ -218,14 +218,16 @@ public class ClientEventBusSubscriber {
 	@SubscribeEvent
 	public static void registerParticleFactories(final ParticleFactoryRegisterEvent event) {
 		
-		Minecraft.getInstance().particleEngine.register(ParticleInit.HELLFLAME_PARTICLES.get(), HellflameParticle.Provider::new);
-		Minecraft.getInstance().particleEngine.register(ParticleInit.TFF_PORTAL_PARTICLES.get(), TffPortalParticle.Provider::new);
-		Minecraft.getInstance().particleEngine.register(ParticleInit.POCKET_SAND_PARTICLE.get(), PocketSandParticle.Provider::new);
-		Minecraft.getInstance().particleEngine.register(ParticleInit.BLOOD_PARTICLE.get(), BloodParticle.Provider::new);
-		Minecraft.getInstance().particleEngine.register(ParticleInit.BONE_PARTICLE.get(), BoneParticle.Provider::new);
-		Minecraft.getInstance().particleEngine.register(ParticleInit.BRANCH_PARTICLE.get(), BranchParticle.Provider::new);
-		Minecraft.getInstance().particleEngine.register(ParticleInit.ICY_EXPLOSION_PARTICLE.get(), IcyExplosionParticle.Provider::new);
-		Minecraft.getInstance().particleEngine.register(ParticleInit.ROTTING_BUBBLE_PARTICLE.get(), RottingBubbleParticle.Provider::new);
+		Minecraft instance = Minecraft.getInstance();
+		
+		instance.particleEngine.register(ParticleInit.HELLFLAME_PARTICLES.get(), HellflameParticle.Provider::new);
+		instance.particleEngine.register(ParticleInit.TFF_PORTAL_PARTICLES.get(), TffPortalParticle.Provider::new);
+		instance.particleEngine.register(ParticleInit.POCKET_SAND_PARTICLE.get(), PocketSandParticle.Provider::new);
+		instance.particleEngine.register(ParticleInit.BLOOD_PARTICLE.get(), BloodParticle.Provider::new);
+		instance.particleEngine.register(ParticleInit.BONE_PARTICLE.get(), BoneParticle.Provider::new);
+		instance.particleEngine.register(ParticleInit.BRANCH_PARTICLE.get(), BranchParticle.Provider::new);
+		instance.particleEngine.register(ParticleInit.ICY_EXPLOSION_PARTICLE.get(), IcyExplosionParticle.Provider::new);
+		instance.particleEngine.register(ParticleInit.ROTTING_BUBBLE_PARTICLE.get(), RottingBubbleParticle.Provider::new);
 	}
 	
 }

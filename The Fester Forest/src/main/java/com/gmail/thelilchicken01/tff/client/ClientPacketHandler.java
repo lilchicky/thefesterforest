@@ -14,7 +14,9 @@ public class ClientPacketHandler {
 	
 	public static void handleSinkPacket(SinkPacket packet) {
 		
-		Player player = Minecraft.getInstance().player;
+		Minecraft instance = Minecraft.getInstance();
+		
+		Player player = instance.player;
 		if (player != null) {
 			player.getCapability(SwimHandler.CAPABILITY).ifPresent(handler -> handler.setSinking(packet.SHOULD_SINK));
 		}
@@ -23,7 +25,9 @@ public class ClientPacketHandler {
 	
 	public static void handlePetPacket(PetPacket packet) {
 		
-		Player player = Minecraft.getInstance().player;
+		Minecraft instance = Minecraft.getInstance();
+		
+		Player player = instance.player;
 		if (player != null) {
 			player.getCapability(PetSpawnHandler.CAPABILITY).ifPresent(handler -> handler.setHasPet(packet.HAS_PET));
 		}
@@ -32,7 +36,9 @@ public class ClientPacketHandler {
 	
 	public static void handlePetNamePacket(PetNamePacket packet) {
 		
-		Player player = Minecraft.getInstance().player;
+		Minecraft instance = Minecraft.getInstance();
+		
+		Player player = instance.player;
 		if (player != null) {
 			player.getCapability(PetNameHandler.CAPABILITY).ifPresent(handler -> handler.setPetUUID(packet.PET_NAME));
 		}
