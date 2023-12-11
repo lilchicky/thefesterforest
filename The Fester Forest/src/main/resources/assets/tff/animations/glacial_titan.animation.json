@@ -3,6 +3,7 @@
 	"animations": {
 		"animation.glacial_titan.idle": {
 			"loop": true,
+			"animation_length": 4,
 			"bones": {
 				"body": {
 					"position": {
@@ -11,12 +12,32 @@
 				},
 				"upperbody": {
 					"rotation": {
-						"vector": [35, 0, 0]
+						"0.0": {
+							"vector": [35, 0, 0]
+						},
+						"2.0": {
+							"vector": [37, 0, 0],
+							"easing": "easeInOutSine"
+						},
+						"4.0": {
+							"vector": [35, 0, 0],
+							"easing": "easeInOutSine"
+						}
 					}
 				},
 				"head": {
 					"rotation": {
-						"vector": [-15, 0, 0]
+						"0.0": {
+							"vector": [-15, 0, 0]
+						},
+						"2.0": {
+							"vector": [-17.5, 0, 0],
+							"easing": "easeInOutSine"
+						},
+						"4.0": {
+							"vector": [-15, 0, 0],
+							"easing": "easeInOutSine"
+						}
 					}
 				},
 				"rightarm": {
@@ -26,7 +47,17 @@
 				},
 				"rightelbow": {
 					"rotation": {
-						"vector": [-75, 0, 0]
+						"0.0": {
+							"vector": [-75, 0, 0]
+						},
+						"2.0": {
+							"vector": [-77.5, 0, 0],
+							"easing": "easeInOutSine"
+						},
+						"4.0": {
+							"vector": [-75, 0, 0],
+							"easing": "easeInOutSine"
+						}
 					}
 				},
 				"leftarm": {
@@ -36,7 +67,17 @@
 				},
 				"leftelbow": {
 					"rotation": {
-						"vector": [-75, 0, 0]
+						"0.0": {
+							"vector": [-75, 0, 0]
+						},
+						"2.0": {
+							"vector": [-77.5, 0, 0],
+							"easing": "easeInOutSine"
+						},
+						"4.0": {
+							"vector": [-75, 0, 0],
+							"easing": "easeInOutSine"
+						}
 					}
 				},
 				"legs": {
