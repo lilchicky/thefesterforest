@@ -1,9 +1,7 @@
 package com.gmail.thelilchicken01.tff.entity.custom;
 
-import com.gmail.thelilchicken01.tff.entity.projectile.FrostbittenBolt;
 import com.gmail.thelilchicken01.tff.entity.projectile.FrozenRock;
 import com.gmail.thelilchicken01.tff.init.ItemInit;
-import com.gmail.thelilchicken01.tff.item.projectile.FrostbittenBoltProjectile;
 import com.gmail.thelilchicken01.tff.item.projectile.FrozenRockShot;
 
 import net.minecraft.core.BlockPos;
@@ -26,6 +24,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -64,6 +63,8 @@ public class GlacialTitanEntity extends Monster implements IAnimatable {
 		if (this.tickCount % 80 == 0) {
 			if (this.getTarget() != null && this.getTarget() instanceof Player player) {
 				
+				this.isThrowing = true;
+				
 				FrozenRockShot bulletItem = ItemInit.FROZEN_ROCK.get();
 				ItemStack shotAmmo = new ItemStack(ItemInit.FROZEN_ROCK.get());
 				
@@ -81,8 +82,6 @@ public class GlacialTitanEntity extends Monster implements IAnimatable {
 				shot.setIgnoreInvulnerability(false);
 	
 				getLevel().addFreshEntity(shot);
-				
-				isThrowing = true;
 				
 			}
 		}
@@ -134,14 +133,15 @@ public class GlacialTitanEntity extends Monster implements IAnimatable {
 		
 	}
 	
-	private <E extends IAnimatable> PlayState throwPredicate(AnimationEvent<E> event) {
+	private <E extends IAnimatable> PlayState attackPredicate(AnimationEvent<E> event) {
 		
-		if (isThrowing) {
-				
+		if (this.isThrowing && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
+			
 			event.getController().markNeedsReload();
+			
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.glacial_titan.attack", EDefaultLoopTypes.PLAY_ONCE));
 			
-			isThrowing = false;
+			this.isThrowing = false;
 			
 		}
 		
@@ -158,7 +158,7 @@ public class GlacialTitanEntity extends Monster implements IAnimatable {
 	public void registerControllers(AnimationData data) {
 		
 		data.addAnimationController(new AnimationController<>(this, "controller", 0, this::predicate));
-		data.addAnimationController(new AnimationController<>(this, "throwcontroller", 0, this::throwPredicate));
+		data.addAnimationController(new AnimationController<>(this, "attackcontroller", 0, this::attackPredicate));
 		
 	}
 
