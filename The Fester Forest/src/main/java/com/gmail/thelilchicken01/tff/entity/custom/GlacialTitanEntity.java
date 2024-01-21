@@ -60,7 +60,7 @@ public class GlacialTitanEntity extends Monster implements IAnimatable {
 		
 		super.tick();
 		
-		if (this.tickCount % 80 == 0) {
+		if (this.tickCount % 80 == 0 && !this.getLevel().isClientSide()) {
 			if (this.getTarget() != null && this.getTarget() instanceof Player player) {
 				
 				this.isThrowing = true;
@@ -135,13 +135,13 @@ public class GlacialTitanEntity extends Monster implements IAnimatable {
 	
 	private <E extends IAnimatable> PlayState attackPredicate(AnimationEvent<E> event) {
 		
-		if (this.isThrowing && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
+		if (!this.getLevel().isClientSide() && this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
 			
 			event.getController().markNeedsReload();
 			
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.glacial_titan.attack", EDefaultLoopTypes.PLAY_ONCE));
 			
-			this.isThrowing = false;
+			this.swinging = false;
 			
 		}
 		
