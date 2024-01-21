@@ -135,7 +135,7 @@ public class GlacialTitanEntity extends Monster implements IAnimatable {
 	
 	private <E extends IAnimatable> PlayState attackPredicate(AnimationEvent<E> event) {
 		
-		if (!this.getLevel().isClientSide() && this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
+		if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
 			
 			event.getController().markNeedsReload();
 			
