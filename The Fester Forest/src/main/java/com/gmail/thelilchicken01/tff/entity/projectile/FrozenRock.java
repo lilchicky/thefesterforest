@@ -182,8 +182,7 @@ public class FrozenRock extends Fireball {
 			
 			BlockPos hitLoc = result.getBlockPos();
 			@Nullable Entity owner = this.getOwner();
-			if (owner != null && owner instanceof Player) {
-				Player shooter = (Player) owner;
+			if (owner != null && owner instanceof Player shooter) {
 				
 				List<LivingEntity> nearbyEntities = this.getLevel().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, shooter, new AABB(
 						hitLoc.getX() - 3, 
@@ -202,6 +201,25 @@ public class FrozenRock extends Fireball {
 					currentEntity.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_frozen_rock_damage",
 					this, shooter), (float)shatterDamage);
 					currentEntity.setTicksFrozen(240);
+					
+				}
+				
+			}
+			
+			else if (owner != null && owner instanceof LivingEntity shooter) {
+				
+				List<LivingEntity> nearbyEntities = this.getLevel().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, shooter, new AABB(
+						hitLoc.getX() - 3, 
+						hitLoc.getY() - 3, 
+						hitLoc.getZ() - 3, 
+						hitLoc.getX() + 3, 
+						hitLoc.getY() + 3, 
+						hitLoc.getZ() + 3));
+				
+				for (LivingEntity currentEntity : nearbyEntities) {
+					currentEntity.hurt(new IndirectEntityDamageSource(TheFesterForest.MODID + "_frozen_rock_damage",
+					this, shooter), (float)shatterDamage);
+					currentEntity.setTicksFrozen(120);
 					
 				}
 				
