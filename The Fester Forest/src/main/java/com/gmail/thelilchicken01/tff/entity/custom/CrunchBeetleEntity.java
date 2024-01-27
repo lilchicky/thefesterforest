@@ -104,6 +104,11 @@ public class CrunchBeetleEntity extends Animal implements IAnimatable {
 	
 	protected SoundEvent getAmbientSound() { return SoundEvents.SILVERFISH_STEP; }
 	
+	@Override
+	public float getVoicePitch() {
+		return 1.5f;
+	}
+	
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {return SoundEvents.TURTLE_EGG_BREAK; }
 	
 	protected SoundEvent getDeathSound() {return SoundEvents.SILVERFISH_DEATH; }
