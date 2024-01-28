@@ -16,7 +16,7 @@ public class ArcanePowerEnchant extends Enchantment {
 	}
 	
 	public static double getDamage(int level) {
-		return 1 + (0.2 * level);
+		return 1 + (0.1 * level);
 	}
 	
 }
