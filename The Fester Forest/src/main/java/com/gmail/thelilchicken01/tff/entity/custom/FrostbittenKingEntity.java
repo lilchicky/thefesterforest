@@ -188,7 +188,7 @@ public class FrostbittenKingEntity extends Monster implements IAnimatable {
 			
 			vCounter++;
 			
-			if (this.tickCount % 10 == 0) {
+			if (this.tickCount % 5 == 0) {
 			
 				for (Player player : nearbyPlayers) {
 					if ((!(player.isSpectator() || player.isCreative()) && ((getY() + 2) <= player.getY() || getY() > player.getY())) && this.isInvulnerable()) {

@@ -190,7 +190,7 @@ public class FrostbittenBolt extends NoParticleProjectile implements ItemSupplie
 		
 		if (getLevel() instanceof ServerLevel serverlevel && !(serverlevel.getBlockState(result.getBlockPos()).getBlock() == Blocks.BEDROCK)) {
 		
-			serverlevel.destroyBlock(result.getBlockPos(), true);
+			serverlevel.destroyBlock(result.getBlockPos(), false);
 			
 		}
 		
