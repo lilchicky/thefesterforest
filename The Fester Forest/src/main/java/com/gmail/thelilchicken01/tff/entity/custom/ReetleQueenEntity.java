@@ -59,11 +59,11 @@ public class ReetleQueenEntity extends TamableAnimal implements IAnimatable {
 	
 	public static AttributeSupplier setAttributes() {
 		return Monster.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 120.00)
+				.add(Attributes.MAX_HEALTH, 400.00)
 				.add(Attributes.ATTACK_DAMAGE, 24.0f)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.MOVEMENT_SPEED, 0.01f)
-				.add(Attributes.ARMOR, 25.0f)
+				.add(Attributes.ARMOR, 10.0f)
 				.add(Attributes.KNOCKBACK_RESISTANCE, 10.0f).build();
 	}
 	
@@ -111,7 +111,7 @@ public class ReetleQueenEntity extends TamableAnimal implements IAnimatable {
 			
 				minion.setPos(getX(), getY(), getZ());
 				minion.setTarget(getTarget());
-				minion.setHealth(1.0f);
+				minion.setHealth(30.0f);
 				minion.setSummoned();
 			
 				getLevel().addFreshEntity(minion);
