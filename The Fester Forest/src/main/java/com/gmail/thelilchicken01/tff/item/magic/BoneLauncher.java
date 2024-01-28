@@ -67,7 +67,7 @@ public class BoneLauncher extends TFFProjectileWeaponItem implements MagicItem, 
 		world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BONE_BLOCK_BREAK, SoundSource.PLAYERS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
 		player.awardStat(Stats.ITEM_USED.get(this));
 		
-		player.getCooldowns().addCooldown(this, ItemUtil.getQuickcastCooldown(20, gun));
+		player.getCooldowns().addCooldown(this, ItemUtil.getQuickcastCooldown(10, gun));
 		return super.use(world, player, hand);
 	}
 	
