@@ -100,6 +100,11 @@ public class WightEntity extends Monster implements IAnimatable {
 	
 	protected float getSoundVolume() {return 1.0f;}
 	
+	@Override
+	public float getVoicePitch() {
+		return 0.05f;
+	}
+	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
 		if(event.isMoving()) {
